@@ -3,7 +3,7 @@
 Portal institucional do Programa de Pós-Graduação em Engenharia de Materiais
 (REDEMAT — UFOP · UEMG), reconstruído a partir de dados com proveniência declarada.
 
-**Versão:** 4.7 · **Data:** 03/09/2026
+**Versão:** 4.8 · **Data:** 03/09/2026
 
 ---
 
@@ -73,7 +73,7 @@ redemat-portal/
 │   ├── normas.html                 Normas, credenciamento e atas do Colegiado
 │   ├── indicadores.html            Dashboard: produção, formação, projetos, metodologia
 │   ├── producao-lattes.html        Mapa dinâmico docente × periódico + relatório ScriptLattes
-│   ├── internacionalizacao.html    Vínculos no exterior, colaboração, parceiros
+│   ├── internacionalizacao.html    Vínculos no exterior, mapa de colaborações, parceiros
 │   └── processo-seletivo.html      Etapas, documentos, escolha de orientador
 │
 ├── scripts/
@@ -436,6 +436,14 @@ O repositório local está pronto para <https://github.com/matheusjsmatos/redema
 envio e da ativação do GitHub Pages está em **`docs/publicar-no-github.md`**.
 
 ## Correções relevantes
+
+**Versão 4.8** moveu o mapa de colaborações de `producao-lattes.html` para
+`internacionalizacao.html`, abaixo da lista de países. Testar a mudança revelou
+três erros: o mapa contava 20 países onde há 19 (um registro sem `codigo_pais`
+fazia os Estados Unidos entrarem duas vezes), o indicador "Publicações em
+coautoria" mostrava 731 quando as publicações distintas são 275 — soma por
+instituição sob rótulo de publicação, o erro do "202" — e o mapa inicializava
+duas vezes.
 
 **Versão 4.7** retirou do portal o nome do docente fora do conjunto publicado.
 Ele aparecia em três lugares — o aviso "Exclusão formal" em `pessoas.html`, o

@@ -11,7 +11,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
 <style>
 .country-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 1.3rem; display: flex; gap: 1rem; align-items: center; transition: box-shadow .2s, transform .2s; }
 .country-card:hover { box-shadow: var(--sh); transform: translateY(-2px); }
@@ -93,6 +95,37 @@
   </section>
 
   <!-- Rede de colaboração -->
+  <!-- Mapa geolocalizado -->
+  <section class="section section--alt" id="mapa-geo" aria-labelledby="geo-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Alcance geográfico</p>
+        <h2 class="h2" id="geo-h">Mapa de colaborações no mundo</h2>
+        <p class="section-lede" id="geoLede"></p>
+      </div>
+
+      <div class="geo-wrap">
+        <div class="geo-toolbar" role="group" aria-label="Filtros do mapa de colaborações">
+          <label for="geoProf" class="filter-lbl">Docente</label>
+          <select id="geoProf"><option value="">Todos os docentes</option></select>
+          <label for="geoAno" class="filter-lbl">Ano</label>
+          <select id="geoAno"><option value="">2021–2026</option></select>
+          <label for="geoBusca" class="sr-only">Buscar instituição, cidade ou país</label>
+          <input type="search" id="geoBusca" placeholder="Buscar instituição, cidade ou país…" style="min-width:220px;">
+        </div>
+        <div id="geoMapa" role="application" aria-label="Mapa de colaborações científicas da REDEMAT no mundo"></div>
+        <p class="geo-vazio" id="geoVazio" hidden></p>
+        <div class="geo-stats" aria-live="polite">
+          <div class="geo-stat"><b id="geoNLocais">0</b><span>Instituições</span></div>
+          <div class="geo-stat"><b id="geoNPaises">0</b><span>Países</span></div>
+          <div class="geo-stat"><b id="geoNPubs">0</b><span>Coautorias com instituição</span></div>
+        </div>
+      </div>
+
+      <div class="mt-3" id="geoNota"></div>
+    </div>
+  </section>
+
   <section class="section" aria-labelledby="rede-h">
     <div class="wrap">
       <div class="section-head">
@@ -200,6 +233,7 @@
 
 <script src="../assets/js/site-data.js"></script>
 <script src="../assets/js/components.js"></script>
+<script src="../assets/js/mapa-geo-dados.js"></script>
 <script>
 (function () {
   'use strict';
@@ -302,6 +336,167 @@
   document.getElementById('acordoTxt').textContent = I.acordos_formais.nota;
 
   /* ---------- init ---------- */
+  /* ═══════════════ MAPA GEOLOCALIZADO ═══════════════ */
+  const G = window.MAPA_GEO || null;
+  const MG = R.mapa_geo;
+
+  document.getElementById('geoLede').textContent =
+    MG.conexoes + ' conexões entre docentes da REDEMAT e ' + MG.locais +
+    ' instituições coautoras em ' + MG.paises + ' países, a partir de ' +
+    MG.publicacoes_resolvidas + ' publicações com DOI resolvido no período 2021–2026.';
+
+  document.getElementById('geoNota').innerHTML =
+    C.note('info', '<strong>Como o mapa foi construído.</strong> ' + MG.nota + ' ' + C.badge('PRELIMINAR')) +
+    '<div class="mt-2">' + C.note('warn',
+      '<strong>Auditoria de geolocalização.</strong> ' + MG.auditoria) + '</div>' +
+    /* As duas contagens de publicação do mapa medem coisas diferentes, e o
+       rótulo de cada uma tem de dizer qual: são 275 publicações distintas, mas
+       731 coautorias, porque um artigo com três instituições estrangeiras conta
+       uma vez em cada. Publicar 731 sob o rótulo "publicações" seria o mesmo
+       erro do "202". */
+    '<div class="mt-2">' + C.note('info',
+      '<strong>Duas contagens, dois rótulos.</strong> São <strong>' +
+      MG.publicacoes_resolvidas + ' publicações distintas</strong> com DOI resolvido no período. ' +
+      'O indicador <em>Coautorias com instituição</em> soma um vínculo por instituição coautora: ' +
+      'um artigo assinado com três instituições estrangeiras conta três vezes, e por isso o total é maior ' +
+      'que o número de publicações. As duas medidas são legítimas — o que não seria legítimo é publicar ' +
+      'uma sob o rótulo da outra.') + '</div>';
+
+  /* O gancho de carga pode disparar por dois caminhos (o `load` do script do
+     Leaflet e o `load` da janela), e o Leaflet recusa inicializar o mesmo
+     contêiner duas vezes — "Map container is already initialized". A guarda
+     torna a chamada idempotente. */
+  let geoIniciado = false;
+
+  function iniciarGeo() {
+    if (geoIniciado) return;
+    geoIniciado = true;
+    const el = document.getElementById('geoMapa');
+    const vazio = document.getElementById('geoVazio');
+    if (!el) return;
+
+    if (!G || !G.links || !G.links.length) {
+      el.style.display = 'none';
+      vazio.hidden = false;
+      vazio.textContent = 'Dados do mapa não carregados. Confirme que assets/js/mapa-geo-dados.js está presente.';
+      return;
+    }
+
+    if (!window.L) {
+      /* Sem Leaflet (offline), o mapa vira uma lista por país — o dado não se perde.
+         A barra de filtros é escondida: sem mapa, os controles não teriam efeito. */
+      el.style.display = 'none';
+      const tb = document.querySelector('.geo-toolbar');
+      if (tb) tb.hidden = true;
+      const porPais = {};
+      G.locais.forEach(function (l) {
+        (porPais[l.pais] = porPais[l.pais] || []).push(l);
+      });
+      const linhas = Object.keys(porPais).sort(function (a, b) {
+        return porPais[b].length - porPais[a].length;
+      }).map(function (pais) {
+        const ls = porPais[pais];
+        return '<div class="bar-row"><span class="bar-lbl">' + pais + '</span>' +
+          '<span class="bar-track"><span class="bar-fill" style="background:var(--area1);width:' +
+            Math.round(ls.length / G.locais.length * 100) + '%"></span></span>' +
+          '<span class="bar-val">' + ls.length + '</span></div>';
+      }).join('');
+      vazio.hidden = false;
+      vazio.innerHTML = '<div class="geo-fallback" style="text-align:left;">' +
+        '<p style="font-size:.84rem;color:var(--text-mid);margin-bottom:1rem;">' +
+          'O mapa interativo precisa da biblioteca Leaflet, que não carregou (provavelmente sem conexão). ' +
+          'Instituições coautoras por país:</p>' + linhas + '</div>';
+      document.getElementById('geoNLocais').textContent = C.num(G.locais.length);
+      document.getElementById('geoNPaises').textContent = Object.keys(porPais).length;
+      document.getElementById('geoNPubs').textContent = C.num(G.links.reduce(function (s2, l) { return s2 + l.publicacoes; }, 0));
+      return;
+    }
+
+    const mapa = window.L.map(el, { zoomControl: false, minZoom: 2, worldCopyJump: true, scrollWheelZoom: false })
+      .setView([8, -18], 2);
+    window.L.control.zoom({ position: 'bottomright' }).addTo(mapa);
+    window.L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors', maxZoom: 19
+    }).addTo(mapa);
+    const camada = window.L.layerGroup().addTo(mapa);
+
+    const selP = document.getElementById('geoProf');
+    const selA = document.getElementById('geoAno');
+    G.professores.forEach(function (n) { selP.add(new Option(n, n)); });
+    for (let a = G.meta.fim; a >= G.meta.inicio; a--) selA.add(new Option(a, a));
+
+    function desenhar() {
+      camada.clearLayers();
+      const prof = selP.value, ano = selA.value;
+      const q = document.getElementById('geoBusca').value.trim().toLowerCase();
+
+      let links = G.links.filter(function (l) {
+        return (!prof || l.professor === prof) && (!ano || l.anos[ano]);
+      });
+      const ids = {};
+      links.forEach(function (l) { ids[l.destino] = 1; });
+      let locais = G.locais.filter(function (l) {
+        return ids[l.id] && (!q || (l.instituicao + ' ' + l.cidade + ' ' + l.pais).toLowerCase().indexOf(q) > -1);
+      });
+      const ok = {};
+      locais.forEach(function (l) { ok[l.id] = 1; });
+      links = links.filter(function (l) { return ok[l.destino]; });
+
+      const totais = {};
+      links.forEach(function (l) {
+        totais[l.destino] = (totais[l.destino] || 0) + (ano ? (l.anos[ano] || 0) : l.publicacoes);
+      });
+
+      const o = [G.origem.lat, G.origem.lon];
+      window.L.circleMarker(o, { radius: 7, color: '#fff', weight: 2, fillColor: '#0B1F3A', fillOpacity: 1 })
+        .bindTooltip('<b>REDEMAT</b><br>Ouro Preto, Brasil').addTo(camada);
+
+      locais.forEach(function (l) {
+        const peso = totais[l.id] || 1;
+        window.L.polyline([o, [l.lat, l.lon]], {
+          color: '#1D6FA5', opacity: .35, weight: Math.min(1 + Math.sqrt(peso), 5)
+        }).addTo(camada);
+        window.L.circleMarker([l.lat, l.lon], {
+          radius: 5 + Math.sqrt(peso) * 2, color: '#fff', weight: 1.5,
+          fillColor: '#D9A521', fillOpacity: .88
+        }).bindTooltip('<b>' + l.cidade + ', ' + l.pais + '</b><br>' + l.instituicao +
+          '<br>' + peso + ' publicação' + (peso === 1 ? '' : 'ões')).addTo(camada);
+      });
+
+      /* Conta pelo NOME do país, não pelo código: um registro sem
+         `codigo_pais` caía no nome e o mesmo país era contado duas vezes —
+         o mapa dizia 20 países onde havia 19. O nome nunca falta. */
+      const paises = {};
+      locais.forEach(function (l) { paises[l.pais] = 1; });
+      document.getElementById('geoNLocais').textContent = C.num(locais.length);
+      document.getElementById('geoNPaises').textContent = Object.keys(paises).length;
+      document.getElementById('geoNPubs').textContent = C.num(
+        links.reduce(function (s2, l) { return s2 + (ano ? (l.anos[ano] || 0) : l.publicacoes); }, 0));
+
+      const vz = document.getElementById('geoVazio');
+      vz.hidden = locais.length > 0;
+      vz.textContent = 'Nenhuma colaboração corresponde aos filtros.';
+    }
+
+    selP.addEventListener('change', desenhar);
+    selA.addEventListener('change', desenhar);
+    document.getElementById('geoBusca').addEventListener('input', desenhar);
+    /* O zoom por scroll só liga depois de clicar — evita capturar a rolagem da página */
+    mapa.on('click', function () { mapa.scrollWheelZoom.enable(); });
+    mapa.on('mouseout', function () { mapa.scrollWheelZoom.disable(); });
+    desenhar();
+  }
+
+  if (window.L) iniciarGeo();
+  else {
+    const ls = document.querySelector('script[src*="leaflet"]');
+    if (ls) {
+      ls.addEventListener('load', iniciarGeo);
+      ls.addEventListener('error', iniciarGeo);
+    }
+    window.addEventListener('load', function () { setTimeout(iniciarGeo, 300); });
+  }
+
   C.mount('internacionalizacao.html', '../');
 
   let drawn = false;

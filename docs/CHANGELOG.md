@@ -1,5 +1,68 @@
 # Registro de correções — Portal REDEMAT
 
+## Versão 4.8 — 03/09/2026
+
+O mapa de colaborações muda de página, e três erros que a mudança revelou.
+
+### O mapa vai para Internacionalização
+
+A seção **Alcance geográfico — Mapa de colaborações no mundo** saiu de
+`producao-lattes.html` e entrou em `internacionalizacao.html`, logo abaixo de
+"Países com vínculos registrados". É o mesmo assunto em outra forma: a lista diz
+quais países, o mapa mostra onde — e é ali que o visitante procura alcance
+geográfico, não na página de produção.
+
+Foram junto o Leaflet (CSS e JS), o `mapa-geo-dados.js`, as 31 linhas de HTML da
+seção e as 128 linhas de JavaScript que a movem. O bloco era autossuficiente —
+usa apenas `REDEMAT`, os componentes compartilhados e `window.MAPA_GEO` — o que
+tornou a mudança um recorte, não uma reescrita.
+
+Dois ajustes de acabamento: a alternância de faixas claras e escuras foi
+recomposta nas duas páginas (a seção que saiu era clara e deixou três faixas
+escuras seguidas em `producao-lattes.html`), e a página de produção ganhou um
+ponteiro para o mapa, já que ainda exibe o número de países com coautoria.
+
+### Três erros que só apareceram ao testar
+
+**O mapa dizia 20 países; são 19.** O indicador contava
+`l.codigo_pais || l.pais`, e um registro — o *Advanced Light Source*, em
+Berkeley — estava com `codigo_pais: null`. Aquele local caía na chave "United
+States" enquanto os outros usavam "US", e os Estados Unidos entravam duas vezes.
+Corrigido nas duas pontas: o código do país foi preenchido no dado, e a
+contagem passou a usar o **nome** do país, que nunca falta.
+
+**"Publicações em coautoria: 731" media outra coisa.** A legenda logo acima diz
+275 publicações com DOI resolvido — e 731 é a soma de vínculos por instituição:
+um artigo assinado com três instituições estrangeiras conta três vezes. Publicar
+731 sob o rótulo "publicações" é exatamente o erro do "202". O indicador passou
+a se chamar **"Coautorias com instituição"**, e a página agora explica as duas
+contagens lado a lado, com o aviso de que as duas medidas são legítimas e o que
+não seria legítimo é publicar uma sob o rótulo da outra.
+
+**O mapa inicializava duas vezes.** O gancho de carga dispara por dois caminhos
+— o `load` do script do Leaflet e o `load` da janela — e o Leaflet recusa o
+mesmo contêiner duas vezes, com "Map container is already initialized" no
+console. Uma guarda tornou a chamada idempotente. O erro vinha de antes da
+mudança de página; a movimentação só o trouxe à luz.
+
+### Verificação
+
+O Leaflet vem de CDN, que o ambiente de verificação não alcança — então o mapa
+foi testado servindo o Leaflet 1.9.4 local no lugar do CDN e um tile de 1×1 no
+lugar do OpenStreetMap. Com isso, os dois caminhos foram conferidos:
+
+- **com Leaflet:** 257 marcadores e linhas desenhados, 128 instituições, 19
+  países, 731 coautorias; o filtro por docente responde (Taíse Matte
+  Manhabosco → 24 instituições, 4 países, 62 coautorias) e o filtro de ano
+  compõe com ele (2025 → 6 / 1 / 9); 25 docentes e 7 anos nos seletores;
+- **sem Leaflet:** a degradação documentada entra em ação — a lista por país
+  substitui o mapa, os indicadores continuam corretos e nada quebra.
+
+Nenhum erro de JavaScript nas duas situações. 14 páginas e 8 pontos de quebra
+sem regressão.
+
+---
+
 ## Versão 4.7 — 03/09/2026
 
 Sai do portal o nome do docente fora do conjunto publicado. A explicação do
