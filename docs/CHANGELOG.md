@@ -1,5 +1,80 @@
 # Registro de correções — Portal REDEMAT
 
+## Versão 4.6 — 03/09/2026
+
+Repositório Git preparado para <https://github.com/matheusjsmatos/redemat>, e
+mais seis fotos de docentes.
+
+### O repositório
+
+`git init` na pasta do projeto, branch `main`, endereço remoto configurado e
+primeiro commit com **268 arquivos, 16 MB**. O envio sai do Windows — o
+ambiente onde o assistente trabalha não tem rede para o GitHub. O passo a passo
+está em `docs/publicar-no-github.md`.
+
+`.gitignore` deixa de fora o que é regenerável ou de trabalho:
+`scriptlattes.bak/` (o script de sincronização recria a pasta a cada execução),
+`assets/img/originais/` e `assets/img/pessoas/originais/` (imagens antes de
+reencodar), além do lixo de Windows, macOS, Dropbox e editores.
+
+`.gitattributes` normaliza fim de linha (`* text=auto`) e marca os binários,
+para que editar no Windows e no Linux não produza diff de arquivo inteiro.
+
+### Preparado para o GitHub Pages
+
+- **`.nojekyll`** na raiz — sem ele o GitHub processa o site como Jekyll e
+  ignora arquivos e pastas iniciadas por sublinhado.
+- **Nenhum caminho absoluto**, conferido: Pages serve em `/redemat/`, não na
+  raiz do domínio, e um `src="/assets/..."` quebraria.
+- **`noindex` automático no github.io.** Enquanto o endereço for
+  `matheusjsmatos.github.io`, cada página declara `noindex, nofollow`: são duas
+  cópias do mesmo conteúdo na internet, e a que não deve aparecer na busca é a
+  prévia. Não é controle de acesso — quem tem o link abre. A verificação é pelo
+  hostname, então **se desliga sozinha** no domínio definitivo; não há nada
+  para lembrar de remover. Verificado em navegador nos três casos: ausente em
+  `localhost`, ausente em domínio `ufop.br`, presente em `github.io`.
+
+### Decisão registrada: repositório público com as fotos
+
+O repositório é **público** e inclui as fotos de pessoas, por decisão da
+vice-coordenação. Fica registrado que:
+
+- as 10 fotos hoje na pasta vão para uma página pública, e **9 delas são de
+  outras pessoas** — 6 docentes, 2 pós-doutorandos e o secretário;
+- não há autorização de imagem registrada para nenhuma delas: a coluna
+  `autorizacao` do `assets/img/pessoas/LISTA-DE-FOTOS.csv` está em branco;
+- **o Git guarda histórico.** Remover uma foto num commit futuro não a apaga
+  dos commits anteriores, que seguem acessíveis. Tirar uma imagem do histórico
+  exige reescrever a história e forçar o push.
+
+A autorização de imagem permanece como pendência, agora com o agravante de que
+a publicação precede a coleta.
+
+### Seis fotos novas, e a mesma armadilha de novo
+
+Chegaram Ana Paula Moreira Barboza, Dalila Chaves Sicupira, Ive Silvestre de
+Almeida e Taíse Matte Manhabosco (docentes), Gustavo Henrique Silvestre
+(pós-doutorando) e Rodrigo Cesário Lourenço (secretário) — **10 fotos no total**.
+
+Duas vinham com extensão `.gif` e eram JPEG por dentro, exatamente como na v4.4.
+O `conferir-fotos.py`, que passou a ler os primeiros bytes justamente por causa
+disso, apontou as duas. Renomeadas para `.jpg`.
+
+A de Dalila tinha **2257 KB** em 3088×2316 — um retrato de câmera inteiro para
+exibir num círculo de 48 px. Reencodada: **70 KB**. A de Ana Paula, 449 KB →
+61 KB. Os arquivos de origem ficaram em `assets/img/pessoas/originais/`, fora do
+repositório.
+
+### Observação para a Fase 4
+
+`pages/normas.html` aponta para PDFs hospedados em
+`redemat.ufop.br/sites/default/files/...` — endereços do site OpenScholar atual,
+que **deixarão de existir** quando o domínio for substituído. A pasta local
+`normas/` tem 23 documentos e entrou no repositório; ligar os links a ela é
+trabalho de Fase 4, e dois arquivos precisarão de nome sem acento e sem espaço.
+
+---
+
 ## Versão 4.5 — 03/09/2026
 
 Foto aérea do campus na página de laboratórios, e um erro de rótulo que ela

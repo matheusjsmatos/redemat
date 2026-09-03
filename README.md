@@ -3,7 +3,7 @@
 Portal institucional do Programa de Pós-Graduação em Engenharia de Materiais
 (REDEMAT — UFOP · UEMG), reconstruído a partir de dados com proveniência declarada.
 
-**Versão:** 4.5 · **Data:** 03/09/2026
+**Versão:** 4.6 · **Data:** 03/09/2026
 
 ---
 
@@ -429,7 +429,20 @@ honestamente como "em definição" ou "preliminar".
 
 ---
 
+## Publicar no GitHub
+
+O repositório local está pronto para <https://github.com/matheusjsmatos/redemat>
+(branch `main`, remoto configurado, primeiro commit feito). O passo a passo do
+envio e da ativação do GitHub Pages está em **`docs/publicar-no-github.md`**.
+
 ## Correções relevantes
+
+**Versão 4.6** preparou o repositório Git (`.gitignore`, `.gitattributes`,
+`.nojekyll`) e o GitHub Pages, incluindo um `noindex` que vale só no domínio
+github.io — para a prévia não competir com redemat.ufop.br na busca — e que se
+desliga sozinho no domínio definitivo. Chegaram seis fotos novas, totalizando 10;
+duas vinham com extensão `.gif` sendo JPEG, e uma tinha 2,2 MB — o
+`conferir-fotos.py` apontou as três.
 
 **Versão 4.5** pôs uma vista aérea do campus na abertura da lista de
 laboratórios, montada a partir dos dados com legenda e crédito, e reduziu a
