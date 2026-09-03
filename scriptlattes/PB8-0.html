@@ -1,0 +1,323 @@
+
+                <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf8"><meta name="Generator" content="scriptLattes"><title>REDEMAT</title><link rel="stylesheet" href="css/scriptLattes.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"><link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css"><link rel="stylesheet" type="text/css" href="css/dataTables.colVis.min.css"><script type="text/javascript" charset="utf8" src="js/jquery.min.js"></script><script type="text/javascript" charset="utf8" src="js/jquery.dataTables.min.js"></script><script type="text/javascript" charset="utf8" src="js/dataTables.colVis.min.js"></script><script type="text/javascript" charset="utf8" src="js/sorttable-local.js"></script><link rel="stylesheet" href="portal-redemat.css">
+</head><body>
+<div id="portal-back"><a href="../pages/producao-lattes.html">&#8592; Voltar ao portal REDEMAT</a><span>Relatório ScriptLattes — dados brutos dos currículos Lattes</span></div><div id="header2"> <button onClick="history.go(-1)">Voltar</button><h2>REDEMAT</h2></div>
+                
+        <script type="text/javascript" src="./js/jquery.min.js"></script>
+        <!--
+        <script type="text/javascript" src="./highcharts.js"></script>
+        <script type="text/javascript" src="./exporting.js"></script>
+        <script type="text/javascript" src="./drilldown.js"></script>
+        -->
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+        <script type="text/javascript">
+        // Load the fonts
+        Highcharts.createElement('link', {
+           href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700',
+           rel: 'stylesheet',
+           type: 'text/css'
+        }, null, document.getElementsByTagName('head')[0]);
+
+        Highcharts.theme = {
+   colors: ["#1F77B4", "#118D95", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#2b908f", "#90ee7e", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
+   chart: {
+      backgroundColor: null,
+      style: {
+         fontFamily: "'Source Sans Pro', 'sans-serif'"
+      }
+   },
+   title: {
+      style: {
+         color: 'black',
+         fontSize: '16px',
+         fontWeight: 'bold'
+      }
+   },
+   subtitle: {
+      style: {
+         color: 'black'
+      }
+   },
+   tooltip: {
+      borderWidth: 0
+   },
+   legend: {
+      itemStyle: {
+         fontWeight: 'bold',
+         fontSize: '13px'
+      }
+   },
+   xAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   yAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   plotOptions: {
+      series: {
+         shadow: true
+      },
+      candlestick: {
+         lineColor: '#404048'
+      },
+      map: {
+         shadow: false
+      }
+   },
+
+   // Highstock specific
+   navigator: {
+      xAxis: {
+         gridLineColor: '#D0D0D8'
+      }
+   },
+   rangeSelector: {
+      buttonTheme: {
+         fill: 'white',
+         stroke: '#C0C0C8',
+         'stroke-width': 1,
+         states: {
+            select: {
+               fill: '#D0D0D8'
+            }
+         }
+      }
+   },
+   scrollbar: {
+      trackBorderColor: '#C0C0C8'
+   },
+
+   // General
+   background2: '#E0E0E8'
+};
+
+        Highcharts.setOptions(Highcharts.theme);
+        $(function () {
+            $('#container').highcharts({chart: {type: 'column', 
+height: 300}, 
+title: {text: 'Apresentações de trabalho'}, 
+subtitle: {text: ''}, 
+xAxis: {title: {text: ''}, 
+type: 'category'}, 
+yAxis: {min: 0, 
+title: {text: 'Quantidade', 
+align: 'middle'}, 
+labels: {overflow: 'justify'}, 
+stackLabels: {enabled: true, 
+format: '{stack}'}}, 
+tooltip: {enabled: true, 
+valueSuffix: '', 
+shared: false, 
+headerFormat: '<span style="font-size: 10px">{point.key}{point.stack}{series.stack}</span><br/>', 
+pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'}, 
+plotOptions: {bar: {dataLabels: {enabled: false}}, 
+column: {stacking: null}, 
+series: {shadow: 'true'}}, 
+legend: {enabled: false, 
+layout: 'vertical', 
+align: 'right', 
+verticalAlign: 'middle', 
+borderWidth: 1, 
+backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor || '#FFFFFF'), 
+shadow: true}, 
+credits: {enabled: false}, 
+series: [{name: 'Total', 
+data: [[2021,
+11],
+[2022,
+15],
+[2023,
+18],
+[2024,
+17],
+[2025,
+18],
+[2026,
+2]]}]});
+        });
+        </script>
+        
+                <h3>Apresentações de trabalho</h3> <br>
+                    <div id="container" style="min-width: 310px; max-width: 1920px; height: 300; margin: 0"></div>
+                    Número total de itens: 81<br>
+                    
+                    
+                    <div id="dv-year-2026"><h3 class="year">2026</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>OLIVEIRA, DIONE DA COSTA ; POSTACCHINI, B. B. ; VIEIRA, ANDRÉ ALEXANDRE ; MANHABOSCO, TAISE MATTE ; MATOS, MATHEUS J S ; DIAZ, E. E. C. ; CAZATI, T.. <b>Investigation of Fluorescence Quenching of Benzazole Derivatives by Fullerene and Non-Fullerene Electron Acceptors for Application in Organic Solar Cells</b>. 2026. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>OLIVEIRA, DIONE DA COSTA ; RUAS, B. R. ; BARBOSA, M. S. ; POSTACCHINI, B. B. ; MANHABOSCO, TAÍSE M. ; VIEIRA, ANDRÉ A. ; MATOS, M. J. S. ; CAZATI, T.. <b>Solvent and Solid-State Effects on the Photophysical Properties of Benzothiadiazole and Benzoselenadiazole Derivatives,</b>. 2026. Apresentação de Trabalho/Congresso</td></tr>
+            </table></div><div id="dv-year-2025"><h3 class="year">2025</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>A. JUNIOR, E. T. ; CAMPIDELI, V. C. ; BATISTA, P. F. R. ; SICUPIRA, D. C.. <b>DESENVOLVIMENTO DE UM FILME FLEXÍVEL ANTICORROSÍVO À BASE DE ÓXIDO DE GRAFENO PARA APLICAÇÃO EM LIGAS NITI SUPERELÁSTICAS</b>. 2025. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>BARBOZA, ANA PAULA M. <b>Microscopia de Varredura por Sonda Aplicada ao Estudo de Nanomateriais</b>. 2025. Apresentação de Trabalho/Conferência ou palestra</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>BARBOZA, ANA PAULA M. <b>Microscopia de Varredura por Sonda aplicada ao estudo de nanomateriais</b>. 2025. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>BORGES, J. V. ; PAULA, G. R. S. ; SICUPIRA, D. C.. <b>Nanotubos anódicos de TiO2 dopados com íons Fe3+ : avaliação do potencial fotocatalítico na modalidade Eletroquímica e Eletroanalítica</b>. 2025. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>CAMPIDELI, V. C. ; A. JUNIOR, E. T. ; FELISBERTO, M. D. V. ; SANTOS, L. A. ; SICUPIRA, D. C.. <b>EFEITO DOS PARÂMETROS DA ELETRODEPOSIÇÃO DE REVESTIMENTOS A BASE DE ÓXIDO DE GRAFENO EM UMA LIGA SUPERPLÁSTICA DE NITI: ESTUDO DAS PROPRIEDADES ANTICORROSIVAS</b>. 2025. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>CAMPIDELI, V. C. ; FELISBERTO, M. D. V. ; SANTOS, L. A. ; SICUPIRA, D. C.. <b>Efeito dos parâmetros da eletrodeposição de revestimentos a base de óxido de grafeno em uma liga superplástica de NiTi: Estudo das propriedades anticorrosivas na modalidade Eletroquímica e Eletroanalítica</b>. 2025. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>CAMPIDELI, V. C. ; RIBEIRO, N. C. ; SICUPIRA, D. C. ; BORTOLETO, E. M.. <b>Um Estudo Eletroquímico Focado na Resistência à Corrosão em Ambientes de Mineração na modalidade Química de Materiais (MAT):</b>. 2025. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>GOMES SPEZIALI, MARCELO. <b>Oficina de Estratégias de Valoração de Tecnologia</b>. 2025. Apresentação de Trabalho/Outra</td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>GOMES SPEZIALI, MARCELO; LINS, A. ; VELLOSO, J. ; YOGUI, R.. <b>Painel - Inteligência Artificial - Contribuição da IA para a operação dos NIT e na estratégia de proteção da propriedade intelectual</b>. 2025. Apresentação de Trabalho/Outra</td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>KOGA, H. H. ; PORCARO, R. R. ; SICUPIRA, D. C.. <b>Análise microestrutural e comportamento eletroquímico de partículas de SiC incorporadas em superfície de aço inoxidável duplex 2205 utilizando processo de soldagem ao arco elétrico com eletrodo de tungstênio e gás inerte (TIG)</b>. 2025. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>KOGA, H. H. ; SICUPIRA, D. C. ; PORCARO, R. R.. <b>ANÁLISE MICROESTRUTURAL E COMPORTAMENTO ELETROQUÍMICO DA PARTÍCULA DE SiC INCORPORADAS EM SUPERFÍCIE DE AÇO INOXIDÁVEL DUPLEX 2205 UTILIZANDO O PROCESSO DE SOLDAGEM AO ARCO ELÉTRICO COM ELETRODO DE TUNGSTÊNIO E GÁS INERTE (TIG)</b>. 2025. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>MARCELINO, STHEFANNY FERREIRA SANTOS ; FONSECA, MARIA EDUARDA ; SANTOS, D. B. ; SICUPIRA, D. C.. <b>EFEITO DA TEMPERATURA DE RECOZIMENTO NO COMPORTAMENTO ELETROQUÍMICO DO TITÂNIO CP EM SOLUÇÃO DE SALIVA ARTIFICIAL CONTENDO ÍONS FLUORETO</b>. 2025. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>MARCELINO, STHEFANNY FERREIRA SANTOS ; FONSECA, MARIA EDUARDA ; SANTOS, D. B. ; SICUPIRA, D. C.. <b>EFEITO DA TEMPERATURA DE RECOZIMENTO NO COMPORTAMENTO ELETROQUÍMICO DO TITÂNIO CP EM SOLUÇÃO DE SALIVA ARTIFICIAL CONTENDO ÍONS FLUORETO</b>. 2025. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>Speziali, Marcelo. <b>Como as Patentes podem transformar a química e os químicos em negócios e pessoas de Sucesso</b>. 2025. Apresentação de Trabalho/Conferência ou palestra</td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>Speziali, Marcelo. <b>Workshop de propriedade intelectual, transferência de tecnologia e empreendedorismo</b>. 2025. Apresentação de Trabalho/Conferência ou palestra</td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td>Speziali, Marcelo. <b>Pesquisa que vira produto: a ciência no caminho da propriedade intelectual</b>. 2025. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>17. &nbsp;</td> <td>Speziali, Marcelo. <b>Quando o Jaleco Encontra o Terno e a Gravata</b>. 2025. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>18. &nbsp;</td> <td>Speziali, Marcelo. <b>Oficina de Estratégias de Valoração de Tecnologia</b>. 2025. Apresentação de Trabalho/Outra</td></tr>
+            </table></div><div id="dv-year-2024"><h3 class="year">2024</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>C. B. Gonçalvesa ; R. T. da Silva ; G. Dalenogare ; M. M. Ferrer ; I. M. D. Gonzaga ; L. H. Mascaro ; E. Longo ; M. Assis ; A. C. Doriguetto ; H. B. de CARVALHO. <b>omprehensive Experimental and Theoretical Studies on the Synthesis and Characterization of Electrodeposited Nanostructured Cu2O Thin Films</b>. 2024. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>CASTRO, F. N. O. ; Engler, Rita C. <b>LIBRÁRIO PARA APRENDIZAGEM DE LIBRAS: Como o Design pode tornar a sociedade mais inclusiva</b>. 2024. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>DIAS, J. M. P. ; RITA CASTRO ENGLER. <b>A cultura do campo no feed e na cidade: algumas reflexões sobre design e sustentabilidade</b>. 2024. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>Júnior, C.F. ; Electo, F.L. ; Santana, F.E. ; Becker, V. ; Assis, P.S.. <b>EFFICIENCY OF THE GAS SEALING SYSTEM USED BETWEEN THE DISTRIBUTOR AND MOLD IN THE CONTINUOUS CASTING OF BILLETS</b>. 2024. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>LAKTIM, M. C. ; FONSECA, A. R. ; RITA CASTRO ENGLER. <b>?Circular Economy and Social Impact: Making Sleeping Bags from Textile Waste in Belo Horizonte?</b>. 2024. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>M. H. da Silva Ribeiro ; M. M. Oliveira ; J. H. G. Rangel ; G. N. Marques ; R. C. Oliveira ; L. H. Mascaro ; A. C. Krohling ; W. A. A. Macedo ; M. I. B. Bernardi ; H. B. de CARVALHO. <b>Green Synthesis of Highly Defective Nanostructured Fe-doped SnO2: Magnetic and Photocatalytic Properties Evaluation</b>. 2024. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>M. P. Ferreira ; A. Mesquita ; M. J. da Silva ; M. L. Peres ; M. I. B. Bernardi ; H. B. de CARVALHO. <b>On the Processing of Anatase p-Type La-doped TiO2 Nanopowders: Structural Phase Transition and Surface Defect Engineering</b>. 2024. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>MATOS, MATHEUS JOSUE DE SOUZA. <b>Modelling atomically-thin van der Waals materials</b>. 2024. Apresentação de Trabalho/Conferência ou palestra</td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>MORAES, L. A. F. ; COSTA, N. D. O. ; SANTOS, Heloisa Nazaré dos. <b>?Multiplier Agents for Sustainable Fashion in Belo Horizonte: Embroidered Ecobags as a Tool?</b>. 2024. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>MORAES, L. A. F. ; SANTOS, Heloisa Nazaré dos. <b>Training in Embroidery and Design Tools for Multiplier Agents in the Metropolitan Region of Belo Horizonte</b>. 2024. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>P. H. Xavier ; A. Cantarero ; D. Thomazini ; M. V. Gelfuso ; H. B. de CARVALHO. <b>Studies on the Thermoelectric Properties Enhancement Through Microstructure Engineering: The Case of the Ca3Co4O9 (CCO)</b>. 2024. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>SANCHES, Cora Wallach ; SANTOS, Heloisa Nazaré dos. <b>SURFACE DESIGN: A HISTORICAL CONTEXT OF THE WALLACH FAMILY</b>. 2024. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>SANTOS, Heloisa Nazaré dos. <b>?Um olhar para as atividades relacionadas a governança em uma pequena empresa de moda.?</b>. 2024. Apresentação de Trabalho/Conferência ou palestra</td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>SCHERRER, Rachel Rios ; ROMEIRO FILHO, E. ; SANTOS, Heloisa Nazaré dos. <b>EMPOWERMENT THROUGH COSTUMING: THE REPRESENTATION OF CLARA INÊS IN ?UNBROKEN HEART?</b>. 2024. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>Speziali, Marcelo. <b>MESA REDONDA 1 - Perspectivas e desafios da pesquisa e inovação</b>. 2024. Apresentação de Trabalho/Conferência ou palestra</td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td>V. J. Pimenta ; V. A. Chitta ; H. B. de CARVALHO. <b>Development of New Route of Synthesis of Bulk Cu2O Ceramics: Structural and Electrical Characterization</b>. 2024. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>17. &nbsp;</td> <td>V. M. A. Lage ; C. Rodríguez-Fernández ; R. T. da Silva ; F. S. Vieira ; A. Cantarero ; M. M. de Lima Jr. ; M. I. B. Bernardi ; H. B. de CARVALHO. <b>On the Vibrational Properties of Transition Metal Doped ZnO: Surface, Defect, and Bandgap Engineering</b>. 2024. Apresentação de Trabalho/Congresso</td></tr>
+            </table></div><div id="dv-year-2023"><h3 class="year">2023</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>ALMEIDA, M. L. B. ; NUNES, E. H. M. ; BARRIONI, B. R. ; COHEN, L. A. F. P. ; AYRES, E.. <b>Activated biochar from acai seeds (Euterpe oleracea Mart): The use of polyurethane foam as adsorbent device for water treatment</b>. 2023. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Anacleto, N.B. ; Santos, K.G. ; ASSIS, P. S.. <b>CIRCULAR ECONOMY: ANALYSIS OF THE EFFECTS OF THE USE OF RECYCLED STEEL IN THE NAVAL SECTOR</b>. 2023. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>ARAÚJO, G.S. ; ASSIS, P. S. ; CARVALHO, A.C. ; Araújo B.S.L. ; Brasil, M.. <b>ULTRASONIC WAVES FOR THE CONTROL OF LIMNOPERNA FORTUNEI ? THE GOLDEN MUSSEL</b>. 2023. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>CAMPIDELI, VICTOR C. ; SANTOS, L. A. ; Sicupira, D. C.. <b>CARACTERIZAÇÃO ELETROQUÍMICA DE UMA LIGA NITI SUPERELÁSTICA COM RECOBRIMENTOS DE ÓXIDO DE GRAFENO E ÓXIDO DE GRAFENO REDUZIDO</b>. 2023. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>CARVALHO, A.C. ; Anacleto, N.B. ; ARAÚJO, G.S. ; ASSIS, P. S.. <b>THE PRODUCTION OF STEEL AND THE USE OF BIOMASS AS A RENEWABLE AND CARBON NEUTRAL ENERGY SOURCE</b>. 2023. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>Coura, D. ; ASSIS, P. S.. <b>BIOMASS CONSUMPTION IN A STEAM GENERATOR IN THE CONTEXT OF THE BRAZILIAN SCENARIO</b>. 2023. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>GAMARANO, D. S. ; MOURA, F. C. C. ; ALMEIDA, M. L. B. ; AYRES, E.. <b>Rice Husks Biochar as Adsorbent for Removal Water Pollutants: The use of porous 3D printed supports</b>. 2023. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>Góis, G.A. ; ASSIS, P. S.. <b>THE USE OF BIOMASS IN THE STEEL INDUSTRY AS A SUSTAINABLE ALTERNATIVE</b>. 2023. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>Góis, G.A. ; ASSIS, P. S. ; Reis, O.. <b>STUDY OF VARIATIONS IN MICROSTRUCTURES AND PROPERTIES OF SINTERED NI-TI ALLOYS ACCORDING TO LOADS APPLIED IN COMPACTION AND SINTERING TEMPERATURES AND TIMES</b>. 2023. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>Junior, W.F.S. ; ASSIS, P. S. ; MURTA, J. L. B.. <b>THE EXPORTS OF BRAZILIAN COMPANIES ARE MORE COMPETITIVE WITH INCENTIVES AND TAX BENEFITS</b>. 2023. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>Luiz Gustavo Pimenta Martins, ; COMIN, RICCARDO ; MATOS, MATHEUS JOSUE DE SOUZA ; MAZZONI, M. S. C. ; NEVES, B. R. A. ; YANKOWITZ, M.. <b>Modelling atomically-thin van der Waals materials at high pressures</b>. 2023. Apresentação de Trabalho/Conferência ou palestra</td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>Nath, N.K. ; ASSIS, P. S.. <b>SOFTWARE SYSTEM FOR MODEL BASED PROCESS CONTROL OF STEEL REHEATING IN BATCH AND CONTINUOUS FURNACE FOR OPTIMIZING HEATING TIME, ENERGY EFFICIENCY AND THERMAL HOMOGENIZATION</b>. 2023. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>Nath, N.K. ; ASSIS, P. S. ; CASTRO, J. A.. <b>MATHEMATICAL MODELING, SIMULATION AND OPTIMIZATION IN THE AREA OF IRON MAKING FOR QUALITY, PRODUCTIVITY AND FUEL EFFICIENCY</b>. 2023. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>Oliveira, M.C.R. ; ASSIS, P. S. ; MURTA, J. L. B. ; Assis, L.B. ; Campos, M.. <b>ALTERNATIVE SLURRY TREATMENT (LANDFILL LEACHATE), A PERSPECTIVE ON SUSTAINABLE DEVELOPMENT</b>. 2023. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>SANTOS, Heloisa Nazaré dos; FREITAS, Amanda Ketlyn Alves. <b>FERRAMENTAS PARA MULTIPLICADORES EM DESIGN DE MODA: ESTUDO DE CASOS NA REGIÃO METROPOLITANA DE BELO HORIZONTE</b>. 2023. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td>SCHERRER, Rachel Rios ; E., R. F. ; SANTOS, Heloisa Nazaré dos. <b>DESIGN DE BASES DE MODELAGENS DO VESTUÁRIO FEMININO PARA O CORPO GORDO</b>. 2023. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>17. &nbsp;</td> <td>SCHERRER, Rachel Rios ; ROMEIRO FILHO, E. ; SANTOS, Heloisa Nazaré dos. <b>A Reflection on Sustainable Actions in a Plus-Size Lingerie Manufacturing Company in São Paulo</b>. 2023. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>18. &nbsp;</td> <td>Tateo Usui ; Konishi, Hirokazu ; Ichikawa, Kazuhira ; Hideki Ono ; Kawabata, Hirotoshi ; ASSIS, P. S.. <b>Reduction rate enhancement of carbon composite iron oxide pellets by using semi-char or smi-charcoal</b>. 2023. Apresentação de Trabalho/Congresso</td></tr>
+            </table></div><div id="dv-year-2022"><h3 class="year">2022</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>Ana Paula M Barboza. <b>Microscopia de Varredura por Sonda: princípios e aplicações</b>. 2022. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>BESSA, MAURICIO V. ; WELLINGTON DAMACENO DE FREITAS ; Natália Paz Neme ; Luiz Gustavo Pimenta Martins, ; BARBOZA, A. P. M. ; MATOS, M. J. S. ; MAZZONI, M. S. C. ; NEVES, B. R. A.. <b>Electromechanical Modulations in Transition Metal Dichalcogenide Nanosheets: Implications for Environmental Sensors</b>. 2022. Apresentação de Trabalho/Conferência ou palestra</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>BICALHO, C. M. ; SANTOS, Heloisa Nazaré dos. <b>DENIMBOARD: COMPÓSITO POLIMÉRICO BIODEGRADÁVEL OBTIDO A POBTIDO A PARTIR DE FIO DO URDUME DE DENIMARTIR DE FIO DO URDUME DE DENIM</b>. 2022. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>CAMPIDELI, V. C. ; SICUPIRA, D. C. ; FERREIRA, MARCOS V.F. ; SANTOS, L. A. ; ARAUJO, ATHOS F.. <b>CARACTERIZAÇÃO ELETROQUÍMICA DE UMA LIGA NITI SUPERELÁSTICA COM RECOBRIMENTOS A BASE DE ÓXIDO DE GRAFENO</b>. 2022. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>DE OLIVEIRA, MICHELLE ; DOS SANTOS SOARES, JAQUELINE ; ALVARENGA, E. C. ; MANHABOSCO, TAÍSE M.. <b>Development and characterization of collagen type I biocomposites reinforced with 2D nanominerals for biomedical applications</b>. 2022. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>DOS SANTOS, HELOISA NAZARÉ. <b>2º Plenario Virtual Internacional del XVI Foro de Escuelas de Diseno</b>. 2022. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>DOS SANTOS, HELOISA NAZARÉ. <b>Ferramentas para multiplicadores em Design de Moda: estudos de casos na região metropolitana de Belo Horizonte</b>. 2022. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>DOS SANTOS, HELOISA NAZARÉ. <b>Capacitação em bordado de agentes multiplicadores na RMBH</b>. 2022. Apresentação de Trabalho/Conferência ou palestra</td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>GOMES SPEZIALI, MARCELO. <b>O Bicentenário e as perspectivas do futuro da ciência e inovação em Minas Gerais</b>. 2022. Apresentação de Trabalho/Conferência ou palestra</td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>I.Silvestre; BARBOZA, A. P. M. ; PRADO, M.C. ; SOARES, JAQUELINE S. ; MANHABOSCO, T.. <b>Trabalhos desenvolvidos nos Laboratórios Experimentais do Grupo Nano do Departamento de Física da Universidade Federal de Ouro Preto</b>. 2022. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>KOGA, H. H. ; BESSA, M. L. T. ; ABRAHAO JUNIOR, R. ; RODRIGUEZ, R. J. S. ; SICUPIRA, D. C.. <b>DESEMPENHO ANTICORROSIVO DE UM REVESTIMENTO A BASE DE POLIURETANO PRODUZIDO A PARTIR DE ÓLEO DE MAMONA,</b>. 2022. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>SANTOS, H N; BARUQUE-RAMOS, J.. <b>FERRAMENTAS DE DESIGN UTILIZADAS NA CAPACITAÇÃO EM BORDADO DE MULTIPLICADORES EM DESIGN DE mODA: ESTUDOS DE CASO NA REGIÃO METROPOLITANA DE BELO HORIZONTE ? MINAS GERAIS - BRASIL</b>. 2022. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>SANTOS, H N; FREITAS, M. A. M. ; JESUS, M. A.. <b>FERRAMENTAS PARA MULTIPLICADORES EM DESIGN DE MODA: ESTUDO DE CASOS NA REGIÃO METROPOLITANA DE BELO HORIZONTE</b>. 2022. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>SANTOS, Heloisa Nazaré dos; CABRERA, D. C. ; GUTIÉRREZ, Erika Rivera ; ZIMBRÓN, Aejandro Higuera ; RUIZ, Joel Olivares ; CASTELLON, M. C. K. J.. <b>Red de Investigadores en Diseño - I Plenario Fundacional - Febrero 2022</b>. 2022. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>Silvestre, I.; ALVES, V. F. ; MARTINS, RAFAEL. <b>Síntese e Caracterização de Dissulfeto de Molibdênio Bidimensional por Deposição Química na Fase Vapor (CVD)</b>. 2022. Apresentação de Trabalho/Conferência ou palestra</td></tr>
+            </table></div><div id="dv-year-2021"><h3 class="year">2021</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>ABRAHAO JUNIOR, R. ; SICUPIRA, D. C. ; ASSUMPÇÃO, R. F. ; SILVA, AMANDA DE PAIVA. <b>INFLUÊNCIA DA TEMPERATURA DE RECOZIMENTO NA MICROESTRUTURA E NAS PROPRIEDADES PASSIVAS DO AÇO INOXIDÁVEL DUPLEX UNS S32205 HOMOGENEIZADO</b>. 2021. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>ASSUMPÇÃO, R. F. ; ABRAHAO JUNIOR, R. ; SANTOS, D. B. ; SICUPIRA, D. C.. <b>Electrochemical Behavior of Weathering Steel Submitted to Simulated Industrial Environment</b>. 2021. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>ASSUMPÇÃO, R. F. ; SILVA, AMANDA DE PAIVA ; CARNEIRO, R. A. ; LINS, V. F. C. ; SICUPIRA, D. C.. <b>Effect of aging time on intergranular corrosion of duplex stainless steel UNS S32205</b>. 2021. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>CAMPIDELI, V. C. ; SICUPIRA, D. C.. <b>CARACTERIZAÇÃO ELETROQUÍMICA DE SUPERFÍCIES ANODIZADAS DE NITI</b>. 2021. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>dos Santos, Heloisa Nazare; ANDRADE, M. A. M. ; FREITAS, Amanda Ketlyn Alves ; GONTIJO, Samuel Gomes. <b>Herramientas para multiplicadores del diseño de moda para la Región Metropolitana de Belo Horizonte - Minas Gerais</b>. 2021. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>FERREIRA, MARCOS V.F. ; RESENDE, P. D. ; BUONO, V. T. L. ; SICUPIRA, D. C.. <b>Electrochemical characterization of anodized TiNi and Ti surfaces</b>. 2021. Apresentação de Trabalho/Congresso</td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>FREITAS, Amanda Ketlyn Alves ; dos Santos, Heloisa Nazare ; Aureliano, M. M. A.. <b>FERRAMENTAS PARA MULTIPLICADORES EM DESIGN DE MODA: ESTUDOS DE CASOS NA REGIÃO METROPOLITANA DE BELO HORIZONTE</b>. 2021. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>MATOS, M. J. S. <b>Como manipular átomos e moléculas e construir novos materiais: uma abordagem teórica</b>. 2021. Apresentação de Trabalho/Conferência ou palestra</td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>MATOS, M.J.S. <b>Design de Materiais e Simulação computacional em materiais bidimensionais</b>. 2021. Apresentação de Trabalho/Conferência ou palestra</td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>SANTOS, Heloisa Nazaré dos; Aureliano, M. M. A. ; GONTIJO, Samuel Gomes. <b>FERRAMENTAS PARA MULTIPLICADORES EM DESIGN DE MODA: PRÁTICAS APLICADAS NOS GRUPOS PRODUTIVOS DE BORDADOS NA REGIÃO METROPOLITANA DE BELO HORIZONTE</b>. 2021. Apresentação de Trabalho/Seminário</td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>SILVA, AMANDA DE PAIVA ; ASSUMPÇÃO, R. F. ; CARNEIRO, R. A. ; LINS, V. F. C. ; SICUPIRA, D. C.. <b>Corrosion behavior of weathering steel in marine environments</b>. 2021. Apresentação de Trabalho/Congresso</td></tr>
+            </table></div>
+                    </table>
+                <br><p><br>(*) Relatório criado com produções desde 2021 até 2026
+<br>Data de processamento: 31/08/2026 22:11:56<br>         <div id="footer">         Relatório gerado por <a href="https://scriptlattes.sourceforge.net/">scriptLattes V9</a>.         Os resultados podem ser afetados por possíveis falhas decorrentes de inconsistências no preenchimento dos Currículos Lattes. E-mail de contato: <a href="mailto:matheusmatos@ufop.edu.br">matheusmatos@ufop.edu.br</a>         </div> </body></html>
+              

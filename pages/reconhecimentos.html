@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prêmios e propriedade intelectual — REDEMAT | UFOP · UEMG</title>
+<meta name="description" content="Prêmios e títulos recebidos por docentes e estudantes da REDEMAT, e as patentes e softwares desenvolvidos no Programa.">
+<link rel="canonical" href="https://redemat.ufop.br/reconhecimentos">
+<link rel="icon" href="../assets/img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<div id="site-header-slot"></div>
+
+<section class="page-hero page-hero--img" style="--hero-img:url('../img/ilustra/premio-hero.svg')" aria-labelledby="ph">
+  <div class="page-hero-in">
+    <nav class="crumb" aria-label="Trilha de navegação">
+      <a href="../index.html">Início</a><span aria-hidden="true">›</span>
+      <a href="pesquisa.html">Pesquisa</a><span aria-hidden="true">›</span>
+      <span aria-current="page">Prêmios e PI</span>
+    </nav>
+    <h1 id="ph">Prêmios e propriedade intelectual</h1>
+    <p class="lede">
+      O que o trabalho do Programa rendeu em reconhecimento externo e em propriedade
+      intelectual: prêmios e títulos declarados nos currículos, prêmios de estudantes,
+      e as patentes e softwares com aplicação descrita.
+    </p>
+    <div class="hero-metrics" id="heroMetrics"></div>
+  </div>
+</section>
+
+<main id="conteudo">
+
+  <!-- Prêmios de docentes -->
+  <section class="section" id="premios" aria-labelledby="pr-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Reconhecimento externo</p>
+        <h2 class="h2" id="pr-h">Prêmios e títulos do corpo docente</h2>
+        <p class="section-lede" id="prLede"></p>
+      </div>
+      <div class="tl" id="prTl"></div>
+      <div class="mt-3" id="prNota"></div>
+    </div>
+  </section>
+
+  <!-- Prêmios de estudantes -->
+  <section class="section section--alt" id="discentes" aria-labelledby="pd-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Estudantes</p>
+        <h2 class="h2" id="pd-h">Prêmios recebidos por estudantes</h2>
+        <p class="section-lede" id="pdLede"></p>
+      </div>
+      <div class="grid grid--2" id="pdGrid"></div>
+      <div class="mt-3" id="pdNota"></div>
+    </div>
+  </section>
+
+  <!-- Patentes -->
+  <section class="section" id="patentes" aria-labelledby="pt-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Propriedade intelectual</p>
+        <h2 class="h2" id="pt-h">Patentes e softwares</h2>
+        <p class="section-lede" id="ptLede"></p>
+      </div>
+      <div class="grid grid--3 mb-3" id="ptKpis"></div>
+      <div class="pat-list" id="ptList"></div>
+      <div class="mt-3" id="ptNota"></div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer-slot"></div>
+
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+(function () {
+  'use strict';
+  const R = window.REDEMAT, C = window.RC;
+  const P = R.premios, PAT = R.producao.patentes, D = PAT.destaques;
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  document.getElementById('heroMetrics').innerHTML = [
+    { v: P.publicados, l: 'Prêmios e títulos 2021–2026' },
+    { v: P.discentes.itens.length, l: 'Prêmios de estudantes publicados' },
+    { v: PAT.unicas, l: 'Patentes únicas no Lattes' },
+    { v: D.itens.length, l: 'Itens de PI com aplicação descrita' }
+  ].map(function (m) {
+    return '<div class="hero-metric"><b data-count="' + m.v + '">0</b><span>' + m.l + '</span></div>';
+  }).join('');
+
+  /* ---------------- prêmios de docentes ---------------- */
+  const T_ROT = { premio: 'Prêmio', medalha: 'Medalha', homenagem: 'Homenagem',
+                  palestra: 'Convite', trabalho: 'Trabalho premiado', produto: 'Produto' };
+  const T_COR = { premio: 'var(--amber)', medalha: 'var(--amber)', homenagem: 'var(--l12)',
+                  palestra: 'var(--area1)', trabalho: 'var(--area2)', produto: 'var(--l22)' };
+
+  document.getElementById('prLede').textContent =
+    P.publicados + ' prêmios e títulos declarados nos currículos do corpo docente entre 2021 e 2026, ' +
+    'de sociedades científicas, empresas, do Ministério da Defesa e das próprias universidades.';
+
+  document.getElementById('prTl').innerHTML = P.itens.map(function (x) {
+    return '<div class="tl-item">' +
+      '<span class="tl-year">' + x.ano + '</span>' +
+      '<div class="tl-text">' +
+        '<span class="prem-tipo" style="background:' + (T_COR[x.tipo] || 'var(--navy-light)') + '">' +
+          (T_ROT[x.tipo] || 'Reconhecimento') + '</span>' +
+        '<h3 class="prem-titulo">' + esc(x.titulo) + '</h3>' +
+        '<p class="prem-quem">' + esc(x.docente) + '</p>' +
+        '<p class="prem-inst">' + esc(x.instituicao) + '</p>' +
+        (x.detalhe ? '<p class="prem-det">' + esc(x.detalhe) + '</p>' : '') +
+      '</div></div>';
+  }).join('');
+
+  document.getElementById('prNota').innerHTML =
+    C.note('info', '<strong>Como os nomes foram atribuídos.</strong> ' + P.nota +
+      ' Fonte: ' + esc(P.ref) + '. ' + C.badge('VALIDADO')) +
+    '<div class="mt-2">' + C.note('warn',
+      '<strong>Um prêmio não aparece nesta lista.</strong> ' + P.exclusao +
+      ' O relatório ScriptLattes registra ' + P.total_lattes + ' prêmios; o portal publica ' +
+      P.publicados + '.') + '</div>' +
+    '<div class="mt-2">' + C.note('prov',
+      '<strong>O que esta lista não é.</strong> Não é ranking nem medida de desempenho ' +
+      'individual: prêmio depende de área, de existir premiação na especialidade e de quem ' +
+      'indica. A ausência de um docente aqui não diz nada sobre o trabalho dele.') + '</div>';
+
+  /* ---------------- prêmios de estudantes ---------------- */
+  document.getElementById('pdLede').textContent = P.discentes.nota;
+  document.getElementById('pdGrid').innerHTML = P.discentes.itens.map(function (x) {
+    return '<article class="card prem-disc">' +
+      '<span class="prem-tipo" style="background:var(--amber)">' + x.ano + '</span>' +
+      '<h3 class="h3">' + esc(x.nome) + '</h3>' +
+      '<p class="prem-titulo prem-titulo--sm">' + esc(x.titulo) + '</p>' +
+      '<p class="prem-inst">' + esc(x.instituicao) + '</p>' +
+      (x.trabalho ? '<p class="prem-det"><em>' + esc(x.trabalho) + '</em></p>' : '') +
+      (x.ref ? '<a class="mini-link" href="' + x.ref + '" target="_blank" rel="noopener">' +
+        'Notícia no site do Programa ' + C.ICO.ext + '</a>' : '') +
+      '</article>';
+  }).join('');
+  document.getElementById('pdNota').innerHTML = C.note('info',
+    '<strong>Faltam prêmios aqui?</strong> Provavelmente sim. Prêmio de estudante não fica ' +
+    'registrado no currículo do orientador, e por isso não é capturado automaticamente. ' +
+    'A secretaria cadastra caso a caso, a partir de notícia ou informe do orientador. ' +
+    C.badge('PARCIAL'));
+
+  /* ---------------- patentes ---------------- */
+  document.getElementById('ptLede').textContent = D.nota;
+
+  document.getElementById('ptKpis').innerHTML = [
+    { v: PAT.unicas, l: 'Patentes únicas nos currículos', s: 'Todos os anos declarados', cor: 'var(--l22)', ico: C.ICO.doc },
+    { v: PAT.declaracoes, l: 'Declarações docente–patente', s: 'A mesma patente pode constar em dois currículos', cor: 'var(--area1)', ico: C.ICO.people },
+    { v: D.itens.length, l: 'Itens com aplicação descrita', s: 'Selecionados e descritos pelo Programa', cor: 'var(--amber)', ico: C.ICO.chart }
+  ].map(function (k) {
+    return '<div class="kpi"><div class="kpi-top">' +
+      '<span class="kpi-ico" style="background:color-mix(in srgb, ' + k.cor + ' 12%, transparent);color:' + k.cor + '">' + k.ico + '</span>' +
+      C.badge('VALIDADO') + '</div>' +
+      '<div class="kpi-val" style="color:' + k.cor + '" data-count="' + k.v + '">0</div>' +
+      '<div class="kpi-lbl">' + k.l + '</div><div class="kpi-src">' + k.s + '</div></div>';
+  }).join('');
+
+  document.getElementById('ptList').innerHTML = D.itens.map(function (x) {
+    return '<article class="pat-card pat-card--' + x.situacao_cor + '">' +
+      '<div class="pat-top">' +
+        '<span class="pat-tipo">' + (x.tipo === 'software' ? 'Software' : 'Patente') + '</span>' +
+        '<span class="badge badge--' + x.situacao_cor + '">' + esc(x.situacao) + '</span>' +
+      '</div>' +
+      '<h3 class="pat-titulo">' + esc(x.titulo) + '</h3>' +
+      (x.numero ? '<p class="pat-num">' + esc(x.numero) +
+        (x.ano ? ' · depósito em ' + x.ano : '') +
+        (x.ano_concessao ? ' · concessão em ' + x.ano_concessao : '') + '</p>' : '') +
+      '<p class="pat-apl">' + esc(x.aplicacao) + '</p>' +
+      (x.detalhe ? '<p class="pat-det">' + esc(x.detalhe) + '</p>' : '') +
+      '<p class="pat-inv"><span>Inventores</span> ' + esc(x.inventores) + '</p>' +
+      (x.docentes && x.docentes.length
+        ? '<p class="pat-doc">' + x.docentes.map(function (d) {
+            return '<span class="tag tag--perm">' + esc(d) + '</span>'; }).join('') + '</p>'
+        : '') +
+      '</article>';
+  }).join('');
+
+  document.getElementById('ptNota').innerHTML =
+    C.note('warn', '<strong>Situação de cada processo.</strong> ' + PAT.aviso) +
+    '<div class="mt-2">' + C.note('info',
+      '<strong>Por que 8 e não 47.</strong> O inventário do Lattes tem ' + PAT.unicas +
+      ' patentes únicas, extraídas do HTML bruto dos currículos porque o campo de patentes ' +
+      'dos arquivos consolidados vem vazio. Destas, ' + D.itens.length + ' têm descrição de ' +
+      'aplicação escrita pelo Programa e são as que aparecem acima com detalhe. As outras ' +
+      (PAT.unicas - 7) + ' constam no currículo sem essa descrição — existem, mas o portal ' +
+      'não inventaria uma aplicação que ninguém escreveu. ' +
+      'Fonte da seleção: <a href="' + D.ref + '" target="_blank" rel="noopener">página oficial de patentes</a>. ' +
+      C.badge('VALIDADO')) + '</div>';
+
+  C.mount('reconhecimentos.html', '../');
+})();
+</script>
+</body>
+</html>

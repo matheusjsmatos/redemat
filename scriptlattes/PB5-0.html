@@ -1,0 +1,203 @@
+
+                <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf8"><meta name="Generator" content="scriptLattes"><title>REDEMAT</title><link rel="stylesheet" href="css/scriptLattes.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"><link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css"><link rel="stylesheet" type="text/css" href="css/dataTables.colVis.min.css"><script type="text/javascript" charset="utf8" src="js/jquery.min.js"></script><script type="text/javascript" charset="utf8" src="js/jquery.dataTables.min.js"></script><script type="text/javascript" charset="utf8" src="js/dataTables.colVis.min.js"></script><script type="text/javascript" charset="utf8" src="js/sorttable-local.js"></script><link rel="stylesheet" href="portal-redemat.css">
+</head><body>
+<div id="portal-back"><a href="../pages/producao-lattes.html">&#8592; Voltar ao portal REDEMAT</a><span>Relatório ScriptLattes — dados brutos dos currículos Lattes</span></div><div id="header2"> <button onClick="history.go(-1)">Voltar</button><h2>REDEMAT</h2></div>
+                
+        <script type="text/javascript" src="./js/jquery.min.js"></script>
+        <!--
+        <script type="text/javascript" src="./highcharts.js"></script>
+        <script type="text/javascript" src="./exporting.js"></script>
+        <script type="text/javascript" src="./drilldown.js"></script>
+        -->
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+        <script type="text/javascript">
+        // Load the fonts
+        Highcharts.createElement('link', {
+           href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700',
+           rel: 'stylesheet',
+           type: 'text/css'
+        }, null, document.getElementsByTagName('head')[0]);
+
+        Highcharts.theme = {
+   colors: ["#1F77B4", "#118D95", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#2b908f", "#90ee7e", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
+   chart: {
+      backgroundColor: null,
+      style: {
+         fontFamily: "'Source Sans Pro', 'sans-serif'"
+      }
+   },
+   title: {
+      style: {
+         color: 'black',
+         fontSize: '16px',
+         fontWeight: 'bold'
+      }
+   },
+   subtitle: {
+      style: {
+         color: 'black'
+      }
+   },
+   tooltip: {
+      borderWidth: 0
+   },
+   legend: {
+      itemStyle: {
+         fontWeight: 'bold',
+         fontSize: '13px'
+      }
+   },
+   xAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   yAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   plotOptions: {
+      series: {
+         shadow: true
+      },
+      candlestick: {
+         lineColor: '#404048'
+      },
+      map: {
+         shadow: false
+      }
+   },
+
+   // Highstock specific
+   navigator: {
+      xAxis: {
+         gridLineColor: '#D0D0D8'
+      }
+   },
+   rangeSelector: {
+      buttonTheme: {
+         fill: 'white',
+         stroke: '#C0C0C8',
+         'stroke-width': 1,
+         states: {
+            select: {
+               fill: '#D0D0D8'
+            }
+         }
+      }
+   },
+   scrollbar: {
+      trackBorderColor: '#C0C0C8'
+   },
+
+   // General
+   background2: '#E0E0E8'
+};
+
+        Highcharts.setOptions(Highcharts.theme);
+        $(function () {
+            $('#container').highcharts({chart: {type: 'column', 
+height: 300}, 
+title: {text: 'Resumos expandidos publicados em anais de congressos'}, 
+subtitle: {text: ''}, 
+xAxis: {title: {text: ''}, 
+type: 'category'}, 
+yAxis: {min: 0, 
+title: {text: 'Quantidade', 
+align: 'middle'}, 
+labels: {overflow: 'justify'}, 
+stackLabels: {enabled: true, 
+format: '{stack}'}}, 
+tooltip: {enabled: true, 
+valueSuffix: '', 
+shared: false, 
+headerFormat: '<span style="font-size: 10px">{point.key}{point.stack}{series.stack}</span><br/>', 
+pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'}, 
+plotOptions: {bar: {dataLabels: {enabled: false}}, 
+column: {stacking: null}, 
+series: {shadow: 'true'}}, 
+legend: {enabled: false, 
+layout: 'vertical', 
+align: 'right', 
+verticalAlign: 'middle', 
+borderWidth: 1, 
+backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor || '#FFFFFF'), 
+shadow: true}, 
+credits: {enabled: false}, 
+series: [{name: 'Total', 
+data: [[2021,
+7],
+[2023,
+10],
+[2024,
+2],
+[2025,
+4]]}]});
+        });
+        </script>
+        
+                <h3>Resumos expandidos publicados em anais de congressos</h3> <br>
+                    <div id="container" style="min-width: 310px; max-width: 1920px; height: 300; margin: 0"></div>
+                    Número total de itens: 23<br>
+                    
+                    
+                    <div id="dv-year-2025"><h3 class="year">2025</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>ABRAHAO, L. M. ; SALIBA, P. A. ; TRINDADE, W. G. ; GUEDES, V. S. ; AYRES, E. ; GENEROSO, V. A. M. ; OREFICE, R. L. ; ALMEIDA, M. L. B.. <b>Identification and characterization of microplastics in Pampulha lake: a study in an urban reservoir in the southeast region of Brasil</b>. Em: 18° Congresso Brasileiro de Polímeros, 2025, Campos do Jordão. Anais do 18° Congresso Brasileiro de Polímeros. São Carlos: Aptor Software, v. 1, p. 929-934, 2025. </td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>AYRES, E.; ALMEIDA, M. L. B. ; GUEDES, V. S. ; SILVA, M. C. ; OREFICE, R. L.. <b>Properties of polyurethane foam composites filled with different agro residues: Tuning the adsorption capacity with the recyclability</b>. Em: 18° Congresso Brasileiro de Polímeros, 2025, Campos do Jordão. Anais do 18° Congresso Brasileiro de Polímeros. São Carlos: Aptor Software, v. 1, p. 993-998, 2025. </td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>COTRIM, M. A. ; PATRICIO, P. S. O. ; AYRES, E.. <b>Bovine milk caseins cotton textile finishing crosslinked with citric acid for fire retardant purposes</b>. Em: 18° Congresso Brasileiro de Polímeros, 2025, Campos do Jordão. Anais do 18° Congresso Brasileiro de Polímeros. São Carlos: Aptor Software, v. 1, p. 1381-1386, 2025. </td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>GUIMARAES, J. S. P. ; ABREU, G. F. ; SILVA, M. C. ; GAMARANO, D. S. ; PAGNAN, C. S. ; AYRES, E.. <b>Production of sustainable PLA (polylactic acid) composites reinforced with spent coffee grounds via extrusion with the aid of design of experiments</b>. Em: 18° Congresso Brasileiro de Polímeros, 2025, Campos do Jordão. Anais do 18° Congresso Brasileiro de Polímeros. São Carlos: Aptor Software, v. 1, p. 348-353, 2025. </td></tr>
+            </table></div><div id="dv-year-2024"><h3 class="year">2024</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>BERNARDES, FRANK GOMES ; Speziali, Marcelo Gomes ; MEDEIROS, JULIANA CORRÊA CREPALDE. <b>Funil de Licenciamento de Tecnologias: Um Modelo de Gestão para Processos de Licenciamento de Tecnologias em Núcleos de Inovação Tecnológica</b>. Em: VIII Encontro Nacional de Economia Industrial e da Inovação (ENEI), 2024, Goiania. Anais do VIII Encontro Nacional de Economia Industrial e da Inovação (ENEI), 2024. <a href="http://dx.doi.org/10.29327/viii-enei.923539" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>PESSOA, D. F. ; COELHO, HENRIQUE C. S. ; SEBASTIAO, R. C. O. ; Oliveira, V. A. A.. <b>THERMAL DECOMPOSITION KINETICS STUDY OF A LATERITE NICKEL ORE: POTENTIAL FOR USE IN PYROMETALLURGIC PROCESSING IMPROVEMENTS</b>. Em: 36° ERSBQ, 2024, Diamantina. 36° Encontro Regional da Sociedade Brasileira de Química, v. 1, 2024. </td></tr>
+            </table></div><div id="dv-year-2023"><h3 class="year">2023</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>ALMEIDA, M. L. B. ; AYRES, E. ; SILVA, M. C. ; OREFICE, R. L.. <b>THE ROLE OF ISOCYANATE IN THE PROPERTIES FOR RECYCLABLE POLYURETHANE FOAMS</b>. Em: XVII Congresso Brasileiro de Polímeros, 2023, Joinville. Anais do XVII Congresso Brasileiro de Polímeros. São Carlos: Aptor software, v. 1, p. 1726-1730, 2023. </td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>ALMEIDA, M. L. B. ; NUNES, E. H. M. ; BARRIONI, B. R. ; COHEN, L. A. F. P. ; AYRES, E.. <b>Activated biochar from acai seeds (Euterpe oleracea Mart): The use of polyurethane foam as adsorbent device for water treatment</b>. Em: 14th International Chemical and Biological (CHEMPHOR 2023), 2023, Bragança-Portugal. Book of Abstracts of 14th International Chemical and Biological. Bragança: Instituto Politécnico de Bragança, v. 1, p. 484-485, 2023. </td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>COTRIM, M. A. ; FERRAZ, M. R. F. ; AYRES, E.. <b>PECTIN EDIBLE FILM OBTAINED FROM ORANGE PEEL: FABRICATION AND APPLICATION TO EXTEND THE SHELF LIFE OF MINIMALLY PROCESSED APPLES</b>. Em: XVII Congresso Brasileiro de Polímeros, 2023, Joinville. Anais do XVII Congresso Brasileiro de Polímeros. São Carlos: Aptor software, v. 1, p. 1994-1998, 2023. </td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>GAMARANO, D. S. ; GUEDES, V. S. ; MOURA, F. C. C. ; ALMEIDA, M. L. B. ; AYRES, E.. <b>Rice Husks Biochar as Adsorbent for Removal Water Pollutants: The use of porous 3D printed supports</b>. Em: 14th International Chemical and Biological Engineering Conference (CHEMPOR 2023), 2023, Bragança-Portugal. Book of Abstracts of 14th International Chemical and Biological Engineering Conference. Bragança: Instituto Politécnico de Bragança, v. 1, p. 482-483, 2023. </td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>GAMARANO, D. S. ; PAGNAN, C. S. ; SILVA, M. C. ; ALMEIDA, M. L. B. ; AYRES, E.. <b>POROUS DEVICES FOR WATER DECONTAMINATION MANUFACTURED BY 3D PRINTING AND RICE HUSK SILICA</b>. Em: XVII Congresso Brasileiro de Polímeros, 2023, Joinville. Anais do XVII Congresso Brasileiro de Polímeros. São Carlos: Aptor software, v. 1, p. 1399-1402, 2023. </td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>GUEDES, V. S. ; MORATO, B. N. ; AYRES, E. ; CORREIA, R. O. ; R. L. Oréfice ; LIBANIO, M. ; ALMEIDA, M. L. B.. <b>SUSTAINABLE POLYURETHANE FOAM WITH RICE HUSK ASH RESIDUES WITH POTENTIAL APPLICATION IN THE ADSORPTION OF PESTICIDES IN WATER FOR HUMAN CONSUMPTION</b>. Em: XVII Congresso Brasileiro de Polímeros, 2023, Joinville. Anais do XVII Congresso Brasileiro de Polímeros. São Carlos: Aptor Software, v. 1, p. 1205-1209, 2023. </td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>KOHAN, L. ; ENGLER, RITA DE CASTRO ; BARUQUE-RAMOS, J. ; FANGUEIRO, R. ; SAVASTANO JUNIOR, H.. <b>ADERÊNCIA DO REFORÇO TÊXTIL EM COMPÓSITOS CIMENTÍCIOS</b>. Em: 9˚ CONTEXMOD, 2023, Sao Paulo. 9˚ CONTEXMOD - Congresso Científico Têxtil e Moda. Campinas: galoa, v. 9, p. 1-15, 2023. </td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>KOHAN, LAIS ; LAKTIM, M. C. ; ENGLER, RITA DE CASTRO ; BARUQUE-RAMOS, J. ; FANGUEIRO, R. ; SAVASTANO JUNIOR, H.. <b>Microparticle coating for bonding improvement of natural fiber textile-reinforce mortars (NFTRM)</b>. Em: ICNF 2023 - 6th International Conference on Natural Fibers,, 2023, Funchal. Proceedings of the 6th International Conference on Natural Fibers - Nature Inspired Sustainable Solutions. portugal: SCIENCENTRIS, v. 1, p. 342-343, 2023. </td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>LAKTIM, M. C. ; BARUQUE-RAMOS, J. ; SAVASTANO JUNIOR, H. ; DE CASTRO ENGLER, RITA. <b>APPLICATION OF NIOBIUM OXIDE: FUNCTIONALISED FLAT FABRICS FOR SMART TEXTILES</b>. Em: ICNF 2023 - 6th International Conference on Natural Fibers, 2023, Funchal. Proceedings of the 6th International Conference on Natural Fibers - Nature Inspired Sustainable Solutions.. portugal: SCIENCENTRIS,, v. 1, p. 350-353, 2023. </td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>LAKTIM, M. C. ; KOHAN, L. ; SAVASTANO JUNIOR, H. ; BARUQUE-RAMOS, J. ; ENGLER, RITA DE CASTRO. <b>Linen bedding: characterization and comfort properties</b>. Em: ICNF 2023 - 6th International Conference on Natural Fibers, 2023, 2023, Funchal. Proceedings of the 6th International Conference on Natural Fibers - Nature Inspired Sustainable Solutions. portugal: SCIENCENTRIS, v. 1, p. 355-357, 2023. </td></tr>
+            </table></div><div id="dv-year-2021"><h3 class="year">2021</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>COHEN, L. A. F. P. ; MARTINS, E. B. C. ; SILVA, M. C. ; SANTOS, N. S. S. ; AYRES, E.. <b>CHARACTERIZATION OF AÇAÍ (EUTERPE OLERACEA MART.) FIBER AND IT'S POTENTIAL FOR THE DEVELOPMENT OF COMPOSITES MATERIALS</b>. Em: 16th Brazilian Polymer Conference, 2021, Ouro Preto. Proceedings of 16th Brazilian Polymer Conference. Ouro Preto: e-democracia.com.br, v. X, p. 1-5, 2021. </td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>dos Santos, Heloisa Nazare; BARUQUE-RAMOS, J.. <b>Ferramentas de design utilizadas na capacitação em bordado de multiplicadores em Design de Moda: Estudos de casos na região metropolitana de Belo Horizonte</b>. Em: 8º Contexmod - Congresso Científico Têxtil e Moda 2021, 2021, São Paulo. 8º Contexmod - Congresso Científico Têxtil e Moda 2021. Brusque - SP: UNIFEBE, 2021. </td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>FRAGA, D. K. ; PAGNAN, C. S. ; SALES, R. B. C. ; AYRES, E.. <b>DOES BEESWAX-BASED COATING ON CELLULOSIC SUBSTRATE ENABLE TO REPLACE POLYVINYL CHLORIDE PLASTIC FILMS (PVC)?</b>. Em: 16th Brazilian Polymer Conference, 2021, Ouro Preto. Proceedings of 16th Brazilian Polymer Conference. Ouro Preto: e-democracia.com.br, v. X, p. 1-5, 2021. </td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>GAMARANO, D. S. ; PEREIRA, I. M. ; MOTTIN, A. C. ; AYRES, E.. <b>THERMOPLASTIC STARCH - UREA, A FEASIBLE ALTERNATIVE IN ORDER TO STORAGE NITROGEN AS FERTILIZER</b>. Em: 16th Brazilian Polymer Conference, 2021, Ouro Preto. Proceedings of 16th Brazilian Polymer Conference. Ouro Preto: e-democracia.com.br, v. X, p. 1-5, 2021. </td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>MARTINS, E. B. C. ; COHEN, L. A. F. P. ; SILVA, M. C. ; AYRES, E.. <b>TRANSPARENT WOOD COMPOSITES FABRICATED BY IMPREGNATION OF EPOXY RESIN INTO JUPATI PETIOLE (Raphia Taedigera)</b>. Em: 16th Brazilian Polymer Conference, 2021, Ouro Preto. Proceedings of 16th Brazilian Polymer Conference. Ouro Preto: e-democracia.com.br, v. x, p. 1-5, 2021. </td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>SANTOS, L. C. G. S. ; PEREIRA, I. M. ; SOBREIRA, M. A. S. ; ALMEIDA, M. L. B. ; AYRES, E.. <b>COATINGS OF WATERBORNE POLYURETHANE AND SILICA FROM RICE HUSK ASH WASTES WITH POTENTIAL APPLICATION IN MICROWAVE ABSORPTIVE FABRICS</b>. Em: 16th Brazilian Polymer Conference, 2021, Ouro Preto. Proceedings of 16th Brazilian Polymer Conference. Ouro Preto: e-democracia.com.br, v. 1, p. 1-5, 2021. </td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>SOUZA, C. C. ; CARDOSO, A. V.. <b>Segundo Congresso Digital de Bioengenharia e Nanotecnologia</b>. Em: Segundo Congresso Digital de Bioengenharia e Nanotecnologia, 2021, Brasília. Segundo Congresso Digital de Bioengenharia e Nanotecnologia. Brasília: Embrapa, 2021. </td></tr>
+            </table></div>
+                    </table>
+                <br><p><br>(*) Relatório criado com produções desde 2021 até 2026
+<br>Data de processamento: 31/08/2026 22:11:56<br>         <div id="footer">         Relatório gerado por <a href="https://scriptlattes.sourceforge.net/">scriptLattes V9</a>.         Os resultados podem ser afetados por possíveis falhas decorrentes de inconsistências no preenchimento dos Currículos Lattes. E-mail de contato: <a href="mailto:matheusmatos@ufop.edu.br">matheusmatos@ufop.edu.br</a>         </div> </body></html>
+              

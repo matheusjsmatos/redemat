@@ -1,0 +1,359 @@
+
+                <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf8"><meta name="Generator" content="scriptLattes"><title>REDEMAT</title><link rel="stylesheet" href="css/scriptLattes.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"><link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css"><link rel="stylesheet" type="text/css" href="css/dataTables.colVis.min.css"><script type="text/javascript" charset="utf8" src="js/jquery.min.js"></script><script type="text/javascript" charset="utf8" src="js/jquery.dataTables.min.js"></script><script type="text/javascript" charset="utf8" src="js/dataTables.colVis.min.js"></script><script type="text/javascript" charset="utf8" src="js/sorttable-local.js"></script><link rel="stylesheet" href="portal-redemat.css">
+</head><body>
+<div id="portal-back"><a href="../pages/producao-lattes.html">&#8592; Voltar ao portal REDEMAT</a><span>Relatório ScriptLattes — dados brutos dos currículos Lattes</span></div><div id="header2"> <button onClick="history.go(-1)">Voltar</button><h2>REDEMAT</h2></div>
+                
+        <script type="text/javascript" src="./js/jquery.min.js"></script>
+        <!--
+        <script type="text/javascript" src="./highcharts.js"></script>
+        <script type="text/javascript" src="./exporting.js"></script>
+        <script type="text/javascript" src="./drilldown.js"></script>
+        -->
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+        <script type="text/javascript">
+        // Load the fonts
+        Highcharts.createElement('link', {
+           href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700',
+           rel: 'stylesheet',
+           type: 'text/css'
+        }, null, document.getElementsByTagName('head')[0]);
+
+        Highcharts.theme = {
+   colors: ["#1F77B4", "#118D95", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#2b908f", "#90ee7e", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
+   chart: {
+      backgroundColor: null,
+      style: {
+         fontFamily: "'Source Sans Pro', 'sans-serif'"
+      }
+   },
+   title: {
+      style: {
+         color: 'black',
+         fontSize: '16px',
+         fontWeight: 'bold'
+      }
+   },
+   subtitle: {
+      style: {
+         color: 'black'
+      }
+   },
+   tooltip: {
+      borderWidth: 0
+   },
+   legend: {
+      itemStyle: {
+         fontWeight: 'bold',
+         fontSize: '13px'
+      }
+   },
+   xAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   yAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   plotOptions: {
+      series: {
+         shadow: true
+      },
+      candlestick: {
+         lineColor: '#404048'
+      },
+      map: {
+         shadow: false
+      }
+   },
+
+   // Highstock specific
+   navigator: {
+      xAxis: {
+         gridLineColor: '#D0D0D8'
+      }
+   },
+   rangeSelector: {
+      buttonTheme: {
+         fill: 'white',
+         stroke: '#C0C0C8',
+         'stroke-width': 1,
+         states: {
+            select: {
+               fill: '#D0D0D8'
+            }
+         }
+      }
+   },
+   scrollbar: {
+      trackBorderColor: '#C0C0C8'
+   },
+
+   // General
+   background2: '#E0E0E8'
+};
+
+        Highcharts.setOptions(Highcharts.theme);
+        $(function () {
+            $('#container').highcharts({chart: {type: 'column', 
+height: 300}, 
+title: {text: 'Resumos publicados em anais de congressos'}, 
+subtitle: {text: ''}, 
+xAxis: {title: {text: ''}, 
+type: 'category'}, 
+yAxis: {min: 0, 
+title: {text: 'Quantidade', 
+align: 'middle'}, 
+labels: {overflow: 'justify'}, 
+stackLabels: {enabled: true, 
+format: '{stack}'}}, 
+tooltip: {enabled: true, 
+valueSuffix: '', 
+shared: false, 
+headerFormat: '<span style="font-size: 10px">{point.key}{point.stack}{series.stack}</span><br/>', 
+pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'}, 
+plotOptions: {bar: {dataLabels: {enabled: false}}, 
+column: {stacking: null}, 
+series: {shadow: 'true'}}, 
+legend: {enabled: false, 
+layout: 'vertical', 
+align: 'right', 
+verticalAlign: 'middle', 
+borderWidth: 1, 
+backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor || '#FFFFFF'), 
+shadow: true}, 
+credits: {enabled: false}, 
+series: [{name: 'Total', 
+data: [[2021,
+14],
+[2022,
+25],
+[2023,
+26],
+[2024,
+19],
+[2025,
+14],
+[2026,
+1]]}]});
+        });
+        </script>
+        
+                <h3>Resumos publicados em anais de congressos</h3> <br>
+                    <div id="container" style="min-width: 310px; max-width: 1920px; height: 300; margin: 0"></div>
+                    Número total de itens: 99<br>
+                    
+                    
+                    <div id="dv-year-2026"><h3 class="year">2026</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>GOMES SPEZIALI, MARCELO. <b>Frontiers of Innovation in Inorganic Chemistry: Emerging Trends and Technological Drivers</b>. Em: 49ª Reunião Anual da Sociedade Brasileira de Química, 2026, Campinas. 49ª Reunião Anual da Sociedade Brasileira de Química, 2026. </td></tr>
+            </table></div><div id="dv-year-2025"><h3 class="year">2025</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>BRITO, N. B. V. ; Speziali. <b>Panorama do financiamento e incentivo À produção de inovação sustentável no Brasil no contexto da bioeconomia</b>. Em: XXVII ENGEMA - Encontro Internacional sobre Gestão Empresarial e Meio Ambiente, 2025, Belo Horizonte. XXVII ENGEMA, v. 1, p. 1, 2025. </td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>BRITO, N. B. V. ; Speziali, Marcelo Gomes. <b>INOVAÇÃO E CONHECIMENTOS TRADICIONAIS: UM ESTUDO DE CASO DA EMPRESA NATURA</b>. Em: SIITPG - Seminário Internacional em Inovação Tecnológica na Pós Graduação, 2025, Belo Horizonte. SIITPG - Seminário Internacional em Inovação Tecnológica na Pós Graduação, 2025. </td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>C. A. Rodrigues ; NEVES, HEYDER PEREIRA ; DIAS FERREIRA, GABRIEL MAX ; MAGESTE, APARECIDA BARBOSA ; Leão, Versiane. <b>Recuperação de Neodímio a partir de lixo eletrônico por meio de ensaios de lixiviação com Cloreto Férrico: estudos prospectivos</b>. Em: 37º Encontro Regional da Sociedade Brasileira de Química de Minas Gerais, 2025, Ouro Preto. Anais do 37º Encontro Regional da Sociedade Brasileira de Química de Minas Gerais, v. 1, p. 1, 2025. </td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>FERREIRA, M. E. A. ; GUIMARAES, J. S. P. ; GAMARANO, D. S. ; AYRES, E.. <b>Biodegradable agricultural film based on thermoplastic starch and eggshell</b>. Em: 18° Congresso Brasileiro de Polímeros, 2025, Campos do Jordão. Anais do 18° Congresso Brasileiro de Polímeros. São Carlos: Aptor Software, v. 1, p. 59-59, 2025. </td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>ISHIARA, A. ; FERREIRA1, M. E. A. ; COHEN, L. A. F. P. ; AYRES, E.. <b>Valorization of amazon açaí pulping waste (Euterpe Oleracea) into lignocelulosic fibers for paper production</b>. Em: 18° Congresso Brasileiro de Polímeros, 2025, Campos do Jordão. Anais do 18° Congresso Brasileiro de Polímeros. São Carlos: Aptor Software, v. 1, p. 55-55, 2025. </td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>MASCARINI, I. F. S. S. ; DUARTE, R. S. ; AYRES, E. ; ALMEIDA, M. L. B. ; OREFICE, R. L. ; SILVA, M. C.. <b>Characterization of PET glycolisis products aiming at the production of new materials</b>. Em: 18° Congresso Brasileiro de Polímeros, 2025, Campos do Jordão. Anais do 18° Congresso Brasileiro de Polímeros. São Carlos: Aptor Software, v. 1, p. 1712-1712, 2025. </td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>MOURA, C. A. M. ; MANHABOSCO, TAÍSE M. ; SILVA, G. J. B.. <b>Difração de raios X aplicada à determinação da composição mineralógica de resíduos de esteatito: propriedades e perspectivas de uso na construção civil</b>. Em: X MOSTRA DOS PROGRAMAS DE PÓS-GRADUAÇÃO, 2025, Ouro Preto. X MOSTRA DOS PROGRAMAS DE PÓS-GRADUAÇÃO, 2025. </td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>OLIVEIRA, D. C. ; A. A. Vieira ; Cazati, T. <b>Fluorescence Quenching in Benzazole-Fullerene Systems: Electronic and Structural Effects on Charge Transfer</b>. Em: XXIII B-MRS Meeting, 2025, Salvador, BA. XXIII B-MRS Meeting, 2025. </td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>OLIVEIRA, D. C. ; Postacchini B. ; MATOS, M. J. S. ; A. A. Vieira ; Cazati, T. <b>Photophysical Properties of Benzothiadiazole and Benzoselenodiazole Derivatives: Solvent Effects, Aggregation, and Optoelectronic Applications</b>. Em: XXIII B-MRS Meeting 2025, 2025, Salvador, BA. XXIII B-MRS Meeting, 2025. </td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>SANTOS, C. R. ; ROSMANINHO, M. G. ; MENDES, L. A. ; SPEZIALI, M. G.. <b>ECONOMIA CIRCULAR NAS PRÁTICAS DE ENSINO DE QUÍMICA</b>. Em: XXXIII SEMINÁRIO DE INICIAÇÃO CIENTÍFICA, 2025, Ouro Preto. XXXIII SEMINÁRIO DE INICIAÇÃO CIENTÍFICA, 2025. </td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>SANTOS, C. R. ; ROSMANINHO, M. G. ; MENDES, L. A. ; SPEZIALI, M. G.. <b>Economia Circular nas Práticas de Ensino de Química</b>. Em: 37º Encontro Regional da Sociedade Brasileira de Química de Minas Gerais, 2025, Ouro Preto. 37º Encontro Regional da Sociedade Brasileira de Química de Minas Gerais, 2025. </td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>Speziali, Marcelo; MENDES, L. A. ; SILVA, W. T. ; SILVA, J. P. E.. <b>Gamification proposal for teaching innovation and Intellectual Property contents in Chemistry and correlated areas</b>. Em: 48 Reunião Anual da Sociedade Brasileira de Química, 2025, Campinas. 48 Reunião Anual da Sociedade Brasileira de Química, 2025. </td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>TARABAL, V. S. ; LIVIO, D. F. ; GUIMARAES, P. P. G. ; SILVA, G. R. ; GRANJEIRO, PAULO AFONSO ; Speziali, Marcelo. <b>OPTIMIZATION OF NANOPARTICLE-BASED THERAPY FOR BIOFILM DISRUPTION IN CHRONIC WOUND INFECTIONS USING FRACTIONAL FACTORIAL DESIGN</b>. Em: 54th Annual Meeting of the Brazilian Society of Biochemistry and Molecular Biology, 2025, Águas de Lindóia. 54th Annual Meeting of the Brazilian Society of Biochemistry and Molecular Biology, 2025. </td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>TRINDADE, C. M. ; REIS, E. R. ; TONELLI, C. S. ; AYRES, E.. <b>Composites based on recycled high-density polyethylene (R-HDPE) and discarded solid waste from the leather industry</b>. Em: 18° Congresso Brasileiro de Polímeros, 2025, Campos do Jordão. Anais do 18° Congresso Brasileiro de Polímeros. São Carlos: Aptor Software, v. 1, p. 71-71, 2025. </td></tr>
+            </table></div><div id="dv-year-2024"><h3 class="year">2024</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>ALVES, K. ; RODRIGUES, M. L. ; I.Silvestre ; MATOS, MATHEUS J. S. ; BARBOZA, A. P. M.. <b>MODULAÇÃO DE PROPRIEDADES ELÉTRICAS DE DISSULFETO DE MOLIBIDÊNIO COM TRANS-RESVERATROL: UM ESTUDO TEÓRICO-EXPERIMENTAL</b>. Em: 9o Encontro INCT Nanocarbono - 4to Encontro Rede2D, 2024, Belo Horizonte. https://www.inctnanocarbono.com/resumos, 2024. </td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>C. B. Gonçalvesa ; R. T. da Silva ; G. Dalenogare ; M. M. Ferrer ; I. M. D. Gonzaga ; L. H. Mascaro ; E. Longo ; M. Assis ; A. C. Doriguetto ; H. B. de CARVALHO. <b>Comprehensive Experimental and Theoretical Studies on the Synthesis and Characterization of Electrodeposited Nanostructured Cu2O Thin Films</b>. Em: Brazilian Physics Society Autumn Meeting, 2024, Florianópolis. Proceedings of the Brazilian Physics Society Autumn Meeting, 2024. </td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>ENGLER, R. C.; COSTA, S. M. M.. <b>Baú do Tesouro: Design de Produto para Prevenção de Furtos em Escola</b>. Em: 24º Seminário de Pesquisa e Extensão, 2024, 2024, Belo Horizonte. 24º Seminário de Pesquisa e Extensão, 2024, 2024. </td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>GONCALVES, I. L. ; MERLO, ALOIR ; Postacchini B. ; CAZATI, T.. <b>Illuminating mesophases: Isoxazolines with carbazole moiety</b>. Em: 29th International Liquid Crystal Conference (ILCC 2024), 2024, Rio de Janeiro/RJ. 29th International Liquid Crystal Conference (ILCC 2024), 2024. </td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>LADEIRA, N. ; SANTOS, Z. M. Q. ; SUZUKI, R. ; SOUZA, A. ; Speziali, Marcelo G.. <b>PANORAMA PATENTOMÉTRICO PARA TECNOLOGIAS DE COSMÉTICOS E COSMECÊUTICOS ANTIACNE</b>. Em: X ENPI ? ENCONTRO NACIONAL DE PROPRIEDADE INTELECTUAL, 2024, Fortaleza. X ENPI ? ENCONTRO NACIONAL DE PROPRIEDADE INTELECTUAL, 2024. </td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>M. H. da Silva Ribeiro ; M. M. Oliveira ; J. H. G. Rangel ; G. N. Marques ; R. C. Oliveira ; L. H. Mascaro ; A. C. Krohling ; W. A. A. Macedo ; M. I. B. Bernardi ; H. B. de CARVALHO. <b>Green Synthesis of Highly Defective Nanostructured Fe-doped SnO2: Magnetic and Photocatalytic Properties Evaluation</b>. Em: Brazilian Physics Society Autumn Meeting, 2024, Florianópolis. Proceedings of the Brazilian Physics Society Autumn Meeting, 2024. </td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>M. P. Ferreira ; A. Mesquita ; M. J. da Silva ; M. L. Peres ; M. I. B. Bernardi ; H. B. de CARVALHO. <b>On the Processing of Anatase p-Type La-doped TiO2 Nanopowders: Structural Phase Transition and Surface Defect Engineering</b>. Em: Brazilian Physics Society Autumn Meeting, 2024, Florianópolis. Proceedings of the Brazilian Physics Society Autumn Meeting, 2024. </td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>MARTINS, RAFAEL ; ARAUJO, F. G. S. ; SOARES, JAQUELINE S. ; BARBOZA, A. P. M. ; I.Silvestre. <b>USO DO OURO COMO AGENTE NUCLEADOR NA SÍNTESE CVD DE MOS2 MONOCAMADA</b>. Em: 9o Encontro INCT Nanocarbono - 4to Encontro Rede2D, 2024, Belo Horizonte. https://www.inctnanocarbono.com/resumos, 2024. </td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>MATOS, R. O. ; SIQUEIRA, A. ; CORSINI, H. ; Cláudio Laudares Passos da Silva ; REZENDE, N. P. ; ORNELAS, V. ; BARBOZA, A. P. M. ; I.Silvestre. <b>INVESTIGAÇÃO DO USO DE TINTA DE NANOCELULOSE E NANOTUBOS DE CARBONO NÃO FUNCIONALIZADOS COMO SENSOR DE UMIDADE</b>. Em: 9o Encontro INCT Nanocarbono - 4to Encontro Rede2D, 2024, Belo Horizonte. https://www.inctnanocarbono.com/resumos, 2024. </td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>MORAES, L. A. F. ; SANTOS, Heloisa Nazaré dos. <b>TRAINING IN EMBROIDERY AND DESIGN TOOLS FOR MULTIPLIER AGENTS IN THE METROPOLITAN REGION OF BELO HORIZONTE</b>. Em: 7º Congresso Internacional de Moda e Design - Università degli Studi della Campania 'Luigi Vanvitelli', 2024, Caserta - Itália. CIMODE 2024 7º Congresso Internacional de Moda e Design Livro de Resumos. Portugal: Uminho, v. 1, p. 1-76, 2024. </td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>OLIVEIRA, D. C. ; POSTACCHINI, B. B. ; A. A. Vieira ; Cazati, T. <b>Propriedades FotofísicasDe Novos FluoróforosOrg NicosDerivados De Benzazol</b>. Em: XI Encontro Mineiro de Física, 2024, Lavras/MG. XI Encontro Mineiro de Física, 2024. </td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>P. H. Xavier ; A. Cantarero ; D. Thomazini ; M. V. Gelfuso ; H. B. de CARVALHO. <b>Studies on the Thermoelectric Properties Enhancement Through Microstructure Engineering: The Case of the Ca3Co4O9 (CCO)</b>. Em: Brazilian Physics Society Autumn Meeting, 2024, Florianópolis. Proceedings of the Brazilian Physics Society Autumn Meeting, 2024. </td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>REIS, A. A. ; FARIA, G. L. ; GODEFROID, L.B.. <b>ESTUDO DE PROPRIEDADES MECÂNICAS DE LIGAS RECICLADAS A PARTIR DE LATAS DE ALUMÍNIO E TIXOFORJADAS NO ESTADO SEMI-SÓLIDO</b>. Em: Congresso Brasileiro de Ciência e Engenharia de Materiais, 2024, Fortaleza. Anais do 25o CBECIMAT. São Paulo: Associação Brasileira de Cerâmica, 2024. </td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>RODRIGUES, M. L. ; ALVES, V. F. ; MARTINS, RAFAEL ; SOARES, JAQUELINE S. ; I.Silvestre ; MATOS, MATHEUS J. S.. <b>Investigação teórico-experimental da ressulfurização de amostras de MoS2 CVD</b>. Em: 9o Encontro INCT Nanocarbono - 4to Encontro Rede2D, 2024, Belo Horizonte. https://www.inctnanocarbono.com/resumos, 2024. </td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>SCHERRER, Rachel Rios ; ROMEIRO FILHO, E. ; SANTOS, Heloisa Nazaré dos. <b>EMPODERAMENTO ATRAVÉS DO FIGURINO: A REPRESENTAÇÃO DE CLARA INÊS EM ?CANTO PARA NÃO CHORAR?</b>. Em: 7º Congresso Internacional de Moda e Design - Università degli Studi della Campania 'Luigi Vanvitelli', 2024, Caserta - Itália. CIMODE 2024 7º Congresso Internacional de Moda e Design Livro de Resumos. Portugal: Uminho, v. 1, p. 1-76, 2024. </td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td>SIQUEIRA, A. ; MATOS, R. O. ; Cláudio Laudares Passos da Silva ; I.Silvestre ; BARBOZA, A. P. M.. <b>PRODUÇÃO E CARACTERIZAÇÃO DE FILMES DE MWCNT DISPERSOS EM TOCNF PARA APLICAÇÃO EM SENSORES</b>. Em: 9o Encontro INCT Nanocarbono - 4to Encontro Rede2D, 2024, Belo Horizonte. https://www.inctnanocarbono.com/resumos, 2024. </td></tr>
+            
+            <tr valign="top"><td>17. &nbsp;</td> <td>SOARES, JAQUELINE S. ; BARBOZA, A. P. M. ; PRADO, M.C. ; MANHABOSCO, T. ; I.Silvestre ; PIMENTA, M. A.. <b>Trabalhos desenvolvidos nos Laboratórios Experimentais do Grupo Nano do Departamento de Física da Universidade Federal de Ouro Preto</b>. Em: 9o Encontro INCT Nanocarbono - 4to Encontro Rede2D, 2024, Belo Horizonte. Quarta-feira 11 de Setembro, 2024. </td></tr>
+            
+            <tr valign="top"><td>18. &nbsp;</td> <td>V. J. Pimenta ; V. A. Chitta ; H. B. de CARVALHO. <b>Development of New Route of Synthesis of Bulk Cu2O Ceramics: Structural and Electrical Characterization</b>. Em: Brazilian Physics Society Autumn Meeting, 2024, Florianópolis. Proceedings of the Brazilian Physics Society Autumn Meeting, 2024. </td></tr>
+            
+            <tr valign="top"><td>19. &nbsp;</td> <td>V. M. A. Lage ; C. Rodríguez-Fernández ; R. T. da Silva ; F. S. Vieira ; A. Cantarero ; M. M. de Lima Jr. ; M. I. B. Bernardi ; H. B. de CARVALHO. <b>On the Vibrational Properties of Transition Metal Doped ZnO: Surface, Defect, and Bandgap Engineering</b>. Em: Brazilian Physics Society Autumn Meeting, 2024, Florianópolis. Proceedings of the Brazilian Physics Society Autumn Meeting, 2024. </td></tr>
+            </table></div><div id="dv-year-2023"><h3 class="year">2023</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>ALMEIDA, A. ; OREFICE, R. L. ; AYRES, E. ; ALMEIDA, M. L. B. ; SILVA, M. C.. <b>EVALUATION OF THE INFLUENCE OF COLORATION ON THE YIELD OF PET DEPOLYMERIZATION BY HYDROLYSIS</b>. Em: XVII Congresso Brasileiro de Polímeros, 2023, Joinville. Anais do XVII Congresso Brasileiro de Polímeros. São Carlos: Aptor software, v. 1, p. 1768-1768, 2023. </td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>B. G. Paiva ; Bianchi, R.F.. <b>Desenvolvimento de selo inteligente para monitoramento de novo processo de desinfecção de água com luz azul</b>. Em: Encontro Nacional de Engenharia Ambiental e Sanitaria, 2023, São Paulo, SP. Anais do Encontro Nacional de Engenharia Ambiental e Sanitaria, 2023. </td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>B. G. Paiva ; Bianchi, R.F.. <b>Entrepreneurship</b>. Em: Workshop do Instituto Nacional de Eletrônica Orgânica (INEO), 2023, Atibainha, SP. Anais do Workshop do Instituto Nacional de Eletrônica Orgânica (INEO), 2023. </td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>BORDIN, R. D. ; MENDES, L. A. ; LOBO, F. A. ; SILVA, E. N. ; GOMES SPEZIALI, MARCELO. <b>'Determinação de metais e metaloides em malte e lúpulo para a fabricação de cervejas artesanais</b>. Em: 35 Encontro Regional da Sociedade Brasileira de Química, 2023, Lavras. 35 Encontro Regional da Sociedade Brasileira de Química, 2023. </td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>CAZATI, T.; A. A. Vieira ; C. A. Guaje ; POSTACCHINI, B. B. ; HINOJOSA, ABAD ROGER CASTILLO. <b>Photophysical and electrochemical properties of three novel fluorescent Benzazole derivatives and their interaction with fullerenes</b>. Em: Brazilian Materials Research Society (B-MRS), 2023, Maceió-AL. Brazilian Materials Research Society (B-MRS), 2023. </td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>CAZATI, T.; CURCIO, S. F. ; TAYLOR, J. G. ; CORREA, RODRIGO S. ; MATOS, M. J. S.. <b>Theoretical and Experimental studies of the Photophysical properties of novel and highly fluorescent difluoroboron flavanone β-diketonate complexes</b>. Em: Brazilian Materials Research Society (B-MRS), 2023, Maceió-AL. Brazilian Materials Research Society (B-MRS), 2023. </td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>CAZATI, T.; DOS SANTOS, GERSON ; POSTACCHINI, B. B. ; T. M. Manhabosco ; A. A. Vieira. <b>Photophysical Characterization of 2,1,3-benzoxadiazole: Building Blocks for Optoelectronic Devices</b>. Em: Brazilian Materials Research Society (B-MRS), 2023, Maceió-AL. Brazilian Materials Research Society (B-MRS), 2023. </td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>CAZATI, T.; POSTACCHINI, B. B.. <b>Systematic Characterization of Cumarin 6 in Different Solvents and Concentrations for Photophysical Analysis and Technological Applications</b>. Em: Brazilian Materials Research Society (B-MRS), 2023, Maceió-AL. Brazilian Materials Research Society (B-MRS), 2023. </td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>DOS SANTOS, GERSON ; CAZATI, T. ; POSTACCHINI, B. B. ; A. A. Vieira ; T. M. Manhabosco. <b>PHOTOPHYSICAL CHARACTERIZATION OF LIQUID CRYSTALS BASED ON BENZOXADIAZOLE</b>. Em: Autumn Meeting 2023 - Brazilian Physical Society, 2023, Ouro Preto. Autumn Meeting 2023 - Brazilian Physical Society, 2023. </td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>E. C Claudio ; POSTACCHINI, B. B. ; CAZATI, T.. <b>Study of the photophysical properties Benzazole derivatives blended with fullerene in solution</b>. Em: Brazilian Physics Society Autumn Meeting, 2023, Ouro Preto/MG. Brazilian Physics Society Autumn Meeting 2023, 2023. </td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>Gabriel Carvalho ; Natália Paz Neme ; MATOS, MATHEUS JOSUE DE SOUZA. <b>Theoretical characterization of Difluoroboro Flavanone beta -Diketonate Molecules</b>. Em: Autumn Meeting of the Brazilian Physical Society (EOSBF 2023), 2023, Ouro Preto. Autumn Meeting of the Brazilian Physical Society (EOSBF 2023), 2023. </td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>HORTA, A. A. ; PAGNAN, C. S. ; AYRES, E.. <b>NIOBIUM OXIDE (Nb2O5) AS A FILLER FOR PLA FILAMENTS: 3D PRINTING IN BIOMEDICAL APPLICATIONS</b>. Em: XVII Congresso Brasileiro de Polímeros, 2023, Joinville. Anais do XVII Congresso Brasileiro de Polímeros. São Carlos: Aptor sofware, v. 1, p. 1420-1420, 2023. </td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>Luiz Gustavo Pimenta Martins, ; COMIN, RICCARDO ; Matos, Matheus J. S. ; MAZZONI, M. S. C. ; NEVES, B. R. A. ; YANKOWITZ, M.. <b>Modelling atomically-thin van der Waals materials at high pressures</b>. Em: Autumn Meeting of the Brazilian Physical Society (EOSBF 2023), 2023, Ouro Preto. Autumn Meeting of the Brazilian Physical Society (EOSBF 2023), 2023. </td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>Luiz Gustavo Pimenta Martins, ; RUIZ-TIJERINA, D. A. ; Connor A Occhialini ; Ji-Hoon Park ; SONG, Q. ; Pedro Venezuela ; CANÇADO, LUIZ G. ; MAZZONI, M. S. C. ; Matos, Matheus J. S. ; KONG, J. ; COMIN, RICCARDO. <b>Pressure-tuning of minibands in MoS2/WSe2 heterostructures revealed by moiré phonons</b>. Em: Autumn Meeting of the Brazilian Physical Society (EOSBF 2023), 2023, Ouro Preto. Autumn Meeting of the Brazilian Physical Society (EOSBF 2023), 2023. </td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>MANHABOSCO, TAÍSE M.; DE OLIVEIRA, MICHELLE ; DOS SANTOS SOARES, JAQUELINE ; PRADO, M. C. ; ALVARENGA, E. C.. <b>Development and characterization of collagen type I biocomposites reinforced with 2D nano minerals for biomedical applications</b>. Em: Autumn Meeting 2023 - Brazilian Physical Society, 2023, Ouro Preto. Autumn Meeting 2023 - Brazilian Physical Society, 2023. </td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td>MELLO, HELIANA ; RIBEIRO, L. C. ; Bernardes, Américo T.. <b>ON THE FRACTAL PATTERNS OF LANGUAGE STRUCTURES</b>. Em: 17th Granada Seminar, 2023, Granada. program. Granada: Instituto Interuniversitario Carlos I de Física Teórica y Computacional, v. 1, 2023. </td></tr>
+            
+            <tr valign="top"><td>17. &nbsp;</td> <td>OLIVEIRA, D. C. ; A. A. Vieira ; POSTACCHINI, B. B. ; CAZATI, T.. <b>PHOTOPHYSICAL PROPERTIES OF NEW ORGANIC FLUOROPHORES BASED ON BENZAZOLE DERIVATIVES</b>. Em: Brazilian Physics Society Autumn Meeting, 2023, Ouro Preto/MG. Brazilian Physics Society Autumn Meeting 2023, 2023. </td></tr>
+            
+            <tr valign="top"><td>18. &nbsp;</td> <td>OLIVEIRA, R. E. S. ; CAZATI, T. ; POSTACCHINI, B. B.. <b>Study of the photophysical properties Benzazole derivatives in solution and solid film</b>. Em: Brazilian Physics Society Autumn Meeting, 2023, Ouro Preto/MG. Brazilian Physics Society Autumn Meeting 2023, 2023. </td></tr>
+            
+            <tr valign="top"><td>19. &nbsp;</td> <td>Santos, BLP ; DUARTE JUNIOR, L. A. ; K. M. C. Pinto ; Bianchi, RF ; Duarte, ESM ; Coelho, EAF ; A. T. P. da Silva. <b>Fototerapia com luz LED azul reduz infecção in vitro por Toxoplasma gondii</b>. Em: 58o Congresso da Sociedade Brasileira de Medicina Tropical (MEDTROP 2023), 2023, Salvador, BA. Anais do 58o Congresso da Sociedade Brasileira de Medicina Tropical (MEDTROP 2023), 2023. </td></tr>
+            
+            <tr valign="top"><td>20. &nbsp;</td> <td>SILVA, Welesson ; MATOS, MATHEUS JOSUE DE SOUZA ; BARBOZA, A. P. M. ; NEVES, B. R. A. ; Mazzoni, M S C. <b>STRUCTURAL TRANSITIONS, CHARGE DENSITY WAVES AND MAGNETIC ORDERINGS IN SEMI-HYDROGENATED MoS2</b>. Em: Autumn Meeting of the Brazilian Physical Society (EOSBF 2023), 2023, Ouro Preto. Autumn Meeting of the Brazilian Physical Society (EOSBF 2023), 2023. </td></tr>
+            
+            <tr valign="top"><td>21. &nbsp;</td> <td>SOUZA, W. M. ; PAULA, R. M. ; BOAVENTURA, R. ; Thiago Cunha ; Cláudio Laudares Passos da Silva ; REZENDE, N. P. ; NEVES, B.R.A. ; I.Silvestre ; BARBOZA, ANA P. M.. <b>A green approach to transfer graphene using nanocellulose</b>. Em: 2023 Autumn Meeting of the Brazilian Physical Society, 2023, Ouro Preto. NANOSCOPIC MATERIALS I Chair: Alexandre Reily Rocha Local: Room Diamantina, 2023. </td></tr>
+            
+            <tr valign="top"><td>22. &nbsp;</td> <td>TOLEDO, D. ; LAGE, D. P. ; VALE, D. L. ; FREITAS, C. S. ; DUARTE JUNIOR, L. A. ; Louise, V ; Silva, SPG ; Coelho, EAF ; Bianchi, RF ; A. T. P. da Silva. <b>Effects of blue LED light phototherapy in macrophage culture infected by Leishamania amazonensis</b>. Em: XLVII Congress of the Brazilian Society of Immunology, 2023, Ouro Preto. Anais do 47o Congress of the Brazilian Society of Immunology (SBI), v. 1, 2023. </td></tr>
+            
+            <tr valign="top"><td>23. &nbsp;</td> <td>VALENTIM, Mirela 1 ; Matos, Matheus J. S. ; MAZZONI, M. S. C.. <b>AB INITIO CALCULATIONS OF ELECTRONIC AND STRUCTURAL PROPERTIES OF B2N2O2: A NEW CLASS OF 2D NANOSTRUCTURES</b>. Em: Autumn Meeting of the Brazilian Physical Society (EOSBF 2023), 2023, Ouro Preto. Autumn Meeting of the Brazilian Physical Society (EOSBF 2023), 2023. </td></tr>
+            
+            <tr valign="top"><td>24. &nbsp;</td> <td>VIEIRA, C. G. ; SOARES, EDMAR A ; Matos, Matheus J. S. ; Chacham, H ; CARVALHO, V. E.. <b>Exploring the Structural and Electronic Properties of Sulfur Segregated on Cu(111) in the (\surd 7x\surd 7)R19.1 Phase</b>. Em: Autumn Meeting of the Brazilian Physical Society (EOSBF 2023), 2023, Ouro Preto. Autumn Meeting of the Brazilian Physical Society (EOSBF 2023), 2023. </td></tr>
+            
+            <tr valign="top"><td>25. &nbsp;</td> <td>VIEIRA, P. R. L. ; MATOS, MATHEUS JOSUE DE SOUZA ; MARTINS, J. R. ; CHACHAM, H.. <b>Substitutional impurities and adsorbed molecules as dopants in MoS2</b>. Em: Autumn Meeting of the Brazilian Physical Society (EOSBF 2023), 2023, Ouro Preto. Autumn Meeting of the Brazilian Physical Society (EOSBF 2023), 2023. </td></tr>
+            
+            <tr valign="top"><td>26. &nbsp;</td> <td>WELLINGTON DAMACENO DE FREITAS ; MAZZONI, M. S. C. ; Matos, Matheus J. S. ; GALVAO, B. R. L.. <b>Prediction of polynitrogen molecular crystals using evolutionary algorithm</b>. Em: Autumn Meeting of the Brazilian Physical Society (EOSBF 2023), 2023, Ouro Preto. Autumn Meeting of the Brazilian Physical Society (EOSBF 2023), 2023. </td></tr>
+            </table></div><div id="dv-year-2022"><h3 class="year">2022</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>ALVES, V. F. ; ARAUJO, F. G. S. ; MOURA, L. ; RESENDE, G. ; FERREIRA, D. ; MARTINS, RAFAEL ; BARBOZA, A. P. M. ; I.Silvestre. <b>SÍNTESE E CARACTERIZAÇÃO DE DISSULFETO DE MOLIBDÊNIO POR DEPOSIÇÃO QUÍMICA NA FASE VAPOR UTILIZANDO MoO3 COMO PRECURSOR</b>. Em: 8o Encontro INCT Nanocarbono - 2to Encontro Rede2D, 2022, Uberlândia. https://drive.google.com/file/d/1Pns0Hh1n_Ywq532gFip_Pif8KdmXuGnJ/view, 2022. </td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>B. G. Paiva ; A. T. P. da Silva ; Bianchi, R.F.. <b>Aqualux - innovation strategy for neglected populations. In: XVI International Symposium on Schistosomiasis</b>. Em: International Symposium on Schistosomiasis, 2022, Ouro Preto, MG. Anais do International Symposium on Schistosomiasis, 2022. </td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>B. G. Paiva ; A. T. P. da Silva ; Bianchi, R.F.. <b>Desenvolvimento de colorímetro orgânico e flexível para monitoramento de novo processo de desinfecção da água com luz azul</b>. Em: Encontro dos Saberes, 2022, Ouro Preto, MG. Anais do Encontro de Saberes, 2022. </td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>B. G. Paiva ; A. T. P. da Silva ; Bianchi, R.F.. <b>Desenvolvimento de colorímetro orgânico e flexível para monitoramento de novo processo de desinfecção da água com luz azul</b>. Em: Encontro dos Saberes, 2022, Ouro Preto, MG. Anais do Encontro de Saberes, 2022. </td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>B. G. Paiva ; A. T. P. da Silva ; M. C. Lanna ; Bianchi, R.F.. <b>Flexible polymeric sensor, on paper substrate, for checking water sterilization by blue radiation</b>. Em: Encontro da SBPMAT, 2022, Foz do Iguaçu. Anais do Encontro da SBPMAT, 2022. </td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>BARBOZA, A. P. M. ; MAZZONI, M. S. C. ; MATOS, M. J. S. ; CHACHAM, H. ; NEVES, B. R. A.. <b>SPM-induced electromechanical manipulation of 2D materials</b>. Em: XX B-MRS Meeting, 2022, Paraná - Brazil. XX B-MRS Meeting - Proceedings, 2022. </td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>BEATO, F. R. G. ; E. Silva-Pinto ; ARAUJO, F. G. S. ; B.R.A.Neves ; PRADO, M. C. ; BARBOZA, A.P.M.. <b>Electromechanical characterization of Sb nanolayers by Scanning Probe Microscopy</b>. Em: XVIII Brazil MRS Meeting, 2022, f. XVIII Brazil MRS Meeting, 2022. </td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>BENEDITO, A. ; ARAUJO, F. G. S. ; NEVES, B. R. A. ; MATOS, M. J. S. ; Mazzoni, M S C ; PINTO, E. S. ; BARBOZA, A. P. M.. <b>Caracterização de Sulfeto de Antimônio bidimensional por Microscopia de Varredura por Sonda</b>. Em: 8º Encontro do INCT Nanocarbono e o 2º Encontro da Rede 2D, 2022, Uberlândia. 8º Encontro do INCT Nanocarbono e o 2º Encontro da Rede 2D, 2022. </td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>Benedito, A. J. ; ARAUJO, F. G. S. ; B.R.A.Neves ; E. Silva-Pinto ; Barboza, Ana P. M.. <b>Characterization of two-dimensional antimony sulfide by Scanning Probe Microscopy</b>. Em: XVIII Brazil MRS Meeting, 2022, Foz do Iguaçu. XVIII Brazil MRS Meeting, 2022. </td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>BESSA, MAURICIO V. ; WELLINGTON DAMACENO DE FREITAS ; Natália Paz Neme ; Luiz Gustavo Pimenta Martins, ; BARBOZA, A. P. M. ; MATOS, M.J.S. ; Mazzoni, M S C ; NEVES, B. R. A.. <b>Electromechanical Modulations in Transition Metal Dichalcogenide Nanosheets: Implications for Environmental Sensors</b>. Em: Autumn Meeting of the Brazilian Physical Society, 2022, São Paulo. Livro de Resumos do EOSBF, 2022. </td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>DE OLIVEIRA, ALAN B ; BATISTA, RONALDO C.J. ; MATOS, M. J. S.. <b>Estudo de Nanoestruturas de Carbono e Materiais Bidimensionais utilizando métodos teóricos desenvolvidos pelo grupo Nano/UFOP</b>. Em: 8º Encontro do INCT Nanocarbono e o 2º Encontro da Rede 2D, 2022, Uberlândia. 8º Encontro do INCT Nanocarbono e o 2º Encontro da Rede 2D, 2022. </td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>Gabriel Carvalho ; Natália Paz Neme ; MATOS, M. J. S.. <b>CARACTERIZAÇÃO TEÓRICA DE NOVAS MOLÉCULAS DE Β-DICETONATO DE DIFLUOROBORO FLAVANONA</b>. Em: 8º Encontro do INCT Nanocarbono e o 2º Encontro da Rede 2D, 2022, Uberlândia. 8º Encontro do INCT Nanocarbono e o 2º Encontro da Rede 2D, 2022. </td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>Jammal, N. F. ; ARAUJO, F. G. S. ; B.R.A.Neves ; Barboza, Ana P.M. ; MAZZONI, M.. <b>Electromechanical characterization of Sb nanolayers by Scanning Probe Microscopy</b>. Em: XVIII Brazil MRS Meeting, 2022, Foz do Iguaçu. XVIII Brazil MRS Meeting, 2022. </td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>LA Duarte Júnior ; A. T. P. da Silva ; RIBEIRO, L. ; Bianchi, R.F.. <b>Sensor polimérico em substrato de papel para monitoramento de radiação UVC (222nm)</b>. Em: 16a Semana de Polímeros Professora Eloisa Mano, 2022, Rio de Janeiro, RJ. Anais da 16a Semana de Polímeros Professora Eloisa Mano, v. 0, p. 1, 2022. </td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>LA Duarte Júnior ; A. T. P. da Silva ; RIBEIRO, L. ; Bianchi, R.F.. <b>Dispositivo terapêutico de fototerapia com luz azul (LED) como estratégia complementar ao tratamento com benznidazol na infecção experimental por Trypanosoma cruzi</b>. Em: 57o Congresso da Sociedade de Medicina Tropical - MEDTROP, 2022, Belem, PA. Anais do 57o Congresso da Sociedade de Medicina Tropical - MEDTROP, v. 0, p. 1, 2022. </td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td>LA Duarte Júnior ; RIBEIRO, L. ; A. T. P. da Silva ; Bianchi, R.F.. <b>Sensor polimérico em substrato de papel para monitoramento de radiação UV 222</b>. Em: 57o Congresso da Sociedade de Medicina Tropical, 2022, Belem, PA. Anais do 57o Congresso da Sociedade de Medicina Tropical - MEDTROP, 2022. </td></tr>
+            
+            <tr valign="top"><td>17. &nbsp;</td> <td>LA Duarte Júnior ; T. F. Nascimento ; A. T. P. da Silva ; LACERDA, G. ; Bianchi, R.F.. <b>Dispositivo vestível para fototerapia contínua para icterícia neonatal</b>. Em: 57° congresso da Sociedade Brasileira de Medicina Tropical - MEDTROP, 2022, Belem, PA. Anais do 57° congresso da Sociedade Brasileira de Medicina Tropical - MEDTROP, 2022. </td></tr>
+            
+            <tr valign="top"><td>18. &nbsp;</td> <td>Luiz Gustavo Pimenta Martins, ; Bruno R Carvalho ; Connor A Occhialini ; Natália Paz Neme ; Ji-Hoon Park ; SONG, Q. ; MAZZONI, M. S. C. ; Pedro Venezuela ; MATOS, MATHEUS JOSUÉ DE SOUZA ; KONG, J. ; COMIN, RICCARDO. <b>Multivalley dynamics in monolayer TMDs at high pressures revealed by double-resonance Raman</b>. Em: APS March Meeting 2022, 2022, Chicago. APS March Meeting 2022, p. Q12.00006, 2022. </td></tr>
+            
+            <tr valign="top"><td>19. &nbsp;</td> <td>Luiz Gustavo Pimenta Martins, ; RUIZ-TIJERINA, D. A. ; Connor A Occhialini ; MATOS, MATHEUS J S ; Ji-Hoon Park ; SONG, Q. ; LU, A. ; MAZZONI, M. S. C. ; Pedro Venezuela ; KONG, J. ; COMIN, RICCARDO. <b>Pressuring-tuning of moiré phonons in MoS2/WSe2 heterostructures</b>. Em: APS March Meeting 2022, 2022, Chicago. Bulletin of the American Physical Society, p. D55.00007, 2022. </td></tr>
+            
+            <tr valign="top"><td>20. &nbsp;</td> <td>MARTINS, RAFAEL ; ALVES, V. F. ; SOUZA, W. M. ; ARAUJO, F. G. S. ; BARBOZA, A. P. M. ; I.Silvestre. <b>SÍNTESE E CARACTERIZAÇÃO DE DISSULFETO DE MOLIBDÊNIO CVD A PARTIR DE MoO2 COMO PRECURSOR</b>. Em: 8o Encontro INCT Nanocarbono - 2to Encontro Rede2D, 2022, Uberlândia. https://drive.google.com/file/d/1Pns0Hh1n_Ywq532gFip_Pif8KdmXuGnJ/view, 2022. </td></tr>
+            
+            <tr valign="top"><td>21. &nbsp;</td> <td>NEVES, B. R. A. ; BESSA, MAURICIO V. ; WELLINGTON DAMACENO DE FREITAS ; Natália Paz Neme ; Luiz Gustavo Pimenta Martins, ; BARBOZA, A. P. M. ; MATOS, M. J. S. ; MAZZONI, MARIO S C. <b>Electromechanical Modulations in Transition Metal Dichalcogenides?Implications for Environmental Sensors</b>. Em: MRS Fall 2022, 2022, Boston, Massachusetts. MRS Fall 2022, p. EQ04.11.08, 2022. </td></tr>
+            
+            <tr valign="top"><td>22. &nbsp;</td> <td>RUAS, B. R. ; Alan Barros de Oliveira ; MATOS, M. J. S.. <b>Caracterização das Propriedades Mecânicas da Celulose Utilizando Dinâmica Molecular</b>. Em: 8º Encontro do INCT Nanocarbono e o 2º Encontro da Rede 2D, 2022, 2022. </td></tr>
+            
+            <tr valign="top"><td>23. &nbsp;</td> <td>Souza, W. M. ; PAULA, R. M. ; ARAUJO, F. G. S. ; B.R.A.Neves ; BOAVENTURA, R. V. A. ; JESUS, W. P. ; CUNHA, T. H. R. ; SILVA, C. L. P. ; SILVESTRE, I. ; Barboza, Ana Paula M.. <b>An alternative approach to transfer graphene using nanocellulose</b>. Em: XVIII Brazil MRS Meeting, 2022, Foz do Iguaçu. XVIII Brazil MRS Meeting, 2022. </td></tr>
+            
+            <tr valign="top"><td>24. &nbsp;</td> <td>SOUZA, W. M. ; PAULA, R. M. ; ARAUJO, F. G. S. ; BOAVENTURA, R. ; JESUS, W. P. ; NEVES, B.R.A. ; Thiago Cunha ; Cláudio Laudares Passos da Silva ; I.Silvestre ; BARBOZA, A. P. M.. <b>UMA ABORDAGEM ALTERNATIVA PARA TRANSFERIR GRAFENO USANDO NANOCELULOSE</b>. Em: 8o Encontro INCT Nanocarbono - 2to Encontro Rede2D, 2022, Uberlândia. https://drive.google.com/file/d/1Pns0Hh1n_Ywq532gFip_Pif8KdmXuGnJ/view, 2022. </td></tr>
+            
+            <tr valign="top"><td>25. &nbsp;</td> <td>VALENTIM, Mirela 1 ; MATOS, M. J. S. ; Mazzoni, M S C. <b>PROPOSITION AND INVESTIGATION OF A NEW CLASS OF TWO-DIMENSIONAL NANOSTRUCTURES FROM FIRST PRINCIPLES</b>. Em: 8º Encontro do INCT Nanocarbono e o 2º Encontro da Rede 2D, 2022, Uberlândia. 8º Encontro do INCT Nanocarbono e o 2º Encontro da Rede 2D, 2022. </td></tr>
+            </table></div><div id="dv-year-2021"><h3 class="year">2021</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>Allan Kleyton Muniz Pinto ; Mazzoni, M S C ; MATOS, M.J.S. ; Sérgio Azevedo. <b>On the structural and electronic properties of BCN diamondene</b>. Em: XXI Simpósio Brasileiro de Quimica Teórica, 2021. Anais do XXI Simpósio Brasileiro de Quimica Teórica, v. 21, 2021. </td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Allan Kleyton Muniz Pinto ; Mazzoni, M S C ; MATOS, M.J.S. ; Sérgio Azevedo. <b>Ab initio calculations of the electronic structure of two-dimensional hybrid diamond-like structures based on BCN</b>. Em: XVII Escola Brasileira de Estrutura Eletrônica, 2021, Online. XVII Escola Brasileira de Estrutura Eletrônica, p. R0124-1, 2021. </td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>Allan Kleyton Muniz Pinto ; Mazzoni, M S C ; MATOS, M.J.S. ; Sérgio Azevedo. <b>Estabilidade energética e propriedades eletrônicas de estruturas bidimensionais de BCN tipo-diamante, via cálculos ab initio</b>. Em: XXXV ENCONTRO DE FÍSICA DO NORTE E NORDESTE, 2021, Online. XXXV ENCONTRO DE FÍSICA DO NORTE E NORDESTE, p. R0139-1, 2021. </td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>CAZATI, T.; C. A. Guaje ; POSTACCHINI, B. B. ; VIEIRA, ANDRÉ. <b>Photophysical properties of a new fluorescent benzothiadiazole derivative and its interaction with fullerene in solution</b>. Em: BMRS+IUMRS Meeting, 2021, on line. BMRS+IUMRS Meeting, 2021. </td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>Gabriel Carvalho ; Natália Paz Neme ; MATOS, M.J.S.. <b>Caracterização teórica de novas moléculas de Difluoroboron β- dicetonatos Flavanonas</b>. Em: XXI Simpósio Brasileiro de Quimica Teórica, 2021. Anais do XXI Simpósio Brasileiro de Quimica Teórica, v. 21, 2021. </td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>Gabriel Carvalho ; Natália Paz Neme ; MATOS, M.J.S.. <b>PHOTOPHYSICAL PROPERTIES OF NEW DIFLUOROBORON FLAVANONES β-DIKETONATES COMPLEXES: COMPUTATIONAL INVESTIGATIONS</b>. Em: XVII Escola Brasileira de Estrutura Eletrônica, 2021, Online. XVII Escola Brasileira de Estrutura Eletrônica, p. R0227-1, 2021. </td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>GUALLICHICO, L. A. G. ; Mazzoni, M S C ; MATOS, M.J.S.. <b>Passivação de Perovskitas de Iodeto de Metilamônio e Chumbo com moléculas orgânicas: o caso da molécula 4-terc-butil piridina (TBP)</b>. Em: XXI Simpósio Brasileiro de Quimica Teórica, 2021. Anais do XXI Simpósio Brasileiro de Quimica Teórica, v. 21, 2021. </td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>GUALLICHICO, L. A. G. ; Mazzoni, M S C ; MATOS, M.J.S.. <b>Defect Passivation of Hybrid Perovskite Methyl Ammonium Lead Iodide with organic molecules: The 4-tert-butyl pyridine (TBP) molecule case</b>. Em: XVII Escola Brasileira de Estrutura Eletrônica, 2021, Online. XVII Escola Brasileira de Estrutura Eletrônica, p. R0131-1, 2021. </td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>M. T. S. Souza ; Bianchi, R.F.. <b>Desenvolvimento e caracterização de microfibras condutoras de Janaúba com polianilina para detecção de amônia</b>. Em: 16ª Semana de Polímeros Professora Eloísa Mano, 2021, Rio de Janeiro, RJ. Anais da 16ª Semana de Polímeros Professora Eloísa Mano, v. 0, 2021. </td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>M. T. S. Souza ; Bianchi, R.F.. <b>Microtubo de fibra vegetal recoberto por polímero condutor para sensoriamento de amônia</b>. Em: 15ª Semana de Polímeros Professora Eloísa Mano, 2021, Rio de Janeiro, RJ. Anais do 15ª Semana de Polímeros Professora Eloísa Mano, 2021. </td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>MATOS, M.J.S.; Mazzoni, M S C. <b>Compressão induzindo modificações em materiais bidimensionais</b>. Em: XXI Simpósio Brasileiro de Quimica Teórica, 2021. Anais do XXI Simpósio Brasileiro de Quimica Teórica. Galoá anais e Proceedings: Anais do XXI Simpósio Brasileiro de Quimica Teórica, v. 21, 2021. </td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>S F Curcio ; BECHTOLD, IVAN ; VIEIRA, ANDRÉ ALEXANDRE ; POSTACCHINI, B. B. ; CAZATI, T.. <b>Evidences of charge transfer between the 5,8-π- extended quinoxaline derivatives and C60 in solution and thin films deposited by spin-coating</b>. Em: BMRS+IUMRS Meeting, 2021. BMRS+IUMRS Meeting, 2021. </td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>S F Curcio ; TAYLOR, JASON ; CAZATI, T. ; PAEZ, ELIDA BETANIA ARIZA. <b>Photophysical properties of the difluoroboro flavanones compounds and their interactions with fullerenes in solution and solid thin films</b>. Em: BMRS+IUMRS Meeting, 2021, on line. BMRS+IUMRS Meeting, 2021. </td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>WELLINGTON DAMACENO DE FREITAS ; MATOS, M.J.S. ; GALVAO, B. R. L.. <b>Estrutura cristalina de alótropos do nitrogênio</b>. Em: XXI Simpósio Brasileiro de Quimica Teórica, 2021. Anais do XXI Simpósio Brasileiro de Quimica Teórica, v. 21, 2021. </td></tr>
+            </table></div>
+                    </table>
+                <br><p><br>(*) Relatório criado com produções desde 2021 até 2026
+<br>Data de processamento: 31/08/2026 22:11:56<br>         <div id="footer">         Relatório gerado por <a href="https://scriptlattes.sourceforge.net/">scriptLattes V9</a>.         Os resultados podem ser afetados por possíveis falhas decorrentes de inconsistências no preenchimento dos Currículos Lattes. E-mail de contato: <a href="mailto:matheusmatos@ufop.edu.br">matheusmatos@ufop.edu.br</a>         </div> </body></html>
+              

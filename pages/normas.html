@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Normas, Credenciamento e Atas — REDEMAT | UFOP · UEMG</title>
+<meta name="description" content="Normas do Programa de Pós-Graduação em Engenharia de Materiais da REDEMAT: regimento, bolsas, estágio de docência, credenciamento docente, qualificação, defesa, PROAP e atas do Colegiado.">
+<link rel="canonical" href="https://redemat.ufop.br/normas">
+<link rel="icon" href="../assets/img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<div id="site-header-slot"></div>
+
+<section class="page-hero" aria-labelledby="ph">
+  <div class="page-hero-in">
+    <nav class="crumb" aria-label="Trilha de navegação">
+      <a href="../index.html">Início</a><span aria-hidden="true">›</span>
+      <span aria-current="page">Normas</span>
+    </nav>
+    <h1 id="ph">Normas, Credenciamento e Atas</h1>
+    <p class="lede">
+      Toda a regulamentação que organiza a vida acadêmica do Programa — do regimento interno
+      às normas de defesa, passando por bolsas, estágio de docência, PROAP e credenciamento
+      docente. As decisões do Colegiado são públicas.
+    </p>
+    <div class="hero-metrics" id="heroMetrics"></div>
+  </div>
+</section>
+
+<main id="conteudo">
+
+  <!-- Aviso de fonte -->
+  <section class="section" style="padding-block:2rem 0;">
+    <div class="wrap" id="fonteNota"></div>
+  </section>
+
+  <!-- Normas por assunto -->
+  <section class="section" aria-labelledby="norm-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Regulamentação</p>
+        <h2 class="h2" id="norm-h">Normas por assunto</h2>
+        <p class="section-lede">
+          Clique em um grupo para ver os documentos que o compõem. Os arquivos permanecem
+          hospedados no site institucional da REDEMAT.
+        </p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.85rem;" id="normGroups"></div>
+      <div class="mt-3">
+        <a href="https://redemat.ufop.br/normas" target="_blank" rel="noopener" class="btn btn--dark"
+           style="display:inline-flex;align-items:center;gap:.45rem;font-size:.86rem;font-weight:700;padding:.7rem 1.3rem;border-radius:var(--r-sm);background:var(--navy);color:#fff;">
+          Abrir a página oficial de normas ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credenciamento -->
+  <section class="section section--alt" id="credenciamento" aria-labelledby="cred-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Corpo docente</p>
+        <h2 class="h2" id="cred-h">Credenciamento docente</h2>
+        <p class="section-lede">
+          O credenciamento define quem integra o corpo docente do Programa e em que categoria.
+          Os critérios e o sistema de pontuação constam nas Normas Gerais de Credenciamento.
+        </p>
+      </div>
+      <div class="grid grid--2 mb-3">
+        <div class="card">
+          <h3 class="h3">Documentos que regem o processo</h3>
+          <div class="prose" style="max-width:none;">
+            <ul>
+              <li><strong>Normas Gerais de Credenciamento de Docentes</strong> — critérios e procedimentos de credenciamento, recredenciamento e descredenciamento. Documento em PDF, atualizado em 29/04/2025.</li>
+              <li><strong>Critérios de Pontuação de Currículo (Anexo I)</strong> — sistema de pontos aplicado na avaliação.</li>
+              <li><strong>Regimento Interno da REDEMAT</strong> — categorias docentes e competências do Colegiado.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="h3">Categorias vigentes no Programa</h3>
+          <div id="catBox" class="mt-2"></div>
+          <p style="font-size:.76rem;color:var(--text-soft);margin-top:1rem;line-height:1.6;">
+            Composição atual do quadro. A categoria formal de cada docente está em conferência
+            com a secretaria — ver <a href="indicadores.html#conflitos" style="color:var(--amber);font-weight:600;">conflitos de dados</a>.
+          </p>
+        </div>
+      </div>
+      <div id="credNota"></div>
+    </div>
+  </section>
+
+  <!-- Atas -->
+  <section class="section" id="atas" aria-labelledby="atas-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Transparência</p>
+        <h2 class="h2" id="atas-h">Atas e decisões do Colegiado</h2>
+        <p class="section-lede">
+          Atas aprovadas das reuniões do Colegiado, organizadas por ano. Cada documento abre
+          no site institucional.
+        </p>
+      </div>
+      <div id="atasList"></div>
+      <div class="mt-3" id="atasNota"></div>
+    </div>
+  </section>
+
+  <!-- Formulários e modelos -->
+  <section class="section section--alt" aria-labelledby="form-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Operacional</p>
+        <h2 class="h2" id="form-h">Formulários e modelos</h2>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <h3 class="h3">Formulários eletrônicos</h3>
+          <div class="prose" style="max-width:none;"><ul id="formList"></ul></div>
+        </div>
+        <div class="card">
+          <h3 class="h3">Modelos de documento</h3>
+          <div class="prose" style="max-width:none;"><ul id="modList"></ul></div>
+        </div>
+      </div>
+      <div class="mt-3" id="formNota"></div>
+    </div>
+  </section>
+
+  <!-- Apoio ao estudante -->
+  <section class="section" aria-labelledby="apoio-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Acolhimento</p>
+        <h2 class="h2" id="apoio-h">Apoio ao estudante</h2>
+      </div>
+      <div class="card" id="apoioCard"></div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer-slot"></div>
+
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+(function () {
+  'use strict';
+  const R = window.REDEMAT, C = window.RC, N = R.normas, D = R.docentes.itens;
+
+  const totalDocs = N.grupos.reduce(function (s, g) { return s + g.itens.length; }, 0);
+
+  document.getElementById('heroMetrics').innerHTML = [
+    { v: N.grupos.length, l: 'Grupos de normas' },
+    { v: totalDocs, l: 'Documentos normativos' },
+    { v: R.atas.itens.length, l: 'Atas publicadas' },
+    { v: N.formularios.length + N.modelos.length, l: 'Formulários e modelos' }
+  ].map(function (m) { return '<div class="hero-metric"><b data-count="' + m.v + '">0</b><span>' + m.l + '</span></div>'; }).join('');
+
+  document.getElementById('fonteNota').innerHTML = C.note('info',
+    '<strong>Sobre esta página.</strong> ' + N.nota +
+    ' Em caso de divergência entre esta página e o documento oficial, <strong>vale o documento</strong>. ' +
+    C.badge(N.status));
+
+  /* ---------------- grupos de normas (acordeão) ---------------- */
+  const CHEV = '<svg class="norm-chev" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>';
+
+  document.getElementById('normGroups').innerHTML = N.grupos.map(function (g, i) {
+    const ico = C.ICO[g.icone] || C.ICO.doc;
+    const open = i === 0;
+    return '<div class="norm-group">' +
+      '<button class="norm-head" aria-expanded="' + open + '" aria-controls="ng-' + g.id + '" id="nh-' + g.id + '">' +
+        '<span class="norm-ico" aria-hidden="true">' + ico + '</span>' +
+        '<span class="norm-title">' + g.titulo + '</span>' +
+        '<span class="norm-count">' + g.itens.length + ' documento' + (g.itens.length === 1 ? '' : 's') + '</span>' +
+        CHEV +
+      '</button>' +
+      '<ul class="norm-list" id="ng-' + g.id + '" role="region" aria-labelledby="nh-' + g.id + '"' + (open ? '' : ' hidden') + '>' +
+        g.itens.map(function (it) {
+          return '<li><p class="norm-name">' + it.nome + '</p><p class="norm-desc">' + it.desc + '</p></li>';
+        }).join('') +
+      '</ul></div>';
+  }).join('');
+
+  document.getElementById('normGroups').addEventListener('click', function (e) {
+    const b = e.target.closest('.norm-head');
+    if (!b) return;
+    const open = b.getAttribute('aria-expanded') === 'true';
+    b.setAttribute('aria-expanded', String(!open));
+    document.getElementById(b.getAttribute('aria-controls')).hidden = open;
+  });
+
+  /* ---------------- categorias docentes ---------------- */
+  const nPerm = D.filter(function (d) { return d.cat === 'permanente'; }).length;
+  const nCol = D.length - nPerm;
+  const nBolCNPq = D.filter(function (d) { return d.bolsa && d.bolsaAgencia !== 'UEMG'; }).length;
+  const nBolUEMG = D.filter(function (d) { return d.bolsaAgencia === 'UEMG'; }).length;
+
+  document.getElementById('catBox').innerHTML = [
+    ['Docentes permanentes', nPerm, 'var(--area1)'],
+    ['Docentes colaboradores', nCol, 'var(--amber)'],
+    ['Bolsistas de produtividade CNPq', nBolCNPq, 'var(--l12)'],
+    ['Bolsistas de produtividade UEMG', nBolUEMG, 'var(--l22)']
+  ].map(function (r) {
+    return '<div class="bar-row"><span class="bar-lbl">' + r[0] + '</span>' +
+      '<span class="bar-track"><span class="bar-fill" style="background:' + r[2] + ';width:' + (r[1] / D.length * 100) + '%"></span></span>' +
+      '<span class="bar-val">' + r[1] + '</span></div>';
+  }).join('');
+
+  document.getElementById('credNota').innerHTML = C.note('warn',
+    '<strong>Formulário de manifestação de interesse.</strong> A página oficial de credenciamento registra ' +
+    'que o formulário para manifestação de interesse está <em>"a ser implementado"</em>. Docentes interessados ' +
+    'devem procurar a coordenação diretamente: ' +
+    '<a href="mailto:' + R.programa.contato.email_coord + '">' + R.programa.contato.email_coord + '</a>. ' +
+    C.badge('EM_DEFINICAO'));
+
+  /* ---------------- atas por ano ---------------- */
+  const anos = {};
+  R.atas.itens.forEach(function (a) { (anos[a.ano] = anos[a.ano] || []).push(a); });
+  const DOC = '<svg viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>';
+
+  document.getElementById('atasList').innerHTML = Object.keys(anos)
+    .sort(function (a, b) { return b - a; })
+    .map(function (y) {
+      return '<h3 class="ata-year">' + y + '</h3>' +
+        anos[y].map(function (a) {
+          const ext = (a.url.split('.').pop() || '').toUpperCase();
+          const dt = a.data ? a.data.split('-').reverse().join('/') : '';
+          return '<a class="ata-item" href="' + a.url + '" target="_blank" rel="noopener">' +
+            DOC + '<span class="t">' + a.titulo + '</span>' +
+            '<span class="d">' + (dt ? dt + ' · ' : '') + ext + ' ↗</span></a>';
+        }).join('');
+    }).join('');
+
+  document.getElementById('atasNota').innerHTML = C.note('info',
+    R.atas.nota + ' Atas de reuniões mais recentes são publicadas após aprovação em reunião subsequente. ' +
+    'Para atas não listadas, solicite à secretaria: <a href="mailto:' + R.programa.contato.email + '">' +
+    R.programa.contato.email + '</a>. ' + C.badge(R.atas.status));
+
+  /* ---------------- formulários e modelos ---------------- */
+  document.getElementById('formList').innerHTML = N.formularios.map(function (f) { return '<li>' + f + '</li>'; }).join('');
+  document.getElementById('modList').innerHTML = N.modelos.map(function (m) { return '<li>' + m + '</li>'; }).join('');
+  document.getElementById('formNota').innerHTML = C.note('info',
+    'Os formulários eletrônicos e modelos são disponibilizados na página oficial de normas. ' +
+    'Este portal não hospeda cópias, para evitar versões desatualizadas em circulação.');
+
+  /* ---------------- apoio ao estudante ---------------- */
+  const A = R.comunidade.acolhimento;
+  document.getElementById('apoioCard').innerHTML =
+    '<h3 class="h3">' + A.titulo + '</h3>' +
+    '<p style="font-size:.9rem;color:var(--text-mid);line-height:1.7;margin-bottom:1.25rem;">' + A.texto + '</p>' +
+    '<a href="' + A.url + '" target="_blank" rel="noopener" class="mini-link" style="font-size:.85rem;padding:.5rem .9rem;">' +
+      C.ICO.ext + A.orgao + '</a>';
+
+  C.mount('normas.html', '../');
+})();
+</script>
+</body>
+</html>

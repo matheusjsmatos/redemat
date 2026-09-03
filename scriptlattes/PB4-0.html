@@ -1,0 +1,397 @@
+
+                <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf8"><meta name="Generator" content="scriptLattes"><title>REDEMAT</title><link rel="stylesheet" href="css/scriptLattes.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"><link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css"><link rel="stylesheet" type="text/css" href="css/dataTables.colVis.min.css"><script type="text/javascript" charset="utf8" src="js/jquery.min.js"></script><script type="text/javascript" charset="utf8" src="js/jquery.dataTables.min.js"></script><script type="text/javascript" charset="utf8" src="js/dataTables.colVis.min.js"></script><script type="text/javascript" charset="utf8" src="js/sorttable-local.js"></script><link rel="stylesheet" href="portal-redemat.css">
+</head><body>
+<div id="portal-back"><a href="../pages/producao-lattes.html">&#8592; Voltar ao portal REDEMAT</a><span>Relatório ScriptLattes — dados brutos dos currículos Lattes</span></div><div id="header2"> <button onClick="history.go(-1)">Voltar</button><h2>REDEMAT</h2></div>
+                
+        <script type="text/javascript" src="./js/jquery.min.js"></script>
+        <!--
+        <script type="text/javascript" src="./highcharts.js"></script>
+        <script type="text/javascript" src="./exporting.js"></script>
+        <script type="text/javascript" src="./drilldown.js"></script>
+        -->
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+        <script type="text/javascript">
+        // Load the fonts
+        Highcharts.createElement('link', {
+           href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700',
+           rel: 'stylesheet',
+           type: 'text/css'
+        }, null, document.getElementsByTagName('head')[0]);
+
+        Highcharts.theme = {
+   colors: ["#1F77B4", "#118D95", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#2b908f", "#90ee7e", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
+   chart: {
+      backgroundColor: null,
+      style: {
+         fontFamily: "'Source Sans Pro', 'sans-serif'"
+      }
+   },
+   title: {
+      style: {
+         color: 'black',
+         fontSize: '16px',
+         fontWeight: 'bold'
+      }
+   },
+   subtitle: {
+      style: {
+         color: 'black'
+      }
+   },
+   tooltip: {
+      borderWidth: 0
+   },
+   legend: {
+      itemStyle: {
+         fontWeight: 'bold',
+         fontSize: '13px'
+      }
+   },
+   xAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   yAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   plotOptions: {
+      series: {
+         shadow: true
+      },
+      candlestick: {
+         lineColor: '#404048'
+      },
+      map: {
+         shadow: false
+      }
+   },
+
+   // Highstock specific
+   navigator: {
+      xAxis: {
+         gridLineColor: '#D0D0D8'
+      }
+   },
+   rangeSelector: {
+      buttonTheme: {
+         fill: 'white',
+         stroke: '#C0C0C8',
+         'stroke-width': 1,
+         states: {
+            select: {
+               fill: '#D0D0D8'
+            }
+         }
+      }
+   },
+   scrollbar: {
+      trackBorderColor: '#C0C0C8'
+   },
+
+   // General
+   background2: '#E0E0E8'
+};
+
+        Highcharts.setOptions(Highcharts.theme);
+        $(function () {
+            $('#container').highcharts({chart: {type: 'column', 
+height: 300}, 
+title: {text: 'Trabalhos completos publicados em anais de congressos'}, 
+subtitle: {text: ''}, 
+xAxis: {title: {text: ''}, 
+type: 'category'}, 
+yAxis: {min: 0, 
+title: {text: 'Quantidade', 
+align: 'middle'}, 
+labels: {overflow: 'justify'}, 
+stackLabels: {enabled: true, 
+format: '{stack}'}}, 
+tooltip: {enabled: true, 
+valueSuffix: '', 
+shared: false, 
+headerFormat: '<span style="font-size: 10px">{point.key}{point.stack}{series.stack}</span><br/>', 
+pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'}, 
+plotOptions: {bar: {dataLabels: {enabled: false}}, 
+column: {stacking: null}, 
+series: {shadow: 'true'}}, 
+legend: {enabled: false, 
+layout: 'vertical', 
+align: 'right', 
+verticalAlign: 'middle', 
+borderWidth: 1, 
+backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor || '#FFFFFF'), 
+shadow: true}, 
+credits: {enabled: false}, 
+series: [{name: 'Total', 
+data: [[2021,
+4],
+[2022,
+28],
+[2023,
+15],
+[2024,
+30],
+[2025,
+33],
+[2026,
+8]]}]});
+        });
+        </script>
+        
+                <h3>Trabalhos completos publicados em anais de congressos</h3> <br>
+                    <div id="container" style="min-width: 310px; max-width: 1920px; height: 300; margin: 0"></div>
+                    Número total de itens: 118<br>
+                    
+                    
+                    <div id="dv-year-2026"><h3 class="year">2026</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>BOURBON, APOLO ; SANTOS, LUIZA CARAVELLI SANTOS E ; COSTA, SUÉLLEN MOTA MARQUES ; ENGLER, RITA DE CASTRO. <b>Sustentabilidade em Design de Interiores e Ambientes: aplicações em escola pública</b>. Em: <font color=#330066>ENSUS 2026</font>, 2026. <a href="http://dx.doi.org/10.29327/9786527226116.1448244" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>GOMES SPEZIALI, MARCELO. <b>ANÁLISE DO DESENVOLVIMENTO TECNOLÓGICO EM QUÍMICA INORGÂNICA POR MEIO DE INDICADORES DE COMPETITIVIDADE</b>. Em: <font color=#330066>XII ENCONTRO NACIONAL DE PROPRIEDADE INTELECTUAL</font>, 2026.</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>MEGALE, J. D. ; GOMES SPEZIALI, MARCELO. <b>ANÁLISE DO DESENVOLVIMENTO TECNOLÓGICO NA ÁREA DE CICATRIZAÇÃO POR MEIO DE PROSPECÇÃO TECNOLÓGICA</b>. Em: <font color=#330066>XII ENCONTRO NACIONAL DE PROPRIEDADE INTELECTUAL</font>, 2026.</td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>PAIXAO, T. A. ; BRANDAO, G. P. ; GOMES SPEZIALI, MARCELO. <b>PROSPECÇÃO TECNOLÓGICA DE PATENTES GLOBAIS SOBRE CÂNHAMO: PANORAMA E INDICADORES DE DESENVOLVIMENTO</b>. Em: <font color=#330066>XII ENCONTRO NACIONAL DE PROPRIEDADE INTELECTUAL</font>, 2026.</td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>PORTELA, H. S. ; DELAMORE, M. O. ; SOTANI, P. F. B. ; PINTO, M. A. ; MANHABOSCO, TAÍSE M.. <b>ESTUDO COMPARATIVO DE MATERIAIS UTILIZADOS EM MANDÍBULAS DE BRITADOR PRIMÁRIO*</b>. Em: <font color=#330066>ABM Week 10ª edição</font>, 2026.</td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>REZENDE, M. C. P. ; MEDEIROS, J. C. C. ; GOMES SPEZIALI, MARCELO. <b>Proximidade Geográfica, intensidade em P&D, concentração setorial e porte das empresas: Uma análise padrão dos licenciamentos de patentes das universidades federais</b>. Em: <font color=#330066>XII ENCONTRO NACIONAL DE PROPRIEDADE INTELECTUAL</font>, 2026. <a href="http://dx.doi.org/10.22533/at.ed.0002120109" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>SANTOS, P. H. L. ; GOMES SPEZIALI, MARCELO. <b>ANÁLISE DAS TRANSFERÊNCIAS DE TECNOLOGIA DE NITS CONSOLIDADOS PARA A CRIAÇÃO DE UM MODELO DE MATCHMAKING DE PARCEIROS</b>. Em: <font color=#330066>XII ENCONTRO NACIONAL DE PROPRIEDADE INTELECTUAL</font>, 2026.</td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>VALADÃO CARDOSO, ANTONIO; SOUTO, R. A. M. ; ANDREATA, R.. <b>Joias Ensino e Micro-ondas</b>. Em: <font color=#330066>Ensus 2026</font>, v. 1, p. 25-37, 2026.</td></tr>
+            </table></div><div id="dv-year-2025"><h3 class="year">2025</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>ALMEIDA, M. E. C. ; BARBOZA, N. R. ; DELUCCHI, M. T. ; Leão, Versiane. <b>Treatment of manganese-laden waters with Chlorella vulgaris</b>. Em: <font color=#330066>EMC 2025</font>, v. 1, p. 1-18, 2025.</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>ANDRADE, LEANDRO RIBEIRO DE ; SOUZA, HENRIQUE REZENDE DE OLIVEIRA ; PORCARO, RODRIGO RANGEL ; GODEFROID, LEONARDO BARBOSA. <b>AVALIAÇÃO DE INTEGRIDADE ESTRUTURAL EM GANCHO TRANSPORTADOR DE BOBINAS DE FIO-MÁQUINA: EFEITOS DA SOLDAGEM E APLICAÇÃO DE METODOLOGIA DE TOLERÂNCIA DE DANOS BS7910</b>. Em: <font color=#330066>2º Seminário de Manutenção e Engenharia de Projetos em Metalurgia e Mineração</font>, p. 157, 2025. <a href="http://dx.doi.org/10.5151/2594-5327-42054" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>ASSUMPÇÃO, RAPHAEL FRANÇA ; GEORGE, MARIANA ; GUO, XIAOLEI ; SANTOS, DAGOBERTO BRANDÃO ; FRANKEL, GERALD ; Sicupira, Dalila Chaves. <b>DISTRIBUIÇÃO ESTATÍSTICA DO POTENCIAL DE RUPTURA DO FILME PASSIVO EM FUNÇÃO DA ÁREA EXPOSTA EM AÇO INOXIDÁVEL DUPLEX</b>. Em: <font color=#330066>78º Congresso Anual da ABM Internacional</font>, v. 1, p. 1212-1222, 2025. <a href="http://dx.doi.org/10.5151/2594-5327-42212" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>BUENO, RAFAEL FERREIRA DELFIM ; PEIXOTO, JOHNE JESUS MOL ; RIBEIRO, EDGARD MARCOS ; MAIA, BRENO TOTTI ; CUNHA, MARCOS VINICIUS RIBEIRO ; COSTA, HELTON JACKSON ; RAMPINELLI, VINICIUS THIAGO LECCO. <b>OTIMIZAçãO DO SLAG SPLASHING POR ANáLISE DE VíDEO</b>. Em: <font color=#330066>54º Seminário de Aciaria</font>, p. 576-587, 2025. <a href="http://dx.doi.org/10.5151/2594-5300-42385" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>CAMPIDELI, V. C. ; FELISBERTO, M. D. V. ; SANTOS, L. A. ; SICUPIRA, D. C.. <b>Estudo dos efeitos dos parâmetros na eletrodeposição de revestimentos a base de óxido de grafeno em uma liga superplástica de NiTi no comportamento à corrosão</b>. Em: <font color=#330066>InterCorr</font>, v. 132, p. 1-12, 2025.</td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>CESAR, ROGERIO LOPES VIEIRA ; GONÇALVES, ARIEL BARBOSA ; MONTEIRO, INGRID TEIXEIRA ; ENGLER, RITA DE CASTRO. <b>Uma Revisão Sistemática Sobre a Aplicação do Design de Interação em Tecnologias IoT Voltadas para Pessoas com Autismo</b>. Em: <font color=#330066>Simpósio Brasileiro sobre Fatores Humanos em Sistemas Computacionais</font>, p. 976, 2025. <a href="http://dx.doi.org/10.5753/ihc.2025.10778" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>COSTA, S. M. M. ; SOUZA, R. C. F. ; ENGLER, R. C.. <b>Sustainability, architecture and security: using dephtmapx to prevent theft in brazilian public schools</b>. Em: <font color=#330066>XIII ENSUS</font>, v. 13, p. 1005, 2025. <a href="http://dx.doi.org/10.29183/2596-237" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>COSTA-FELIX, R. P. B. ; BERNARDES, A. T. ; LANDIM, R. P.. <b>MEDIDA OU MEDIÇÃO: HERMENÊUTICA DA EDIÇÃO LUSO-BRASILEIRA DO VOCABULÁRIO INTERNACIONAL DE METROLOGIA (VIM)</b>. Em: <font color=#330066>Congresso METROLOGIA 2025</font>, v. 1, p. 1-1, 2025. <a href="http://dx.doi.org/10.1081/E-EISA-120050997" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>CUNHA, DEIVISON LUIS RIBEIRO DA ; JUNIOR, PAULO LUIZ SANTOS ; BARBOSA, BENNARDO KENNEDY THEOTÔNIO ; SILVA, CARLOS ANTÔNIO DA ; PEIXOTO, JOHNE JESUS MOL. <b>COMPORTAMENTO DO FLUXO E FLUTUAÇÕES DE SUPERFÍCIE EM MOLDE DE BLOCOS: MODELAGEM FÍSICA COM DOIS PROJETOS DE VÁLVULAS SUBMERSAS</b>. Em: <font color=#330066>54º Seminário de Aciaria</font>, p. 673-685, 2025. <a href="http://dx.doi.org/10.5151/2594-5300-42508" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>DIAS, J. M. P. ; ENGLER, R. C.. <b>Moda, design e reutilização no brechó da Poppi</b>. Em: <font color=#330066>ENSUS 2025 - XIII Encontro de Sustentabilidade em Projeto.</font>, v. 13, p. 1912-1921, 2025.</td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>FARIA, GERALDO LUCIO DE ; DUARTE, TIBERIO GRACO BOTELHO TORRES ; SILVA, LAVINIA MARIA DA ; MOREIRA, PAULO SÉRGIO ; GODEFROID, LEONARDO BARBOSA. <b>EFEITO DA TEMPERATURA DE AUSTENITIZAÇÃO SOBRE A TRANSFORMAÇÃO MARTENSÍTICA E O COMPORTAMENTO MECÂNICO EM TRAÇÃO DE UM AÇO INOXIDÁVEL AISI 420D (SUS420J1)</b>. Em: <font color=#330066>78º Congresso Anual da ABM Internacional</font>, v. 78, p. 327-342, 2025. <a href="http://dx.doi.org/10.5151/2594-5327-41874" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>Faria, Geraldo Lúcio de; MELO, DENILSON PEREIRA DE ; MOREIRA, PAULO SÉRGIO ; DUARTE, TIBÉRIO GRACO BOTELHO TORRES. <b>EFEITO DA CONCENTRAÇÃO DE ESPODUMÊNIO SOBRE O DESEMPENHO EM DESGASTE DE UM COMPÓSITO DE MATRIZ EM LIGA DE ALUMÍNIO A356.0 RECICLADA</b>. Em: <font color=#330066>78º Congresso Anual da ABM Internacional</font>, p. 203, 2025. <a href="http://dx.doi.org/10.5151/2594-5327-41854" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>FARIA, R. A. ; COSTA, A. M. ; MATSUBARA, D. B. ; FARIA, G. L. ; PORCARO, R. R.. <b>Effect of Nucleation Site Density on the Bainitic Transformation Kinetics of an API 5L Grade X80 Steel</b>. Em: <font color=#330066>AISTECH</font>, 2025.</td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>FERREIRA, CARLA REGINA ; LIMA, ERMANI VINICIUS DE OLIVEIRA ; SALUSTRE, MARIANE GONÇALVES DE MIRANDA ; PORCARO, RODRIGO RANGEL ; FARIA, GERALDO LÚCIO DE. <b>EFEITO DE MODIFICAÇÕES DE COMPOSIÇÃO QUÍMICA SOBRE AS TRANSFORMAÇÕES DE FASES SOB RESFRIAMENTO CONTÍNUO DE LIGAS DA CLASSE SAE 6150/DIN51CRV4</b>. Em: <font color=#330066>78º Congresso Anual da ABM Internacional</font>, p. 707, 2025. <a href="http://dx.doi.org/10.5151/2594-5327-41994" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>GAMARANO, D. S. ; GUIMARAES, J. S. P. ; MOTTIN, A. C. ; PAGNAN, C. S. ; AYRES, E.. <b>Design para reflorestamento: Estudo de caso da produção de dispositivos biodegradáveis para dispersão de sementes por plantio aéreo</b>. Em: <font color=#330066>ENSUS 2025 - XIII Encontro de Sustentabilidade em Projeto</font>, v. 13, p. 1364-1374, 2025.</td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td>GOMES, RODRIGO ; PEREIRA, L. A. C. ; LELLIS, M. A. ; Leão, Versiane. <b>Caracterização de um concentrado de espodumênio visando à extração de lítio</b>. Em: <font color=#330066>XXX Encontro Nacional de Tratamento de Minérios e Metalurgia Extrativa</font>, v. 1, p. 1-6, 2025.</td></tr>
+            
+            <tr valign="top"><td>17. &nbsp;</td> <td>INVERNO, E. A. P. ; COTA, K. B. F. ; Leão, Versiane. <b>Avaliação e otimização de variáveis em processos hidrometalúrgicos na extração de lítio da fase β-espodumênio: estratégia para sustentabilidade ambiental?,</b>. Em: <font color=#330066>XXX Encontro Nacional de Tratamento de Minérios e Metalurgia Extrativa</font>, v. 1, p. 1-6, 2025.</td></tr>
+            
+            <tr valign="top"><td>18. &nbsp;</td> <td>JUNIOR, JOSÉ IZABEL LIBERATO ; SANTOS, ANTÔNIO ADEL DOS ; SOUZA, ALTAIR LÚCIO DE ; ARAÚJO, FERNANDO GABRIEL DA SILVA ; SILVEIRA, MARCOS PAULO DA ; ALVES, PAULO AFONSO FERNANDES. <b>CáLCULO DA TAXA DE FORMAçãO DE CAREPA PRIMáRIA EM UM FORNO DE REAQUECIMENTO DE PLACAS WALKING BEAM</b>. Em: <font color=#330066>60º Seminário de Laminação</font>, p. 98, 2025. <a href="http://dx.doi.org/10.5151/2594-5297-41957" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>19. &nbsp;</td> <td>LIMA, ERMANI VINICIUS DE OLIVEIRA ; FERREIRA, CARLA REGINA ; SALUSTRE, MARIANE GONÇALVES DE MIRANDA ; PORCARO, RODRIGO RANGEL ; FARIA, GERALDO LÚCIO DE. <b>EFEITO DA COMPOSIÇÃO QUÍMICA SOBRE AS CARACTERÍSTICAS DE AUSTENITIZAÇÃO DE LIGAS VARIANTES DA CLASSE SAE 6150/DIN51CRV4</b>. Em: <font color=#330066>78º Congresso Anual da ABM Internacional</font>, p. 690, 2025. <a href="http://dx.doi.org/10.5151/2594-5327-41993" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>20. &nbsp;</td> <td>MARTINS, MAYSA LORENA FIGUEIREDO ; ARAUJO, FERNANDO GABRIEL DA SILVA ; BEZERRA, AUGUSTO CESAR DA SILVA. <b>Metassilicato de sódio sólido sintetizado a partir de resíduo cervejeiro para ativação de materiais álcali-ativados one-part</b>. Em: <font color=#330066>IX ENCONTRO NACIONAL DE APROVEITAMENTO DE RESÍDUOS NA CONSTRUÇÃO</font>, 2025. <a href="http://dx.doi.org/10.46421/enarc.v9i1.7383" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>21. &nbsp;</td> <td>MATOSO, G. C. ; SANTOS, L. L. R. ; SILVA, M. L. ; CARDOSO, M. A. ; FAGUNDES, J. V. ; LOPES, D. H. ; SANTOS, J. G. ; FREITAS, A. P. ; SILVA, M. C. A. ; BRITO, H. ; VASCONCELOS, G. ; LAGE, R. ; SANTOS, A. E. M. ; GALGANO, G. D. ; BERNARDES, A. T. ; SANTOS, T. B.. <b>METODOLOGIA DE PREVISÃO DE ALCANCE DE RUPTURAS EM TALUDES DE SOLO</b>. Em: <font color=#330066>12ª Congresso Brasileiro de Mina a Céu Aberto e Mina Subterrânea</font>, v. 1, p. 1-1, 2025.</td></tr>
+            
+            <tr valign="top"><td>22. &nbsp;</td> <td>MELO, GILBERSON MENDONÇA STORCK DE ; BARBOSA, BENNARDO KENNEDY THEOTÔNIO ; NASCIMENTO, ANDRÉ AFONSO ; JERÔNIMO, WILLIAN JUNQUEIRA DE OLIVEIRA ; SILVA, CARLOS ANTÔNIO DA ; PEIXOTO, JOHNE JESUS MOL. <b>ANÁLISE DO EFEITO DO POSICIONAMENTO ASSIMÉTRICO DO TUBO LONGO EM UM DISTRIBUIDOR DE DOIS VEIOS</b>. Em: <font color=#330066>54º Seminário de Aciaria</font>, p. 269-281, 2025. <a href="http://dx.doi.org/10.5151/2594-5300-42076" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>23. &nbsp;</td> <td>MOTTIN, A. C. ; GAMARANO, D. S. ; PAGNAN, C. S. ; AYRES, E.. <b>Manufatura aditiva como estratégia para projetos de despoluição a base de biocarvão: uma revisão sistêmica</b>. Em: <font color=#330066>ENSUS 2025 - XIII Encontro de Sustentabilidade em Projeto</font>, v. 13, p. 533-546, 2025.</td></tr>
+            
+            <tr valign="top"><td>24. &nbsp;</td> <td>MOURA, C. A. M. ; FERREIRA, M. H. D. C. ; RAMOS, G. D. ; ANDRADE, N. C. C. ; MANHABOSCO, TAÍSE M. ; SILVA, G. J. B.. <b>Caracterização de resíduos de pedras-sabão: prospecção de materiais regionais para desenvolvimento de aglomerantes álcali-ativados</b>. Em: <font color=#330066>IX ENCONTRO NACIONAL DE APROVEITAMENTO DE RESÍDUOS NA CONSTRUÇÃO /</font>, v. 9, 2025.</td></tr>
+            
+            <tr valign="top"><td>25. &nbsp;</td> <td>MUNIZ, TAINAN FERREIRA ; FARIA, GERALDO LUCIO DE ; PEREIRA, ARTUR CAMPOSO ; PORCARO, RODRIGO RANGEL ; GODEFROID, LEONARDO BARBOSA. <b>SIMULAÇÕES FÍSICAS POR DILATOMETRIA E CARACTERIZAÇÃO MICROESTRUTURAL DE AÇOS FERROVIÁRIOS PREMIUM VISANDO A OTIMIZAÇÃO DE CICLOS TÉRMICOS DE SOLDAGEM POR CENTELHAMENTO ELÉTRICO</b>. Em: <font color=#330066>60º Seminário de Laminação</font>, v. 60, p. 211-223, 2025. <a href="http://dx.doi.org/10.5151/2594-5297-42121" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>26. &nbsp;</td> <td>NEVES, M. S. ; COSTA, S. M. M. ; ENGLER, R. C.. <b>Bem-estar térmico com baixo consumo de energia: método simples para aplicação por designers de interiores</b>. Em: <font color=#330066>Congresso Brasileiro Interdisciplinar em Ciência e Tecnologia</font>, 2025.</td></tr>
+            
+            <tr valign="top"><td>27. &nbsp;</td> <td>OLIVEIRA, ARTHUR FIGUEIRA ALMEIDA ; TOMAS, ANA FLAVIA XAVIER ; SILVA, ANTONIO MARLON BARROS ; SILVA, CARLOS ANTONIO DA ; PEIXOTO, JOHNE JESUS MOL. <b>MODELAGEM CFD E FíSICA DE UM DESGASEIFICADOR RH COM LANçA SUBMERSA: UMA ANáLISE COMPARATIVA DO COMPORTAMENTO DO FLUXO E DA EFICIêNCIA DE MISTURA</b>. Em: <font color=#330066>54º Seminário de Aciaria</font>, p. 257-268, 2025. <a href="http://dx.doi.org/10.5151/2594-5300-42046" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>28. &nbsp;</td> <td>OLIVEIRA, DAYNARA FAUSTINA MOREIRA DE ; PEREIRA, EDUARDA CARVALHO ; FARIA, GERALDO LÚCIO DE ; PORCARO, RODRIGO RANGEL. <b>AVALIAÇÃO DOS EFEITOS DA TAXA DE RESFRIAMENTO NA ZTA DE GRANULAÇÃO GROSSEIRA REAQUECIDA INTERCRITICAMENTE DE UM AÇO API 5L-X80 POR MEIO DE SIMULAÇÃO NUMÉRICA E FÍSICA</b>. Em: <font color=#330066>60º Seminário de Laminação</font>, p. 258, 2025. <a href="http://dx.doi.org/10.5151/2594-5297-42147" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>29. &nbsp;</td> <td>PARK, V. N. ; SIMAO, S. L. M. S. ; GOMES, RODRIGO ; PEREIRA, MATHEUS ; Leão, Versiane. <b>Análise multivariada da lixiviação de neodímio em placas de circuito impresso</b>. Em: <font color=#330066>XXX Encontro Nacional de Tratamento de Minérios e Metalurgia Extrativa</font>, v. 1, p. 1-10, 2025. <a href="http://dx.doi.org/10.1007/978-3-319-52132-9_11" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>30. &nbsp;</td> <td>REIS, VICTOR TOMASSONI DE PAIVA ; DE ABREU, SALVATORE GIULIANO PEIXOTO TROPIA ; PORCARO, RODRIGO RANGEL. <b>SIMULAÇÃO TÉRMICA POR MEF DA SOLDAGEM GTAW EM AÇO ASTM A516 GRAU 70: DESENVOLVIMENTO E VALIDAÇÃO DE MODELO</b>. Em: <font color=#330066>78º Congresso Anual da ABM Internacional</font>, p. 875, 2025. <a href="http://dx.doi.org/10.5151/2594-5327-42085" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>31. &nbsp;</td> <td>SANTIAGO, CARINA RODRIGUES ; MARTINS, KÁTIA GUIMARÃES ; PORCARO, RODRIGO RANGEL. <b>EFEITO DO TIPO DE CORRENTE ELÉTRICA E DA POLARIDADE SOBRE OS PARÂMETROS GEOMÉTRICOS E METALÚRGICOS DE CORDÕES DE SOLDA OBTIDOS COM O PROCESSO SMAW EM AÇO BAIXO CARBONO</b>. Em: <font color=#330066>23º Enemet Encontro Nacional de Estudantes de Engenharia Metalúrgica</font>, p. 614, 2025. <a href="http://dx.doi.org/10.5151/2594-4711-42634" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>32. &nbsp;</td> <td>SANTOS, D. ; ARRUDA, J. ; TOMÁS, A. ; VENTURA, T. ; SILVA, C. ; PEIXOTO, J.. <b>Physical Modeling of Agitation in Refining Ladle With Submerged Lance Gas Blowing Injection: A Comparison Between Two-Nozzle and Single-Nozzle</b>. Em: <font color=#330066>AISTech 2025</font>, p. 978-986, 2025. <a href="http://dx.doi.org/10.33313/389/105" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>33. &nbsp;</td> <td>TELES, J. M. S. ; BARTULICI, E. ; BORGES, A. R. ; CETLIN, P. R. ; FLAUSINO, P. C. A. ; MANHABOSCO, TAISE MATTE ; SILVA, N. A. N.. <b>EVOLUÇÃO MICROESTRUTURAL E COMPORTAMENTO MECÂNICO DO AÇO EUTETÓIDE SUBMETIDO A FORJAMENTO MULTIDIRECIONAL COM BAIXA AMPLITUDE DE DEFORMAÇÃO</b>. Em: <font color=#330066>ABM Week 9ª edição</font>, 2025.</td></tr>
+            </table></div><div id="dv-year-2024"><h3 class="year">2024</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>ABREU, SALVATORE GIULIANO PEIXOTO T DE ; JUNIOR, MADERSON MACHADO DE PAULA ; PORCARO, RODRIGO RANGEL ; PEREIRA, IGOR CEZAR. <b>DESENVOLVIMENTO E AVALIAçãO DE SISTEMAS PARA CONTROLE DE NíVEL DE FLUIDO DE REFRIGERAçãO PARA MANUFATURA ADITIVA AO ARCO ELéTRICO</b>. Em: <font color=#330066>20º Seminário de Moldes</font>, p. 46, 2024. <a href="http://dx.doi.org/10.5151/5463-5463-41145" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>ABREU, SALVATORE GIULIANO PEIXOTO T DE ; PORCARO, RODRIGO RANGEL ; FARIA, GERALDO LUCIO DE ; SOUZA, SAMUEL DA SILVA DE. <b>EFEITOS DA TEMPERATURA DE MS NAS TENSõES RESIDUAIS DURANTE A SOLDAGEM: SIMULAçãO NUMéRICA POR MODELO DE TRêS BARRAS</b>. Em: <font color=#330066>77º Congresso Anual da ABM Internacional</font>, p. 2193, 2024. <a href="http://dx.doi.org/10.5151/2594-5327-41140" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>ARRUDA, JOSE DIMAS DE ; TOMAS, ANA FLAVIA XAVIER ; SANTOS, DAVI RODRIGUES DE OLIVEIRA ; VENTURA, THALYS BRUNO DE SOUZA ; PEIXOTO, JOHNE JESUS MOL ; SILVA, CARLOS ANTONIO DA. <b>AGITAçãO EM PANELA DE REFINO: UMA COMPARAçãO ENTRE SOPRO PELO FUNDO E INJEçãO POR LANçA SUBMERSA USANDO MODELO FíSICO</b>. Em: <font color=#330066>53º Seminário de Aciaria</font>, v. 53, p. 655-667, 2024. <a href="http://dx.doi.org/10.5151/2594-5300-41258" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>CAMPIDELI, VICTOR CARDOSO ; INÁCIO, LÓREN KELLY DE PAULA ; ASSUMPÇÃO, RAPHAEL FRANÇA ; SANTOS, DAGOBERTO BRANDÃO ; SICUPIRA, Dalila Chaves. <b>EFEITO DA DECOMPOSIÇÃO ESPINODAL NA DUREZA E RESISTÊNCIA À CORROSÃO DO AÇO INOXIDÁVEL DUPLEX 2304</b>. Em: <font color=#330066>77º Congresso Anual da ABM Internacional</font>, p. 796-807, 2024. <a href="http://dx.doi.org/10.5151/2594-5327-40583" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>CAMPIDELI, VICTOR CARDOSO ; SANTOS, JEILCE MARIA ABREU DOS ; SILVA, MARIA LAURA NUNES DA ; SICUPIRA, Dalila Chaves ; BUENO, GILVANDRO ; PENAGOS, JOSE JIMMY. <b>ESTUDO DO COMPORTAMENTO ELETROQUÍMICO DE METAIS DUROS DE WC COM LIGANTES À BASE DE COBALTO E NÍQUEL</b>. Em: <font color=#330066>77º Congresso Anual da ABM Internacional</font>, p. 1308-1318, 2024. <a href="http://dx.doi.org/10.5151/2594-5327-40748" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>COSTA, S. M. M. ; ENGLER, R. C. ; SOUZA, R. C. F.. <b>Método Simples de Análise Espacial para Prevenção de Furtos em Escola Pública Brasileira</b>. Em: <font color=#330066>Congresso Brasileiro Interdisciplinar em Ciência e Tecnologia,</font>, 2024.</td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>DIAS, J. M. P. ; ENGLER, R. C.. <b>Rural culture in social media feeds and in the city: some reflections on design and sustainability</b>. Em: <font color=#330066>ENSUS 2024 XII Encontro de Sustentabilidade em Projeto</font>, p. 341-949, 2024.</td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>FARIA, GEOVANE DE ASSIS ; COSTA, JÚLIA NASCIMENTO ; PEREIRA, IGOR CÉZAR ; PORCARO, RODRIGO RANGEL. <b>AVALIAÇÃO DO RESFRIAMENTO ATIVO POR QUASE IMERSÃO NA PRODUTIVIDADE E MICROESTRUTURA DO AÇO INOXIDÁVEL AISI 316L OBTIDO COM MANUFATURA ADITIVA POR DEPOSIÇÃO AO ARCO ELÉTRICO</b>. Em: <font color=#330066>22º Enemet Encontro Nacional de Estudantes de Engenharia Metalúrgica</font>, p. 45, 2024. <a href="http://dx.doi.org/10.5151/2594-4711-40577" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>FARIA, GEOVANE DE ASSIS ; PORCARO, RODRIGO RANGEL ; RAMOS, DANIELA MAGALHÃES. <b>AVALIAÇÃO DE SOLDABILIDADE DOS AÇOS INOXIDÁVEIS FERRÍTICOS ABNT 430 E ABNT 409 AO PROCESSO GTAW: ESTRUTURA DE SOLIDIFICAÇÃO, PROPRIEDADES MECÂNICAS E ESTAMPABILIDADE</b>. Em: <font color=#330066>77º Congresso Anual da ABM Internacional</font>, p. 1069, 2024. <a href="http://dx.doi.org/10.5151/2594-5327-40669" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>FARIA, GERALDO LUCIO DE ; MAGALHÃES, CHARLES HENRIQUE XAVIER MORAIS ; GODEFROID, LEONARDO BARBOSA. <b>CARACTERIZAÇÃO MICROESTRUTURAL E AVALIAÇÃO DA TENACIDADE À FRATURA DE AÇOS AUTOMOTIVOS TRATADOS POR TÊMPERA E PARTIÇÃO</b>. Em: <font color=#330066>77º Congresso Anual da ABM Internacional</font>, p. 756-770, 2024. <a href="http://dx.doi.org/10.5151/2594-5327-40575" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>FARIA, GERALDO LUCIO DE; CIRILO, PAULO HENRIQUE ; MOREIRA, PAULO SÉRGIO ; ROCHA, JOSÉ MARCIO DA. <b>EFEITO DE UMA CONDIÇÃO DE AUSTENITIZAÇÃO INTERCRÍTICA SOBRE TRANSFORMAÇÃO BAINÍTICA ISOTÉRMICA EM UM AÇO OCTG PARA APLICAÇÃO NA INDÚSTRIA DE ÓLEO E GÁS</b>. Em: <font color=#330066>77º Congresso Anual da ABM Internacional</font>, p. 545, 2024. <a href="http://dx.doi.org/10.5151/2594-5327-40535" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>FARIA, GERALDO LUCIO DE; DUARTE, TIBÉRIO GRACO BOTELHO TORRES ; MOREIRA, PAULO SÉRGIO ; ALCÂNTARA, CLÁUDIO MOREIRA DE. <b>EFEITO DA CONDIÇÃO DE AUSTENITIZAÇÃO SOBRE A DISSOLUÇÃO DE CARBONETOS E TEMPERATURA DE TRANSFORMAÇÃO MARTENSÍTICA EM UM AÇO INOXIDÁVEL AISI 420A (SUS420J2)</b>. Em: <font color=#330066>77º Congresso Anual da ABM Internacional</font>, p. 400, 2024. <a href="http://dx.doi.org/10.5151/2594-5327-40518" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>FARIA, GERALDO LUCIO DE; GONÇALVES, ALICE SILVA ; MOREIRA, PAULO SÉRGIO. <b>EFEITO DA TAXA DE AQUECIMENTO SOBRE A CINÉTICA DE AUSTENITIZAÇÃO DE UM AÇO AO BORO COMERCIAL BRASILEIRO</b>. Em: <font color=#330066>77º Congresso Anual da ABM Internacional</font>, p. 743, 2024. <a href="http://dx.doi.org/10.5151/2594-5327-40570" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>FARIA, GERALDO LUCIO DE; MELO, DENILSON PEREIRA ; MOREIRA, PAULO SÉRGIO ; GONÇALVES, ALICE SILVA ; Reis, Érica Linhares ; SILVA, MARIANA CAROLINE ANDRADE. <b>AVALIAÇÃO DA EFICÁCIA DE MÉTODOS EXPERIMENTAIS PARA INCORPORAÇÃO DE ESPODUMÊNIO COMO REFORÇO EM COMPÓSITO COM MATRIZ METÁLICA DE LIGA DE ALUMÍNIO A356.0</b>. Em: <font color=#330066>77º Congresso Anual da ABM Internacional</font>, p. 387, 2024. <a href="http://dx.doi.org/10.5151/2594-5327-40516" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>GODEFROID, L. B. ; Faria, G.L. ; ARAUJO, S. C. ; REIS, A. R.. <b>Estudo de Propriedades Mecânicas de Ligas Recicladas a Partir de Latas de Alumínio e Tixoforjadas no Estado Semi-Sólido</b>. Em: <font color=#330066>25° Congresso Brasileiro de Engenharia e Ciência dos Materiais</font>, v. 25, 2024.</td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td>MARCELINO, STHEFANNY FERREIRA SANTOS ; FONSECA, MARIA EDUARDA ; CARMO, BRUNA LUIZA SILVA DO ; SOUZA, SOFIA DA CRUZ ; OLIVEIRA, ANNA JÚLIA CASSIMIRO PRADO M DE ; SANTOS, DAGOBERTO BRANDÃO ; SICUPIRA, Dalila Chaves ; CAMPIDELLI, VICTOR CARDOSO. <b>EFEITO DA TEMPERATURA DE RECOZIMENTO NO COMPORTAMENTO ELETROQUÍMICO DO TITÂNIO CO-MERCIALMENTE PURO EM SOLUÇÃO DE SALIVA ARTI-FICIAL CONTENDO ÍONS FLUORETO</b>. Em: <font color=#330066>77º Congresso Anual da ABM Internacional</font>, p. 1837-1851, 2024. <a href="http://dx.doi.org/10.5151/2594-5327-40958" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>17. &nbsp;</td> <td>OLIVEIRA, DAYNARA FAUSTINA MOREIRA DE ; PORCARO, RODRIGO RANGEL ; FARIA, GERALDO LÚCIO DE. <b>SIMULAÇÃO NUMÉRICA E FÍSICA DO PROCESSO DE SOLDAGEM AO ARCO SUBMERSO EM UM AÇO API 5L</b>. Em: <font color=#330066>77º Congresso Anual da ABM Internacional</font>, p. 1996, 2024. <a href="http://dx.doi.org/10.5151/2594-5327-41029" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>18. &nbsp;</td> <td>OLIVEIRA, FERNANDA DO NASCIMENTO ; BARBOSA, BENNARDO KENNEDY THEOTÔNIO ; SANTOS, VINÍCIUS CAMPOS SOARES DOS ; CUNHA, DEIVISON LUIS RIBEIRO DA ; SILVA, CARLOS ANTÔNIO DA ; PEIXOTO, JOHNE JESUS MOL. <b>ANÁLISE DE FLUXO E REMOÇÃO DE INCLUSÕES EM UM MODELO FÍSICO DE DISTRIBUIDOR DE QUATRO VEIOS</b>. Em: <font color=#330066>53º Seminário de Aciaria</font>, v. 53, p. 926-938, 2024. <a href="http://dx.doi.org/10.5151/2594-5300-41573" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>19. &nbsp;</td> <td>PEREIRA, A. C. ; MONTEIRO, S. N. ; GODEFROID, L. B.. <b>ENSAIO DE IMPACTO CHARPY DE COMPÓSITO REFORÇADO COM TECIDO DE FIQUE NA MATRIZ EPÓXI COM NANOPLACA DE GRAFENO</b>. Em: <font color=#330066>ABM Week 8a Edição</font>, p. 2517-2527, 2024. <a href="http://dx.doi.org/10.5151/2594-5327-41244" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>20. &nbsp;</td> <td>PEREIRA, IGOR JURANDIR UBALDO VIANA ; OLIVEIRA, VÍCTOR DE ANDRADE ALVARENGA. <b>REVISÃO DE PATENTES DE PROCESSOS DE SINTERIZAÇÃO</b>. Em: <font color=#330066>10º Seminário de Aglomeração de Minérios</font>, p. 303, 2024. <a href="http://dx.doi.org/10.5151/2594-357X-41334" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>21. &nbsp;</td> <td>PEREIRA, IGOR JURANDIR UBALDO VIANA ; OLIVEIRA, VÍCTOR DE ANDRADE ALVARENGA ; OLIVEIRA, VICTOR DE ANDRADE ALVARENGA. <b>AGLOMERAÇÃO E SINTERIZAÇÃO DE MINÉRIO DE FERRO ITABIRÍTICO GOETHÍTICO E MINÉRIO DE FERRO HEMATÍTICO VISANDO A UTILIZAÇÃO EM PEQUENOS ALTOS FORNOS A CARVÃO VEGETAL</b>. Em: <font color=#330066>10º Seminário de Aglomeração de Minérios</font>, p. 312, 2024. <a href="http://dx.doi.org/10.5151/2594-357X-41336" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>22. &nbsp;</td> <td>PORTO, R. ; MARTINS, C. A. ; GUERRA, G. ; GODEFROID, L.B.. <b>MICROSTRUCTURAL CHARACTERIZATION OF AN ULTRA-HIGH STRENGTH HOT-ROLLED STEEL PRODUCED WITH TWO DISTINCT ROLLING STRATEGIES</b>. Em: <font color=#330066>ABM Week 8a Edição</font>, p. 502-511, 2024. <a href="http://dx.doi.org/10.5151/2594-5297-41108" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>23. &nbsp;</td> <td>RODRIGUES, LUCAS PROSPERI ; PEREIRA, IGOR JURANDIR UBALDO VIANA ; COELHO, HENRIQUE CARVALHO DA SILVA ; LEITE, ADILSON DO LAGO ; SANTOS, CLÁUDIO GOUVÊA DOS ; OLIVEIRA, VÍCTOR DE ANDRADE ALVARENGA. <b>DECOMPOSIÇÃO TÉRMICA E REDUÇÃO CARBOTÉRMICA DE UM MINÉRIO LATERÍTICO DE NÍQUEL</b>. Em: <font color=#330066>53º Seminário de Aciaria</font>, p. 679, 2024. <a href="http://dx.doi.org/10.5151/2594-5300-41266" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>24. &nbsp;</td> <td>SANCHES, Cora Wallach ; SANTOS, Heloisa Nazaré dos. <b>SURFACE DESIGN: A HISTORICAL CONTEXT OF THE WALLACH FAMILY</b>. Em: <font color=#330066>7º Congresso Internacional de Moda e Design - Università degli Studi della Campania 'Luigi Vanvitelli'</font>, v. 1, p. 1-76, 2024. <a href="http://dx.doi.org/10.11606/9788564842311" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>25. &nbsp;</td> <td>GODEFROID, L. B. ; FARIA, G. L. ; PEREIRA, A. C. ; SILVA, A. R. ; LACERDA, J. C. ; BATALHA, R. L.. <b>INFLUÊNCIA DE ANISOTROPIA E TRATAMENTO TÉRMICO NO COMPORTAMENTO MECÂNICO DE UMA LIGA DE ALUMÍNIO DA SÉRIE 2XXX FABRICADA POR MANUFATURA ADITIVA</b>. Em: <font color=#330066>25° Congresso Brasileiro de Engenharia e Ciência dos Materiais</font>, v. 25, 2024.</td></tr>
+            
+            <tr valign="top"><td>26. &nbsp;</td> <td>SILVA, E. A. L. ; FARIA, G. L.. <b>Effect of Heating Rate on the Kinetics of Intercritical Austenitizing in a Commercial C-Mn-Si Steel for Automotive Application</b>. Em: <font color=#330066>AISTech - Iron & Steel Technology Conference</font>, p. 1765-1776, 2024. <a href="http://dx.doi.org/10.33313/388/185" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>27. &nbsp;</td> <td>SILVA, EDUARDO ANTONIO LAIA DA ; Faria, Geraldo Lúcio de. <b>METODOLOGIAS DE APLICAÇÃO DE MICRODUREZA VICKERS PARA AVALIAÇÃO DA CINÉTICA DE AUSTENITIZAÇÃO INTERCRÍTICA EM UM AÇO TRIP 780</b>. Em: <font color=#330066>77º Congresso Anual da ABM Internacional</font>, p. 415, 2024. <a href="http://dx.doi.org/10.5151/2594-5327-40520" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>28. &nbsp;</td> <td>SOARES, IGOR CORNEAU ; BARBOSA, BENNARDO KENNEDY THEOTONIO ; SANTOS, VINICIUS CAMPOS SOARES DOS ; CUNHA, DEIVISON LUIS RIBEIRO DA ; SILVA, CARLOS ANTÔNIO DA ; PEIXOTO, JOHNE JESUS MOL. <b>ANÁLISE DE FLUXO EM UM MODELO FÍSICO DE MOLDE DE LINGOTAMENTO CONTÍNUO DE BLOCOS: COMPARAÇÃO DE DOIS MODELOS DE VÁLVULAS SUBMERSAS</b>. Em: <font color=#330066>53º Seminário de Aciaria</font>, v. 53, p. 939-951, 2024. <a href="http://dx.doi.org/10.5151/2594-5300-41585" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>29. &nbsp;</td> <td>SUCHARSKI, YASMIM LOPES ; MOREIRA, PAULO SÉRGIO ; Faria, Geraldo Lúcio de. <b>EFEITO DA TEMPERATURA DE AUSTENITIZAÇÃO SOBRE A EFICÁCIA DE DOIS MÉTODOS DE CONTRASTE PARA REVELAÇÃO DE GRÃOS AUSTENÍTICOS PRÉVIOS EM UM AÇO TRIP 780</b>. Em: <font color=#330066>77º Congresso Anual da ABM Internacional</font>, p. 373, 2024. <a href="http://dx.doi.org/10.5151/2594-5327-40515" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>30. &nbsp;</td> <td>VENTURA, THALYS BRUNO DE SOUZA ; SANTOS, DAVI RODRIGUES DE OLIVEIRA ; TOMAS, ANA FLAVIA XAVIER ; ARRUDA, JOSÉ DIMAS DE ; SILVA, ANTÔNIO MARLON BARROS ; PEIXOTO, JOHNE JESUS MOL ; SILVA, CARLOS ANTÔNIO DA. <b>AVALIAÇÃO DO REATOR RH COM LANÇA SUBMERSA: TEMPO DE MISTURA, TAXA DE CIRCULAÇÃO E CARACTERIZAÇÃO DE FLUXO</b>. Em: <font color=#330066>53º Seminário de Aciaria</font>, v. 53, p. 608-620, 2024. <a href="http://dx.doi.org/10.5151/2594-5300-41168" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            </table></div><div id="dv-year-2023"><h3 class="year">2023</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>ABREU, LUIZ GUSTAVO DE OLIVEIRA ; PORCARO, R. RANGEL ; FARIA, GERALDO LUCIO DE ; MATSUBAR, D. B.. <b>API 5L X80 STEEL HEAVY PLATES PRODUCED BY THERMO-MECHANICAL PROCESS IN THE PLATE MILL AT GERDAU - EFFECTS OF THE ROLLING STRATEGY</b>. Em: <font color=#330066>58th Rolling & Products ABMWeek 7</font>, p. 39722, 2023.</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>ALVES, R. R. ; GONCALVES JUNIOR, J. L. ; CUNHA, D. F. ; FIGUEIREDO, K. M. ; FARIA, G. L. ; LABIAPARI, W. S.. <b>Microstructure and hardness of UNS S41003 steel when submitted to different heat treatments</b>. Em: <font color=#330066>COBEF 2023 - 12º Congresso Brasileiro de Engenharia de Fabricação</font>, v. 12, 2023.</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>Araújo, R. ; Góis, G.A. ; Assis, P.S.. <b>MINING ACTIVITIES IN BRAZIL: STUDIES OF WAYS TO AVOID AND MITIGATE ENVIRONMENTAL IMPACTS CAUSED BY IT UNDER A PERSPECTIVE OF MATERIALS ENGINEERING AND BRAZILIAN LAW</b>. Em: <font color=#330066>SIPS 2023</font>, v. 1, p. 1-9, 2023.</td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>ARRUDA, JOSE DIMAS DE ; SILVA, CARLOS ANTÔNIO DA ; PEIXOTO, JOHNE JESUS MOL ; ELECTO, FELIPE LANA ; COSTA, LUCAS NETO DA. <b>TEMPOS DE MISTURA E PERFIL DE VELOCIDADE EM UMA PANELA DEVIDO à INJEçãO DE GáS NO FUNDO E REAGENTES USADOS PARA FINS DE REFINO</b>. Em: <font color=#330066>52º Seminário de Aciaria</font>, p. 722-733, 2023. <a href="http://dx.doi.org/10.5151/2594-5300-39962" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>ASSIS, P. S. <b>An Industrial and academic life dedicated to iron and steel production</b>. Em: <font color=#330066>SIPS 2023</font>, v. 1, p. 46, 2023. <a href="http://dx.doi.org/10.37885/220408509" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>BERLINI FILHO, C. ; DA SILVA, C. ; E SILVA, M. ; PEIXOTO, J. ; PERASOLI, D. ; SILVA, C.. <b>Physical Modeling of Hot Metal Desulfurization through Submerged Rotative Lance</b>. Em: <font color=#330066>AISTech 2023</font>, p. 876-883, 2023. <a href="http://dx.doi.org/10.33313/387/097" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>CAMPIDELI, VICTOR CARDOSO ; ASSUMPÇÃO, RAPHAEL FRANÇA ; SANTOS, DAGOBERTO BRANDÃO ; SICUPIRA, Dalila Chaves. <b>EFEITO DA REVERSÃO DA MARTENSITA INDUZIDA POR DEFORMAÇÃO EM BAIXAS TEMPERATURAS SOBRE O COMPORTAMENTO ELETROQUÍMICO DO AÇO INOXIDÁVEL LEAN DUPLEX 2304</b>. Em: <font color=#330066>21° Encontro Nacional de Estudantes de Engenharia Metalúrgica</font>, p. 54, 2023. <a href="http://dx.doi.org/10.5151/2594-4711-39627" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>FARIA, GERALDO LUCIO DE; MOUSSA, THAYNARA MELO. <b>AVALIAÇÃO DA EFICÁCIA DE UM MODELO EMPÍRICO PARA PREVISÃO DE TEMPERATURAS CRÍTICAS DE TRANSFORMAÇÕES DE FASES EM AÇOS SUBMETIDOS A RESFRIAMENTO CONTÍNUO</b>. Em: <font color=#330066>76º Congresso Anual da ABM Internacional</font>, p. 2531, 2023. <a href="http://dx.doi.org/10.5151/2594-5327-39380" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>FARIA, GERALDO LUCIO DE; OLIVEIRA, DAYNARA FAUSTINA MOREIRA DE ; MOREIRA, PAULO SÉRGIO. <b>EFEITO DA MICROESTRUTURA PRÉVIA E DA TAXA DE AQUECIMENTO NO PROCESSO DE AUSTENITIZAÇÃO DE UM AÇO C-MN-SI APLICADO NA INDÚSTRIA AUTOMOTIVA</b>. Em: <font color=#330066>76º Congresso Anual da ABM Internacional</font>, p. 2545, 2023. <a href="http://dx.doi.org/10.5151/2594-5327-39383" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>KOGA, HANA HITOMI ; CAMPIDELI, VICTOR CARDOSO ; BATISTA, PABLO FORLAM RIBEIRO ; SANTOS, LEANDRO DE ARRUDA ; SICUPIRA, Dalila Chaves. <b>AUMENTO DA RESISTÊNCIA À CORROSÃO DE UMA LIGA DE NITI SUPERELÁSTICA COM REVESTIMENTOS A BASE DE ÓXIDO DE GRAFENO E DE ÓXIDO DE GRAFENO REDUZIDO¿ UM ESTUDO COMPARATIVO</b>. Em: <font color=#330066>21° Encontro Nacional de Estudantes de Engenharia Metalúrgica</font>, p. 109, 2023. <a href="http://dx.doi.org/10.5151/2594-4711-39716" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>MEDEIROS, Y. L. X. ; COSTA, S. M. M. ; RODRIGUES, C. S. ; RITA DE CASTRO ENGLER. <b>Peace, justice and strong institution: violence prevention in a public school</b>. Em: <font color=#330066>IX SIMPÓSIO DE DESIGN SUSTENTÁVEL,</font>, v. 1, p. 943-953, 2023.</td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>MORAES, L. F. ; COSTA, S. M. M. ; Engler, Rita C. <b>Sustentabilidade e Prevenção do Crime: contribuições para Espaços Públicos</b>. Em: <font color=#330066>Congresso Brasileiro Interdisciplinar em Ciência e Tecnologia,</font>, 2023.</td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>MORAES, LF ; COSTA, S. M. M. ; ENGLER, RITA DE CASTRO. <b>Encontro da Rede Internacional Design para Inovação Social e Sustentabilidade</b>. Em: <font color=#330066>IV Congresso Brasileiro Interdisciplinar em Ciência e Tecnologia,</font>, v. 4, 2023.</td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>PEIXOTO, J.; QUINTAS, A. ; SILVA, C. ; SILVA, E.. <b>Evaluation and Improvement Methods of Preparation for a Blast Furnace Taphole Campaign</b>. Em: <font color=#330066>AISTech 2023</font>, p. 375-380, 2023. <a href="http://dx.doi.org/10.33313/387/041" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>PERASOLI, DANIELA BARÇANTE ; GONÇALVES, ALICE SILVA ; SILVA, CECILIA LAIA DA ; BERLINI FILHO, CARLOS ; SILVA, CARLOS ANTÔNIO DA ; PEIXOTO, JOHNE JESUS MOL. <b>DESENVOLVIMENTO DE SIMULAÇÃO FLUIDODINÂMICA EM PANELA COM LANÇA DE INJEÇÃO SUBMERSA</b>. Em: <font color=#330066>52º Seminário de Aciaria</font>, p. 254-265, 2023. <a href="http://dx.doi.org/10.5151/2594-5300-40052" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            </table></div><div id="dv-year-2022"><h3 class="year">2022</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>ABRAHAO JUNIOR, R. ; ASSUMPÇÃO, R. F. ; SANTOS, D. B. ; DIAS, F. L. ; SICUPIRA, D. C.. <b>CARACTERIZAÇÃO MICROESTRUTURAL E AVALIAÇÃO DA RESISTÊNCIA MECÂNICA E CORROSIVA DE UM AÇO INOXIDÁVEL DUPLEX UNS S32205 SUBMETIDO A TRATAMENTO TERMOMECÂNICO</b>. Em: <font color=#330066>20° Encontro Nacional de Estudantes de Engenharia Metalúrgica</font>, v. 20, p. 1-10, 2022. <a href="http://dx.doi.org/10.5151/2594-4711-34413" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>ABREU, LUIZ GUSTAVO DE OLIVEIRA ; PORCARO, RODRIGO RANGEL. <b>ASSESSMENT OF ACTIVE FLUXES IN FORMATION OF WELDING BEAD IN STRUCTURAL AND STAINLESS STEEL BY THE TIG WELDING PROCESS</b>. Em: <font color=#330066>57° Seminário de Laminação e Conformação de Metais</font>, p. 22, 2022. <a href="http://dx.doi.org/10.5151/2594-5297-34071" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>Amengol, B P C ; PIRES, R. C. ; Leão, Versiane. <b>Seleção de resinas de troca iônica para a adsorção de manganês</b>. Em: <font color=#330066>XXIX Encontro Nacional de Tratamento de Minérios e Metalurgia Extrativa</font>, v. 1, p. 1-8, 2022.</td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>Assis, P.S. <b>VISION OF IRON AND STEEL PRODUCTION WITHOUT COAL AND COKE</b>. Em: <font color=#330066>SIPS 2022 - Summit of Sustainability based on Science and Technology</font>, v. 1, p. 21-30, 2022.</td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>ASSUMPÇÃO, R. F. ; CARNEIRO, R. A. ; SICUPIRA, D. C. ; LINS, V. F. C.. <b>ESTUDO COMPARATIVO DO COMPORTAMENTO CORROSIVO DE AÇOS PATINÁVEIS EM ATMOSFERA MARINHA E INDUSTRIAL*</b>. Em: <font color=#330066>75° Congresso Anual da ABM</font>, v. 75, p. 1-10, 2022. <a href="http://dx.doi.org/10.5151/2594-5327-34322" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>CAMPOS, A. M. A. ; Nascimento, A.L.B. ; Assis, P.S. ; MURTA, J. L. B.. <b>THE FUTURE OF THE STEEL INDUSTRY WITH LESS GREENHOUSE GASES EMISSIONS</b>. Em: <font color=#330066>SIPS 2022 - Summit of Sustainability based on Science and Technology</font>, v. 1, p. 10-20, 2022.</td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>CAMPOS, P. H. K. ; MAGALHAES, C. H. X. M. ; ALMEIDA, N. C. ; FARIA, G. L.. <b>10.5151/2594-5327-34139</b>. Em: <font color=#330066>ABM Week 6th Edition</font>, v. 6, 2022. <a href="http://dx.doi.org/10.5151/2594-5327-34139" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>CLEMENTE, DANIEL MAPA ; SILVA, CARLOS ANTÔNIO DA ; OLIVEIRA, MARIVALDO JÚNIOR MONTEIRO DE ; PEIXOTO, JOHNE JESUS MOL. <b>RECOVERY OF TIN FROM HIGH ZRO2 TIN SLAGS</b>. Em: <font color=#330066>51° Seminário de Fusão</font>, v. 51, p. 367-380, 2022. <a href="http://dx.doi.org/10.5151/2594-5300-34539" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>DAMASO, H. V. ; RIBEIRO, L. B. L. S. ; MAGALHAES, A. S. ; FARIA, G. L.. <b>DESENVOLVIMENTO DE UMA CÂMARA CRIOGÊNICA DE BAIXO CUSTO PARA AVALIAÇÃO DO DESEMPENHO MECÂNICO EM TRAÇÃO DE AÇOS EM BAIXAS TEMPERATURAS</b>. Em: <font color=#330066>ABM Week 6th Edition</font>, v. 6, 2022. <a href="http://dx.doi.org/10.5151/2594-5327-34133" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>ENGLER, RITA DE CASTRO. <b>ECHNIQUES FOR NON-INVASIVE IDENTIFICATION OF TEXTILES AND NONCONVENTIONAL COMPOSITE MATERIALS</b>. Em: <font color=#330066>18th International Conference on Non-conventional Materials and Technologies</font>, p. 1, 2022.</td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>FARIA, GERALDO LUCIO DE ; MOREIRA, PAULO SÉRGIO ; SILVA, TAMIRES CRISTIANE VALADARES ; PORCARO, RODRIGO RANGEL. <b>MÉTODO DE CONTRASTE POR OXIDAÇÃO PARA REVELAÇÃO DE COLÔNIAS DE PERLITA EM AÇOS EUTETÓIDES</b>. Em: <font color=#330066>75° Congresso Anual da ABM</font>, v. 6, p. 45, 2022. <a href="http://dx.doi.org/10.5151/2594-5327-34136" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>FERREIRA, B. F. ; BEZERRA, A. C. S. ; SILVA, G. J. B. ; BRANDAO, F. ; MANHABOSCO, TAÍSE M.. <b>Rejeito Magnético de Fosfato do Complexo de Mineração de Tapira/MG em substituição parcial ao agregado miúdo em argamassas</b>. Em: <font color=#330066>III Brazilian Congress of Development</font>, 2022. <a href="http://dx.doi.org/10.51162/dev2022" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>FERREIRA, MARCOS V.F. ; ARAUJO, ATHOS F. ; SANTOS, L. A. ; SICUPIRA, D. C.. <b>CARACTERIZAÇÃO ELETROQUÍMICA DE UMA LIGA NITI SUPERELÁSTICA COM RECOBRIMENTOS A BASE DE ÓXIDO DE GRAFENO*</b>. Em: <font color=#330066>20° Encontro Nacional de Estudantes de Engenharia Metalúrgica</font>, v. 20, p. 1-10, 2022. <a href="http://dx.doi.org/10.5151/2594-4711-34152" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>GALANTE, GUSTAVO SANTOS ; OLIVEIRA, MATHEUS TELES BRAGA DE ; VELASCOS, CARLOS LEONARDO DE OLIVEIRA ; SILVA, Itavahn Alves da ; SILVA, CARLOS ANTÔNIO DA ; PEIXOTO, JOHNE de JESUS MOL. <b>EFEITO DE MODIFICADORES DE FLUXO NA QUALIDADE DO AÇO LINGOTADO EM UM DISTRIBUIDOR ASSIMÉTRICO</b>. Em: <font color=#330066>51° Seminário de Fusão</font>, v. 51, p. 717-730, 2022. <a href="http://dx.doi.org/10.5151/2594-5300-34867" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>GODEFROID, L. B. ; FARIA, G. L. ; ARAUJO, S. C. ; NUNES, I. P. ; LACERDA, J. C.. <b>EFEITO DA FRAÇÃO VOLUMÉTRICA DE MARTENSITA NO COMPORTAMENTO MECÂNICO DE UM AÇO INOXIDÁVEL BIFÁSICO DO TIPO UNS S41003</b>. Em: <font color=#330066>Congresso Brasileiro de Engenharia e Ciência dos Materiais</font>, v. 24, 2022.</td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td>LAKTIM, M. C. ; ENGLER, R. C. ; BARUQUE-RAMOS, J. ; FANGUEIRO, R.. <b>MECHANICAL AND STRUCTURAL ANALYSIS OF FLAT TERRY FABRICS</b>. Em: <font color=#330066>18th International Conference on Non-conventional Materials and Technologies,</font>, 2022.</td></tr>
+            
+            <tr valign="top"><td>17. &nbsp;</td> <td>Leão, Versiane. <b>Bases científicas das tecnologias aplicadas na remoção de manganês de águas de minas: oxidação e adsorção</b>. Em: <font color=#330066>XXIX Encontro Nacional de Tratamento de Minérios e Metalurgia Extrativa</font>, v. 1, p. 1-8, 2022.</td></tr>
+            
+            <tr valign="top"><td>18. &nbsp;</td> <td>MAGALHAES, A. S. ; MAGALHAES, C. H. X. M. ; LIMA, M. S. F. ; GODEFROID, L. B. ; FARIA, G. L.. <b>EFEITO DE UM TRATAMENTO TÉRMICO PÓS-SOLDAGEM A LASER NA RESISTÊNCIA À TRAÇÃO E FADIGA DE UM AÇO INOXIDÁVEL DUPLEX UNS S32304</b>. Em: <font color=#330066>75º Congresso Anual da ABM ? Internacional.</font>, v. 6, 2022. <a href="http://dx.doi.org/10.5151/2594-5327-34134" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>19. &nbsp;</td> <td>MAGALHAES, C. H. X. M. ; CAMPOS, P. H. K. ; FARIA, G. L.. <b>EFEITO DA TEMPERATURA DE AUSTENITIZAÇÃO NO TAMANHO DE GRÃO AUSTENÍTICO E NAS TEMPERATURAS DE INÍCIO DE TRANSFORMAÇÃO DE FASES EM UM AÇO DO TIPO TRIP780</b>. Em: <font color=#330066>ABM Week 6th Edition</font>, v. 6, 2022. <a href="http://dx.doi.org/10.5151/2594-5327-34138" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>20. &nbsp;</td> <td>MARTINS, C. A. ; SOUZA, A. L. ; COHN, J. A. C. ; FARIA, G. L. ; REBELLATO, M. A. ; GORNI, A. A. ; URANGA, P. ; RODRIGUEZ-IBABE, J. M.. <b>DEVELOPMENT OF A 600MPA STRENGTH STEEL BY THERMOMECHANICAL PROCESSING OF A HIGH TITANIUM ALLOY IN A STECKEL PLATE</b>. Em: <font color=#330066>ABM Week 6th Edition</font>, v. 6, 2022. <a href="http://dx.doi.org/10.5151/2594-5297-34921" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>21. &nbsp;</td> <td>MELO, D. P. ; MOREIRA, P. S. ; FARIA, G. L.. <b>UTILIZAÇÃO DA METODOLOGIA SAG TEST PARA AVALIAR O COMPORTAMENTO EM FLUÊNCIA DOS AÇOS INOXIDÁVEIS AISI 321 E AISI 441</b>. Em: <font color=#330066>ABM Week 6th Edition</font>, v. 6, 2022. <a href="http://dx.doi.org/10.5151/2594-5327-34135" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>22. &nbsp;</td> <td>MOREIRA, L. P. ; FARIA, G. L. ; GODEFROID, L. B. ; ARAUJO, S. C. ; MOREIRA, P. S.. <b>INFLUÊNCIA DE TRATAMENTOS TÉRMICOS NA MICROESTRUTURA E NO COMPORTAMENTO MECÂNICO DE UM AÇO ALTO CARBONO MICROLIGADO AO Nb E AO V PARA USO EM TRILHOS FERROVIÁRIOS</b>. Em: <font color=#330066>75º Congresso Anual da ABM ? Internacional.</font>, v. 6, 2022. <a href="http://dx.doi.org/10.5151/2594-5327-34173" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>23. &nbsp;</td> <td>OLIVEIRA, D. F. M. ; FARIA, G. L. ; MOREIRA, P. S.. <b>EFEITO DA TEMPERATURA DE AUSTENITIZAÇÃO INTERCRÍTICA NAS TEMPERATURAS CRÍTICAS DE TRANSFORMAÇÃO MARTENSÍTICA DE UM AÇO INOXIDÁVEL UNS S41003</b>. Em: <font color=#330066>ABM Week 6th Edition</font>, v. 6, 2022. <a href="http://dx.doi.org/10.5151/2594-5327-34827" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>24. &nbsp;</td> <td>OLIVEIRA, ISADORA FERNANDES COSTA DE ; PORCARO, RODRIGO RANGEL. <b>ANÁLISE DE TENSÕES RESIDUAIS DECORRENTES DA SOLDAGEM ELÉTRICA POR CENTELHAMENTO EM TRILHOS FERROVIÁRIOS - SIMULAÇÃO POR ELEMENTOS FINITOS E MEDIDAS EXPERIMENTAIS</b>. Em: <font color=#330066>20° Encontro Nacional de Estudantes de Engenharia Metalúrgica</font>, p. 29, 2022. <a href="http://dx.doi.org/10.5151/2594-4711-34271" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>25. &nbsp;</td> <td>PAULA, G. S. ; SOUZA, A. L. ; FARIA, G. L.. <b>USE OF A THERMALMECHANICAL SIMULATOR FOR EVALUATION OF DIFFERENT ROLLING STRATEGIES OF A NIOBIUM MICROALLOYED STEEL</b>. Em: <font color=#330066>ABM Week 6th Edition</font>, v. 6, 2022. <a href="http://dx.doi.org/10.5151/2594-5297-34945" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>26. &nbsp;</td> <td>PEREIRA, I. J. U. V. ; M. PEREIRA, MATHEUS ; F. GOMES, RODRIGO ; Leão, Versiane. <b>Estudo da adaptação de microrganismos mesófilos a placas de circuito impresso</b>. Em: <font color=#330066>Encontro Nacional de Tratamento de Minérios e Metalurgia Extrativa (XXIX ENTMME)</font>, v. 1, p. 1-9, 2022.</td></tr>
+            
+            <tr valign="top"><td>27. &nbsp;</td> <td>QUEIROZ, GUILHERME SANTIAGO ; GALANTE, GUSTAVO SANTOS ; SILVA, CARLOS ANTÔNIO DA ; SILVA, Itavahn Alves da ; PEIXOTO, JOHNE JESUS MOL. <b>MODELAGEM FÍSICA E MATEMÁTICA DO BASCULAMENTO E DRENAGEM DE UM BOF - BASIC OXYGEN FURNACE</b>. Em: <font color=#330066>51° Seminário de Fusão</font>, v. 51, p. 882-894, 2022. <a href="http://dx.doi.org/10.5151/2594-5300-34991" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>28. &nbsp;</td> <td>SILVA, AMANDA DE PAIVA ; ASSUMPÇÃO, R. F. ; SANTOS, D. B. ; SICUPIRA, D. C.. <b>EFEITO DA TEMPERATURA DE RECOZIMENTO NAS PROPRIEDADES MECÂNICAS E ELETROQUÍMICAS DO AÇO INOXIDÁVEL DUPLEX 2205*</b>. Em: <font color=#330066>ABM</font>, v. 75, p. 1-10, 2022. <a href="http://dx.doi.org/10.5151/2594-5327-34371" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            </table></div><div id="dv-year-2021"><h3 class="year">2021</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>Aureliano, M. M. A. ; SANTOS, Heloisa Nazaré dos. <b>Gestão do Design no Brasil: uma revisão da literatura, sob a perspectiva da Administração Científica</b>. Em: <font color=#330066>IX ENSUS ? Encontro de Sustentabilidade em Projeto ? UFSC</font>, v. V.9, p. 45-56, 2021.</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>FONSECA, A. R. ; ENGLER, R. C. ; TEODOSIO, A. S. S.. <b>Descarte de Medicamentos de Uso Domiciliar: uma análise a partir da economia e do design circulare</b>. Em: <font color=#330066>ENSUS</font>, v. 9, p. 484-498, 2021.</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>FONSECA, ALINE RODRIGUES DA ; ENGLER, RITA DE CASTRO ; TEODÓSIO, ARMINDO DOS SANTOS DE SOUSA. <b>A PROBLEMÁTICA DO DESCARTE INADEQUADO DE MEDICAMENTOS DE USO DOMICILIAR: UM ESTUDO SOB A ÓTICA DA ECONOMIA E O DESIGN CIRCULARES</b>. Em: <font color=#330066>Simpósio de Design Sustentável</font>, 2021. <a href="http://dx.doi.org/10.5380/8sds2021.art03" target="_blank" style="PADDING-RIGHT:4px;"><img border=0 src="doi.png"></a></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>MARTINS, C. A. ; SOUZA, A. L. ; COHN, J. A. C. ; FARIA, G. L. ; REBELLATO, M. A. ; GORNI, A. A. ; URANGA, P. ; RODRIGUEZ-IBABE, J. M.. <b>Desenvolvimento do Aço LNE600 com Alto Titânio na Laminação de Tiras a Quente da Gerdau Ouro Branco</b>. Em: <font color=#330066>II Seminário Técnico da Gerdau Usina Ouro Branco</font>, v. 2, 2021.</td></tr>
+            </table></div>
+                    </table>
+                <br><p><br>(*) Relatório criado com produções desde 2021 até 2026
+<br>Data de processamento: 31/08/2026 22:11:56<br>         <div id="footer">         Relatório gerado por <a href="https://scriptlattes.sourceforge.net/">scriptLattes V9</a>.         Os resultados podem ser afetados por possíveis falhas decorrentes de inconsistências no preenchimento dos Currículos Lattes. E-mail de contato: <a href="mailto:matheusmatos@ufop.edu.br">matheusmatos@ufop.edu.br</a>         </div> </body></html>
+              

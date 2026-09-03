@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pessoas — Docentes, Discentes e Equipe | REDEMAT UFOP · UEMG</title>
+<meta name="description" content="A comunidade da REDEMAT: 24 docentes de UFOP e UEMG, 117 discentes de mestrado e doutorado, pós-doutorandos e equipe técnica do Programa de Pós-Graduação em Engenharia de Materiais.">
+<link rel="canonical" href="https://redemat.ufop.br/pessoas">
+<link rel="icon" href="../assets/img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<div id="site-header-slot"></div>
+
+<section class="page-hero" aria-labelledby="ph">
+  <div class="page-hero-in">
+    <nav class="crumb" aria-label="Trilha de navegação">
+      <a href="../index.html">Início</a><span aria-hidden="true">›</span>
+      <span aria-current="page">Pessoas</span>
+    </nav>
+    <h1 id="ph">Pessoas</h1>
+    <p class="lede">
+      A comunidade do Programa: docentes permanentes e colaboradores, pós-doutorandos,
+      discentes de mestrado e doutorado, e a equipe técnica que sustenta o dia a dia.
+    </p>
+    <div class="hero-metrics" id="heroMetrics"></div>
+  </div>
+</section>
+
+<nav class="tabs" aria-label="Grupos da comunidade">
+  <div class="tabs-in" role="tablist">
+    <button class="tab" role="tab" id="t-doc" aria-controls="p-doc" aria-selected="true">Docentes</button>
+    <button class="tab" role="tab" id="t-pos" aria-controls="p-pos" aria-selected="false">Pós-doutorandos</button>
+    <button class="tab" role="tab" id="t-dis" aria-controls="p-dis" aria-selected="false">Discentes</button>
+    <button class="tab" role="tab" id="t-tec" aria-controls="p-tec" aria-selected="false">Secretaria e equipe</button>
+  </div>
+</nav>
+
+<div class="filter-bar" id="filterBar" role="region" aria-label="Filtros do corpo docente">
+  <div class="filter-in">
+    <span class="filter-lbl" id="fl">Filtrar</span>
+    <div class="chips" role="group" aria-labelledby="fl" id="chips"></div>
+    <div class="search" role="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <label for="q" class="sr-only">Buscar docente por nome, linha de pesquisa ou instituição</label>
+      <input type="search" id="q" placeholder="Buscar por nome ou linha…">
+    </div>
+  </div>
+</div>
+
+<main id="conteudo">
+ <div class="panel" id="p-doc" role="tabpanel" aria-labelledby="t-doc" tabindex="0">
+  <section class="section" style="padding-top:2.5rem;" aria-labelledby="gh">
+    <div class="wrap">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.75rem;">
+        <h2 class="h3" id="gh" style="margin:0;">Docentes</h2>
+        <span class="badge badge--val" id="count" aria-live="polite" style="font-size:.72rem;">—</span>
+      </div>
+
+      <div class="grid grid--3" id="grid" role="list"></div>
+
+      <div class="mt-4" id="notas"></div>
+    </div>
+  </section>
+
+  <!-- Distribuição por linha -->
+  <section class="section section--alt" aria-labelledby="dist-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Distribuição</p>
+        <h2 class="h2" id="dist-h">Docentes por linha de pesquisa</h2>
+        <p class="section-lede">
+          Vinculação conforme a proposta APCN 2026. Cada docente tem uma linha principal e,
+          no máximo, uma secundária, justificada por produção, projeto, orientação, disciplina
+          e infraestrutura.
+        </p>
+      </div>
+      <div class="card" id="distCard"></div>
+      <div class="mt-3" id="distNota"></div>
+    </div>
+  </section>
+
+  <!-- Composição institucional -->
+  <section class="section" aria-labelledby="comp-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Composição</p>
+        <h2 class="h2" id="comp-h">Categoria, instituição e produtividade</h2>
+      </div>
+      <div class="grid grid--3" id="compGrid"></div>
+    </div>
+  </section>
+ </div>
+
+  <!-- ═══════════ PÓS-DOUTORANDOS ═══════════ -->
+  <div class="panel" id="p-pos" role="tabpanel" aria-labelledby="t-pos" tabindex="0" hidden>
+    <section class="section" style="padding-top:2.5rem;" aria-labelledby="pos-h">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Pesquisa avançada</p>
+          <h2 class="h2" id="pos-h">Pós-doutorandos</h2>
+          <p class="section-lede">
+            Pesquisadores em estágio pós-doutoral vinculados a grupos de pesquisa do Programa.
+          </p>
+        </div>
+        <div class="grid grid--2" id="posGrid"></div>
+        <div class="mt-3" id="posNota"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ═══════════ DISCENTES ═══════════ -->
+  <div class="panel" id="p-dis" role="tabpanel" aria-labelledby="t-dis" tabindex="0" hidden>
+    <section class="section" style="padding-top:2.5rem;" aria-labelledby="dis-h">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Corpo discente</p>
+          <h2 class="h2" id="dis-h">Discentes matriculados</h2>
+          <p class="section-lede" id="disLede"></p>
+        </div>
+        <div class="grid grid--3 mb-4" id="disKpis"></div>
+        <div class="mb-4">
+          <a href="discentes.html" class="btn btn--dark" style="display:inline-flex;align-items:center;gap:.45rem;font-size:.88rem;font-weight:700;padding:.72rem 1.35rem;border-radius:var(--r-sm);background:var(--navy);color:#fff;">
+            Ver a relação nominal completa
+            <svg viewBox="0 0 20 20" style="width:15px;height:15px;fill:currentColor;"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </a>
+        </div>
+        <div class="card mb-3">
+          <h3 class="h3">Distribuição por nível</h3>
+          <div class="mt-2" id="disBars"></div>
+        </div>
+        <div id="disNota"></div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="apoio-h">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Acolhimento</p>
+          <h2 class="h2" id="apoio-h">Apoio ao estudante</h2>
+        </div>
+        <div class="card" id="apoioCard"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ═══════════ TÉCNICOS ═══════════ -->
+  <div class="panel" id="p-tec" role="tabpanel" aria-labelledby="t-tec" tabindex="0" hidden>
+    <section class="section" style="padding-top:2.5rem;" aria-labelledby="tec-h">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Secretaria</p>
+          <h2 class="h2" id="tec-h">Secretaria e equipe técnica</h2>
+          <p class="section-lede">
+            A equipe que atende discentes, docentes e candidatos no dia a dia do Programa.
+          </p>
+        </div>
+        <div class="grid grid--2" id="tecGrid"></div>
+        <div class="mt-3" id="tecNota"></div>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<div id="site-footer-slot"></div>
+
+<script src="../assets/js/site-data.js"></script>
+<!-- Manifesto de fotos: declara quem tem foto e em que formato.
+     Gerado por scripts/conferir-fotos.py --manifesto. Ausente antes
+     da primeira foto: o portal trata a ausência e usa as iniciais. -->
+<script src="../assets/img/pessoas/fotos.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+(function () {
+  'use strict';
+  const R = window.REDEMAT, C = window.RC, D = R.docentes.itens;
+
+  /* ------------------- métricas do hero ------------------- */
+  const nPerm = D.filter(function (d) { return d.cat === 'permanente'; }).length;
+  const nCol  = D.filter(function (d) { return d.cat === 'colaborador'; }).length;
+  const nBol  = D.filter(function (d) { return d.bolsa; }).length;
+  const nPQ   = D.filter(function (d) { return d.bolsa && d.bolsa.indexOf('PQ') === 0; }).length;
+  const nDT   = D.filter(function (d) { return d.bolsa && d.bolsa.indexOf('DT') === 0; }).length;
+  const nUFOP = D.filter(function (d) { return d.ies === 'UFOP'; }).length;
+  const nUEMG = D.filter(function (d) { return d.ies === 'UEMG'; }).length;
+
+  document.getElementById('heroMetrics').innerHTML = [
+    { v: D.length, l: 'Docentes' },
+    { v: R.comunidade.discentes.total, l: 'Discentes matriculados' },
+    { v: R.comunidade.posdoc.total, l: 'Pós-doutorandos' },
+    { v: nBol,  l: 'Bolsistas de produtividade' }
+  ].map(function (m) {
+    return '<div class="hero-metric"><b data-count="' + m.v + '">0</b><span>' + m.l + '</span></div>';
+  }).join('');
+
+  /* ------------------- chips ------------------- */
+  const FILTERS = [
+    { id: 'todos',       label: 'Todos' },
+    { id: 'permanente',  label: 'Permanentes' },
+    { id: 'colaborador', label: 'Colaboradores' },
+    { id: 'bolsa',       label: 'Bolsistas CNPq' },
+    { id: 'UFOP',        label: 'UFOP' },
+    { id: 'UEMG',        label: 'UEMG' },
+    { id: 'l11',         label: 'Linha 1.1' },
+    { id: 'l12',         label: 'Linha 1.2' },
+    { id: 'l21',         label: 'Linha 2.1' },
+    { id: 'l22',         label: 'Linha 2.2' }
+  ];
+  document.getElementById('chips').innerHTML = FILTERS.map(function (f, i) {
+    return '<button class="chip" data-f="' + f.id + '" aria-pressed="' + (i === 0) + '">' + f.label + '</button>';
+  }).join('');
+
+  /* ------------------- render ------------------- */
+  function card(d) {
+    const li = d.linha ? C.lineInfo(d.linha) : null;
+    const cor = d.linha ? C.lineColor(d.linha) : 'var(--text-soft)';
+
+    const tags = [
+      '<span class="tag tag--' + (d.cat === 'permanente' ? 'perm' : 'colab') + '">' +
+        (d.cat === 'permanente' ? 'Permanente' : 'Colaborador') + '</span>',
+      '<span class="tag tag--ies">' + d.ies + '</span>',
+      d.bolsa ? '<span class="tag tag--pq">' + d.bolsa + ' CNPq</span>' : ''
+    ].filter(Boolean).join('');
+
+    const linhaHtml = li
+      ? '<div class="prof-line"><span class="dot" style="background:' + cor + '" aria-hidden="true"></span>' +
+        '<span><strong style="color:' + cor + ';font-weight:700;">' + li.linha.codigo.replace('Linha ', 'L') + '</strong> ' +
+        li.linha.nome + (d.linhaStatus === 'PRELIMINAR' ? ' <span title="Vinculação inferida da responsabilidade por disciplina na proposta curricular — aguarda validação no Colegiado.">*</span>' : '') +
+        '</span></div>'
+      : '<div class="prof-line"><span class="dot" style="background:var(--text-soft)" aria-hidden="true"></span>' +
+        '<span style="color:var(--text-soft);">Vinculação de linha em definição</span></div>';
+
+    const links = [
+      '<a class="mini-link" href="http://lattes.cnpq.br/' + d.lattes + '" target="_blank" rel="noopener" ' +
+        'aria-label="Currículo Lattes de ' + d.nome + ' (abre em nova aba)">' + C.ICO.doc + 'Lattes</a>',
+      d.email ? '<a class="mini-link" href="mailto:' + d.email + '" aria-label="Enviar e-mail para ' + d.nome + '">' +
+        C.ICO.mail + 'E-mail</a>' : ''
+    ].filter(Boolean).join('');
+
+    return '<article class="prof-card" role="listitem">' +
+      '<div class="prof-top">' +
+        C.avatar(d.nome, cor, '../') +
+        '<div style="min-width:0;flex:1;">' +
+          (d.cargo ? '<p class="prof-role">' + d.cargo + '</p>' : '') +
+          '<h3 class="prof-name">' + d.nome + '</h3>' +
+          '<div class="prof-tags">' + tags + '</div>' +
+        '</div>' +
+      '</div>' +
+      linhaHtml +
+      '<div class="prof-links">' + links + '</div>' +
+    '</article>';
+  }
+
+  function render(list) {
+    const g = document.getElementById('grid');
+    const c = document.getElementById('count');
+    if (!list.length) {
+      g.innerHTML = '<div style="grid-column:1/-1;">' + C.empty('Nenhum docente encontrado com os filtros selecionados.') + '</div>';
+      c.textContent = '0 docentes';
+      c.className = 'badge badge--nd';
+      return;
+    }
+    g.innerHTML = list.map(card).join('');
+    c.textContent = list.length + (list.length === 1 ? ' docente' : ' docentes');
+    c.className = 'badge badge--val';
+  }
+
+  /* ------------------- filtros ------------------- */
+  let active = 'todos', query = '';
+  function apply() {
+    let l = D.slice();
+    if (active === 'permanente' || active === 'colaborador') l = l.filter(function (d) { return d.cat === active; });
+    else if (active === 'bolsa') l = l.filter(function (d) { return d.bolsa; });
+    else if (active === 'UFOP' || active === 'UEMG') l = l.filter(function (d) { return d.ies === active; });
+    else if (active.indexOf('l') === 0) l = l.filter(function (d) { return d.linha === active; });
+
+    const q = query.trim().toLowerCase();
+    if (q) {
+      l = l.filter(function (d) {
+        const li = d.linha ? C.lineInfo(d.linha) : null;
+        return (d.nome + ' ' + d.ies + ' ' + (d.bolsa || '') + ' ' + (li ? li.linha.nome : '')).toLowerCase().indexOf(q) > -1;
+      });
+    }
+    render(l);
+  }
+
+  document.getElementById('chips').addEventListener('click', function (e) {
+    const b = e.target.closest('.chip');
+    if (!b) return;
+    this.querySelectorAll('.chip').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+    b.setAttribute('aria-pressed', 'true');
+    active = b.dataset.f;
+    apply();
+  });
+  document.getElementById('q').addEventListener('input', function (e) { query = e.target.value; apply(); });
+
+  /* ------------------- notas ------------------- */
+  document.getElementById('notas').innerHTML =
+    C.note('info',
+      '<strong>Sobre estes dados.</strong> Nomes, e-mails e identificadores Lattes provêm da ' +
+      '<a href="https://redemat.ufop.br/docentes-1" target="_blank" rel="noopener">página oficial de docentes</a>. ' +
+      'Categoria, instituição, carga horária e bolsa provêm da tabela de corpo docente da proposta APCN 2026. ' +
+      'O asterisco (*) na linha de pesquisa indica vinculação inferida da responsabilidade por disciplina na ' +
+      'proposta curricular, ainda não validada no Colegiado. ' + C.badge('VALIDADO')) +
+    '<div class="mt-2">' + C.note('warn',
+      '<strong>O que não é publicado.</strong> Este diretório não apresenta contagens individuais de produção, ' +
+      'captação de recursos, índice h ou qualquer pontuação por docente. Análises individuais integram instrumento ' +
+      'interno de planejamento e não constituem avaliação pública do corpo docente.') + '</div>' +
+    '<div class="mt-2">' + C.note('info',
+      '<strong>Exclusão formal.</strong> ' + R.docentes.exclusao) + '</div>' +
+    '<div class="mt-2">' + C.note('info',
+      '<strong>Fotos.</strong> ' + R.fotos.nota + ' ' + R.fotos.consentimento +
+      ' Arquivos em <code>' + R.fotos.pasta + '</code> — ver <code>LEIA-ME.md</code> na pasta.') + '</div>';
+
+  /* ------------------- distribuição por linha ------------------- */
+  const linhas = [];
+  R.areas.itens.forEach(function (a) { a.linhas.forEach(function (l) { linhas.push({ l: l, a: a }); }); });
+  const semLinha = D.filter(function (d) { return !d.linha; }).length;
+
+  document.getElementById('distCard').innerHTML =
+    linhas.map(function (x) {
+      const n = D.filter(function (d) { return d.linha === x.l.id; }).length;
+      const pct = Math.round(n / D.length * 100);
+      return '<div class="bar-row">' +
+        '<span class="bar-lbl"><strong style="color:' + x.l.cor + '">' + x.l.codigo.replace('Linha ', 'L') + '</strong> ' +
+          x.l.nome.split(',')[0] + '</span>' +
+        '<span class="bar-track"><span class="bar-fill" style="background:' + x.l.cor + ';width:' + pct + '%"></span></span>' +
+        '<span class="bar-val">' + n + '</span></div>';
+    }).join('') +
+    (semLinha ? '<div class="bar-row">' +
+      '<span class="bar-lbl" style="color:var(--text-soft);">Em definição</span>' +
+      '<span class="bar-track"><span class="bar-fill" style="background:var(--text-soft);width:' + Math.round(semLinha / D.length * 100) + '%"></span></span>' +
+      '<span class="bar-val">' + semLinha + '</span></div>' : '');
+
+  document.getElementById('distNota').innerHTML = C.note('warn',
+    'A arquitetura de duas áreas e quatro linhas foi proposta em 2026 e aguarda aprovação no Colegiado. ' +
+    'Nove docentes têm vinculação nomeada na proposta APCN; para os demais, a linha exibida foi inferida ' +
+    'da responsabilidade por disciplina na proposta curricular. ' + C.badge('PRELIMINAR'));
+
+  /* ------------------- composição ------------------- */
+  document.getElementById('compGrid').innerHTML = [
+    { t: 'Por categoria', rows: [['Permanentes', nPerm], ['Colaboradores', nCol]],
+      nota: 'Conforme a tabela de corpo docente da proposta APCN 2026 e os rótulos dos currículos Lattes.' },
+    { t: 'Por instituição', rows: [['UFOP', nUFOP], ['UEMG', nUEMG]],
+      nota: 'A forma associativa UFOP-UEMG é constitutiva da REDEMAT desde 1995.' },
+    { t: 'Bolsas de produtividade', rows: [['Produtividade em Pesquisa (PQ)', nPQ], ['Desenv. Tecnológico (DT)', nDT], ['Sem bolsa registrada', D.length - nBol]],
+      nota: 'Bolsas vigentes registradas em currículo e na proposta APCN.' }
+  ].map(function (c) {
+    return '<div class="card"><h3 class="h3">' + c.t + '</h3>' +
+      '<table class="tbl" style="min-width:0;font-size:.85rem;margin-top:.5rem;"><tbody>' +
+      c.rows.map(function (r) {
+        return '<tr><td style="padding:.5rem 0;border-color:var(--border);">' + r[0] + '</td>' +
+          '<td class="num" style="padding:.5rem 0;border-color:var(--border);font-weight:700;color:var(--navy);">' + r[1] + '</td></tr>';
+      }).join('') +
+      '</tbody></table>' +
+      '<p style="font-size:.74rem;color:var(--text-soft);margin-top:.85rem;line-height:1.6;">' + c.nota + '</p></div>';
+  }).join('');
+
+  /* ═══════════════ PÓS-DOUTORANDOS ═══════════════ */
+  const PD = R.comunidade.posdoc;
+  document.getElementById('posGrid').innerHTML = PD.itens.map(function (x) {
+    return '<article class="card card--hover">' +
+      '<div class="prof-top">' +
+        C.avatar(x.nome, 'var(--l22)', '../', x.foto) +
+        '<div style="min-width:0;flex:1;">' +
+          '<p class="prof-role">Pós-doutorando</p>' +
+          '<h3 class="prof-name">' + x.nome + '</h3>' +
+          '<div class="prof-tags"><span class="tag tag--ies">' + x.grupo + '</span></div>' +
+        '</div>' +
+      '</div>' +
+      (x.formacao ? '<p style="font-size:.79rem;color:var(--text-soft);line-height:1.6;margin:.5rem 0 .6rem;">' + x.formacao + '</p>' : '') +
+      '<p style="font-size:.83rem;color:var(--text-mid);line-height:1.65;margin:.5rem 0 1rem;">' + x.area + '</p>' +
+      '<p style="font-size:.78rem;color:var(--text-soft);margin-bottom:.85rem;">' +
+        '<strong>Supervisão:</strong> ' + x.supervisor + '</p>' +
+      '<div class="prof-links">' +
+        '<a class="mini-link" href="mailto:' + x.email + '" aria-label="E-mail de ' + x.nome + '">' +
+          C.ICO.mail + 'E-mail</a>' +
+      '</div></article>';
+  }).join('');
+
+  document.getElementById('posNota').innerHTML = C.note('info',
+    'Fonte: <a href="' + PD.ref + '" target="_blank" rel="noopener">página oficial de pós-doutorandos</a>. ' +
+    'Vagas de pós-doutorado, quando abertas, são divulgadas no mural da página inicial e pelas redes sociais do Programa. ' +
+    C.badge('PRELIMINAR'));
+
+  /* ═══════════════ DISCENTES ═══════════════ */
+  const DI = R.comunidade.discentes;
+  document.getElementById('disLede').textContent =
+    DI.total + ' discentes matriculados — ' + DI.doutorado + ' no doutorado e ' + DI.mestrado +
+    ' no mestrado. ' + DI.ingresso_faixa + '.';
+
+  document.getElementById('disKpis').innerHTML = [
+    { v: DI.total, l: 'Discentes matriculados', cor: 'var(--navy)', ico: C.ICO.people, s: 'Mestrado e doutorado somados' },
+    { v: DI.doutorado, l: 'Doutorandos', cor: 'var(--l22)', ico: C.ICO.cap, s: 'Curso com seleção anual' },
+    { v: DI.mestrado, l: 'Mestrandos', cor: 'var(--area1)', ico: C.ICO.cap, s: 'Curso com seleção semestral' }
+  ].map(function (k) {
+    return '<div class="kpi"><div class="kpi-top">' +
+      '<span class="kpi-ico" style="background:color-mix(in srgb, ' + k.cor + ' 12%, transparent);color:' + k.cor + '">' + k.ico + '</span>' +
+      C.badge('PRELIMINAR') + '</div>' +
+      '<div class="kpi-val" style="color:' + k.cor + '" data-count="' + k.v + '">0</div>' +
+      '<div class="kpi-lbl">' + k.l + '</div><div class="kpi-src">' + k.s + '</div></div>';
+  }).join('');
+
+  document.getElementById('disBars').innerHTML =
+    [['Doutorado', DI.doutorado, 'var(--l22)'], ['Mestrado', DI.mestrado, 'var(--area1)']]
+    .map(function (r) {
+      return '<div class="bar-row"><span class="bar-lbl">' + r[0] + '</span>' +
+        '<span class="bar-track"><span class="bar-fill" style="background:' + r[2] + ';width:' + (r[1] / DI.total * 100) + '%"></span></span>' +
+        '<span class="bar-val">' + r[1] + '</span></div>';
+    }).join('') +
+    '<p style="font-size:.78rem;color:var(--text-soft);margin-top:1rem;line-height:1.6;">' +
+      'Fontes de fomento identificadas: ' + DI.fomento.join(', ') + '.</p>';
+
+  document.getElementById('disNota').innerHTML =
+    C.note('info', '<strong>Relação nominal completa.</strong> A lista de todos os ' + DI.total +
+      ' discentes, com orientador, situação de bolsa, data de ingresso e prazo regulamentar, ' +
+      'está em página própria — publicação em atendimento às exigências de transparência da CAPES. ' +
+      '<a href="discentes.html" style="font-weight:700;">Ver a lista completa de discentes →</a>') +
+    '<div class="mt-2">' + C.note('info', '<strong>Sobre os dados publicados.</strong> ' +
+      'E-mails de discentes não são republicados — não são necessários para a finalidade de ' +
+      'transparência. Fonte: <a href="' + DI.ref + '" target="_blank" rel="noopener">página oficial de discentes ↗</a>') + '</div>';
+
+  const AC = R.comunidade.acolhimento;
+  document.getElementById('apoioCard').innerHTML =
+    '<h3 class="h3">' + AC.titulo + '</h3>' +
+    '<p style="font-size:.9rem;color:var(--text-mid);line-height:1.7;margin-bottom:1.25rem;">' + AC.texto + '</p>' +
+    '<a href="' + AC.url + '" target="_blank" rel="noopener" class="mini-link" style="font-size:.85rem;padding:.5rem .9rem;">' +
+      C.ICO.ext + AC.orgao + '</a>';
+
+  /* ═══════════════ TÉCNICOS ═══════════════ */
+  const TE = R.comunidade.tecnicos;
+  document.getElementById('tecGrid').innerHTML = TE.itens.map(function (x) {
+    return '<article class="card card--hover">' +
+      '<div class="prof-top">' +
+        C.avatar(x.nome, 'var(--amber)', '../', x.foto) +
+        '<div style="min-width:0;flex:1;">' +
+          '<p class="prof-role">' + x.cargo + '</p>' +
+          '<h3 class="prof-name">' + x.nome + '</h3>' +
+        '</div>' +
+      '</div>' +
+      '<div class="prof-links" style="border-top:none;padding-top:.5rem;">' +
+        '<a class="mini-link" href="mailto:' + x.email + '">' + C.ICO.mail + x.email + '</a>' +
+      '</div></article>';
+  }).join('') +
+  '<article class="card">' +
+    '<h3 class="h3">Contato institucional</h3>' +
+    '<p style="font-size:.86rem;color:var(--text-mid);line-height:1.8;">' +
+      R.programa.contato.endereco + '<br>' +
+      '<strong>' + R.programa.contato.telefone + '</strong><br>' +
+      '<a href="mailto:' + R.programa.contato.email + '" style="color:var(--amber);font-weight:600;">' + R.programa.contato.email + '</a>' +
+    '</p></article>';
+
+  document.getElementById('tecNota').innerHTML = C.note('info',
+    TE.nota + ' Fonte: <a href="' + TE.ref + '" target="_blank" rel="noopener">página oficial de técnicos</a>. ' +
+    C.badge('PRELIMINAR'));
+
+  /* ═══════════════ ABAS ═══════════════ */
+  const tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  const fbar = document.getElementById('filterBar');
+  function select(tab) {
+    tabs.forEach(function (t) {
+      const on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    /* A barra de filtros só faz sentido no painel de docentes */
+    fbar.hidden = tab.id !== 't-doc';
+    C.animateCounters(document.getElementById(tab.getAttribute('aria-controls')));
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { select(t); });
+    t.addEventListener('keydown', function (e) {
+      let n = null;
+      if (e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
+      if (e.key === 'ArrowLeft') n = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (n) { e.preventDefault(); n.focus(); select(n); }
+    });
+  });
+
+  /* ------------------- init ------------------- */
+  render(D);
+  C.mount('pessoas.html', '../');
+  select(tabs[0]);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,585 @@
+{
+ "per": [
+  {
+   "n": "Alan Barros de Oliveira",
+   "id": "2373454332205980",
+   "rot": "Professor Permanente",
+   "bol": "Bolsista de Pesquisador Visitante do CNPq - Nível 1",
+   "atz": "13/08/2026",
+   "tot": 16,
+   "y": {
+    "2021": 4,
+    "2022": 3,
+    "2023": 2,
+    "2025": 1,
+    "2026": 6
+   },
+   "s21_26": 16,
+   "liv": 0,
+   "cap": 0,
+   "prj": 1,
+   "areas": [
+    "Física",
+    "Física",
+    "Física"
+   ]
+  },
+  {
+   "n": "Américo Tristão Bernardes",
+   "id": "1219153096910234",
+   "rot": "Professor Permanente",
+   "bol": "",
+   "atz": "28/08/2026",
+   "tot": 7,
+   "y": {
+    "2021": 2,
+    "2022": 1,
+    "2023": 2,
+    "2025": 1,
+    "2026": 1
+   },
+   "s21_26": 7,
+   "liv": 1,
+   "cap": 0,
+   "prj": 3,
+   "areas": [
+    "Física"
+   ]
+  },
+  {
+   "n": "Ana Paula Moreira Barboza",
+   "id": "4012812193989993",
+   "rot": "Professor Permanente",
+   "bol": "Nível 2",
+   "atz": "30/07/2026",
+   "tot": 24,
+   "y": {
+    "2021": 3,
+    "2022": 4,
+    "2023": 5,
+    "2024": 3,
+    "2025": 7,
+    "2026": 2
+   },
+   "s21_26": 24,
+   "liv": 0,
+   "cap": 0,
+   "prj": 7,
+   "areas": [
+    "Física",
+    "Física"
+   ]
+  },
+  {
+   "n": "Antonio Valadao Cardoso",
+   "id": "4629729793297288",
+   "rot": "Professor Colaborador",
+   "bol": "",
+   "atz": "22/08/2026",
+   "tot": 17,
+   "y": {
+    "2021": 4,
+    "2022": 4,
+    "2023": 4,
+    "2024": 3,
+    "2025": 1,
+    "2026": 1
+   },
+   "s21_26": 17,
+   "liv": 0,
+   "cap": 0,
+   "prj": 2,
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica"
+   ]
+  },
+  {
+   "n": "Claudio Gouvea dos Santos",
+   "id": "7624637352404779",
+   "rot": "Professor Permanente",
+   "bol": "",
+   "atz": "15/06/2026",
+   "tot": 6,
+   "y": {
+    "2021": 2,
+    "2022": 2,
+    "2024": 1,
+    "2026": 1
+   },
+   "s21_26": 6,
+   "liv": 0,
+   "cap": 0,
+   "prj": 3,
+   "areas": [
+    "Química",
+    "Química",
+    "Engenharia de Materiais e Metalúrgica"
+   ]
+  },
+  {
+   "n": "Dalila Chaves Sicupira",
+   "id": "2402619959878318",
+   "rot": "Professor Permanente",
+   "bol": "",
+   "atz": "27/08/2026",
+   "tot": 13,
+   "y": {
+    "2022": 4,
+    "2023": 3,
+    "2024": 1,
+    "2025": 4,
+    "2026": 1
+   },
+   "s21_26": 13,
+   "liv": 0,
+   "cap": 0,
+   "prj": 8,
+   "areas": [
+    "Química",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia Química"
+   ]
+  },
+  {
+   "n": "Eliane Ayres",
+   "id": "1370798140664840",
+   "rot": "Professor Permanente",
+   "bol": "Bolsista de Produtividade Desen. Tec. e Extensão Inovadora do CNPq - Nível C",
+   "atz": "23/08/2026",
+   "tot": 15,
+   "y": {
+    "2021": 1,
+    "2022": 2,
+    "2023": 3,
+    "2024": 4,
+    "2025": 4,
+    "2026": 1
+   },
+   "s21_26": 15,
+   "liv": 0,
+   "cap": 0,
+   "prj": 8,
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Desenho Industrial"
+   ]
+  },
+  {
+   "n": "Fernando Gabriel da Silva Araujo",
+   "id": "8915679278888857",
+   "rot": "Professor Permanente",
+   "bol": "",
+   "atz": "05/07/2026",
+   "tot": 9,
+   "y": {
+    "2021": 5,
+    "2022": 2,
+    "2024": 2
+   },
+   "s21_26": 9,
+   "liv": 0,
+   "cap": 0,
+   "prj": 0,
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica",
+    "Física"
+   ]
+  },
+  {
+   "n": "Geraldo Lúcio de Faria",
+   "id": "0954824992144106",
+   "rot": "Professor Permanente",
+   "bol": "Nível 1D",
+   "atz": "19/08/2026",
+   "tot": 40,
+   "y": {
+    "2021": 9,
+    "2022": 4,
+    "2023": 8,
+    "2024": 6,
+    "2025": 8,
+    "2026": 5
+   },
+   "s21_26": 40,
+   "liv": 2,
+   "cap": 1,
+   "prj": 7,
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica"
+   ]
+  },
+  {
+   "n": "Heloisa Nazaré dos Santos",
+   "id": "7238982117122755",
+   "rot": "Professor Colaborador",
+   "bol": "",
+   "atz": "23/08/2026",
+   "tot": 4,
+   "y": {
+    "2021": 1,
+    "2022": 1,
+    "2025": 1,
+    "2026": 1
+   },
+   "s21_26": 4,
+   "liv": 1,
+   "cap": 8,
+   "prj": 6,
+   "areas": [
+    "Desenho Industrial",
+    "Engenharia de Produção",
+    "Desenho Industrial"
+   ]
+  },
+  {
+   "n": "Hugo Bonette de Carvalho",
+   "id": "1642083834158700",
+   "rot": "Professor Permanente",
+   "bol": "",
+   "atz": "27/08/2026",
+   "tot": 12,
+   "y": {
+    "2021": 3,
+    "2022": 2,
+    "2023": 3,
+    "2024": 1,
+    "2026": 3
+   },
+   "s21_26": 12,
+   "liv": 0,
+   "cap": 0,
+   "prj": 3,
+   "areas": [
+    "Física",
+    "Física",
+    "Física"
+   ]
+  },
+  {
+   "n": "Ive Silvestre de Almeida",
+   "id": "8756368667136851",
+   "rot": "Professor Colaborador",
+   "bol": "",
+   "atz": "14/06/2026",
+   "tot": 3,
+   "y": {
+    "2022": 1,
+    "2024": 1,
+    "2025": 1
+   },
+   "s21_26": 3,
+   "liv": 0,
+   "cap": 0,
+   "prj": 3,
+   "areas": [
+    "Física",
+    "Física",
+    "Física"
+   ]
+  },
+  {
+   "n": "Johne Jesus Mol Peixoto",
+   "id": "7172124269609011",
+   "rot": "Professor Permanente",
+   "bol": "Nível C",
+   "atz": "03/08/2026",
+   "tot": 10,
+   "y": {
+    "2021": 1,
+    "2022": 2,
+    "2023": 4,
+    "2024": 1,
+    "2025": 2
+   },
+   "s21_26": 10,
+   "liv": 0,
+   "cap": 0,
+   "prj": 7,
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica"
+   ]
+  },
+  {
+   "n": "Leonardo Barbosa Godefroid",
+   "id": "1995142616892313",
+   "rot": "Professor Permanente",
+   "bol": "",
+   "atz": "17/08/2026",
+   "tot": 13,
+   "y": {
+    "2021": 1,
+    "2023": 3,
+    "2024": 2,
+    "2025": 3,
+    "2026": 4
+   },
+   "s21_26": 13,
+   "liv": 0,
+   "cap": 0,
+   "prj": 0,
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica"
+   ]
+  },
+  {
+   "n": "Marcelo Gomes Speziali",
+   "id": "7307092459450276",
+   "rot": "Professor Permanente",
+   "bol": "Bolsista de Produtividade Desen. Tec. e Extensão Inovadora do CNPq - Nível C",
+   "atz": "25/08/2026",
+   "tot": 6,
+   "y": {
+    "2021": 1,
+    "2022": 2,
+    "2024": 1,
+    "2025": 2
+   },
+   "s21_26": 6,
+   "liv": 1,
+   "cap": 4,
+   "prj": 3,
+   "areas": [
+    "Direito",
+    "Engenharia de Produção",
+    "Engenharia de Produção"
+   ]
+  },
+  {
+   "n": "Matheus Josué de Souza Matos",
+   "id": "6221953730638193",
+   "rot": "Professor Permanente",
+   "bol": "Nível 2",
+   "atz": "31/07/2026",
+   "tot": 29,
+   "y": {
+    "2021": 3,
+    "2022": 5,
+    "2023": 6,
+    "2024": 3,
+    "2025": 8,
+    "2026": 4
+   },
+   "s21_26": 29,
+   "liv": 1,
+   "cap": 0,
+   "prj": 9,
+   "areas": [
+    "Física",
+    "Física",
+    "Física"
+   ]
+  },
+  {
+   "n": "Paulo Santos Assis",
+   "id": "7360474381329605",
+   "rot": "Professor Permanente",
+   "bol": "Bolsista de Produtividade em Desenvolvimento Tecnológico e Extensão Inovadora FAPEMIG/CNPq - DT Nível C",
+   "atz": "12/07/2026",
+   "tot": 29,
+   "y": {
+    "2021": 7,
+    "2022": 3,
+    "2023": 3,
+    "2024": 8,
+    "2025": 4,
+    "2026": 4
+   },
+   "s21_26": 29,
+   "liv": 0,
+   "cap": 2,
+   "prj": 0,
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica"
+   ]
+  },
+  {
+   "n": "Rita de Castro Engler",
+   "id": "1848076566428564",
+   "rot": "Professor Permanente",
+   "bol": "",
+   "atz": "24/08/2026",
+   "tot": 32,
+   "y": {
+    "2021": 11,
+    "2022": 3,
+    "2023": 9,
+    "2024": 4,
+    "2025": 5
+   },
+   "s21_26": 32,
+   "liv": 0,
+   "cap": 1,
+   "prj": 8,
+   "areas": [
+    "Engenharia de Produção",
+    "Engenharia de Produção",
+    "Administração"
+   ]
+  },
+  {
+   "n": "Rodrigo Fernando Bianchi",
+   "id": "0576192110271130",
+   "rot": "Professor Permanente",
+   "bol": "Nível 2",
+   "atz": "14/07/2026",
+   "tot": 14,
+   "y": {
+    "2021": 5,
+    "2022": 3,
+    "2023": 1,
+    "2024": 1,
+    "2025": 2,
+    "2026": 2
+   },
+   "s21_26": 14,
+   "liv": 3,
+   "cap": 3,
+   "prj": 1,
+   "areas": [
+    "Física",
+    "Física",
+    "Engenharia Elétrica"
+   ]
+  },
+  {
+   "n": "Rodrigo Rangel Porcaro",
+   "id": "3405298711596512",
+   "rot": "Professor Permanente",
+   "bol": "",
+   "atz": "15/04/2026",
+   "tot": 11,
+   "y": {
+    "2021": 1,
+    "2022": 1,
+    "2023": 2,
+    "2024": 3,
+    "2025": 2,
+    "2026": 2
+   },
+   "s21_26": 11,
+   "liv": 0,
+   "cap": 0,
+   "prj": 0,
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica"
+   ]
+  },
+  {
+   "n": "Taíse Matte Manhabosco",
+   "id": "9945942332231660",
+   "rot": "Professor Permanente",
+   "bol": "Nível 2",
+   "atz": "24/08/2026",
+   "tot": 21,
+   "y": {
+    "2021": 3,
+    "2022": 3,
+    "2024": 2,
+    "2025": 4,
+    "2026": 9
+   },
+   "s21_26": 21,
+   "liv": 0,
+   "cap": 0,
+   "prj": 3,
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica"
+   ]
+  },
+  {
+   "n": "Thiago Cazati",
+   "id": "0873693558323059",
+   "rot": "Professor Permanente",
+   "bol": "",
+   "atz": "17/07/2026",
+   "tot": 14,
+   "y": {
+    "2021": 3,
+    "2022": 2,
+    "2023": 2,
+    "2024": 1,
+    "2025": 3,
+    "2026": 3
+   },
+   "s21_26": 14,
+   "liv": 0,
+   "cap": 0,
+   "prj": 4,
+   "areas": [
+    "Física",
+    "Física",
+    "Física"
+   ]
+  },
+  {
+   "n": "Versiane Albis Leão",
+   "id": "4062848906639188",
+   "rot": "Professor Permanente",
+   "bol": "Nível B",
+   "atz": "20/08/2026",
+   "tot": 13,
+   "y": {
+    "2021": 3,
+    "2022": 1,
+    "2023": 4,
+    "2024": 5
+   },
+   "s21_26": 13,
+   "liv": 0,
+   "cap": 0,
+   "prj": 6,
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia Sanitária",
+    "Engenharia de Materiais e Metalúrgica"
+   ]
+  },
+  {
+   "n": "Víctor de Andrade Alvarenga Oliveira",
+   "id": "9004123547060623",
+   "rot": "Professor Permanente",
+   "bol": "",
+   "atz": "30/07/2026",
+   "tot": 12,
+   "y": {
+    "2021": 2,
+    "2022": 3,
+    "2023": 2,
+    "2024": 3,
+    "2025": 2
+   },
+   "s21_26": 12,
+   "liv": 0,
+   "cap": 0,
+   "prj": 4,
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Química"
+   ]
+  }
+ ],
+ "uniq_por_ano": {
+  "2021": 62,
+  "2022": 48,
+  "2023": 57,
+  "2024": 49,
+  "2025": 53,
+  "2026": 39
+ },
+ "n_uniq": 308,
+ "com_doi": 289
+}

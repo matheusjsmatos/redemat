@@ -1,0 +1,355 @@
+
+                <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf8"><meta name="Generator" content="scriptLattes"><title>REDEMAT</title><link rel="stylesheet" href="css/scriptLattes.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"><link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css"><link rel="stylesheet" type="text/css" href="css/dataTables.colVis.min.css"><script type="text/javascript" charset="utf8" src="js/jquery.min.js"></script><script type="text/javascript" charset="utf8" src="js/jquery.dataTables.min.js"></script><script type="text/javascript" charset="utf8" src="js/dataTables.colVis.min.js"></script><script type="text/javascript" charset="utf8" src="js/sorttable-local.js"></script><link rel="stylesheet" href="portal-redemat.css">
+</head><body>
+<div id="portal-back"><a href="../pages/producao-lattes.html">&#8592; Voltar ao portal REDEMAT</a><span>Relatório ScriptLattes — dados brutos dos currículos Lattes</span></div><div id="header2"> <button onClick="history.go(-1)">Voltar</button><h2>REDEMAT</h2></div>
+                
+        <script type="text/javascript" src="./js/jquery.min.js"></script>
+        <!--
+        <script type="text/javascript" src="./highcharts.js"></script>
+        <script type="text/javascript" src="./exporting.js"></script>
+        <script type="text/javascript" src="./drilldown.js"></script>
+        -->
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+        <script type="text/javascript">
+        // Load the fonts
+        Highcharts.createElement('link', {
+           href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700',
+           rel: 'stylesheet',
+           type: 'text/css'
+        }, null, document.getElementsByTagName('head')[0]);
+
+        Highcharts.theme = {
+   colors: ["#1F77B4", "#118D95", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#2b908f", "#90ee7e", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
+   chart: {
+      backgroundColor: null,
+      style: {
+         fontFamily: "'Source Sans Pro', 'sans-serif'"
+      }
+   },
+   title: {
+      style: {
+         color: 'black',
+         fontSize: '16px',
+         fontWeight: 'bold'
+      }
+   },
+   subtitle: {
+      style: {
+         color: 'black'
+      }
+   },
+   tooltip: {
+      borderWidth: 0
+   },
+   legend: {
+      itemStyle: {
+         fontWeight: 'bold',
+         fontSize: '13px'
+      }
+   },
+   xAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   yAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   plotOptions: {
+      series: {
+         shadow: true
+      },
+      candlestick: {
+         lineColor: '#404048'
+      },
+      map: {
+         shadow: false
+      }
+   },
+
+   // Highstock specific
+   navigator: {
+      xAxis: {
+         gridLineColor: '#D0D0D8'
+      }
+   },
+   rangeSelector: {
+      buttonTheme: {
+         fill: 'white',
+         stroke: '#C0C0C8',
+         'stroke-width': 1,
+         states: {
+            select: {
+               fill: '#D0D0D8'
+            }
+         }
+      }
+   },
+   scrollbar: {
+      trackBorderColor: '#C0C0C8'
+   },
+
+   // General
+   background2: '#E0E0E8'
+};
+
+        Highcharts.setOptions(Highcharts.theme);
+        $(function () {
+            $('#container').highcharts({chart: {type: 'column', 
+height: 300}, 
+title: {text: 'Total de organização de eventos'}, 
+subtitle: {text: ''}, 
+xAxis: {title: {text: ''}, 
+type: 'category'}, 
+yAxis: {min: 0, 
+title: {text: 'Quantidade', 
+align: 'middle'}, 
+labels: {overflow: 'justify'}, 
+stackLabels: {enabled: true, 
+format: '{stack}'}}, 
+tooltip: {enabled: true, 
+valueSuffix: '', 
+shared: false, 
+headerFormat: '<span style="font-size: 10px">{point.key}{point.stack}{series.stack}</span><br/>', 
+pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'}, 
+plotOptions: {bar: {dataLabels: {enabled: false}}, 
+column: {stacking: null}, 
+series: {shadow: 'true'}}, 
+legend: {enabled: false, 
+layout: 'vertical', 
+align: 'right', 
+verticalAlign: 'middle', 
+borderWidth: 1, 
+backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor || '#FFFFFF'), 
+shadow: true}, 
+credits: {enabled: false}, 
+series: [{name: 'Total', 
+data: [[2021,
+4],
+[2022,
+4],
+[2023,
+6],
+[2024,
+5],
+[2025,
+1]]}]});
+        });
+        </script>
+        
+                <h3>Total de organização de eventos</h3> <br>
+                    <div id="container" style="min-width: 310px; max-width: 1920px; height: 300; margin: 0"></div>
+                    Número total de itens: 98<br>
+                    
+                    
+                    <div id="dv-year-2025"><h3 class="year">2025</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>ENGLER, R. C.; Monteiro, JCF. <b>Projeto Extensão Maternidade Sofia Feldman</b>. 2025. Outro</td></tr>
+            </table></div><div id="dv-year-2024"><h3 class="year">2024</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>I.Silvestre; MATOS, MATHEUS J. S. ; BARBOZA, A. P. M. ; H.E.S. Velten ; CAZATI, T.. <b>XI Semana da Física e IX Semana de Física de Materiais</b>. 2024. Outro</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Matos, M J S; BARBOZA, A. P. M. ; ALMEIDA, I. S. ; Hermano Endlich Schneider Velten ; ESCORCIO, F. S. ; M. L. Rodrigues ; OLIVEIRA, W. C. S.. <b>IX Semana de Física de Materiais e XI Semana de Estudos da Física</b>. 2024. Congresso</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>SANTOS, Heloisa Nazaré dos; HORTA, A. A. ; RIBEIRO, Rita Aparecida da Conceição ; FANGUEIRO, R. ; CARVALHO, A. F. ; SILVEIRA, Y. S. ; CAMPOS, C. F.. <b>1º Congresso Internacional de Moda e Econômia Criativa - CIMEC</b>. 2024. Congresso</td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>SANTOS, Heloisa Nazaré dos; SCHERRER, Rachel Rios. <b>Apresentação Palestras: Cases de Mercado Apresentações de cases de mercado em formato talk</b>. 2024. Outro</td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>SANTOS, Heloisa Nazaré dos; SILVEIRA, Y. S. ; OLIVEIRA, M. L. M.. <b>Exposição: Experimentações e Formas: a moda como uma expertise da Escola de Design</b>. 2024. Exposição</td></tr>
+            </table></div><div id="dv-year-2023"><h3 class="year">2023</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>CANCADO, L. G. O. L. ; LATGE, A. ; VASCONCELOS, A. J. ; MATOS, M. J. S. ; BERNARDES, AMERICO T.. <b>2023 Autumn Meeting of the Brazilian Physical Society</b>. 2023. Congresso</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>CANÇADO, LUIZ GUSTAVO ; Américo Tristão Bernardes ; Matos, Matheus J. S. ; JORIO, ADO ; LATGE, A.. <b>Autumn Meeting of the Brazilian Physical Society (EOSBF-2023)</b>. 2023. Congresso</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>COSTA-FELIX, R. P. B. ; MENDES, A. ; BERNARDES, AMERICO T. ; FLATSCHART, A. V. F. ; SOUZA, C. H. S. ; LOUZADA, D. R. ; COUCEIRO, I. B. ; PEIXOTO, J. G. P. ; GRANJEIRO, J. M. ; TORRES, M. ; LANDIM, R. ; SOUZA, V.. <b>METROLOGIA 2023</b>. 2023. Congresso</td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>ENGLER, RITA DE CASTRO; COSTA, S. M. M. ; DIAS, J. M. P.. <b>DESIS Cafe</b>. 2023. Outro</td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>ENGLER, RITA DE CASTRO; DIAS, J. M. P. ; Monteiro, JCF ; Almeida, JCEF ; COSTA, S. M. M.. <b>Natal Inclusivo</b>. 2023. Outro</td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>FONSECA, A. R. ; ENGLER, RITA DE CASTRO ; DIAS, J. M. P.. <b>Grupo de Estudos em Economia Circular</b>. 2023. Outro</td></tr>
+            </table></div><div id="dv-year-2022"><h3 class="year">2022</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>LACERDA, R. G. ; FRAGNEAUD, B. ; MATOS, M. ; Barboza, A P M. <b>I Encontro da Rede 2D Fapemig</b>. 2022. Outro</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>MATOS, M.J.S.; BARBOZA, A. P. M. ; SILVESTRE, IVE ; ESCORCIO, F. S. ; M. L. Rodrigues ; Hermano Endlich Schneider Velten ; SILVA, A. D. ; PORTELLA, V. ; QUEIROZ, V. A. S. ; ALMEIDA, G. ; OLIVEIRA, W. C. S.. <b>VIII Semana de Física de Materiais e X Semana de Estudos da Física: Ciência e Tecnologia pós pandemia</b>. 2022. Outro</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>MATOS, MATHEUS J S; BARBOZA, A. P. M. ; LACERDA, R. G. ; Benjamin Fragneaud. <b>I Encontro da Rede 2D</b>. 2022. Outro</td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>MATOS, MATHEUS J. S. ; BARBOZA, ANA PAULA M. ; Silvestre, I.. <b>"VIII Semana de Física de Materiais e X Semana de Estudos da Física"</b>. 2022. Outro</td></tr>
+            </table></div><div id="dv-year-2021"><h3 class="year">2021</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>BERNARDES, A. T.; COSTA-FELIX, R. P. B. ; COUCEIRO, I. B. ; ROCHA, G. ; FLATSCHART, A. V. ; SOUZA, V. ; PEIXOTO, J. G. P. ; LOUZADA, D. R.. <b>Metrologia 2021 - XI COngresso Brasileirod e Metrologia</b>. 2021. Congresso</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>DOS-SANTOS, C. G.; PAOLI, M. A. ; NOVACK, K. M. ; PASQUINI, D. ; OREFICE, R. L. ; FINZI-QUINTAO, C. M. ; LACERDA, K. A. ; PATRICIO, P.. <b>16o Congresso Brasileiro de Polímeros</b>. 2021. Congresso</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>Speziali, Marcelo Gomes; DOMJAN, C. A. H. ; MONTENEGRO, K. B. M.. <b>Encontro da Associação FORTEC Sudeste</b>. 2021. Outro</td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>Willian Ricardo Rocha ; Américo Tristão Bernardes ; José Rachid Mohallem ; Dalva Ester da Costa Ferreira ; Heitor Avelino de Abreu ; João Paulo de Ataíde Martins ; Antônio Francisco Cruz Arapiraca ; Gabriel Heerdt ; MATOS, M.J.S. ; GALVAO, B. R. L.. <b>XXI Simpósio Brasileiro de Quimica Teórica</b>. 2021. Outro</td></tr>
+            </table></div><div id="dv-year-*itens sem ano"><h3 class="year">*itens sem ano</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>BERNARDES, A. T.. 8º Congresso Brasileiro de Metrologia. 2015. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>BERNARDES, A. T.. 9º Congresso Brasileiro de Metrologia. 2017. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>BERNARDES, A. T.. I Brazilian Meeting on Simulational Physics. 1997. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>BERNARDES, A. T.. I Escola Jorge André Swieca em Simulação Computacional. 1997. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>BERNARDES, A. T.. II Brazilian Meeting on Simulational Physics. 1999. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>BERNARDES, A. T.. III Encontro Regional da Sociedade Brasileira de Física em Minas Gerais. 2001. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>BERNARDES, A. T.. Ising Centennial Colloquium. 2000. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>BERNARDES, A. T.. School on Computational Physics. 2001. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>BERNARDES, A. T.. XXIV Encontro Nacional de Física da Matéria. 2001. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>Bianchi, R. F.. 64a. Congresso Anual da Associação Brasileira de Metalurgia, Materiais e Mineração. 2009. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>BIANCHI, R. F.. 65o ABM International Congress. 2010. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>Bianchi, R. F.. Estação Ciência 2013 - Semana C&T. 2013. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>BIANCHI, R. F.. II Simpósio Mineiro em Ciência dos Materiais. 2007. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>Bianchi, R. F.. III Semana da Física da UFOP. 2008. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>BIANCHI, R. F.. NT07: Eighth International Conference on the Science and Application of Nanotubes. 2007. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td>Bianchi, R. F.. Programa de Incentivo à Inovação - PII na UFOP. 2013. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>17. &nbsp;</td> <td>Bianchi, R. F.. XII Encontro da SBPMat. 2013. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>18. &nbsp;</td> <td>CARDOSO, A. V.. Curso de Materiais Industriais para o PROEP. 2003. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>19. &nbsp;</td> <td>CARDOSO, A. V.. III Fórum do mexilhão dourado. 2019. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>20. &nbsp;</td> <td>CARDOSO, A. V.. IV Fórum Virtual do Mexilhão. 2021. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>21. &nbsp;</td> <td>CARDOSO, A. V.. V Fórum Virtual do Mexilhão - DNA Ambiental. 2021. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>22. &nbsp;</td> <td>CARDOSO, A. V.. Workshop de encerramento do P&D GT604 - Controle do Mexilhão Dourado. 2022. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>23. &nbsp;</td> <td>CAZATI, T.. 1º Gincana de Ciências na Escola Prof. Sebastião de Oliveira Rocha. 2006. .. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>24. &nbsp;</td> <td>DE CASTRO ENGLER, RITA. Projeto Material Reciclado na Indústria Moveleira. 1994. (Exposição).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>25. &nbsp;</td> <td>de Oliveira, A. B.. II Mostra de Trabalhos de Pós-Graduação do IF-UFRGS. 2003. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>26. &nbsp;</td> <td>DOS SANTOS, HELOISA NAZARÉ. Projeto Natal Liberdade Escola de Design & Escola de Música. 2021. (Concerto).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>27. &nbsp;</td> <td>ENGLER, R. C.. 4/ Workshop Design & Materiais. 2009. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>28. &nbsp;</td> <td>ENGLER, R. C.. Aprendendo com os Líderes. 2005. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>29. &nbsp;</td> <td>ENGLER, R. C.. Banco Central - Seminário. 2005. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>30. &nbsp;</td> <td>ENGLER, R. C.. Comunidades Criativas das Geraes - Ecobags. 2010. (Exposição).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>31. &nbsp;</td> <td>ENGLER, R. C.. Conclusão Projeto extensão. 2025. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>32. &nbsp;</td> <td>ENGLER, R. C.. Forum Regional de Políticas Públicas e Segurança Comunitária. 2006. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>33. &nbsp;</td> <td>ENGLER, R. C.. II INTERNATIONAL CONGRESS ON TEXTILE AND FASHION SUSTAINABILITY Scientific comitee. 2020. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>34. &nbsp;</td> <td>ENGLER, R. C.. Proejto extensão sinalização. 2026. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>35. &nbsp;</td> <td>ENGLER, R. C.. Projeto Extensão. 2025. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>36. &nbsp;</td> <td>ENGLER, R. C.. Seminário sobre cenários e política cambial. 2006. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>37. &nbsp;</td> <td>ENGLER, R. C.. World Conference on Continuous Engineering Education. 1995. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>38. &nbsp;</td> <td>FARIA, G. L.. ABM Week 7a Edição. 2023. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>39. &nbsp;</td> <td>FARIA, G. L.. XXXIX Congresso Anual de Ensaios Não Destrutivos e Inspeção, a XXIII Conferência Internacional sobre Evaluación de Integridad y Extensión de Vida de Equipos Industriales. 2023. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>40. &nbsp;</td> <td>GODEFROID, L. B.. 56 Congresso Anual da ABM. 2001. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>41. &nbsp;</td> <td>GODEFROID, L. B.. Fundamentos da Análise Moderna de Fadiga para Projeto Estrutural. 1996. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>42. &nbsp;</td> <td>GODEFROID, L. B.. I Seminário de Mecânica de Fratura. 1995. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>43. &nbsp;</td> <td>GODEFROID, L. B.. II Seminário de Mecânica de Fratura. 1996. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>44. &nbsp;</td> <td>GODEFROID, L. B.. III Seminário de Mecânica de Fratura. 1997. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>45. &nbsp;</td> <td>GODEFROID, L. B.. IV Seminário de Mecânica de Fratura. 1998. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>46. &nbsp;</td> <td>GODEFROID, L. B.. IX Seminário de Mecânica de Fratura. 2003. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>47. &nbsp;</td> <td>GODEFROID, L. B.. SBPMAT-2010: Processing, structure and properties of advanced metallic materials. 2010. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>48. &nbsp;</td> <td>GODEFROID, L. B.. Seminário Aplicação da Mecânica de Fratura na Engenharia Brasileira. 1993. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>49. &nbsp;</td> <td>GODEFROID, L. B.. V Seminário de Mecânica de Fratura. 1999. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>50. &nbsp;</td> <td>GODEFROID, L. B.. VI Seminário de Mecânica de Fratura. 2000. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>51. &nbsp;</td> <td>GODEFROID, L. B.. VII Seminário de Mecânica de Fratura. 2001. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>52. &nbsp;</td> <td>GODEFROID, L. B.. VIII Seminário de Mecânica de Fratura. 2002. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>53. &nbsp;</td> <td>GODEFROID, L. B.. X Seminário de Mecânica de Fratura. 2004. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>54. &nbsp;</td> <td>GODEFROID, L. B.. XI Seminário de Mecânica de Fratura. 2005. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>55. &nbsp;</td> <td>GODEFROID, L. B.. XII Seminário de Mecânica de Fratura. 2006. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>56. &nbsp;</td> <td>GODEFROID, L. B.. XIII Seminário de Mecânica de Fratura. 2007. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>57. &nbsp;</td> <td>GODEFROID, L. B.. XIV Seminário de Mecânica de Fratura. 2008. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>58. &nbsp;</td> <td>GODEFROID, L. B.. XIX Seminário de Mecânica de Fratura e Integridade Estrutural. 2013. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>59. &nbsp;</td> <td>GODEFROID, L. B.. XVII Seminário de Mecânica de Fratura e Integridade Estrutural. 2011. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>60. &nbsp;</td> <td>GODEFROID, L. B.. XVIII Seminário de Mecânica de Fratura e Integridade Estrutural. 2012. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>61. &nbsp;</td> <td>GODEFROID, L. B.. XX Seminário de Mecânica de Fratura e Integridade Estrutural. 2014. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>62. &nbsp;</td> <td>GODEFROID, L. B.. XXI Seminário de Mecânica de Fratura e Integridade Estrutural. 2015. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>63. &nbsp;</td> <td>GODEFROID, L. B.. XXII Seminário de Mecânica de Fratura e Integridade Estrutural. 2016. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>64. &nbsp;</td> <td>GODEFROID, L. B.. XXVIII Congresso Brasileiro de Ensino de Engenharia. 2000. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>65. &nbsp;</td> <td>GOMES SPEZIALI, MARCELO. V Conferência Estadual de Ciência, Tecnologia e Inovação. 2024. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>66. &nbsp;</td> <td>SANTOS, H. N.. Intercâmbio de Cooperação Técnica / UEMG - PUC CHILE. 2018. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>67. &nbsp;</td> <td>SANTOS, Heloisa Nazaré dos. Análise de Gestão nas Lojas do Condomínio Minas Shopping. 2008. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>68. &nbsp;</td> <td>SANTOS, Heloisa Nazaré dos. Circuito Cultural da Praça - Desfile de tema Boemia. 2005. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>69. &nbsp;</td> <td>SANTOS, Heloisa Nazaré dos. Formatura do Curso de Corte e Costura do Espaço Constança Alkmim. 2004. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>70. &nbsp;</td> <td>SANTOS, Heloisa Nazaré dos. Projeto Oficina de Moda Executado. 2008. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>71. &nbsp;</td> <td>SANTOS, Heloisa Nazaré dos. VII Fortec - Encontro do Forum Nacional de Gestores de Inovação e Transferência de Tecnologia com o Tema: Maximizando a transferência de tecnologia para o desenvolvimento socioeconômioc. 2013. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>72. &nbsp;</td> <td>SICUPIRA, Dalila Chaves. 1ª Feira de profissões da Universidade Federal de Ouro Preto. 2006. (Outro).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>73. &nbsp;</td> <td>SPEZIALI, M. G.. VIII Encontro da Rede Mineira de Propriedade Intelectual. 2007. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>74. &nbsp;</td> <td>Speziali, Marcelo Gomes. 37 Encontro Regional da Sociedade Brasileira de Química. 2025. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>75. &nbsp;</td> <td>Speziali, Marcelo Gomes. Encontro da Rede Mineira de Propriedade Intelectual. 2014. (Congresso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>76. &nbsp;</td> <td>SPEZIALI, MARCELO. Empreenda! Em Ação. 2014. (Concurso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>77. &nbsp;</td> <td>SPEZIALI, MARCELO. Empreenda! Em Ação. 2015. (Concurso).. <b></b>. 0. </td></tr>
+            
+            <tr valign="top"><td>78. &nbsp;</td> <td>SPEZIALI, MARCELO. Empreenda! Em Ação. 2016. (Concurso).. <b></b>. 0. </td></tr>
+            </table></div>
+                    </table>
+                <br><p><br>(*) Relatório criado com produções desde 2021 até 2026
+<br>Data de processamento: 31/08/2026 22:11:56<br>         <div id="footer">         Relatório gerado por <a href="https://scriptlattes.sourceforge.net/">scriptLattes V9</a>.         Os resultados podem ser afetados por possíveis falhas decorrentes de inconsistências no preenchimento dos Currículos Lattes. E-mail de contato: <a href="mailto:matheusmatos@ufop.edu.br">matheusmatos@ufop.edu.br</a>         </div> </body></html>
+              

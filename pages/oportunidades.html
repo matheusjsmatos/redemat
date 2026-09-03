@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oportunidades para estudantes — REDEMAT | UFOP · UEMG</title>
+<meta name="description" content="Iniciação científica, TCC, mestrado, doutorado e pós-doutorado na REDEMAT: quantas orientações o Programa conduziu, com que agências de fomento e de que cursos vêm os estudantes.">
+<link rel="canonical" href="https://redemat.ufop.br/oportunidades">
+<link rel="icon" href="../assets/img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
+</head>
+<body>
+
+<div id="site-header-slot"></div>
+
+<section class="page-hero page-hero--img" style="--hero-img:url('../img/ilustra/oportunidades-hero.svg')" aria-labelledby="ph">
+  <div class="page-hero-in">
+    <nav class="crumb" aria-label="Trilha de navegação">
+      <a href="../index.html">Início</a><span aria-hidden="true">›</span>
+      <span aria-current="page">Oportunidades</span>
+    </nav>
+    <h1 id="ph">Oportunidades para estudantes</h1>
+    <p class="lede">
+      Da iniciação científica ao pós-doutorado. Esta página não lista vagas: mostra o
+      tamanho e a variedade da porta de entrada, com o que o corpo docente de fato
+      orientou nos últimos seis anos — e diz onde procurar a vaga.
+    </p>
+    <div class="hero-metrics" id="heroMetrics"></div>
+  </div>
+</section>
+
+<main id="conteudo">
+
+  <!-- Como participar -->
+  <section class="section" aria-labelledby="cp-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Por onde começar</p>
+        <h2 class="h2" id="cp-h">Como entrar, por nível</h2>
+        <p class="section-lede" id="cpLede"></p>
+      </div>
+      <div class="grid grid--2" id="cpGrid"></div>
+    </div>
+  </section>
+
+  <!-- Graduação: IC e TCC -->
+  <section class="section section--alt" id="graduacao" aria-labelledby="gr-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Graduação</p>
+        <h2 class="h2" id="gr-h">A REDEMAT e os estudantes de graduação</h2>
+        <p class="section-lede" id="grLede"></p>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="chart-card">
+          <div class="chart-head">
+            <div>
+              <p class="chart-title">Iniciações científicas concluídas por ano</p>
+              <p class="chart-sub">Orientações registradas nos currículos, 2021–2026</p>
+            </div>
+            <span class="badge badge--val">Validado</span>
+          </div>
+          <div class="chart-box chart-box--sm"><canvas id="cIC" role="img" aria-label="Gráfico de barras com iniciações científicas concluídas por ano"></canvas></div>
+        </div>
+        <div class="card">
+          <h3 class="h3">De onde vêm os estudantes de IC</h3>
+          <p style="font-size:.82rem;color:var(--text-mid);margin:.4rem 0 1rem;">
+            Curso de graduação dos orientandos das iniciações científicas concluídas.
+            A rede reúne metalurgia, física, química e design — e a lista mostra isso na prática.
+          </p>
+          <div id="cursosBars"></div>
+        </div>
+      </div>
+
+      <div class="grid grid--2 mt-3">
+        <div class="card">
+          <h3 class="h3">Bolsas que financiaram essas iniciações</h3>
+          <p style="font-size:.82rem;color:var(--text-mid);margin:.4rem 0 1rem;" id="bolsasLede"></p>
+          <div id="bolsasBars"></div>
+          <div class="mt-3" id="bolsasNota"></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-head">
+            <div>
+              <p class="chart-title">Trabalhos de conclusão de curso por ano</p>
+              <p class="chart-sub">TCCs orientados por docentes do Programa</p>
+            </div>
+          </div>
+          <div class="chart-box chart-box--sm"><canvas id="cTCC" role="img" aria-label="Gráfico de barras com trabalhos de conclusão de curso por ano"></canvas></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Orientações por tipo -->
+  <section class="section" id="orientacoes" aria-labelledby="or-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Capacidade de orientação</p>
+        <h2 class="h2" id="or-h">Supervisões e orientações, por tipo</h2>
+        <p class="section-lede" id="orLede"></p>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <caption class="sr-only">Orientações concluídas e em andamento por tipo, 2021–2026</caption>
+          <thead><tr>
+            <th scope="col">Tipo de orientação</th>
+            <th scope="col">Público</th>
+            <th scope="col" style="text-align:right">Concluídas</th>
+            <th scope="col" style="text-align:right">Em andamento</th>
+            <th scope="col">Proporção concluídas / em andamento</th>
+          </tr></thead>
+          <tbody id="orBody"></tbody>
+        </table>
+      </div>
+      <div class="mt-3" id="orNota"></div>
+    </div>
+  </section>
+
+  <!-- Projetos -->
+  <section class="section section--alt" id="projetos" aria-labelledby="pj-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Participação em projetos</p>
+        <h2 class="h2" id="pj-h">Projetos de pesquisa e eventos</h2>
+        <p class="section-lede" id="pjLede"></p>
+      </div>
+      <div class="grid grid--3 mb-3" id="pjKpis"></div>
+      <div class="chart-card">
+        <div class="chart-head">
+          <div>
+            <p class="chart-title">Projetos de pesquisa declarados por ano</p>
+            <p class="chart-sub">Currículos do corpo docente, 2021–2026</p>
+          </div>
+        </div>
+        <div class="chart-box chart-box--sm"><canvas id="cPj" role="img" aria-label="Gráfico de barras com projetos de pesquisa por ano"></canvas></div>
+      </div>
+      <div class="mt-3" id="pjNota"></div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer-slot"></div>
+
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+(function () {
+  'use strict';
+  const R = window.REDEMAT, C = window.RC, O = R.oportunidades;
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  const icTot = O.orientacoes.filter(function (o) { return o.tipo.indexOf('Iniciação') === 0; })[0];
+  const tccTot = O.orientacoes.filter(function (o) { return o.tipo.indexOf('Trabalho de conclusão') === 0; })[0];
+
+  document.getElementById('heroMetrics').innerHTML = [
+    { v: icTot.concluidas, l: 'Iniciações científicas concluídas' },
+    { v: tccTot.concluidas, l: 'Trabalhos de conclusão orientados' },
+    { v: O.totais.andamento, l: 'Orientações em andamento' },
+    { v: O.projetos_pesquisa.valor, l: 'Projetos de pesquisa no período' }
+  ].map(function (m) {
+    return '<div class="hero-metric"><b data-count="' + m.v + '">0</b><span>' + m.l + '</span></div>';
+  }).join('');
+
+  /* ---------------- como participar ---------------- */
+  document.getElementById('cpLede').textContent = O.nota;
+  document.getElementById('cpGrid').innerHTML = O.como_participar.map(function (x) {
+    return '<a class="card card--hover opp-card" href="' + x.acao + '">' +
+      '<span class="opp-pub">' + esc(x.publico) + '</span>' +
+      '<h3 class="h3">' + esc(x.titulo) + '</h3>' +
+      '<p class="opp-txt">' + esc(x.texto) + '</p>' +
+      '<span class="mini-link">Ir para a página ' + C.ICO.ext + '</span></a>';
+  }).join('');
+
+  /* ---------------- graduação ---------------- */
+  document.getElementById('grLede').textContent =
+    icTot.concluidas + ' iniciações científicas e ' + tccTot.concluidas +
+    ' trabalhos de conclusão de curso concluídos entre 2021 e 2026, com ' +
+    (icTot.andamento + tccTot.andamento) + ' em andamento. ' + icTot.nota;
+
+  const maxC = Math.max.apply(null, O.cursos_ic.map(function (c) { return c.n; }));
+  document.getElementById('cursosBars').innerHTML = O.cursos_ic.map(function (c) {
+    return '<div class="bar-row"><span class="bar-lbl bar-lbl--wide">' + esc(c.curso) + '</span>' +
+      '<span class="bar-track"><span class="bar-fill" style="width:' +
+      (c.n / maxC * 100).toFixed(1) + '%"></span></span>' +
+      '<span class="bar-val">' + c.n + '</span></div>';
+  }).join('');
+
+  const B = O.bolsas_ic;
+  const totB = B.itens.reduce(function (a, b) { return a + b.n; }, 0);
+  document.getElementById('bolsasLede').textContent =
+    totB + ' das ' + icTot.concluidas + ' iniciações tiveram agência de fomento declarada no currículo. ' +
+    'É a resposta concreta a "que bolsa eu posso pleitear".';
+  const maxB = Math.max.apply(null, B.itens.map(function (b) { return b.n; }));
+  const B_COR = { CNPq: 'var(--area1)', FAPEMIG: 'var(--area2)', UFOP: 'var(--l12)',
+                  UEMG: 'var(--l22)', UFMG: 'var(--l11)', Empresa: 'var(--amber)' };
+  document.getElementById('bolsasBars').innerHTML = B.itens.map(function (b) {
+    return '<div class="bar-row"><span class="bar-lbl bar-lbl--wide">' + esc(b.agencia) + '</span>' +
+      '<span class="bar-track"><span class="bar-fill" style="width:' +
+      (b.n / maxB * 100).toFixed(1) + '%;background:' + (B_COR[b.sigla] || 'var(--navy-light)') + '"></span></span>' +
+      '<span class="bar-val">' + b.n + '</span></div>';
+  }).join('');
+  document.getElementById('bolsasNota').innerHTML = C.note('info', B.nota + ' ' + C.badge('VALIDADO'));
+
+  /* ---------------- orientações por tipo ---------------- */
+  document.getElementById('orLede').textContent =
+    'Concluídas e em andamento vêm de blocos separados do relatório ScriptLattes: são populações ' +
+    'distintas, e nenhuma coluna é subconjunto da outra. No total, ' + O.totais.concluidas +
+    ' orientações concluídas e ' + O.totais.andamento + ' em andamento no período.';
+
+  const maxO = Math.max.apply(null, O.orientacoes.map(function (o) {
+    return Math.max(o.concluidas, o.andamento); }));
+  document.getElementById('orBody').innerHTML = O.orientacoes.map(function (o) {
+    return '<tr>' +
+      '<th scope="row">' + esc(o.tipo) + (o.destaque ? ' <span class="opp-tag">porta de entrada</span>' : '') + '</th>' +
+      '<td style="font-size:.8rem;color:var(--text-mid)">' + esc(o.publico) + '</td>' +
+      '<td class="num"><strong>' + o.concluidas + '</strong></td>' +
+      '<td class="num">' + o.andamento + '</td>' +
+      '<td><span class="dual-bar" aria-hidden="true">' +
+        '<span class="dual-a" style="width:' + (o.concluidas / maxO * 100).toFixed(1) + '%"></span>' +
+        '<span class="dual-b" style="width:' + (o.andamento / maxO * 100).toFixed(1) + '%"></span>' +
+      '</span></td>' +
+    '</tr>';
+  }).join('');
+  document.getElementById('orNota').innerHTML =
+    C.note('info', '<strong>Leitura.</strong> ' + O.totais.nota +
+      ' A barra escura é o volume de concluídas; a clara, o de orientações em curso. ' +
+      'Doutorado tem mais em andamento (' +
+      O.orientacoes.filter(function (o) { return o.tipo.indexOf('Tese') === 0; })[0].andamento +
+      ') que concluídas (' +
+      O.orientacoes.filter(function (o) { return o.tipo.indexOf('Tese') === 0; })[0].concluidas +
+      ') — é o que se espera de um curso em expansão. ' + C.badge('VALIDADO')) +
+    '<div class="mt-2">' + C.note('prov', '<strong>Fonte.</strong> ' + O.ref +
+      '. Cada linha traz o bloco de origem no relatório: ' +
+      O.orientacoes.map(function (o) { return o.ref; }).join(', ') + '.') + '</div>';
+
+  /* ---------------- projetos ---------------- */
+  const P = O.projetos_pesquisa;
+  document.getElementById('pjLede').textContent =
+    P.valor + ' projetos de pesquisa declarados nos currículos do corpo docente entre 2021 e 2026. ' +
+    'Participar de projeto é a via mais direta para entrar em pesquisa antes da pós-graduação.';
+  document.getElementById('pjKpis').innerHTML = [
+    { v: P.valor, l: 'Projetos de pesquisa', s: 'Declarados nos currículos', cor: 'var(--area1)', ico: C.ICO.chart },
+    { v: O.eventos.participacao, l: 'Participações em eventos', s: 'Congressos e encontros', cor: 'var(--l12)', ico: C.ICO.people },
+    { v: O.eventos.organizacao, l: 'Eventos organizados', s: 'Pelo corpo docente', cor: 'var(--area2)', ico: C.ICO.cap }
+  ].map(function (k) {
+    return '<div class="kpi"><div class="kpi-top">' +
+      '<span class="kpi-ico" style="background:color-mix(in srgb, ' + k.cor + ' 12%, transparent);color:' + k.cor + '">' + k.ico + '</span>' +
+      C.badge('VALIDADO') + '</div>' +
+      '<div class="kpi-val" style="color:' + k.cor + '" data-count="' + k.v + '">0</div>' +
+      '<div class="kpi-lbl">' + k.l + '</div><div class="kpi-src">' + k.s + '</div></div>';
+  }).join('');
+  document.getElementById('pjNota').innerHTML = C.note('warn',
+    '<strong>Duas contagens de projeto, e elas não coincidem.</strong> ' + P.nota +
+    ' O portal publica as duas, cada uma no seu lugar: esta é a declaração dos currículos; ' +
+    'a de <a href="indicadores.html#projetos">Indicadores</a> é a planilha de captação, com valor e pendência documental. ' +
+    C.badge('VALIDADO'));
+
+  /* ---------------- gráficos ---------------- */
+  function barras(id, dados, cor, rotulo) {
+    const anos = Object.keys(dados);
+    const vals = anos.map(function (a) { return dados[a]; });
+    C.whenChart(function () {
+      const el = document.getElementById(id);
+      if (!el) return;
+      new window.Chart(el, {
+        type: 'bar',
+        data: { labels: anos, datasets: [{ data: vals, backgroundColor: cor, borderRadius: 5, maxBarThickness: 46 }] },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          animation: { duration: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 600 },
+          scales: { y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,.06)' }, ticks: { precision: 0 } },
+                    x: { grid: { display: false } } },
+          plugins: { legend: { display: false },
+            tooltip: { backgroundColor: '#0B1F3A', padding: 10, cornerRadius: 6,
+              callbacks: { label: function (c) { return c.raw + ' ' + rotulo; } } } }
+        }
+      });
+    }, function () {
+      C.chartFallback(id, ['Ano', rotulo.charAt(0).toUpperCase() + rotulo.slice(1)],
+        anos.map(function (a, i) { return [a, vals[i]]; }));
+    });
+  }
+  barras('cIC', O.ic_por_ano, '#1D6FA5', 'iniciações');
+  barras('cTCC', O.tcc_por_ano, '#4C6FBF', 'TCCs');
+  barras('cPj', P.por_ano, '#1B8A6B', 'projetos');
+
+  C.mount('oportunidades.html', '../');
+})();
+</script>
+</body>
+</html>

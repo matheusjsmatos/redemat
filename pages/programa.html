@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Programa — REDEMAT | UFOP · UEMG</title>
+<meta name="description" content="História, missão, visão, governança e planejamento do Programa de Pós-Graduação em Engenharia de Materiais da REDEMAT — rede associativa UFOP-UEMG desde 1995.">
+<link rel="canonical" href="https://redemat.ufop.br/programa">
+<link rel="icon" href="../assets/img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<style>
+.quote-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--amber); border-radius: var(--r); padding: 1.75rem; }
+.quote-card p { font-family: var(--f-serif); font-size: 1.05rem; line-height: 1.7; color: var(--text); }
+.id-tbl td:first-child { width: 34%; font-weight: 600; color: var(--navy); }
+.gov-card { display: flex; gap: 1rem; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 1.25rem; }
+.gov-av { width: 46px; height: 46px; border-radius: 50%; background: var(--navy); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: .95rem; flex-shrink: 0; }
+.prog-grid { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,1fr); gap: clamp(2rem,5vw,4rem); align-items: start; }
+.prog-grid > * { min-width: 0; }
+@media (max-width: 860px) { .prog-grid { grid-template-columns: minmax(0,1fr); } }
+@media (max-width: 480px) { .id-tbl td:first-child { width: auto; } }
+</style>
+</head>
+<body>
+
+<div id="site-header-slot"></div>
+
+<section class="page-hero" aria-labelledby="ph">
+  <div class="page-hero-in">
+    <nav class="crumb" aria-label="Trilha de navegação">
+      <a href="../index.html">Início</a><span aria-hidden="true">›</span>
+      <span aria-current="page">O Programa</span>
+    </nav>
+    <h1 id="ph">O Programa</h1>
+    <p class="lede">
+      Uma rede temática interinstitucional criada em 1995 para impulsionar o desenvolvimento do setor
+      industrial brasileiro em Engenharia de Materiais — hoje coordenada pela UFOP, com a UEMG
+      como instituição associada.
+    </p>
+    <div class="hero-metrics" id="heroMetrics"></div>
+  </div>
+</section>
+
+<main id="conteudo">
+
+  <!-- Identificação -->
+  <section class="section" aria-labelledby="id-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Ficha institucional</p>
+        <h2 class="h2" id="id-h">Identificação do Programa</h2>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl id-tbl">
+          <caption class="sr-only">Dados de identificação do Programa</caption>
+          <tbody id="idBody"></tbody>
+        </table>
+      </div>
+      <p style="font-size:.75rem;color:var(--text-soft);margin-top:.85rem;">
+        Fonte: ficha de dados do Programa na proposta APCN Doutorado 2026 e site institucional.
+      </p>
+    </div>
+  </section>
+
+  <!-- História -->
+  <section class="section section--alt" aria-labelledby="hist-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Trajetória</p>
+        <h2 class="h2" id="hist-h">Três décadas de formação em rede</h2>
+      </div>
+      <div class="prog-grid">
+        <div class="prose">
+          <p>
+            O Programa de Pós-Graduação em Engenharia de Materiais foi criado em <strong>1995</strong> por
+            meio da união entre a Universidade Federal de Ouro Preto, a Universidade do Estado de Minas
+            Gerais e o Centro Tecnológico de Minas Gerais (CETEC), que constituíram a Rede Temática em
+            Engenharia de Materiais.
+          </p>
+          <p>
+            De estrutura interinstitucional, interdepartamental e multi-unidades, a REDEMAT possui caráter
+            eminentemente multidisciplinar. Em 1º de janeiro de <strong>2014</strong>, o CETEC foi incorporado
+            pela FIEMG e deixou de integrar formalmente a rede; o Programa seguiu com a UFOP na coordenação
+            geral e a UEMG como instituição associada.
+          </p>
+          <p>
+            Desde o início, a REDEMAT definiu como missão central impulsionar o desenvolvimento do setor
+            industrial brasileiro em seu campo de conhecimento. Em alinhamento com sua proposta plural,
+            preservou a oferta de disciplinas sobre todas as classes de materiais e garantiu a atuação do
+            corpo docente em suas variadas áreas e linhas.
+          </p>
+          <p>
+            A partir de <strong>1999</strong>, o Programa firmou parcerias com empresas e entidades para
+            disseminar conhecimento avançado e impulsionar ciência e tecnologia por meio da capacitação
+            em níveis de especialização, mestrado e doutorado.
+          </p>
+          <h3 class="h3">Alcance regional</h3>
+          <p>
+            A atuação da REDEMAT manifesta-se intensamente nas instituições de ensino de Minas Gerais, mas
+            alcança regiões estratégicas com oferta restrita de pós-graduação <em>stricto sensu</em> na área:
+          </p>
+          <p id="regioes" style="font-size:.9rem;"></p>
+        </div>
+        <div>
+          <h3 class="h3 mb-3">Linha do tempo</h3>
+          <div class="tl" id="timeline"></div>
+        </div>
+      </div>
+      <p style="font-size:.75rem;color:var(--text-soft);margin-top:1.5rem;">
+        Fonte: proposta APCN Doutorado 2026, seções 4.2 e 4.3.
+      </p>
+    </div>
+  </section>
+
+  <!-- Nucleação -->
+  <section class="section" aria-labelledby="nucl-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Impacto formativo</p>
+        <h2 class="h2" id="nucl-h">Nucleação de quadros docentes</h2>
+        <p class="section-lede">
+          Um dos desdobramentos mais relevantes da REDEMAT é a capacitação de quadros docentes para o
+          ensino superior mineiro.
+        </p>
+      </div>
+      <div class="grid grid--2" id="nuclGrid"></div>
+      <div class="mt-3" id="nuclNota"></div>
+    </div>
+  </section>
+
+  <!-- Missão / visão -->
+  <section class="section section--alt" aria-labelledby="mv-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Identidade</p>
+        <h2 class="h2" id="mv-h">Missão, visão e valor gerado</h2>
+      </div>
+      <div class="grid grid--2 mb-4">
+        <div class="quote-card">
+          <p class="eyebrow" style="font-family:var(--f-sans);">Missão</p>
+          <p id="missao"></p>
+        </div>
+        <div class="quote-card">
+          <p class="eyebrow" style="font-family:var(--f-sans);">Visão</p>
+          <p id="visao"></p>
+        </div>
+      </div>
+      <h3 class="h3 mb-2">Valor gerado pelo Programa</h3>
+      <div class="card">
+        <div class="prose" style="max-width:none;"><ul id="valorList"></ul></div>
+      </div>
+      <div class="mt-3" id="mvNota"></div>
+    </div>
+  </section>
+
+  <!-- Governança -->
+  <section class="section" aria-labelledby="gov-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Gestão</p>
+        <h2 class="h2" id="gov-h">Coordenação e governança</h2>
+      </div>
+      <div class="grid grid--2 mb-4" id="coordGrid"></div>
+
+      <h3 class="h3 mb-2">Comissão APCN</h3>
+      <p class="section-lede mb-3">
+        Comissão responsável pela elaboração da proposta de criação do curso de Doutorado
+        (APCN/CAPES 2026).
+      </p>
+      <div class="card">
+        <div class="prose" style="max-width:none;"><ul id="comissaoList"></ul></div>
+      </div>
+      <div class="mt-3" id="govNota"></div>
+    </div>
+  </section>
+
+  <!-- Forma associativa -->
+  <section class="section section--alt" aria-labelledby="assoc-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">UFOP · UEMG</p>
+        <h2 class="h2" id="assoc-h">A forma associativa</h2>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <h3 class="h3">Por que uma rede</h3>
+          <div class="prose" style="max-width:none;">
+            <p>
+              A REDEMAT possui natureza interinstitucional desde sua origem. A associação entre UFOP e
+              UEMG permite reunir competências complementares em engenharia metalúrgica e de materiais,
+              física, química, processamento, mineração, superfícies, materiais funcionais, biomateriais,
+              design e desenvolvimento de produtos.
+            </p>
+            <p>
+              A associação é apresentada como <strong>mecanismo acadêmico efetivo de sinergia e otimização
+              de recursos</strong> — não como expediente para atendimento numérico de requisitos.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="h3">Contexto regional</h3>
+          <div class="prose" style="max-width:none;">
+            <p>
+              A REDEMAT está sediada em Minas Gerais, estado de elevada densidade de atividades de
+              mineração, metalurgia, siderurgia, manufatura, energia, cimento, materiais avançados e
+              serviços tecnológicos.
+            </p>
+            <p>
+              A localização da UFOP no <strong>Quadrilátero Ferrífero</strong> e a inserção estadual da
+              UEMG proporcionam ambiente singular para pesquisa aplicada em toda a cadeia que vai do
+              recurso mineral ao produto de alto valor agregado.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-3" id="assocNota"></div>
+    </div>
+  </section>
+
+  <!-- Autoavaliação -->
+  <section class="section" aria-labelledby="aval-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Planejamento</p>
+        <h2 class="h2" id="aval-h">Autoavaliação e governança de dados</h2>
+        <p class="section-lede">
+          O Programa institui um ciclo anual de autoavaliação com indicadores, metas, evidências e
+          divulgação de síntese pública.
+        </p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <h3 class="h3">Histórico</h3>
+          <p style="font-size:.88rem;color:var(--text-mid);line-height:1.7;" id="avalHist"></p>
+        </div>
+        <div class="card">
+          <h3 class="h3">Ciclo anual</h3>
+          <div class="prose" style="max-width:none;"><ul id="avalCiclo"></ul></div>
+        </div>
+      </div>
+      <div class="mt-3">
+        <a href="indicadores.html#p-aval" class="btn btn--dark" style="display:inline-flex;align-items:center;gap:.45rem;font-size:.88rem;font-weight:700;padding:.72rem 1.35rem;border-radius:var(--r-sm);background:var(--navy);color:#fff;">
+          Ver governança de dados completa
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer-slot"></div>
+
+<script src="../assets/js/site-data.js"></script>
+<!-- Manifesto de fotos: declara quem tem foto e em que formato.
+     Gerado por scripts/conferir-fotos.py --manifesto. Ausente antes
+     da primeira foto: o portal trata a ausência e usa as iniciais. -->
+<script src="../assets/img/pessoas/fotos.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+(function () {
+  'use strict';
+  const R = window.REDEMAT, C = window.RC, P = R.programa;
+
+  document.getElementById('heroMetrics').innerHTML = [
+    { v: 2026 - 1995, l: 'Anos de trajetória' },
+    { v: R.docentes.itens.length, l: 'Docentes' },
+    { v: 2, l: 'Instituições associadas' },
+    { v: P.conceito_capes.valor, l: 'Conceito CAPES' }
+  ].map(function (m) { return '<div class="hero-metric"><b data-count="' + m.v + '">0</b><span>' + m.l + '</span></div>'; }).join('');
+
+  /* ---------- ficha ---------- */
+  const rows = [
+    ['Nome do Programa', P.nome],
+    ['Nome em inglês', P.nome_en],
+    ['Rede', P.rede],
+    ['Código CAPES', P.codigo_capes.valor + ' ' + C.badge(P.codigo_capes.status)],
+    ['Área de avaliação', P.area_avaliacao],
+    ['Área básica', P.area_basica],
+    ['Forma associativa', P.forma_associativa.valor + ' ' + C.badge(P.forma_associativa.status)],
+    ['Conceito CAPES', 'Conceito ' + P.conceito_capes.valor + ' ' + C.badge(P.conceito_capes.status)],
+    ['Ano de concepção da rede', P.ano_concepcao.valor + ' ' + C.badge(P.ano_concepcao.status)],
+    ['Início do Mestrado', P.ano_inicio_mestrado.valor + ' ' + C.badge(P.ano_inicio_mestrado.status)],
+    ['Modalidade', P.modalidade],
+    ['Endereço', P.contato.endereco],
+    ['E-mail institucional', '<a href="mailto:' + P.contato.email + '" style="color:var(--amber);font-weight:600;">' + P.contato.email + '</a>'],
+    ['Site', '<a href="' + P.contato.site + '" target="_blank" rel="noopener" style="color:var(--amber);font-weight:600;">' + P.contato.site + ' ↗</a>']
+  ];
+  document.getElementById('idBody').innerHTML = rows.map(function (r) {
+    return '<tr><td>' + r[0] + '</td><td>' + r[1] + '</td></tr>';
+  }).join('');
+
+  /* ---------- timeline ---------- */
+  document.getElementById('timeline').innerHTML = R.timeline.itens.map(function (t) {
+    return '<div class="tl-item"><div class="tl-year">' + t.ano + '</div><p class="tl-text">' + t.texto + '</p></div>';
+  }).join('');
+
+  document.getElementById('regioes').innerHTML = R.alcance.regioes.map(function (r) {
+    return '<span class="kw" style="margin:.15rem .2rem 0 0;display:inline-block;">' + r + '</span>';
+  }).join('');
+
+  /* ---------- nucleação ---------- */
+  document.getElementById('nuclGrid').innerHTML = R.alcance.nucleacao.map(function (n) {
+    return '<div class="card"><h3 class="h3">' + n.instituicao + '</h3>' +
+      '<p style="font-size:.86rem;color:var(--text-mid);line-height:1.7;">' + n.detalhe + '</p></div>';
+  }).join('');
+  document.getElementById('nuclNota').innerHTML = C.note('info',
+    'Relação descrita na proposta APCN 2026, seção 4.3. Os números de docentes formados por instituição ' +
+    'aguardam consolidação do cadastro de egressos. ' + C.badge('PRELIMINAR'));
+
+  /* ---------- missão / visão ---------- */
+  document.getElementById('missao').textContent = P.missao.valor;
+  document.getElementById('visao').textContent = P.visao.valor;
+  document.getElementById('valorList').innerHTML = P.valor_gerado.valor.map(function (v) { return '<li>' + v + '</li>'; }).join('');
+  document.getElementById('mvNota').innerHTML = C.note('warn',
+    '<strong>Textos em minuta.</strong> Missão, visão e valor gerado constam como minuta na proposta APCN 2026 ' +
+    '(seções 5.1 a 5.3) e aguardam validação no Colegiado. ' + C.badge('PRELIMINAR'));
+
+  /* ---------- governança ---------- */
+  document.getElementById('coordGrid').innerHTML = P.coordenacao.map(function (c) {
+    return '<div class="gov-card">' +
+      C.avatar(c.nome.replace(/^(Profa?\.|Dra?\.)\s*/g, ''), 'var(--navy)', '../', c.foto) +
+      '<div><p class="prof-role">' + c.cargo + '</p>' +
+      '<p style="font-size:.95rem;font-weight:700;color:var(--navy);line-height:1.3;">' + c.nome + '</p>' +
+      '<a href="mailto:' + c.email + '" style="font-size:.79rem;color:var(--amber);font-weight:600;">' + c.email + '</a></div></div>';
+  }).join('');
+
+  document.getElementById('comissaoList').innerHTML = P.comissao_apcn.valor.map(function (m) { return '<li>' + m + '</li>'; }).join('');
+
+  document.getElementById('govNota').innerHTML = C.note('info',
+    'A composição do Colegiado e da Assembleia Docente, com mandatos vigentes, está em processo de ' +
+    'atualização e será publicada após confirmação pela secretaria. ' + C.badge('EM_DEFINICAO'));
+
+  document.getElementById('assocNota').innerHTML = C.note('warn',
+    '<strong>Pendência declarada.</strong> A atualização do instrumento jurídico da associação UFOP-UEMG, ' +
+    'com governança acadêmica e administrativa e distribuição de responsabilidades, consta como pendência ' +
+    'crítica na matriz de conformidade da proposta APCN 2026. ' + C.badge('EM_DEFINICAO'));
+
+  /* ---------- autoavaliação ---------- */
+  document.getElementById('avalHist').textContent = R.autoavaliacao.historico;
+  document.getElementById('avalCiclo').innerHTML = R.autoavaliacao.ciclo.slice(0, 6).map(function (c) { return '<li>' + c + '</li>'; }).join('');
+
+  C.mount('programa.html', '../');
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+
+                <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf8"><meta name="Generator" content="scriptLattes"><title>REDEMAT</title><link rel="stylesheet" href="css/scriptLattes.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"><link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css"><link rel="stylesheet" type="text/css" href="css/dataTables.colVis.min.css"><script type="text/javascript" charset="utf8" src="js/jquery.min.js"></script><script type="text/javascript" charset="utf8" src="js/jquery.dataTables.min.js"></script><script type="text/javascript" charset="utf8" src="js/dataTables.colVis.min.js"></script><script type="text/javascript" charset="utf8" src="js/sorttable-local.js"></script><link rel="stylesheet" href="portal-redemat.css">
+</head><body>
+<div id="portal-back"><a href="../pages/producao-lattes.html">&#8592; Voltar ao portal REDEMAT</a><span>Relatório ScriptLattes — dados brutos dos currículos Lattes</span></div><div id="header2"> <button onClick="history.go(-1)">Voltar</button><h2>REDEMAT</h2></div>
+                
+        <script type="text/javascript" src="./js/jquery.min.js"></script>
+        <!--
+        <script type="text/javascript" src="./highcharts.js"></script>
+        <script type="text/javascript" src="./exporting.js"></script>
+        <script type="text/javascript" src="./drilldown.js"></script>
+        -->
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+        <script type="text/javascript">
+        // Load the fonts
+        Highcharts.createElement('link', {
+           href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700',
+           rel: 'stylesheet',
+           type: 'text/css'
+        }, null, document.getElementsByTagName('head')[0]);
+
+        Highcharts.theme = {
+   colors: ["#1F77B4", "#118D95", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#2b908f", "#90ee7e", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
+   chart: {
+      backgroundColor: null,
+      style: {
+         fontFamily: "'Source Sans Pro', 'sans-serif'"
+      }
+   },
+   title: {
+      style: {
+         color: 'black',
+         fontSize: '16px',
+         fontWeight: 'bold'
+      }
+   },
+   subtitle: {
+      style: {
+         color: 'black'
+      }
+   },
+   tooltip: {
+      borderWidth: 0
+   },
+   legend: {
+      itemStyle: {
+         fontWeight: 'bold',
+         fontSize: '13px'
+      }
+   },
+   xAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   yAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   plotOptions: {
+      series: {
+         shadow: true
+      },
+      candlestick: {
+         lineColor: '#404048'
+      },
+      map: {
+         shadow: false
+      }
+   },
+
+   // Highstock specific
+   navigator: {
+      xAxis: {
+         gridLineColor: '#D0D0D8'
+      }
+   },
+   rangeSelector: {
+      buttonTheme: {
+         fill: 'white',
+         stroke: '#C0C0C8',
+         'stroke-width': 1,
+         states: {
+            select: {
+               fill: '#D0D0D8'
+            }
+         }
+      }
+   },
+   scrollbar: {
+      trackBorderColor: '#C0C0C8'
+   },
+
+   // General
+   background2: '#E0E0E8'
+};
+
+        Highcharts.setOptions(Highcharts.theme);
+        $(function () {
+            $('#container').highcharts({chart: {type: 'column', 
+height: 300}, 
+title: {text: 'Trabalhos técnicos'}, 
+subtitle: {text: ''}, 
+xAxis: {title: {text: ''}, 
+type: 'category'}, 
+yAxis: {min: 0, 
+title: {text: 'Quantidade', 
+align: 'middle'}, 
+labels: {overflow: 'justify'}, 
+stackLabels: {enabled: true, 
+format: '{stack}'}}, 
+tooltip: {enabled: true, 
+valueSuffix: '', 
+shared: false, 
+headerFormat: '<span style="font-size: 10px">{point.key}{point.stack}{series.stack}</span><br/>', 
+pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'}, 
+plotOptions: {bar: {dataLabels: {enabled: false}}, 
+column: {stacking: null}, 
+series: {shadow: 'true'}}, 
+legend: {enabled: false, 
+layout: 'vertical', 
+align: 'right', 
+verticalAlign: 'middle', 
+borderWidth: 1, 
+backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor || '#FFFFFF'), 
+shadow: true}, 
+credits: {enabled: false}, 
+series: [{name: 'Total', 
+data: [[2021,
+13],
+[2022,
+4],
+[2023,
+3],
+[2024,
+2],
+[2025,
+3],
+[2026,
+3]]}]});
+        });
+        </script>
+        
+                <h3>Trabalhos técnicos</h3> <br>
+                    <div id="container" style="min-width: 310px; max-width: 1920px; height: 300; margin: 0"></div>
+                    Número total de itens: 29<br>
+                    
+                    
+                    <div id="dv-year-2026"><h3 class="year">2026</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>SANTOS, Heloisa Nazaré dos. <b>V Congresso Internacional de Sustentabilidade em Têxtil e Moda - SUSTEXMODA</b>. 2026.</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>SANTOS, Heloisa Nazaré dos. <b>Palestra: ?Green Textiles, Healthy Future, Connected Education ? Co-Building a Global Textile Community?. 2026. (Programa de rádio ou</b>. 2026.</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>SANTOS, Heloisa Nazaré dos; SARAIVA, A. ; TOBIAS, R. ; AGUIAR, M.. <b>Palestra: Como observar o pilar Meio Ambiente na Sustentabilidade no Setor Têxtil e Moda, hoje?. 2026. (Programa de rádio ou TV/Mesa</b>. 2026.</td></tr>
+            </table></div><div id="dv-year-2025"><h3 class="year">2025</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>SANTOS, Heloisa Nazaré dos. <b>P&E 27º Seminário de Pesquisa e Extensão</b>. 2025.</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>SANTOS, Heloisa Nazaré dos. <b>Curso Viver de Costura Capacitação em Design de Moda de Agentes Multiplicadores Conselheiro Pena ? Minas Gerais</b>. 2025.</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>SANTOS, T. B. ; SANTOS, A. E. M. ; SOUZA, F. R. ; GALGANO, G. D. ; BERNARDES, A. T. ; SILVA, M. C. A. ; FREITAS, A. P. ; CANDIDO FILHO, M. ; SANTOS, L. L. R. ; SANTOS, J. G. ; OLIVEIRA, A. L. ; SILVA, M. L. ; CARDOSO, M. A. ; FAGUNDES, J. V. ; LOPES, D. H. ; MATOSO, G. C.. <b>SLOPE BREAK: METODOLOGIA DE CÁLCULO DA PROJEÇÃO E ALCANCE DE RUPTURAS EM TALUDES</b>. 2025.</td></tr>
+            </table></div><div id="dv-year-2024"><h3 class="year">2024</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>MATOS, M.J.S. <b>Parecer Ad Hoc - Chamada CNPq Nº 32/2023</b>. 2024.</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>SANTOS, Heloisa Nazaré dos; CAMPOS, D.. <b>Palestrante: Um olhar para as atividades relacionadas a governança em uma pequena empresa de moda.. 2024. (Programa de rádio ou</b>. 2024.</td></tr>
+            </table></div><div id="dv-year-2023"><h3 class="year">2023</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>Matos, M J S. <b>Encontro de Saberes 2023 - XXXI SEMINÁRIO DE INICIAÇÃO CIENTÍFICA - SEIC/UFOP</b>. 2023.</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Matos, M J S. <b>Semana do Conhecimento UFMG</b>. 2023.</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>MATOS, MATHEUS J.S. <b>Parecer ad hoc EDITAL Nº 11/2023 CAPES</b>. 2023.</td></tr>
+            </table></div><div id="dv-year-2022"><h3 class="year">2022</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>LA Duarte Júnior ; T. F. Nascimento ; Bianchi, R.F.. <b>OUMLIGHT - Conheça as startups selecionadas para a 2ª Rodada do Programa de Desenvolvimento Tecnológico da Prefeitura de Belo Horizonte. 2022. (Programa de rádio ou</b>. 2022.</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>LA Duarte Júnior ; T. F. Nascimento ; Bianchi, R.F.. <b>OUMLIGHT - 2ª Ed. do Programa de Desenvolvimento Tecnológico de BH. 2022. (Programa de rádio ou</b>. 2022.</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>MATOS, M.J.S. <b>Parecer Ad Hoc - Chamada CNPq Nº 09/2022</b>. 2022.</td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>MATOS, M.J.S. <b>Parecer Ad Hoc - Chamada CNPq Nº 09/2022</b>. 2022.</td></tr>
+            </table></div><div id="dv-year-2021"><h3 class="year">2021</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>B. G. Paiva ; Bianchi, R.F.. <b>Brasileira cria garrafa que filtra água com energia solar e concorre a prêmio mundial. 2021. (Programa de rádio ou</b>. 2021.</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>B. G. Paiva ; Bianchi, R.F.. <b>PESQUISADORA DA UFOP DESENVOLVE GARRAFA QUE TORNA QUALQUER ÁGUA EM POTÁVEL. 2021. (Programa de rádio ou</b>. 2021.</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>B. G. Paiva ; Bianchi, R.F.. <b>Universitária brasileira cria garrafa que torna qualquer água potável. 2021. (Programa de rádio ou</b>. 2021.</td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>B. G. Paiva ; Bianchi, R.F.. <b>Pesquisadora brasileira cria garrafa que torna água potável. 2021. (Programa de rádio ou</b>. 2021.</td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>B. G. Paiva ; Bianchi, R.F.. <b>Entrevista Primaz convida Bárbara Gosziniak. 2021. (Programa de rádio ou</b>. 2021.</td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>B. G. Paiva ; Bianchi, R.F.. <b>Prêmio Red Bull Basement Brasil 2021. 2021. (Programa de rádio ou</b>. 2021.</td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>B. G. Paiva ; Bianchi, R.F.. <b>Estudante da UFOP é finalista mundial do Red Bull Basement University. 2021; Tema: Prêmio RedBull</b>. 2021.</td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>B. G. Paiva ; Bianchi, R.F.. <b>Com garrafa que limpa a água, brasileira irá para final de desafio mundial. 2021; Tema: Prêmio RedBull</b>. 2021.</td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>B. G. Paiva ; Bianchi, R.F.. <b>Brasileira cria garrafa que limpa água e vai para desafio mundial. 2021; Tema: Prêmio RedBull</b>. 2021.</td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>B. G. Paiva ; Bianchi, R.F.. <b>ALUNA DA UFOP É FINALISTA DE PROGRAMA INTERNACIONAL. 2021; Tema: Prêmio RedBull</b>. 2021.</td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>Matos, M J S. <b>5o Evento Científico Unificado: Jornada de Física. 2021. (Programa de rádio ou</b>. 2021.</td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>MATOS, M. J. S. <b>Parecer artigo científico - Advanced Theory and Simulations</b>. 2021.</td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>MATOS, M.J.S. <b>Parecer Ad Hoc - Chamada CNPq Nº 04/2021</b>. 2021.</td></tr>
+            </table></div><div id="dv-year-*itens sem ano"><h3 class="year">*itens sem ano</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>SANTOS, Heloisa Nazaré dos. Palestrante: Um olhar para as atividades relacionadas a governança em uma pequena empresa de moda. <b>2024. (Programa de rádio ou TV/Mesa redonda)</b>. 0.</td></tr>
+            </table></div>
+                    </table>
+                <br><p><br>(*) Relatório criado com produções desde 2021 até 2026
+<br>Data de processamento: 31/08/2026 22:11:56<br>         <div id="footer">         Relatório gerado por <a href="https://scriptlattes.sourceforge.net/">scriptLattes V9</a>.         Os resultados podem ser afetados por possíveis falhas decorrentes de inconsistências no preenchimento dos Currículos Lattes. E-mail de contato: <a href="mailto:matheusmatos@ufop.edu.br">matheusmatos@ufop.edu.br</a>         </div> </body></html>
+              

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pesquisa — Áreas e Linhas | REDEMAT UFOP · UEMG</title>
+<meta name="description" content="Duas áreas de concentração e quatro linhas de pesquisa da REDEMAT: processamento e desempenho de materiais; materiais estratégicos, funcionais e sustentáveis.">
+<link rel="canonical" href="https://redemat.ufop.br/pesquisa/areas">
+<link rel="icon" href="../assets/img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<div id="site-header-slot"></div>
+
+<section class="page-hero" aria-labelledby="ph">
+  <div class="page-hero-in">
+    <nav class="crumb" aria-label="Trilha de navegação">
+      <a href="../index.html">Início</a><span aria-hidden="true">›</span>
+      <span aria-current="page">Pesquisa</span>
+    </nav>
+    <h1 id="ph">Áreas de Concentração e Linhas de Pesquisa</h1>
+    <p class="lede">
+      A REDEMAT organiza sua pesquisa em duas áreas de concentração e quatro linhas, articuladas por
+      cinco eixos transversais que atravessam todas as linhas sem fragmentar a arquitetura acadêmica.
+    </p>
+  </div>
+</section>
+
+<main id="conteudo">
+
+  <!-- Aviso de status -->
+  <section class="section" style="padding-block:2rem 0;">
+    <div class="wrap" id="statusNota"></div>
+  </section>
+
+  <!-- Princípios -->
+  <section class="section" aria-labelledby="prin-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Como está organizado</p>
+        <h2 class="h2" id="prin-h">Princípios de organização</h2>
+        <p class="section-lede">
+          A reorganização de 2026 responde a um apontamento da Avaliação Quadrienal 2021–2024: o número
+          elevado e fragmentado de linhas de pesquisa — 17, com sobreposição e massa crítica desigual.
+        </p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <div class="prose" style="max-width:none;">
+            <ul>
+              <li>Cada <strong>área</strong> expressa um domínio científico e tecnológico amplo, mas identificável.</li>
+              <li>Cada <strong>linha</strong> representa problemas e objetos de pesquisa coletivos — não técnicas isoladas ou projetos individuais.</li>
+              <li>Caracterização, inteligência artificial, modelagem, sustentabilidade e inovação atravessam as linhas como eixos transversais.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="prose" style="max-width:none;">
+            <ul>
+              <li>Cada docente tem uma linha principal e, no máximo, uma secundária, justificada por produção, projeto, orientação, disciplina e infraestrutura.</li>
+              <li>Cada linha deve possuir massa crítica, projetos ativos, produção recente, orientações, disciplinas ofertáveis e infraestrutura identificada.</li>
+              <li>A distribuição reflete a associação UFOP-UEMG e evita dependência de um único docente.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:.75rem;color:var(--text-soft);margin-top:1rem;">
+        Fonte: proposta APCN Doutorado 2026, seção 6.1.
+      </p>
+    </div>
+  </section>
+
+  <!-- Áreas e linhas -->
+  <section class="section section--alt" aria-labelledby="areas-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Estrutura</p>
+        <h2 class="h2" id="areas-h">As duas áreas e suas linhas</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2rem;" id="areasWrap"></div>
+    </div>
+  </section>
+
+  <!-- Eixos transversais -->
+  <section class="section" aria-labelledby="eixos-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Integração</p>
+        <h2 class="h2" id="eixos-h">Eixos transversais</h2>
+        <p class="section-lede">
+          Cinco eixos suportam todas as áreas e linhas sem constituir linhas autônomas — decisão
+          deliberada para evitar a fragmentação que caracterizou a estrutura anterior.
+        </p>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <caption class="sr-only">Eixos transversais, sua função na proposta e a evidência esperada</caption>
+          <thead><tr><th scope="col">Eixo transversal</th><th scope="col">Função na arquitetura acadêmica</th></tr></thead>
+          <tbody id="eixosBody"></tbody>
+        </table>
+      </div>
+      <p style="font-size:.75rem;color:var(--text-soft);margin-top:.85rem;">
+        Fonte: proposta APCN Doutorado 2026, seção 6.
+      </p>
+    </div>
+  </section>
+
+  <!-- Colaboração -->
+  <section class="section section--alt" aria-labelledby="colab-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Redes</p>
+        <h2 class="h2" id="colab-h">Colaboração científica</h2>
+        <p class="section-lede">
+          A integração prévia entre os docentes é um requisito de coerência coletiva. A rede de
+          coautoria interna evidencia essa articulação.
+        </p>
+      </div>
+      <div class="grid grid--3" id="colabGrid"></div>
+      <div class="mt-3" id="colabNota"></div>
+    </div>
+  </section>
+
+  <!-- Infraestrutura -->
+  <section class="section" aria-labelledby="infra-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Suporte à pesquisa</p>
+        <h2 class="h2" id="infra-h">Infraestrutura e laboratórios</h2>
+      </div>
+      <div class="card" id="infraCard"></div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer-slot"></div>
+
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+(function () {
+  'use strict';
+  const R = window.REDEMAT, C = window.RC;
+
+  /* --------------- aviso de status --------------- */
+  document.getElementById('statusNota').innerHTML = C.note('warn',
+    '<strong>Estrutura proposta, em aprovação.</strong> ' + R.areas.nota +
+    ' A estrutura vigente publicada no site atual descreve três áreas ' +
+    '(Biomateriais e Compósitos, Materiais Avançados e Tecnologia Mineral). ' +
+    'Esta página apresenta a arquitetura da proposta APCN 2026. ' + C.badge('PRELIMINAR'));
+
+  /* --------------- áreas --------------- */
+  document.getElementById('areasWrap').innerHTML = R.areas.itens.map(function (a) {
+    const nDoc = R.docentes.itens.filter(function (d) {
+      return a.linhas.some(function (l) { return l.id === d.linha; });
+    }).length;
+
+    const linhas = a.linhas.map(function (l) {
+      const n = R.docentes.itens.filter(function (d) { return d.linha === l.id; }).length;
+      const discs = (R.curriculo.especificas[l.id] || []);
+      return '<div class="line-item" id="' + l.id + '">' +
+        '<img class="line-img" src="../assets/img/ilustra/linha-' + l.id.replace('l', '') + '-hero.svg" alt="" loading="lazy">' +
+        '<p class="line-code" style="color:' + l.cor + '">' + l.codigo.toUpperCase() + ' · ' + n + ' docente' + (n === 1 ? '' : 's') +
+          ' · ' + discs.length + ' disciplina' + (discs.length === 1 ? '' : 's') + ' proposta' + (discs.length === 1 ? '' : 's') + '</p>' +
+        '<h4 class="line-name">' + l.nome + '</h4>' +
+        '<p class="line-scope"><strong>Escopo:</strong> ' + l.escopo + '</p>' +
+        '<div class="kw-list">' + l.palavras.map(function (k) { return '<span class="kw">' + k + '</span>'; }).join('') + '</div>' +
+      '</div>';
+    }).join('');
+
+    return '<article class="area-block" id="' + a.id + '">' +
+      '<img class="area-img" src="../assets/img/ilustra/' + a.id.replace('a', 'area-') + '-hero.svg" alt="" loading="lazy">' +
+      '<div class="area-head" style="background:' + a.pale + '">' +
+        '<p class="area-tag" style="color:' + a.cor + '">' + a.codigo + ' · ' + nDoc + ' docentes vinculados</p>' +
+        '<h3 class="area-title">' + a.nome + '</h3>' +
+        '<p class="area-desc">' + a.descricao + '</p>' +
+      '</div>' +
+      '<div class="line-list">' + linhas + '</div>' +
+    '</article>';
+  }).join('');
+
+  /* --------------- eixos --------------- */
+  document.getElementById('eixosBody').innerHTML = R.eixos_transversais.itens.map(function (e) {
+    return '<tr><td><strong style="color:var(--navy);">' + e.nome + '</strong></td><td>' + e.funcao + '</td></tr>';
+  }).join('');
+
+  /* --------------- colaboração --------------- */
+  const col = R.colaboracao;
+  document.getElementById('colabGrid').innerHTML = [
+    { ico: C.ICO.people, cor: 'var(--area1)', v: col.interna.nos, l: 'Docentes na rede interna de coautoria',
+      s: 'Nós do grafo de colaboração' },
+    { ico: C.ICO.chart,  cor: 'var(--l12)', v: col.interna.arestas, l: 'Vínculos de coautoria entre docentes',
+      s: 'Arestas do grafo de colaboração' },
+    { ico: C.ICO.globe,  cor: 'var(--area2)', v: col.externa.colaboradores, l: 'Coautores externos distintos',
+      s: 'Identificados nos currículos do corpo docente' }
+  ].map(function (k) {
+    return '<div class="kpi">' +
+      '<div class="kpi-top">' +
+        '<span class="kpi-ico" style="background:color-mix(in srgb, ' + k.cor + ' 12%, transparent);color:' + k.cor + '">' + k.ico + '</span>' +
+        C.badge('PRELIMINAR') +
+      '</div>' +
+      '<div class="kpi-val" style="color:' + k.cor + '" data-count="' + k.v + '">0</div>' +
+      '<div class="kpi-lbl">' + k.l + '</div>' +
+      '<div class="kpi-src">' + k.s + '</div></div>';
+  }).join('');
+
+  document.getElementById('colabNota').innerHTML = C.note('info',
+    col.interna.nota + ' ' + col.externa.nota +
+    ' Fonte: grafo de coautoria gerado pelo ScriptLattes a partir dos currículos do corpo docente, coleta em 28/08/2026.');
+
+  /* --------------- infraestrutura --------------- */
+  (function infra() {
+    const L = R.laboratorios;
+    const nEquip = L.itens.reduce(function (a, x) { return a + (x.equipamentos || []).length; }, 0);
+    const tec = {};
+    L.itens.forEach(function (x) { (x.tecnicas || []).forEach(function (t) { tec[t] = 1; }); });
+    const destaques = L.itens.filter(function (x) { return (x.equipamentos || []).length >= 5; }).slice(0, 4);
+
+    document.getElementById('infraCard').innerHTML =
+      '<div class="infra-top">' +
+        '<img src="../assets/img/ilustra/laboratorios.svg" alt="" class="infra-img" loading="lazy">' +
+        '<div>' +
+          '<h3 class="h3">' + L.total + ' laboratórios, ' + nEquip + ' equipamentos</h3>' +
+          '<p class="infra-txt">' + L.nota + '</p>' +
+          '<p class="infra-txt">De MEV com EBSD e microtomografia de raios X a fornos de 1600 °C e um ' +
+            'cluster de simulação: são ' + Object.keys(tec).length + ' técnicas distintas declaradas.</p>' +
+          '<a class="mini-link" href="laboratorios.html">Ver os laboratórios, com responsável e equipamento ' + C.ICO.ext + '</a>' +
+        '</div>' +
+      '</div>' +
+      '<ul class="infra-lista">' + destaques.map(function (x) {
+        return '<li><b>' + (x.sigla ? x.sigla + ' — ' : '') + x.nome.split(' — ').pop() + '</b>' +
+          (x.equipamentos || []).length + ' equipamentos · ' + (x.tecnicas || []).slice(0, 3).join(', ') + '</li>';
+      }).join('') + '</ul>' +
+      '<div class="mt-3">' + C.note('info',
+        '<strong>Infraestrutura da instituição associada.</strong> ' + R.infraestrutura.uemg.valor +
+        '. Fonte: proposta APCN 2026, ficha da UEMG. ' + C.badge('PRELIMINAR')) + '</div>' +
+      '<div class="mt-2">' + C.note('warn', L.aviso) + '</div>' +
+      '<div class="mt-2">' + C.note('info',
+        'Para equipamentos multiusuários e agendamento de análises, o contato é o responsável do ' +
+        'laboratório — os e-mails estão na página de laboratórios — ou a secretaria: ' +
+        '<a href="mailto:' + R.programa.contato.email + '">' + R.programa.contato.email + '</a>') + '</div>';
+  }());
+
+  C.mount('pesquisa.html', '../');
+})();
+</script>
+</body>
+</html>

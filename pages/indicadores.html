@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indicadores e Transparência — REDEMAT | UFOP · UEMG</title>
+<meta name="description" content="Indicadores do Programa de Pós-Graduação em Engenharia de Materiais da REDEMAT: produção científica, formação, projetos, captação e metodologia de dados com proveniência declarada.">
+<link rel="canonical" href="https://redemat.ufop.br/indicadores">
+<link rel="icon" href="../assets/img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
+<style>
+.src-tbl td:first-child { font-weight: 600; color: var(--navy); white-space: nowrap; }
+.conflict { border-left: 3px solid var(--st-div); background: var(--surface); border-radius: var(--r); padding: 1.25rem 1.4rem; }
+.conflict.ok { border-left-color: var(--st-val); }
+.conflict h3 { font-size: .93rem; font-weight: 700; color: var(--navy); margin-bottom: .3rem; }
+.conflict-srcs { margin: .85rem 0; display: flex; flex-direction: column; gap: .3rem; }
+.conflict-src { font-size: .8rem; color: var(--text-mid); display: flex; gap: .5rem; }
+.conflict-src b { color: var(--text); font-weight: 600; min-width: 0; }
+.conflict-res { font-size: .83rem; color: var(--text-mid); line-height: 1.65; padding-top: .85rem; border-top: 1px dashed var(--border); }
+.pipeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .75rem; }
+.pipe-step { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 1rem; position: relative; }
+.pipe-step b { display: block; font-size: .78rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; margin-bottom: .35rem; }
+.pipe-step p { font-size: .76rem; color: var(--text-mid); line-height: 1.55; }
+</style>
+</head>
+<body>
+
+<div id="site-header-slot"></div>
+
+<section class="page-hero" aria-labelledby="ph">
+  <div class="page-hero-in">
+    <nav class="crumb" aria-label="Trilha de navegação">
+      <a href="../index.html">Início</a><span aria-hidden="true">›</span>
+      <span aria-current="page">Indicadores</span>
+    </nav>
+    <h1 id="ph">Indicadores e Transparência</h1>
+    <p class="lede">
+      Produção científica, formação de pesquisadores, projetos e captação de recursos — cada número
+      com fonte declarada, data de coleta e status de validação. Nenhum indicador é publicado sem
+      origem rastreável.
+    </p>
+    <div class="hero-metrics" id="heroMetrics"></div>
+  </div>
+</section>
+
+<nav class="tabs" aria-label="Seções de indicadores">
+  <div class="tabs-in" role="tablist">
+    <button class="tab" role="tab" id="t-prod"  aria-controls="p-prod"  aria-selected="true">Produção</button>
+    <button class="tab" role="tab" id="t-form"  aria-controls="p-form"  aria-selected="false">Formação</button>
+    <button class="tab" role="tab" id="t-proj"  aria-controls="p-proj"  aria-selected="false">Projetos e captação</button>
+    <button class="tab" role="tab" id="t-corpo" aria-controls="p-corpo" aria-selected="false">Corpo docente</button>
+    <button class="tab" role="tab" id="t-aval"  aria-controls="p-aval"  aria-selected="false">Autoavaliação</button>
+    <button class="tab" role="tab" id="t-met"   aria-controls="p-met"   aria-selected="false">Metodologia</button>
+  </div>
+</nav>
+
+<main id="conteudo">
+  <div class="section" style="padding-top:2.25rem;">
+    <div class="wrap">
+
+      <!-- ═══════════════ PRODUÇÃO ═══════════════ -->
+      <div class="panel" id="p-prod" role="tabpanel" aria-labelledby="t-prod" tabindex="0">
+        <div class="grid grid--4 mb-4" id="prodKpis"></div>
+
+        <div class="grid grid--2">
+          <div class="chart-card">
+            <div class="chart-head">
+              <div>
+                <p class="chart-title">Artigos em periódicos por ano</p>
+                <p class="chart-sub">Comparação entre artigos únicos e soma das contagens por docente</p>
+              </div>
+              <span class="badge badge--pre">Preliminar</span>
+            </div>
+            <div class="chart-box"><canvas id="cProd" role="img" aria-label="Gráfico comparando artigos únicos e soma por docente, de 2021 a 2026"></canvas></div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-head">
+              <div>
+                <p class="chart-title">Distribuição Qualis CAPES</p>
+                <p class="chart-sub">Estratos A1–A4 e B da produção do período</p>
+              </div>
+              <span class="badge badge--nd">Não disponível</span>
+            </div>
+            <div id="qualisBox"></div>
+          </div>
+        </div>
+
+        <div class="mt-3" id="prodNotas"></div>
+      </div>
+
+      <!-- ═══════════════ FORMAÇÃO ═══════════════ -->
+      <div class="panel" id="p-form" role="tabpanel" aria-labelledby="t-form" tabindex="0" hidden>
+        <div class="grid grid--4 mb-4" id="formKpis"></div>
+
+        <div class="grid grid--2">
+          <div class="chart-card">
+            <div class="chart-head">
+              <div>
+                <p class="chart-title">Formação no recorte 2021–2026</p>
+                <p class="chart-sub">Orientações concluídas e em andamento pelo corpo docente atual</p>
+              </div>
+              <span class="badge badge--pre">Preliminar</span>
+            </div>
+            <div class="chart-box chart-box--sm"><canvas id="cForm" role="img" aria-label="Gráfico de rosca com orientações de mestrado, doutorado e em andamento"></canvas></div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-head">
+              <div>
+                <p class="chart-title">Totais históricos desde a criação</p>
+                <p class="chart-sub">Números informados no site institucional atual</p>
+              </div>
+              <span class="badge badge--pre">Preliminar</span>
+            </div>
+            <div id="histBox"></div>
+          </div>
+        </div>
+
+        <div class="mt-3" id="formNotas"></div>
+      </div>
+
+      <!-- ═══════════════ PROJETOS ═══════════════ -->
+      <div class="panel" id="p-proj" role="tabpanel" aria-labelledby="t-proj" tabindex="0" hidden>
+        <div class="grid grid--4 mb-4" id="projKpis"></div>
+
+        <div class="grid grid--2">
+          <div class="chart-card">
+            <div class="chart-head">
+              <div>
+                <p class="chart-title">Projetos iniciados por ano</p>
+                <p class="chart-sub">Recorte 2021–2026, projetos únicos sem dupla contagem</p>
+              </div>
+              <span class="badge badge--pre">Preliminar</span>
+            </div>
+            <div class="chart-box"><canvas id="cProj" role="img" aria-label="Gráfico de barras com projetos iniciados por ano de 2021 a 2026"></canvas></div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-head">
+              <div>
+                <p class="chart-title">Financiadores</p>
+                <p class="chart-sub">Número de projetos por agência, empresa ou instituição</p>
+              </div>
+              <span class="badge badge--pre">Preliminar</span>
+            </div>
+            <div id="finBox" style="max-height:340px;overflow-y:auto;"></div>
+          </div>
+        </div>
+
+        <div class="mt-3" id="projNotas"></div>
+      </div>
+
+      <!-- ═══════════════ CORPO DOCENTE ═══════════════ -->
+      <div class="panel" id="p-corpo" role="tabpanel" aria-labelledby="t-corpo" tabindex="0" hidden>
+        <div class="grid grid--4 mb-4" id="corpoKpis"></div>
+        <div class="grid grid--2">
+          <div class="chart-card">
+            <div class="chart-head">
+              <div>
+                <p class="chart-title">Docentes por linha de pesquisa</p>
+                <p class="chart-sub">Vinculação conforme proposta APCN 2026</p>
+              </div>
+              <span class="badge badge--pre">Preliminar</span>
+            </div>
+            <div id="corpoLinhas" class="mt-2"></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-head">
+              <div>
+                <p class="chart-title">Categoria e instituição</p>
+                <p class="chart-sub">Composição do quadro de 24 docentes</p>
+              </div>
+              <span class="badge badge--val">Validado</span>
+            </div>
+            <div id="corpoComp" class="mt-2"></div>
+          </div>
+        </div>
+        <div class="mt-3" id="corpoNotas"></div>
+      </div>
+
+      <!-- ═══════════════ AUTOAVALIAÇÃO ═══════════════ -->
+      <div class="panel" id="p-aval" role="tabpanel" aria-labelledby="t-aval" tabindex="0" hidden>
+        <div class="grid grid--2 mb-4">
+          <div class="card">
+            <h3 class="h3">Histórico do processo</h3>
+            <p style="font-size:.88rem;color:var(--text-mid);line-height:1.7;" id="avalHist"></p>
+            <p style="font-size:.74rem;color:var(--text-soft);margin-top:.85rem;">
+              Fonte: proposta APCN 2026, seção 5.8.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="h3">Ciclo anual proposto</h3>
+            <div class="prose" style="max-width:none;"><ul id="avalCiclo"></ul></div>
+          </div>
+        </div>
+
+        <h3 class="h3 mb-2">Governança de dados e evidências</h3>
+        <p class="section-lede mb-3">
+          A Avaliação Quadrienal evidenciou que falhas de preenchimento e comprovação podem reduzir o
+          desempenho formal do Programa mesmo quando existem atividades acadêmicas relevantes.
+          Cada dimensão tem responsável, validador e periodicidade definidos.
+        </p>
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <caption class="sr-only">Governança de dados: dimensão, responsável e periodicidade</caption>
+            <thead><tr><th scope="col">Dimensão</th><th scope="col">Responsável</th><th scope="col">Periodicidade</th></tr></thead>
+            <tbody id="govBody"></tbody>
+          </table>
+        </div>
+        <div class="mt-3" id="avalNotas"></div>
+      </div>
+
+      <!-- ═══════════════ METODOLOGIA ═══════════════ -->
+      <div class="panel" id="p-met" role="tabpanel" aria-labelledby="t-met" tabindex="0" hidden>
+        <div id="metodologia">
+          <h2 class="h2">Metodologia de dados</h2>
+          <p class="section-lede mb-4">
+            Regra fundamental: <strong>nenhum dado é publicado sem origem rastreável.</strong>
+            Todo número, nome, projeto, publicação, instituição, indicador ou afirmação factual
+            neste portal carrega fonte, data de coleta e status de validação.
+          </p>
+
+          <h3 class="h3 mb-2">Pipeline de dados</h3>
+          <div class="pipeline mb-2">
+            <div class="pipe-step"><b style="color:var(--text-soft)">RAW</b><p>Dado coletado da fonte, sem tratamento. Nunca publicado.</p></div>
+            <div class="pipe-step"><b style="color:var(--st-nd)">CLEANED</b><p>Normalizado: unicode, formatação, deduplicação. Nunca publicado.</p></div>
+            <div class="pipe-step"><b style="color:var(--st-pre)">PRELIMINAR</b><p>Em validação. Publicado <em>sempre</em> com aviso explícito.</p></div>
+            <div class="pipe-step"><b style="color:var(--st-val)">VALIDADO</b><p>Conferido em ≥2 fontes ou confirmado por documento oficial.</p></div>
+            <div class="pipe-step"><b style="color:var(--st-div)">DIVERGENTE</b><p>Fontes conflitam. Publicação do valor suspensa.</p></div>
+          </div>
+          <p style="font-size:.8rem;color:var(--text-mid);line-height:1.7;" class="mb-4">
+            Quando um dado validado não está disponível, o portal exibe
+            <strong>“Dado em processo de atualização”</strong>. Nenhum valor estimado, arredondado
+            por conveniência ou inventado substitui um dado ausente.
+          </p>
+
+          <h3 class="h3 mb-2">Fontes utilizadas</h3>
+          <div class="tbl-wrap mb-4">
+            <table class="tbl src-tbl">
+              <caption class="sr-only">Fontes de dados do portal, referência e data de coleta</caption>
+              <thead><tr><th scope="col">Fonte</th><th scope="col">Referência</th><th scope="col">Coleta</th></tr></thead>
+              <tbody id="srcBody"></tbody>
+            </table>
+          </div>
+
+          <h3 class="h3 mb-2" id="conflitos">Conflitos de dados identificados</h3>
+          <p class="section-lede mb-3">
+            A auditoria comparou o site atual, os currículos Lattes, o painel analítico interno e a
+            proposta APCN. Onde as fontes divergem, o conflito é declarado — não silenciado.
+          </p>
+          <div style="display:flex;flex-direction:column;gap:1rem;" class="mb-4" id="confList"></div>
+
+          <h3 class="h3 mb-2">O que este portal não publica</h3>
+          <div class="card">
+            <div class="prose" style="max-width:none;">
+              <ul>
+                <li><strong>Dados pessoais sensíveis:</strong> CPF, telefone pessoal, endereço residencial, remuneração.</li>
+                <li><strong>Análises individuais de desempenho:</strong> pontuação, índice h ou ranking por docente. O painel analítico que contém essas métricas é <em>instrumento interno de planejamento</em> e não constitui avaliação pública nem nota oficial da CAPES.</li>
+                <li><strong>Contagens individuais de produção ou captação</strong> por docente.</li>
+                <li><strong>Respostas individuais de autoavaliação</strong> de discentes, docentes ou egressos — somente sínteses agregadas.</li>
+                <li><strong>Estimativas de Qualis</strong> ou de percentil não comprovadas nas bases de origem.</li>
+                <li><strong>Inventários e acordos não confirmados</strong> com os respectivos responsáveis.</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="h3 mb-2 mt-4">Ciclo de atualização</h3>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <caption class="sr-only">Frequência de atualização por tipo de dado</caption>
+              <thead><tr><th scope="col">Dado</th><th scope="col">Frequência</th><th scope="col">Responsável</th></tr></thead>
+              <tbody>
+                <tr><td>Notícias e editais</td><td>Sob demanda</td><td>Secretaria</td></tr>
+                <tr><td>Processo seletivo</td><td>Por semestre</td><td>Coordenação</td></tr>
+                <tr><td>Corpo docente</td><td>A cada alteração</td><td>Coordenação</td></tr>
+                <tr><td>Produção e formação</td><td>Anual, após Sucupira</td><td>Comissão de Produção</td></tr>
+                <tr><td>Projetos e captação</td><td>Semestral</td><td>Comissão de Projetos</td></tr>
+                <tr><td>Infraestrutura</td><td>A cada alteração</td><td>Responsáveis de laboratório</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mt-4" id="metNota"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<div id="site-footer-slot"></div>
+
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+(function () {
+  'use strict';
+  const R = window.REDEMAT, C = window.RC, D = R.docentes.itens;
+
+  function kpi(o) {
+    return '<div class="kpi">' +
+      '<div class="kpi-top">' +
+        '<span class="kpi-ico" style="background:color-mix(in srgb, ' + o.cor + ' 12%, transparent);color:' + o.cor + '">' + (o.ico || C.ICO.chart) + '</span>' +
+        C.badge(o.status) +
+      '</div>' +
+      '<div class="kpi-val" style="color:' + o.cor + '"' + (o.raw ? '' : ' data-count="' + o.v + '"') + '>' + (o.raw ? o.raw : '0') + '</div>' +
+      '<div class="kpi-lbl">' + o.l + '</div>' +
+      '<div class="kpi-src">' + o.src + '</div></div>';
+  }
+
+  /* ---------------- hero ---------------- */
+  document.getElementById('heroMetrics').innerHTML = [
+    { v: R.producao.total_unico, l: 'Artigos 2021–2026' },
+    { v: R.formacao.mestrado_concluido + R.formacao.doutorado_concluido, l: 'Orientações concluídas' },
+    { v: R.projetos.unicos_recorte, l: 'Projetos únicos' },
+    { v: D.length, l: 'Docentes' }
+  ].map(function (m) { return '<div class="hero-metric"><b data-count="' + m.v + '">0</b><span>' + m.l + '</span></div>'; }).join('');
+
+  /* ---------------- produção ---------------- */
+  document.getElementById('prodKpis').innerHTML =
+    kpi({ v: R.producao.total_unico, l: 'Artigos únicos em periódicos (2021–2026)', cor: 'var(--area2)', status: 'PRELIMINAR',
+          src: 'Lattes, deduplicado por DOI/título', ico: C.ICO.doc }) +
+    kpi({ v: R.producao.com_doi, l: 'Artigos com DOI registrado', cor: 'var(--area1)', status: 'PRELIMINAR',
+          src: Math.round(R.producao.com_doi / R.producao.total_unico * 100) + '% do total único' }) +
+    kpi({ v: R.producao.com_discentes.valor, l: 'Artigos únicos com coautoria de discentes e egressos', cor: 'var(--l12)', status: 'VALIDADO',
+          src: 'Cruzamento nominal Lattes × base institucional', ico: C.ICO.people }) +
+    kpi({ raw: R.producao.atd_quadrienio.valor.toFixed(3).replace('.', ','), l: 'ATD auditado — quadriênio 2021–2024', cor: 'var(--amber)', status: 'PRELIMINAR',
+          src: 'Linha de base declarada na proposta APCN' });
+
+  /* Qualis: existe para um subconjunto documentado, e só ele é publicado. */
+  (function qualis() {
+    const Q = R.producao.qualis;
+    const box = document.getElementById('qualisBox');
+    if (!Q.subconjunto) {
+      box.innerHTML = C.empty('Distribuição Qualis não disponível.', Q.nota);
+      return;
+    }
+    const E = Q.subconjunto.estratos;
+    const tot = Object.keys(E).reduce(function (a, k) { return a + E[k]; }, 0);
+    const cor = { A1: '#15803D', A2: '#16A34A', A3: '#1D4ED8', A4: '#3B82F6',
+                  B1: '#A16207', B2: '#CA8A04', B3: '#D97706', B4: '#EA580C', C: '#94A3B8' };
+    box.innerHTML =
+      C.note('info', '<strong>Escopo desta distribuição.</strong> ' + Q.nota) +
+      '<p class="mt-2" style="font-size:.82rem;color:var(--text-mid)">' +
+      Q.subconjunto.escopo + ' — ' + tot + ' artigos classificados.</p>' +
+      '<div class="mt-2">' + Object.keys(E).map(function (k) {
+        return '<div class="bar-row"><span class="bar-lbl">' + k + '</span>' +
+          '<span class="bar-track"><span class="bar-fill" style="width:' +
+          (E[k] / tot * 100).toFixed(1) + '%;background:' + cor[k] + '"></span></span>' +
+          '<span class="bar-val">' + E[k] + '</span></div>';
+      }).join('') + '</div>' +
+      '<div class="mt-2">' + C.note('warn', '<strong>Não extrapole.</strong> ' +
+        Q.subconjunto.aviso + ' ' + C.badge('PRELIMINAR')) + '</div>';
+  }());
+
+  document.getElementById('prodNotas').innerHTML =
+    C.note('info', '<strong>Como o total foi apurado.</strong> ' + R.producao.nota +
+      ' ' + R.producao.aviso_2026 + ' ' + C.badge('PRELIMINAR')) +
+    '<div class="mt-2">' + C.note('warn',
+      '<strong>Pendência crítica declarada.</strong> A comprovação de percentil Scopus/Web of Science para a ' +
+      'produção destacada e para ao menos 60% do núcleo docente consta como pendência formal antes da submissão ' +
+      'da proposta APCN. Enquanto não concluída, o portal não publica distribuição por estrato do conjunto ' +
+      'completo — só a do subconjunto auditado acima, com o escopo declarado.') + '</div>' +
+    '<div class="mt-2">' + C.note('info',
+      'Livros publicados no período: ' + R.producao.livros_capitulos.livros + '. Capítulos de livro: ' +
+      R.producao.livros_capitulos.capitulos + '. Artigos em periódico com percentil Scopus acima de 50: ' +
+      R.producao.p50.valor + ' <em>' + R.producao.p50.unidade + '</em> — ' + R.producao.p50.nota +
+      ' ' + C.badge('VALIDADO')) + '</div>' +
+    '<div class="mt-2">' + C.note('prov',
+      '<strong>Uma medida, dois números — e por que os dois aparecem.</strong> ' +
+      'Todo indicador de produção pode ser contado por <em>produto único</em> (cada artigo uma vez no Programa) ' +
+      'ou por <em>soma por docente</em> (cada artigo uma vez para cada docente coautor). No período, são ' +
+      R.producao.total_unico + ' artigos únicos e ' + R.producao.total_somado + ' registros docente–artigo; ' +
+      R.producao.com_discentes.valor + ' artigos únicos com coautoria de discente ou egresso, cuja soma por ' +
+      'docente é ' + R.producao.com_discentes.soma_por_docente + '. ' +
+      'Num recorte mais exigente — em que o docente coautor é também o orientador principal comprovado do ' +
+      'discente — são ' + R.producao.com_discentes.criterio_estrito.valor + ' artigos, de ' +
+      R.producao.com_discentes.criterio_estrito.docentes + ' docentes. ' +
+      'Os três números são corretos e medem coisas diferentes; o portal diz sempre qual está mostrando.') + '</div>' +
+    '<div class="mt-2">' + C.note('warn',
+      '<strong>Duas séries anuais que não coincidem.</strong> A série Lattes registra ' +
+      R.producao.serie_oficial_2021_2024.unicos[2021] + ' artigos únicos em 2021 pela contagem oficial do ' +
+      'quadriênio e ' + R.producao.unicos[2021] + ' pela coleta Lattes. ' +
+      R.producao.serie_oficial_2021_2024.nota + ' ' + C.badge('DIVERGENTE')) + '</div>';
+
+  /* ---------------- formação ---------------- */
+  const F = R.formacao;
+  document.getElementById('formKpis').innerHTML =
+    kpi({ v: F.mestrado_concluido, l: 'Dissertações de mestrado concluídas (2021–2026)', cor: 'var(--area2)', status: 'PRELIMINAR',
+          src: 'Orientações registradas em currículo', ico: C.ICO.cap }) +
+    kpi({ v: F.doutorado_concluido, l: 'Teses de doutorado orientadas (2021–2026)', cor: 'var(--l22)', status: 'PRELIMINAR',
+          src: 'Inclui orientações em outros programas', ico: C.ICO.cap }) +
+    kpi({ v: F.orientacoes_ativas, l: 'Orientações em andamento', cor: 'var(--area1)', status: 'PRELIMINAR',
+          src: 'Mestrado, doutorado e pós-doutorado', ico: C.ICO.people }) +
+    kpi({ raw: '1996', l: 'Início do Mestrado', cor: 'var(--amber)', status: 'VALIDADO',
+          src: 'Ficha de dados do Programa — proposta APCN' });
+
+  document.getElementById('histBox').innerHTML =
+    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;padding:1rem 0;">' +
+      '<div style="text-align:center;">' +
+        '<div style="font-size:2.6rem;font-weight:800;color:var(--area2);line-height:1;" data-count="' + F.historico_site.dissertacoes.valor + '">0</div>' +
+        '<div style="font-size:.85rem;color:var(--text-mid);margin-top:.5rem;">Dissertações</div></div>' +
+      '<div style="text-align:center;">' +
+        '<div style="font-size:2.6rem;font-weight:800;color:var(--l22);line-height:1;" data-count="' + F.historico_site.teses.valor + '">0</div>' +
+        '<div style="font-size:.85rem;color:var(--text-mid);margin-top:.5rem;">Teses</div></div>' +
+    '</div>' +
+    '<p style="font-size:.78rem;color:var(--text-soft);line-height:1.6;padding-top:1rem;border-top:1px solid var(--border);">' +
+      F.historico_site.nota + '</p>';
+
+  document.getElementById('formNotas').innerHTML = C.note('warn',
+    '<strong>Dois recortes distintos.</strong> ' + F.nota +
+    ' Os totais históricos (430 e 132) referem-se a toda a existência do Programa e provêm do site atual; ' +
+    'não devem ser confundidos com as ' + F.mestrado_concluido + ' dissertações e ' + F.doutorado_concluido +
+    ' teses do recorte 2021–2026. ' + C.badge('PRELIMINAR'));
+
+  /* ---------------- projetos ---------------- */
+  const P = R.projetos;
+  document.getElementById('projKpis').innerHTML =
+    kpi({ v: P.unicos_recorte, l: 'Projetos de pesquisa únicos (2021–2026)', cor: 'var(--l21)', status: 'PRELIMINAR',
+          src: 'Planilha deduplicada por ID de projeto', ico: C.ICO.flask }) +
+    kpi({ raw: C.brl(P.valor_global_dedup), l: 'Captação global sem dupla contagem', cor: 'var(--area2)', status: 'PRELIMINAR',
+          src: 'Valor integral por projeto, sem rateio anual' }) +
+    kpi({ raw: C.brl(P.valor_coordenacao), l: 'Valor sob coordenação ou liderança', cor: 'var(--area1)', status: 'PRELIMINAR',
+          src: 'Indicador de liderança institucional' }) +
+    kpi({ v: P.pendencias, l: 'Pendências documentais ativas', cor: 'var(--st-div)', status: 'DIVERGENTE',
+          src: 'Valor, papel ou parcela atribuível não informados', ico: C.ICO.warn });
+
+  const maxFin = Math.max.apply(null, P.financiadores.map(function (f) { return f.projetos; }));
+  const TIPO_COR = { agencia: 'var(--area1)', empresa: 'var(--amber)', institucional: 'var(--area2)' };
+  document.getElementById('finBox').innerHTML = P.financiadores
+    .slice().sort(function (a, b) { return b.projetos - a.projetos; })
+    .map(function (f) {
+      return '<div class="bar-row">' +
+        '<span class="bar-lbl" style="min-width:135px;">' + f.nome + '</span>' +
+        '<span class="bar-track"><span class="bar-fill" style="background:' + TIPO_COR[f.tipo] + ';width:' + (f.projetos / maxFin * 100) + '%"></span></span>' +
+        '<span class="bar-val">' + f.projetos + '</span></div>';
+    }).join('') +
+    '<p style="font-size:.74rem;color:var(--text-soft);margin-top:.85rem;line-height:1.6;">' +
+      '<span style="color:var(--area1);font-weight:700;">■</span> Agência de fomento &nbsp; ' +
+      '<span style="color:var(--amber);font-weight:700;">■</span> Empresa &nbsp; ' +
+      '<span style="color:var(--area2);font-weight:700;">■</span> Institucional<br>' + P.financiadores_nota + '</p>';
+
+  document.getElementById('projNotas').innerHTML = C.note('warn',
+    '<strong>Por que este indicador é preliminar.</strong> ' + P.nota + ' ' + C.badge('PRELIMINAR'));
+
+  /* ---------------- corpo docente ---------------- */
+  const nPerm = D.filter(function (d) { return d.cat === 'permanente'; }).length;
+  const nCol = D.length - nPerm;
+  const nBol = D.filter(function (d) { return d.bolsa; }).length;
+  const nUFOP = D.filter(function (d) { return d.ies === 'UFOP'; }).length;
+
+  document.getElementById('corpoKpis').innerHTML =
+    kpi({ v: D.length, l: 'Docentes no quadro', cor: 'var(--navy)', status: 'VALIDADO',
+          src: 'Página oficial de docentes + proposta APCN', ico: C.ICO.people }) +
+    kpi({ v: nPerm, l: 'Docentes permanentes', cor: 'var(--area1)', status: 'VALIDADO',
+          src: 'Proporção de ' + Math.round(nPerm / D.length * 100) + '% do quadro', ico: C.ICO.check }) +
+    kpi({ v: nBol, l: 'Bolsistas de produtividade CNPq', cor: 'var(--amber)', status: 'VALIDADO',
+          src: '8 PQ + 3 DT' }) +
+    kpi({ v: R.internacionalizacao.docentes_com_experiencia.valor, l: 'Docentes com pós-doutorado ou experiência internacional',
+          cor: 'var(--area2)', status: 'PRELIMINAR', src: Math.round(13 / 24 * 100) + '% do quadro', ico: C.ICO.globe });
+
+  const linhas = [];
+  R.areas.itens.forEach(function (a) { a.linhas.forEach(function (l) { linhas.push(l); }); });
+  document.getElementById('corpoLinhas').innerHTML = linhas.map(function (l) {
+    const n = D.filter(function (d) { return d.linha === l.id; }).length;
+    return '<div class="bar-row">' +
+      '<span class="bar-lbl"><strong style="color:' + l.cor + '">' + l.codigo.replace('Linha ', 'L') + '</strong> ' + l.nome.split(',')[0] + '</span>' +
+      '<span class="bar-track"><span class="bar-fill" style="background:' + l.cor + ';width:' + (n / D.length * 100) + '%"></span></span>' +
+      '<span class="bar-val">' + n + '</span></div>';
+  }).join('') + (function () {
+    const s = D.filter(function (d) { return !d.linha; }).length;
+    return s ? '<div class="bar-row"><span class="bar-lbl" style="color:var(--text-soft)">Em definição</span>' +
+      '<span class="bar-track"><span class="bar-fill" style="background:var(--text-soft);width:' + (s / D.length * 100) + '%"></span></span>' +
+      '<span class="bar-val">' + s + '</span></div>' : '';
+  })();
+
+  document.getElementById('corpoComp').innerHTML =
+    [['Permanentes', nPerm, 'var(--area1)'], ['Colaboradores', nCol, 'var(--amber)'],
+     ['UFOP', nUFOP, 'var(--navy)'], ['UEMG', D.length - nUFOP, 'var(--l22)']]
+    .map(function (r) {
+      return '<div class="bar-row"><span class="bar-lbl">' + r[0] + '</span>' +
+        '<span class="bar-track"><span class="bar-fill" style="background:' + r[2] + ';width:' + (r[1] / D.length * 100) + '%"></span></span>' +
+        '<span class="bar-val">' + r[1] + '</span></div>';
+    }).join('');
+
+  document.getElementById('corpoNotas').innerHTML = C.note('info',
+    '<strong>Conflito resolvido.</strong> ' + R.conflitos[0].resolucao + ' ' + C.badge('VALIDADO'));
+
+  /* ---------------- autoavaliação ---------------- */
+  const A = R.autoavaliacao;
+  document.getElementById('avalHist').textContent = A.historico;
+  document.getElementById('avalCiclo').innerHTML = A.ciclo.map(function (c) { return '<li>' + c + '</li>'; }).join('');
+  document.getElementById('govBody').innerHTML = A.governanca_dados.map(function (g) {
+    return '<tr><td><strong style="color:var(--navy);">' + g.dim + '</strong></td><td>' + g.resp + '</td><td>' + g.per + '</td></tr>';
+  }).join('');
+  document.getElementById('avalNotas').innerHTML =
+    C.note('info', '<strong>LGPD.</strong> ' + A.nota_lgpd + ' Fonte: proposta APCN 2026, seções 5.8 e 5.11. ' + C.badge('PRELIMINAR'));
+
+  /* ---------------- metodologia ---------------- */
+  document.getElementById('srcBody').innerHTML = R.meta.fontes.map(function (f) {
+    const ref = f.ref.indexOf('http') === 0
+      ? '<a href="' + f.ref + '" target="_blank" rel="noopener" style="color:var(--amber);font-weight:600;">' + f.ref + ' ↗</a>'
+      : '<code style="font-size:.8rem;color:var(--text-mid);">' + f.ref + '</code>';
+    return '<tr><td>' + f.nome + '</td><td>' + ref + '</td><td style="white-space:nowrap;">' + f.coleta.split('-').reverse().join('/') + '</td></tr>';
+  }).join('');
+
+  document.getElementById('confList').innerHTML = R.conflitos.map(function (c) {
+    return '<div class="conflict' + (c.resolvido ? ' ok' : '') + '">' +
+      '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:.75rem;flex-wrap:wrap;">' +
+        '<h3>' + c.campo + '</h3>' + C.badge(c.resolvido ? 'VALIDADO' : 'DIVERGENTE') +
+      '</div>' +
+      '<div class="conflict-srcs">' + c.fontes.map(function (f) {
+        return '<div class="conflict-src"><b>' + f.fonte + ':</b><span>' + f.valor + '</span></div>';
+      }).join('') + '</div>' +
+      '<p class="conflict-res">' + c.resolucao + '</p>' +
+    '</div>';
+  }).join('');
+
+  document.getElementById('metNota').innerHTML = C.note('info',
+    '<strong>Encontrou uma divergência?</strong> Correções e validações de dados podem ser encaminhadas à ' +
+    'secretaria do Programa: <a href="mailto:' + R.programa.contato.email + '">' + R.programa.contato.email + '</a>. ' +
+    'Última atualização dos dados deste portal: ' + R.meta.atualizado.split('-').reverse().join('/') + '.');
+
+  /* ---------------- abas ---------------- */
+  const tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  function select(tab) {
+    tabs.forEach(function (t) {
+      const on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    C.animateCounters(document.getElementById(tab.getAttribute('aria-controls')));
+    draw(tab.getAttribute('aria-controls'));
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { select(t); });
+    t.addEventListener('keydown', function (e) {
+      let n = null;
+      if (e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
+      if (e.key === 'ArrowLeft') n = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (n) { e.preventDefault(); n.focus(); select(n); }
+    });
+  });
+
+  /* ---------------- gráficos ---------------- */
+  const drawn = {};
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const BASE = {
+    responsive: true, maintainAspectRatio: false,
+    animation: { duration: reduce ? 0 : 700 },
+    plugins: { legend: { display: false }, tooltip: { backgroundColor: '#0B1F3A', padding: 10, cornerRadius: 6 } }
+  };
+  const AX = {
+    x: { grid: { display: false }, ticks: { font: { size: 11 } } },
+    y: { beginAtZero: true, grid: { color: 'rgba(16,32,54,.06)' }, ticks: { font: { size: 11 } } }
+  };
+
+  function draw(panel) {
+    if (!window.Chart || drawn[panel]) return;
+
+    if (panel === 'p-prod') {
+      const el = document.getElementById('cProd'); if (!el) return;
+      drawn[panel] = true;
+      const anos = R.producao.anos;
+      new window.Chart(el, {
+        type: 'bar',
+        data: {
+          labels: anos.map(function (a) { return a === '2026' ? '2026*' : a; }),
+          datasets: [
+            { label: 'Artigos únicos', data: anos.map(function (a) { return R.producao.unicos[a]; }),
+              backgroundColor: 'rgba(27,138,107,.75)', borderRadius: 5, borderSkipped: false },
+            { label: 'Soma por docente', data: anos.map(function (a) { return R.producao.por_docente[a]; }),
+              backgroundColor: 'rgba(29,111,165,.28)', borderRadius: 5, borderSkipped: false }
+          ]
+        },
+        options: Object.assign({}, BASE, {
+          plugins: Object.assign({}, BASE.plugins, { legend: { display: true, position: 'bottom', labels: { boxWidth: 11, font: { size: 11 } } } }),
+          scales: AX
+        })
+      });
+    }
+
+    if (panel === 'p-form') {
+      const el = document.getElementById('cForm'); if (!el) return;
+      drawn[panel] = true;
+      new window.Chart(el, {
+        type: 'doughnut',
+        data: {
+          labels: ['Mestrado concluído', 'Doutorado concluído', 'Em andamento'],
+          datasets: [{ data: [F.mestrado_concluido, F.doutorado_concluido, F.orientacoes_ativas],
+            backgroundColor: ['#1B8A6B', '#8B5CA8', '#1D6FA5'], borderWidth: 0 }]
+        },
+        options: Object.assign({}, BASE, {
+          cutout: '62%',
+          plugins: Object.assign({}, BASE.plugins, { legend: { display: true, position: 'bottom', labels: { boxWidth: 11, font: { size: 11 } } } })
+        })
+      });
+    }
+
+    if (panel === 'p-proj') {
+      const el = document.getElementById('cProj'); if (!el) return;
+      drawn[panel] = true;
+      const ks = Object.keys(P.por_ano_inicio);
+      new window.Chart(el, {
+        type: 'bar',
+        data: {
+          labels: ks,
+          datasets: [{ label: 'Projetos iniciados', data: ks.map(function (k) { return P.por_ano_inicio[k]; }),
+            backgroundColor: 'rgba(27,138,107,.32)', borderColor: '#1B8A6B', borderWidth: 2, borderRadius: 5, borderSkipped: false }]
+        },
+        options: Object.assign({}, BASE, { scales: AX })
+      });
+    }
+  }
+
+  /* ---------------- init ---------------- */
+  C.mount('indicadores.html', '../');
+  select(tabs[0]);
+  if (window.location.hash === '#metodologia' || window.location.hash === '#conflitos') {
+    select(document.getElementById('t-met'));
+    setTimeout(function () {
+      const t = document.querySelector(window.location.hash);
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 90);
+  }
+  C.whenChart(
+    function () { draw(document.querySelector('.tab[aria-selected="true"]').getAttribute('aria-controls')); },
+    function () {
+      /* Sem a biblioteca, cada gráfico vira tabela — o dado nunca se perde. */
+      C.chartFallback('cProd',
+        ['Ano', 'Artigos únicos', 'Soma por docente'],
+        R.producao.anos.map(function (a) {
+          return [a === '2026' ? '2026*' : a, R.producao.unicos[a], R.producao.por_docente[a]];
+        }).concat([['Total', R.producao.total_unico, R.producao.total_somado]]));
+
+      C.chartFallback('cForm',
+        ['Situação', 'Orientações'],
+        [['Mestrado concluído', F.mestrado_concluido],
+         ['Doutorado concluído', F.doutorado_concluido],
+         ['Em andamento', F.orientacoes_ativas]]);
+
+      C.chartFallback('cProj',
+        ['Ano de início', 'Projetos'],
+        Object.keys(P.por_ano_inicio).map(function (k) { return [k, P.por_ano_inicio[k]]; })
+          .concat([['Total no recorte', P.unicos_recorte]]));
+    });
+})();
+</script>
+</body>
+</html>

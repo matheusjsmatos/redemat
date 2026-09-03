@@ -1,0 +1,2236 @@
+/* Mapa docente x periódico com quartil Scopus — gerado de mapa_publicacoes_dados.xlsx
+   Carregado por <script> em vez de fetch() para funcionar também em file://. */
+window.MAPA_PUB = {
+ "geracao": "29/08/2026",
+ "fonte": "mapa_publicacoes_dados.xlsx (ScriptLattes + Scopus 2025)",
+ "revistas": {
+  "TMMM": {
+   "n": "Tecnologia em Metalurgia, Materiais e Mineração",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 22,
+   "d": 6
+  },
+  "MatRes": {
+   "n": "Materials Research",
+   "p": "43",
+   "q": "Q3",
+   "c": "Mechanical Engineering",
+   "a": 14,
+   "d": 7
+  },
+  "BJD": {
+   "n": "Brazilian Journal of Development",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 8,
+   "d": 5
+  },
+  "JPCC": {
+   "n": "Journal of Physical Chemistry C",
+   "p": "68",
+   "q": "Q2",
+   "c": "Surfaces, Coatings and Films",
+   "a": 8,
+   "d": 4
+  },
+  "Metals": {
+   "n": "Metals",
+   "p": "77",
+   "q": "Q1",
+   "c": "Metals and Alloys",
+   "a": 7,
+   "d": 6
+  },
+  "SRI": {
+   "n": "Steel Research International",
+   "p": "66",
+   "q": "Q2",
+   "c": "Metals and Alloys",
+   "a": 7,
+   "d": 3
+  },
+  "JMRTJT": {
+   "n": "Journal of Materials Research and Technology-JMR&T",
+   "p": "90",
+   "q": "Q1",
+   "c": "Metals and Alloys",
+   "a": 6,
+   "d": 4
+  },
+  "JAC": {
+   "n": "Journal of Alloys and Compounds",
+   "p": "91",
+   "q": "Q1",
+   "c": "Mechanical Engineering",
+   "a": 5,
+   "d": 1
+  },
+  "LiqCryst": {
+   "n": "Liquid Crystals",
+   "p": "56",
+   "q": "Q2",
+   "c": "Chemistry (all)",
+   "a": 5,
+   "d": 3
+  },
+  "MMAP": {
+   "n": "METALLOGRAPHY, MICROSTRUCTURE, AND ANALYSIS (PRINT)",
+   "p": "57",
+   "q": "Q2",
+   "c": "Metals and Alloys",
+   "a": 5,
+   "d": 3
+  },
+  "RSD": {
+   "n": "Research, Society and Development",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 5,
+   "d": 3
+  },
+  "RDCS": {
+   "n": "Revista de Derecho y Câmbio Social",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 5,
+   "d": 1
+  },
+  "CerInt": {
+   "n": "Ceramics International",
+   "p": "83",
+   "q": "Q1",
+   "c": "Electronic, Optical and Magnetic Materials",
+   "a": 4,
+   "d": 4
+  },
+  "IJAMT": {
+   "n": "INTERNATIONAL JOURNAL OF ADVANCED MANUFACTURING TECHNOLOGY",
+   "p": "80",
+   "q": "Q1",
+   "c": "Mechanical Engineering",
+   "a": 4,
+   "d": 3
+  },
+  "JMEP": {
+   "n": "JOURNAL OF MATERIALS ENGINEERING AND PERFORMANCE",
+   "p": "58",
+   "q": "Q2",
+   "c": "Mechanical Engineering",
+   "a": 4,
+   "d": 2
+  },
+  "JBCS": {
+   "n": "Journal of the Brazilian Chemical Society",
+   "p": "38",
+   "q": "Q3",
+   "c": "Chemistry (all)",
+   "a": 4,
+   "d": 2
+  },
+  "ADHR": {
+   "n": "ARACÊ - DIREITOS HUMANOS EM REVISTA",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 3,
+   "d": 3
+  },
+  "BJM": {
+   "n": "BRAZILIAN JOURNAL OF MICROBIOLOGY",
+   "p": "40",
+   "q": "Q3",
+   "c": "Microbiology",
+   "a": 3,
+   "d": 2
+  },
+  "CELE": {
+   "n": "CONCILIUM (ENGLISH LANGUAGE EDITION)",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 3,
+   "d": 1
+  },
+  "Hydromet": {
+   "n": "Hydrometallurgy",
+   "p": "88",
+   "q": "Q1",
+   "c": "Metals and Alloys",
+   "a": 3,
+   "d": 2
+  },
+  "IP": {
+   "n": "IMPACT projects",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 3,
+   "d": 1
+  },
+  "JOM": {
+   "n": "JOM",
+   "p": "67",
+   "q": "Q2",
+   "c": "Engineering (all)",
+   "a": 3,
+   "d": 3
+  },
+  "JMBBM": {
+   "n": "Journal of the Mechanical Behavior of Biomedical Materials",
+   "p": "82",
+   "q": "Q1",
+   "c": "Mechanics of Materials",
+   "a": 3,
+   "d": 3
+  },
+  "MSESMP": {
+   "n": "MATERIALS SCIENCE AND ENGINEERING A-STRUCTURAL MATERIALS PROPERTIES MICROSTRUCTURE AND PROCESSING",
+   "p": "95",
+   "q": "Q1",
+   "c": "Mechanical Engineering",
+   "a": 3,
+   "d": 2
+  },
+  "PCT": {
+   "n": "Polímeros: ciência e Tecnologia",
+   "p": "39",
+   "q": "Q3",
+   "c": "Chemical Engineering (miscellaneous)",
+   "a": 3,
+   "d": 2
+  },
+  "REM": {
+   "n": "REM - International Engineering Journal",
+   "p": "26",
+   "q": "Q3",
+   "c": "Geochemistry and Petrology",
+   "a": 3,
+   "d": 2
+  },
+  "RL": {
+   "n": "e-Revista LOGO",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 3,
+   "d": 1
+  },
+  "AM": {
+   "n": "ACTA MATERIALIA",
+   "p": "96",
+   "q": "Q1",
+   "c": "Metals and Alloys",
+   "a": 2,
+   "d": 1
+  },
+  "AJMS": {
+   "n": "AMERICAN JOURNAL OF MATERIALS SCIENCE",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 2,
+   "d": 1
+  },
+  "A": {
+   "n": "ANIMALS",
+   "p": "94",
+   "q": "Q1",
+   "c": "Veterinary (all)",
+   "a": 2,
+   "d": 1
+  },
+  "AANM": {
+   "n": "Acs Applied Nano Materials",
+   "p": "80",
+   "q": "Q1",
+   "c": "Materials Science (all)",
+   "a": 2,
+   "d": 2
+  },
+  "APR": {
+   "n": "Applied Physics Reviews",
+   "p": "94",
+   "q": "Q1",
+   "c": "Physics and Astronomy (all)",
+   "a": 2,
+   "d": 1
+  },
+  "BJN": {
+   "n": "Beilstein Journal of Nanotechnology",
+   "p": "71",
+   "q": "Q2",
+   "c": "Physics and Astronomy (all)",
+   "a": 2,
+   "d": 1
+  },
+  "BZ": {
+   "n": "Bmc Zoology",
+   "p": "78",
+   "q": "Q1",
+   "c": "Animal Science and Zoology",
+   "a": 2,
+   "d": 2
+  },
+  "CPLO": {
+   "n": "CADERNO PEDAGÓGICO (LAJEADO. ONLINE)",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 2,
+   "d": 2
+  },
+  "CB": {
+   "n": "CONCILIUM (BRASIL)",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 2,
+   "d": 1
+  },
+  "CA": {
+   "n": "Cadernos de Astronomia",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 2,
+   "d": 2
+  },
+  "Carbon": {
+   "n": "Carbon",
+   "p": "95",
+   "q": "Q1",
+   "c": "Materials Science (all)",
+   "a": 2,
+   "d": 2
+  },
+  "CM": {
+   "n": "Carbon Management",
+   "p": "70",
+   "q": "Q2",
+   "c": "Environmental Science (all)",
+   "a": 2,
+   "d": 2
+  },
+  "IJGET": {
+   "n": "International Journal of geoscience, engineering and technology",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 2,
+   "d": 1
+  },
+  "JAP": {
+   "n": "JOURNAL OF APPLIED PHYSICS",
+   "p": "71",
+   "q": "Q2",
+   "c": "Physics and Astronomy (miscellaneous)",
+   "a": 2,
+   "d": 2
+  },
+  "JMSDO": {
+   "n": "JOURNAL OF MATERIALS SCIENCE (DORDRECHT. ONLINE)",
+   "p": "81",
+   "q": "Q1",
+   "c": "Mechanical Engineering",
+   "a": 2,
+   "d": 2
+  },
+  "JMM": {
+   "n": "JOURNAL OF MOLECULAR MODELING",
+   "p": "73",
+   "q": "Q2",
+   "c": "Computational Theory and Mathematics",
+   "a": 2,
+   "d": 2
+  },
+  "JMS": {
+   "n": "JOURNAL OF MOLECULAR STRUCTURE",
+   "p": "84",
+   "q": "Q1",
+   "c": "Organic Chemistry",
+   "a": 2,
+   "d": 2
+  },
+  "JMCC": {
+   "n": "Journal of Materials Chemistry C",
+   "p": "81",
+   "q": "Q1",
+   "c": "Chemistry (all)",
+   "a": 2,
+   "d": 2
+  },
+  "JMS2": {
+   "n": "Journal of Materials Science",
+   "p": "81",
+   "q": "Q1",
+   "c": "Mechanical Engineering",
+   "a": 2,
+   "d": 2
+  },
+  "JTACO": {
+   "n": "Journal of Thermal Analysis and Calorimetry (Online)",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 2,
+   "d": 2
+  },
+  "MSO": {
+   "n": "MACROMOLECULAR SYMPOSIA (ONLINE)",
+   "p": "25",
+   "q": "Q3",
+   "c": "Materials Chemistry",
+   "a": 2,
+   "d": 1
+  },
+  "MMTPMM": {
+   "n": "METALLURGICAL AND MATERIALS TRANSACTIONS A-PHYSICAL METALLURGY AND MATERIALS SCIENCE",
+   "p": "71",
+   "q": "Q2",
+   "c": "Metals and Alloys",
+   "a": 2,
+   "d": 2
+  },
+  "MMTBPM": {
+   "n": "METALLURGICAL AND MATERIALS TRANSACTIONS B-PROCESS METALLURGY AND MATERIALS PROCESSING SCIENCE",
+   "p": "71",
+   "q": "Q2",
+   "c": "Metals and Alloys",
+   "a": 2,
+   "d": 1
+  },
+  "MRIAJM": {
+   "n": "Materials Research-Ibero-american Journal of Materials",
+   "p": "43",
+   "q": "Q3",
+   "c": "Mechanical Engineering",
+   "a": 2,
+   "d": 2
+  },
+  "MTC": {
+   "n": "Materials Today Communications",
+   "p": "80",
+   "q": "Q1",
+   "c": "Computer Science (all)",
+   "a": 2,
+   "d": 2
+  },
+  "MPEMR": {
+   "n": "Mineral Processing and Extractive Metallurgy Review",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 2,
+   "d": 2
+  },
+  "NNBM": {
+   "n": "Nanomedicine-Nanotechnology Biology and Medicine",
+   "p": "91",
+   "q": "Q1",
+   "c": "Medicine (miscellaneous)",
+   "a": 2,
+   "d": 2
+  },
+  "N": {
+   "n": "Nanoscale",
+   "p": "78",
+   "q": "Q1",
+   "c": "Materials Science (all)",
+   "a": 2,
+   "d": 2
+  },
+  "PST": {
+   "n": "PARTICULATE SCIENCE AND TECHNOLOGY",
+   "p": "59",
+   "q": "Q2",
+   "c": "Chemical Engineering (all)",
+   "a": 2,
+   "d": 2
+  },
+  "PCCP": {
+   "n": "PHYSICAL CHEMISTRY CHEMICAL PHYSICS",
+   "p": "79",
+   "q": "Q1",
+   "c": "Physics and Astronomy (all)",
+   "a": 2,
+   "d": 2
+  },
+  "PO": {
+   "n": "PLoS One",
+   "p": "83",
+   "q": "Q1",
+   "c": "Multidisciplinary",
+   "a": 2,
+   "d": 2
+  },
+  "PPMP": {
+   "n": "Physicochemical Problems of Mineral Processing",
+   "p": "56",
+   "q": "Q2",
+   "c": "Economic Geology",
+   "a": 2,
+   "d": 1
+  },
+  "QN": {
+   "n": "QUIMICA NOVA",
+   "p": "22",
+   "q": "Q4",
+   "c": "Chemistry (all)",
+   "a": 2,
+   "d": 2
+  },
+  "RDTS": {
+   "n": "REVISTA DE DESIGN, TECNOLOGIA E SOCIEDADE",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 2,
+   "d": 1
+  },
+  "RO": {
+   "n": "REVISTA OWL",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 2,
+   "d": 1
+  },
+  "RVQ": {
+   "n": "REVISTA VIRTUAL DE QUÍMICA",
+   "p": "16",
+   "q": "Q4",
+   "c": "Chemistry (all)",
+   "a": 2,
+   "d": 2
+  },
+  "R": {
+   "n": "Recycling",
+   "p": "80",
+   "q": "Q1",
+   "c": "Management, Monitoring, Policy and Law",
+   "a": 2,
+   "d": 2
+  },
+  "RT": {
+   "n": "Revista Transverso",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 2,
+   "d": 1
+  },
+  "SCT": {
+   "n": "SURFACE & COATINGS TECHNOLOGY",
+   "p": "92",
+   "q": "Q1",
+   "c": "Condensed Matter Physics",
+   "a": 2,
+   "d": 2
+  },
+  "SIA": {
+   "n": "SURFACE AND INTERFACE ANALYSIS",
+   "p": "53",
+   "q": "Q2",
+   "c": "Chemistry (all)",
+   "a": 2,
+   "d": 2
+  },
+  "SciRep": {
+   "n": "Scientific Reports",
+   "p": "87",
+   "q": "Q1",
+   "c": "Multidisciplinary",
+   "a": 2,
+   "d": 2
+  },
+  "SJR": {
+   "n": "Southern Journal of Research",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 2,
+   "d": 2
+  },
+  "TMMMI": {
+   "n": "TECNOLOGIA EM METALURGIA, MATERIAIS E MINERAÇÃO (IMPRESSO)",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 2,
+   "d": 2
+  },
+  "URBGU": {
+   "n": "URBE. REVISTA BRASILEIRA DE GESTÃO URBANA",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 2,
+   "d": 1
+  },
+  "WPI": {
+   "n": "WORLD PATENT INFORMATION",
+   "p": "76",
+   "q": "Q1",
+   "c": "Library and Information Sciences",
+   "a": 2,
+   "d": 1
+  },
+  "WBV": {
+   "n": "Waste and Biomass Valorization",
+   "p": "71",
+   "q": "Q2",
+   "c": "Environmental Engineering",
+   "a": 2,
+   "d": 2
+  },
+  "WW": {
+   "n": "Welding in the World",
+   "p": "76",
+   "q": "Q1",
+   "c": "Metals and Alloys",
+   "a": 2,
+   "d": 2
+  },
+  "2M": {
+   "n": "2D Materials",
+   "p": "85",
+   "q": "Q1",
+   "c": "Mechanical Engineering",
+   "a": 1,
+   "d": 1
+  },
+  "AP": {
+   "n": "AAPS PHARMSCITECH",
+   "p": "82",
+   "q": "Q1",
+   "c": "Pharmaceutical Science",
+   "a": 1,
+   "d": 1
+  },
+  "AN": {
+   "n": "ACS Nano",
+   "p": "99",
+   "q": "Q1",
+   "c": "Engineering (all)",
+   "a": 1,
+   "d": 1
+  },
+  "ANM": {
+   "n": "ACS Nano Medicine",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "AO": {
+   "n": "ACS Omega",
+   "p": "78",
+   "q": "Q1",
+   "c": "Chemistry (all)",
+   "a": 1,
+   "d": 1
+  },
+  "AEM": {
+   "n": "ADVANCED ENGINEERING MATERIALS",
+   "p": "70",
+   "q": "Q2",
+   "c": "Condensed Matter Physics",
+   "a": 1,
+   "d": 1
+  },
+  "AMPT": {
+   "n": "ADVANCES IN MATERIALS AND PROCESSING TECHNOLOGIES",
+   "p": "76",
+   "q": "Q1",
+   "c": "Industrial and Manufacturing Engineering",
+   "a": 1,
+   "d": 1
+  },
+  "APL": {
+   "n": "APPLIED PHYSICS LETTERS",
+   "p": "81",
+   "q": "Q1",
+   "c": "Physics and Astronomy (miscellaneous)",
+   "a": 1,
+   "d": 1
+  },
+  "ASS": {
+   "n": "APPLIED SURFACE SCIENCE",
+   "p": "94",
+   "q": "Q1",
+   "c": "Condensed Matter Physics",
+   "a": 1,
+   "d": 1
+  },
+  "AMM": {
+   "n": "ARCHIVES OF METALLURGY AND MATERIALS",
+   "p": "32",
+   "q": "Q3",
+   "c": "Metals and Alloys",
+   "a": 1,
+   "d": 1
+  },
+  "AAEM": {
+   "n": "Acs Applied Electronic Materials",
+   "p": "75",
+   "q": "Q1",
+   "c": "Electronic, Optical and Magnetic Materials",
+   "a": 1,
+   "d": 1
+  },
+  "ABB": {
+   "n": "Acta Biologica Brasiliensia",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "AN2": {
+   "n": "Applied Nano",
+   "p": "67",
+   "q": "Q2",
+   "c": "Materials Science (miscellaneous)",
+   "a": 1,
+   "d": 1
+  },
+  "BEJ": {
+   "n": "BIOCHEMICAL ENGINEERING JOURNAL",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "BRAC": {
+   "n": "BIOINTERFACE RESEARCH IN APPLIED CHEMISTRY",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "BIDO": {
+   "n": "BIOLOGICAL INVASIONS (DORDRECHT. ONLINE)",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "BTER": {
+   "n": "BIOLOGICAL TRACE ELEMENT RESEARCH",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "BJCE": {
+   "n": "BRAZILIAN JOURNAL OF CHEMICAL ENGINEERING",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "BJOC": {
+   "n": "Beilstein Journal of Organic Chemistry",
+   "p": "37",
+   "q": "Q3",
+   "c": "Organic Chemistry",
+   "a": 1,
+   "d": 1
+  },
+  "BOJ": {
+   "n": "Biodiversity Online Journal",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "B": {
+   "n": "Biofouling",
+   "p": "68",
+   "q": "Q2",
+   "c": "Aquatic Science",
+   "a": 1,
+   "d": 1
+  },
+  "BM": {
+   "n": "Biomedical Materials",
+   "p": "65",
+   "q": "Q2",
+   "c": "Biomedical Engineering",
+   "a": 1,
+   "d": 1
+  },
+  "B2": {
+   "n": "Biomedicines",
+   "p": "87",
+   "q": "Q1",
+   "c": "Medicine (miscellaneous)",
+   "a": 1,
+   "d": 1
+  },
+  "BJAER": {
+   "n": "Brazilian Journal of Animal and Environmental Research",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "CAUO": {
+   "n": "CADERNOS DE ARQUITETURA E URBANISMO (ONLINE)",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "CEJ": {
+   "n": "CHEMICAL ENGINEERING JOURNAL",
+   "p": "96",
+   "q": "Q1",
+   "c": "Chemical Engineering (all)",
+   "a": 1,
+   "d": 1
+  },
+  "CPL": {
+   "n": "CHEMICAL PHYSICS LETTERS",
+   "p": "80",
+   "q": "Q1",
+   "c": "General Physics and Astronomy",
+   "a": 1,
+   "d": 1,
+   "cs": "5.8",
+   "m": 1
+  },
+  "CSPEA": {
+   "n": "COLLOIDS AND SURFACES A-PHYSICOCHEMICAL AND ENGINEERING ASPECTS",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "CT": {
+   "n": "COLORATION TECHNOLOGY",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "CCM": {
+   "n": "COMPUTATIONAL CONDENSED MATTER",
+   "p": "72",
+   "q": "Q2",
+   "c": "Condensed Matter Physics",
+   "a": 1,
+   "d": 1
+  },
+  "CMS": {
+   "n": "COMPUTATIONAL MATERIALS SCIENCE",
+   "p": "88",
+   "q": "Q1",
+   "c": "Computational Mathematics",
+   "a": 1,
+   "d": 1
+  },
+  "CIE": {
+   "n": "COMPUTERS & INDUSTRIAL ENGINEERING",
+   "p": "96",
+   "q": "Q1",
+   "c": "Engineering (all)",
+   "a": 1,
+   "d": 1
+  },
+  "CCO": {
+   "n": "CONEXÃO CIÊNCIA (ONLINE)",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "C": {
+   "n": "CONJECTURAS",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "CLCS": {
+   "n": "CONTRIBUCIONES A LAS CIENCIAS SOCIALES",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "CEST": {
+   "n": "CORROSION ENGINEERING SCIENCE AND TECHNOLOGY",
+   "p": "56",
+   "q": "Q2",
+   "c": "Chemistry (all)",
+   "a": 1,
+   "d": 1
+  },
+  "CS": {
+   "n": "CORROSION SCIENCE",
+   "p": "94",
+   "q": "Q1",
+   "c": "Chemical Engineering (all)",
+   "a": 1,
+   "d": 1
+  },
+  "CET": {
+   "n": "Cleaner Engineering And Technology",
+   "p": "94",
+   "q": "Q1",
+   "c": "Engineering (miscellaneous)",
+   "a": 1,
+   "d": 1
+  },
+  "D": {
+   "n": "DAPESQUISA",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "DRM": {
+   "n": "DIAMOND AND RELATED MATERIALS",
+   "p": "86",
+   "q": "Q1",
+   "c": "Physics and Astronomy (all)",
+   "a": 1,
+   "d": 1
+  },
+  "EFA": {
+   "n": "ENGINEERING FAILURE ANALYSIS",
+   "p": "93",
+   "q": "Q1",
+   "c": "Engineering (all)",
+   "a": 1,
+   "d": 1
+  },
+  "EJC": {
+   "n": "EUROPEAN JOURNAL OF CHEMISTRY",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "EJPS": {
+   "n": "EUROPEAN JOURNAL OF PHARMACEUTICAL SCIENCES",
+   "p": "82",
+   "q": "Q1",
+   "c": "Pharmaceutical Science",
+   "a": 1,
+   "d": 1
+  },
+  "FAM": {
+   "n": "Food Analytical Methods",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "FCIM": {
+   "n": "Frontiers in Cellular and Infection Microbiology",
+   "p": "91",
+   "q": "Q1",
+   "c": "Infectious Diseases",
+   "a": 1,
+   "d": 1
+  },
+  "FI": {
+   "n": "Frontiers in Imaging",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "GSPO": {
+   "n": "GEOCIÊNCIAS (SÃO PAULO. ONLINE)",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "GJRE": {
+   "n": "GLOBAL JOURNAL OF RESEARCHES IN ENGINEERING",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "I": {
+   "n": "IMMUNOBIOLOGY",
+   "p": "69",
+   "q": "Q2",
+   "c": "Hematology",
+   "a": 1,
+   "d": 1
+  },
+  "IJAERS": {
+   "n": "INTERNATIONAL JOURNAL OF ADVANCED ENGINEERING RESEARCH AND SCIENCE",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "IJBM": {
+   "n": "INTERNATIONAL JOURNAL OF BIOLOGICAL MACROMOLECULES",
+   "p": "93",
+   "q": "Q1",
+   "c": "Structural Biology",
+   "a": 1,
+   "d": 1
+  },
+  "IJERAI": {
+   "n": "INTERNATIONAL JOURNAL OF ENGINEERING RESEARCH AND APPLICATIONS (IJERA)",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "IJMEE": {
+   "n": "INTERNATIONAL JOURNAL OF MECHANICAL ENGINEERING EDUCATION",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "IJMS": {
+   "n": "INTERNATIONAL JOURNAL OF MOLECULAR SCIENCES",
+   "p": "90",
+   "q": "Q1",
+   "c": "Inorganic Chemistry",
+   "a": 1,
+   "d": 1
+  },
+  "IJPRT": {
+   "n": "INTERNATIONAL JOURNAL OF PEPTIDE RESEARCH AND THERAPEUTICS",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "IS": {
+   "n": "IRONMAKING & STEELMAKING",
+   "p": "67",
+   "q": "Q2",
+   "c": "Metals and Alloys",
+   "a": 1,
+   "d": 1
+  },
+  "IP2": {
+   "n": "Impact project",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "IJEST": {
+   "n": "International Journal of Environmental Science and Technology",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "IJH": {
+   "n": "International Journal of Hydrology",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "IJMRE": {
+   "n": "International Journal of Mining Reclamation and Environment",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "IJTP": {
+   "n": "International Journal of Theoretical Physics",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "JAPS": {
+   "n": "JOURNAL OF APPLIED POLYMER SCIENCE",
+   "p": "66",
+   "q": "Q2",
+   "c": "Chemistry (all)",
+   "a": 1,
+   "d": 1
+  },
+  "JCTB": {
+   "n": "JOURNAL OF CHEMICAL TECHNOLOGY AND BIOTECHNOLOGY",
+   "p": "74",
+   "q": "Q2",
+   "c": "Organic Chemistry",
+   "a": 1,
+   "d": 1
+  },
+  "JCP": {
+   "n": "JOURNAL OF CLEANER PRODUCTION",
+   "p": "98",
+   "q": "Q1",
+   "c": "Environmental Science (all)",
+   "a": 1,
+   "d": 1
+  },
+  "JEM": {
+   "n": "JOURNAL OF ELECTRONIC MATERIALS",
+   "p": "66",
+   "q": "Q2",
+   "c": "Electrical and Electronic Engineering",
+   "a": 1,
+   "d": 1
+  },
+  "JMST": {
+   "n": "JOURNAL OF MATERIALS SCIENCE & TECHNOLOGY",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "JML": {
+   "n": "JOURNAL OF MOLECULAR LIQUIDS",
+   "p": "91",
+   "q": "Q1",
+   "c": "Condensed Matter Physics",
+   "a": 1,
+   "d": 1
+  },
+  "JPCM": {
+   "n": "JOURNAL OF PHYSICS-CONDENSED MATTER",
+   "p": "63",
+   "q": "Q2",
+   "c": "Condensed Matter Physics",
+   "a": 1,
+   "d": 1
+  },
+  "JSM": {
+   "n": "JOURNAL OF SUSTAINABLE METALLURGY",
+   "p": "73",
+   "q": "Q2",
+   "c": "Metals and Alloys",
+   "a": 1,
+   "d": 1
+  },
+  "JES": {
+   "n": "JOURNAL OF THE ELECTROCHEMICAL SOCIETY",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "JSAIMM": {
+   "n": "Journal Of The Southern African Institute Of Mining And Metallurgy",
+   "p": "45",
+   "q": "Q3",
+   "c": "Metals and Alloys",
+   "a": 1,
+   "d": 1
+  },
+  "JETI": {
+   "n": "Journal of Experimental Techniques and Instrumentation",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "JPCB": {
+   "n": "Journal of Physical Chemistry B",
+   "p": "61",
+   "q": "Q2",
+   "c": "Surfaces, Coatings and Films",
+   "a": 1,
+   "d": 1
+  },
+  "MCP": {
+   "n": "MATERIALS CHEMISTRY AND PHYSICS",
+   "p": "89",
+   "q": "Q1",
+   "c": "Condensed Matter Physics",
+   "a": 1,
+   "d": 1
+  },
+  "ML": {
+   "n": "MATERIALS LETTERS",
+   "p": "74",
+   "q": "Q2",
+   "c": "Mechanical Engineering",
+   "a": 1,
+   "d": 1
+  },
+  "MST": {
+   "n": "MATERIALS SCIENCE AND TECHNOLOGY",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "MSO2": {
+   "n": "MIX SUSTENTÁVEL (ONLINE)",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "MRJ": {
+   "n": "Materia-Rio de Janeiro",
+   "p": "42",
+   "q": "Q3",
+   "c": "Physics and Astronomy (all)",
+   "a": 1,
+   "d": 1
+  },
+  "MCE": {
+   "n": "Materials Circular Economy",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "MSEBAF": {
+   "n": "Materials Science and Engineering B-Advanced Functional Solid-State Materials",
+   "p": "86",
+   "q": "Q1",
+   "c": "Condensed Matter Physics",
+   "a": 1,
+   "d": 1
+  },
+  "M": {
+   "n": "Minerals",
+   "p": "77",
+   "q": "Q1",
+   "c": "Geology",
+   "a": 1,
+   "d": 1
+  },
+  "MP": {
+   "n": "Modapalavra e-periódico",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "N2": {
+   "n": "Nanomedicine",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "NN": {
+   "n": "Nature Nanotechnology",
+   "p": "99",
+   "q": "Q1",
+   "c": "Condensed Matter Physics",
+   "a": 1,
+   "d": 1
+  },
+  "ODE": {
+   "n": "ORGANISMS DIVERSITY & EVOLUTION",
+   "p": "76",
+   "q": "Q1",
+   "c": "Ecology, Evolution, Behavior and Systematics",
+   "a": 1,
+   "d": 1
+  },
+  "OFOAJ": {
+   "n": "Oceanography & Fisheries Open access Journal",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "P": {
+   "n": "PHARMACEUTICS",
+   "p": "93",
+   "q": "Q1",
+   "c": "Pharmaceutical Science",
+   "a": 1,
+   "d": 1
+  },
+  "PSMIA": {
+   "n": "PHYSICA A-STATISTICAL MECHANICS AND ITS APPLICATIONS",
+   "p": "91",
+   "q": "Q1",
+   "c": "Statistics and Probability",
+   "a": 1,
+   "d": 1
+  },
+  "PLDSN": {
+   "n": "PHYSICA E-LOW-DIMENSIONAL SYSTEMS & NANOSTRUCTURES",
+   "p": "78",
+   "q": "Q1",
+   "c": "Condensed Matter Physics",
+   "a": 1,
+   "d": 1
+  },
+  "PB": {
+   "n": "POLYMER BULLETIN",
+   "p": "85",
+   "q": "Q1",
+   "c": "Condensed Matter Physics",
+   "a": 1,
+   "d": 1
+  },
+  "PC": {
+   "n": "POLYMER COMPOSITES",
+   "p": "77",
+   "q": "Q1",
+   "c": "Chemistry (all)",
+   "a": 1,
+   "d": 1
+  },
+  "POC": {
+   "n": "PROGRESS IN ORGANIC COATINGS",
+   "p": "94",
+   "q": "Q1",
+   "c": "Organic Chemistry",
+   "a": 1,
+   "d": 1
+  },
+  "P2": {
+   "n": "PROJETICA",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "PAC": {
+   "n": "PURE AND APPLIED CHEMISTRY",
+   "p": "50",
+   "q": "Q2",
+   "c": "Chemistry (all)",
+   "a": 1,
+   "d": 1
+  },
+  "PD": {
+   "n": "Pensamentos em Design",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "PSSRRL": {
+   "n": "Physica Status Solidi-Rapid Research Letters",
+   "p": "54",
+   "q": "Q2",
+   "c": "Condensed Matter Physics",
+   "a": 1,
+   "d": 1
+  },
+  "PRB": {
+   "n": "Physical Review B",
+   "p": "76",
+   "q": "Q1",
+   "c": "Condensed Matter Physics",
+   "a": 1,
+   "d": 1
+  },
+  "PRM": {
+   "n": "Physical Review Materials",
+   "p": "82",
+   "q": "Q1",
+   "c": "Physics and Astronomy (miscellaneous)",
+   "a": 1,
+   "d": 1
+  },
+  "PD2": {
+   "n": "Plural Design",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "P3": {
+   "n": "Polymers",
+   "p": "87",
+   "q": "Q1",
+   "c": "Polymers and Plastics",
+   "a": 1,
+   "d": 1
+  },
+  "RRCMOS": {
+   "n": "RCMOS - Revista Científica Multidisciplinar O Saber",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "RPB": {
+   "n": "RECENT PATENTS ON BIOTECHNOLOGY",
+   "p": "45",
+   "q": "Q3",
+   "c": "Biotechnology",
+   "a": 1,
+   "d": 1
+  },
+  "RRLAEC": {
+   "n": "RELACult - Revista Latino-Americana de Estudos em Cultura e Sociedade",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "RSI": {
+   "n": "REVIEW OF SCIENTIFIC INSTRUMENTS",
+   "p": "58",
+   "q": "Q2",
+   "c": "Instrumentation",
+   "a": 1,
+   "d": 1
+  },
+  "RDOO": {
+   "n": "REVISTA D'OBRAS (ONLINE)",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "RLMYM": {
+   "n": "REVISTA LATINOAMERICANA DE METALURGIA Y MATERIALES",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "RA": {
+   "n": "RGSA (ANPAD)",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "RA2": {
+   "n": "RSC Advances",
+   "p": "83",
+   "q": "Q1",
+   "c": "Chemical Engineering (all)",
+   "a": 1,
+   "d": 1
+  },
+  "RC": {
+   "n": "Results In Chemistry",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "RBI": {
+   "n": "Revista Brasileira de Inovação",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "RP": {
+   "n": "Revista Poliedro",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "REAMD": {
+   "n": "Revista de Ensino em Artes, Moda e Design",
+   "p": "25",
+   "q": "Q3",
+   "c": "Visual Arts and Performing Arts",
+   "a": 1,
+   "d": 1
+  },
+  "SABC": {
+   "n": "SENSORS AND ACTUATORS B-CHEMICAL",
+   "p": "98",
+   "q": "Q1",
+   "c": "Instrumentation",
+   "a": 1,
+   "d": 1
+  },
+  "SEJ": {
+   "n": "SSRN Electronic Journal",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "SI": {
+   "n": "SURFACES AND INTERFACES",
+   "p": "80",
+   "q": "Q1",
+   "c": "Surfaces, Coatings and Films",
+   "a": 1,
+   "d": 1
+  },
+  "SN": {
+   "n": "Scientia Naturalis",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "S": {
+   "n": "Small",
+   "p": "96",
+   "q": "Q1",
+   "c": "Engineering (miscellaneous)",
+   "a": 1,
+   "d": 1
+  },
+  "S2": {
+   "n": "Sustainability",
+   "p": "92",
+   "q": "Q1",
+   "c": "Geography, Planning and Development",
+   "a": 1,
+   "d": 1
+  },
+  "TAFM": {
+   "n": "THEORETICAL AND APPLIED FRACTURE MECHANICS",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "TIIM": {
+   "n": "TRANSACTIONS OF THE INDIAN INSTITUTE OF METALS",
+   "p": "61",
+   "q": "Q2",
+   "c": "Metals and Alloys",
+   "a": 1,
+   "d": 1
+  },
+  "JEES": {
+   "n": "The Journal of Engineering and Exact Sciences",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "JEESJ": {
+   "n": "The Journal of Engineering and Exact Sciences ? jCEC,",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "V": {
+   "n": "Vaccines",
+   "p": "85",
+   "q": "Q1",
+   "c": "Infectious Diseases",
+   "a": 1,
+   "d": 1
+  },
+  "V2": {
+   "n": "VÉRTICES",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "HDO12S": {
+   "n": "https://doi.org/10.20021/sjr.v1i2.32",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "HDO12S2": {
+   "n": "https://doi.org/10.20021/sjr.v3i2.66",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "HDO122": {
+   "n": "https://doi.org/10.29183/2447-3073.MIX2025.v11.n1.17-28",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "HDO13A": {
+   "n": "https://doi.org/10.35572/arql.v3i11.6610",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "HDO15R": {
+   "n": "https://doi.org/10.51189/rema/1286",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  },
+  "RLAFD": {
+   "n": "revista latino americana de food design",
+   "p": null,
+   "q": null,
+   "c": null,
+   "a": 1,
+   "d": 1
+  }
+ },
+ "docentes": [
+  {
+   "nome": "Alan Barros de Oliveira",
+   "total": 16,
+   "nrev": 14,
+   "rev": {
+    "JPCC": 3,
+    "Metals": 1,
+    "CerInt": 1,
+    "JMBBM": 1,
+    "JMS2": 1,
+    "SciRep": 1,
+    "SIA": 1,
+    "SCT": 1,
+    "CA": 1,
+    "Carbon": 1,
+    "PLDSN": 1,
+    "IJTP": 1,
+    "JPCM": 1,
+    "JPCB": 1
+   },
+   "q": {
+    "Q2": 6,
+    "Q1": 8,
+    "SQ": 2
+   }
+  },
+  {
+   "nome": "Américo Tristão Bernardes",
+   "total": 7,
+   "nrev": 7,
+   "rev": {
+    "ADHR": 1,
+    "TMMMI": 1,
+    "R": 1,
+    "PO": 1,
+    "PSMIA": 1,
+    "V": 1,
+    "RBI": 1
+   },
+   "q": {
+    "SQ": 3,
+    "Q1": 4
+   }
+  },
+  {
+   "nome": "Ana Paula Moreira Barboza",
+   "total": 24,
+   "nrev": 21,
+   "rev": {
+    "JPCC": 1,
+    "MMAP": 2,
+    "JBCS": 2,
+    "JMS2": 1,
+    "JAP": 1,
+    "RVQ": 1,
+    "PST": 1,
+    "NNBM": 1,
+    "N": 1,
+    "BJN": 2,
+    "AANM": 1,
+    "P3": 1,
+    "P": 1,
+    "AP": 1,
+    "AO": 1,
+    "N2": 1,
+    "EJPS": 1,
+    "IJPRT": 1,
+    "IJMS": 1,
+    "IJBM": 1,
+    "2M": 1
+   },
+   "q": {
+    "Q2": 7,
+    "Q3": 2,
+    "Q1": 12,
+    "Q4": 1,
+    "SQ": 2
+   }
+  },
+  {
+   "nome": "Antonio Valadao Cardoso",
+   "total": 17,
+   "nrev": 14,
+   "rev": {
+    "BJD": 1,
+    "RSD": 2,
+    "BJM": 2,
+    "A": 2,
+    "BZ": 1,
+    "BJAER": 1,
+    "BIDO": 1,
+    "OFOAJ": 1,
+    "ODE": 1,
+    "BOJ": 1,
+    "AN2": 1,
+    "B": 1,
+    "IJH": 1,
+    "C": 1
+   },
+   "q": {
+    "SQ": 9,
+    "Q3": 2,
+    "Q1": 4,
+    "Q2": 2
+   }
+  },
+  {
+   "nome": "Claudio Gouvea dos Santos",
+   "total": 6,
+   "nrev": 6,
+   "rev": {
+    "Metals": 1,
+    "WBV": 1,
+    "SJR": 1,
+    "CM": 1,
+    "PAC": 1,
+    "RRCMOS": 1
+   },
+   "q": {
+    "Q1": 1,
+    "Q2": 3,
+    "SQ": 2
+   }
+  },
+  {
+   "nome": "Dalila Chaves Sicupira",
+   "total": 13,
+   "nrev": 12,
+   "rev": {
+    "MatRes": 1,
+    "JMEP": 2,
+    "MRIAJM": 1,
+    "QN": 1,
+    "POC": 1,
+    "AMM": 1,
+    "EJC": 1,
+    "JES": 1,
+    "IJERAI": 1,
+    "MRJ": 1,
+    "CEST": 1,
+    "CS": 1
+   },
+   "q": {
+    "Q3": 4,
+    "Q2": 3,
+    "Q4": 1,
+    "Q1": 2,
+    "SQ": 3
+   }
+  },
+  {
+   "nome": "Eliane Ayres",
+   "total": 15,
+   "nrev": 12,
+   "rev": {
+    "MatRes": 1,
+    "RSD": 2,
+    "MSO": 2,
+    "AJMS": 2,
+    "RA": 1,
+    "PB": 1,
+    "RP": 1,
+    "REAMD": 1,
+    "RDOO": 1,
+    "JAPS": 1,
+    "MSO2": 1,
+    "CT": 1
+   },
+   "q": {
+    "Q3": 4,
+    "SQ": 9,
+    "Q1": 1,
+    "Q2": 1
+   }
+  },
+  {
+   "nome": "Fernando Gabriel da Silva Araujo",
+   "total": 9,
+   "nrev": 8,
+   "rev": {
+    "MatRes": 2,
+    "JMBBM": 1,
+    "PCT": 1,
+    "MPEMR": 1,
+    "CPLO": 1,
+    "S2": 1,
+    "ML": 1,
+    "CET": 1
+   },
+   "q": {
+    "Q3": 3,
+    "Q1": 3,
+    "SQ": 2,
+    "Q2": 1
+   }
+  },
+  {
+   "nome": "Geraldo Lúcio de Faria",
+   "total": 40,
+   "nrev": 17,
+   "rev": {
+    "TMMM": 13,
+    "MatRes": 4,
+    "Metals": 2,
+    "SRI": 5,
+    "JMRTJT": 1,
+    "MMAP": 2,
+    "IJAMT": 2,
+    "JMEP": 2,
+    "JOM": 1,
+    "JTACO": 1,
+    "MMTPMM": 1,
+    "MRIAJM": 1,
+    "WW": 1,
+    "AMPT": 1,
+    "EFA": 1,
+    "IJMEE": 1,
+    "JETI": 1
+   },
+   "q": {
+    "SQ": 16,
+    "Q3": 5,
+    "Q1": 8,
+    "Q2": 11
+   }
+  },
+  {
+   "nome": "Heloisa Nazaré dos Santos",
+   "total": 4,
+   "nrev": 4,
+   "rev": {
+    "BJD": 1,
+    "PD": 1,
+    "P2": 1,
+    "MP": 1
+   },
+   "q": {
+    "SQ": 4
+   }
+  },
+  {
+   "nome": "Hugo Bonette de Carvalho",
+   "total": 12,
+   "nrev": 7,
+   "rev": {
+    "JAC": 5,
+    "CerInt": 1,
+    "AM": 2,
+    "SI": 1,
+    "MSEBAF": 1,
+    "JMST": 1,
+    "CSPEA": 1
+   },
+   "q": {
+    "Q1": 10,
+    "SQ": 2
+   }
+  },
+  {
+   "nome": "Ive Silvestre de Almeida",
+   "total": 3,
+   "nrev": 3,
+   "rev": {
+    "JMSDO": 1,
+    "PST": 1,
+    "N": 1
+   },
+   "q": {
+    "Q1": 2,
+    "Q2": 1
+   }
+  },
+  {
+   "nome": "Johne Jesus Mol Peixoto",
+   "total": 10,
+   "nrev": 9,
+   "rev": {
+    "TMMM": 1,
+    "BJD": 1,
+    "SRI": 1,
+    "JMRTJT": 1,
+    "REM": 1,
+    "JOM": 1,
+    "MMTBPM": 2,
+    "TIIM": 1,
+    "IS": 1
+   },
+   "q": {
+    "SQ": 2,
+    "Q2": 6,
+    "Q1": 1,
+    "Q3": 1
+   }
+  },
+  {
+   "nome": "Leonardo Barbosa Godefroid",
+   "total": 13,
+   "nrev": 9,
+   "rev": {
+    "TMMM": 2,
+    "MatRes": 2,
+    "SRI": 1,
+    "JMRTJT": 2,
+    "IJAMT": 1,
+    "MSESMP": 2,
+    "MMTPMM": 1,
+    "TMMMI": 1,
+    "TAFM": 1
+   },
+   "q": {
+    "SQ": 4,
+    "Q3": 2,
+    "Q2": 2,
+    "Q1": 5
+   }
+  },
+  {
+   "nome": "Marcelo Gomes Speziali",
+   "total": 6,
+   "nrev": 5,
+   "rev": {
+    "BJM": 1,
+    "WPI": 2,
+    "RPB": 1,
+    "BTER": 1,
+    "MCP": 1
+   },
+   "q": {
+    "Q3": 2,
+    "Q1": 3,
+    "SQ": 1
+   }
+  },
+  {
+   "nome": "Matheus Josué de Souza Matos",
+   "total": 29,
+   "nrev": 26,
+   "rev": {
+    "JPCC": 3,
+    "LiqCryst": 1,
+    "CerInt": 1,
+    "JMSDO": 1,
+    "JAP": 1,
+    "JMM": 1,
+    "SciRep": 1,
+    "PCCP": 1,
+    "MTC": 1,
+    "CA": 1,
+    "APR": 2,
+    "Carbon": 1,
+    "AANM": 1,
+    "PRB": 1,
+    "PRM": 1,
+    "PSSRRL": 1,
+    "RA2": 1,
+    "AN": 1,
+    "S": 1,
+    "ANM": 1,
+    "APL": 1,
+    "ASS": 1,
+    "NN": 1,
+    "DRM": 1,
+    "CMS": 1,
+    "CPL": 1
+   },
+   "q": {
+    "Q2": 7,
+    "Q1": 19,
+    "SQ": 3
+   }
+  },
+  {
+   "nome": "Paulo Santos Assis",
+   "total": 29,
+   "nrev": 20,
+   "rev": {
+    "TMMM": 1,
+    "BJD": 1,
+    "RSD": 1,
+    "RDCS": 5,
+    "REM": 2,
+    "CELE": 3,
+    "ADHR": 1,
+    "RO": 2,
+    "BZ": 1,
+    "CB": 2,
+    "CPLO": 1,
+    "ABB": 1,
+    "SEJ": 1,
+    "RLMYM": 1,
+    "GJRE": 1,
+    "IJMRE": 1,
+    "IJAERS": 1,
+    "HDO15R": 1,
+    "CIE": 1,
+    "JSM": 1
+   },
+   "q": {
+    "SQ": 24,
+    "Q3": 2,
+    "Q1": 2,
+    "Q2": 1
+   }
+  },
+  {
+   "nome": "Rita de Castro Engler",
+   "total": 32,
+   "nrev": 21,
+   "rev": {
+    "BJD": 4,
+    "RL": 3,
+    "IP": 3,
+    "IJGET": 2,
+    "RT": 2,
+    "URBGU": 2,
+    "RDTS": 2,
+    "V2": 1,
+    "PD2": 1,
+    "RRLAEC": 1,
+    "RLAFD": 1,
+    "JEESJ": 1,
+    "JEES": 1,
+    "IP2": 1,
+    "HDO13A": 1,
+    "HDO122": 1,
+    "MCE": 1,
+    "CAUO": 1,
+    "CCO": 1,
+    "D": 1,
+    "CLCS": 1
+   },
+   "q": {
+    "SQ": 32
+   }
+  },
+  {
+   "nome": "Rodrigo Fernando Bianchi",
+   "total": 14,
+   "nrev": 13,
+   "rev": {
+    "PCT": 2,
+    "ADHR": 1,
+    "R": 1,
+    "PO": 1,
+    "PC": 1,
+    "SABC": 1,
+    "RSI": 1,
+    "B2": 1,
+    "BRAC": 1,
+    "FAM": 1,
+    "FCIM": 1,
+    "I": 1,
+    "JEM": 1
+   },
+   "q": {
+    "Q3": 2,
+    "SQ": 3,
+    "Q1": 6,
+    "Q2": 3
+   }
+  },
+  {
+   "nome": "Rodrigo Rangel Porcaro",
+   "total": 11,
+   "nrev": 7,
+   "rev": {
+    "TMMM": 3,
+    "MatRes": 3,
+    "Metals": 1,
+    "MMAP": 1,
+    "IJAMT": 1,
+    "JOM": 1,
+    "WW": 1
+   },
+   "q": {
+    "SQ": 3,
+    "Q3": 3,
+    "Q1": 3,
+    "Q2": 2
+   }
+  },
+  {
+   "nome": "Taíse Matte Manhabosco",
+   "total": 21,
+   "nrev": 19,
+   "rev": {
+    "TMMM": 2,
+    "MatRes": 1,
+    "Metals": 1,
+    "JMRTJT": 2,
+    "LiqCryst": 1,
+    "CerInt": 1,
+    "JMBBM": 1,
+    "MSESMP": 1,
+    "JMS": 1,
+    "JMCC": 1,
+    "SIA": 1,
+    "SCT": 1,
+    "NNBM": 1,
+    "BM": 1,
+    "SN": 1,
+    "AEM": 1,
+    "FI": 1,
+    "MST": 1,
+    "CCM": 1
+   },
+   "q": {
+    "SQ": 5,
+    "Q3": 1,
+    "Q1": 10,
+    "Q2": 5
+   }
+  },
+  {
+   "nome": "Thiago Cazati",
+   "total": 14,
+   "nrev": 11,
+   "rev": {
+    "JPCC": 1,
+    "LiqCryst": 3,
+    "JBCS": 2,
+    "JMS": 1,
+    "JMCC": 1,
+    "JMM": 1,
+    "PCCP": 1,
+    "MTC": 1,
+    "BJOC": 1,
+    "AAEM": 1,
+    "JML": 1
+   },
+   "q": {
+    "Q2": 5,
+    "Q3": 3,
+    "Q1": 6
+   }
+  },
+  {
+   "nome": "Versiane Albis Leão",
+   "total": 13,
+   "nrev": 11,
+   "rev": {
+    "Hydromet": 2,
+    "MPEMR": 1,
+    "RVQ": 1,
+    "QN": 1,
+    "PPMP": 2,
+    "BJCE": 1,
+    "BEJ": 1,
+    "JCTB": 1,
+    "JCP": 1,
+    "IJEST": 1,
+    "CEJ": 1
+   },
+   "q": {
+    "Q1": 4,
+    "SQ": 4,
+    "Q4": 2,
+    "Q2": 3
+   }
+  },
+  {
+   "nome": "Víctor de Andrade Alvarenga Oliveira",
+   "total": 12,
+   "nrev": 12,
+   "rev": {
+    "Metals": 1,
+    "Hydromet": 1,
+    "JTACO": 1,
+    "WBV": 1,
+    "SJR": 1,
+    "CM": 1,
+    "RC": 1,
+    "HDO12S2": 1,
+    "HDO12S": 1,
+    "GSPO": 1,
+    "M": 1,
+    "JSAIMM": 1
+   },
+   "q": {
+    "Q1": 3,
+    "SQ": 6,
+    "Q2": 2,
+    "Q3": 1
+   }
+  }
+ ],
+ "resumo": {
+  "n_docentes": 24,
+  "n_revistas": 204,
+  "com_quartil": 120,
+  "vinculos": 370,
+  "revistas_com_percentil_manual": 1
+ }
+};

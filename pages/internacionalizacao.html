@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Internacionalização e Colaboração — REDEMAT | UFOP · UEMG</title>
+<meta name="description" content="Inserção internacional da REDEMAT: vínculos no exterior do corpo docente, rede de colaboração científica, parcerias com empresas e instituições e metas de internacionalização.">
+<link rel="canonical" href="https://redemat.ufop.br/internacionalizacao">
+<link rel="icon" href="../assets/img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
+<style>
+.country-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 1.3rem; display: flex; gap: 1rem; align-items: center; transition: box-shadow .2s, transform .2s; }
+.country-card:hover { box-shadow: var(--sh); transform: translateY(-2px); }
+.country-flag { font-size: 2rem; line-height: 1; flex-shrink: 0; }
+.country-name { font-size: .95rem; font-weight: 700; color: var(--navy); }
+.country-count { font-size: .78rem; color: var(--text-mid); margin-top: .15rem; }
+.net-viz { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 1.5rem; }
+.net-stat { display: flex; align-items: baseline; gap: .6rem; }
+.net-stat b { font-size: 2.2rem; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+.net-stat span { font-size: .85rem; color: var(--text-mid); line-height: 1.4; }
+.partner-grid-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 1.15rem 1.3rem; }
+.partner-grid-card .t { font-size: .66rem; font-weight: 800; text-transform: uppercase; letter-spacing: .09em; margin-bottom: .4rem; }
+.partner-grid-card .n { font-size: .92rem; font-weight: 700; color: var(--navy); }
+</style>
+</head>
+<body>
+
+<div id="site-header-slot"></div>
+
+<section class="page-hero" aria-labelledby="ph">
+  <div class="page-hero-in">
+    <nav class="crumb" aria-label="Trilha de navegação">
+      <a href="../index.html">Início</a><span aria-hidden="true">›</span>
+      <span aria-current="page">Internacionalização</span>
+    </nav>
+    <h1 id="ph">Internacionalização e Colaboração</h1>
+    <p class="lede">
+      A inserção internacional do Programa combina a experiência formativa do corpo docente no exterior,
+      a coautoria com pesquisadores de outros países e a cooperação com o setor produtivo nacional.
+    </p>
+    <div class="hero-metrics" id="heroMetrics"></div>
+  </div>
+</section>
+
+<main id="conteudo">
+
+  <!-- Experiência internacional -->
+  <section class="section" aria-labelledby="exp-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Corpo docente</p>
+        <h2 class="h2" id="exp-h">Experiência formativa no exterior</h2>
+        <p class="section-lede" id="expLede"></p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <h3 class="h3">Docentes com pós-doutorado ou experiência internacional</h3>
+          <div class="mt-3" id="expBar"></div>
+          <p style="font-size:.78rem;color:var(--text-soft);margin-top:1.25rem;line-height:1.6;">
+            O parâmetro de referência da CAPES para propostas de Doutorado na Área Engenharias II é de
+            ao menos 25% dos docentes permanentes com pós-doutorado ou experiência internacional de,
+            no mínimo, três meses.
+          </p>
+        </div>
+        <div class="chart-card">
+          <div class="chart-head">
+            <div>
+              <p class="chart-title">Vínculos institucionais por país</p>
+              <p class="chart-sub">Registros na seção “Atuação Profissional” dos currículos</p>
+            </div>
+            <span class="badge badge--pre">Preliminar</span>
+          </div>
+          <div class="chart-box chart-box--sm"><canvas id="cPaises" role="img" aria-label="Gráfico de barras horizontais com vínculos institucionais por país"></canvas></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Países -->
+  <section class="section section--alt" aria-labelledby="pais-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Mapa de presença</p>
+        <h2 class="h2" id="pais-h">Países com vínculos registrados</h2>
+      </div>
+      <div class="grid grid--3" id="paisGrid"></div>
+      <div class="mt-3" id="paisNota"></div>
+    </div>
+  </section>
+
+  <!-- Rede de colaboração -->
+  <section class="section" aria-labelledby="rede-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Coautoria</p>
+        <h2 class="h2" id="rede-h">Rede de colaboração científica</h2>
+        <p class="section-lede">
+          A integração prévia entre os docentes é requisito de coerência coletiva para propostas de curso.
+          O grafo de coautoria mede essa articulação — internamente e com o mundo.
+        </p>
+      </div>
+      <div class="grid grid--3 mb-3" id="redeGrid"></div>
+      <div class="net-viz">
+        <h3 class="h3">Como o grafo é construído</h3>
+        <div class="prose" style="max-width:none;">
+          <p>
+            O grafo de colaborações é gerado pelo <strong>ScriptLattes</strong> a partir dos currículos
+            Lattes do corpo docente. Cada docente é um nó; cada artigo, livro ou capítulo em coautoria
+            entre dois docentes gera uma aresta entre eles.
+          </p>
+          <ul>
+            <li><strong>Rede interna:</strong> mede a articulação do corpo docente entre si — evidência de que o Programa funciona como coletivo, e não como soma de pesquisadores isolados.</li>
+            <li><strong>Rede externa:</strong> conta coautores distintos fora do quadro docente — indicador de inserção em redes nacionais e internacionais de pesquisa.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-3" id="redeNota"></div>
+    </div>
+  </section>
+
+  <!-- Parceiros -->
+  <section class="section section--alt" aria-labelledby="part-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Cooperação</p>
+        <h2 class="h2" id="part-h">Empresas e instituições parceiras</h2>
+        <p class="section-lede">
+          Historicamente, a REDEMAT desenvolve projetos e ações com empresas e instituições das cadeias
+          minero-metalúrgica e de materiais.
+        </p>
+      </div>
+      <div class="partners-grid mb-3" id="partGrid"></div>
+      <div id="partNota"></div>
+    </div>
+  </section>
+
+  <!-- Financiadores -->
+  <section class="section" aria-labelledby="fin-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Fomento</p>
+        <h2 class="h2" id="fin-h">Agências e financiadores de projetos</h2>
+        <p class="section-lede">
+          Distribuição dos projetos de pesquisa do período 2021–2026 por fonte de financiamento.
+        </p>
+      </div>
+      <div class="chart-card">
+        <div class="chart-head">
+          <div>
+            <p class="chart-title">Projetos por financiador</p>
+            <p class="chart-sub">Recorte 2021–2026, projetos únicos sem dupla contagem</p>
+          </div>
+          <span class="badge badge--pre">Preliminar</span>
+        </div>
+        <div id="finBars" class="mt-2"></div>
+      </div>
+      <div class="mt-3">
+        <a href="indicadores.html#p-proj" style="font-size:.86rem;font-weight:600;color:var(--amber);">
+          Ver indicadores completos de projetos e captação →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metas -->
+  <section class="section section--dark" aria-labelledby="meta-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Planejamento</p>
+        <h2 class="h2" id="meta-h">Metas de internacionalização</h2>
+      </div>
+      <div class="grid grid--2">
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:1.5rem;">
+          <h3 style="color:#fff;font-size:.95rem;font-weight:700;margin-bottom:.7rem;">Meta declarada 2026–2029</h3>
+          <p style="font-size:.92rem;color:rgba(255,255,255,.76);line-height:1.75;" id="metaTxt"></p>
+          <p style="font-size:.78rem;color:rgba(255,255,255,.5);margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.1);">
+            Indicadores de acompanhamento: acordos ativos, mobilidade, coautoria internacional e recepção
+            de pesquisadores visitantes. Responsável: Comissão de Internacionalização.
+          </p>
+        </div>
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:1.5rem;">
+          <h3 style="color:#fff;font-size:.95rem;font-weight:700;margin-bottom:.7rem;">Acordos formais vigentes</h3>
+          <p style="font-size:.92rem;color:rgba(255,255,255,.76);line-height:1.75;" id="acordoTxt"></p>
+          <p style="font-size:.78rem;color:rgba(255,255,255,.5);margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.1);">
+            Este portal não publica listas de acordos antes da confirmação de objeto, vigência e
+            resultados junto às instituições envolvidas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer-slot"></div>
+
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+(function () {
+  'use strict';
+  const R = window.REDEMAT, C = window.RC, I = R.internacionalizacao, CO = R.colaboracao;
+
+  const totalVinc = I.paises.reduce(function (s, p) { return s + p.vinculos; }, 0);
+
+  document.getElementById('heroMetrics').innerHTML = [
+    { v: I.docentes_com_experiencia.valor, l: 'Docentes com experiência internacional' },
+    { v: I.paises.length, l: 'Países com vínculos registrados' },
+    { v: CO.externa.colaboradores, l: 'Coautores externos distintos' },
+    { v: CO.interna.arestas, l: 'Vínculos internos de coautoria' }
+  ].map(function (m) { return '<div class="hero-metric"><b data-count="' + m.v + '">0</b><span>' + m.l + '</span></div>'; }).join('');
+
+  /* ---------- experiência ---------- */
+  const nExp = I.docentes_com_experiencia.valor, nTot = I.docentes_com_experiencia.total;
+  const pct = Math.round(nExp / nTot * 100);
+  document.getElementById('expLede').textContent =
+    nExp + ' dos ' + nTot + ' docentes (' + pct + '%) possuem estágio pós-doutoral ou experiência internacional formal registrada em currículo.';
+
+  document.getElementById('expBar').innerHTML =
+    '<div class="bar-row">' +
+      '<span class="bar-lbl">Com experiência</span>' +
+      '<span class="bar-track"><span class="bar-fill" style="background:var(--area2);width:' + pct + '%"></span></span>' +
+      '<span class="bar-val">' + nExp + '</span></div>' +
+    '<div class="bar-row">' +
+      '<span class="bar-lbl">Sem registro formal</span>' +
+      '<span class="bar-track"><span class="bar-fill" style="background:var(--border-str);width:' + (100 - pct) + '%"></span></span>' +
+      '<span class="bar-val">' + (nTot - nExp) + '</span></div>' +
+    '<p style="font-size:2rem;font-weight:800;color:var(--area2);margin-top:1.25rem;">' + pct + '%' +
+      '<span style="font-size:.85rem;font-weight:500;color:var(--text-mid);"> do quadro docente</span></p>';
+
+  /* ---------- países ---------- */
+  document.getElementById('paisGrid').innerHTML = I.paises.map(function (p) {
+    return '<div class="country-card">' +
+      '<span class="country-flag" aria-hidden="true">' + p.flag + '</span>' +
+      '<div><p class="country-name">' + p.pais + '</p>' +
+      '<p class="country-count">' + p.vinculos + ' vínculo' + (p.vinculos > 1 ? 's' : '') + ' em currículo · ' +
+      Math.round(p.vinculos / totalVinc * 100) + '% do total</p></div></div>';
+  }).join('');
+
+  document.getElementById('paisNota').innerHTML = C.note('info',
+    '<strong>Como ler estes números.</strong> ' + I.paises_nota +
+    ' Um mesmo docente pode ter vínculos em mais de um país, e um país pode acumular vínculos de ' +
+    'diferentes docentes ou períodos. Fonte: currículos Lattes, coleta em 28/08/2026. ' + C.badge('PRELIMINAR'));
+
+  /* ---------- rede ---------- */
+  document.getElementById('redeGrid').innerHTML = [
+    { v: CO.interna.nos, l: 'Docentes na rede interna', s: 'Nós do grafo de coautoria', cor: 'var(--area1)', ico: C.ICO.people },
+    { v: CO.interna.arestas, l: 'Vínculos de coautoria interna', s: 'Arestas entre docentes do Programa', cor: 'var(--l12)', ico: C.ICO.chart },
+    { v: CO.externa.colaboradores, l: 'Coautores externos distintos', s: 'Pesquisadores fora do quadro docente', cor: 'var(--area2)', ico: C.ICO.globe }
+  ].map(function (k) {
+    return '<div class="kpi">' +
+      '<div class="kpi-top">' +
+        '<span class="kpi-ico" style="background:color-mix(in srgb, ' + k.cor + ' 12%, transparent);color:' + k.cor + '">' + k.ico + '</span>' +
+        C.badge('PRELIMINAR') + '</div>' +
+      '<div class="kpi-val" style="color:' + k.cor + '" data-count="' + k.v + '">0</div>' +
+      '<div class="kpi-lbl">' + k.l + '</div>' +
+      '<div class="kpi-src">' + k.s + '</div></div>';
+  }).join('');
+
+  document.getElementById('redeNota').innerHTML = C.note('info',
+    'O grafo de colaborações e a lista de coautores externos são geradas automaticamente pelo ScriptLattes ' +
+    'e refletem o conteúdo declarado nos currículos Lattes na data da coleta. A homonímia entre autores e ' +
+    'variações de grafia de nomes podem afetar a contagem exata. ' + C.badge('PRELIMINAR'));
+
+  /* ---------- parceiros ---------- */
+  const T_COR = { Empresa: 'var(--amber)', Institucional: 'var(--area2)', Fomento: 'var(--area1)' };
+  document.getElementById('partGrid').innerHTML = R.parceiros.itens.map(function (p) {
+    return '<div class="partner-tile" title="' + p.nome + ' — ' + p.tipo + '">' +
+      '<img src="../assets/img/parceiros/' + p.slug + '.png" alt="' + p.nome + '" loading="lazy" onerror="this.remove()">' +
+      '<span class="pname">' + p.nome + '</span>' +
+      '<span class="pmeta" style="color:' + (T_COR[p.tipo] || 'var(--text-soft)') + '">' + p.tipo + '</span>' +
+      (p.comProjeto && p.projetos ? '<span class="pproj">' + p.projetos + ' projeto' + (p.projetos > 1 ? 's' : '') + '</span>' : '') +
+    '</div>';
+  }).join('');
+
+  document.getElementById('partNota').innerHTML =
+    C.note('warn', '<strong>Relação histórica, não portfólio vigente.</strong> ' + R.parceiros.nota +
+      ' ' + C.badge('PRELIMINAR')) +
+    '<div class="mt-2">' + C.note('info', '<strong>Sobre os logos.</strong> ' + R.parceiros.aviso_marca) + '</div>';
+
+  /* ---------- financiadores ---------- */
+  const F = R.projetos.agencias_valor.concat(R.projetos.empresas_valor).slice().sort(function (a, b) { return b.projetos - a.projetos; });
+  const maxF = F[0].projetos;
+  const AG = R.projetos.agencias_valor.map(function (x) { return x.nome; });
+  document.getElementById('finBars').innerHTML = F.map(function (f) {
+    const cor = AG.indexOf(f.nome) > -1 ? 'var(--area1)' : 'var(--amber)';
+    return '<div class="bar-row"><span class="bar-lbl bar-lbl--wide">' + f.nome + '</span>' +
+      '<span class="bar-track"><span class="bar-fill" style="background:' + cor + ';width:' + (f.projetos / maxF * 100) + '%"></span></span>' +
+      '<span class="bar-val">' + f.projetos + '</span></div>';
+  }).join('') +
+  '<p style="font-size:.74rem;color:var(--text-soft);margin-top:1rem;line-height:1.6;">' +
+    '<span style="color:var(--area1);font-weight:700;">■</span> Agência de fomento e institucional &nbsp; ' +
+    '<span style="color:var(--amber);font-weight:700;">■</span> Empresa<br>' +
+    R.projetos.financiadores_nota + '</p>';
+
+  /* ---------- metas ---------- */
+  document.getElementById('metaTxt').textContent = I.metas.valor;
+  document.getElementById('acordoTxt').textContent = I.acordos_formais.nota;
+
+  /* ---------- init ---------- */
+  C.mount('internacionalizacao.html', '../');
+
+  let drawn = false;
+  function draw() {
+    if (drawn || !window.Chart) return;
+    const el = document.getElementById('cPaises'); if (!el) return;
+    drawn = true;
+    new window.Chart(el, {
+      type: 'bar',
+      data: {
+        labels: I.paises.map(function (p) { return p.pais; }),
+        datasets: [{ label: 'Vínculos', data: I.paises.map(function (p) { return p.vinculos; }),
+          backgroundColor: ['#1D6FA5', '#4A5FBF', '#1B8A6B', '#B8860B', '#8B5CA8', '#2A8FB8', '#C97A2A'],
+          borderRadius: 4, borderSkipped: false }]
+      },
+      options: {
+        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+        animation: { duration: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 700 },
+        plugins: { legend: { display: false }, tooltip: { backgroundColor: '#0B1F3A', padding: 10, cornerRadius: 6,
+          callbacks: { label: function (c) { return c.raw + ' vínculo' + (c.raw > 1 ? 's' : '') + ' em currículo'; } } } },
+        scales: {
+          x: { beginAtZero: true, grid: { color: 'rgba(16,32,54,.06)' }, ticks: { font: { size: 11 }, stepSize: 5 } },
+          y: { grid: { display: false }, ticks: { font: { size: 11 } } }
+        }
+      }
+    });
+  }
+  C.whenChart(draw, function () {
+    C.chartFallback('cPaises',
+      ['País', 'Vínculos em currículo'],
+      I.paises.map(function (p) { return [p.pais, p.vinculos]; })
+        .concat([['Total', totalVinc]]));
+  });
+})();
+</script>
+</body>
+</html>

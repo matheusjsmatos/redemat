@@ -1,0 +1,423 @@
+
+                <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf8"><meta name="Generator" content="scriptLattes"><title>REDEMAT</title><link rel="stylesheet" href="css/scriptLattes.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"><link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css"><link rel="stylesheet" type="text/css" href="css/dataTables.colVis.min.css"><script type="text/javascript" charset="utf8" src="js/jquery.min.js"></script><script type="text/javascript" charset="utf8" src="js/jquery.dataTables.min.js"></script><script type="text/javascript" charset="utf8" src="js/dataTables.colVis.min.js"></script><script type="text/javascript" charset="utf8" src="js/sorttable-local.js"></script><link rel="stylesheet" href="portal-redemat.css">
+</head><body>
+<div id="portal-back"><a href="../pages/producao-lattes.html">&#8592; Voltar ao portal REDEMAT</a><span>Relatório ScriptLattes — dados brutos dos currículos Lattes</span></div><div id="header2"> <button onClick="history.go(-1)">Voltar</button><h2>REDEMAT</h2></div>
+                
+        <script type="text/javascript" src="./js/jquery.min.js"></script>
+        <!--
+        <script type="text/javascript" src="./highcharts.js"></script>
+        <script type="text/javascript" src="./exporting.js"></script>
+        <script type="text/javascript" src="./drilldown.js"></script>
+        -->
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+        <script type="text/javascript">
+        // Load the fonts
+        Highcharts.createElement('link', {
+           href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700',
+           rel: 'stylesheet',
+           type: 'text/css'
+        }, null, document.getElementsByTagName('head')[0]);
+
+        Highcharts.theme = {
+   colors: ["#1F77B4", "#118D95", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#2b908f", "#90ee7e", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
+   chart: {
+      backgroundColor: null,
+      style: {
+         fontFamily: "'Source Sans Pro', 'sans-serif'"
+      }
+   },
+   title: {
+      style: {
+         color: 'black',
+         fontSize: '16px',
+         fontWeight: 'bold'
+      }
+   },
+   subtitle: {
+      style: {
+         color: 'black'
+      }
+   },
+   tooltip: {
+      borderWidth: 0
+   },
+   legend: {
+      itemStyle: {
+         fontWeight: 'bold',
+         fontSize: '13px'
+      }
+   },
+   xAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   yAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   plotOptions: {
+      series: {
+         shadow: true
+      },
+      candlestick: {
+         lineColor: '#404048'
+      },
+      map: {
+         shadow: false
+      }
+   },
+
+   // Highstock specific
+   navigator: {
+      xAxis: {
+         gridLineColor: '#D0D0D8'
+      }
+   },
+   rangeSelector: {
+      buttonTheme: {
+         fill: 'white',
+         stroke: '#C0C0C8',
+         'stroke-width': 1,
+         states: {
+            select: {
+               fill: '#D0D0D8'
+            }
+         }
+      }
+   },
+   scrollbar: {
+      trackBorderColor: '#C0C0C8'
+   },
+
+   // General
+   background2: '#E0E0E8'
+};
+
+        Highcharts.setOptions(Highcharts.theme);
+        $(function () {
+            $('#container').highcharts({chart: {type: 'column', 
+height: 300}, 
+title: {text: 'Iniciação científica'}, 
+subtitle: {text: ''}, 
+xAxis: {title: {text: ''}, 
+type: 'category'}, 
+yAxis: {min: 0, 
+title: {text: 'Quantidade', 
+align: 'middle'}, 
+labels: {overflow: 'justify'}, 
+stackLabels: {enabled: true, 
+format: '{stack}'}}, 
+tooltip: {enabled: true, 
+valueSuffix: '', 
+shared: false, 
+headerFormat: '<span style="font-size: 10px">{point.key}{point.stack}{series.stack}</span><br/>', 
+pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'}, 
+plotOptions: {bar: {dataLabels: {enabled: false}}, 
+column: {stacking: null}, 
+series: {shadow: 'true'}}, 
+legend: {enabled: false, 
+layout: 'vertical', 
+align: 'right', 
+verticalAlign: 'middle', 
+borderWidth: 1, 
+backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor || '#FFFFFF'), 
+shadow: true}, 
+credits: {enabled: false}, 
+series: [{name: 'Total', 
+data: [[2021,
+23],
+[2022,
+26],
+[2023,
+27],
+[2024,
+24],
+[2025,
+20],
+[2026,
+11]]}]});
+        });
+        </script>
+        
+                <h3>Iniciação científica</h3> <br>
+                    <div id="container" style="min-width: 310px; max-width: 1920px; height: 300; margin: 0"></div>
+                    Número total de itens: 131<br>
+                    
+                    
+                    <div id="dv-year-2026"><h3 class="year">2026</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>AMINE VIANA OMAR. <b>Análise Computacional de Propriedades Mecânicas e Vibracionais em Materiais 2D via Dinâmica Molecular com Potenciais Otimizados por Aprendizado de Máquina</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>ELIAS TADEU ARANTES JUNIOR. <b>Partículas de SiC incorporadas em superfície de aço inoxidável duplex 2205 utilizando processo TIG: microestrutura e comportamento eletroquímico</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>GABRIEL VINICIUS DOS SANTOS FERREIRA. <b>Análise das Propriedades Fotofísicas de Moléculas Orgânicas para aplicação em dispositivos eletrônicos conversores de energia</b>. Federal Ouro Preto, . 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>Gabriela Soldera Cabrini. <b>OTIMIZAÇÃO DE ATIVIDADES MULTIFUNCIONAIS DE ÓXIDOS METÁLICOS SEMICONDUTORES NANOESTRUTURADOS VIA ENGENHARIA DE DEFEITOS ASSISTIDA POR ?IA?</b>. (Graduando em Biomedicina) - Universidade Federal de Alfenas, . 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1642083834158700">Hugo Bonette de Carvalho</a>.</font></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>JOAO VITOR BORGES. <b>Efeito da temperatura de recozimento no comportamento eletroquímico do titânio (CP) em solução de saliva artificial contendo íons fluoreto.</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, UFOP. 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>LARA CANDIDA GONCALVES RIBEIRO. <b>Nanotubos anódicos de TiO2 dopados com íons Fe3+: síntese, caracterização e avaliação do potencial fotocatalítico</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, . 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>LUANA AMORIM SILVA CARLOS DE SOUZA. <b>Estabilidade de Empilhamento de Materiais: Uma Abordagem Simulacional</b>. (Graduando em Engenharia de Minas) - Universidade Federal de Ouro Preto, Universidade Federal de Ouro Preto-PIP. 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1219153096910234">Américo Tristão Bernardes</a>.</font></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>Luiza Prado. <b>Relatórios técnicos das visitas aos pacientes, análise das imagens obtidas a partir do escaneamento dos pés, análise da baropodometria e desenvolvimento de possibilidades de palmilhas para os pacientes.</b>. (Graduando em Design de Produto) - Escola de Design UEMG, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>MARIA EDUARDA ASSIS FERREIRA. <b>MARIA EDUARDA ASSIS FERREIRA</b>. (Graduando em Design de Produto) - Universidade do Estado de Minas Gerais, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1370798140664840">Eliane Ayres</a>.</font></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>Pedro Braga. <b>Condutividade Térmica da Hematita por Dinâmica Molecular</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Universidade Federal de Ouro Preto. 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2373454332205980">Alan Barros de Oliveira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>Rafael Antônio Ferreira Martins. <b>Investigação das Interações entre Compostos Bioativos e Materiais 2D por Microscopia de Varredura por Sonda</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4012812193989993">Ana Paula Moreira Barboza</a>.</font></td></tr>
+            </table></div><div id="dv-year-2025"><h3 class="year">2025</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>ALEXANDER JESUS DA ROCHA REIS. <b>Uso do Ouro como Agente Nucleador para a Síntese Controlada de MoS2 Monocamada por CVD</b>. (Graduando em Engenharia Mecânica) - Universidade Federal de Ouro Preto, PROPP UFOP. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Ana Flávia Xavier Tomás. <b>Análise de modificadores de fluxo em um modelo físico de distribuidor de lingotamento contínuo com quatro veios</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>BERNARDO DE MELO GOMES MAGALHAES. <b>Explorando as Propriedades Fotofísicas da Bilirrubina</b>. (Graduando em Farmácia) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>BETHINA RIBEIRO RUAS. <b>Estudo Teórico e Experimental da Ressulfurização de Amostras de MoS2 Crescidas por CVD</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>DIEGO LEONARDO MARQUES VIEIRA. <b>Caracterização Fotofísica de Misturas de Curcumina, Azul de Metileno e Bixina como Sensibilizadores para Fotodinâmica Antimicrobiana</b>. (Graduando em Farmácia) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>Elias Tadeu Arantes Junior. <b>Desenvolvimento de um filme flexível anticorrosivo a base de óxido de grafeno para aplicação em ligas de NiTi superelásticas.</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>Evelly Rodrigues dos Reis. <b>Da indústria do couro ao setor automobilístico: Exploração de potenciais aplicações de resíduos sólidos descartados</b>. (Graduando em Design de Ambientes) - Universidade do Estado de Minas Gerais, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1370798140664840">Eliane Ayres</a>.</font></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>Hana Hitomi Koga. <b>Partículas de SiC incorporadas em superfície de aço inoxidável duplex 2205 utilizando processo TIG: microestrutura e comportamento eletroquímico</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>Hugo Alessi Coelho. <b>Desenvolvimento de placas para uso na construção cívil à base de serragem de fibras de madeira de densidade média</b>. (Graduando em Engenharia Civil) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0576192110271130">Rodrigo Fernando Bianchi</a>.</font></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>JOAO VITOR DANESE KEHRIG. <b>ESPUMAS FENÓLICAS À BASE DE ALCATRÃO VEGETAL: SÍNTESE, CARACTERIZAÇÃO E DESENVOLVIMENTO DE APLICAÇÕES</b>. (Graduando em Farmácia) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7624637352404779">Claudio Gouvea dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>JOAO VITOR FAGUNDES. <b>ESTABILIDADE ACÚSTICA DE TALUDES E SUSCEPTIBILIDADE DE DESLIZAMENTOS: UMA ABORDAGEM DE SISTEMAS GRANULARES</b>. (Graduando em Engenharia de Controle e Automação) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1219153096910234">Américo Tristão Bernardes</a>.</font></td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>João Vitor Borges. <b>Nanotubos anódicos de TiO2 dopados com íons Fe3+: síntese, caracterização e avaliação do potencial fotocatalítico</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>LUANA AMORIM SILVA CARLOS DE SOUZA. <b>Estabilidade de Empilhamento de Materiais: Uma Abordagem Simulacional</b>. (Graduando em Engenharia de Minas) - Universidade Federal de Ouro Preto, Universidade Federal de Ouro Preto-PIP. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1219153096910234">Américo Tristão Bernardes</a>.</font></td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>LUCAS DE OLIVEIRA MIRANDA DIAS. <b>Resinas Fenólicas de Alto Impacto preparadas com Óleo de Alcatrão Vegetal</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7624637352404779">Claudio Gouvea dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>Maria Eduarda Fonseca. <b>Geração de hidrogênio pela fotoeletrólise da água utilizando eletrodos de aços inoxidáveis revestidos com óxidos anódicos nanoestruturados</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td>MIGUEL DAHER FERREIRA. <b>Preparação de Termoesferas Fenólicas à Base de Alcatrão para Aplicação como Resinas de Troca Iônica.</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7624637352404779">Claudio Gouvea dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>17. &nbsp;</td> <td>Sthefany Ferreira Santos Marcelino. <b>Efeito da temperatura de recozimento no comportamento eletroquímico do titânio (CP) em solução de saliva artificial contendo íons fluoreto.</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>18. &nbsp;</td> <td>Thaina de Paula Teixeira. <b>Síntese de nanopartículas de TiO2 dopado com Al [Ti(1-x)Al(x)O(2-x/2)]: Estudo da transição estrutural de fase e engenharia de defeitos</b>. (Graduando em Química) - Universidade Federal de Alfenas, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1642083834158700">Hugo Bonette de Carvalho</a>.</font></td></tr>
+            
+            <tr valign="top"><td>19. &nbsp;</td> <td>Thaís Mariana Cordeiro de Souza. <b>Efeito da Taxa de Aquecimento e do Tempo de Encharque Sobre a Cinética de Austenitização em um Aço CMnSi de Aplicação Automotiva</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></td></tr>
+            
+            <tr valign="top"><td>20. &nbsp;</td> <td>Tibério Graco Botelho Torres Duarte. <b>Efeito da Temperatura de Austenitização Sobre o Comportamento Mecânico em Tração de Aços Inoxidáveis AISI 420 com Diferentes Composições Químicas</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></td></tr>
+            </table></div><div id="dv-year-2024"><h3 class="year">2024</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>Alice Silva Gonçalves. <b>Efeito da Taxa de Aquecimento Sobre a Cinética de Austenitização de um Aço ao Boro Comercial Brasileiro</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>ARTHUR FELIPE ZITO SANTOS. <b>Estudo da Interação entre Moléculas Orgânicas Doadoras e Aceitadoras para aplicações em Dispositivos Fotovoltaicos Não-Fulerenos</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>ELOISA CONSTANTINO CLAUDIO. <b>Propriedades Optoeletrônicas de Moléculas Aceitadores de Elétrons Não-Fulerenos em Células Solares Orgânicas</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>Evelly Rodrigues dos Reis. <b>Síntese de pontos quânticos de carbono a partir de resíduos de cascas de laranja: aplicação em têxtil retardante à chama</b>. (Graduando em Design de Ambientes) - Universidade do Estado de Minas Gerais, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1370798140664840">Eliane Ayres</a>.</font></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>Geovane de Assis Faria. <b>Avaliação da Soldabilidade de um aço API 5l X65Q ao processo GMAW</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/3405298711596512">Rodrigo Rangel Porcaro</a>.</font></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>HANA HITOMI KOGA. <b>Desenvolvimento de um filme fléxivel anticorrosivo a base de óxido de grafeno para aplicação em ligas de NiTi superelásticas.</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, UFOP. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>Hana Hitomi Koga. <b>Efeito da reversão da martensita induzida por deformação sobre o comportamento mecânico e eletroquímico do aço inoxidável lean duplex 2304</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>JOAO VITOR FAGUNDES. <b>ESTABILIDADE ACÚSTICA DE TALUDES E SUSCEPTIBILIDADE DE DESLIZAMENTOS: UMA ABORDAGEM DE SISTEMAS GRANULARES</b>. (Graduando em Engenharia de Controle e Automação) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1219153096910234">Américo Tristão Bernardes</a>.</font></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>Karina Alves Candido da Silva. <b>Interação de moléculas fotossensíveis e materiais bidimensionais por Microscopia de Varredura por Sonda</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4012812193989993">Ana Paula Moreira Barboza</a>.</font></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>LUCAS DE PAULA SILVA. <b>Investigação das Propriedades Fotofísicas de Moléculas Orgânicas Fluorescentes para otimização em Fotovoltaicos Orgânicos</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, . 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>Maria Eduarda Fonseca. <b>Efeito da reversão da martensita induzida por deformação sobre o comportamento mecânico e eletroquímico do aço inoxidável lean duplex 2304</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, Universidade Federal de Minas Gerais. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>MARIA LUISA RODRIGUES. <b>Heteroestruturas de Novos Materiais bidimensionais com minerais abundantes</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>marina lages silva. <b>ESTABILIDADE ACÚSTICA DE TALUDES E SUSCEPTIBILIDADE DE DESLIZAMENTOS: UMA ABORDAGEM DE SISTEMAS GRANULARES</b>. (Graduando em Engenharia de Produção) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1219153096910234">Américo Tristão Bernardes</a>.</font></td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>RAFAEL ANTÔNIO FERREIRA MARTINS. <b>Síntese de monocamadas de MoS2 por deposição química na fase vapor (CVD) em substratos transparentes para investigações elétricas, ópticas e de microscopia.</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2024.<br><i><font size=-1>Orientadores: <a href="https://lattes.cnpq.br/4012812193989993">Ana Paula Moreira Barboza</a>, <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>Raquel França Nascimento Andreata. <b>Sinterização por microondas de jóias utilizando reciclagem de materiais</b>. (Graduando em Design de Produto) - Universidade do Estado de Minas Gerais, . 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4629729793297288">Antonio Valadao Cardoso</a>.</font></td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td>Rayssa de Oliveira Matos. <b>Desenvolvimento de Tintas Condutivas à Base de Nanocelulose TEMPO-Oxidada e Nanotubos de Carbono Não Funcionalizados para Aplicações em Sensores de Umidade</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, PROPP UFOP. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>17. &nbsp;</td> <td>Regina Santos Corrêa. <b>Sinterização por microondas de jóias utilizando reciclagem de materiais - Etapa 2</b>. (Graduando em Design de Produto) - Universidade do Estado de Minas Gerais, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4629729793297288">Antonio Valadao Cardoso</a>.</font></td></tr>
+            
+            <tr valign="top"><td>18. &nbsp;</td> <td>Samuel Luis de Sales Oliveira. <b>Relatórios técnicos das visitas aos pacientes, análise das imagens obtidas a partir do escaneamento dos pés, análise da baropodometria e desenvolvimento de possibilidades de palmilhas para os pacientes.</b>. (Graduando em Design de Produto) - Escola de Design UEMG, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>19. &nbsp;</td> <td>STHEFANNY FERREIRA SANTOS MARCELINO. <b>Desempenho anticorrosivo de um revestimento orgânico a base de poliuretano produzido a partir do óleo de mamona.</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, UFOP. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>20. &nbsp;</td> <td>STHEFANNY FERREIRA SANTOS MARCELINO. <b>Efeito do recozimento a baixas temperaturas e da reversão da martensita α? na resistência à corrosão do aço inoxidável lean duplex 2304</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>21. &nbsp;</td> <td>Thalys B. S. Ventura. <b>Resistência à fadiga de um aço do tipo UHSS endurecido por deformação e por precipitação para emprego automobilístico</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1995142616892313">Leonardo Barbosa Godefroid</a>.</font></td></tr>
+            
+            <tr valign="top"><td>22. &nbsp;</td> <td>Thalys Bruno de Souza Ventura. <b>Modelamento Físico e Simulação Computacional da Dessulfuração do aço no Reator RH com Injeção de Material por Lança Submersa</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>23. &nbsp;</td> <td>Tibério Graco Botelho Torres Duarte. <b>Efeito da Condição de Austenitização Sobre a Dissolução de Carbonetos, Crescimento de Grão Austenítico e Desempenho em Desgaste de Aços Inoxidáveis AISI 420 com Diferentes Composições Químicas.</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></td></tr>
+            
+            <tr valign="top"><td>24. &nbsp;</td> <td>Willian Junqueira de Oliveira Jeronimo. <b>Melhoria do Rendimento Metálico e de Remoção de inclusões em Distribuidor de Lingotamento Contínuo de placas</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            </table></div><div id="dv-year-2023"><h3 class="year">2023</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>Alice Silva Gonçalves. <b>Modelamento Físico de Transferência de Massa e da Interação Escória-Metal em Panela de Refino de Aço com Injeção por Lança Submersa para Dessulfuração</b>. Iniciação Científica - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>ARTHUR FELIPE ZITO SANTOS. <b>Estudo da interação entre moléculas orgânicas doadoras e as aceitadoras de elétrons (não-fulereno) usando técnicas de fluorescência</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, . 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>ARTHUR FELIPE ZITO SANTOS. <b>Análise espectroscópica da interação entre moléculas orgânicas fluorescentes e materiais aceitadores de elétrons não-fulerenos em células solares</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>Bennardo Kennedy Theotonio Barbosa. <b>Análise de modificadores de fluxo e do efeito de temperatura do líquido em um distribuidor de lingotamento contínuo com quatro veios</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>Bethina Ribeiro Ruas. <b>Caracterização das Propriedades Mecânicas da Celulose e sua Interação com líquidos e Materiais 2D Utilizando Dinâmica Molecular</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>Bethina Ribeiro Ruas. <b>Previsão de Cristais Moleculares Observados Experimentalmente Usando Algoritimos Evolutivos</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, . 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>Bianca Nogueira Vargas. <b>Estudo randomizado referente a prevenção das LPP?s utilizando roupa de cama produzida com material do feltro de lã ovina revestida com tecido 100% algodão.</b>. (Graduando em Design de Produto) - Escola de Design UEMG, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>CHARLES EDUARDO DOURADO DE OLIVEIRA. <b>ESPUMAS FENÓLICAS À BASE DE ALCATRÃO VEGETAL: SÍNTESE, CARACTERIZAÇÃO E DESENVOLVIMENTO DE APLICAÇÕES</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, . 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7624637352404779">Claudio Gouvea dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>Davi Rodrigues de Oliveira Santos. <b>Modelamento físico da dessulfuração de aço pela injeção de gás por plugue combinado com injeção de material dessulfurante por lança em Panela</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>ELOISA CONSTANTINO CLAUDIO. <b>Explorando Materiais Aceitadores de Elétrons Não-Fulerenos (NFAs) em Células Solares Orgânicas: Análise das Propriedades Optoeletrônicas</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>Felipe Souza da Silva. <b>Estudo randomizado referente a prevenção das LPP?s utilizando roupa de cama produzida com material do feltro de lã ovina revestida com tecido 100% algodão.</b>. (Graduando em Medicina) - Universidade Federal de Minas Gerais, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>Geovane de Assis Faria. <b>Tenacidade à fratura e resistência à fadiga de um aço do tipo UHSS</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, ArcelorMittal S/A. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1995142616892313">Leonardo Barbosa Godefroid</a>.</font></td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>Laila Andrade Franco Moraes. <b>Investigação de metodologia para implementação de um núcleo de costura de moda íntima autossustentável no município de Conselheiro Pena - MG</b>. DE BOLSAS DE INICIAÇÃO CIENTÍFICA E TECNÓLOGICA, . 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>Luisa Marques Cesar. <b>Efeito do Nióbio sobre a Formação de Rede de Cementita em Aços Hipereutetóides</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>Maria Aparecida Miquelão de Freitas. <b>Capacitação em costura de moda íntima autossustentável para a formação do núcleo de agentes multiplicadores no município de Conselheiro Pena ? Minas Gerais</b>. (Graduando em Design de Moda) - Universidade do Estado de Minas Gerais, PROGRAMA DE APOIO A PROJETOS DE EXTENSÃO DA UEMG. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td>MARIA LUISA RODRIGUES. <b>Estudo de crescimento de TMDs utilizando Dinâmica Molecular..</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, . 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>17. &nbsp;</td> <td>MARIA LUISA RODRIGUES. <b>Abordagem teórico-experimental do crescimento de dissulfeto de molibdênio (MoS2): simulações de dinâmica molecular e deposição química em fase vapor</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>18. &nbsp;</td> <td>Marina Lages SIlva. <b>Simulação de escoamento de Grãos em Silos</b>. (Graduando em Engenharia de Produção) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1219153096910234">Américo Tristão Bernardes</a>.</font></td></tr>
+            
+            <tr valign="top"><td>19. &nbsp;</td> <td>MATHEUS DIAS DOS PASSOS SILVA. <b>ESPUMAS FENÓLICAS À BASE DE ALCATRÃO VEGETAL: SÍNTESE, CARACTERIZAÇÃO E DESENVOLVIMENTO DE APLICAÇÕES</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7624637352404779">Claudio Gouvea dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>20. &nbsp;</td> <td>MIGUEL ANDRADE CARDOSO. <b>Desenvolvimento de substratos cerâmicos co-dopados com nióbio e lantânio</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/9945942332231660">Taíse Matte Manhabosco</a>.</font></td></tr>
+            
+            <tr valign="top"><td>21. &nbsp;</td> <td>Rafael Antonio Ferreira Martins. <b>Síntese de monocamadas de MoS2 por deposição química na fase vapor utilizando MoO2 como precursor.</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>22. &nbsp;</td> <td>Rafael Antonio Ferreira Martins. <b>Síntese de monocamadas de MoS2 por deposição química na fase vapor (CVD) em substratos transparentes para investigações elétricas, ópticas e de microscopia.</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>23. &nbsp;</td> <td>Rayssa de Oliveira Matos. <b>Desenvolvimento de uma câmara de sensoreamento caseira para avaliação do uso de tintas de celulose microfibrilar e diferentes nanomateriais como sensores de umidade</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, UFOP. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>24. &nbsp;</td> <td>TATYANA ALMEIDA FERNANDES. <b>Estudo da interação entre moléculas orgânicas doadoras e as aceitadoras de elétrons (não-fulereno) usando técnicas de fluorescência</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, . 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></td></tr>
+            
+            <tr valign="top"><td>25. &nbsp;</td> <td>Thalys Bruno de Souza Ventura. <b>Análise da Dessulfuração do aço no Reator RH com Injeção de Material por Lança Submersa ? Modelamento Físico e Simulação Computacional</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>26. &nbsp;</td> <td>Victor Cardoso Campideli. <b>Efeito do recozimento a baixas temperaturas e da reversão da martensita α? na resistência à corrosão do aço inoxidável lean duplex 2304</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>27. &nbsp;</td> <td>Yasmim Lopes Sucharski. <b>Influência da Temperatura de Austenitização Sobre a Microestrutura Temperada e a Eficiência de Métodos de Contraste para a Revelação de Grãos Austeníticos Prévios em um Aço TRIP780</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></td></tr>
+            </table></div><div id="dv-year-2022"><h3 class="year">2022</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>1 - CECILIA LAIA DA SILVA, 2 - MYLLA CASSIA DA SILVA E SILVA. <b>Modelamento Físico de Transferência de Massa e da Interação Escória-Metal em Panela de Refino de Aço Agitada por Borbulhamento de Gás Inerte ? Aplicação à Dessulfuração</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Bennardo Kennedy Theotonio Barbosa. <b>Modelamento Físico da Dessulfuração de aço pela injeção de material em plugue localizado no fundo da panela</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>Bethina Ribeiro Ruas. <b>Caracterização das Propriedades Mecânicas da Celulose Utilizando Dinâmica Molecular</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>Daynara Faustina Moreira de Oliveira. <b>Efeito da Microestrutura Prévia e da Taxa de Aquecimento Sobre as Cinéticas de Austenitização e das Transformações Sob Resfriamento Contínuo em um Aço de Aplicação Automotiva</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>ELOISA CONSTANTINO CLAUDIO. <b>Estudo da interação entre Moléculas Doadoras e Aceitadoras de carga através de técnicas de fluorescência</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>Gabriel Carvalho Matoso. <b>Escoamento de Grãos em Silos</b>. (Graduando em Engenharia de Controle e Automação) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1219153096910234">Américo Tristão Bernardes</a>.</font></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>HANA HITOMI KOGA. <b>Desempenho anticorrosivo de um revestimento orgânico a base de poliuretano produzido a partir do óleo de mamona</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, UFOP. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>Igor Corneau Soares. <b>Desenvolvimento de Simulação Fluidodinâmica de Distribuidor de Lingotamento Contínuo Utilizando Software de Código Aberto OPENFOAM®</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>Juansley David Silvestre. <b>Construção de uma câmara de controle de umidade para o estudo de propriedades elétricas de nanomateriais por Microscopia de Varredura por Sonda</b>. (Graduando em Engenharia Mecânica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4012812193989993">Ana Paula Moreira Barboza</a>.</font></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>Junio de Oliveira Maciel. <b>ESTUDO DE INTERAÇÃO DE MOLÉCULAS DE C60 COM GRAFENO UTILIZANDO DINÂMICA MOLECULAR</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>Júnia Maria dos Santos Lopes. <b>Design & Inovação em Têxteis pela Funcionalização com Agro-Resíduos:sílica derivada de cascade arroz</b>. (Graduando em Design de Moda) - Universidade do Estado de Minas Gerais, Universidade do Estado de Minas Gerais. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1370798140664840">Eliane Ayres</a>.</font></td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>Laila Andrade Franco Moraes. <b>Capacitação em bordado de agentes multiplicadores na região metropolitana de Belo Horizonte</b>. (Graduando em Design de Moda) - Escola de Design Universidade do Estado de Minas Gerais, PROGRAMA INSTITUCIONAL DE APOIO À EXTENSÃO DA UEMG PAEx. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>Marcela Antônia de Jesus. <b>Ferramentas para multiplicadores em Design de Moda: Estudos de casos na região metropolitana de Belo Horizonte</b>. DE BOLSAS DE INICIAÇÃO CIENTÍFICA E TECNÓLOGICA, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>Maria Aparecida Miquelão de Freitas. <b>Ferramentas para multiplicadores em Design de Moda: Estudos de casos na região metropolitana de Belo Horizonte</b>. DE BOLSAS DE INICIAÇÃO CIENTÍFICA E TECNÓLOGICA, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>Marina Ribeiro Ferraz de Ferraz. <b>ACABAMENTO À BASE DE PECTINA, OBTIDA A PARTIR DO ALBEDO DA LARANJA, PARA MITIGAR O IMPACTO DOS MICROPLÁSTICOS LIBERADOS PELOS TECIDOS DE POLIAMIDA?</b>. (Graduando em Design de Moda) - Universidade do Estado de Minas Gerais, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1370798140664840">Eliane Ayres</a>.</font></td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td>MATEUS DE OLIVEIRA SIMAO. <b>Modelamento Físico de Transferência de Massa em Reator de Sopro Combinado Aplicado ao Refino do Aço</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>17. &nbsp;</td> <td>Matheus dos Santos Silva. <b>Sinterização por microondas de jóias utilizando reciclagem de materiais</b>. (Graduando em Design de Produto) - Universidade do Estado de Minas Gerais, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4629729793297288">Antonio Valadao Cardoso</a>.</font></td></tr>
+            
+            <tr valign="top"><td>18. &nbsp;</td> <td>Nubia Lurdes Teodoro de Moura. <b>Obtenção de Jóias por rejeitos utilizando sinterização e fusão por microondas</b>. (Graduando em Design de Produto) - Universidade do Estado de Minas Gerais, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4629729793297288">Antonio Valadao Cardoso</a>.</font></td></tr>
+            
+            <tr valign="top"><td>19. &nbsp;</td> <td>RAFAEL ANTONIO FERREIRA MARTINS. <b>Síntese de monocamadas de MoS2 por deposição química na fase vapor utilizando MoO2 como precursor.</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>20. &nbsp;</td> <td>Rafael Antonio Ferreira Martins. <b>Síntese de Dissulfeto de Molibdênio (MoS2) via Deposição Química em Fase Vapor (CVD) e investigação de suas propriedades mecânicas e elétricas em configuração suspensa.</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>21. &nbsp;</td> <td>RAFAEL EULALIO SILVA DE OLIVEIRA. <b>Estudo das propriedades fotofísicas de filmes finos de derivados de Benzazol</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></td></tr>
+            
+            <tr valign="top"><td>22. &nbsp;</td> <td>Rayssa de Oliveira Matos. <b>USO DA PLATAFORMA ARDUINO PARA CARACTERIZAÇÃO ELÉTRICA DE DISPOSITIVOS BASEADOS EM COMPÓSITOS DE MICROFIBRAS DE CELULOSE/NANOMATERIAIS.</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, UFOP. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>23. &nbsp;</td> <td>RICARDO ABRAHAO JUNIOR. <b>Desempenho anticorrosivo de um revestimento orgânico a base de poliuretano produzido a partir do óleo de mamona</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, UFOP. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>24. &nbsp;</td> <td>Thaynara Melo Moussa. <b>Avaliação de um Modelo Empírico Funcional para Previsão de Temperaturas Críticas de Transformação de Fases em Aços Resfriados Continuamente</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></td></tr>
+            
+            <tr valign="top"><td>25. &nbsp;</td> <td>VICTOR CARDOSO CAMPIDELI. <b>Caracterização eletroquímica de uma liga NiTi superelástica com recobrimentos a base de óxido de grafeno</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, UFOP. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>26. &nbsp;</td> <td>WILCKER CESAR SILVA OLIVEIRA. <b>Estudo teórico de bicamadas de Sulfeto de Antimônio: propriedades eletrônicas e estruturais.</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></td></tr>
+            </table></div><div id="dv-year-2021"><h3 class="year">2021</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>Alexia Leticia Dias dos Santos Ferreira. <b>Construção de uma câmara de controle de umidade para o estudo de propriedades elétricas de nanomateriais por Microscopia de Varredura por Sonda</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4012812193989993">Ana Paula Moreira Barboza</a>.</font></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Amanda Ketlyn Alves Freitas. <b>Ferramentas para multiplicadores em Design de Moda: Estudos de casos na região metropolitana de Belo Horizonte</b>. DE BOLSAS DE INICIAÇÃO CIENTÍFICA E TECNÓLOGICA, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>Ana Gabrielle Souza Oliveira. <b>DESIGN, MATERIAIS e BIOMIMÉTICA: dispositivos para descontaminação de água fabricados por impressão 3D</b>. (Graduando em Design de produto) - Universidade do Estado de Minas Gerais, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1370798140664840">Eliane Ayres</a>.</font></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>BERNARDO VERSIANI PASSOS COELHO. <b>Desenvolvimento de substratos cerâmicos de Dióxido de titânio dopados com alta permissividade dielétrica para aplicações em antenas</b>. Iniciação Científica - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/9945942332231660">Taíse Matte Manhabosco</a>.</font></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>DAVI HENRIQUE TOME KANNOA VIEIRA. <b>Estudo da permissividade elétrica de cerâmicas de TiO2 dopadas com Sb+3 (Sb2O3), Mn+2 (MnO), Y+3 (Y2O3), W+4 (WO2), Si+4 (SiO2), Zn+2 (ZnO)</b>. Iniciação Científica - Universidade Federal de Ouro Preto, UFOP. 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/9945942332231660">Taíse Matte Manhabosco</a>.</font></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>DIONE DA COSTA OLIVEIRA. <b>Estudo de complexação de moléculas orgânicas com íons metálicos para aplicação em sensor químico fluorescente</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>Diovana Moreira da Silva. <b>Construção de uma câmara de controle de umidade para o estudo de propriedades elétricas de nanomateriais por Microscopia de Varredura por Sonda</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4012812193989993">Ana Paula Moreira Barboza</a>.</font></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>FELIPE DOS SANTOS ESCORCIO. <b>INVESTIGAÇÃO DA INTERAÇÃO DO ÁCIDO OLEICO COM GRAFENO POR MEIO DE SIMULAÇÕES DE DINÂMICA MOLECULAR</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2021.<br><i><font size=-1>Orientadores: <a href="https://lattes.cnpq.br/2373454332205980">Alan Barros de Oliveira</a>, <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>Gabriel Carvalho Matoso. <b>Escoamento de Grãos em Silos</b>. (Graduando em Engenharia de Controle e Automação) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1219153096910234">Américo Tristão Bernardes</a>.</font></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>GERSON DOS SANTOS. <b>Camada ativa de celulose dopada com fluoróforos e fulerenos</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, UFOP. 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>ISADORA FERNANDES COSTA DE OLIVEIRA. <b>Avaliação da Soldabilidade de Aço Dual Phase 980 ao Processo GTAW</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/3405298711596512">Rodrigo Rangel Porcaro</a>.</font></td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>ISAIAS THIAGO FERREIRA. <b>Caracterização de propriedades mecânicas de materiais 2D via indentação utilizando dinâmica molecular clássica</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>Júlio Henrique Marotta. <b>Estudo de crescimento de grafeno por evaporação de moléculas orgânicas utilizando Dinâmica Molecular.</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2021.<br><i><font size=-1>Orientadores: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>, <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>Marcos Vinícius Fonseca Ferreira. <b>Caracterização eletroquímica de uma liga NiTi superelástica com recobrimentos a base de óxido de grafeno?</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>MIGUEL ANDRADE CARDOSO. <b>esenvolvimento de substratos cerâmicos de Dióxido de titânio dopados com alta permissividade dielétrica para aplicações em antenas</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/9945942332231660">Taíse Matte Manhabosco</a>.</font></td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td>Mírian Velten. <b>Investigação sobre funções do manto no bivalve Limnoperna fortunei</b>. (Graduando em Ciências Biológicas) - Universidade Federal de Minas Gerais, Fundação Gorceix. 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4629729793297288">Antonio Valadao Cardoso</a>.</font></td></tr>
+            
+            <tr valign="top"><td>17. &nbsp;</td> <td>Nathan Souza Macedo. <b>Manufatura aditiva de alumínio através do processo MIG</b>. (Graduando em Engenharia Mecânica) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/3405298711596512">Rodrigo Rangel Porcaro</a>.</font></td></tr>
+            
+            <tr valign="top"><td>18. &nbsp;</td> <td>Rafael Antonio Ferreira Martins. <b>Síntese de Dissulfeto de Molibdênio (MoS2) via Deposição Química em Fase Vapor (CVD) e investigação de suas propriedades mecânicas e elétricas em configuração suspensa.</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>19. &nbsp;</td> <td>RAYSSA DE OLIVEIRA MATOS. <b>USO DA PLATAFORMA ARDUINO PARA CARACTERIZAÇÃO ELÉTRICA DE DISPOSITIVOS BASEADOS EM COMPÓSITOS DE MICROFIBRAS DE CELULOSE/NANOMATERIAIS.</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, UFOP. 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>20. &nbsp;</td> <td>RENATA MIRANDA DE MOURA RANGEL. <b>Estudo da interação entre Moléculas Orgânicas Fluorescentes e Nanomateriais de Carbono através de técnicas de fluorescência</b>. (Graduando em Física) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></td></tr>
+            
+            <tr valign="top"><td>21. &nbsp;</td> <td>Ricardo Abrahão Júnior. <b>Influência da temperatura de recozimento na microestrutura e nas propriedades passivas do aço inoxidável duplex UNS S32205.</b>. (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Universidade Federal de Minas Gerais. 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>22. &nbsp;</td> <td>Samuel Gomes Gontijo. <b>Ferramentas para multiplicadores em Design de Moda: Práticas aplicadas nos grupos produtivos de bordado na região metropolitana de Belo Horizonte</b>. (Graduando em Design de Moda) - Escola de Design Universidade do Estado de Minas Gerais, PROGRAMA INSTITUCIONAL DE APOIO À EXTENSÃO DA UEMG PAEx. 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>23. &nbsp;</td> <td>Victor Cardoso Campideli. <b>Caracterização eletroquímica de superfícies anodizadas de NiTi.</b>. (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            </table></div>
+                    </table>
+                <br><p><br>(*) Relatório criado com produções desde 2021 até 2026
+<br>Data de processamento: 31/08/2026 22:11:56<br>         <div id="footer">         Relatório gerado por <a href="https://scriptlattes.sourceforge.net/">scriptLattes V9</a>.         Os resultados podem ser afetados por possíveis falhas decorrentes de inconsistências no preenchimento dos Currículos Lattes. E-mail de contato: <a href="mailto:matheusmatos@ufop.edu.br">matheusmatos@ufop.edu.br</a>         </div> </body></html>
+              

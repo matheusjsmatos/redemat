@@ -1,0 +1,14 @@
+item,publicado,consolidado,veredito,fonte,nota
+Artigos únicos 2021–2026,308,308,OK,09/05_evidencias_artigos_deduplicados.csv,"deduplicado por DOI; sem DOI, título normalizado"
+Registros docente–artigo,366,366,OK,09/05_evidencias_artigos_deduplicados.csv,soma por docente — NÃO é contagem de artigos
+Artigos com DOI distinto,289,289,OK,09/05_evidencias_artigos_deduplicados.csv,
+Periódicos distintos,204,204,OK,09/05_evidencias_artigos_deduplicados.csv,
+Artigos únicos em Q1,85,85,OK,09/05_evidencias_artigos_deduplicados.csv,por registro docente–artigo seria 103
+Artigos únicos em Q2,47,47,OK,09/05_evidencias_artigos_deduplicados.csv,por registro docente–artigo seria 59
+Artigos únicos em Q3,21,21,OK,09/05_evidencias_artigos_deduplicados.csv,por registro docente–artigo seria 27
+Artigos únicos em Q4,4,4,OK,09/05_evidencias_artigos_deduplicados.csv,por registro docente–artigo seria 4
+Artigos sem métrica Scopus,146,146,OK,09/05_evidencias_artigos_deduplicados.csv,periódico não localizado no snapshot — não é qualidade zero
+Artigos marcados NE (não elegível),5,5,OK,09/05_evidencias_artigos_deduplicados.csv,contados à parte dos sem métrica; a soma fecha em 308
+Artigos ÚNICOS com coautoria de discente/egresso,168,168,OK,06/resumo_anual_2021_2026.csv,a soma por docente dá 202 — é esse número que estava publicado
+Projetos únicos no recorte,108,108.0,OK,07/sintese_capitulo_11.csv,
+Vínculos professor–projeto,129,129.0,OK,07/sintese_capitulo_11.csv,

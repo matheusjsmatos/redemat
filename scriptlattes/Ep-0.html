@@ -1,0 +1,265 @@
+
+                <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf8"><meta name="Generator" content="scriptLattes"><title>REDEMAT</title><link rel="stylesheet" href="css/scriptLattes.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"><link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css"><link rel="stylesheet" type="text/css" href="css/dataTables.colVis.min.css"><script type="text/javascript" charset="utf8" src="js/jquery.min.js"></script><script type="text/javascript" charset="utf8" src="js/jquery.dataTables.min.js"></script><script type="text/javascript" charset="utf8" src="js/dataTables.colVis.min.js"></script><script type="text/javascript" charset="utf8" src="js/sorttable-local.js"></script><link rel="stylesheet" href="portal-redemat.css">
+</head><body>
+<div id="portal-back"><a href="../pages/producao-lattes.html">&#8592; Voltar ao portal REDEMAT</a><span>Relatório ScriptLattes — dados brutos dos currículos Lattes</span></div><div id="header2"> <button onClick="history.go(-1)">Voltar</button><h2>REDEMAT</h2></div>
+                
+        <script type="text/javascript" src="./js/jquery.min.js"></script>
+        <!--
+        <script type="text/javascript" src="./highcharts.js"></script>
+        <script type="text/javascript" src="./exporting.js"></script>
+        <script type="text/javascript" src="./drilldown.js"></script>
+        -->
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+        <script type="text/javascript">
+        // Load the fonts
+        Highcharts.createElement('link', {
+           href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700',
+           rel: 'stylesheet',
+           type: 'text/css'
+        }, null, document.getElementsByTagName('head')[0]);
+
+        Highcharts.theme = {
+   colors: ["#1F77B4", "#118D95", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#2b908f", "#90ee7e", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
+   chart: {
+      backgroundColor: null,
+      style: {
+         fontFamily: "'Source Sans Pro', 'sans-serif'"
+      }
+   },
+   title: {
+      style: {
+         color: 'black',
+         fontSize: '16px',
+         fontWeight: 'bold'
+      }
+   },
+   subtitle: {
+      style: {
+         color: 'black'
+      }
+   },
+   tooltip: {
+      borderWidth: 0
+   },
+   legend: {
+      itemStyle: {
+         fontWeight: 'bold',
+         fontSize: '13px'
+      }
+   },
+   xAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   yAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   plotOptions: {
+      series: {
+         shadow: true
+      },
+      candlestick: {
+         lineColor: '#404048'
+      },
+      map: {
+         shadow: false
+      }
+   },
+
+   // Highstock specific
+   navigator: {
+      xAxis: {
+         gridLineColor: '#D0D0D8'
+      }
+   },
+   rangeSelector: {
+      buttonTheme: {
+         fill: 'white',
+         stroke: '#C0C0C8',
+         'stroke-width': 1,
+         states: {
+            select: {
+               fill: '#D0D0D8'
+            }
+         }
+      }
+   },
+   scrollbar: {
+      trackBorderColor: '#C0C0C8'
+   },
+
+   // General
+   background2: '#E0E0E8'
+};
+
+        Highcharts.setOptions(Highcharts.theme);
+        $(function () {
+            $('#container').highcharts({chart: {type: 'column', 
+height: 300}, 
+title: {text: 'Total de participação em eventos'}, 
+subtitle: {text: ''}, 
+xAxis: {title: {text: ''}, 
+type: 'category'}, 
+yAxis: {min: 0, 
+title: {text: 'Quantidade', 
+align: 'middle'}, 
+labels: {overflow: 'justify'}, 
+stackLabels: {enabled: true, 
+format: '{stack}'}}, 
+tooltip: {enabled: true, 
+valueSuffix: '', 
+shared: false, 
+headerFormat: '<span style="font-size: 10px">{point.key}{point.stack}{series.stack}</span><br/>', 
+pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'}, 
+plotOptions: {bar: {dataLabels: {enabled: false}}, 
+column: {stacking: null}, 
+series: {shadow: 'true'}}, 
+legend: {enabled: false, 
+layout: 'vertical', 
+align: 'right', 
+verticalAlign: 'middle', 
+borderWidth: 1, 
+backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor || '#FFFFFF'), 
+shadow: true}, 
+credits: {enabled: false}, 
+series: [{name: 'Total', 
+data: [[2021,
+9],
+[2022,
+11],
+[2023,
+11],
+[2024,
+9],
+[2025,
+10],
+[2026,
+2]]}]});
+        });
+        </script>
+        
+                <h3>Total de participação em eventos</h3> <br>
+                    <div id="container" style="min-width: 310px; max-width: 1920px; height: 300; margin: 0"></div>
+                    Número total de itens: 52<br>
+                    
+                    
+                    <div id="dv-year-2026"><h3 class="year">2026</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>49ª Reunião Anual da Sociedade Brasileira de Química. Frontiers of Innovation in Inorganic Chemistry: Emerging Trends and Technological Drivers. 2026. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Aula Inaugural da Pós Graduação FIMAT.Microscopia de Varredura por Sonda Aplicada ao Estudo de Nanomateriais. 2026. (Outra).</td></tr>
+            </table></div><div id="dv-year-2025"><h3 class="year">2025</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>18th Brazilian Polymer Conference (CBPol). Biodegradable agricultural film based on thermoplastic starch and eggshell. 2025. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>18th Brazilian Polymer Conference (CBPol). Composites based on recycled high-density polyethylene (R-HDPE) and discarded solid waste from the leather industry. 2025. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>18th Brazilian Polymer Conference (CBPol). Properties of polyurethane foam composites filled with different agro residues: tuning the adsorption capacity with the recyclability. 2025. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>37o Encontro Regional da Sociedade Brasileira de Química. Economia Circular nas Práticas de Ensino de Química. 2025. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>5o Encontro da Rede 2D Fapemig.Sensoriamento de Umidade Mediado por Contra-íons em Compósitos de MWCNTs não Funcionalizados e Nanocelulose TEMPO-oxidada: Experimentos e Insights Teóricos. 2025. (Encontro).</td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>ABM Week 9a edição.Comportamento do Fluxo e Flutuações de Superfície em Molde de Blocos: Modelagem Física com Dois Projetos de Válvulas Submersas. 2025. (Seminário).</td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>IV Encontro Capixaba de Física/SBF.A nova fronteira da modelagem de materiais quânticos: dos métodos de primeiros princípios à era da Inteligência Artificial. 2025. (Encontro).</td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>Simposio Internacional Agenda del Diseño 2026-2030.XX Semana Internacional de Diseño en Palermo - 28 de Julio al 1º de Agosto de 2025. 2025. (Simpósio).</td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>V Encontro da Rede 2D FAPEMIG.Grupo Nano ? UFOP/DEFISTrabalhos Experimentais. 2025. (Encontro).</td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>XIX Encontro Nacional FORTEC. 2025. (Encontro).</td></tr>
+            </table></div><div id="dv-year-2024"><h3 class="year">2024</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>7º Congresso Internacional de Moda e Design. EMPOWERMENT THROUGH COSTUMING: THE REPRESENTATION OF CLARA INÊS IN ?UNBROKEN HEART?. 2024. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>9°Encontro do INCT Nanocarbono 4ºEncontro da Rede 2D. 2024. (Encontro).</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>9º Encontro INCT NANOCARBONO & 4º Encontro REDE2D.rabalhos desenvolvidos nos Laboratórios Experimentais do Grupo Nano do Departamento de Física da Universidade Federal de Ouro Preto. 2024. (Encontro).</td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>AJUNTA+: Design entre OXENTEs e UAIs.AJUNTA+: Design entre OXENTEs e UAIs. 2024. (Seminário).</td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>Asia Conference. NetZero Challenge. How to solve GHG Emission in the iron and Steelmaking. 2024. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>CBECIMAT 2024. INFLUÊNCIA DE ANISOTROPIA E TRATAMENTO TÉRMICO NO COMPORTAMENTO MECÂNICO DE UMA LIGA DE ALUMÍNIO DA SÉRIE 2XXX FABRICADA POR MANUFATURA ADITIVA. 2024. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>I Congresso Internacional de Moda e Economia Criativa. Valorização de Resíduos de Casca de Arroz para Aplicações Têxteis. 2024. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>II Ibero-American Meeting on Quantum Materials and Electronic Structure - II-IMQMES.Modelling atomically- thin van der Waals materials.. 2024. (Encontro).</td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>II Ibero-American Meeting on Quantum Materials and Electronic Structure.Electromechanical manipulation and discovery of new 2D materials via SPM. 2024. (Encontro).</td></tr>
+            </table></div><div id="dv-year-2023"><h3 class="year">2023</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>14th International Chemical and Biological Engineering Conference. Rice Husks Biochar as Adsorbent for Removal Water Pollutants: The use of porous 3D printed supports. 2023. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>20 anos do PPSUS - A ciência e a inovação sustentável que precisamomos. 2023. (Encontro).</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>2023 Autumn Meeting of the Brazilian Physical Society (EOSBF-2023). Gypsum: an environment friendly, inexpensive and robust height calibration standard at nanometer scale for Atomic Force Microscopy. 2023. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>3º Encontro da Rede 2D.SÍNTESE DE MOS2 CVD EM DIFERENTES SUBSTRATOS TRANSPARENTES. 2023. (Encontro).</td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>ABM Week. Disruptive Technologies for the Steel Industry: Breaking the Paradigm. 2023. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>ABMWeek 7a Edição 2023. Avaliação da Eficácia de um Modelo Empírico para Previsão de Temperaturas Críticas de Transformação de Fases em Aços Submetidos a Resfriamento Contínuo. 2023. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>ABMWeek 7a Edição 2023. Efeito da Microestrutura Prévia e da Taxa de Aquecimento no Processo de Austenitização de um Aço C-Mn-Si Aplicado na Indústria Automotiva. 2023. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>Autumn Meeting of the Brazilian Physical Society (EOSBF-2023). Modelling atomically-thin van der Waals materials at high pressures. 2023. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>Encontro de Outono da Sociedade Brasileira de Física (EOSBF).A green approach to transfer graphene using nanocellulose. 2023. (Encontro).</td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>International Conference on Metallurgical Engineering and Centenary Celebration. Technical and Economical Feasibility by using Biogas in the Iron and Steel Making. 2023. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>International Synposium on Hydrogen Metallurgy. Gray Hydrogen: How the GHG emission in the iron and steelmaking production can be reduced by using waste. 2023. (Congresso).</td></tr>
+            </table></div><div id="dv-year-2022"><h3 class="year">2022</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>51º Seminário de Fusão, Refino & Solidificação de Metais. EFEITO DE MODIFICADORES DE FLUXO NA QUALIDADE DO AÇO LINGOTADO EM UM DISTRIBUIDOR ASSIMÉTRICO. 2022. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>8º Encontro do INCT Nanocarbono e o 2º Encontro da Rede 2D.Estudo de propriedades eletromecânicas de TMD Janus por Microscopia de Varredura por Sonda. 2022. (Encontro).</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>8º Encontro do INCT Nanocarbono e o 2º Encontro da Rede 2D.Trabalhos desenvolvidos nos Laboratórios Experimentais do Grupo Nano do Departamento de Física da Universidade Federal de Ouro Preto. 2022. (Encontro).</td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>ABM Week 6th Edition. Método de Contraste Por Oxidação para Revelação de Colônias de Perlita em Aços Eutetóides. 2022. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>Autumn Meeting of the Brazilian Physical Society (EOSBF-2022). Electromechanical Modulations in Transition Metal Dichalcogenide Nanosheets: Implications for Environmental Sensors. 2022. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>CBECIMAT 2022. Efeito da fração volumétrica de martensita no comportamento mecânico de um aço inoxidável bifásico do tipo UNS S41003. 2022. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>Encontro dos Saberes - UFOP.O Bicentenário e as perspectivas do futuro da ciência e inovação em Minas Gerais. 2022. (Encontro).</td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>I Encontro da Rede 2D. 2022. (Encontro).</td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>I Simpósio de Pós-graduação da Universidade Federal de São João del-Rei (UFSJ).Fomento à Pesquisa no Estado de Minas Gerais: desafios, avanços e estratégias. 2022. (Simpósio).</td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>V Semana do Físico da UFMA: O universo elegante da Física à luz da divulgação Científica.Design de Materiais e Simulação computacional em materiais bidimensionais. 2022. (Outra).</td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>X Semana de Estudos da Física e VIII Semana de Física de Materaisi.Caracterização Elétrica de Sistemas Sólidos Desordenados.. 2022. (Encontro).</td></tr>
+            </table></div><div id="dv-year-2021"><h3 class="year">2021</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>16th Brazilian Polymer Conference. COATINGS OF WATERBORNE POLYURETHANE AND SILICA FROM RICE HUSK ASH WASTES WITH POTENTIAL APPLICATION IN MICROWAVE ABSORPTIVE FABRICS. 2021. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>28th Congress of the Brazilian Society of Microscopy and Microanalysis. Gypsum: An Environment-Friendly, Inexpensive And Robust Height Calibration Standard At Nanometer-Scale For Atomic Force Microscopy. 2021. (Congresso).</td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>9 encontro latino americano de Food Design.O mineiro e o milho: reflexões sobre o food design.. 2021. (Encontro).</td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>?Mineiridade e Food Design?.?Diálogos em sabores: reuniões de trabalho em almoço compartilhado e outras experiências?,. 2021. (Outra).</td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>AMOCI FORTEC Meeting 2021.Painel Internacional: Modelos de NIT. 2021. (Encontro).</td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>I Mostra Científica de Iguatu.Microscopia aplicada a nanociência e nanotecnologia. 2021. (Seminário).</td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>V Forum do mexilhão.Atividades de P&D GT604 em 2021. 2021. (Seminário).</td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>VIII Simpósio de Design Sustentável.Relações entre Design, Materiais e a Cadeia Produtiva do Açaí (Euterpe Oleracea Mart.). 2021. (Simpósio).</td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>XXI Simpósio Brasileiro de Quimica Teórica.Compressão induzindo modificações em materiais bidimensionais. 2021. (Simpósio).</td></tr>
+            </table></div>
+                    </table>
+                <br><p><br>(*) Relatório criado com produções desde 2021 até 2026
+<br>Data de processamento: 31/08/2026 22:11:56<br>         <div id="footer">         Relatório gerado por <a href="https://scriptlattes.sourceforge.net/">scriptLattes V9</a>.         Os resultados podem ser afetados por possíveis falhas decorrentes de inconsistências no preenchimento dos Currículos Lattes. E-mail de contato: <a href="mailto:matheusmatos@ufop.edu.br">matheusmatos@ufop.edu.br</a>         </div> </body></html>
+              

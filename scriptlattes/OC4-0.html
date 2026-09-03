@@ -1,0 +1,351 @@
+
+                <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf8"><meta name="Generator" content="scriptLattes"><title>REDEMAT</title><link rel="stylesheet" href="css/scriptLattes.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"><link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css"><link rel="stylesheet" type="text/css" href="css/dataTables.colVis.min.css"><script type="text/javascript" charset="utf8" src="js/jquery.min.js"></script><script type="text/javascript" charset="utf8" src="js/jquery.dataTables.min.js"></script><script type="text/javascript" charset="utf8" src="js/dataTables.colVis.min.js"></script><script type="text/javascript" charset="utf8" src="js/sorttable-local.js"></script><link rel="stylesheet" href="portal-redemat.css">
+</head><body>
+<div id="portal-back"><a href="../pages/producao-lattes.html">&#8592; Voltar ao portal REDEMAT</a><span>Relatório ScriptLattes — dados brutos dos currículos Lattes</span></div><div id="header2"> <button onClick="history.go(-1)">Voltar</button><h2>REDEMAT</h2></div>
+                
+        <script type="text/javascript" src="./js/jquery.min.js"></script>
+        <!--
+        <script type="text/javascript" src="./highcharts.js"></script>
+        <script type="text/javascript" src="./exporting.js"></script>
+        <script type="text/javascript" src="./drilldown.js"></script>
+        -->
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+        <script type="text/javascript">
+        // Load the fonts
+        Highcharts.createElement('link', {
+           href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700',
+           rel: 'stylesheet',
+           type: 'text/css'
+        }, null, document.getElementsByTagName('head')[0]);
+
+        Highcharts.theme = {
+   colors: ["#1F77B4", "#118D95", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#2b908f", "#90ee7e", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
+   chart: {
+      backgroundColor: null,
+      style: {
+         fontFamily: "'Source Sans Pro', 'sans-serif'"
+      }
+   },
+   title: {
+      style: {
+         color: 'black',
+         fontSize: '16px',
+         fontWeight: 'bold'
+      }
+   },
+   subtitle: {
+      style: {
+         color: 'black'
+      }
+   },
+   tooltip: {
+      borderWidth: 0
+   },
+   legend: {
+      itemStyle: {
+         fontWeight: 'bold',
+         fontSize: '13px'
+      }
+   },
+   xAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   yAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   plotOptions: {
+      series: {
+         shadow: true
+      },
+      candlestick: {
+         lineColor: '#404048'
+      },
+      map: {
+         shadow: false
+      }
+   },
+
+   // Highstock specific
+   navigator: {
+      xAxis: {
+         gridLineColor: '#D0D0D8'
+      }
+   },
+   rangeSelector: {
+      buttonTheme: {
+         fill: 'white',
+         stroke: '#C0C0C8',
+         'stroke-width': 1,
+         states: {
+            select: {
+               fill: '#D0D0D8'
+            }
+         }
+      }
+   },
+   scrollbar: {
+      trackBorderColor: '#C0C0C8'
+   },
+
+   // General
+   background2: '#E0E0E8'
+};
+
+        Highcharts.setOptions(Highcharts.theme);
+        $(function () {
+            $('#container').highcharts({chart: {type: 'column', 
+height: 300}, 
+title: {text: 'Trabalho de conclusão de curso de graduação'}, 
+subtitle: {text: ''}, 
+xAxis: {title: {text: ''}, 
+type: 'category'}, 
+yAxis: {min: 0, 
+title: {text: 'Quantidade', 
+align: 'middle'}, 
+labels: {overflow: 'justify'}, 
+stackLabels: {enabled: true, 
+format: '{stack}'}}, 
+tooltip: {enabled: true, 
+valueSuffix: '', 
+shared: false, 
+headerFormat: '<span style="font-size: 10px">{point.key}{point.stack}{series.stack}</span><br/>', 
+pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'}, 
+plotOptions: {bar: {dataLabels: {enabled: false}}, 
+column: {stacking: null}, 
+series: {shadow: 'true'}}, 
+legend: {enabled: false, 
+layout: 'vertical', 
+align: 'right', 
+verticalAlign: 'middle', 
+borderWidth: 1, 
+backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor || '#FFFFFF'), 
+shadow: true}, 
+credits: {enabled: false}, 
+series: [{name: 'Total', 
+data: [[2021,
+23],
+[2022,
+25],
+[2023,
+16],
+[2024,
+12],
+[2025,
+15],
+[2026,
+4]]}]});
+        });
+        </script>
+        
+                <h3>Trabalho de conclusão de curso de graduação</h3> <br>
+                    <div id="container" style="min-width: 310px; max-width: 1920px; height: 300; margin: 0"></div>
+                    Número total de itens: 95<br>
+                    
+                    
+                    <div id="dv-year-2026"><h3 class="year">2026</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>André de Paulo Rosa Silva. <b>EFEITO DA TEMPERATURA DE INÍCIO DE LAMINAÇÃO DE ACABAMENTO SOBRE A MICROESTRUTURA E PROPRIEDADES MECÂNICAS DE UM AÇO API 5L X65</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Arthur Figueira Almeida Oliveira. <b>Avaliação fluidodinâmica do reator RH com injeção por lança submersa na panela, estudo comparativo entre modelo físico e simulação computacional</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>Igor Diniz Perera. <b>Utilização de Resíduos de mineração na produção de materiais de construção sustentáveis através de métodos de separação gravimétrica</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, ECOENVIROX Mercado de Carbono. 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>Júlio Henrique Marotta. <b>Principais Fatores Que Impactam o Rendimento Metálico em Convertedores BOF (Basic Oxygen Furnace): uma Revisão da Literatura</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            </table></div><div id="dv-year-2025"><h3 class="year">2025</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>Alice Silva Gonçalves. <b>Efeito da Taxa de Aquecimento Sobre a Cinética de Austenitização de um Aço ao Boro Comercial Brasileiro</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Antônio Gurgel Barros Júnior. <b>Análise da remoção de inclusões e efeito de bolhas em distribuidor de lingotamento contínuo de placas por meio de injeção de gás</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>Bethina Ribeiro Ruas. <b>Previsão Teórica de Cristais Moleculares Orgânicos com Algoritmos Evolutivos</b>. (Graduação em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>Caio Eduardo de Paula. <b>Efeito de uma condição de austenitização intercrítica sobre a decomposição da austenita sob resfriamento contínuo em um açodual-phase baixo carbono</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>Ester Bárbara Gonçalves Martins. <b>"A produção de vídeos científicos como ferramenta facilitadora de aprendizagem dos conceitos físicos"</b>. (Graduação em Física) - Universidade Federal de Ouro Preto, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1219153096910234">Américo Tristão Bernardes</a>.</font></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>Igor Corneau Soares. <b>Análise do Efeito do Clogging da Válvula Submersa sobre o Fluxo no Interior de um Molde de Lingotamento Contínuo de Blocos: Modelamento Físico e Matemático</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>Isabela Mendes Azevedo Reis. <b>POR DEBAIXO DOS PANOS E DAS SOMBRAS: moda, psique e a representação feminina na literatura gótica vitoriana</b>. (Graduação em Design de Moda) - Universidade do Estado de Minas Gerais, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>João Marcos Rabelo Mesquita. <b>Avaliação do impacto da obstrução de bicos de spray do resfriamento secundário na formação de trincas transversais de quina em placas produzidas no lingotamento contínuo</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>Lucas Neto da Costa. <b>Utilização de Técnicas Automáticas para Medição de Bolhas Em Modelo Físico De Reatores Metalúrgicos</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>Luiz Gustavo Batista. <b>Entre o Estilo e o Desejo: O papel da cultura pop na influência do consumo de produtos de moda</b>. (Graduação em Design de Produto) - Universidade do Estado de Minas Gerais, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>Pedro Henrique Bicalho de Paula. <b>Drag Fashion: Desenvolvimento de uma Coleção de Moda Inspirada na Comunidade Drag Queen de Belo Horizonte ? Minas Gerais</b>. (Graduação em Design de Moda) - Universidade do Estado de Minas Gerais, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>Rayssa de Oliveira Matos. <b>COMPORTAMENTO ELÉTRICO DE TINTAS DE NANOTUBOS DE CARBONO E NANOCELULOSE TEMPO-OXIDADA: RESPOSTA SENSORIAL E PERCOLAÇÃO FUNCIONAL SOB UMIDADE.</b>. (Graduação em Física) - Universidade Federal de Ouro Preto, PROPP UFOP. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>Thalys Bruno de Souza Ventura. <b>valiação da Dessulfuração do Aço no Reator RH por Meio da Injeção de Material por Lança Submersa - Modelamento Físico</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>Wilcker César Silva Oliveira. <b>Efeitos de Campo Elétrico e Pressão nas Propriedades Ópticas e Eletrônicas de Poucas Camadas de Sb2S3</b>. (Graduação em Física) - Universidade Federal de Ouro Preto, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>Yasmim Moreira de Souza. <b>SEMANA DE MODA E IDENTIDADE CULTURAL: Democratização da moda por meio da proposta de projeto cultural em Belo Horizonte</b>. (Graduação em Design de Moda) - Universidade do Estado de Minas Gerais, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            </table></div><div id="dv-year-2024"><h3 class="year">2024</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>Alan Martins Ventura. <b>Caracterização de propriedades mecânicas de materiais por meio de ensaio de excitação por impulso</b>. (Graduação em Engenharia Mecânica) - Universidade Federal de Ouro Preto, . 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1995142616892313">Leonardo Barbosa Godefroid</a>.</font></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Andréia De-Lazzari Bicalho Peixoto Resende. <b>Estudo da cementação do cádmio presente no resíduo da purificação de um eletrólito industrial de zinco</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4062848906639188">Versiane Albis Leão</a>.</font></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>Cecilia Rodrigues Monteiro. <b>Biodesign: Um estudo de biomateriais aplicados no desenvolvimento de bolsas</b>. (Graduação em Design de Produto) - Universidade do Estado de Minas Gerais, . 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>Dione da Costa Oliveira. <b>Propriedades Fotofísicas de novos fluoróforos orgânicos derivados de Benzazol</b>. (Graduação em Física) - Universidade Federal de Ouro Preto, . 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>Gabriela Eloisa Santos. <b>Moda festa: o uso da moulage para criação de uma coleção de vestidos inspirados em orquídeas</b>. (Graduação em Design de Moda) - Escola de Design UEMG, . 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>Geovane de Assis Faria. <b>Avaliação da Soldabilidade de um aço API 5l X65Q ao processo GMAW</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/3405298711596512">Rodrigo Rangel Porcaro</a>.</font></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>Karina Alves Cândido da Silva. <b>Modulação de Propriedades Eletro-Ópticas de Dissulfeto de Molibdênio com Trans-Resveratrol</b>. (Graduação em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>Mylla Cássia da Silva e Silva. <b>Principais Processos Industriais de Dessulfuração de Ferro-Gusa: Estado da Arte</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>Rafael de Mello Machado. <b>Rotas para produção de níquel e neutralização do sulfato de magnésio com hidróxido de cálcio</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4062848906639188">Versiane Albis Leão</a>.</font></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>Raquel França Nascimento Andreata. <b>Sinterização por microondas de jóias utilizando reciclagem de materiais</b>. (Graduação em Design de Produto) - Universidade do Estado de Minas Gerais, . 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4629729793297288">Antonio Valadao Cardoso</a>.</font></td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>Rosana Aparecida Machado Souto. <b>Sinterização por microondas de jóias utilizando reciclagem de materiais</b>. (Graduação em Design de Produto) - Universidade do Estado de Minas Gerais, . 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4629729793297288">Antonio Valadao Cardoso</a>.</font></td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>Yara Aparecida Santiago Queiroz. <b>Análise do impacto das paradas da planta de PCI nos parâmetros operacionais do Alto-Forno</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            </table></div><div id="dv-year-2023"><h3 class="year">2023</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>Cecília Laia da Silva. <b>Modelagem Física da Dessulfuração de Gusa em Panela com Lança Submersa Rotativa</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Felipe Alves Guedes. <b>Análise via Modelagem Física dos Efeitos de Alterações em Alguns Parâmetros Operacionais sobre a Turbulência Superficial num Molde de Lingotamento Conơnuo de Placas</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>JACQUES ROBERTO DA SILVA. <b>O pensamento Lean aplicado ao processo de prototipagem</b>. (Graduação em Design de Produto) - Universidade do Estado de Minas Gerais, . 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>Johny Luciano Moutinho. <b>Aspectos Técnicos e Ambientais do Uso da Carga Metálica em Aciaria Elétrica</b>. (Graduação em Engenharia Metalúrgica e de Materiais) - Universidade Federal de Ouro Preto, Gerdau. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>José Eduardo Vieira Lima. <b>Desenvolvimento de um Modelo Dinâmico de Vazamento de Aço para Panelas de uma Aciaria: Projeto Piloto</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Mannesmann S.A. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>Laila Andrade Franco de Moraes. <b>A vida da estilista Zuzu Angel e seu papel na moda</b>. (Graduação em Design de Moda) - Universidade do Estado de Minas Gerais, . 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>Leticia Dias Batista. <b>Substituição parcial do carvão mineral por bagaço de cana na produção do coque metalúrgico</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Gerdau. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>Lucas Vinicius da Cruz. <b>Análise da adição de piche sólido em uma mistura de carvões para produção de coque metalúrgico</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Gerdau. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>Marcela Antônia de Jesus. <b>Materialização das vertentes da literatura gótica</b>. (Graduação em Design de Moda) - Universidade do Estado de Minas Gerais, . 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>Maria Aparecida Miquelão de Freitas. <b>upcycling: O desafio da reutilização de têxteis na moda</b>. (Graduação em Design de Moda) - Universidade do Estado de Minas Gerais, . 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>Matheus Augusto Andrade Ávila. <b>Utilização de resíduo de milho na fabricação de coque</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Gerdau Açominas. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>Natália Diniz de Oliveira Costa. <b>Ouça seu coração e crie asas</b>. (Graduação em Design de Moda) - Universidade do Estado de Minas Gerais, . 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>Rafael Nunes Costa. <b>Avaliação dos efeitos da temperatura e do tempo de encharque sobre a dissolução do nitreto de alumínio (AlN) na tecnologia de produção do aço silício de grão orientado com baixa temperatura de reaquecimento de placa</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>Thaynara Melo Moussa. <b>AVALIAÇÃO DA EFICÁCIA DE UM MODELO EMPÍRICO PARA PREVISÃO DE TEMPERATURAS CRÍTICAS DE TRANSFORMAÇÕES DE FASES EM AÇOS SUBMETIDOS A RESFRIAMENTO CONTÍNUO</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>Thévilla Coeli Pereira Mairink. <b>?Controle da incrustação do Limnoperna fortunei - mexilhão dourado utilizando ondas ultrassônicas</b>. (Graduação em Engenharia Ambiental) - Universidade Federal de Ouro Preto, Centrais Elétricas de Minas Gerais. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td>Weldenn Jefferson Cerceau Vidigal. <b>Efeito do aporte térmico na soldabilidade de aço inoxidável martensíƟco ABNT 420D com metal de adição ABNT 308LSi e caracterização química e metalográfica dos aços ABNT 420A e 498A</b>. (Graduação em Engenharia Metalurgica) - Universidade Federal de Ouro Preto, . 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/3405298711596512">Rodrigo Rangel Porcaro</a>.</font></td></tr>
+            </table></div><div id="dv-year-2022"><h3 class="year">2022</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>Abelar José Antônio Dias Lelis. <b>Proposição e Avaliação da Eficácia de um Método de Contraste por Oxidação Subcrítica para Revelação de Grãos Austeníticos Prévios em Aços</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Arthur Cançado Schuttenberg. <b>Efeito de Tratamentos Térmicos de Têmpera com Austenitização Intercrítica sobre as Transformações de Fase e Evolução Microestrutural de um Aço para Aplicação na Indústria de Óleo e Gás</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>Bernardo Versiani Passos Coelho. <b>Um estudo de caso sobre a influência do indicadores macroeconômicos em uma produtora independente de ferro-gusa</b>. (Graduação em Engenharia Metalúrgica e de Materiais) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>Camila Silva Pereira. <b>Desenvolvimento de calçado em impressão 3D para pcd's</b>. (Graduação em Design de Produto) - Escola de Design Universidade do Estado de Minas Gerais, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>Daiana Cristina Pereira da Silva. <b>Análise do comportamento o nível térmico do alto-forno a carvão vegetal durante o controle da taxa de carbono de topo</b>. (Graduação em Engenharia Metalúrgica e de Materiais) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>Daynara Faustina Moreira de Oliveira. <b>EFEITO DA TEMPERATURA DE AUSTENITIZAÇÃO NA CINÉTICA DE TRANSFORMAÇÃO MARTENSÍTICA DO AÇO INOXIDÁVEL FERRÍTICO 410D (UNS S41003)</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>Eduardo Antônio Laia da Silva. <b>Desenvolvimento de Metodologia para Avaliação de Campanha de Furo de Gusa de um Alto-forno</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>Eduardo Augusto Pereira Togni. <b>Alteração do revestimento refratário de trabalho de uma panela de aço, de Al2O3-MgO-C, para a redução da ocorrência de inclusões de Al2O3 em rodas ferrovíárias</b>. (Graduação em Engenharia Metalúrgica e de Materiais) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>Fabio Oliveira Costa. <b>Influência da geometria da válvula submersa no lingotamento conơnuo de blocos: uma revisão da literatura</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>Gabriel Lança Galdino da Rocha. <b>Efeito do Processo de Preparação de Corpos de Prova e das Condições de Ensaio de Tração Sobre as Propriedades Mecânicas de Chapas Grossas de um Aço API 5L X65 com Espessura de 10,14mm</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>Gustavo Fernando Ribeiro Rodrigues. <b>Influência do refratário na disponibilidade do desgaseificador RH</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>Iago. <b>APLICAÇÃO DE REDES NEURAIS ARTIFICIAIS PARA PREVISÃO DE CARBONO DE FINAL DE SOPRO E TEMPERATURA DE FINAL DE SOPRO EM UM CONVERTEDOR LD</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Gerdau Açominas. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>Igor da Costa e Silva. <b>Avaliação do efeito de elementos de liga na fabricação e soldagem de aços API de alta resistência mecânica - Revisão bibliográfica</b>. (Graduação em Engenharia Metalurgica) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/3405298711596512">Rodrigo Rangel Porcaro</a>.</font></td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>Igor Jurandir Ubaldo Viana Pereira. <b>Estudo da adaptação de microrganismos mesófilos a placas de circuito impresso</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4062848906639188">Versiane Albis Leão</a>.</font></td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>Junio de Oliveira Maciel. <b>Estudo de interação de moléculas de C60 com grafeno utilizando Dinâmica Molecular</b>. (Graduação em Física) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td>Kátia Guimarães Martins. <b>Efeito do tipo de corrente e da polaridade sobre os parâmetros geométricos e metalúrgicos de cordões de solda obtidos com o processo SMAW em aço baixo carbono</b>. (Graduação em Engenharia Metalurgica) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/3405298711596512">Rodrigo Rangel Porcaro</a>.</font></td></tr>
+            
+            <tr valign="top"><td>17. &nbsp;</td> <td>Leonardo Barbosa Lazarini Silva Ribeiro. <b>Desenvolvimento de uma Câmara Criogênica de Baixo Custo para a Realização de Ensaios Mecânicos de Tração sob Condições de Temperatura Subzero</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></td></tr>
+            
+            <tr valign="top"><td>18. &nbsp;</td> <td>Luisa Moreira Fonseca. <b>Desenvolvimento de Coleção de Corselet</b>. (Graduação em Design de Produto) - Escola de Design Universidade do Estado de Minas Gerais, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>19. &nbsp;</td> <td>Natalia Diniz de Oliveira Costa. <b>Capacitação em bordado de agentes multiplicadores na região metropolitana de Belo Horizonte</b>. (Graduação em Design de Moda) - Escola de Design Universidade do Estado de Minas Gerais, PROGRAMA INSTITUCIONAL DE APOIO À EXTENSÃO DA UEMG PAEx. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>20. &nbsp;</td> <td>Otávio Augusto Gomes e Souza. <b>METODOLOGIA DE PARADA DE ALTOS-FORNOS: ESTUDO DE CASO PARA UMA USINA SIDERÚRGICA NÃO INTEGRADA</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/9004123547060623">Víctor de Andrade Alvarenga Oliveira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>21. &nbsp;</td> <td>Paloma Faria Avelar. <b>Ensaios eletromagnéticos para inspeção de cabos de aço - estado da arte</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/3405298711596512">Rodrigo Rangel Porcaro</a>.</font></td></tr>
+            
+            <tr valign="top"><td>22. &nbsp;</td> <td>Ricardo Abrahão Júnior. <b>Caracterização microestrutural e avaliação das propriedades mecânica e corrosiva de um aço inoxidável duplex UNS S32205 submetido a tratamento termomecânico</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>23. &nbsp;</td> <td>Thamires Fernandes Pinto. <b>Avaliação do Uso da Técnica de Temper Bead Welding (Soldagem com Passe de Revenimento) em Aços Estruturais ? Estado da Arte</b>. (Graduação em Engenharia Metalurgica) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/3405298711596512">Rodrigo Rangel Porcaro</a>.</font></td></tr>
+            
+            <tr valign="top"><td>24. &nbsp;</td> <td>Túlio Simplício Ferreira. <b>Comportamento dos minerais constituintes da ganga de um concentrado de vanádio durante a redução por hidrogênio</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/9004123547060623">Víctor de Andrade Alvarenga Oliveira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>25. &nbsp;</td> <td>Vitor Silva Coimbra. <b>Redução carbotérmica de um concentrado de willemita por carvão vegetal</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/9004123547060623">Víctor de Andrade Alvarenga Oliveira</a>.</font></td></tr>
+            </table></div><div id="dv-year-2021"><h3 class="year">2021</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>Bárbara dos Santos Trintinella. <b>O USO DE CORANTES NATURAIS NA INDÚSTRIA TÊXTIL</b>. (Graduação em Design de Produto) - Escola de Design Universidade do Estado de Minas Gerais, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Cora Wallach Sanches. <b>Design de superfícies: um contexto histórico da Família Wallach</b>. (Graduação em Design de Produto) - Escola de Design Universidade do Estado de Minas Gerais, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>Elisa Oliveira Linares. <b>Avaliação da Eficiência do Software OpenFOAM® na Resolução de Problemas Metalúrgicos</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>Filipe Henrique Miranda Ferreira. <b>CARACTERIZAÇÃO QUÍMICA DO EXTRATO METANÓLICO DO LIMNOPERNA FORTUNEI ? MEXILHÃO DOURADO</b>. (Graduação em Engenharia Ambiental) - Universidade Federal de Ouro Preto, Centrais Elétricas de Minas Gerais. 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>Gabriel Franco Borges. <b>?Efeito preg-robbing em minerais auríferos por compostos carbonáceos: estado da arte</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4062848906639188">Versiane Albis Leão</a>.</font></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>Guilherme Santiago Queiroz. <b>Modelagem Física e Matemática do Basculamento e Drenagem do Reator BOF</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>Gustavo Sales de Paula. <b>Utilização de um Simulador Termomecânico para Avaliação de Diferentes Estratégias de Laminação de um Aço Microligado ao Nb</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>Hércules. <b>Automatização do Processamento de Dados em Experimentos de Indentação de Nanomateriais</b>. (Graduação em Engenharia de Controle e Automação) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>Jessica Caetano Fortes Monteiro. <b>Efeito de Composição Química e Variáveis de Processamento Termomecânico na Relação Microestrutura - Propriedades Mecânicas de Aços Microligados para Aplicação em Estruturas Eólicas</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1995142616892313">Leonardo Barbosa Godefroid</a>.</font></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>Lucas Matheus Magalhães Silva. <b>INFLUÊNCIA DA QUALIDADE E PROPORÇÃO DE DIFERENTES TIPOS DE BENTONITA NAS PROPRIEDADES DAS PELOTAS CRUAS E QUEIMADAS DE MINÉRIO DE FERRO: ESTADO DA ARTE</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>Ludimila Guimarães. <b>Avaliação Comparativa da Estrutura e Propriedades Mecânicas de Aços Inoxidáveis Ferríticos (ABNT 430 e ABNT 409) Soldados com Metal de Adição Austenítico - Revisão Bibliográfica</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/3405298711596512">Rodrigo Rangel Porcaro</a>.</font></td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>Luiz Gustavo Batista. <b>A comunicação e moda: o impacto da cultura pop como veículo de influência sob a grande massa.</b>. (Graduação em Design de Produto) - Escola de Design Universidade do Estado de Minas Gerais, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>Marcos Vinícius Fonseca Ferreira. <b>Caracterização eletroquímica de uma liga NiTi superelástica com recobrimentos a base de óxido de grafeno?</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>Mariana Carvalho Araújo. <b>Uso da cal aditivada como substituto parcial para a fonte de óxido de magnésio na sinterização de minério de ferro</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>Matheus Teles Braga de Oliveira. <b>Simulação Fluidodinâmica do Fluxo Bifásico em um Distribuidor de Lingotamento Contínuo com Barreira Gasosa</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td>Michele Carolina dos Santos Guimarães. <b>Estudo da viabilidade técnica de reciclagem de escória de refino secundário e utilização em forno elétrico a arco</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>17. &nbsp;</td> <td>Moacir Ândretti Sabino Mota. <b>Aplicação de redes neurais artificiais para predição do consumo de carbono, teor de silício e enxofre em um alto-forno a coque de uma empresa de grande porte</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></td></tr>
+            
+            <tr valign="top"><td>18. &nbsp;</td> <td>Natália Lopes Zinato. <b>Estudo das propriedades fotofísicas do complexo de bis-β-dicetona com íons metálicos para a aplicação como sensor fluorescente</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></td></tr>
+            
+            <tr valign="top"><td>19. &nbsp;</td> <td>Nelson Alexandre Pereira Aráujo. <b>Avaliação do consumo de pó fluxante no lingotamento contínuo e seu efeito sobre a qualidade do produto: uma revisão da literatura</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>20. &nbsp;</td> <td>Pedro Paulo Peixoto Dias Junior. <b>Uma revisão sobre Modelamento Físico de Transferência de Massa Aplicado ao Convertedor com Sopro Combinado</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></td></tr>
+            
+            <tr valign="top"><td>21. &nbsp;</td> <td>Reginaldo Alves Félix. <b>Efeito das Configurações Elétricas Sobre os Parâmetros Geométricos em Soldas Obtidas ao Arco Elétrico com os Processos por Eletrodos Revestidos, MIG/MAG E TIG: Uma Revisão</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/3405298711596512">Rodrigo Rangel Porcaro</a>.</font></td></tr>
+            
+            <tr valign="top"><td>22. &nbsp;</td> <td>Tainá Souto de Oliveira. <b>Estudo do reaproveitamento do potencial energético dos gases de exaustão da Siderurgia</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Gerdau Açominas. 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></td></tr>
+            
+            <tr valign="top"><td>23. &nbsp;</td> <td>Túlio César Evangelista. <b>Avaliação dos parâmetros da Coqueria para a formação do Insolúvel de Quinolina (IQ Primário)</b>. (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></td></tr>
+            </table></div>
+                    </table>
+                <br><p><br>(*) Relatório criado com produções desde 2021 até 2026
+<br>Data de processamento: 31/08/2026 22:11:56<br>         <div id="footer">         Relatório gerado por <a href="https://scriptlattes.sourceforge.net/">scriptLattes V9</a>.         Os resultados podem ser afetados por possíveis falhas decorrentes de inconsistências no preenchimento dos Currículos Lattes. E-mail de contato: <a href="mailto:matheusmatos@ufop.edu.br">matheusmatos@ufop.edu.br</a>         </div> </body></html>
+              

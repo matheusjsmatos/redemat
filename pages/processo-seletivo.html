@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Processo Seletivo — REDEMAT | UFOP · UEMG</title>
+<meta name="description" content="Como ingressar no Mestrado em Engenharia de Materiais da REDEMAT: etapas do processo seletivo, documentos, escolha de orientador e contato da secretaria.">
+<link rel="canonical" href="https://redemat.ufop.br/processo-seletivo">
+<link rel="icon" href="../assets/img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<style>
+.status-band { padding: .9rem 1.25rem; text-align: center; font-size: .88rem; font-weight: 600; }
+.status-band.encerrado { background: #FEF2F2; border-bottom: 2px solid #FECACA; color: #991B1B; }
+.status-band.aberto { background: #ECFDF5; border-bottom: 2px solid #A7F3D0; color: #065F46; }
+.status-band.breve { background: var(--st-div-bg); border-bottom: 2px solid #FED7AA; color: #92400E; }
+.status-band a { text-decoration: underline; font-weight: 700; }
+.doc-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 1.5rem; }
+.link-item { display: flex; align-items: center; gap: .55rem; font-size: .86rem; color: var(--navy); padding: .65rem .9rem; border: 1px solid var(--border); border-radius: var(--r-sm); transition: background .15s, border-color .15s; }
+.link-item:hover { background: var(--bg); border-color: var(--border-str); }
+.link-item svg { width: 14px; height: 14px; fill: var(--amber); flex-shrink: 0; }
+.orient-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 1.2rem; }
+.orient-line { font-size: .7rem; font-weight: 800; letter-spacing: .06em; margin-bottom: .4rem; }
+.orient-names { font-size: .82rem; color: var(--text-mid); line-height: 1.7; }
+</style>
+</head>
+<body>
+
+<div id="site-header-slot"></div>
+<div id="statusBand" role="status" aria-live="polite"></div>
+
+<section class="page-hero" aria-labelledby="ph">
+  <div class="page-hero-in">
+    <nav class="crumb" aria-label="Trilha de navegação">
+      <a href="../index.html">Início</a><span aria-hidden="true">›</span>
+      <span aria-current="page">Processo Seletivo</span>
+    </nav>
+    <h1 id="ph">Como ingressar na REDEMAT</h1>
+    <p class="lede">
+      O ingresso no Mestrado Acadêmico em Engenharia de Materiais ocorre por processo seletivo com
+      edital próprio, em periodicidade semestral. Esta página explica as etapas, os documentos
+      habitualmente exigidos e como escolher um orientador.
+    </p>
+  </div>
+</section>
+
+<main id="conteudo">
+
+  <!-- Situação atual -->
+  <section class="section" style="padding-block:2.25rem 0;">
+    <div class="wrap" id="situacao"></div>
+  </section>
+
+  <!-- Etapas -->
+  <section class="section" aria-labelledby="et-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Percurso</p>
+        <h2 class="h2" id="et-h">Etapas do processo seletivo</h2>
+        <p class="section-lede">
+          As etapas abaixo descrevem o fluxo habitual. A composição exata, os pesos de cada etapa e o
+          cronograma são definidos em cada edital.
+        </p>
+      </div>
+      <div class="steps" id="etapas"></div>
+      <div class="mt-4" id="etapasNota"></div>
+    </div>
+  </section>
+
+  <!-- Documentos -->
+  <section class="section section--alt" aria-labelledby="doc-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Preparação</p>
+        <h2 class="h2" id="doc-h">Documentos habitualmente exigidos</h2>
+      </div>
+      <div class="grid grid--2">
+        <div class="doc-card">
+          <h3 class="h3">Formação e histórico</h3>
+          <div class="prose" style="max-width:none;">
+            <ul>
+              <li>Diploma ou comprovante de conclusão de graduação em Engenharia, Física, Química, Design ou áreas afins</li>
+              <li>Histórico escolar da graduação</li>
+              <li>Documento de identificação com foto</li>
+            </ul>
+          </div>
+        </div>
+        <div class="doc-card">
+          <h3 class="h3">Projeto e trajetória</h3>
+          <div class="prose" style="max-width:none;">
+            <ul>
+              <li>Currículo Lattes atualizado</li>
+              <li>Proposta ou pré-projeto de pesquisa aderente a uma das quatro linhas do Programa</li>
+              <li>Carta de motivação e, quando previsto no edital, cartas de recomendação</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="mt-3" id="docNota"></div>
+    </div>
+  </section>
+
+  <!-- Escolher orientador -->
+  <section class="section" aria-labelledby="or-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Antes de se inscrever</p>
+        <h2 class="h2" id="or-h">Escolha a linha e converse com um docente</h2>
+        <p class="section-lede" id="orLede"></p>
+      </div>
+      <div class="grid grid--2" id="orGrid"></div>
+      <div class="mt-4">
+        <a href="pessoas.html" class="btn btn--dark" style="display:inline-flex;align-items:center;gap:.45rem;font-size:.88rem;font-weight:700;padding:.72rem 1.35rem;border-radius:var(--r-sm);background:var(--navy);color:#fff;">
+          Ver o diretório completo de docentes
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doutorado -->
+  <section class="section section--alt" aria-labelledby="dr-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Doutorado</p>
+        <h2 class="h2" id="dr-h">Ingresso no Doutorado</h2>
+      </div>
+      <div id="drNota"></div>
+    </div>
+  </section>
+
+  <!-- Contato e links -->
+  <section class="section" aria-labelledby="ct-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Fale com a gente</p>
+        <h2 class="h2" id="ct-h">Contato e links úteis</h2>
+      </div>
+      <div class="grid grid--2">
+        <div class="doc-card">
+          <h3 class="h3">Secretaria do Programa</h3>
+          <div style="display:flex;flex-direction:column;gap:.85rem;margin-top:1rem;" id="contato"></div>
+        </div>
+        <div class="doc-card">
+          <h3 class="h3">Links oficiais</h3>
+          <div style="display:flex;flex-direction:column;gap:.5rem;margin-top:1rem;" id="links"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer-slot"></div>
+
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+(function () {
+  'use strict';
+  const R = window.REDEMAT, C = window.RC, PS = R.processo_seletivo;
+
+  /* ---------- faixa de status ---------- */
+  const BAND = {
+    encerrado: { cls: 'encerrado', txt: 'As inscrições para o processo seletivo ' + PS.semestre + ' foram encerradas. Acompanhe esta página para o próximo edital.' },
+    aberto:    { cls: 'aberto',    txt: 'Inscrições abertas para o processo seletivo ' + PS.semestre + '. <a href="#situacao">Ver detalhes</a>' },
+    breve:     { cls: 'breve',     txt: 'O edital do processo seletivo ' + PS.semestre + ' será publicado em breve.' }
+  };
+  const b = BAND[PS.situacao] || BAND.breve;
+  document.getElementById('statusBand').innerHTML =
+    '<div class="status-band ' + b.cls + '">' + b.txt + '</div>';
+
+  /* ---------- situação ---------- */
+  document.getElementById('situacao').innerHTML =
+    C.note(PS.situacao === 'aberto' ? 'info' : 'warn',
+      '<strong>Situação atual — ' + PS.semestre + ':</strong> ' + PS.nota +
+      ' Fonte: site institucional REDEMAT. ' + C.badge('PRELIMINAR')) +
+    '<div class="mt-2">' + C.note('info',
+      '<strong>Número de vagas.</strong> Este portal não publica número de vagas fora da vigência de um ' +
+      'edital, para evitar informação desatualizada. As vagas de cada processo — por ampla concorrência e ' +
+      'por ações afirmativas — constam exclusivamente no edital publicado.') + '</div>';
+
+  /* ---------- etapas ---------- */
+  document.getElementById('etapas').innerHTML = PS.etapas.map(function (e, i) {
+    return '<div class="step">' +
+      '<span class="step-n" aria-hidden="true">' + (i + 1) + '</span>' +
+      '<div class="step-body"><h3 class="h3">' + e.titulo + '</h3>' +
+      '<p style="font-size:.88rem;color:var(--text-mid);line-height:1.7;">' + e.desc + '</p></div></div>';
+  }).join('');
+
+  document.getElementById('etapasNota').innerHTML = C.note('warn',
+    '<strong>O edital prevalece.</strong> Etapas, pesos, critérios de desempate, prazos e exigências ' +
+    'específicas são definidos em cada edital e podem variar entre processos. Em caso de divergência entre ' +
+    'esta página e o edital vigente, <strong>vale o edital</strong>.');
+
+  document.getElementById('docNota').innerHTML = C.note('info',
+    'A lista acima é orientativa e reflete o padrão dos processos anteriores. Confira sempre a ' +
+    'documentação exigida no edital vigente antes de iniciar sua inscrição, e entre em contato com a ' +
+    'secretaria em caso de dúvida: <a href="mailto:' + R.programa.contato.email + '">' + R.programa.contato.email + '</a>');
+
+  /* ---------- orientador ---------- */
+  document.getElementById('orLede').textContent = PS.dica;
+
+  const linhas = [];
+  R.areas.itens.forEach(function (a) { a.linhas.forEach(function (l) { linhas.push({ l: l, a: a }); }); });
+
+  document.getElementById('orGrid').innerHTML = linhas.map(function (x) {
+    const docs = R.docentes.itens.filter(function (d) { return d.linha === x.l.id; });
+    return '<div class="orient-card">' +
+      '<p class="orient-line" style="color:' + x.l.cor + '">' + x.l.codigo.toUpperCase() + ' · ' + docs.length + ' docente' + (docs.length === 1 ? '' : 's') + '</p>' +
+      '<h3 class="h3" style="font-size:.93rem;">' + x.l.nome + '</h3>' +
+      '<p style="font-size:.78rem;color:var(--text-soft);margin:.5rem 0 .75rem;line-height:1.6;">' +
+        x.l.palavras.slice(0, 5).join(' · ') + '</p>' +
+      '<p class="orient-names">' + docs.map(function (d) { return d.nome; }).join(' · ') + '</p>' +
+    '</div>';
+  }).join('');
+
+  /* ---------- doutorado ---------- */
+  const DR = R.doutorado;
+  document.getElementById('drNota').innerHTML =
+    C.note('info', '<strong>O Doutorado está em funcionamento.</strong> Duração de ' + DR.duracao +
+      ', ' + DR.creditos.total + ' créditos e ' + DR.periodicidade.toLowerCase() + '. ' +
+      'Destina-se a ' + DR.publico.toLowerCase() + '. Exige ' + DR.exigencia_producao.toLowerCase() +
+      ' para a defesa. ' + C.badge('VALIDADO')) +
+    '<div class="mt-2">' + C.note('info',
+      'Bolsas de doutorado são oferecidas por ' + DR.bolsa.agencias.join(', ') + ', por até ' +
+      DR.bolsa.duracao_max_meses + ' meses, conforme a cota do Programa. ' +
+      '<a href="cursos.html">Ver a estrutura dos dois níveis →</a>') + '</div>' +
+    '<div class="mt-2">' + C.note('warn',
+      '<strong>Não confundir com a proposta APCN.</strong> ' + R.apcn.aviso +
+      ' <a href="cursos.html#apcn">Ver a proposta →</a> ' + C.badge('EM_DEFINICAO')) + '</div>';
+
+  /* ---------- contato ---------- */
+  const c = R.programa.contato;
+  document.getElementById('contato').innerHTML =
+    '<div style="display:flex;gap:.6rem;align-items:flex-start;">' +
+      '<span style="width:15px;flex-shrink:0;margin-top:.15rem;color:var(--amber);">' + C.ICO.mail + '</span>' +
+      '<div><a href="mailto:' + c.email + '" style="font-size:.88rem;color:var(--navy);font-weight:600;">' + c.email + '</a>' +
+      '<p style="font-size:.76rem;color:var(--text-soft);">Secretaria do Programa</p></div></div>' +
+    '<div style="display:flex;gap:.6rem;align-items:flex-start;">' +
+      '<span style="width:15px;flex-shrink:0;margin-top:.15rem;color:var(--amber);">' + C.ICO.mail + '</span>' +
+      '<div><a href="mailto:' + c.email_coord + '" style="font-size:.88rem;color:var(--navy);font-weight:600;">' + c.email_coord + '</a>' +
+      '<p style="font-size:.76rem;color:var(--text-soft);">Coordenação</p></div></div>' +
+    '<div style="display:flex;gap:.6rem;align-items:flex-start;padding-top:.85rem;border-top:1px solid var(--border);">' +
+      '<span style="width:15px;flex-shrink:0;margin-top:.15rem;color:var(--amber);">' + C.ICO.globe + '</span>' +
+      '<div><p style="font-size:.86rem;color:var(--text);"><strong>' + (c.endereco_detalhe || 'Secretaria') + '</strong><br>' + c.endereco + '</p>' +
+      (c.telefone ? '<p style="font-size:.86rem;color:var(--text-mid);margin-top:.35rem;">' + c.telefone + '</p>' : '') +
+      (c.endereco_cadastro ? '<p style="font-size:.74rem;color:var(--text-soft);margin-top:.5rem;line-height:1.55;">' +
+        'Endereço de correspondência no cadastro institucional: ' + c.endereco_cadastro + '</p>' : '') +
+      '</div></div>';
+
+  document.getElementById('links').innerHTML = [
+    { u: 'https://redemat.ufop.br/processo-seletivo', t: 'Editais e processo seletivo — site REDEMAT' },
+    { u: 'https://sigaa.ufop.br', t: 'SIGAA — sistema acadêmico da UFOP' },
+    { u: 'https://ppgs.ufop.br', t: 'Pró-Reitoria de Pesquisa e Pós-Graduação — UFOP' },
+    { u: 'https://www.gov.br/capes/pt-br', t: 'CAPES — bolsas e programas' },
+    { u: 'http://lattes.cnpq.br', t: 'Plataforma Lattes — criar ou atualizar currículo' }
+  ].map(function (l) {
+    return '<a class="link-item" href="' + l.u + '" target="_blank" rel="noopener">' + C.ICO.ext +
+      '<span>' + l.t + '</span></a>';
+  }).join('');
+
+  C.mount('processo-seletivo.html', '../');
+})();
+</script>
+</body>
+</html>

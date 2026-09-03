@@ -1,0 +1,495 @@
+
+                <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf8"><meta name="Generator" content="scriptLattes"><title>REDEMAT</title><link rel="stylesheet" href="css/scriptLattes.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"><link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css"><link rel="stylesheet" type="text/css" href="css/dataTables.colVis.min.css"><script type="text/javascript" charset="utf8" src="js/jquery.min.js"></script><script type="text/javascript" charset="utf8" src="js/jquery.dataTables.min.js"></script><script type="text/javascript" charset="utf8" src="js/dataTables.colVis.min.js"></script><script type="text/javascript" charset="utf8" src="js/sorttable-local.js"></script><link rel="stylesheet" href="portal-redemat.css">
+</head><body>
+<div id="portal-back"><a href="../pages/producao-lattes.html">&#8592; Voltar ao portal REDEMAT</a><span>Relatório ScriptLattes — dados brutos dos currículos Lattes</span></div><div id="header2"> <button onClick="history.go(-1)">Voltar</button><h2>REDEMAT</h2></div>
+                
+        <script type="text/javascript" src="./js/jquery.min.js"></script>
+        <!--
+        <script type="text/javascript" src="./highcharts.js"></script>
+        <script type="text/javascript" src="./exporting.js"></script>
+        <script type="text/javascript" src="./drilldown.js"></script>
+        -->
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+        <script type="text/javascript">
+        // Load the fonts
+        Highcharts.createElement('link', {
+           href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700',
+           rel: 'stylesheet',
+           type: 'text/css'
+        }, null, document.getElementsByTagName('head')[0]);
+
+        Highcharts.theme = {
+   colors: ["#1F77B4", "#118D95", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#2b908f", "#90ee7e", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
+   chart: {
+      backgroundColor: null,
+      style: {
+         fontFamily: "'Source Sans Pro', 'sans-serif'"
+      }
+   },
+   title: {
+      style: {
+         color: 'black',
+         fontSize: '16px',
+         fontWeight: 'bold'
+      }
+   },
+   subtitle: {
+      style: {
+         color: 'black'
+      }
+   },
+   tooltip: {
+      borderWidth: 0
+   },
+   legend: {
+      itemStyle: {
+         fontWeight: 'bold',
+         fontSize: '13px'
+      }
+   },
+   xAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   yAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   plotOptions: {
+      series: {
+         shadow: true
+      },
+      candlestick: {
+         lineColor: '#404048'
+      },
+      map: {
+         shadow: false
+      }
+   },
+
+   // Highstock specific
+   navigator: {
+      xAxis: {
+         gridLineColor: '#D0D0D8'
+      }
+   },
+   rangeSelector: {
+      buttonTheme: {
+         fill: 'white',
+         stroke: '#C0C0C8',
+         'stroke-width': 1,
+         states: {
+            select: {
+               fill: '#D0D0D8'
+            }
+         }
+      }
+   },
+   scrollbar: {
+      trackBorderColor: '#C0C0C8'
+   },
+
+   // General
+   background2: '#E0E0E8'
+};
+
+        Highcharts.setOptions(Highcharts.theme);
+        $(function () {
+            $('#container').highcharts({chart: {type: 'column', 
+height: 300}, 
+title: {text: 'Total de orientações em andamento'}, 
+subtitle: {text: ''}, 
+xAxis: {title: {text: ''}, 
+type: 'category'}, 
+yAxis: {min: 0, 
+title: {text: 'Quantidade', 
+align: 'middle'}, 
+labels: {overflow: 'justify'}, 
+stackLabels: {enabled: true, 
+format: '{stack}'}}, 
+tooltip: {enabled: true, 
+valueSuffix: '', 
+shared: false, 
+headerFormat: '<span style="font-size: 10px">{point.key}{point.stack}{series.stack}</span><br/>', 
+pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'}, 
+plotOptions: {bar: {dataLabels: {enabled: false}}, 
+column: {stacking: null}, 
+series: {shadow: 'true'}}, 
+legend: {enabled: false, 
+layout: 'vertical', 
+align: 'right', 
+verticalAlign: 'middle', 
+borderWidth: 1, 
+backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor || '#FFFFFF'), 
+shadow: true}, 
+credits: {enabled: false}, 
+series: [{name: 'Total', 
+data: [[2021,
+8],
+[2022,
+15],
+[2023,
+11],
+[2024,
+33],
+[2025,
+51],
+[2026,
+49]]}]});
+        });
+        </script>
+        
+                <h3>Total de orientações em andamento</h3> <br>
+                    <div id="container" style="min-width: 310px; max-width: 1920px; height: 300; margin: 0"></div>
+                    Número total de itens: 167<br>
+                    
+                    
+                    <div id="dv-year-2026"><h3 class="year">2026</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>Albino Luciani Papa. <b>A semiótica da estampa em Alexandre Herchcovitch</b>. Dissertação (Mestrado em Mestrado em Design) - Universidade do Estado de Minas Gerais, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>AMINE VIANA OMAR. <b>Propriedades Mecânicas e Vibracionais de TMDs 2D com Vacâncias e Dopagem via Potenciais de Aprendizado de Máquina</b>. Dissertação (Mestrado em Ciências) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>Ana Isabela Mendonça Gonçalves. <b>RE:CICLO Auto: desenvolvimento e avaliação das propriedades mecânicas de materiais à base de polipropileno reciclado e resíduos de espuma de poliuretano para aplicações automotivas</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1370798140664840">Eliane Ayres</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>Angélica de Fátima Nogueira Vicente. <b>Efeito do pH e dos diferentes tipos de contaminação do lastro nos mecanismos de corrosão de dormentes ferroviários de aço</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td><a href="https://lattes.cnpq.br/6686314460533074">Arthur Figueira Almeida Oliveira</a>. <b>Avaliação fluidodinâmica do reator RH com injeção por lança submersa na panela - aplicação a dessulfuração</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>Bennardo Kennedy Theotônio Barbosa. <b>Simulação Fluidodinâmica do Comportamento da Camada de Escória em um Distribuidor de Lingotamento Contínuo de Dois Veios Durante a Troca de panela</b>. Trabalho de Conclusão de Curso (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td><a href="https://lattes.cnpq.br/4853775222152203">Bernardo João Francisco Companhia</a>. <b>A definir</b>. Tese (Doutorado em Engenharia Ambiental) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4062848906639188">Versiane Albis Leão</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td><a href="https://lattes.cnpq.br/2316822897772639">Catarina Soto Tonelli</a>. <b>Desenvolvimento de uma pasta vítrea moldável (glass clay) baseada em vidro reciclado para sinterização em baixa temperatura</b>. Dissertação (Mestrado em Design) - Universidade do Estado de Minas Gerais, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1370798140664840">Eliane Ayres</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>Dalton Abednego Jerónimo Simone. <b>Criação de produtos sustentáveis com materiais locais: Uma abordagem de design na cidade da Beira, Moçambique</b>. Dissertação (Mestrado em Mestrado em Design) - Universidade do Estado de Minas Gerais, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>Elias Tadeu Arantes Junior. <b>Influência dos parâmetros da eletrodeposição eletroforética catódica de óxido de grafeno em liga NiTi: Comportamento eletroquímico</b>. Iniciação científica (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, Universidade Federal de Minas Gerais. In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>Emanuel A. Pedro Inverno. <b>Novas tecnologias de processamento de espodumênio para produação de lítio</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4062848906639188">Versiane Albis Leão</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>Eustaquia de Antonio Mario. <b>A definir</b>. Tese (Doutorado em Engenharia Ambiental) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4062848906639188">Versiane Albis Leão</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>Felipe Souza de Oliveira. <b>Fronteiras da Tribologia: Ciência, Tecnologia e Divulgação</b>. Iniciação científica (Graduando em Engenharia Metalurgica) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/9945942332231660">Taíse Matte Manhabosco</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td><a href="https://lattes.cnpq.br/7291195004676609">Gabriel Leandro Alves da Silva</a>. <b>Dinâmica molecular de moléculas aromáticas suspensas em cachaça brasileira: interfaces, volatilização e percepção sensorial</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2373454332205980">Alan Barros de Oliveira</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>Gabriel Pedro de Oliveira. <b>Sofisticação sertaneja: Desenvolvimento de uma marca de bolsas a partir de reuso de couro sob uma perspectiva brasileira</b>. Trabalho de Conclusão de Curso (Graduação em Design de Produto) - Universidade do Estado de Minas Gerais, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td><a href="https://lattes.cnpq.br/1516799916565644">Gabriela Araújo Góis</a>. <b>Processos de extração e beneficiamento de elementos terras raras (ETRs) de minérios complexos e rejeitos minerais: estudo aplicado a carbonatitos do Rio Grande do Sul</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>17. &nbsp;</td> <td>GRAZIELA TANURE FERNANDINO GAMA. <b>Efeito da modificação alcalina da superfície do tecido na resistência ao descascamento de acabamentos compósitos impressos em 3D</b>. Iniciação científica (Graduando em Design de Produto) - Universidade do Estado de Minas Gerais, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1370798140664840">Eliane Ayres</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>18. &nbsp;</td> <td>Hamilton Portela. <b>Análise da adição de elementos de liga no aço manganês austemnítico usado em mandíbulas de britador primário</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/9945942332231660">Taíse Matte Manhabosco</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>19. &nbsp;</td> <td><a href="https://lattes.cnpq.br/5176423793487853">HANA HITOMI KOGA</a>. <b>Análise microestrutural e comportamento eletroquímico de partículas de SiC incorporadas em superfície de aço inoxidável duplex 2205 utilizando processo de soldagem ao arco elétrico com eletrodo de tungstênio e gás inerte (TIG)</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>20. &nbsp;</td> <td>Igor Ferreira Curvelo. <b>Uso de Simulação computacional para Análise de Problemas Práticos Ligados a Industria de Mineração.</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Fundação Gorceix. In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>21. &nbsp;</td> <td><a href="https://lattes.cnpq.br/8048546667482231">Igor Moreira de Carvalho</a>. <b>TRANSPORTE HIDRÁULICO DE REJEITOS ULTRAFINOS: ANÁLISE EXPERIMENTAL E NUMÉRICA PARA A VIABILIZAÇÃO DO BOMBEAMENTO EM LONGAS DISTÂNCIAS</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>22. &nbsp;</td> <td>Izabelle Juliana da Silva. <b>A definir</b>. Dissertação (Mestrado em Engenharia Ambiental) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4062848906639188">Versiane Albis Leão</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>23. &nbsp;</td> <td>Jeilce Maria Abreu dos Santos. <b>Desenvolvimento e avaliação tribocorrosiva de metal duro aplicado em pinos de moagem de alta pressão: efeito do tamanho de grão e das propriedades mecânicas</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>24. &nbsp;</td> <td>Kamila de Fatima Costa da Silva. <b>Monitoramento de Dilatação Térmica em Trilhos Longos Soldados com Sensores</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1219153096910234">Américo Tristão Bernardes</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>25. &nbsp;</td> <td>Kleber Brangança Ferreira Cota. <b>Comparação sulfato de sódio e de potássio como agentes sulfatantes de espodumênio</b>. Trabalho de Conclusão de Curso (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4062848906639188">Versiane Albis Leão</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>26. &nbsp;</td> <td>Lara candida Goncalves Ribeiro. <b>Uso de Seringa para Caracterização Eletroquímica de Ligas NiTi e Cu-NiTi em solução de saliva artificial</b>. Iniciação científica (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>27. &nbsp;</td> <td>Lara Viegas da Aparecida. <b>Da indústria do couro ao setor automobilístico: Exploração de potenciais aplicações de resíduos sólidos descartados</b>. Iniciação científica (Graduando em Design de Produto) - Universidade do Estado de Minas Gerais, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1370798140664840">Eliane Ayres</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>28. &nbsp;</td> <td>LEONAN RODRIGUES SENA. <b>Previsão de Estabilidade de Pilhas de Grãos por Meio de Aprendizado de Máquina</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1219153096910234">Américo Tristão Bernardes</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>29. &nbsp;</td> <td>Leonardo Andrade Costa Pereira. <b>Correlação entre o processo de lingotamento contínuo de placas e a ocorrência de segregação central detectada em chapas grossas de aço S355</b>. Trabalho de Conclusão de Curso (Graduação em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>30. &nbsp;</td> <td>Letícia de Castro Soares. <b>Tecnologia de microencapsulação de óleos essenciais para o desenvolvimento de têxtil funcional sustentável e ecológico</b>. Orientação de outra natureza. Universidade do Estado de Minas Gerais. Fundação de Amparo à Pesquisa do Estado de Minas Gerais, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1370798140664840">Eliane Ayres</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>31. &nbsp;</td> <td>Lira Motta Lima. <b>Tecnologia de microencapsulação de óleos essenciais para o desenvolvimento de têxtil funcional sustentável e ecológico</b>. Orientação de outra natureza. Universidade do Estado de Minas Gerais. Fundação de Amparo à Pesquisa do Estado de Minas Gerais, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1370798140664840">Eliane Ayres</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>32. &nbsp;</td> <td>Luana Gabriela Ferreira. <b>Implementação da técnica de Microscopia de Força Lateral no estudo de nanomateriais</b>. Iniciação científica (Graduando em Engenharia Civil) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4012812193989993">Ana Paula Moreira Barboza</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>33. &nbsp;</td> <td><a href="https://lattes.cnpq.br/6808622161967297">Magno Luiz Coelho de Moura</a>. <b>Caracterização e aplicação de fibras naturais do agronegócio brasileiro no desenvolvimento de produtos de design sustentável</b>. Tese (Doutorado em Doutorado em Design) - Universidade do Estado de Minas Gerais, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>34. &nbsp;</td> <td>Marcos Túlio Assunção de Freitas Cândido. <b>Inovação em processos de pigmentação têxtil: Desenvolvimento de biopigmentos do Alto Jequitinhonha e otimização digital via CLO3D</b>. Dissertação (Mestrado em Mestrado Profissional em Design de Moda) - Universidade do Estado de Minas Gerais, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>35. &nbsp;</td> <td>Mariana Luiza Souza da Silva Guimarães. <b>Análise da adição de elementos de liga no aço manganês austenítico usado em mandíbulas de britador primário</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/9945942332231660">Taíse Matte Manhabosco</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>36. &nbsp;</td> <td>Rafael Antônio Ferreira Martins. <b>Microscopia de Força Lateral como Ferramenta para Investigação Tribológica em Nanomateriais</b>. Dissertação (Mestrado em Física de Materiais) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. (Coorientador).. In&iacute;cio: 2026.<br><i><font size=-1>Orientadores: <a href="https://lattes.cnpq.br/4012812193989993">Ana Paula Moreira Barboza</a>, <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>37. &nbsp;</td> <td>Rafael de Oliveira. <b>A integração de ferramentas artificiais nas fases iniciais do Processo de Desenvolvimento de Produto (PDP): otimização da seleção de materiais para durabilidade programada e enfrentamento da obsolescência técnica</b>. Dissertação (Mestrado em Mestrado em Design) - Universidade do Estado de Minas Gerais, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>38. &nbsp;</td> <td><a href="https://lattes.cnpq.br/3671834043088328">Rafaela Pereira Alvarenga</a>. <b>Desenvolvimento de membranas baseadas em MOFs para processos sustentáveis de purificação de água: um estudo teórico-computacional</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2373454332205980">Alan Barros de Oliveira</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>39. &nbsp;</td> <td>Raquel de Carvalho Reis. <b>Influência da Corrosão na Formação e Desempenho de Revestimentos UV em Aço carbono Utilizando Modelagem Preditiva por Inteligência Artificial</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>40. &nbsp;</td> <td>Rayane Ventura de Paula. <b>Investigação das Interações entre Compostos Bioativos e Materiais 2D por Microscopia de Varredura por Sonda</b>. Iniciação científica (Graduando em Engenharia Civil) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4012812193989993">Ana Paula Moreira Barboza</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>41. &nbsp;</td> <td>RUBEM FRANCISCO SILVA BEZERRA. <b>.</b>. Dissertação (Mestrado em Química) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. (Coorientador).. In&iacute;cio: 2026.<br><i><font size=-1>Supervisor: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>42. &nbsp;</td> <td>Sofia Gonzaga Carvalho Silva. <b>Bolsas e Calçados como produtos de moda para expressão de gênero</b>. Trabalho de Conclusão de Curso (Graduação em Design de Produto) - Universidade do Estado de Minas Gerais, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>43. &nbsp;</td> <td>STHEFANNY FERREIRA SANTOS MARCELINO. <b>Anti-Corrosion and Mechanical Performance of Graphene Oxide and Reduced Graphene Oxide Multi-Layer Coatings Applied to Nickel-Titanium Via Dip-Coating</b>. Dissertação (Mestrado em Engenharia Metalúrgica e de Minas) - Universidade Federal de Minas Gerais, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. (Coorientador).. In&iacute;cio: 2026.<br><i><font size=-1>Supervisor: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>44. &nbsp;</td> <td>Thiago Peixoto dos Santos. <b>Entre partes e possibilidade: O calçado como sistema modular aplicado ao design contemporâneo</b>. Trabalho de Conclusão de Curso (Graduação em Design de Produto) - Universidade do Estado de Minas Gerais, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>45. &nbsp;</td> <td>Thiago Rodrigo Gomes da Silva. <b>Produção e caracterização de nanocompósitos para aglomeração a frio de finos de minério de ferro.</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. (Coorientador).. In&iacute;cio: 2026.<br><i><font size=-1>Orientadores: <a href="https://lattes.cnpq.br/4012812193989993">Ana Paula Moreira Barboza</a>, <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>46. &nbsp;</td> <td>Vasco Paulo Magosso. <b>Redução com hidrogênio e produção de óxido de zinco a partir de um concentrado de smithsonita</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/9004123547060623">Víctor de Andrade Alvarenga Oliveira</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>47. &nbsp;</td> <td><a href="https://lattes.cnpq.br/2560367868624009">Victor Cardoso Campideli</a>. <b>Estudo dos mecanismos tribocorrosivos no desgaste de corpos moedores de ferro fundido branco com diferentes razões Cr/C: Correlação de ensaios tribocorossivos obtidos em laboratorio com ensaio de moinho de bolas em escala piloto</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>48. &nbsp;</td> <td>VICTOR HUGO BATONI. <b>Uso de Potenciais Interatômicos com Aprendizado de Máquina para descrição de propriedades mecânicas e vibracionais de materiais</b>. Iniciação científica (Graduando em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>49. &nbsp;</td> <td>Érica Miranda Caetano. <b>Produção de Rutílo Sintético Via Redução por Hidrogênio e Ustulação Cloretanta</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/9004123547060623">Víctor de Andrade Alvarenga Oliveira</a>.</font></i></td></tr>
+            </table></div><div id="dv-year-2025"><h3 class="year">2025</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>Agatha Dornelas. <b>Gestão CT&I Fundações</b>. Dissertação (Mestrado em Programa de Pós Graduação em Inovação Tecnológica) - Universidade Federal de Minas Gerais, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7307092459450276">Marcelo Gomes Speziali</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Alice Silva Gonçalves. <b>Efeito da Taxa de Aquecimento Sobre a Austenitização, Refino Microestrutural e Propriedades Mecânicas de um Aço ao Boro</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>ALLAN EMANUEL DAS DORES TEIXEIRA SANTOS. <b>Modulação do Transporte Eletrônico por Contra-íons em Tintas de Nanotubos de Carbono e Nanocelulose Oxidada visando o desenvolvimento de Sensores de Salinidade</b>. Iniciação científica (Graduando em Engenharia Mecânica) - Universidade Federal de Ouro Preto, UFOP. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td><a href="https://lattes.cnpq.br/3472776217805625">Amílcar Plácido da Costa Xavier</a>. <b>O Design de produto mobiliário: Estudo de caso de pequenas indústrias de fabrico de mobiliários em Moçambique</b>. Tese (Doutorado em Doutorado em Design) - Universidade do Estado de Minas Gerais, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>Ana Flavia Xavier Tomas. <b>Melhoria do Rendimento Metálico e de Remoção de inclusões em Distribuidor de Lingotamento Contínuo de placas</b>. Iniciação científica (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>ANA LUISA BARBOSA MARTINS. <b>Estudo da interação intermolecular entre moléculas orgânicas e íons metálicos para aplicação em sensor químico fluorescente</b>. Iniciação científica (Graduando em Física) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>Andrew Siaw Dadson. <b>Estudos Cinéticos de Transformação Bainítica e Propriedades Mecânicas de Ligas da Classe SAE 6150</b>. Dissertação (Mestrado em ENGENHARIA MECÂNICA) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>Andreza de Jesus Siqueira. <b>Estudo de sensores a base de nanocelulose e nanotubos de carbono: mecanismos de transporte e aplicações</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. (Coorientador).. In&iacute;cio: 2025.<br><i><font size=-1>Orientadores: <a href="https://lattes.cnpq.br/4012812193989993">Ana Paula Moreira Barboza</a>, <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td><a href="https://lattes.cnpq.br/9722661161300262">Anselmo J Silva</a>. <b>Efeitos dos transbordamentos de conhecimento sobre inovações tecnológicas de Hidrogênio Verde (Provisório)</b>. Tese (Doutorado em INOVAÇÃO TECNOLÓGICA E BIOFARMACÊUTICA) - Universidade Federal de Minas Gerais, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7307092459450276">Marcelo Gomes Speziali</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>ARTHUR FELIPE ZITO SANTOS. <b>Estudo da interação entre moléculas orgânicas e materiais aceitadores de elétrons não-fulerenos para aplicação em células solares</b>. Iniciação científica (Graduando em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td><a href="https://lattes.cnpq.br/0942811221929455">Bethina Ribeiro Ruas</a>. <b>Previsão Teórica de Cristais Moleculares Orgânicos com Algoritmos Evolutivos</b>. Dissertação (Mestrado em Ciências) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>CAMILLY RAFAELA SANTOS. <b>Desenvolvimento de novas práticas de laboratório de ensino em química, baseadas na sustentabilidade e Economia Circular</b>. Iniciação científica (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7307092459450276">Marcelo Gomes Speziali</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td>Carina Rodrigues Santiago. <b>Efeito da polaridade e tipo de corrente sobre os parâmetros geométricos e metalúrgicos de cordões de solda obtidos com o processo SMAW em aço baixo carbono</b>. Iniciação científica (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/3405298711596512">Rodrigo Rangel Porcaro</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>Claudinei Roberto Guimarães. <b>Caracterização microestrutural e tenacidade à fratura de corpos moedores para moagem de minérios de ferro itabiríticos</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1995142616892313">Leonardo Barbosa Godefroid</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>Daynara Faustina Moreira de Oliveira. <b>Avaliação dos Efeitos de Diferentes Ciclos Térmicos sobre a Fração e Morfologia de Constituintes M-A na Região de Crescimento de Grãos Reaquecida Intercriticamente em um Aço API 5L-X80 e Seus Impactos sobre as Propriedades Mecânicas ? Simulações Numéricas e Físicas</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/3405298711596512">Rodrigo Rangel Porcaro</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td><a href="https://lattes.cnpq.br/0462565031669474">Dione da Costa Oliveira</a>. <b>Caracterização de Derivados inéditos de Benzazól e suas Interações com Aceitadores de Carga para Aplicação em Dispositivos Fotovoltáicos Orgânicos</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>17. &nbsp;</td> <td>ELAINE CRISTINA AMANCIO MOREIRA. <b>Tribologia: Estudo e Divulgação</b>. Iniciação científica (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/9945942332231660">Taíse Matte Manhabosco</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>18. &nbsp;</td> <td><a href="https://lattes.cnpq.br/7014168702313216">Eric Bartulici</a>. <b>Análise da Evolução Microestrutural, Comportamento Mecânico e Resistência ao Desgaste Abrasivo de um Aço Microligado ao Nb Processado por Deformação Plástica Severa.</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/9945942332231660">Taíse Matte Manhabosco</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>19. &nbsp;</td> <td>ESNEIDER ENRIQUE CABRERA DÍAZ. <b>Estudo de moléculas auto-organizadas em materiais bidimensionais magnéticos</b>. Dissertação (Mestrado em Ciências) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>20. &nbsp;</td> <td><a href="https://lattes.cnpq.br/2185019959111136">Fellipe Augusto Santiago da Silva</a>. <b>Estudo de moléculas auto-organizadas em materiais bidimensionais</b>. Dissertação (Mestrado em Ciências) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>21. &nbsp;</td> <td><a href="https://lattes.cnpq.br/7071168201328013">Gabriel Carvalho Matoso</a>. <b>Desenvolvimento de Ferramenta para Simulação de Riscos de Ruptura de Taludes</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1219153096910234">Américo Tristão Bernardes</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>22. &nbsp;</td> <td>GABRIEL HIDEKI NAKANO PEREIRA DA SILVA. <b>Síntese e caracterização de nanomateriais para integração em compósitos políméricos e em revestimentos metálicos obtidos por eletrodeposição</b>. Iniciação científica (Graduando em Química) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/9945942332231660">Taíse Matte Manhabosco</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>23. &nbsp;</td> <td><a href="https://lattes.cnpq.br/4642699901788940">Gabriel Martins Chaves Barbosa</a>. <b>Efeito das Condições de Austenitização Intercrítica Sobre as Transformações de Fase sob Resfriamento Contínuo de um Aço Dual-Phase Baixo Carbono</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>24. &nbsp;</td> <td>Guilherme Duarte Moreira. <b>Efeito do tratamento térmico a laser localizado sobre a tenacidade a fratura e resistência à fadiga em aço inoxidável superduplex do tipo UNS S32750 utilizado em tubos formadores de espiras para laminação de fio máquina</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>25. &nbsp;</td> <td>Gustavo Henrique SIlvestre. <b></b>. Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais.. In&iacute;cio: 2025.<br><i><font size=-1>Supervisor: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>26. &nbsp;</td> <td>Heitor Vieira Damaso. <b>Desenvolvimento de Sistema de Automação e Supervisório de Baixo Custo para uma Máquina Universal de Ensaios Mecânicos</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>27. &nbsp;</td> <td>JOAO VICTOR DE ALMEIDA FIGUEIREDO. <b>Modelagem por Dinâmica Molecular de Azul da Prússia para Avanços em Dessalinização Sustentável</b>. Iniciação científica (Graduando em Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2373454332205980">Alan Barros de Oliveira</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>28. &nbsp;</td> <td>Jose Gabriel Andrade Rodrigues Souza. <b>Desenvolvimento de Simulação Fluidodinâmica de Distribuidor de Lingotamento Contínuo Utilizando Software de Código Aberto OpenFOAM®</b>. Iniciação científica (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>29. &nbsp;</td> <td><a href="https://lattes.cnpq.br/4343255308206818">Júlia Megale</a>. <b>Mapeamento estratégico de tecnologias antibióticas e desenvolvimento de metodologias de análise em prospecção (provisório)</b>. Dissertação (Mestrado em INOVAÇÃO BIOFARMACÊUTICA) - Universidade Federal de Minas Gerais, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7307092459450276">Marcelo Gomes Speziali</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>30. &nbsp;</td> <td>Laila Andrade Franco de Moraes. <b>Métodos e processos sustentáveis aplicáveis ao design de moda e estamparia</b>. Dissertação (Mestrado em Mestrado em Design) - Universidade do Estado de Minas Gerais, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>31. &nbsp;</td> <td>Lavínia Maria da Silva. <b>Caracterização Macro e Microestrutural de Chapas Grossas para Aplicação na Indústria Eólica</b>. Iniciação científica (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Gerdau Ouro Branco. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>32. &nbsp;</td> <td>Leonardo da Silva Araújo. <b>Estudo de dissulfeto de molibdênio utilizando espectroscopia Raman.</b>. Dissertação (Mestrado em Física de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. (Coorientador).. In&iacute;cio: 2025.<br><i><font size=-1>Supervisor: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>33. &nbsp;</td> <td>Letícia Dias Batista. <b>Influência da microestrutura de materiais cerâmicos comerciais no comportamento tribológico em ensaios de desgaste abrasivo em laboratório</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>34. &nbsp;</td> <td>Ludmila Marotta Mapa. <b>Avanços na Manutenção dentro da Mineração: Aplicação da Engenharia de Materiais e Escaneamento 3D para Teste de Novos Materiais</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8915679278888857">Fernando Gabriel da Silva Araujo</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>35. &nbsp;</td> <td><a href="https://lattes.cnpq.br/5978277277690990">Marcelo Henrique Tavares Gomes</a>. <b>Materiais bidimensionais sob pressão na presença de defeitos substitucionais por Primeiros Princípios</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>36. &nbsp;</td> <td><a href="https://lattes.cnpq.br/5378034987226859">Marcus Vinícius da Silva Gonçalves</a>. <b>Estudo da interação entre moléculas doadoras e aceitadoras de elétrons (fulerenos e não-fulerenos) para aplicação em células solares orgânicas</b>. Dissertação (Mestrado em Ciências) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>37. &nbsp;</td> <td><a href="https://lattes.cnpq.br/4584122572270447">Maria Eduarda dos Anjos Coutinho</a>. <b>Jóias do Cerrado: Design Ecológico e Narrativas da Flora Ameaçada em Prata Reciclada de Chapas de Raios-X</b>. Dissertação (Mestrado em Design) - Universidade do Estado de Minas Gerais, Conselho Nacional de Desenvolvimento Científico e Tecnológico. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1370798140664840">Eliane Ayres</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>38. &nbsp;</td> <td><a href="https://lattes.cnpq.br/2839995458478694">Maria Luiza Caus Mesquita</a>. <b>MALEABILIDADE DE MADEIRAS DE REFLORESTAMENTO NA INDÚSTRIA MOVELEIRA: POTENCIAL DO MOGNO AFRICANO NO DESIGN CONTEMPORÂNEO DE MOBILIÁRIO</b>. Dissertação (Mestrado em Design) - Universidade do Estado de Minas Gerais, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1370798140664840">Eliane Ayres</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>39. &nbsp;</td> <td><a href="https://lattes.cnpq.br/5666531784970432">MATHEUS DOS SANTOS BARBOSA</a>. <b>Aplicação da Teoria do Funcional da Densidade para a Análise de Problemas Práticos Ligados a Industria de Mineração</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>40. &nbsp;</td> <td><a href="https://lattes.cnpq.br/9089482703457334">Matheus Mello Pereira</a>. <b>Mineração urbana aplicada a baterias LiB</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4062848906639188">Versiane Albis Leão</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>41. &nbsp;</td> <td><a href="https://lattes.cnpq.br/0182973823265105">Natália Aparecida Barbosa Pimenta</a>. <b>Estudo da recuperação de ferro proveniente da lama de rejeitos produzida durante o processo de beneficiamento de minério de ferro</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>42. &nbsp;</td> <td><a href="https://lattes.cnpq.br/3017082718743319">Natália Zinato</a>. <b>Caracterização sistemática de falhas por desgaste em correias transportadoras de minério de ferro e correlação com ensaios de laboratório</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>43. &nbsp;</td> <td>RAMON DE FREITAS BRUM. <b>Influência das Propriedades Térmicas de Substratos de Suporte na Síntese CVD de MoS₂ Monocamada.</b>. Iniciação científica (Graduando em Engenharia Mecânica) - Universidade Federal de Ouro Preto, UFOP. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>44. &nbsp;</td> <td>Raquel Macedo de Castro. <b>Caracterização de Escórias da Produção de Estanho Visando Recuperação de Nióbio de Tântalo</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>45. &nbsp;</td> <td>Ricardo Abrahão Júnior. <b>CARACTERIZAÇÃO ELETROQUÍMICA DE LIGAS DE MEMÓRIA DE FORMA COBRE-NiTi EM SOLUÇÃO DE SALIVA ARTIFICIAL FLUORETADA</b>. Dissertação (Mestrado em Engenharia Metalúrgica e de Minas) - Universidade Federal de Minas Gerais. (Coorientador)., . In&iacute;cio: 2025.<br><i><font size=-1>Supervisor: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>46. &nbsp;</td> <td><a href="https://lattes.cnpq.br/9160981181086127">Ricardo Porto</a>. <b>Efeito de parâmetros de laminação a quente na microestrutura e na tenacidade à fratura de um aço de ultra alta resistência mecânica</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1995142616892313">Leonardo Barbosa Godefroid</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>47. &nbsp;</td> <td>Rosana Aparecida Machado Souto. <b>Tecnoarte: Rotas para obtenção de revestimentos iridescentes nacarados e gemas sinterizadas a frio para joias</b>. Orientação de outra natureza. Universidade do Estado de Minas Gerais. Fundação de Amparo à Pesquisa do Estado de Minas Gerais, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4629729793297288">Antonio Valadao Cardoso</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>48. &nbsp;</td> <td>Sophia Mendes. <b>Gestão CT&I em saúde e Hospitais</b>. Dissertação (Mestrado em Programa de Pós Graduação em Inovação Tecnológica) - Universidade Federal de Minas Gerais, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7307092459450276">Marcelo Gomes Speziali</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>49. &nbsp;</td> <td>Tainan Ferreira Muniz. <b>Avaliação dos efeitos da soldagem por centelhamento na estrutura e propagação de trinca por fadiga de trilhos ferroviários com análise experimental e numérica</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. (Coorientador).. In&iacute;cio: 2025.<br><i><font size=-1>Supervisor: <a href="https://lattes.cnpq.br/3405298711596512">Rodrigo Rangel Porcaro</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>50. &nbsp;</td> <td>Tharcila Estela. <b>Aceleração de Deeptechs em Materiais Avançados: um estudo sobre desafios e modelos efetivos</b>. Dissertação (Mestrado em Curso de Pós Graduação em Inovação Biofarmacêutica) - Universidade Federal de Minas Gerais, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7307092459450276">Marcelo Gomes Speziali</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>51. &nbsp;</td> <td>Willian Melo. <b>Tecnoarte: Rotas para obtenção de revestimentos iridescentes nacarados e gemas sinterizadas a frio para joias</b>. Orientação de outra natureza. Universidade do Estado de Minas Gerais. Fundação de Amparo à Pesquisa do Estado de Minas Gerais, . In&iacute;cio: 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4629729793297288">Antonio Valadao Cardoso</a>.</font></i></td></tr>
+            </table></div><div id="dv-year-2024"><h3 class="year">2024</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>Alessandra Rocha Luz. <b>Desenvolvimento de calçados e palmilhas personalizados para prevenção de lesões em pés diabéticos</b>. Tese (Doutorado em Escola de Medicina) - Universidade Federal de Mins Gerais. (Coorientador)., . In&iacute;cio: 2024.<br><i><font size=-1>Supervisor: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Carla Regina Ferreira. <b>Efeito da Composição Química e de Múltiplas Têmperas sobre a Evolução Microestrutural e o Desempenho Mecânico em Tração de um Aço SAE 6150</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto. (Coorientador)., . In&iacute;cio: 2024.<br><i><font size=-1>Supervisor: <a href="https://lattes.cnpq.br/3405298711596512">Rodrigo Rangel Porcaro</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>David Hebert Vieira. <b>ESTUDO DA EFICIÊNCIA DE COMBUSTÃO DE UM CO-INJEÇÃO DE GÁS HIDROGÊNIO E BIOMASSA</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>Ely da Silva Araújo Júnior. <b>Otimização das configurações dos injetores de oxigênio do EOF para a redução de perdas metálicas pelo barrado</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td><a href="https://lattes.cnpq.br/5210325371713848">FRANK GOMES BERNARDES</a>. <b>ELEMENTOS CRÍTICOS NA MATURIDADE DE NÚCLEOS DE INOVAÇÃO TECNOLÓGICA: A TRAJETÓRIA DE NÚCLEOS CONSOLIDADOS?</b>. Tese (Doutorado em INOVAÇÃO TECNOLÓGICA E BIOFARMACÊUTICA) - Universidade Federal de Minas Gerais, . In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7307092459450276">Marcelo Gomes Speziali</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td><a href="https://lattes.cnpq.br/5441496263535942">Gabriela Freitas Sampaio</a>. <b>Remoção de sulfato por resinas de troca-iônica</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4062848906639188">Versiane Albis Leão</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td><a href="https://lattes.cnpq.br/3827160366747701">Geovane de Assis Faria</a>. <b>Efeitos de Múltiplos Ciclos Térmicos de Soldagem em Chapas Grossas de Aço API 5L X80 sobre a Formação de Constituinte MA e a Tenacidade à Fratura e Fadiga ? Modelamento Físico e Avaliação em Juntas Soldadas Reais</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/3405298711596512">Rodrigo Rangel Porcaro</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>GERSON DOS SANTOS. <b>Estudo das propriedades optoteletrônicas das Moléculas Isoxazolina para Aplicação em Dispositivos Orgânicos</b>. Dissertação (Mestrado em Ciências) - Universidade Federal de Ouro Preto. (Coorientador)., . In&iacute;cio: 2024.<br><i><font size=-1>Supervisor: <a href="https://lattes.cnpq.br/0873693558323059">Thiago Cazati</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>Gilberson Mendonça Storck de Melo. <b>Melhoria da Limpidez e do Rendimento Metálico em Distribuidor durante Lingotamento de Aços Críticos Aplicados à Produtos Planos</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7172124269609011">Johne Jesus Mol Peixoto</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>Isabella Melano. <b>Design de Moda e Jornalismo: o retrato da mulher no período entreguerras</b>. Dissertação (Mestrado em Mestrado em Design) - Universidade do Estado de Minas Gerais, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. (Coorientador).. In&iacute;cio: 2024.<br><i><font size=-1>Supervisor: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>Ivan Assunção Murad Ramos. <b>Otimização das Propriedades Termoelétricas do Titanato de Estrôncio via Engenharia de Defeitos: SrTiO3 dopado com Co</b>. Dissertação (Mestrado em Química) - Universidade Federal de Alfenas, . In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1642083834158700">Hugo Bonette de Carvalho</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>Janaína Coelho Araújo. <b>Estratégias de Comunicação Núcleos de Inovação em Universidades Federais Brasileiras</b>. Tese (Doutorado em INOVAÇÃO TECNOLÓGICA E BIOFARMACÊUTICA) - Universidade Federal de Minas Gerais, . In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7307092459450276">Marcelo Gomes Speziali</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td><a href="https://lattes.cnpq.br/4389299921044053">Juliana Maria Silva Teles</a>. <b>Deposição e Caracterização de Revestimentos Compósitos de Hidroxiapatita e Nanominerais Inéditos</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/9945942332231660">Taíse Matte Manhabosco</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>LEONARDO VILLEGAS LELOVSKY. <b></b>. Universidade Federal de Ouro Preto., . In&iacute;cio: 2024.<br><i><font size=-1>Supervisor: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td>Ludmila Fernandes Lapertosa Varella. <b>Impacto dos Materiais de Vestuário no Comportamento de Consumo: Uma Comparação entre Fibras Naturais e Químicas</b>. Dissertação (Mestrado em Mestrado em Design) - Universidade do Estado de Minas Gerais, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>16. &nbsp;</td> <td>Mariah Maíra de Carvalho Dias Leite*. <b>Food design</b>. Tese (Doutorado em Design) - Universidade do Estado de Minas Gerais, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1848076566428564">Rita de Castro Engler</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>17. &nbsp;</td> <td><a href="https://lattes.cnpq.br/0462714864769961">Marília Shibayama</a>. <b>A percepção de pesquisadores/inventores sobre proteção e transferência de tecnologia nas ICTs da região norte do Brasil</b>. Tese (Doutorado em INOVAÇÃO TECNOLÓGICA E BIOFARMACÊUTICA) - Universidade Federal de Minas Gerais, . In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7307092459450276">Marcelo Gomes Speziali</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>18. &nbsp;</td> <td>Matheus dos Santos Barbosa. <b>Modelagem Computacional Aplicada a Processos de Mineração</b>. Dissertação (Mestrado em Ciências) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. (Coorientador).. In&iacute;cio: 2024.<br><i><font size=-1>Supervisor: <a href="https://lattes.cnpq.br/2373454332205980">Alan Barros de Oliveira</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>19. &nbsp;</td> <td><a href="https://lattes.cnpq.br/6206578986621723">Nathália Bastos</a>. <b>Título provisório - Modelo de NIT e sustentabilidade</b>. Tese (Doutorado em INOVAÇÃO TECNOLÓGICA E BIOFARMACÊUTICA) - Universidade Federal de Minas Gerais, . In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7307092459450276">Marcelo Gomes Speziali</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>20. &nbsp;</td> <td>Natália Ladeira. <b>Metodologia para avaliação do potencial de inovação de estratégias de descarbonização industrial em cenário nacional</b>. Tese (Doutorado em INOVAÇÃO TECNOLÓGICA E BIOFARMACÊUTICA) - Universidade Federal de Minas Gerais. (Coorientador)., . In&iacute;cio: 2024.<br><i><font size=-1>Supervisor: <a href="https://lattes.cnpq.br/7307092459450276">Marcelo Gomes Speziali</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>21. &nbsp;</td> <td><a href="https://lattes.cnpq.br/2376737719253826">Paulo Henrique Lourenço Santos</a>. <b>Título provisório - Matchmakings prévios ao licenciamento da Propriedade Intelectual</b>. Dissertação (Mestrado em Programa de Pós Graduação em Inovação Tecnológica) - Universidade Federal de Minas Gerais, . In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7307092459450276">Marcelo Gomes Speziali</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>22. &nbsp;</td> <td>Paulo Sinisterra. <b>Desenvolvimento de Modelos Preditivos para Avaliação de Patentes e Previsões de Sucesso de Novas Tecnologias</b>. Dissertação (Mestrado em Programa de Pós Graduação em Inovação Tecnológica) - Universidade Federal de Minas Gerais, . In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7307092459450276">Marcelo Gomes Speziali</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>23. &nbsp;</td> <td>Paulo Sérgio Moreira. <b>Desenvolvimento de Métodos de Contraste Químico e por Oxidação para Revelação de Grão Austenítico Prévio e Colônias de Perlita em Aços</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>24. &nbsp;</td> <td><a href="https://lattes.cnpq.br/8546388364126837">Rafael Marazzi</a>. <b>Título provisório - Modelo de NIT regional</b>. Tese (Doutorado em INOVAÇÃO TECNOLÓGICA E BIOFARMACÊUTICA) - Universidade Federal de Minas Gerais, . In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7307092459450276">Marcelo Gomes Speziali</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>25. &nbsp;</td> <td>Renato Alves Pereira. <b>Estudo computacional da estrutura de nanopartículas de fosfeto de cobre</b>. Tese (Doutorado em Modelagem Matemática e Computacional) - Centro Federal de Educação Tecnológica de Minas Gerais. (Coorientador)., . In&iacute;cio: 2024.<br><i><font size=-1>Supervisor: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>26. &nbsp;</td> <td>Rosana Aparecida Machado Souto. <b>Sinterização por microondas de jóias utilizando reciclagem de materiais</b>. Iniciação científica (Graduando em Design de Produto) - Universidade do Estado de Minas Gerais, . In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4629729793297288">Antonio Valadao Cardoso</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>27. &nbsp;</td> <td>Salvatore Giuliano Peixoto Tropia de Abreu. <b>Efeitos da técnica de resfriamento ativo por quase-imersão sobre a microestrutura e as propriedades mecânicas de um aço ao carbono (ER70S-6) e de um aço inoxidável austenítico (ABNT 316L) obtidos por manufatura aditiva WAAM</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/3405298711596512">Rodrigo Rangel Porcaro</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>28. &nbsp;</td> <td>Samir Souza Leão. <b>Efeito da Substituição Parcial de Mn por Nb Sobre a Evolução Microestrutural e Propriedades Mecânicas de um Aço ARBL da Classe 345MPa Termomecanicamente Processado</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>29. &nbsp;</td> <td>Sidney Cardoso de Araújo. <b>Influência de tratamentos térmicos e anisotropia na tenacidade à fratura e na resistência ao crescimento de trinca por fadiga de uma liga AlSi10Mg A360.0 (ASTM B85)fabricada por manufatura aditiva (PBF-LB).</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1995142616892313">Leonardo Barbosa Godefroid</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>30. &nbsp;</td> <td>Sávio Xavier Lucas. <b>Design, território e emancipação: o papel do design vernacular na construção de tecnologias sociais em Belo Horizonte"</b>. Dissertação (Mestrado em Design) - Universidade do Estado de Minas Gerais, . In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1848076566428564">Rita de Castro Engler</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>31. &nbsp;</td> <td>Thiago Diniz Rodrigues. <b>Caracterização do comportamento em fadiga de um aço S355 aplicado em torres eólicas</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/3405298711596512">Rodrigo Rangel Porcaro</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>32. &nbsp;</td> <td>Tiago Paixão. <b>Crescimento do Mercado de Cannabis e a contribuicao da prospecção tecnológica</b>. Dissertação (Mestrado em Programa de Pós Graduação em Inovação Tecnológica) - Universidade Federal de Minas Gerais, . In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7307092459450276">Marcelo Gomes Speziali</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>33. &nbsp;</td> <td><a href="https://lattes.cnpq.br/1381980427820735">Érica de Paula Mineiro</a>. <b>Efeito do envelhecimento por deformação na tenacidade à fratura da ZTA simulada de aço estrutural para vasos de pressão</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/3405298711596512">Rodrigo Rangel Porcaro</a>.</font></i></td></tr>
+            </table></div><div id="dv-year-2023"><h3 class="year">2023</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>Adriana Castelo Branco Ponte de Araujo. <b>Inovação no design de cobogós</b>. Tese (Doutorado em Design) - Universidade do Estado de Minas Gerais, . In&iacute;cio: 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1848076566428564">Rita de Castro Engler</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td><a href="https://lattes.cnpq.br/0573267798134985">Ana Paula de Oliveira da Silva</a>. <b>Uso do Blend de Agregado Siderúrgico (Escória LD) e Lama da ETA em Aterros: Avaliação da Viabilidade Técnica e do Desempenho Ambiental</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td><a href="https://lattes.cnpq.br/2379266923949128">Bárbara Gosziniak Paiva</a>. <b>Polímeros emissores de luz como elemento ativo de sensores colorimétricos aplicados ao tratamento de água</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0576192110271130">Rodrigo Fernando Bianchi</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>Cristopher Antonio Martins de Moura. <b>PROPRIEDADES DE CIMENTOS LC3 PRODUZIDOS COM ARGILAS CAULINÍTICAS CALCINADAS, RESÍDUOS DE CERÂMICA VERMELHA E DE PEDRA-SABÃO OBTIDOS EM OURO PRETO, MINAS GERAIS, BRASIL?</b>. Tese (Doutorado em Engenharia Civil) - Universidade Federal de Ouro Preto. (Coorientador)., . In&iacute;cio: 2023.<br><i><font size=-1>Supervisor: <a href="https://lattes.cnpq.br/9945942332231660">Taíse Matte Manhabosco</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>Ermani Vinícius de Oliveira Lima. <b>Proposição de Rotas de Tratamento Térmico de Têmpera e Partição em Aços para Aplicação em Molas do Segmento Automotivo</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0954824992144106">Geraldo Lúcio de Faria</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>GABRIELLE JUSTINIANO SIMPLICIO. <b>Estudo Reológico da Lama de Rejeitos Industriais contendo Ferro</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7624637352404779">Claudio Gouvea dos Santos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>Hiago Maurilio Lopes Carvalho. <b>Estados eletrônicos topológicos gerados por defeitos topológicos da rede (discordâncias cristalinas e contornios de grão) em isolantes topológicos 2D e 3D.</b>. Tese (Doutorado em Física) - Universidade Federal de Minas Gerais. (Coorientador)., . In&iacute;cio: 2023.<br><i><font size=-1>Supervisor: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td><a href="https://lattes.cnpq.br/4076681404697761">Kilder Campos Fagundes</a>. <b>Efeitos da trajetória de deposição pelo processo de deposição a arco na tenacidade à fratura e no crescimento de trinca por fadiga de um aço inoxidável austenítico do tipo AISI 302</b>. Dissertação (Mestrado em ENGENHARIA MECÂNICA) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1995142616892313">Leonardo Barbosa Godefroid</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td><a href="https://lattes.cnpq.br/8580985583116539">Paulo Henrique Xavier</a>. <b>Desenvolvimento de óxidos termoelétricos: Abordagem experimental e teórica</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1642083834158700">Hugo Bonette de Carvalho</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td><a href="https://lattes.cnpq.br/6675597084597927">Rogerio Lopes Vieira Cesar</a>. <b>smart homes</b>. Tese (Doutorado em Design) - Universidade do Estado de Minas Gerais, . In&iacute;cio: 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1848076566428564">Rita de Castro Engler</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>Suzy Carvalho Oliveira. <b>Estratégia fototerápica para o controle do Schistosoma mansoni e do granuloma hepático/intestinal em modelo experimental</b>. Tese (Doutorado em Infectologia e Medicina Tropical) - Universidade Federal de Minas Gerais. (Coorientador)., . In&iacute;cio: 2023.<br><i><font size=-1>Supervisor: <a href="https://lattes.cnpq.br/0576192110271130">Rodrigo Fernando Bianchi</a>.</font></i></td></tr>
+            </table></div><div id="dv-year-2022"><h3 class="year">2022</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td><a href="https://lattes.cnpq.br/6453214502304942">Akemi Ishihara Alessi</a>. <b>Papel fibroso à base de fibras de açaí (Euterpe oleracea Mart.) impermeável e ecológico para embalagens verdes</b>. Tese (Doutorado em Doutorado em Design) - Universidade do Estado de Minas Gerais, . In&iacute;cio: 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1370798140664840">Eliane Ayres</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Charles Eduardo Dourado de Oliveira. <b>ESPUMAS FENÓLICAS À BASE DE ALCATRÃO VEGETAL: SÍNTESE, CARACTERIZAÇÃO E DESENVOLVIMENTO DE APLICAÇÕES</b>. Iniciação científica (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. In&iacute;cio: 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7624637352404779">Claudio Gouvea dos Santos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>Daniel Moras Silva. <b>Comportamento de impurezas na recuperação de terras-raras obtidas em rota de sulfatação</b>. Orientação de outra natureza. Universidade Federal de Ouro Preto, . In&iacute;cio: 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4062848906639188">Versiane Albis Leão</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>Dimas Pereira Coura. <b>Modelo Físico-Estatístico de Interação entre Partículas Aplicado à Otimização de Mistura de Carvão para Coqueificação</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td><a href="https://lattes.cnpq.br/8394030411797680">Gilton Martins Lopes Júnior</a>. <b>Estudo e caracterização de sensores colorimetricos para radiação UVC</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. In&iacute;cio: 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/0576192110271130">Rodrigo Fernando Bianchi</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>Henrique Carvalho da Silva Coelho. <b>Redução carbotérmica de minérios lateríticos de níquel</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/9004123547060623">Víctor de Andrade Alvarenga Oliveira</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>Igor Jurandi Ubaldo Viana Pereira. <b>Sinterização de minério goethitico de ferro</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/9004123547060623">Víctor de Andrade Alvarenga Oliveira</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>Juliana Oliveira Guimarães. empreendedorismo na 3a. <b>idade</b>. Tese (Doutorado em Design) - Universidade do Estado de Minas Gerais, . In&iacute;cio: 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1848076566428564">Rita de Castro Engler</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>LAYS AUGUSTA LEAL CARVALHO. <b>Aplicação de materiais refratários de sílica na Coqueria</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7360474381329605">Paulo Santos Assis</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td><a href="https://lattes.cnpq.br/0807498928071779">Martin Elias Torregrosa Delucchi</a>. <b>Remoção de Mn por microalgas em reatores contínuos</b>. Tese (Doutorado em Engenharia Ambiental) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. In&iacute;cio: 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4062848906639188">Versiane Albis Leão</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>11. &nbsp;</td> <td>Matheus Dias dos Passos Silva. <b>ESPUMAS FENÓLICAS À BASE DE ALCATRÃO VEGETAL: SÍNTESE, CARACTERIZAÇÃO E DESENVOLVIMENTO DE APLICAÇÕES</b>. Iniciação científica (Graduando em Química Industrial) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. In&iacute;cio: 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7624637352404779">Claudio Gouvea dos Santos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>12. &nbsp;</td> <td>Matheus Henrique Simplício Pereira. <b>Estudo da redução de minério laterítico de níquel</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/9004123547060623">Víctor de Andrade Alvarenga Oliveira</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>13. &nbsp;</td> <td><a href="https://lattes.cnpq.br/6829427090908099">RAFAEL APARECIDO PEREIRA</a>. <b>Avaliação da extração de lítio do minério de espodumênio via ustulação cloretante</b>. Dissertação (Mestrado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4062848906639188">Versiane Albis Leão</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>14. &nbsp;</td> <td>Renata de Castro Pires. <b>Suporte analítico as atividades de pesquisa em hidrometalurgia</b>. Orientação de outra natureza. Universidade Federal de Ouro Preto. Conselho Nacional de Desenvolvimento Científico e Tecnológico, . In&iacute;cio: 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4062848906639188">Versiane Albis Leão</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>15. &nbsp;</td> <td><a href="https://lattes.cnpq.br/1180191347732982">Vinícius Justino Pimenta</a>. <b>Otimização das propriedades multifuncionais do TiO2 via dopagem.</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1642083834158700">Hugo Bonette de Carvalho</a>.</font></i></td></tr>
+            </table></div><div id="dv-year-2021"><h3 class="year">2021</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td><a href="https://lattes.cnpq.br/9560621782404376">Douglas Filipe Galvão</a>. <b>ESTUDO DO COMPORTAMENTO MECÂNICO DE LIGAS DE MAGNÉSIO PRODUZIDAS POR FUSÃO SELETIVA A LASER (SLM)</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7624637352404779">Claudio Gouvea dos Santos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td><a href="https://lattes.cnpq.br/0176774870554117">Gabriela Delcin Pires</a>. <b>Contribuições do Design para o desenvolvimento do turismo sustentável</b>. Tese (Doutorado em Design) - Universidade do Estado de Minas Gerais, . In&iacute;cio: 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1848076566428564">Rita de Castro Engler</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td><a href="https://lattes.cnpq.br/0644076759149978">JEFFERSON DE PAULA</a>. <b>Grafeno como reforço de concreto de alto desempenho</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8915679278888857">Fernando Gabriel da Silva Araujo</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>Lucas Prosperi Rodrigues. <b>Ustulação Cloretante de Minérios Lateríticos com Cloretos Metálicos</b>. Iniciação científica (Graduando em Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. In&iacute;cio: 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/9004123547060623">Víctor de Andrade Alvarenga Oliveira</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td><a href="https://lattes.cnpq.br/0538422169429337">Mariana Babilone de Souza Ferreira</a>. <b>Viabilidade da utilização de um polímero superabsorvente visando a melhoria do processamento de minério de ferro</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7624637352404779">Claudio Gouvea dos Santos</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td><a href="https://lattes.cnpq.br/3748812246252624">Rodrigo Ferreira Gomes</a>. <b>Extração de lítio de fontes primárias e secundárias</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. In&iacute;cio: 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4062848906639188">Versiane Albis Leão</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td><a href="https://lattes.cnpq.br/2014529480773527">THIAGO DE SOUZA AMARAL</a>. <b>Processamento de Rejeitos da Cadeia do Nióbio</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, . In&iacute;cio: 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8915679278888857">Fernando Gabriel da Silva Araujo</a>.</font></i></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>Wflander Martins de Souza. <b>Utilização de uma plataforma microfluidica para estudo de propriedades de filmes de nanocelulose</b>. Tese (Doutorado em Engenharia de Materiais) - Universidade Federal de Ouro Preto, Coordenação de Aperfeiçoamento de Pessoal de Nível Superior. (Coorientador).. In&iacute;cio: 2021.<br><i><font size=-1>Orientadores: <a href="https://lattes.cnpq.br/4012812193989993">Ana Paula Moreira Barboza</a>, <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></i></td></tr>
+            </table></div>
+                    </table>
+                <br><p><br>(*) Relatório criado com produções desde 2021 até 2026
+<br>Data de processamento: 31/08/2026 22:11:56<br>         <div id="footer">         Relatório gerado por <a href="https://scriptlattes.sourceforge.net/">scriptLattes V9</a>.         Os resultados podem ser afetados por possíveis falhas decorrentes de inconsistências no preenchimento dos Currículos Lattes. E-mail de contato: <a href="mailto:matheusmatos@ufop.edu.br">matheusmatos@ufop.edu.br</a>         </div> </body></html>
+              

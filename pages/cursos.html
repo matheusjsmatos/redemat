@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursos e Estrutura Curricular — REDEMAT | UFOP · UEMG</title>
+<meta name="description" content="Mestrado em Engenharia de Materiais da REDEMAT: estrutura curricular, créditos, disciplinas do núcleo comum e específicas por linha. Proposta de Doutorado em elaboração.">
+<link rel="canonical" href="https://redemat.ufop.br/cursos">
+<link rel="icon" href="../assets/img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<style>
+.course { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; }
+.course-bar { height: 5px; }
+.course-in { padding: 1.75rem; }
+.course-tag { display: inline-block; font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .09em; padding: .22rem .6rem; border-radius: 4px; margin-bottom: .8rem; }
+.course h3 { font-family: var(--f-serif); font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: .3rem; }
+.course .sub { font-size: .85rem; color: var(--text-mid); margin-bottom: 1.5rem; }
+.spec { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.spec-item { background: var(--bg); border-radius: var(--r-sm); padding: .8rem .95rem; }
+.spec-item dt { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--text-soft); margin-bottom: .2rem; }
+.spec-item dd { font-size: .92rem; font-weight: 700; color: var(--navy); }
+.disc-group { border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; background: var(--surface); }
+.disc-head { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: .75rem; flex-wrap: wrap; }
+.disc-head h3 { font-size: .93rem; font-weight: 700; color: var(--navy); line-height: 1.35; margin: 0; }
+.disc-list li { padding: .7rem 1.25rem; border-bottom: 1px solid var(--border); font-size: .86rem; color: var(--text); display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
+.disc-list li:last-child { border-bottom: none; }
+.disc-list li:nth-child(even) { background: var(--surface-alt); }
+.disc-list .ch { font-size: .76rem; color: var(--text-soft); font-variant-numeric: tabular-nums; flex-shrink: 0; }
+.cmp-tbl td:first-child { font-weight: 600; color: var(--navy); }
+</style>
+</head>
+<body>
+
+<div id="site-header-slot"></div>
+
+<section class="page-hero" aria-labelledby="ph">
+  <div class="page-hero-in">
+    <nav class="crumb" aria-label="Trilha de navegação">
+      <a href="../index.html">Início</a><span aria-hidden="true">›</span>
+      <span aria-current="page">Cursos</span>
+    </nav>
+    <h1 id="ph">Cursos e Estrutura Curricular</h1>
+    <p class="lede">
+      O Programa oferece Mestrado desde 1996 e Doutorado Acadêmico, ambos em funcionamento.
+      A estrutura curricular está em reorganização no Colegiado.
+    </p>
+  </div>
+</section>
+
+<main id="conteudo">
+
+  <!-- Aviso doutorado -->
+  <section class="section" style="padding-block:2rem 0;">
+    <div class="wrap" id="drAviso"></div>
+  </section>
+
+  <!-- Cursos -->
+  <section class="section" aria-labelledby="cur-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Níveis</p>
+        <h2 class="h2" id="cur-h">Mestrado e Doutorado</h2>
+      </div>
+      <div class="grid grid--2" id="cursos"></div>
+    </div>
+  </section>
+
+  <!-- Comparativo -->
+  <section class="section section--alt" aria-labelledby="cmp-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Diferenciação</p>
+        <h2 class="h2" id="cmp-h">Mestrado e Doutorado: o que distingue os dois níveis</h2>
+        <p class="section-lede">
+          A proposta APCN define explicitamente a diferenciação formativa entre os níveis — requisito
+          da CAPES para propostas de Doutorado vinculadas a Mestrado existente.
+        </p>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl cmp-tbl">
+          <caption class="sr-only">Comparação entre o perfil formativo do Mestrado e do Doutorado</caption>
+          <thead><tr><th scope="col">Dimensão</th><th scope="col">Mestrado</th><th scope="col">Doutorado</th></tr></thead>
+          <tbody id="cmpBody"></tbody>
+        </table>
+      </div>
+      <p style="font-size:.75rem;color:var(--text-soft);margin-top:.85rem;">
+        Fonte: proposta APCN Doutorado 2026, seção 7.7 — minuta.
+      </p>
+    </div>
+  </section>
+
+  <!-- Créditos -->
+  <section class="section" aria-labelledby="cred-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Estrutura</p>
+        <h2 class="h2" id="cred-h">Distribuição de créditos</h2>
+        <p class="section-lede" id="credLede"></p>
+      </div>
+      <div class="grid grid--2" id="credGrid"></div>
+      <div class="mt-3" id="credNota"></div>
+    </div>
+  </section>
+
+  <!-- Disciplinas -->
+  <section class="section section--alt" aria-labelledby="disc-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Catálogo</p>
+        <h2 class="h2" id="disc-h">Disciplinas propostas</h2>
+        <p class="section-lede" id="discLede"></p>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:1.5rem;">
+        <div class="disc-group">
+          <div class="disc-head" style="background:var(--amber-pale);">
+            <h3>Núcleo comum</h3>
+            <span class="badge badge--nd" id="ncCount"></span>
+          </div>
+          <ul class="disc-list" id="ncList"></ul>
+        </div>
+        <div id="specGroups" style="display:flex;flex-direction:column;gap:1.5rem;"></div>
+      </div>
+
+      <div class="mt-4" id="discNota"></div>
+    </div>
+  </section>
+
+  <!-- Proposta APCN -->
+  <section class="section" id="apcn" aria-labelledby="apcn-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Em elaboração</p>
+        <h2 class="h2" id="apcn-h">Proposta de Doutorado associativo UFOP-UEMG</h2>
+        <p class="section-lede">
+          Além dos cursos em funcionamento, a Comissão APCN elabora uma proposta de curso de
+          Doutorado em forma associativa, a ser submetida à CAPES.
+        </p>
+      </div>
+      <div id="apcnSec"></div>
+    </div>
+  </section>
+
+  <!-- Bolsas -->
+  <section class="section section--alt" aria-labelledby="bol-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Financiamento do estudante</p>
+        <h2 class="h2" id="bol-h">Bolsas e apoio</h2>
+      </div>
+      <div class="tbl-wrap mb-3">
+        <table class="tbl">
+          <caption class="sr-only">Modalidades de bolsa e apoio disponíveis</caption>
+          <thead><tr><th scope="col">Modalidade</th><th scope="col">Nível</th><th scope="col">Agência</th><th scope="col">Disponibilidade</th></tr></thead>
+          <tbody id="bolBody"></tbody>
+        </table>
+      </div>
+      <div id="bolNota"></div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer-slot"></div>
+
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+(function () {
+  'use strict';
+  const R = window.REDEMAT, C = window.RC, DR = R.doutorado, MS = R.mestrado, CU = R.curriculo, AP = R.apcn;
+
+  /* ---------- aviso doutorado ---------- */
+  document.getElementById('drAviso').innerHTML = C.note('info',
+    '<strong>O Programa oferece Mestrado e Doutorado.</strong> Ambos estão em funcionamento, com ' +
+    'seleção regular — o Mestrado em ' + MS.duracao + ' e o Doutorado em ' + DR.duracao + '. ' +
+    'Em paralelo, a Comissão APCN elabora uma proposta de curso de Doutorado em forma associativa ' +
+    'UFOP-UEMG, tratada mais abaixo e que não altera a oferta atual. ' + C.badge('VALIDADO'));
+
+  /* ---------- cursos ---------- */
+  document.getElementById('cursos').innerHTML =
+    '<article class="course">' +
+      '<div class="course-bar" style="background:linear-gradient(90deg,var(--area1),var(--l12));"></div>' +
+      '<div class="course-in">' +
+        '<span class="course-tag" style="background:var(--area1-pale);color:var(--area1);">Em funcionamento</span>' +
+        '<h3>' + MS.nome + '</h3>' +
+        '<p class="sub">Mestrado Acadêmico — oferta contínua desde 1996</p>' +
+        '<dl class="spec">' +
+          '<div class="spec-item"><dt>Duração regular</dt><dd>' + MS.duracao + '</dd></div>' +
+          '<div class="spec-item"><dt>Créditos totais</dt><dd>' + CU.creditos.mestrado.total + ' créditos</dd></div>' +
+          '<div class="spec-item"><dt>Núcleo comum</dt><dd>' + CU.creditos.mestrado.nucleo + ' créditos</dd></div>' +
+          '<div class="spec-item"><dt>Disciplinas da linha</dt><dd>' + CU.creditos.mestrado.linha + ' créditos</dd></div>' +
+        '</dl>' +
+        '<p style="font-size:.8rem;color:var(--text-soft);margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);line-height:1.6;">' +
+          'Regime semestral, ensino presencial. Ingresso por processo seletivo com edital próprio. ' +
+          '<a href="processo-seletivo.html" style="color:var(--amber);font-weight:600;">Ver processo seletivo →</a></p>' +
+      '</div></article>' +
+
+    '<article class="course">' +
+      '<div class="course-bar" style="background:linear-gradient(90deg,var(--l22),var(--amber));"></div>' +
+      '<div class="course-in">' +
+        '<span class="course-tag" style="background:#F3E8FF;color:#6D28D9;">Em funcionamento</span>' +
+        '<h3>' + DR.nome + '</h3>' +
+        '<p class="sub">Doutorado Acadêmico — ' + DR.periodicidade.toLowerCase() + '</p>' +
+        '<dl class="spec">' +
+          '<div class="spec-item"><dt>Duração regular</dt><dd>' + DR.duracao + '</dd></div>' +
+          '<div class="spec-item"><dt>Créditos totais</dt><dd>' + DR.creditos.total + ' créditos</dd></div>' +
+          '<div class="spec-item"><dt>Obrigatórias</dt><dd>' + DR.creditos.obrigatorias + ' créditos</dd></div>' +
+          '<div class="spec-item"><dt>Eletivas</dt><dd>' + DR.creditos.eletivas + ' créditos</dd></div>' +
+          '<div class="spec-item"><dt>Qualificação e defesa</dt><dd>' + (DR.creditos.qualificacao + DR.creditos.defesa) + ' créditos</dd></div>' +
+          '<div class="spec-item"><dt>Doutorandos</dt><dd>' + DR.matriculados.valor + ' matriculados</dd></div>' +
+        '</dl>' +
+        '<p style="font-size:.8rem;color:var(--text-soft);margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);line-height:1.6;">' +
+          '<strong>Exigência de produção:</strong> ' + DR.exigencia_producao + '. ' +
+          'Estágio de docência de ' + DR.creditos.estagio_docencia + ' créditos, obrigatório para bolsistas. ' +
+          '<a href="processo-seletivo.html" style="color:var(--amber);font-weight:600;">Ver processo seletivo →</a></p>' +
+      '</div></article>';
+
+  /* ---------- comparativo ---------- */
+  document.getElementById('cmpBody').innerHTML = AP.perfil_comparado.map(function (r) {
+    return '<tr><td>' + r.dim + '</td><td>' + r.ms + '</td><td>' + r.dr + '</td></tr>';
+  }).join('');
+
+  /* ---------- créditos ---------- */
+  document.getElementById('credLede').textContent = CU.equivalencia;
+
+  function credCard(titulo, obj, cor, extra) {
+    return '<div class="card">' +
+      '<h3 class="h3" style="color:' + cor + '">' + titulo + '</h3>' +
+      '<div class="mt-2">' +
+        '<div class="bar-row"><span class="bar-lbl">Núcleo comum</span>' +
+          '<span class="bar-track"><span class="bar-fill" style="background:' + cor + ';width:' + (obj.nucleo / obj.total * 100) + '%"></span></span>' +
+          '<span class="bar-val">' + obj.nucleo + '</span></div>' +
+        '<div class="bar-row"><span class="bar-lbl">Disciplinas da linha</span>' +
+          '<span class="bar-track"><span class="bar-fill" style="background:' + cor + ';opacity:.5;width:' + (obj.linha / obj.total * 100) + '%"></span></span>' +
+          '<span class="bar-val">' + obj.linha + '</span></div>' +
+      '</div>' +
+      '<p style="font-size:1.5rem;font-weight:800;color:' + cor + ';margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);">' +
+        obj.total + ' <span style="font-size:.85rem;font-weight:500;color:var(--text-mid);">créditos totais</span></p>' +
+      (extra ? '<p style="font-size:.78rem;color:var(--text-soft);margin-top:.6rem;line-height:1.6;">' + extra + '</p>' : '') +
+    '</div>';
+  }
+  document.getElementById('credGrid').innerHTML =
+    credCard('Mestrado', CU.creditos.mestrado, 'var(--area1)',
+      'Inclui estágio de docência e crédito de qualificação nas disciplinas da linha.') +
+    credCard('Doutorado', { nucleo: DR.creditos.obrigatorias, linha: DR.creditos.eletivas, total: DR.creditos.total },
+      'var(--l22)',
+      'Estrutura vigente: ' + DR.creditos.obrigatorias + ' créditos obrigatórios, ' + DR.creditos.eletivas +
+      ' eletivos, ' + DR.creditos.estagio_docencia + ' de estágio de docência (bolsistas), ' +
+      DR.creditos.qualificacao + ' de qualificação e ' + DR.creditos.defesa + ' de defesa. ' +
+      'A proposta APCN prevê ' + CU.creditos.doutorado.total + ' créditos numa estrutura reorganizada.');
+
+  document.getElementById('credNota').innerHTML = C.note('info',
+    'Está em discussão no regimento interno a concessão de créditos por publicação. ' +
+    'Fonte: proposta de estrutura curricular. ' + C.badge('EM_DEFINICAO'));
+
+  /* ---------- disciplinas ---------- */
+  document.getElementById('discLede').textContent =
+    CU.totais.total + ' disciplinas ao todo — ' + CU.totais.nucleo_comum + ' de núcleo comum e ' +
+    CU.totais.especificas + ' específicas das quatro linhas de pesquisa.';
+
+  document.getElementById('ncCount').textContent = CU.nucleo_comum.length + ' disciplinas';
+  document.getElementById('ncList').innerHTML = CU.nucleo_comum.map(function (d) {
+    return '<li><span>' + d.nome + '</span><span class="ch">' + d.ch + '</span></li>';
+  }).join('');
+
+  const groups = [];
+  R.areas.itens.forEach(function (a) {
+    a.linhas.forEach(function (l) {
+      const ds = CU.especificas[l.id] || [];
+      groups.push(
+        '<div class="disc-group" id="disc-' + l.id + '">' +
+          '<div class="disc-head" style="background:color-mix(in srgb, ' + l.cor + ' 7%, transparent);">' +
+            '<h3><span style="color:' + l.cor + ';font-weight:800;">' + l.codigo.replace('Linha ', 'L') + '</span> — ' + l.nome + '</h3>' +
+            '<span class="badge badge--nd">' + ds.length + ' disciplinas</span>' +
+          '</div>' +
+          '<ul class="disc-list">' + ds.map(function (d) { return '<li><span>' + d + '</span></li>'; }).join('') + '</ul>' +
+        '</div>');
+    });
+  });
+  document.getElementById('specGroups').innerHTML = groups.join('');
+
+  document.getElementById('discNota').innerHTML = C.note('warn',
+    '<strong>Catálogo em aprovação — não é oferta vigente.</strong> ' + CU.nota +
+    ' As cargas horárias das disciplinas específicas e a definição dos docentes responsáveis ainda não ' +
+    'foram consolidadas. Para a oferta efetiva do semestre, consulte o SIGAA ou a secretaria do Programa. ' +
+    C.badge('EM_DEFINICAO'));
+
+  /* ---------- proposta APCN ---------- */
+  const apcnSec = document.getElementById('apcnSec');
+  if (apcnSec) {
+    apcnSec.innerHTML =
+      C.note('warn', '<strong>' + AP.titulo + '</strong><br>' + AP.aviso + ' ' + C.badge('EM_DEFINICAO')) +
+      '<div class="grid grid--2 mt-3">' +
+        '<div class="card"><h3 class="h3">O que a proposta prevê</h3>' +
+          '<table class="tbl" style="min-width:0;font-size:.85rem;"><tbody>' +
+            '<tr><td style="padding:.5rem 0;">Vagas por seleção</td><td class="num" style="padding:.5rem 0;font-weight:700;color:var(--navy);">' + AP.vagas_previstas.valor + '</td></tr>' +
+            '<tr><td style="padding:.5rem 0;">Créditos</td><td class="num" style="padding:.5rem 0;font-weight:700;color:var(--navy);">' + AP.creditos_previstos + '</td></tr>' +
+            '<tr><td style="padding:.5rem 0;">Núcleo docente</td><td class="num" style="padding:.5rem 0;font-weight:700;color:var(--navy);font-size:.8rem;">' + AP.nucleo_previsto.valor + '</td></tr>' +
+          '</tbody></table>' +
+          '<p style="font-size:.76rem;color:var(--text-soft);margin-top:.85rem;line-height:1.6;">' +
+            'Valores sujeitos a decisão colegiada após simulação de capacidade de orientação.</p></div>' +
+        '<div class="card"><h3 class="h3">Pendências antes da submissão</h3>' +
+          '<div class="prose" style="max-width:none;"><ul>' +
+            AP.pendencias_criticas.slice(0, 5).map(function (x) { return '<li>' + x + '</li>'; }).join('') +
+          '</ul></div>' +
+          '<p style="font-size:.76rem;color:var(--text-soft);margin-top:.5rem;">' +
+            'Lista completa na proposta APCN (' + AP.pendencias_criticas.length + ' itens).</p></div>' +
+      '</div>';
+  }
+
+  /* ---------- bolsas ---------- */
+  document.getElementById('bolBody').innerHTML = [
+    ['Bolsa de Mestrado', 'Mestrado', 'CAPES', 'Conforme cota anual do Programa'],
+    ['Bolsa de Doutorado', 'Doutorado', 'CNPq · CAPES · FAPEMIG · UFOP', 'Até 48 meses, conforme cota'],
+    ['Bolsa vinculada a projeto', 'Mestrado e Doutorado', 'FAPEMIG · CNPq · FINEP', 'Via projeto do orientador'],
+    ['Bolsa em parceria com empresa', 'Mestrado e Doutorado', 'Empresas parceiras', 'Conforme convênio vigente']
+  ].map(function (r) {
+    return '<tr><td><strong style="color:var(--navy);">' + r[0] + '</strong></td><td>' + r[1] + '</td><td>' + r[2] + '</td><td>' + r[3] + '</td></tr>';
+  }).join('');
+
+  document.getElementById('bolNota').innerHTML =
+    C.note('warn', '<strong>Valores das bolsas.</strong> Os valores mensais das bolsas CAPES e CNPq são ' +
+      'definidos nacionalmente pelas agências e alterados periodicamente. Este portal não publica valores, ' +
+      'para evitar informação desatualizada — consulte as tabelas oficiais da ' +
+      '<a href="https://www.gov.br/capes/pt-br" target="_blank" rel="noopener">CAPES</a> e do ' +
+      '<a href="https://www.gov.br/cnpq/pt-br" target="_blank" rel="noopener">CNPq</a>.') +
+    '<div class="mt-2">' + C.note('info', MS.nota_bolsa +
+      ' Candidatos aprovados sem bolsa das agências podem buscar apoio via projetos de pesquisa dos ' +
+      'orientadores. Consulte diretamente o docente pretendido sobre possibilidades de financiamento.') + '</div>';
+
+  C.mount('cursos.html', '../');
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+id,nome,tipo,referencia,data_coleta,acesso,uso_no_portal
+SITE,Site institucional REDEMAT,Web,https://redemat.ufop.br/,2026-09-01,Público,"Conceito CAPES, totais históricos de titulados, situação do processo seletivo"
+DOCENTES,Página oficial de docentes,Web,https://redemat.ufop.br/docentes-1,2026-09-02,Público,"Nomes, e-mails institucionais e links Lattes dos docentes"
+LATTES,Currículos Lattes via ScriptLattes,Sistema,"scriptlattes/json — 25 currículos, saída de 28/08/2026",2026-08-28,Público (via Lattes),"Produção bibliográfica, orientações, vínculos internacionais, grafo de colaboração, IDs Lattes"
+APCN,Painel analítico APCN REDEMAT,Interno,portal_integrado_apcn_redemat_20260829,2026-08-29,Interno,"Agregados de formação, artigos P50, artigos com discentes, pós-doutorado, ATD. Métricas individuais NÃO utilizadas"
+PROPOSTA,Esqueleto da Proposta APCN Doutorado v0.1,Documento,Esqueleto_Proposta_APCN_Doutorado_REDEMAT_2026,2026-07-31,Interno,"Código CAPES, histórico, missão, visão, áreas e linhas, corpo docente, comissão APCN, autoavaliação, nucleação"
+CURRIC,Proposta de estrutura curricular,Documento,Proposta de estrutura curricular.docx,2026-09-02,Interno,"Créditos, disciplinas do núcleo comum e específicas por linha, responsáveis por disciplina"
+CAPTACAO,Panorama de captação deduplicado,Planilha,REDEMAT_APCN_2026_Panorama_Captacao_Professores_Dinamico_Deduplicado.xlsx,2026-08-29,Interno,"Projetos únicos, valor global sem dupla contagem, financiadores, pendências. Valores individuais NÃO publicados"
+SUCUPIRA,Plataforma Sucupira,Sistema,https://sucupira.capes.gov.br,,Pendente,"FONTE PENDENTE — necessária para promover produção e formação de PRELIMINAR a VALIDADO"
+SCOPUS,Scopus / Web of Science,Base,-,,Pendente,"FONTE PENDENTE — necessária para comprovação de percentil e distribuição Qualis"

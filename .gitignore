@@ -1,0 +1,43 @@
+# ---------------------------------------------------------------------------
+# O que NÃO vai para o repositório.
+#
+# Regra geral: fica de fora o que é regenerável por script, o que é original
+# de trabalho (antes de reencodar) e o lixo que o sistema e o Dropbox criam.
+# ---------------------------------------------------------------------------
+
+# Backup da sincronização do ScriptLattes. O script atualizar-scriptlattes.sh
+# recria a pasta a cada execução; versioná-la duplicaria 5 MB a cada sync.
+scriptlattes.bak/
+
+# Imagens como chegaram, antes de reencodar para a web. O que o portal serve
+# está em assets/img/ e assets/img/pessoas/; estes são só o arquivo de origem,
+# e somam alguns megabytes que ninguém baixa ao clonar.
+assets/img/originais/
+assets/img/pessoas/originais/
+
+# Lixo do Windows e do macOS
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
+._*
+
+# Dropbox: arquivos de conflito e metadados
+*.dropbox
+.dropbox
+.dropbox.attr
+*conflicted copy*
+*[Cc][óo]pia em conflito*
+.sb-*
+
+# Python, se algum script for executado de dentro da pasta
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*~

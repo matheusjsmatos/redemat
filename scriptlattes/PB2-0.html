@@ -1,0 +1,199 @@
+
+                <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf8"><meta name="Generator" content="scriptLattes"><title>REDEMAT</title><link rel="stylesheet" href="css/scriptLattes.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"><link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css"><link rel="stylesheet" type="text/css" href="css/dataTables.colVis.min.css"><script type="text/javascript" charset="utf8" src="js/jquery.min.js"></script><script type="text/javascript" charset="utf8" src="js/jquery.dataTables.min.js"></script><script type="text/javascript" charset="utf8" src="js/dataTables.colVis.min.js"></script><script type="text/javascript" charset="utf8" src="js/sorttable-local.js"></script><link rel="stylesheet" href="portal-redemat.css">
+</head><body>
+<div id="portal-back"><a href="../pages/producao-lattes.html">&#8592; Voltar ao portal REDEMAT</a><span>Relatório ScriptLattes — dados brutos dos currículos Lattes</span></div><div id="header2"> <button onClick="history.go(-1)">Voltar</button><h2>REDEMAT</h2></div>
+                
+        <script type="text/javascript" src="./js/jquery.min.js"></script>
+        <!--
+        <script type="text/javascript" src="./highcharts.js"></script>
+        <script type="text/javascript" src="./exporting.js"></script>
+        <script type="text/javascript" src="./drilldown.js"></script>
+        -->
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+        <script type="text/javascript">
+        // Load the fonts
+        Highcharts.createElement('link', {
+           href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700',
+           rel: 'stylesheet',
+           type: 'text/css'
+        }, null, document.getElementsByTagName('head')[0]);
+
+        Highcharts.theme = {
+   colors: ["#1F77B4", "#118D95", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#2b908f", "#90ee7e", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
+   chart: {
+      backgroundColor: null,
+      style: {
+         fontFamily: "'Source Sans Pro', 'sans-serif'"
+      }
+   },
+   title: {
+      style: {
+         color: 'black',
+         fontSize: '16px',
+         fontWeight: 'bold'
+      }
+   },
+   subtitle: {
+      style: {
+         color: 'black'
+      }
+   },
+   tooltip: {
+      borderWidth: 0
+   },
+   legend: {
+      itemStyle: {
+         fontWeight: 'bold',
+         fontSize: '13px'
+      }
+   },
+   xAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   yAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   plotOptions: {
+      series: {
+         shadow: true
+      },
+      candlestick: {
+         lineColor: '#404048'
+      },
+      map: {
+         shadow: false
+      }
+   },
+
+   // Highstock specific
+   navigator: {
+      xAxis: {
+         gridLineColor: '#D0D0D8'
+      }
+   },
+   rangeSelector: {
+      buttonTheme: {
+         fill: 'white',
+         stroke: '#C0C0C8',
+         'stroke-width': 1,
+         states: {
+            select: {
+               fill: '#D0D0D8'
+            }
+         }
+      }
+   },
+   scrollbar: {
+      trackBorderColor: '#C0C0C8'
+   },
+
+   // General
+   background2: '#E0E0E8'
+};
+
+        Highcharts.setOptions(Highcharts.theme);
+        $(function () {
+            $('#container').highcharts({chart: {type: 'column', 
+height: 300}, 
+title: {text: 'Capítulos de livros publicados'}, 
+subtitle: {text: ''}, 
+xAxis: {title: {text: ''}, 
+type: 'category'}, 
+yAxis: {min: 0, 
+title: {text: 'Quantidade', 
+align: 'middle'}, 
+labels: {overflow: 'justify'}, 
+stackLabels: {enabled: true, 
+format: '{stack}'}}, 
+tooltip: {enabled: true, 
+valueSuffix: '', 
+shared: false, 
+headerFormat: '<span style="font-size: 10px">{point.key}{point.stack}{series.stack}</span><br/>', 
+pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'}, 
+plotOptions: {bar: {dataLabels: {enabled: false}}, 
+column: {stacking: null}, 
+series: {shadow: 'true'}}, 
+legend: {enabled: false, 
+layout: 'vertical', 
+align: 'right', 
+verticalAlign: 'middle', 
+borderWidth: 1, 
+backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor || '#FFFFFF'), 
+shadow: true}, 
+credits: {enabled: false}, 
+series: [{name: 'Total', 
+data: [[2021,
+3],
+[2022,
+4],
+[2023,
+2],
+[2024,
+3],
+[2025,
+6],
+[2026,
+1]]}]});
+        });
+        </script>
+        
+                <h3>Capítulos de livros publicados</h3> <br>
+                    <div id="container" style="min-width: 310px; max-width: 1920px; height: 300; margin: 0"></div>
+                    Número total de itens: 19<br>
+                    
+                    
+                    <div id="dv-year-2026"><h3 class="year">2026</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>PIMENTA, BRENO LUIZ ; LAGE, D. P. ; FREITAS, C. S. ; VALE, DANNIELE LUCIANA ; FALCAO, K. O. M. ; DIAS, S. S. G. ; CAMARA, R. S. B. ; PEREIRA, I. A. G. ; A. L. Quadros ; DUARTE JUNIOR, L. A. ; FUMAGALLI, M. A. C. ; Bianchi, RF ; COELHO, E. A. F. ; TALVANI, ANDRÉ. <b>Blue light-emitting diode phototherapy presents in vitro efficacy against distinct Leishmania species and is therapeutic against tegumentary leishmaniasis in BALB/c mice</b>. Em: Ramona Hurdayal, Herbert Leonel de Matos Guedes and Daniel Claudio Oliveira Gomes. (Org.). Blue light-emitting diode phototherapy reduces cerebral parasitic load and inflammation in murine congenital toxoplasmosis model. 1ed. : Frontiers Research Topics. 2026.v. 1, p. 68-80. </td></tr>
+            </table></div><div id="dv-year-2025"><h3 class="year">2025</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>Dias, Josana Mattedi Prates ; ENGLER, RITA DE CASTRO. <b>A roupa velha e a moda: design, cultura e sustentabilidade. CIMEC - 1º Congresso Internacional de Moda & Economia Criativa. 1ed</b>. Em: . : Editora Blucher. 2025.p. 238-249. </td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Melano, Isabella ; Silva, Sérgio Antônio ; SANTOS, Heloisa Nazaré dos. <b>Design de moda e Jornalismo: o retrato da mulher no período entreguerras</b>. Em: SANTOS, Heloisa Nazaré dos; CARVALHO; Alecir Francisco de; CAMPOS, Cláudia Fátima Campos; GUIMARÃES, Maria Paula.. (Org.). CIMEC - 1º Congresso Internacional de Moda & Economia Criativa. 1ed.São Paulo. : Editora Blucher. 2025.v. 1, p. 168-179. </td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>Monteiro, Cecilia Rodrigues ; SANTOS, Heloisa Nazaré dos. <b>Estudo de biomateriais alternativos ao couro e polímeros plásticos na indústria da moda</b>. Em: SANTOS, Heloisa Nazaré dos; CARVALHO; Alecir Francisco de; CAMPOS, Cláudia Fátima Campos; GUIMARÃES, Maria Paula.. (Org.). CIMEC - 1º Congresso Internacional de Moda & Economia Criativa. 1ed.São Paulo. : Editora Blucher. 2025.v. 1, p. 72-83. </td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>SCHERRER, Rachel Rios ; ROMEIRO FILHO, E. ; SANTOS, Heloisa Nazaré dos. <b>Empoderamento através do figurino: A representação de Clara Inês em ?Canto para não chorar?</b>. Em: BROEGA, Ana Cristina Broega; PROVIDÊNCIA, Bernardo; CARVALHO, Helder; CUNHA, Joana; LIBERTI, Robert; RANZO, Patrizia.. (Org.). Estudos em Moda e Design Paisagens culturais e produtivas da moda. 1ed.Braga. : UMinho Editora. 2025.v. 1, p. 1-240. </td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>Shibayama, Marília Dione Salvador ; Ladeira, Natália Maria Borges ; Brito, Nathalia Bastos do Vale ; Speziali, Marcelo Gomes. <b>TECNOLOGIAS RENOVÁVEIS NA AMAZÔNIA: UM ESTUDO DAS PATENTES VERDES, INDICAÇÕES GEOGRÁFICAS E PRINCIPAIS FINANCIAMENTOS. A Amazônia Diante do Seu Futuro: Visões no Contexto da COP30 ¿ Volume 1. 1ed</b>. Em: . : RIMA Editora. 2025.p. 65-83. </td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>SILVA, M. P. M. ; ALMEIDA, N. F. ; Speziali, Marcelo G. ; SPINOSA, L. M. ; VIEIRA, R. D.. <b>O CONFAP e a promoção da Ciência Aberta no Brasil</b>. Em: SILVA, Fabiano Couto Corrêa da; STUEBER, Ketlen; SEGUNDO, Washington. (Org.). Ciência Aberta no Brasil: conquistas e desafios. 1ed.Porto Alegre. : Letra1. 2025.p. 83-100. </td></tr>
+            </table></div><div id="dv-year-2024"><h3 class="year">2024</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>MORAES, L. A. F. ; SANTOS, Heloisa Nazaré dos. <b>Training in Embroidery and Design Tools for Multiplier Agents in the Metropolitan Region of Belo Horizonte</b>. Em: Joana Cunha ; Ana Cristina Broega; Helder Carvalho; Bernardo Providência. (Org.). Advances in Fashion and Design Research III. 1ed.Switzerland. : Springer. 2024.v. III, p. 1-690. </td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>SANCHES, Cora Wallach ; SANTOS, Heloisa Nazaré dos. <b>Surface Design: A Historical Context of the Wallach Family</b>. Em: Joana Cunha; Ana Cristina Broega; Helder Carvalho; Bernardo Providência. (Org.). Advances in Fashion and Design Research III. 1ed.Switzerland. : Springer. 2024.v. III, p. 1-690. </td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>SCHERRER, Rachel Rios ; ROMEIRO FILHO, E. ; SANTOS, Heloisa Nazaré dos. <b>Design de bases de modelagens do vestuário feminino para o corpo gordo</b>. Em: Teresa Purificación Rodriguez. (Org.). Primer Foro iberoamericano de investigación y diseño. 1ed.Madrid - España. : Gobierno de España - Ministerio de Ciencia Innovación y Universidades. 2024.v. 1, p. 1-652. </td></tr>
+            </table></div><div id="dv-year-2023"><h3 class="year">2023</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>ALVES, R. R. ; GONCALVES JUNIOR, J. L. ; CUNHA, D. F. ; FIGUEIREDO, K. M. ; Geraldo Lúcio Faria ; LABIAPARI, W. S.. <b>Microstructure and Hardness of S41003 Steel When Submitted to Different Heat Treatments</b>. Em: Springer. (Org.). ABCM Series on Mechanical Sciences and Engineering. 1ed. 2023.p. 1-12. </td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>SCHERRER, Rachel Rios ; ROMEIRO FILHO, E. ; SANTOS, Heloisa Nazaré dos. <b>A Reflection on Sustainable Actions in a Plus Size Lingerie Manufacturing Company in São Paulo</b>. Em: CUNHA, Joana; BROEGA, Ana Cristina; Carvalho, Helder; PROVIDÊNCIA, Bernardo.. (Org.). Advances in Fashion and Design Research II. 1ed.Cham, Switzerland. : Springer Nature. 2023.v. 2, p. 416-430. </td></tr>
+            </table></div><div id="dv-year-2022"><h3 class="year">2022</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>CAMPOS, A. M. A. ; ASSIS, P. S.. <b>USING AGRIBUSINESS WASTE AS A PULVERIZED MATERIAL INJECTION IN BLAST FURNACES FOR IRONMAKING PRODUCTION WITH LOW CO2 EMISSIONS</b>. Em: Editora Científica Digital. (Org.). OPEN SCIENCE RESEARCH III. 01ed.São Paulo. : Editora Científica Digital. 2022.v. 3, p. 2639-2649. </td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>N. Ivanova ; A. L. J. Leite ; BARBOSA, M. ; SILVA, O. H. C. E. ; L. W. R. Mota ; G. P. Costa ; C. S. Azevedo ; S. A. Auharek ; R. D. Novaes ; K. M. C. Pinto ; Bianchi, R.F. ; A. T. P. da Silva. <b>New Insights Into Blue Light Phototherapy in Experimental Trypanosoma cruzi Infection</b>. Em: Giovane R. Sousa, Christophe Chevillard, Cristina Poveda and Andréa Teixeira-Carvalho. (Org.). NOVEL INSIGHTS INTO THE IMMUNE MECHANISMS ASSOCIATED WITH THE PATHOGENESIS OF CHAGAS DISEASE. 1ed. 2022.v. 1, p. 1-298. </td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>PELLI, A. ; Abrão, S.A. dos S. ; Camargo, P.R.S. ; Maragoni, D.H.M. ; ASSIS, P. S.. <b>Toxicity of sewage from the city of Uberaba to the golden mussel: Limnoperna fortunei (Dunker, 1857)</b>. Em: Nathan Albano Valente. (Org.). Eyes on Health Science. 1ed.São José dos Pinhais. : Seven Publicações Acadêmicas. 2022.v. 15, p. 140-148. </td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>SANTOS, Heloisa Nazaré dos; BARUQUE-RAMOS, J. <b>Design Tools Used in Training in Embroidery of Multipliers in Fashion Design: Case Study in the Metropolitan Region of Belo Horizonte? Minas Gerais? Brazil</b>. Em: BROEGA; Ana Cristina; CUNHA, Joana; CARVALHO, Hélder; PROVIDÊNCIA, Bernardo.. (Org.). Advances in Fashion and Design Research: Avanços na Pesquisa de Moda e Design Anais do 5º Congresso Internacional de Moda e Design, CIMODE 2022, 4 a 7 de julho de 2022, Guimarães, Portugal. 1ed.Portugal. : Springer Nature. 2022.v. 1, p. 357-372. </td></tr>
+            </table></div><div id="dv-year-2021"><h3 class="year">2021</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>AMBROSIO, N. ; BERNARDI, J. L. ; SPEZIALI, M. G. ; DALLAGO, R. M. ; MIGNONI, M. L.. <b>ESTUDO DE VIABILIDADE DA UTILIZAÇÃO DO LÍQUIDO IÔNICO HIDROGENOSSULFATO DE TRIETILAMÔNIO NA REMOÇÃO DE CROMO DO RESÍDUO DE COURO WET BLUE</b>. Em: Luciana Dornelles Venquiaruto. (Org.). EXPRESSÕES ACADÊMICAS 2021 ENGENHARIA DE ALIMENTOS E ENGENHARIA QUÍMICA/URI. 1ed.Santo Ângelo. : Metrics. 2021.v. 1, p. 95-126. </td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Bianchi, R.F. <b>A startup de Tokiro</b>. Em: Andre Luis Silva. (Org.). Provocações Empreendedoras 3: business no mestrado e doutorado. 1ed.Sao Paulo. : Paco. 2021.v. 3, p. 1-2. </td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>Nascimento, Raphael da Silva ; Speziali, Marcelo Gomes. <b>PATENTOMETRY: A DATA ANALYSIS PROCESS AS A FUNDAMENTAL TOOL FOR THE INNOVATION MANAGEMENT IN SCIENCE AND TECHNOLOGY INSTITUTIONS</b>. Em: ERNANE ROSA MARTINS. (Org.). Ciência, tecnologia e inovação: Fatores de progresso e de desenvolvimento 2. 1ed. : Atena Editora. 2021.v. 2, p. 127-139. </td></tr>
+            </table></div>
+                    </table>
+                <br><p><br>(*) Relatório criado com produções desde 2021 até 2026
+<br>Data de processamento: 31/08/2026 22:11:56<br>         <div id="footer">         Relatório gerado por <a href="https://scriptlattes.sourceforge.net/">scriptLattes V9</a>.         Os resultados podem ser afetados por possíveis falhas decorrentes de inconsistências no preenchimento dos Currículos Lattes. E-mail de contato: <a href="mailto:matheusmatos@ufop.edu.br">matheusmatos@ufop.edu.br</a>         </div> </body></html>
+              

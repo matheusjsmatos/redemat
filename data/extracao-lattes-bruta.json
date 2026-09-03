@@ -1,0 +1,1332 @@
+{
+ "docentes": {
+  "00_Alan-Barros-de-Oliveira_2373454332205980.json": {
+   "nome": "Alan Barros de Oliveira",
+   "lattes": "2373454332205980",
+   "rotulo": "Professor Permanente",
+   "bolsa": "Bolsista de Pesquisador Visitante do CNPq - Nível 1",
+   "url": "http://lattes.cnpq.br/2373454332205980",
+   "atualizacao": "13/08/2026",
+   "areas": [
+    "Física",
+    "Física",
+    "Física"
+   ],
+   "linhas": [
+    "Simulação e modelagem de fluidos anômalos"
+   ],
+   "art_total": 16,
+   "art_por_ano": {
+    "2026": 6,
+    "2025": 1,
+    "2023": 2,
+    "2022": 3,
+    "2021": 4
+   },
+   "qualis": {
+    "SQ": 16
+   },
+   "livros": 0,
+   "capitulos": 0,
+   "proj": 1,
+   "ori_conc": 9,
+   "ori_and": 4,
+   "ms_conc": 4,
+   "dr_conc": 3,
+   "ms_and": 1,
+   "dr_and": 2,
+   "pd_conc": 0,
+   "pd_and": 0,
+   "ic_conc": 2,
+   "intl": [],
+   "agencias": [
+    "{'nome': 'Conselho Nacional de Desenvolvimento Científico e Tecnológico', 'tipo_apoio': 'Bolsa'}"
+   ],
+   "idiomas": [
+    "Inglês",
+    "Português"
+   ]
+  },
+  "01_Américo-Tristão-Bernardes_1219153096910234.json": {
+   "nome": "Américo Tristão Bernardes",
+   "lattes": "1219153096910234",
+   "rotulo": "Professor Permanente",
+   "bolsa": "",
+   "url": "http://lattes.cnpq.br/1219153096910234",
+   "atualizacao": "28/08/2026",
+   "areas": [
+    "Física"
+   ],
+   "linhas": [
+    "Simulação Computacional de Sistemas Complexos",
+    "Simulação Computacional de Sistemas Complexos"
+   ],
+   "art_total": 7,
+   "art_por_ano": {
+    "2026": 1,
+    "2025": 1,
+    "2023": 2,
+    "2022": 1,
+    "2021": 2
+   },
+   "qualis": {
+    "SQ": 7
+   },
+   "livros": 1,
+   "capitulos": 0,
+   "proj": 3,
+   "ori_conc": 15,
+   "ori_and": 3,
+   "ms_conc": 6,
+   "dr_conc": 1,
+   "ms_and": 1,
+   "dr_and": 2,
+   "pd_conc": 0,
+   "pd_and": 0,
+   "ic_conc": 8,
+   "intl": [
+    "INMETRO",
+    "Inovações e Comunicações"
+   ],
+   "agencias": [
+    "{'nome': 'Associação Brasileira de Pesquisa e Inovação Industrial', 'tipo_apoio': 'Cooperação'}",
+    "{'nome': 'Futurion AnÃ¡lise Empresarial Ltda', 'tipo_apoio': 'Financiamento'}",
+    "{'nome': 'VALE S', 'tipo_apoio': 'Financiamento'}",
+    "{'nome': 'Vale S', 'tipo_apoio': 'Financiamento'}"
+   ],
+   "idiomas": []
+  },
+  "02_Ana-Paula-Moreira-Barboza_4012812193989993.json": {
+   "nome": "Ana Paula Moreira Barboza",
+   "lattes": "4012812193989993",
+   "rotulo": "Professor Permanente",
+   "bolsa": "Nível 2",
+   "url": "http://lattes.cnpq.br/4012812193989993",
+   "atualizacao": "30/07/2026",
+   "areas": [
+    "Física",
+    "Física"
+   ],
+   "linhas": [],
+   "art_total": 24,
+   "art_por_ano": {
+    "2026": 2,
+    "2025": 7,
+    "2024": 3,
+    "2023": 5,
+    "2022": 4,
+    "2021": 3
+   },
+   "qualis": {
+    "SQ": 24
+   },
+   "livros": 0,
+   "capitulos": 0,
+   "proj": 7,
+   "ori_conc": 12,
+   "ori_and": 6,
+   "ms_conc": 5,
+   "dr_conc": 1,
+   "ms_and": 1,
+   "dr_and": 3,
+   "pd_conc": 0,
+   "pd_and": 0,
+   "ic_conc": 6,
+   "intl": [],
+   "agencias": [
+    "{'nome': 'Conselho Nacional de Desenvolvimento Científico e Tecnológico', 'tipo_apoio': 'Auxílio financeiro'}",
+    "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Auxílio financeiro'}"
+   ],
+   "idiomas": [
+    "Inglês",
+    "Espanhol"
+   ]
+  },
+  "03_Antonio-Valadao-Cardoso_4629729793297288.json": {
+   "nome": "Antonio Valadao Cardoso",
+   "lattes": "4629729793297288",
+   "rotulo": "Professor Colaborador",
+   "bolsa": "",
+   "url": "http://lattes.cnpq.br/4629729793297288",
+   "atualizacao": "22/08/2026",
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica"
+   ],
+   "linhas": [
+    "Produção de material didático multimídia",
+    "Ceramicas e Vidros",
+    "Viscosidade de vidros e suspensoes ceramicas"
+   ],
+   "art_total": 17,
+   "art_por_ano": {
+    "2026": 1,
+    "2025": 1,
+    "2024": 3,
+    "2023": 4,
+    "2022": 4,
+    "2021": 4
+   },
+   "qualis": {
+    "SQ": 17
+   },
+   "livros": 0,
+   "capitulos": 0,
+   "proj": 2,
+   "ori_conc": 6,
+   "ori_and": 1,
+   "ms_conc": 0,
+   "dr_conc": 0,
+   "ms_and": 0,
+   "dr_and": 0,
+   "pd_conc": 1,
+   "pd_and": 0,
+   "ic_conc": 5,
+   "intl": [],
+   "agencias": [
+    "{'nome': 'Conselho Nacional de Desenvolvimento Científico e Tecnológico', 'tipo_apoio': 'Auxílio financeiro'}",
+    "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Auxílio financeiro'}"
+   ],
+   "idiomas": [
+    "Inglês",
+    "Francês",
+    "Espanhol"
+   ]
+  },
+  "04_Claudio-Gouvea-dos-Santos_7624637352404779.json": {
+   "nome": "Claudio Gouvea dos Santos",
+   "lattes": "7624637352404779",
+   "rotulo": "Professor Permanente",
+   "bolsa": "",
+   "url": "http://lattes.cnpq.br/7624637352404779",
+   "atualizacao": "15/06/2026",
+   "areas": [
+    "Química",
+    "Química",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia Química"
+   ],
+   "linhas": [
+    "Reciclagem de Polímeros",
+    "Síntese e Caracterização de Polímeros Termoplásticos e Termofixos",
+    "Preparo e Caracterização de Compósitos de Matrizes Polimérica e Cerâmica",
+    "Carbonização de Polímeros visando a Preparação de Carbono Ativado",
+    "Ensino e Divulgação de Polímeros",
+    "Ensino de Ciências em Espaços Não Formais"
+   ],
+   "art_total": 6,
+   "art_por_ano": {
+    "2026": 1,
+    "2024": 1,
+    "2022": 2,
+    "2021": 2
+   },
+   "qualis": {
+    "SQ": 6
+   },
+   "livros": 0,
+   "capitulos": 0,
+   "proj": 3,
+   "ori_conc": 6,
+   "ori_and": 5,
+   "ms_conc": 1,
+   "dr_conc": 0,
+   "ms_and": 1,
+   "dr_and": 2,
+   "pd_conc": 0,
+   "pd_and": 0,
+   "ic_conc": 5,
+   "intl": [],
+   "agencias": [
+    "{'nome': 'Conselho Nacional de Desenvolvimento Científico e Tecnológico', 'tipo_apoio': 'Auxílio financeiro'}",
+    "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Auxílio financeiro'}"
+   ],
+   "idiomas": [
+    "Português",
+    "Espanhol",
+    "Inglês",
+    "Alemão",
+    "Francês"
+   ]
+  },
+  "05_Dalila-Chaves-Sicupira_2402619959878318.json": {
+   "nome": "Dalila Chaves Sicupira",
+   "lattes": "2402619959878318",
+   "rotulo": "Professor Permanente",
+   "bolsa": "",
+   "url": "http://lattes.cnpq.br/2402619959878318",
+   "atualizacao": "27/08/2026",
+   "areas": [
+    "Química",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia Química"
+   ],
+   "linhas": [
+    "Tratamento de Efluentes Industriais",
+    "Avaliação da resistência à corrosão de juntas soldadas de aço inoxidável lean duplex",
+    "Estudo do efeito da laminação nas propriedades mecânicas e na resistência à corrosão do aço inoxidável duplex 2205",
+    "Caracterização eletroquímica de uma liga NiTi superelástica com recobrimentos a base de óxido de grafeno",
+    "Geração de hidrogênio pela fotoeletrólise da água utilizando eletrodos de aços inoxidáveis revestidos com óxidos anódicos nanoestruturados",
+    "Recobrimento e resistência à corrosão de ligas com memória de forma"
+   ],
+   "art_total": 13,
+   "art_por_ano": {
+    "2026": 1,
+    "2025": 4,
+    "2024": 1,
+    "2023": 3,
+    "2022": 4
+   },
+   "qualis": {
+    "SQ": 13
+   },
+   "livros": 0,
+   "capitulos": 0,
+   "proj": 8,
+   "ori_conc": 26,
+   "ori_and": 10,
+   "ms_conc": 4,
+   "dr_conc": 2,
+   "ms_and": 4,
+   "dr_and": 4,
+   "pd_conc": 0,
+   "pd_and": 0,
+   "ic_conc": 20,
+   "intl": [
+    "Estados Unidos",
+    "França"
+   ],
+   "agencias": [
+    "{'nome': 'Conselho Nacional de Desenvolvimento Científico e Tecnológico', 'tipo_apoio': 'Auxílio financeiro'}",
+    "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Auxílio financeiro'}"
+   ],
+   "idiomas": [
+    "Espanhol",
+    "Inglês",
+    "Francês"
+   ]
+  },
+  "06_Eliane-Ayres_1370798140664840.json": {
+   "nome": "Eliane Ayres",
+   "lattes": "1370798140664840",
+   "rotulo": "Professor Permanente",
+   "bolsa": "Bolsista de Produtividade Desen. Tec. e Extensão Inovadora do CNPq - Nível C",
+   "url": "http://lattes.cnpq.br/1370798140664840",
+   "atualizacao": "23/08/2026",
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Desenho Industrial"
+   ],
+   "linhas": [
+    "Desenvolvimento de polímeros e nanocompósitos"
+   ],
+   "art_total": 15,
+   "art_por_ano": {
+    "2026": 1,
+    "2025": 4,
+    "2024": 4,
+    "2023": 3,
+    "2022": 2,
+    "2021": 1
+   },
+   "qualis": {
+    "SQ": 15
+   },
+   "livros": 0,
+   "capitulos": 0,
+   "proj": 8,
+   "ori_conc": 16,
+   "ori_and": 7,
+   "ms_conc": 4,
+   "dr_conc": 4,
+   "ms_and": 4,
+   "dr_and": 1,
+   "pd_conc": 2,
+   "pd_and": 0,
+   "ic_conc": 6,
+   "intl": [],
+   "agencias": [
+    "{'nome': 'CONSELHO NACIONAL DE DESENVOLVIMENTO CIENTIFICO E TECNOLOGICO-CNPQ', 'tipo_apoio': 'Bolsa'}",
+    "{'nome': 'Conselho Nacional de Desenvolvimento Científico e Tecnológico', 'tipo_apoio': 'Auxílio financeiro'}",
+    "{'nome': 'Conselho Nacional de Desenvolvimento Científico e Tecnológico', 'tipo_apoio': 'Bolsa'}",
+    "{'nome': 'Financiadora de Estudos e Projetos', 'tipo_apoio': 'Auxílio financeiro'}",
+    "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Auxílio financeiro'}",
+    "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Bolsa'}"
+   ],
+   "idiomas": [
+    "Inglês",
+    "Francês"
+   ]
+  },
+  "07_Fernando-Gabriel-da-Silva-Araujo_8915679278888857.json": {
+   "nome": "Fernando Gabriel da Silva Araujo",
+   "lattes": "8915679278888857",
+   "rotulo": "Professor Permanente",
+   "bolsa": "",
+   "url": "http://lattes.cnpq.br/8915679278888857",
+   "atualizacao": "05/07/2026",
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica",
+    "Física",
+    "Engenharia de Materiais e Metalúrgica"
+   ],
+   "linhas": [
+    "Sol-Gel",
+    "Silica",
+    "Processing",
+    "Laser treatment",
+    "Molecular modeling",
+    "Síntese hidrotérmica de pós e monocristais"
+   ],
+   "art_total": 9,
+   "art_por_ano": {
+    "2024": 2,
+    "2022": 2,
+    "2021": 5
+   },
+   "qualis": {
+    "SQ": 9
+   },
+   "livros": 0,
+   "capitulos": 0,
+   "proj": 0,
+   "ori_conc": 8,
+   "ori_and": 3,
+   "ms_conc": 6,
+   "dr_conc": 2,
+   "ms_and": 0,
+   "dr_and": 3,
+   "pd_conc": 0,
+   "pd_and": 0,
+   "ic_conc": 0,
+   "intl": [
+    "Estados Unidos"
+   ],
+   "agencias": [],
+   "idiomas": [
+    "Inglês",
+    "Alemão",
+    "Espanhol",
+    "Francês",
+    "Português"
+   ]
+  },
+  "08_Geraldo-Lúcio-de-Faria_0954824992144106.json": {
+   "nome": "Geraldo Lúcio de Faria",
+   "lattes": "0954824992144106",
+   "rotulo": "Professor Permanente",
+   "bolsa": "Nível 1D",
+   "url": "http://lattes.cnpq.br/0954824992144106",
+   "atualizacao": "19/08/2026",
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica"
+   ],
+   "linhas": [],
+   "art_total": 40,
+   "art_por_ano": {
+    "2026": 5,
+    "2025": 8,
+    "2024": 6,
+    "2023": 8,
+    "2022": 4,
+    "2021": 9
+   },
+   "qualis": {
+    "SQ": 40
+   },
+   "livros": 2,
+   "capitulos": 1,
+   "proj": 7,
+   "ori_conc": 22,
+   "ori_and": 9,
+   "ms_conc": 11,
+   "dr_conc": 2,
+   "ms_and": 5,
+   "dr_and": 3,
+   "pd_conc": 1,
+   "pd_and": 0,
+   "ic_conc": 8,
+   "intl": [],
+   "agencias": [
+    "{'nome': 'ARCELORMITTAL BRASIL S', 'tipo_apoio': 'Financiamento'}",
+    "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Auxílio financeiro'}",
+    "{'nome': 'Gerdau Açominas', 'tipo_apoio': 'Outra'}"
+   ],
+   "idiomas": [
+    "Inglês",
+    "Alemão",
+    "Espanhol",
+    "Português",
+    "Francês"
+   ]
+  },
+  "10_Heloisa-Nazaré-dos-Santos_7238982117122755.json": {
+   "nome": "Heloisa Nazaré dos Santos",
+   "lattes": "7238982117122755",
+   "rotulo": "Professor Colaborador",
+   "bolsa": "",
+   "url": "http://lattes.cnpq.br/7238982117122755",
+   "atualizacao": "23/08/2026",
+   "areas": [
+    "Desenho Industrial",
+    "Engenharia de Produção",
+    "Desenho Industrial",
+    "Engenharia de Produção"
+   ],
+   "linhas": [
+    "Projetos de design para a área da saúde",
+    "Design e Tecnologia",
+    "Analise e reaproveitamento de refugos",
+    "Novas tecnologias para equipamentos de proteção individual (EPI)",
+    "Pesquisa e planejamento de tendências em design",
+    "Tecnologias para desenvolvimento de calçados"
+   ],
+   "art_total": 4,
+   "art_por_ano": {
+    "2026": 1,
+    "2025": 1,
+    "2022": 1,
+    "2021": 1
+   },
+   "qualis": {
+    "SQ": 4
+   },
+   "livros": 1,
+   "capitulos": 8,
+   "proj": 6,
+   "ori_conc": 15,
+   "ori_and": 10,
+   "ms_conc": 3,
+   "dr_conc": 1,
+   "ms_and": 7,
+   "dr_and": 3,
+   "pd_conc": 0,
+   "pd_and": 0,
+   "ic_conc": 11,
+   "intl": [],
+   "agencias": [
+    "{'nome': 'Assembléia Legislativa de Minas Gerais', 'tipo_apoio': 'Auxílio financeiro'}",
+    "{'nome': 'Conselho Nacional de Desenvolvimento Científico e Tecnológico', 'tipo_apoio': 'Auxílio financeiro'}",
+    "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Auxílio financeiro'}",
+    "{'nome': 'Papq UEMG', 'tipo_apoio': 'PROG'}"
+   ],
+   "idiomas": [
+    "Inglês",
+    "Espanhol"
+   ]
+  },
+  "11_Hugo-Bonette-de-Carvalho_1642083834158700.json": {
+   "nome": "Hugo Bonette de Carvalho",
+   "lattes": "1642083834158700",
+   "rotulo": "Professor Permanente",
+   "bolsa": "",
+   "url": "http://lattes.cnpq.br/1642083834158700",
+   "atualizacao": "27/08/2026",
+   "areas": [
+    "Física",
+    "Física",
+    "Física"
+   ],
+   "linhas": [
+    "Óxidos Magnéticos Diluídos",
+    "Materiais Termoelétricos",
+    "Sistemas catalíticos"
+   ],
+   "art_total": 12,
+   "art_por_ano": {
+    "2026": 3,
+    "2024": 1,
+    "2023": 3,
+    "2022": 2,
+    "2021": 3
+   },
+   "qualis": {
+    "SQ": 12
+   },
+   "livros": 0,
+   "capitulos": 0,
+   "proj": 3,
+   "ori_conc": 7,
+   "ori_and": 3,
+   "ms_conc": 2,
+   "dr_conc": 2,
+   "ms_and": 1,
+   "dr_and": 2,
+   "pd_conc": 1,
+   "pd_and": 0,
+   "ic_conc": 2,
+   "intl": [],
+   "agencias": [
+    "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Auxílio financeiro'}"
+   ],
+   "idiomas": [
+    "Inglês",
+    "Espanhol",
+    "Alemão"
+   ]
+  },
+  "12_Ive-Silvestre-de-Almeida_8756368667136851.json": {
+   "nome": "Ive Silvestre de Almeida",
+   "lattes": "8756368667136851",
+   "rotulo": "Professor Colaborador",
+   "bolsa": "",
+   "url": "http://lattes.cnpq.br/8756368667136851",
+   "atualizacao": "14/06/2026",
+   "areas": [
+    "Física",
+    "Física",
+    "Física"
+   ],
+   "linhas": [],
+   "art_total": 3,
+   "art_por_ano": {
+    "2025": 1,
+    "2024": 1,
+    "2022": 1
+   },
+   "qualis": {
+    "SQ": 3
+   },
+   "livros": 0,
+   "capitulos": 0,
+   "proj": 3,
+   "ori_conc": 17,
+   "ori_and": 6,
+   "ms_conc": 4,
+   "dr_conc": 0,
+   "ms_and": 2,
+   "dr_and": 2,
+   "pd_conc": 0,
+   "pd_and": 0,
+   "ic_conc": 13,
+   "intl": [],
+   "agencias": [
+    "{'nome': 'Conselho Nacional de Desenvolvimento Científico e Tecnológico', 'tipo_apoio': 'Auxílio financeiro'}"
+   ],
+   "idiomas": [
+    "Inglês",
+    "Português"
+   ]
+  },
+  "13_Johne-Jesus-Mol-Peixoto_7172124269609011.json": {
+   "nome": "Johne Jesus Mol Peixoto",
+   "lattes": "7172124269609011",
+   "rotulo": "Professor Permanente",
+   "bolsa": "Nível C",
+   "url": "http://lattes.cnpq.br/7172124269609011",
+   "atualizacao": "03/08/2026",
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica"
+   ],
+   "linhas": [
+    "Hidrometalurgia - Lixiviação de minérios sulfetados de cobre",
+    "Modelamento físico e matemático em processos metalúrgicos"
+   ],
+   "art_total": 10,
+   "art_por_ano": {
+    "2025": 2,
+    "2024": 1,
+    "2023": 4,
+    "2022": 2,
+    "2021": 1
+   },
+   "qualis": {
+    "SQ": 10
+   },
+   "livros": 0,
+   "capitulos": 0,
+   "proj": 7,
+   "ori_conc": 20,
+   "ori_and": 6,
+   "ms_conc": 8,
+   "dr_conc": 1,
+   "ms_and": 2,
+   "dr_and": 2,
+   "pd_conc": 0,
+   "pd_and": 0,
+   "ic_conc": 11,
+   "intl": [],
+   "agencias": [
+    "{'nome': 'Conselho Nacional de Desenvolvimento Científico e Tecnológico', 'tipo_apoio': 'Bolsa'}",
+    "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Auxílio financeiro'}",
+    "{'nome': 'Gerdau Açominas', 'tipo_apoio': 'Cooperação'}",
+    "{'nome': 'Gerdau Aços Longos', 'tipo_apoio': 'Filial SP - Cooperação'}",
+    "{'nome': 'Vallourec Soluções Tubulares do Brasil S', 'tipo_apoio': 'Financiamento'}"
+   ],
+   "idiomas": [
+    "Inglês",
+    "Português"
+   ]
+  },
+  "14_Leonardo-Barbosa-Godefroid_1995142616892313.json": {
+   "nome": "Leonardo Barbosa Godefroid",
+   "lattes": "1995142616892313",
+   "rotulo": "Professor Permanente",
+   "bolsa": "",
+   "url": "http://lattes.cnpq.br/1995142616892313",
+   "atualizacao": "17/08/2026",
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica"
+   ],
+   "linhas": [
+    "Análise de falhas",
+    "Tenacidade à fratura K - CTOD - J",
+    "Resistência à iniciação e à propagação de trincas por fadiga"
+   ],
+   "art_total": 13,
+   "art_por_ano": {
+    "2026": 4,
+    "2025": 3,
+    "2024": 2,
+    "2023": 3,
+    "2021": 1
+   },
+   "qualis": {
+    "SQ": 13
+   },
+   "livros": 0,
+   "capitulos": 0,
+   "proj": 0,
+   "ori_conc": 5,
+   "ori_and": 4,
+   "ms_conc": 2,
+   "dr_conc": 1,
+   "ms_and": 2,
+   "dr_and": 2,
+   "pd_conc": 0,
+   "pd_and": 0,
+   "ic_conc": 2,
+   "intl": [],
+   "agencias": [],
+   "idiomas": [
+    "Alemão",
+    "Espanhol",
+    "Francês",
+    "Inglês",
+    "Português"
+   ]
+  },
+  "15_Marcelo-Gomes-Speziali_7307092459450276.json": {
+   "nome": "Marcelo Gomes Speziali",
+   "lattes": "7307092459450276",
+   "rotulo": "Professor Permanente",
+   "bolsa": "Bolsista de Produtividade Desen. Tec. e Extensão Inovadora do CNPq - Nível C",
+   "url": "http://lattes.cnpq.br/7307092459450276",
+   "atualizacao": "25/08/2026",
+   "areas": [
+    "Direito",
+    "Engenharia de Produção",
+    "Engenharia de Produção",
+    "Engenharia de Produção"
+   ],
+   "linhas": [
+    "Prospecção tecnológica",
+    "Novos materiais para liberação controlada de fármacos",
+    "Catálise Homogênea e Heterogênea",
+    "SILP - Líquidos Iônicos Suportados",
+    "Sistemas de Liberação Controlada",
+    "Propriedade Intelectual"
+   ],
+   "art_total": 6,
+   "art_por_ano": {
+    "2025": 2,
+    "2024": 1,
+    "2022": 2,
+    "2021": 1
+   },
+   "qualis": {
+    "SQ": 6
+   },
+   "livros": 1,
+   "capitulos": 4,
+   "proj": 3,
+   "ori_conc": 4,
+   "ori_and": 15,
+   "ms_conc": 4,
+   "dr_conc": 0,
+   "ms_and": 7,
+   "dr_and": 7,
+   "pd_conc": 0,
+   "pd_and": 0,
+   "ic_conc": 0,
+   "intl": [],
+   "agencias": [
+    "{'nome': 'FUNDACAO DE AMPARO A PESQUISA DO ESTADO DO RIO GRANDE DO SUL', 'tipo_apoio': 'Auxílio financeiro'}",
+    "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Auxílio financeiro'}"
+   ],
+   "idiomas": [
+    "Português",
+    "Alemão",
+    "Espanhol",
+    "Inglês"
+   ]
+  },
+  "16_Matheus-Josué-de-Souza-Matos_6221953730638193.json": {
+   "nome": "Matheus Josué de Souza Matos",
+   "lattes": "6221953730638193",
+   "rotulo": "Professor Permanente",
+   "bolsa": "Nível 2",
+   "url": "http://lattes.cnpq.br/6221953730638193",
+   "atualizacao": "31/07/2026",
+   "areas": [
+    "Física",
+    "Física",
+    "Física",
+    "Física"
+   ],
+   "linhas": [
+    "Semicondutores: teoria de propriedades eletrônicas e estruturais",
+    "Estrutura eletrônica de moleculas",
+    "Estrutura eletrônica de solidos",
+    "Teoria de nanoestruturas: propriedades eletrônicas e estruturais por primeiros princípios"
+   ],
+   "art_total": 29,
+   "art_por_ano": {
+    "2026": 4,
+    "2025": 8,
+    "2024": 3,
+    "2023": 6,
+    "2022": 5,
+    "2021": 3
+   },
+   "qualis": {
+    "SQ": 29
+   },
+   "livros": 1,
+   "capitulos": 0,
+   "proj": 9,
+   "ori_conc": 23,
+   "ori_and": 14,
+   "ms_conc": 5,
+   "dr_conc": 3,
+   "ms_and": 5,
+   "dr_and": 6,
+   "pd_conc": 2,
+   "pd_and": 2,
+   "ic_conc": 13,
+   "intl": [],
+   "agencias": [
+    "{'nome': 'Companhia Vale do Rio Doce', 'tipo_apoio': 'Auxílio financeiro'}",
+    "{'nome': 'Conselho Nacional de Desenvolvimento Científico e Tecnológico', 'tipo_apoio': 'Auxílio financeiro'}",
+    "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Auxílio financeiro'}",
+    "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Outra'}"
+   ],
+   "idiomas": [
+    "Português",
+    "Inglês",
+    "Espanhol"
+   ]
+  },
+  "17_Paulo-Santos-Assis_7360474381329605.json": {
+   "nome": "Paulo Santos Assis",
+   "lattes": "7360474381329605",
+   "rotulo": "Professor Permanente",
+   "bolsa": "Bolsista de Produtividade em Desenvolvimento Tecnológico e Extensão Inovadora FAPEMIG/CNPq - DT Nível C",
+   "url": "http://lattes.cnpq.br/7360474381329605",
+   "atualizacao": "12/07/2026",
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica"
+   ],
+   "linhas": [
+    "Modelamento e Simulação da produção de ferro e aço",
+    "Injeção de materiais pulverizados",
+    "Metalurgia Secundária",
+    "Projeto GT 0604 - Controle do Mexilhão dourado",
+    "Aumento de produtividade da Siderurgia",
+    "DESENVOLVIMENTO DE PROJETOS COOPERATIVOS NA AREA DE METALURGIA // ESTABELECIMENTO DE LINHA DE PESQUISA DE INOVACAO EM RED.MINERIO FERRO // DISCUSSAO COM INSTITUICOES DE PESQUISA E ENSINO PROJETO REMIN"
+   ],
+   "art_total": 29,
+   "art_por_ano": {
+    "2026": 4,
+    "2025": 4,
+    "2024": 8,
+    "2023": 3,
+    "2022": 3,
+    "2021": 7
+   },
+   "qualis": {
+    "SQ": 29
+   },
+   "livros": 0,
+   "capitulos": 2,
+   "proj": 0,
+   "ori_conc": 29,
+   "ori_and": 7,
+   "ms_conc": 17,
+   "dr_conc": 10,
+   "ms_and": 0,
+   "dr_and": 7,
+   "pd_conc": 2,
+   "pd_and": 0,
+   "ic_conc": 0,
+   "intl": [],
+   "agencias": [],
+   "idiomas": [
+    "Alemão",
+    "Inglês",
+    "Espanhol",
+    "Francês"
+   ]
+  },
+  "18_Rita-de-Castro-Engler_1848076566428564.json": {
+   "nome": "Rita de Castro Engler",
+   "lattes": "1848076566428564",
+   "rotulo": "Professor Permanente",
+   "bolsa": "",
+   "url": "http://lattes.cnpq.br/1848076566428564",
+   "atualizacao": "24/08/2026",
+   "areas": [
+    "Engenharia de Produção",
+    "Engenharia de Produção",
+    "Administração"
+   ],
+   "linhas": [
+    "Motivação",
+    "Gestão participativa",
+    "Estratégia",
+    "Gestão de Tecnologia",
+    "Inovação",
+    "Liderança"
+   ],
+   "art_total": 32,
+   "art_por_ano": {
+    "2025": 5,
+    "2024": 4,
+    "2023": 9,
+    "2022": 3,
+    "2021": 11
+   },
+   "qualis": {
+    "SQ": 32
+   },
+   "livros": 0,
+   "capitulos": 1,
+   "proj": 8,
+   "ori_conc": 12,
+   "ori_and": 6,
+   "ms_conc": 5,
+   "dr_conc": 7,
+   "ms_and": 1,
+   "dr_and": 5,
+   "pd_conc": 0,
+   "pd_and": 0,
+   "ic_conc": 0,
+   "intl": [
+    "Canadá",
+    "Estados Unidos",
+    "França",
+    "Inglaterra",
+    "Noruega",
+    "Suécia",
+    "África do Sul"
+   ],
+   "agencias": [
+    "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Bolsa'}",
+    "{'nome': 'Universidade do Estado de Minas Gerais', 'tipo_apoio': 'Bolsa'}"
+   ],
+   "idiomas": [
+    "Alemão",
+    "Inglês",
+    "Espanhol",
+    "Francês",
+    "Português",
+    "Italiano"
+   ]
+  },
+  "19_Rodrigo-Fernando-Bianchi_0576192110271130.json": {
+   "nome": "Rodrigo Fernando Bianchi",
+   "lattes": "0576192110271130",
+   "rotulo": "Professor Permanente",
+   "bolsa": "Nível 2",
+   "url": "http://lattes.cnpq.br/0576192110271130",
+   "atualizacao": "14/07/2026",
+   "areas": [
+    "Física",
+    "Física",
+    "Engenharia Elétrica"
+   ],
+   "linhas": [
+    "Caracterização Elétrica de Sistemas Sólidos Desordenados",
+    "Confecção e Caracterização de Filmes e Dispositivos Eletrônicos Poliméricos",
+    "Física de Polímeros",
+    "Membro fundador da Liffee - Startup de base tecnológica incubada na Incultec/UFOP",
+    "Membro da As31 - Empresa de base tecnológica incubada na Incultec/UFOP.",
+    "Eletrônica Orgânica"
+   ],
+   "art_total": 14,
+   "art_por_ano": {
+    "2026": 2,
+    "2025": 2,
+    "2024": 1,
+    "2023": 1,
+    "2022": 3,
+    "2021": 5
+   },
+   "qualis": {
+    "SQ": 14
+   },
+   "livros": 3,
+   "capitulos": 3,
+   "proj": 1,
+   "ori_conc": 10,
+   "ori_and": 3,
+   "ms_conc": 7,
+   "dr_conc": 1,
+   "ms_and": 0,
+   "dr_and": 3,
+   "pd_conc": 1,
+   "pd_and": 0,
+   "ic_conc": 1,
+   "intl": [
+    "Estados Unidos",
+    "UC BERKELEY",
+    "UNC"
+   ],
+   "agencias": [],
+   "idiomas": [
+    "Inglês",
+    "Espanhol"
+   ]
+  },
+  "20_Rodrigo-Rangel-Porcaro_3405298711596512.json": {
+   "nome": "Rodrigo Rangel Porcaro",
+   "lattes": "3405298711596512",
+   "rotulo": "Professor Permanente",
+   "bolsa": "",
+   "url": "http://lattes.cnpq.br/3405298711596512",
+   "atualizacao": "15/04/2026",
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia Aeroespacial"
+   ],
+   "linhas": [
+    "Microscopia óptica",
+    "Propriedades mecânicas de metais e ligas",
+    "Fadiga dos metais",
+    "Simulação por Método dos Elementos Finitos",
+    "Avaliação de soldabilidade de aços de aplicação na indústria automotiva",
+    "Soldagem por centelhamento em trilhos ferroviários"
+   ],
+   "art_total": 11,
+   "art_por_ano": {
+    "2026": 2,
+    "2025": 2,
+    "2024": 3,
+    "2023": 2,
+    "2022": 1,
+    "2021": 1
+   },
+   "qualis": {
+    "SQ": 11
+   },
+   "livros": 0,
+   "capitulos": 0,
+   "proj": 0,
+   "ori_conc": 8,
+   "ori_and": 8,
+   "ms_conc": 5,
+   "dr_conc": 0,
+   "ms_and": 4,
+   "dr_and": 3,
+   "pd_conc": 0,
+   "pd_and": 0,
+   "ic_conc": 3,
+   "intl": [],
+   "agencias": [],
+   "idiomas": [
+    "Inglês",
+    "Italiano"
+   ]
+  },
+  "21_Taíse-Matte-Manhabosco_9945942332231660.json": {
+   "nome": "Taíse Matte Manhabosco",
+   "lattes": "9945942332231660",
+   "rotulo": "Professor Permanente",
+   "bolsa": "Nível 2",
+   "url": "http://lattes.cnpq.br/9945942332231660",
+   "atualizacao": "24/08/2026",
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica"
+   ],
+   "linhas": [
+    "Estudo da tribocorrosão em materiais para implantes",
+    "Aplicações de materiais 2D",
+    "Eletrodeposição",
+    "Cerâmicas",
+    "Biomateriais"
+   ],
+   "art_total": 21,
+   "art_por_ano": {
+    "2026": 9,
+    "2025": 4,
+    "2024": 2,
+    "2022": 3,
+    "2021": 3
+   },
+   "qualis": {
+    "SQ": 21
+   },
+   "livros": 0,
+   "capitulos": 0,
+   "proj": 3,
+   "ori_conc": 15,
+   "ori_and": 8,
+   "ms_conc": 7,
+   "dr_conc": 3,
+   "ms_and": 1,
+   "dr_and": 4,
+   "pd_conc": 1,
+   "pd_and": 0,
+   "ic_conc": 4,
+   "intl": [],
+   "agencias": [
+    "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Auxílio financeiro'}"
+   ],
+   "idiomas": [
+    "Inglês",
+    "Alemão",
+    "Espanhol"
+   ]
+  },
+  "22_Thiago-Cazati_0873693558323059.json": {
+   "nome": "Thiago Cazati",
+   "lattes": "0873693558323059",
+   "rotulo": "Professor Permanente",
+   "bolsa": "",
+   "url": "http://lattes.cnpq.br/0873693558323059",
+   "atualizacao": "17/07/2026",
+   "areas": [
+    "Física",
+    "Física",
+    "Física"
+   ],
+   "linhas": [
+    "Estudo das propriedades eletrônicas de Moléculas Orgânicas Conjugadas para aplicação em sistemas optoeletrônicos",
+    "FOTOGERAÇÃO EM SISTEMAS FOTOVOLTAICOS DE SEMICONDUTORES ORGÂNICOS",
+    "Estudo da Interação entre Moléculas Orgânicas Doadoras e Aceitadoras para aplicações em Dispositivos Fotovoltaicos Não-Fulerenos",
+    "MATERIAIS E SISTEMAS ESTRUTURADOS E NANOESTRUTURADOS"
+   ],
+   "art_total": 14,
+   "art_por_ano": {
+    "2026": 3,
+    "2025": 3,
+    "2024": 1,
+    "2023": 2,
+    "2022": 2,
+    "2021": 3
+   },
+   "qualis": {
+    "SQ": 14
+   },
+   "livros": 0,
+   "capitulos": 0,
+   "proj": 4,
+   "ori_conc": 18,
+   "ori_and": 6,
+   "ms_conc": 3,
+   "dr_conc": 1,
+   "ms_and": 2,
+   "dr_and": 2,
+   "pd_conc": 0,
+   "pd_and": 0,
+   "ic_conc": 14,
+   "intl": [
+    "Inglaterra"
+   ],
+   "agencias": [
+    "{'nome': 'Conselho Nacional de Desenvolvimento Científico e Tecnológico', 'tipo_apoio': 'Bolsa'}",
+    "{'nome': 'Conselho Nacional de Desenvolvimento Científico e Tecnológico', 'tipo_apoio': 'Cooperação'}",
+    "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Auxílio financeiro'}"
+   ],
+   "idiomas": [
+    "Inglês"
+   ]
+  },
+  "23_Versiane-Albis-Leão_4062848906639188.json": {
+   "nome": "Versiane Albis Leão",
+   "lattes": "4062848906639188",
+   "rotulo": "Professor Permanente",
+   "bolsa": "Nível B",
+   "url": "http://lattes.cnpq.br/4062848906639188",
+   "atualizacao": "20/08/2026",
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia Sanitária",
+    "Engenharia de Materiais e Metalúrgica",
+    "Engenharia de Materiais e Metalúrgica"
+   ],
+   "linhas": [
+    "Hidro e biohidrometalurgia",
+    "Tratamento de resíduos na indústria mineral",
+    "Tratamento de efluentes líquidos",
+    "Processos de adsorção"
+   ],
+   "art_total": 13,
+   "art_por_ano": {
+    "2024": 5,
+    "2023": 4,
+    "2022": 1,
+    "2021": 3
+   },
+   "qualis": {
+    "SQ": 13
+   },
+   "livros": 0,
+   "capitulos": 0,
+   "proj": 6,
+   "ori_conc": 7,
+   "ori_and": 9,
+   "ms_conc": 4,
+   "dr_conc": 3,
+   "ms_and": 2,
+   "dr_and": 7,
+   "pd_conc": 0,
+   "pd_and": 0,
+   "ic_conc": 0,
+   "intl": [],
+   "agencias": [
+    "{'nome': 'Conselho Nacional de Desenvolvimento Científico e Tecnológico', 'tipo_apoio': 'Auxílio financeiro'}",
+    "{'nome': 'Financiadora de Estudos e Projetos', 'tipo_apoio': 'Auxílio financeiro'}",
+    "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Auxílio financeiro'}"
+   ],
+   "idiomas": [
+    "Inglês",
+    "Espanhol"
+   ]
+  },
+  "24_Víctor-de-Andrade-Alvarenga-Oliveira_9004123547060623.json": {
+   "nome": "Víctor de Andrade Alvarenga Oliveira",
+   "lattes": "9004123547060623",
+   "rotulo": "Professor Permanente",
+   "bolsa": "",
+   "url": "http://lattes.cnpq.br/9004123547060623",
+   "atualizacao": "30/07/2026",
+   "areas": [
+    "Engenharia de Materiais e Metalúrgica",
+    "Química"
+   ],
+   "linhas": [
+    "Redução e lixiviação amoniacal de minérios lateríticos de níquel",
+    "Influência da presença de cloretos metálicos na extração de níquel e cobalto de minérios lateríticos",
+    "Ustulação alcalina e lixiviação de óxido de nióbio"
+   ],
+   "art_total": 12,
+   "art_por_ano": {
+    "2025": 2,
+    "2024": 3,
+    "2023": 2,
+    "2022": 3,
+    "2021": 2
+   },
+   "qualis": {
+    "SQ": 12
+   },
+   "livros": 0,
+   "capitulos": 0,
+   "proj": 4,
+   "ori_conc": 1,
+   "ori_and": 6,
+   "ms_conc": 1,
+   "dr_conc": 0,
+   "ms_and": 4,
+   "dr_and": 1,
+   "pd_conc": 0,
+   "pd_and": 0,
+   "ic_conc": 0,
+   "intl": [],
+   "agencias": [
+    "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Auxílio financeiro'}",
+    "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Outra'}"
+   ],
+   "idiomas": [
+    "Espanhol",
+    "Inglês",
+    "Francês"
+   ]
+  }
+ },
+ "n_docentes": 24,
+ "prod_por_ano": {
+  "2021": 75,
+  "2022": 58,
+  "2023": 66,
+  "2024": 56,
+  "2025": 65,
+  "2026": 50
+ },
+ "qualis_por_ano": {
+  "2021": {
+   "SQ": 75
+  },
+  "2022": {
+   "SQ": 58
+  },
+  "2023": {
+   "SQ": 66
+  },
+  "2024": {
+   "SQ": 56
+  },
+  "2025": {
+   "SQ": 65
+  },
+  "2026": {
+   "SQ": 50
+  }
+ },
+ "paises": {
+  "Estados Unidos": 18,
+  "França": 10,
+  "Canadá": 5,
+  "África do Sul": 4,
+  "Suécia": 3,
+  "Inglaterra": 3,
+  "INMETRO": 2,
+  "Inovações e Comunicações": 2,
+  "Noruega": 2,
+  "UC BERKELEY": 2,
+  "UNC": 2
+ },
+ "agencias": {
+  "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Auxílio financeiro'}": 29,
+  "{'nome': 'Conselho Nacional de Desenvolvimento Científico e Tecnológico', 'tipo_apoio': 'Auxílio financeiro'}": 10,
+  "{'nome': 'Conselho Nacional de Desenvolvimento Científico e Tecnológico', 'tipo_apoio': 'Bolsa'}": 4,
+  "{'nome': 'Gerdau Açominas', 'tipo_apoio': 'Outra'}": 3,
+  "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Outra'}": 3,
+  "{'nome': 'Fundação de Amparo à Pesquisa do Estado de Minas Gerais', 'tipo_apoio': 'Bolsa'}": 2,
+  "{'nome': 'Financiadora de Estudos e Projetos', 'tipo_apoio': 'Auxílio financeiro'}": 2,
+  "{'nome': 'Assembléia Legislativa de Minas Gerais', 'tipo_apoio': 'Auxílio financeiro'}": 2,
+  "{'nome': 'Gerdau Açominas', 'tipo_apoio': 'Cooperação'}": 2,
+  "{'nome': 'Associação Brasileira de Pesquisa e Inovação Industrial', 'tipo_apoio': 'Cooperação'}": 1,
+  "{'nome': 'VALE S', 'tipo_apoio': 'Financiamento'}": 1,
+  "{'nome': 'Vale S', 'tipo_apoio': 'Financiamento'}": 1,
+  "{'nome': 'Futurion AnÃ¡lise Empresarial Ltda', 'tipo_apoio': 'Financiamento'}": 1,
+  "{'nome': 'CONSELHO NACIONAL DE DESENVOLVIMENTO CIENTIFICO E TECNOLOGICO-CNPQ', 'tipo_apoio': 'Bolsa'}": 1,
+  "{'nome': 'ARCELORMITTAL BRASIL S', 'tipo_apoio': 'Financiamento'}": 1,
+  "{'nome': 'Papq UEMG', 'tipo_apoio': 'PROG'}": 1,
+  "{'nome': 'Vallourec Soluções Tubulares do Brasil S', 'tipo_apoio': 'Financiamento'}": 1,
+  "{'nome': 'Gerdau Aços Longos', 'tipo_apoio': 'Filial SP - Cooperação'}": 1,
+  "{'nome': 'FUNDACAO DE AMPARO A PESQUISA DO ESTADO DO RIO GRANDE DO SUL', 'tipo_apoio': 'Auxílio financeiro'}": 1,
+  "{'nome': 'Companhia Vale do Rio Doce', 'tipo_apoio': 'Auxílio financeiro'}": 1,
+  "{'nome': 'Universidade do Estado de Minas Gerais', 'tipo_apoio': 'Bolsa'}": 1,
+  "{'nome': 'Conselho Nacional de Desenvolvimento Científico e Tecnológico', 'tipo_apoio': 'Cooperação'}": 1
+ }
+}

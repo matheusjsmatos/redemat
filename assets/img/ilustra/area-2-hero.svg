@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="t d" preserveAspectRatio="xMidYMid slice">
+<title id="t">Ciclo de materiais e economia circular</title><desc id="d">Ciclo fechado ligando recurso mineral, material, produto e resíduo, indicando o reaproveitamento que caracteriza a economia circular.</desc>
+<rect width="800" height="420" fill="#0B2A22"/>
+<circle cx="400" cy="210" r="132" fill="none" stroke="#2FA983" stroke-width="2.4" stroke-dasharray="7 9" opacity=".85"/>
+<circle cx="400.0" cy="78.0" r="34" fill="#2FA983" opacity=".92"/><path d="M 477.6 103.2 l -7 -5 l 0 10 z" fill="#2FA983" opacity=".9"/><circle cx="525.5" cy="169.2" r="34" fill="#6FB3E0" opacity=".92"/><path d="M 525.5 250.8 l -7 -5 l 0 10 z" fill="#2FA983" opacity=".9"/><circle cx="477.6" cy="316.8" r="34" fill="#D9A521" opacity=".92"/><path d="M 400.0 342.0 l -7 -5 l 0 10 z" fill="#2FA983" opacity=".9"/><circle cx="322.4" cy="316.8" r="34" fill="#C9A6E8" opacity=".92"/><path d="M 274.5 250.8 l -7 -5 l 0 10 z" fill="#2FA983" opacity=".9"/><circle cx="274.5" cy="169.2" r="34" fill="#7FD8B8" opacity=".92"/><path d="M 322.4 103.2 l -7 -5 l 0 10 z" fill="#2FA983" opacity=".9"/>
+</svg>

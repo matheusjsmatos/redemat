@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REDEMAT — Pós-Graduação em Engenharia de Materiais | UFOP · UEMG</title>
+<meta name="description" content="Programa de Pós-Graduação em Engenharia de Materiais da REDEMAT — rede associativa UFOP-UEMG. Mestrado acadêmico, 24 docentes, duas áreas de concentração e quatro linhas de pesquisa em Ouro Preto, MG.">
+<meta name="author" content="REDEMAT — UFOP">
+<link rel="canonical" href="https://redemat.ufop.br/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="REDEMAT — Pós-Graduação em Engenharia de Materiais | UFOP · UEMG">
+<meta property="og:description" content="Programa associativo UFOP-UEMG em Engenharia de Materiais. Conceito CAPES 4, 24 docentes, duas áreas de concentração e quatro linhas de pesquisa.">
+<meta property="og:url" content="https://redemat.ufop.br/">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="alternate" hreflang="pt-BR" href="https://redemat.ufop.br/">
+<link rel="alternate" hreflang="en" href="https://redemat.ufop.br/en/">
+
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<style>
+/* ---------- Hero da homepage ---------- */
+.home-hero {
+  background: linear-gradient(140deg, var(--navy) 0%, var(--navy-mid) 50%, var(--navy-light) 100%);
+  color: #fff; padding: clamp(3.5rem, 8vw, 6rem) 1.25rem clamp(3rem, 6vw, 4.5rem);
+  position: relative; overflow: hidden;
+}
+.home-hero::after {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 24px 24px; pointer-events: none;
+}
+.home-hero-in { max-width: var(--maxw); margin: 0 auto; position: relative; z-index: 1; }
+.pill {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+  font-size: .78rem; font-weight: 600; color: rgba(255,255,255,.9);
+  padding: .35rem .85rem; border-radius: 99px; margin-bottom: 1.5rem;
+}
+.pill i { width: 7px; height: 7px; border-radius: 50%; background: var(--amber-light); animation: pulse 2.4s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .45; transform: scale(.82); } }
+.home-hero h1 {
+  font-family: var(--f-serif); font-weight: 700;
+  font-size: clamp(1.9rem, 5vw, 3.2rem); line-height: 1.1;
+  letter-spacing: -.02em; margin-bottom: 1rem; max-width: 24ch;
+}
+.home-hero h1 em { font-style: normal; color: var(--amber-light); }
+.home-hero .lede { font-size: clamp(1rem, 1.8vw, 1.15rem); color: rgba(255,255,255,.76); max-width: 60ch; line-height: 1.7; }
+.hero-ctas { display: flex; gap: .75rem; margin-top: 2rem; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: .45rem;
+  font-size: .88rem; font-weight: 700; padding: .72rem 1.35rem;
+  border-radius: var(--r-sm); transition: all .16s;
+}
+.btn svg { width: 15px; height: 15px; fill: currentColor; }
+.btn--pri { background: var(--amber); color: #fff; }
+.btn--pri:hover { background: var(--amber-light); transform: translateY(-1px); }
+.btn--sec { background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.28); }
+.btn--sec:hover { background: rgba(255,255,255,.18); }
+.btn--dark { background: var(--navy); color: #fff; }
+.btn--dark:hover { background: var(--navy-mid); transform: translateY(-1px); }
+
+/* ---------- Faixa de KPI ---------- */
+.kpi-strip { background: var(--surface); border-bottom: 1px solid var(--border); }
+.kpi-strip-in { max-width: var(--maxw); margin: 0 auto; padding: 2rem 1.25rem 1.5rem; }
+.kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1.5rem 1rem; }
+.kpi-mini { text-align: center; }
+.kpi-mini b { display: block; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; line-height: 1; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.kpi-mini span { display: block; font-size: .74rem; color: var(--text-mid); margin-top: .4rem; line-height: 1.4; }
+.kpi-strip-note { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: .72rem; color: var(--text-soft); text-align: center; line-height: 1.6; }
+.kpi-strip-note a { color: var(--amber); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+/* ---------- Sobre + timeline ---------- */
+.about-grid { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+@media (max-width: 860px) { .about-grid { grid-template-columns: minmax(0,1fr); } }
+
+/* ---------- Cartões de área ---------- */
+.area-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .2s, transform .2s; }
+.area-card:hover { box-shadow: var(--sh-lg); transform: translateY(-3px); }
+.area-card-bar { height: 5px; }
+.area-card-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+.area-card-n { font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; margin-bottom: .5rem; }
+.area-card h3 { font-family: var(--f-serif); font-size: 1.12rem; font-weight: 700; color: var(--navy); line-height: 1.3; margin-bottom: .7rem; }
+.area-card p { font-size: .85rem; color: var(--text-mid); line-height: 1.65; margin-bottom: 1.1rem; }
+.area-lines { margin-top: auto; display: flex; flex-direction: column; gap: .5rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+.area-line { display: flex; gap: .55rem; align-items: flex-start; font-size: .8rem; color: var(--text); line-height: 1.45; }
+.area-line b { font-weight: 700; flex-shrink: 0; }
+
+/* ---------- Painel escuro ---------- */
+.dash-grid { display: grid; grid-template-columns: minmax(0,1.4fr) minmax(0,1fr); gap: 1.5rem; align-items: stretch; }
+@media (max-width: 860px) { .dash-grid { grid-template-columns: minmax(0,1fr); } }
+.dash-panel { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: var(--r); padding: 1.5rem; }
+.dash-panel h3 { color: #fff; font-size: .95rem; font-weight: 700; margin-bottom: .3rem; }
+.dash-panel .sub { font-size: .78rem; color: rgba(255,255,255,.55); margin-bottom: 1.25rem; }
+.dash-stats { display: flex; flex-direction: column; gap: 1.1rem; }
+.dash-stat { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-bottom: 1.1rem; border-bottom: 1px solid rgba(255,255,255,.1); }
+.dash-stat:last-child { border-bottom: none; padding-bottom: 0; }
+.dash-stat-lbl { font-size: .82rem; color: rgba(255,255,255,.68); line-height: 1.45; }
+.dash-stat-val { font-size: 1.5rem; font-weight: 800; color: var(--amber-light); line-height: 1; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+
+/* ---------- Grade de docentes na home ---------- */
+.people-strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: .85rem; }
+.person-mini { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 1rem; text-align: center; transition: box-shadow .2s, transform .2s; }
+.person-mini:hover { box-shadow: var(--sh); transform: translateY(-2px); }
+.person-mini .av { width: 44px; height: 44px; margin: 0 auto .6rem; }
+.person-mini .nm { display: block; font-size: .78rem; font-weight: 600; color: var(--navy); line-height: 1.35; }
+.person-mini .bl { display: block; font-size: .68rem; color: var(--amber); font-weight: 700; margin-top: .35rem; }
+
+/* ---------- Faixa de parceiros ---------- */
+.partner-row { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; }
+.partner-chip { background: var(--surface); border: 1px solid var(--border); border-radius: 99px; padding: .45rem 1.05rem; font-size: .84rem; font-weight: 600; color: var(--navy); }
+
+/* ---------- CTA final ---------- */
+.cta-band { background: linear-gradient(120deg, var(--navy) 0%, var(--navy-light) 100%); border-radius: var(--r-lg); padding: clamp(2rem, 5vw, 3rem); text-align: center; color: #fff; }
+.cta-band h2 { font-family: var(--f-serif); font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: 700; margin-bottom: .7rem; }
+.cta-band p { font-size: .95rem; color: rgba(255,255,255,.72); max-width: 56ch; margin: 0 auto 1.75rem; line-height: 1.7; }
+.cta-band .hero-ctas { justify-content: center; margin-top: 0; }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollegeOrUniversity",
+  "name": "REDEMAT — Programa de Pós-Graduação em Engenharia de Materiais",
+  "alternateName": "Rede Temática em Engenharia de Materiais",
+  "url": "https://redemat.ufop.br/",
+  "description": "Programa de Pós-Graduação em Engenharia de Materiais em forma associativa entre a Universidade Federal de Ouro Preto e a Universidade do Estado de Minas Gerais.",
+  "foundingDate": "1995",
+  "parentOrganization": {
+    "@type": "CollegeOrUniversity",
+    "name": "Universidade Federal de Ouro Preto",
+    "url": "https://www.ufop.br/"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Campus Universitário Morro do Cruzeiro",
+    "addressLocality": "Ouro Preto",
+    "addressRegion": "MG",
+    "postalCode": "35400-000",
+    "addressCountry": "BR"
+  },
+  "email": "redemat@ufop.edu.br",
+  "department": [
+    { "@type": "EducationalOrganization", "name": "Área de Concentração 1 — Processamento, Estrutura e Desempenho de Materiais" },
+    { "@type": "EducationalOrganization", "name": "Área de Concentração 2 — Materiais Estratégicos, Funcionais e Sustentáveis" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div id="site-header-slot"></div>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section class="home-hero" aria-labelledby="hero-h1">
+  <div class="home-hero-in">
+    <p class="pill"><i aria-hidden="true"></i> Conceito CAPES 4 · Área Engenharias II</p>
+    <h1 id="hero-h1">Ciência e Engenharia de Materiais em <em>rede</em>, desde 1995.</h1>
+    <p class="lede">
+      Programa de Pós-Graduação associativo entre a <strong>UFOP</strong> e a <strong>UEMG</strong>,
+      no coração do Quadrilátero Ferrífero. Pesquisa que vai do recurso mineral ao
+      dispositivo funcional, com <strong>mestrado e doutorado</strong> para a indústria,
+      a academia e o setor público.
+    </p>
+    <div class="hero-ctas">
+      <a href="pages/processo-seletivo.html" class="btn btn--pri">
+        Como ingressar
+        <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      </a>
+      <a href="pages/pesquisa.html" class="btn btn--sec">Áreas de pesquisa</a>
+      <a href="pages/indicadores.html" class="btn btn--sec">Indicadores</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FAIXA DE KPI ═══════════════════════ -->
+<section class="kpi-strip" aria-labelledby="kpi-h">
+  <div class="kpi-strip-in">
+    <h2 id="kpi-h" class="sr-only">Indicadores do Programa em números</h2>
+    <div class="kpi-row" id="kpiRow"></div>
+    <p class="kpi-strip-note" id="kpiNote"></p>
+  </div>
+</section>
+
+<main id="conteudo">
+
+  <!-- ═══════════════════════ MURAL ═══════════════════════ -->
+  <section class="section" id="mural" aria-labelledby="mural-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Acontece na REDEMAT</p>
+        <h2 class="h2" id="mural-h">Notícias, eventos e oportunidades</h2>
+        <p class="section-lede">
+          Artigos publicados, patentes e produtos, trabalhos de estudantes, eventos,
+          projetos de extensão, vagas de pesquisa e editais — tudo num só lugar.
+        </p>
+      </div>
+      <div class="mural-filters" role="group" aria-label="Filtrar o mural por categoria" id="muralFilters"></div>
+      <div class="mural-grid" id="muralGrid"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ REDES SOCIAIS ═══════════════════════ -->
+  <section class="section section--alt" aria-labelledby="soc-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Acompanhe</p>
+        <h2 class="h2" id="soc-h">Siga a REDEMAT</h2>
+        <p class="section-lede">
+          Defesas, seminários, resultados de pesquisa e chamadas de seleção são divulgados
+          primeiro nas nossas redes.
+        </p>
+      </div>
+      <div class="social-cta" id="socialCta"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ SOBRE + TIMELINE ═══════════════════════ -->
+  <section class="section" aria-labelledby="sobre-h">
+    <div class="wrap about-grid">
+      <div>
+        <p class="eyebrow">O Programa</p>
+        <h2 class="h2" id="sobre-h">Uma rede interinstitucional com três décadas de trajetória</h2>
+        <div class="prose">
+          <p>
+            A REDEMAT nasceu em <strong>1995</strong> da união entre a Universidade Federal de Ouro Preto,
+            a Universidade do Estado de Minas Gerais e o CETEC, constituindo a Rede Temática em Engenharia
+            de Materiais — uma estrutura interinstitucional, interdepartamental e multi-unidades, de caráter
+            eminentemente multidisciplinar.
+          </p>
+          <p>
+            Desde o início, o Programa definiu como missão central impulsionar o desenvolvimento do setor
+            industrial brasileiro em seu campo de conhecimento, preservando a oferta de disciplinas sobre
+            todas as classes de materiais e a atuação do corpo docente em suas variadas áreas e linhas.
+          </p>
+          <p>
+            Hoje a REDEMAT é coordenada pela <strong>UFOP</strong>, com a <strong>UEMG</strong> como
+            instituição associada, e reorganiza sua arquitetura acadêmica em duas áreas de concentração
+            e quatro linhas de pesquisa, ao mesmo tempo em que elabora a proposta de criação do seu
+            curso de Doutorado.
+          </p>
+          <a href="pages/programa.html" class="btn btn--dark mt-2">
+            Conheça o Programa
+            <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">Marcos</p>
+        <h3 class="h3 mb-3">Linha do tempo</h3>
+        <div class="tl" id="timeline"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ ÁREAS DE PESQUISA ═══════════════════════ -->
+  <section class="section section--alt" aria-labelledby="areas-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Arquitetura acadêmica</p>
+        <h2 class="h2" id="areas-h">Duas áreas de concentração, quatro linhas de pesquisa</h2>
+        <p class="section-lede">
+          A reorganização proposta em 2026 substitui as 17 linhas históricas por uma arquitetura enxuta,
+          em que cada linha representa problemas e objetos de pesquisa coletivos — não técnicas isoladas
+          ou projetos individuais.
+        </p>
+      </div>
+      <div class="grid grid--2" id="areasGrid"></div>
+      <div class="mt-3" id="areasNota"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ MINI-DASHBOARD ═══════════════════════ -->
+  <section class="section section--dark" aria-labelledby="dash-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Produção científica</p>
+        <h2 class="h2" id="dash-h">O que o Programa produz</h2>
+        <p class="section-lede">
+          Artigos em periódicos publicados pelo corpo docente entre 2021 e 2026, extraídos dos
+          currículos Lattes e deduplicados por DOI. Indicadores preliminares, sujeitos a conferência
+          na Plataforma Sucupira.
+        </p>
+      </div>
+      <div class="dash-grid">
+        <div class="dash-panel">
+          <h3>Artigos em periódicos por ano</h3>
+          <p class="sub" id="chartSub"></p>
+          <div class="chart-box"><canvas id="chartProd" role="img" aria-label="Gráfico de barras com o número de artigos em periódicos publicados por ano, de 2021 a 2026"></canvas></div>
+        </div>
+        <div class="dash-panel">
+          <h3>Panorama 2021–2026</h3>
+          <p class="sub">Agregados do corpo docente atual</p>
+          <div class="dash-stats" id="dashStats"></div>
+        </div>
+      </div>
+      <p class="mt-3" style="font-size:.76rem;color:rgba(255,255,255,.5);line-height:1.65;">
+        A soma das contagens por docente (366) excede o total de artigos únicos (308) devido à coautoria
+        interna ao Programa — cada indicador desta página diz qual das duas unidades está mostrando.
+        A distribuição por estrato Qualis do conjunto completo não é publicada: o campo está vazio nos
+        registros Lattes. Há estrato atribuído para os 69 artigos com coautoria discente do quadriênio,
+        publicado em Indicadores com o aviso de que o recorte não representa o Programa.
+        <a href="pages/indicadores.html#metodologia" style="color:var(--amber-light);font-weight:600;">Ver metodologia completa →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ CORPO DOCENTE ═══════════════════════ -->
+  <section class="section" aria-labelledby="people-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Pessoas</p>
+        <h2 class="h2" id="people-h">Corpo docente</h2>
+        <p class="section-lede">
+          Vinte e quatro docentes de UFOP e UEMG — 21 permanentes e 3 colaboradores —, dos quais
+          11 são bolsistas de produtividade do CNPq.
+        </p>
+      </div>
+      <div class="people-strip" id="peopleStrip"></div>
+      <div class="mt-4 txt-c">
+        <a href="pages/pessoas.html" class="btn btn--dark">
+          Ver todos os 24 docentes
+          <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ INTERNACIONALIZAÇÃO ═══════════════════════ -->
+  <section class="section section--alt" aria-labelledby="intl-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Inserção internacional</p>
+        <h2 class="h2" id="intl-h">Presença além das fronteiras</h2>
+        <p class="section-lede">
+          Treze dos vinte e quatro docentes possuem estágio pós-doutoral ou experiência internacional
+          formal registrada em currículo.
+        </p>
+      </div>
+      <div class="grid grid--4" id="intlGrid"></div>
+      <div class="mt-3" id="intlNota"></div>
+      <div class="mt-3">
+        <a href="pages/internacionalizacao.html" class="btn btn--dark">Internacionalização e colaboração</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ PARCEIROS ═══════════════════════ -->
+  <section class="section" aria-labelledby="part-h">
+    <div class="wrap">
+      <div class="section-head txt-c">
+        <p class="eyebrow">Cooperação</p>
+        <h2 class="h2" id="part-h">Empresas e instituições parceiras</h2>
+        <p class="section-lede" style="margin-inline:auto;">
+          Relação histórica de cooperação com o setor produtivo e com instituições de ensino e pesquisa.
+        </p>
+      </div>
+      <div class="partners-grid" id="partnerRow"></div>
+      <div class="mt-3" id="partnerNota"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ INSTITUCIONAL ═══════════════════════ -->
+  <section class="section section--alt" aria-labelledby="inst-h">
+    <div class="wrap">
+      <div class="section-head txt-c">
+        <p class="eyebrow">Duas universidades, quatro unidades</p>
+        <h2 class="h2" id="inst-h">Quem forma a REDEMAT</h2>
+        <p class="section-lede" style="margin-inline:auto;" id="compLede"></p>
+      </div>
+      <div class="comp-grid" id="compGrid"></div>
+      <div class="mt-3" id="compNota"></div>
+      <div class="grid grid--2 mt-3" id="instGrid"></div>
+      <div class="mt-3" id="identNota"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ ATALHOS NOVOS ═══════════════════════ -->
+  <section class="section" id="para-estudantes" aria-labelledby="atl-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Para quem quer entrar</p>
+        <h2 class="h2" id="atl-h">Oportunidades, laboratórios e reconhecimentos</h2>
+        <p class="section-lede" id="atlLede"></p>
+      </div>
+      <div class="grid grid--3" id="atlGrid"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ CTA FINAL ═══════════════════════ -->
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>Pense sua pesquisa com a gente</h2>
+        <p>
+          O ingresso no Mestrado ocorre por processo seletivo com edital próprio. Antes de se inscrever,
+          identifique a linha de pesquisa mais próxima do seu interesse e entre em contato com o
+          docente responsável.
+        </p>
+        <div class="hero-ctas">
+          <a href="pages/processo-seletivo.html" class="btn btn--pri">Processo seletivo</a>
+          <a href="pages/pessoas.html" class="btn btn--sec">Encontrar um orientador</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer-slot"></div>
+
+<script src="assets/js/site-data.js"></script>
+<!-- Manifesto de fotos: declara quem tem foto e em que formato.
+     Gerado por scripts/conferir-fotos.py --manifesto. Ausente antes
+     da primeira foto: o portal trata a ausência e usa as iniciais. -->
+<script src="assets/img/pessoas/fotos.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
+<script>
+(function () {
+  'use strict';
+  const R = window.REDEMAT, C = window.RC;
+
+  /* ---------------- KPI ---------------- */
+  const KPI_IDS = ['docentes', 'bolsistas', 'artigos', 'mestres', 'projetos', 'conceito'];
+  document.getElementById('kpiRow').innerHTML = KPI_IDS.map(function (id) {
+    const k = R.kpis.filter(function (x) { return x.id === id; })[0];
+    if (!k) return '';
+    return '<div class="kpi-mini">' +
+      '<b style="color:' + k.cor + '" data-count="' + k.valor + '">0</b>' +
+      '<span>' + k.rotulo + '</span></div>';
+  }).join('');
+
+  document.getElementById('kpiNote').innerHTML =
+    'Fontes: página oficial de docentes, currículos Lattes (coleta 28/08/2026), proposta APCN 2026 e ' +
+    'planilha de captação. Indicadores de produção, formação e projetos são <strong>preliminares</strong> ' +
+    'até conferência na Plataforma Sucupira. ' +
+    '<a href="pages/indicadores.html#metodologia">Metodologia e fontes</a>';
+
+  /* ---------------- Timeline ---------------- */
+  document.getElementById('timeline').innerHTML = R.timeline.itens.map(function (t) {
+    return '<div class="tl-item"><div class="tl-year">' + t.ano + '</div>' +
+      '<p class="tl-text">' + t.texto + '</p></div>';
+  }).join('');
+
+  /* ---------------- Áreas ---------------- */
+  document.getElementById('areasGrid').innerHTML = R.areas.itens.map(function (a) {
+    const lines = a.linhas.map(function (l) {
+      return '<div class="area-line">' +
+        '<b style="color:' + l.cor + '">' + l.codigo.replace('Linha ', '') + '</b>' +
+        '<span>' + l.nome + '</span></div>';
+    }).join('');
+    return '<article class="area-card">' +
+      '<div class="area-card-bar" style="background:' + a.cor + '"></div>' +
+      '<div class="area-card-body">' +
+        '<p class="area-card-n" style="color:' + a.cor + '">' + a.codigo + '</p>' +
+        '<h3>' + a.nome + '</h3>' +
+        '<p>' + a.descricao + '</p>' +
+        '<div class="area-lines">' + lines + '</div>' +
+      '</div></article>';
+  }).join('');
+
+  document.getElementById('areasNota').innerHTML = C.note('warn',
+    '<strong>Estrutura em aprovação.</strong> ' + R.areas.nota +
+    ' Fonte: proposta APCN Doutorado 2026, seções 6.2 e 6.3. ' + C.badge('PRELIMINAR'));
+
+  /* ---------------- Dashboard escuro ---------------- */
+  document.getElementById('chartSub').textContent =
+    'Total único no período: ' + C.num(R.producao.total_unico) + ' artigos · ' +
+    R.producao.com_doi + ' com DOI · ' + R.producao.aviso_2026;
+
+  const ds = [
+    { l: 'Artigos únicos em periódicos', v: R.producao.total_unico },
+    { l: 'Artigos com coautoria de discentes e egressos', v: R.producao.com_discentes.valor },
+    { l: 'Dissertações de mestrado concluídas', v: R.formacao.mestrado_concluido },
+    { l: 'Teses de doutorado orientadas', v: R.formacao.doutorado_concluido },
+    { l: 'Orientações em andamento', v: R.formacao.orientacoes_ativas },
+    { l: 'Projetos de pesquisa únicos', v: R.projetos.unicos_recorte }
+  ];
+  document.getElementById('dashStats').innerHTML = ds.map(function (s) {
+    return '<div class="dash-stat"><span class="dash-stat-lbl">' + s.l + '</span>' +
+      '<span class="dash-stat-val">' + C.num(s.v) + '</span></div>';
+  }).join('');
+
+  /* ---------------- Docentes destacados ---------------- */
+  const bolsistas = R.docentes.itens.filter(function (d) { return d.bolsa; }).slice(0, 12);
+  document.getElementById('peopleStrip').innerHTML = bolsistas.map(function (d) {
+    const cor = d.linha ? C.lineColor(d.linha) : 'var(--navy-light)';
+    const ag = d.bolsaAgencia || 'CNPq';
+    return '<a class="person-mini" href="pages/pessoas.html" aria-label="Ver perfil de ' + d.nome + ' no diretório de docentes">' +
+      C.avatar(d.nome, cor, '') +
+      '<span class="nm">' + d.nome + '</span>' +
+      '<span class="bl">' + d.bolsa + (d.bolsa.indexOf(ag) > -1 ? '' : ' ' + ag) + '</span></a>';
+  }).join('');
+
+  /* ---------------- Internacionalização ---------------- */
+  document.getElementById('intlGrid').innerHTML = R.internacionalizacao.paises.map(function (p) {
+    return '<div class="card">' +
+      '<div style="font-size:1.6rem;line-height:1;margin-bottom:.5rem;" aria-hidden="true">' + p.flag + '</div>' +
+      '<div style="font-size:.88rem;font-weight:700;color:var(--navy);">' + p.pais + '</div>' +
+      '<div style="font-size:.76rem;color:var(--text-mid);margin-top:.2rem;">' + p.vinculos + ' vínculo' + (p.vinculos > 1 ? 's' : '') + ' em currículo</div>' +
+      '</div>';
+  }).join('');
+
+  document.getElementById('intlNota').innerHTML = C.note('info',
+    R.internacionalizacao.paises_nota + ' ' + C.badge('PRELIMINAR'));
+
+  /* ---------------- Mural ---------------- */
+  const M = R.mural;
+  const mf = document.getElementById('muralFilters');
+  mf.innerHTML = '<button class="chip" data-c="todos" aria-pressed="true">Tudo</button>' +
+    M.categorias.map(function (c) {
+      return '<button class="chip" data-c="' + c.id + '" aria-pressed="false">' + c.rotulo + '</button>';
+    }).join('');
+
+  const PH = '<svg viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/></svg>';
+
+  function renderMural(cat) {
+    const g = document.getElementById('muralGrid');
+    const itens = (M.itens || []).filter(function (i) { return cat === 'todos' || i.categoria === cat; });
+
+    if (!itens.length) {
+      /* Nada de conteúdo fictício: o estado vazio explica o mecanismo. */
+      g.innerHTML = '<div class="mural-empty">' + PH +
+        '<h3>' + (M.itens.length ? 'Nenhuma publicação nesta categoria' : 'O mural está pronto para receber conteúdo') + '</h3>' +
+        '<p>' + M.nota + '</p>' +
+        '<p>Para publicar, a secretaria adiciona itens em <code>assets/js/site-data.js</code>, no bloco <code>mural.itens</code>. Há dois itens já publicados que servem de modelo — um de artigo, um de estudante. As categorias abaixo já estão configuradas:</p>' +
+        '<div class="mural-cats">' + M.categorias.map(function (c) {
+          return '<span class="mural-cat-chip" title="' + c.desc + '">' + c.rotulo + '</span>';
+        }).join('') + '</div>' +
+        '<p style="margin-top:1.25rem;"><a href="' + R.programa.redes[1].url + '" target="_blank" rel="noopener" style="color:var(--amber);font-weight:600;">Enquanto isso, acompanhe as novidades no Instagram do Programa &#8599;</a></p>' +
+      '</div>';
+      return;
+    }
+
+    g.innerHTML = itens.map(function (i) {
+      const c = M.categorias.filter(function (x) { return x.id === i.categoria; })[0] || M.categorias[0];
+      const media = i.imagem
+        ? '<div class="mural-media"><img src="' + i.imagem + '" alt="' + (i.imagemAlt || '') + '" loading="lazy"></div>'
+        : '<div class="mural-media"><span class="mural-media-ph" aria-hidden="true">' + PH + '</span></div>';
+      const d = i.detalhe;
+      const ext = i.url && i.url.indexOf('http') === 0 ? ' target="_blank" rel="noopener"' : '';
+
+      /* Bloco de procedência: citação do artigo, ou quem mais participou do
+         evento. Cada link é uma fonte verificável — é o que separa notícia
+         de release. */
+      let detalhe = '';
+      if (d && d.revista) {
+        detalhe += '<p class="mural-cit"><strong>' + d.titulo_original + '</strong><br>' +
+          d.revista + ' <strong>' + d.volume + '</strong>, ' + d.paginas + ' (' + d.ano + ')' +
+          '<br>DOI ' + d.doi + '<br>' + d.autor_redemat +
+          '<br><em>Coautoria: ' + d.coautoria + '</em></p>';
+      }
+      if (d && d.trabalho) {
+        detalhe += '<p class="mural-cit"><strong>' + d.premio + '</strong><br>' +
+          d.evento + '<br><em>' + d.trabalho + '</em></p>';
+      }
+      if (d && d.demais && d.demais.length) {
+        detalhe += '<ul class="mural-mais">' + d.demais.map(function (x) {
+          return '<li><b>' + x.nome + '</b>' + x.trabalho + '</li>'; }).join('') + '</ul>';
+      }
+      if (d && d.repercussao && d.repercussao.length) {
+        detalhe += '<div class="mural-rep">' + d.repercussao.map(function (r) {
+          return '<a href="' + r.url + '" target="_blank" rel="noopener">' + r.veiculo +
+            ' ' + C.ICO.ext + '</a>'; }).join('') + '</div>';
+      }
+      if (i.url) {
+        detalhe += '<div class="mural-rep"><a href="' + i.url + '"' + ext + '>' +
+          (d && d.doi ? 'Artigo original' : 'Notícia completa') + ' ' + C.ICO.ext + '</a></div>';
+      }
+      if (d && d.nota_editorial) {
+        detalhe += '<span class="mural-ex"><strong>Modelo editorial.</strong> ' + d.nota_editorial + '</span>';
+      }
+
+      const inner =
+        media +
+        '<div class="mural-body">' +
+          '<span class="mural-cat" style="background:' + c.cor + '">' + c.rotulo + '</span>' +
+          '<h3 class="mural-title">' +
+            (i.url && !detalhe ? '<a href="' + i.url + '"' + ext + '>' + i.titulo + '</a>' : i.titulo) +
+          '</h3>' +
+          (i.texto ? '<p class="mural-txt">' + i.texto + '</p>' : '') +
+          (i.data ? '<p class="mural-date">' + i.data.split('-').reverse().join('/') + '</p>' : '') +
+          detalhe +
+        '</div>';
+
+      /* Com detalhe o cartão tem links próprios, e link dentro de link é HTML
+         inválido: nesse caso o cartão é <article> e o título leva o link. */
+      return (i.url && !detalhe)
+        ? '<a class="mural-card" href="' + i.url + '"' + ext + '>' + inner + '</a>'
+        : '<article class="mural-card">' + inner + '</article>';
+    }).join('');
+  }
+
+  mf.addEventListener('click', function (e) {
+    const b = e.target.closest('.chip');
+    if (!b) return;
+    mf.querySelectorAll('.chip').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+    b.setAttribute('aria-pressed', 'true');
+    renderMural(b.dataset.c);
+  });
+  renderMural('todos');
+
+  /* ---------------- Redes sociais ---------------- */
+  const SOC_COR = { YouTube: '#C4302B', Instagram: '#C13584', LinkedIn: '#0A66C2' };
+  document.getElementById('socialCta').innerHTML = R.programa.redes.map(function (r) {
+    const k = r.nome.toLowerCase();
+    return '<a class="social-card" href="' + r.url + '" target="_blank" rel="noopener" ' +
+      'aria-label="' + r.nome + ' da REDEMAT (abre em nova aba)">' +
+      '<span class="social-ico" style="background:' + (SOC_COR[r.nome] || 'var(--navy)') + '" aria-hidden="true">' +
+        (C.ICO[k] || C.ICO.ext) + '</span>' +
+      '<span><span class="nm">' + r.nome + '</span><span class="hd">' + r.handle + '</span></span></a>';
+  }).join('');
+
+  /* ---------------- Parceiros com logo ---------------- */
+  document.getElementById('partnerRow').innerHTML = R.parceiros.itens.map(function (p) {
+    const img = '<img src="assets/img/parceiros/' + p.slug + '.png" alt="' + p.nome + '" loading="lazy" ' +
+      'onerror="this.remove()">';
+    return '<div class="partner-tile" title="' + p.nome + ' — ' + p.tipo + '">' +
+      img +
+      '<span class="pname">' + p.nome + '</span>' +
+      '<span class="pmeta">' + p.tipo + '</span>' +
+      (p.comProjeto && p.projetos ? '<span class="pproj">' + p.projetos + ' projeto' + (p.projetos > 1 ? 's' : '') + '</span>' : '') +
+    '</div>';
+  }).join('');
+
+  document.getElementById('partnerNota').innerHTML =
+    C.note('info', R.parceiros.nota + ' ' + C.badge('PRELIMINAR')) +
+    '<div class="mt-2">' + C.note('warn', '<strong>Sobre os logos.</strong> ' + R.parceiros.aviso_marca) + '</div>';
+
+  /* ---------------- Atalhos: oportunidades, labs, prêmios ---------------- */
+  (function atalhos() {
+    const O = R.oportunidades, L = R.laboratorios, P = R.premios;
+    const ic = O.orientacoes.filter(function (x) { return x.tipo.indexOf('Iniciação') === 0; })[0];
+    document.getElementById('atlLede').textContent =
+      'Três portas que o portal abre com dado, não com promessa: quantas orientações o ' +
+      'Programa de fato conduziu, em que laboratório o trabalho acontece, e o que já foi ' +
+      'reconhecido fora de casa.';
+    document.getElementById('atlGrid').innerHTML = [
+      { href: 'pages/oportunidades.html', ico: C.ICO.cap, cor: 'var(--area1)',
+        t: 'Oportunidades para estudantes',
+        v: ic.concluidas, vl: 'iniciações científicas concluídas em seis anos',
+        d: 'Iniciação científica, TCC, mestrado, doutorado e pós-doutorado — com as agências que financiaram cada bolsa e os cursos de origem dos estudantes.' },
+      { href: 'pages/laboratorios.html', ico: C.ICO.chart, cor: 'var(--area2)',
+        t: 'Laboratórios e infraestrutura',
+        v: L.total, vl: 'laboratórios associados ao Programa',
+        d: 'MEV com EBSD, microtomografia, AFM, difração de raios X, fornos até 1600 °C e um cluster para simulação — com responsável e técnica de cada um.' },
+      { href: 'pages/reconhecimentos.html', ico: C.ICO.doc, cor: 'var(--amber)',
+        t: 'Prêmios e propriedade intelectual',
+        v: R.producao.patentes.unicas, vl: 'patentes únicas nos currículos',
+        d: P.publicados + ' prêmios e títulos do corpo docente, prêmios de estudantes e as patentes com aplicação descrita pelo Programa.' }
+    ].map(function (x) {
+      return '<a class="card card--hover atl-card" href="' + x.href + '">' +
+        '<span class="kpi-ico" style="background:color-mix(in srgb, ' + x.cor + ' 12%, transparent);color:' + x.cor + '">' + x.ico + '</span>' +
+        '<h3 class="h3">' + x.t + '</h3>' +
+        '<p class="atl-v" style="color:' + x.cor + '">' + x.v + '<span>' + x.vl + '</span></p>' +
+        '<p class="opp-txt">' + x.d + '</p>' +
+        '<span class="mini-link">Abrir ' + C.ICO.ext + '</span></a>';
+    }).join('');
+  }());
+
+  /* ---------------- Composição institucional ---------------- */
+  (function composicao() {
+    const K = R.programa.composicao;
+    document.getElementById('compLede').textContent = K.resumo;
+    document.getElementById('compGrid').innerHTML = K.unidades.map(function (u) {
+      return '<div class="comp-card">' +
+        '<div class="comp-ies"><span class="comp-sigla">' + u.ies + '</span>' +
+          '<span class="comp-nome">' + u.ies_nome + '</span></div>' +
+        (u.escola_url
+          ? '<a class="comp-escola" href="' + u.escola_url + '" target="_blank" rel="noopener">' +
+            u.escola + ' ' + C.ICO.ext + '</a>'
+          : '<span class="comp-escola">' + u.escola + '</span>') +
+        u.departamentos.map(function (d) {
+          return '<div class="comp-dep">' +
+            '<span class="comp-dep-sig">' + d.sigla + '</span>' +
+            '<span><span class="comp-dep-nome">' + d.nome + '</span>' +
+              (d.unidade ? '<span class="comp-dep-un">' + d.unidade + '</span>' : '') +
+              (d.papel ? '<span class="comp-dep-papel">' + d.papel + '</span>' : '') +
+            '</span></div>';
+        }).join('') +
+        '</div>';
+    }).join('');
+    document.getElementById('compNota').innerHTML = C.note('info', K.nota + ' ' + C.badge('VALIDADO'));
+  }());
+
+  document.getElementById('instGrid').innerHTML =
+    '<div class="card" style="display:flex;gap:1.5rem;align-items:center;">' +
+      '<img src="assets/img/ufop-logo.png" alt="Universidade Federal de Ouro Preto" style="height:88px;width:auto;flex-shrink:0;">' +
+      '<div><h3 class="h3">UFOP</h3>' +
+      '<p style="font-size:.85rem;color:var(--text-mid);line-height:1.65;">Universidade Federal de Ouro Preto — instituição coordenadora do Programa, sediada no Quadrilátero Ferrífero.</p>' +
+      '<a href="https://www.ufop.br" target="_blank" rel="noopener" style="font-size:.8rem;color:var(--amber);font-weight:600;">ufop.br &#8599;</a></div>' +
+    '</div>' +
+    '<div class="card" style="display:flex;gap:1.5rem;align-items:center;">' +
+      '<img src="assets/img/uemg-logo.png" alt="Universidade do Estado de Minas Gerais" style="height:78px;width:auto;flex-shrink:0;">' +
+      '<div><h3 class="h3">UEMG</h3>' +
+      '<p style="font-size:.85rem;color:var(--text-mid);line-height:1.65;">Universidade do Estado de Minas Gerais — instituição associada, com atuação em design, prototipagem e materiais.</p>' +
+      '<a href="https://www.uemg.br" target="_blank" rel="noopener" style="font-size:.8rem;color:var(--amber);font-weight:600;">uemg.br &#8599;</a></div>' +
+    '</div>';
+
+  document.getElementById('identNota').innerHTML = C.note('info',
+    '<strong>Identidade visual em transição.</strong> A REDEMAT usa historicamente um logo vertical azul ' +
+    'com detalhes amarelos. Este portal adota a versão modernizada da marca, mantendo a paleta ' +
+    'institucional. As versões oficiais do logo da UFOP estão em ' +
+    '<a href="https://www.ufop.br/logomarca/" target="_blank" rel="noopener">ufop.br/logomarca</a>.');
+
+  /* ---------------- Montagem ---------------- */
+  C.mount('index.html', '');
+
+  /* ---------------- Gráfico ---------------- */
+  let done = false;
+  function drawChart() {
+    if (done || !window.Chart) return;
+    const el = document.getElementById('chartProd');
+    if (!el) return;
+    done = true;
+    const anos = R.producao.anos;
+    new window.Chart(el, {
+      type: 'bar',
+      data: {
+        labels: anos.map(function (a) { return a === '2026' ? '2026*' : a; }),
+        datasets: [{
+          label: 'Artigos únicos',
+          data: anos.map(function (a) { return R.producao.unicos[a]; }),
+          backgroundColor: 'rgba(217,165,33,.32)',
+          borderColor: '#D9A521',
+          borderWidth: 2, borderRadius: 5, borderSkipped: false
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        animation: { duration: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 750 },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#0B1F3A', padding: 10, cornerRadius: 6,
+            callbacks: {
+              label: function (ctx) { return ctx.raw + ' artigos únicos'; },
+              afterLabel: function (ctx) {
+                const a = anos[ctx.dataIndex];
+                return 'Soma por docente: ' + R.producao.por_docente[a];
+              },
+              footer: function (items) {
+                return items[0].dataIndex === anos.length - 1 ? '* ano em curso (coleta até ago/2026)' : '';
+              }
+            }
+          }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: 'rgba(255,255,255,.62)', font: { size: 11 } } },
+          y: {
+            beginAtZero: true, grid: { color: 'rgba(255,255,255,.09)' },
+            ticks: { color: 'rgba(255,255,255,.62)', font: { size: 11 }, stepSize: 20 }
+          }
+        }
+      }
+    });
+  }
+  C.whenChart(drawChart, function () {
+    C.chartFallback('chartProd',
+      ['Ano', 'Artigos únicos', 'Soma por docente'],
+      R.producao.anos.map(function (a) {
+        return [a === '2026' ? '2026*' : a, R.producao.unicos[a], R.producao.por_docente[a]];
+      }).concat([['Total', R.producao.total_unico, R.producao.total_somado]]));
+  });
+})();
+</script>
+</body>
+</html>

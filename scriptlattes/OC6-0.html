@@ -1,0 +1,221 @@
+
+                <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf8"><meta name="Generator" content="scriptLattes"><title>REDEMAT</title><link rel="stylesheet" href="css/scriptLattes.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"><link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css"><link rel="stylesheet" type="text/css" href="css/dataTables.colVis.min.css"><script type="text/javascript" charset="utf8" src="js/jquery.min.js"></script><script type="text/javascript" charset="utf8" src="js/jquery.dataTables.min.js"></script><script type="text/javascript" charset="utf8" src="js/dataTables.colVis.min.js"></script><script type="text/javascript" charset="utf8" src="js/sorttable-local.js"></script><link rel="stylesheet" href="portal-redemat.css">
+</head><body>
+<div id="portal-back"><a href="../pages/producao-lattes.html">&#8592; Voltar ao portal REDEMAT</a><span>Relatório ScriptLattes — dados brutos dos currículos Lattes</span></div><div id="header2"> <button onClick="history.go(-1)">Voltar</button><h2>REDEMAT</h2></div>
+                
+        <script type="text/javascript" src="./js/jquery.min.js"></script>
+        <!--
+        <script type="text/javascript" src="./highcharts.js"></script>
+        <script type="text/javascript" src="./exporting.js"></script>
+        <script type="text/javascript" src="./drilldown.js"></script>
+        -->
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+        <script type="text/javascript">
+        // Load the fonts
+        Highcharts.createElement('link', {
+           href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700',
+           rel: 'stylesheet',
+           type: 'text/css'
+        }, null, document.getElementsByTagName('head')[0]);
+
+        Highcharts.theme = {
+   colors: ["#1F77B4", "#118D95", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#2b908f", "#90ee7e", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
+   chart: {
+      backgroundColor: null,
+      style: {
+         fontFamily: "'Source Sans Pro', 'sans-serif'"
+      }
+   },
+   title: {
+      style: {
+         color: 'black',
+         fontSize: '16px',
+         fontWeight: 'bold'
+      }
+   },
+   subtitle: {
+      style: {
+         color: 'black'
+      }
+   },
+   tooltip: {
+      borderWidth: 0
+   },
+   legend: {
+      itemStyle: {
+         fontWeight: 'bold',
+         fontSize: '13px'
+      }
+   },
+   xAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   yAxis: {
+      labels: {
+         style: {
+            color: '#6e6e70'
+         }
+      }
+   },
+   plotOptions: {
+      series: {
+         shadow: true
+      },
+      candlestick: {
+         lineColor: '#404048'
+      },
+      map: {
+         shadow: false
+      }
+   },
+
+   // Highstock specific
+   navigator: {
+      xAxis: {
+         gridLineColor: '#D0D0D8'
+      }
+   },
+   rangeSelector: {
+      buttonTheme: {
+         fill: 'white',
+         stroke: '#C0C0C8',
+         'stroke-width': 1,
+         states: {
+            select: {
+               fill: '#D0D0D8'
+            }
+         }
+      }
+   },
+   scrollbar: {
+      trackBorderColor: '#C0C0C8'
+   },
+
+   // General
+   background2: '#E0E0E8'
+};
+
+        Highcharts.setOptions(Highcharts.theme);
+        $(function () {
+            $('#container').highcharts({chart: {type: 'column', 
+height: 300}, 
+title: {text: 'Orientações de outra natureza'}, 
+subtitle: {text: ''}, 
+xAxis: {title: {text: ''}, 
+type: 'category'}, 
+yAxis: {min: 0, 
+title: {text: 'Quantidade', 
+align: 'middle'}, 
+labels: {overflow: 'justify'}, 
+stackLabels: {enabled: true, 
+format: '{stack}'}}, 
+tooltip: {enabled: true, 
+valueSuffix: '', 
+shared: false, 
+headerFormat: '<span style="font-size: 10px">{point.key}{point.stack}{series.stack}</span><br/>', 
+pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'}, 
+plotOptions: {bar: {dataLabels: {enabled: false}}, 
+column: {stacking: null}, 
+series: {shadow: 'true'}}, 
+legend: {enabled: false, 
+layout: 'vertical', 
+align: 'right', 
+verticalAlign: 'middle', 
+borderWidth: 1, 
+backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor || '#FFFFFF'), 
+shadow: true}, 
+credits: {enabled: false}, 
+series: [{name: 'Total', 
+data: [[2021,
+4],
+[2022,
+2],
+[2023,
+5],
+[2024,
+5],
+[2025,
+10],
+[2026,
+4]]}]});
+        });
+        </script>
+        
+                <h3>Orientações de outra natureza</h3> <br>
+                    <div id="container" style="min-width: 310px; max-width: 1920px; height: 300; margin: 0"></div>
+                    Número total de itens: 30<br>
+                    
+                    
+                    <div id="dv-year-2026"><h3 class="year">2026</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>Bruna Teixeira Madeira. <b>Impressão 3D direta de Compósitos sobre Têxteis: estudo das propriedades de adesão e atividade antimicrobiana</b>. (Design de Produto) - Universidade do Estado de Minas Gerais, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1370798140664840">Eliane Ayres</a>.</font></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>JÉSSICA LOURDES ALVES DE AZEVEDO. <b>ESTÁGIO SUPERVISIONADO FUNDAÇÃO GORCEIX</b>. (Química Industrial) - Universidade Federal de Ouro Preto, . 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>LAURA CARRARO BRITO. <b>Monitor de Físico química</b>. (Engenharia Geológica) - Universidade Federal de Ouro Preto, . 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>SAVIO WEDER DE MATOS. <b>Monitor de Físico química</b>. (Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2026.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            </table></div><div id="dv-year-2025"><h3 class="year">2025</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>Alice Rangel Soares. <b>Expressão Gráfica - Representação Tridimensional Moulage -Design de Moda - Bacharelado - Presencial</b>. (Design de Moda) - Escola de Design UEMG, Programa de Ensino em Monitoria Acadêmica ? PEMA. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>BERNARDO OLIVEIRA BARBOSA NOLASCO. <b>Bolsista de Monitoria - FIS214 - MECANICA RACIONAL (Dez 2024 a Abril 2025)</b>. Orientação de outra natureza - Universidade Federal de Ouro Preto, UFOP. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>BETHINA RIBEIRO RUAS. <b>Estudo Teórico e Experimental da Ressulfurização de Amostras de MoS2 Crescidas por CVD</b>. (Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>CARLOS EDUARDO LIMA ESTANISLAU. <b>Bolsista de Monitoria - FIS214 - MECANICA RACIONAL (Dez 2024 a Abril 2025)</b>. (Física) - Universidade Federal de Ouro Preto, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>Felipe Silva Mion. <b>Monitor de Físico química</b>. (Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>6. &nbsp;</td> <td>Hana Hitomi Koga. <b>Estágio supervisionado</b>. (Química Industrial) - Universidade Federal de Ouro Preto, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>7. &nbsp;</td> <td>IAGO LUIZ DE SOUSA MACEDO. <b>Monitor de Físico química</b>. (Química Industrial) - Universidade Federal de Ouro Preto, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>8. &nbsp;</td> <td>Júlia Niz Silva Santos. <b>Expressão Gráfica - Representação Tridimensional Moulage - Design de Moda</b>. (Design de Moda) - Escola de Design UEMG, Programa de Ensino em Monitoria Acadêmica ? PEMA. 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/7238982117122755">Heloisa Nazaré dos Santos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>9. &nbsp;</td> <td>Yuri Judson Gomes. <b>Monitor de Físico química</b>. (Engenharia de Minas) - Universidade Federal de Ouro Preto, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            
+            <tr valign="top"><td>10. &nbsp;</td> <td>Yuri Judson Gomes. <b>Monitor de Físico química</b>. (Química Industrial) - Universidade Federal de Ouro Preto, . 2025.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            </table></div><div id="dv-year-2024"><h3 class="year">2024</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>ARTHUR BERNARD FERREIRA DAMASCENO. <b>Monitoria FIS110 - FUNDAMENTOS DE OPTICA E QUANTICA</b>. (Física) - Universidade Federal de Ouro Preto, . 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Manuela Mota Brentano. <b>IMPRESSÃO 3D DIRETA DE COMPÓSITOS SOBRE TÊXTEIS: ESTUDO DAS PROPRIEDADES DE ADESÃO E ATIVIDADE ANTIMICROBIANA</b>. (Design de Produto) - Universidade do Estado de Minas Gerais, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1370798140664840">Eliane Ayres</a>.</font></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>MARIA LUISA RODRIGUES. <b>Abordagem teórico-experimental do crescimento de dissulfeto de molibdênio (MoS2): simulações de dinâmica molecular e deposição química em fase vapor</b>. (Física) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>MATHEUS DOS SANTOS BARBOSA. <b>Estágio em laboratório de FIS110 - Fundamentos de Óptica e Quântica</b>. (Física) - Universidade Federal de Ouro Preto, . 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>Victor Campideli. <b>Estágio supervisionado</b>. (Química Industrial) - Universidade Federal de Ouro Preto, . 2024.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/2402619959878318">Dalila Chaves Sicupira</a>.</font></td></tr>
+            </table></div><div id="dv-year-2023"><h3 class="year">2023</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>BRENNER MISSON MOTA DOS ANJOS. <b>FIS110 - FUNDAMENTOS DE OPTICA E QUANTICA</b>. Orientação de outra natureza - Universidade Federal de Ouro Preto, . 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>FELIPE MARTINS BRITO AGUIAR. <b>Bolsista de Monitoria - FIS106 - FUNDAMENTOS DE MECANICA (Dez 2022 a Mar 2023)</b>. (Física) - Universidade Federal de Ouro Preto, UFOP. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>FLAVIO GERMANO NASSIF. <b>Monitoria FIS214 - MECANICA RACIONAL</b>. (Engenharia Mecânica) - Universidade Federal de Ouro Preto, . 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4012812193989993">Ana Paula Moreira Barboza</a>.</font></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>GABRIELA CARVALHO DA SILVA REIS. <b>Monitoria FIS 214 - MECÂNICA RACIONAL</b>. (Engenharia Mecânica) - Universidade Federal de Ouro Preto, . 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4012812193989993">Ana Paula Moreira Barboza</a>.</font></td></tr>
+            
+            <tr valign="top"><td>5. &nbsp;</td> <td>Júlia Silveira Pereira Guimarães. <b>Impressão 3D direta de compósitos sobre têxteis: estudo das propriedades de adesão e atividade antimicrobiana</b>. (Design de produto) - Universidade do Estado de Minas Gerais, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2023.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/1370798140664840">Eliane Ayres</a>.</font></td></tr>
+            </table></div><div id="dv-year-2022"><h3 class="year">2022</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>GERSON DOS SANTOS;RAIENE BARBARA DE MATOS. <b>Camada ativa de celulose dopada com fluoróforos e fulerenos</b>. (Física) - Universidade Federal de Ouro Preto, . 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>Natalia Rocha Barboza. <b>Bolsista do Sistema multiusuário de infraestrutura em pesquisa e inovação na área de tecnologia mineral (SIMPITEM)</b>. Orientação de outra natureza - Universidade Federal de Ouro Preto, Fundação de Amparo à Pesquisa do Estado de Minas Gerais. 2022.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4062848906639188">Versiane Albis Leão</a>.</font></td></tr>
+            </table></div><div id="dv-year-2021"><h3 class="year">2021</h3> <table>
+            <tr valign="top"><td>1. &nbsp;</td> <td>Bernardo OLIVEIRA BARBOSA Nolasco. <b>olsista de Monitoria - FIS106 - FUNDAMENTOS DE MECANICA (Junho a Agosto de 2021</b>. (Física) - Universidade Federal de Ouro Preto, UFOP. 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>2. &nbsp;</td> <td>JULIO HENRIQUE MAROTTA. <b>ESTUDO DE PRIMEIROS PRINCÍPIOS DE MATERIAIS 2D e de Moléculas Orgânica</b>. (Engenharia Metalúrgica) - Universidade Federal de Ouro Preto, Conselho Nacional de Desenvolvimento Científico e Tecnológico. 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/8756368667136851">Ive Silvestre de Almeida</a>.</font></td></tr>
+            
+            <tr valign="top"><td>3. &nbsp;</td> <td>LUIS ANTONIO GUALLICHICO GUALLICHICO. <b>Estágio Docente em Mecânica Quântica I - FIS516</b>. (Física) - Universidade Federal de Ouro Preto, . 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/6221953730638193">Matheus Josué de Souza Matos</a>.</font></td></tr>
+            
+            <tr valign="top"><td>4. &nbsp;</td> <td>Núbia Resende Oliveira. <b>Desenvolvimento de metodologias de cultivo de espécies invasoras</b>. Orientação de outra natureza - Rede Temática em Engenharia de Materiais CETEC-UFOP-UEMG, Fundação Gorceix. 2021.<br><i><font size=-1>Orientador: <a href="https://lattes.cnpq.br/4629729793297288">Antonio Valadao Cardoso</a>.</font></td></tr>
+            </table></div>
+                    </table>
+                <br><p><br>(*) Relatório criado com produções desde 2021 até 2026
+<br>Data de processamento: 31/08/2026 22:11:56<br>         <div id="footer">         Relatório gerado por <a href="https://scriptlattes.sourceforge.net/">scriptLattes V9</a>.         Os resultados podem ser afetados por possíveis falhas decorrentes de inconsistências no preenchimento dos Currículos Lattes. E-mail de contato: <a href="mailto:matheusmatos@ufop.edu.br">matheusmatos@ufop.edu.br</a>         </div> </body></html>
+              

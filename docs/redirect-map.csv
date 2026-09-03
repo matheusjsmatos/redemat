@@ -1,0 +1,30 @@
+url_antiga,url_nova,tipo,prioridade,observacao
+/,/,200,-,Home mantém a raiz
+/docentes-1,/pessoas/docentes,301,Alta,Slug numérico substituído por caminho semântico
+/docentes,/pessoas/docentes,301,Alta,
+/corpo-docente,/pessoas/docentes,301,Alta,
+/sobre-o-redemat,/programa,301,Alta,Seção renomeada
+/sobre-o-redemat/historico,/programa#historico,301,Alta,Histórico integrado à página do Programa
+/sobre-o-redemat/coordenacao,/programa#governanca,301,Alta,
+/sobre-o-redemat/colegiado,/programa#governanca,301,Alta,
+/sobre-o-redemat/regimento,/programa#documentos,301,Média,
+/linhas-de-pesquisa,/pesquisa,301,Alta,"Estrutura muda de 3 áreas para 2 áreas e 4 linhas — página explica a transição"
+/linhas-de-pesquisa/biom-e-matcomp,/pesquisa#l22,301,Alta,"Biomateriais e Compósitos passa a integrar a Linha 2.2"
+/linhas-de-pesquisa/mat-avancados,/pesquisa#a1,301,Alta,"Materiais Avançados distribui-se entre as Linhas 1.1 e 1.2"
+/linhas-de-pesquisa/tecnologia-mineral,/pesquisa#l21,301,Alta,"Tecnologia Mineral passa a integrar a Linha 2.1"
+/cursos,/cursos,200,-,Slug mantido
+/cursos/mestrado,/cursos#mestrado,301,Média,
+/cursos/doutorado,/cursos#doutorado,301,Alta,"ATENÇÃO: página anterior pode sugerir curso existente. Novo destino avisa que é proposta"
+/disciplinas,/cursos#disciplinas,301,Alta,Catálogo integrado à página de cursos
+/laboratorios,/pesquisa#infraestrutura,301,Alta,"Lista anterior não confirmada; destino exibe 'em atualização'"
+/indicadores,/indicadores,200,-,Slug mantido
+/indicadores/producao-bibliografica,/indicadores#p-prod,301,Média,
+/indicadores/formacao,/indicadores#p-form,301,Média,
+/parcerias,/internacionalizacao,301,Alta,Parcerias integradas à página de internacionalização
+/parcerias/internacionais,/internacionalizacao#paises,301,Média,
+/parcerias/nacionais,/internacionalizacao#parceiros,301,Média,
+/convênios-e-parcerias,/internacionalizacao#parceiros,301,Média,URL com acento — verificar codificação no servidor
+/processo-seletivo,/processo-seletivo,200,-,Slug mantido
+/processo-seletivo/edital,/processo-seletivo,301,Alta,
+/noticias,/noticias,200,-,A implementar na fase 2
+/contato,/contato,200,-,A implementar na fase 2

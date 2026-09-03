@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produção Lattes e Mapa de Colaboração — REDEMAT | UFOP · UEMG</title>
+<meta name="description" content="Produção científica da REDEMAT extraída dos currículos Lattes: mapa dinâmico docente × periódico com quartil Scopus, quartis de publicação, relatório ScriptLattes completo e rede de colaboração.">
+<link rel="canonical" href="https://redemat.ufop.br/pesquisa/producao">
+<link rel="icon" href="../assets/img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
+</head>
+<body>
+
+<div id="site-header-slot"></div>
+
+<section class="page-hero" aria-labelledby="ph">
+  <div class="page-hero-in">
+    <nav class="crumb" aria-label="Trilha de navegação">
+      <a href="../index.html">Início</a><span aria-hidden="true">›</span>
+      <a href="pesquisa.html">Pesquisa</a><span aria-hidden="true">›</span>
+      <span aria-current="page">Produção Lattes</span>
+    </nav>
+    <h1 id="ph">Produção Lattes e Colaboração</h1>
+    <p class="lede">
+      Onde o Programa publica, com quem colabora e em que veículos. Dados extraídos dos
+      currículos Lattes do corpo docente pelo ScriptLattes e cruzados com o percentil
+      Scopus de cada periódico.
+    </p>
+    <div class="hero-metrics" id="heroMetrics"></div>
+  </div>
+</section>
+
+<main id="conteudo">
+
+  <!-- Resumo -->
+  <section class="section" style="padding-block:2.25rem 0;">
+    <div class="wrap" id="resumoNota"></div>
+  </section>
+
+  <!-- Quartis Scopus -->
+  <section class="section" aria-labelledby="q-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Qualidade dos veículos</p>
+        <h2 class="h2" id="q-h">Distribuição por quartil Scopus</h2>
+        <p class="section-lede" id="qLede"></p>
+      </div>
+      <div class="grid grid--2">
+        <div class="chart-card">
+          <div class="chart-head">
+            <div>
+              <p class="chart-title">Artigos únicos por quartil</p>
+              <p class="chart-sub">Quartil Scopus 2025 do periódico, categoria de maior percentil</p>
+            </div>
+            <span class="badge badge--pre">Preliminar</span>
+          </div>
+          <div class="chart-box chart-box--sm"><canvas id="cQ" role="img" aria-label="Gráfico de rosca com a distribuição de artigos por quartil Scopus"></canvas></div>
+        </div>
+        <div class="card">
+          <h3 class="h3">Leitura dos números</h3>
+          <div id="qBars" class="mt-2"></div>
+          <div class="mt-3" id="qAviso"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mapa dinâmico docente × periódico -->
+  <section class="section section--alt" id="mapa" aria-labelledby="m-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Mapa dinâmico</p>
+        <h2 class="h2" id="m-h">Onde cada docente publica</h2>
+        <p class="section-lede">
+          Selecione um docente para ver seus periódicos no período 2021–2026, com o quartil
+          Scopus de cada um. Selecione um periódico para ver quantos docentes do Programa
+          publicam nele — evidência de convergência temática do coletivo.
+        </p>
+      </div>
+
+      <div class="map-toolbar" role="group" aria-label="Controles do mapa de publicações">
+        <label for="selModo" class="filter-lbl">Ver por</label>
+        <select id="selModo">
+          <option value="docente">Docente → periódicos</option>
+          <option value="periodico">Periódico → docentes</option>
+        </select>
+        <label for="selAlvo" class="filter-lbl" id="lblAlvo">Docente</label>
+        <select id="selAlvo" style="min-width:260px;"></select>
+        <span class="badge badge--pre" style="margin-left:auto;">Preliminar</span>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="card">
+          <h3 class="h3" id="mapTitle">—</h3>
+          <p style="font-size:.8rem;color:var(--text-mid);margin-bottom:1rem;" id="mapSub"></p>
+          <div class="jrn-list" id="mapList"></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-head">
+            <div>
+              <p class="chart-title">Perfil de quartis</p>
+              <p class="chart-sub" id="mapChartSub">Distribuição dos artigos da seleção</p>
+            </div>
+          </div>
+          <div class="chart-box chart-box--sm"><canvas id="cMap" role="img" aria-label="Gráfico de barras com a distribuição de quartis da seleção atual"></canvas></div>
+          <div id="mapStats" class="mt-3"></div>
+        </div>
+      </div>
+
+      <div class="mt-3" id="mapaNota"></div>
+    </div>
+  </section>
+
+  <!-- Periódicos de destaque Q1 -->
+  <section class="section" id="destaque" aria-labelledby="q1-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Destaque</p>
+        <h2 class="h2" id="q1-h">Periódicos Q1 por parâmetro de impacto</h2>
+        <p class="section-lede" id="q1Lede"></p>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <caption class="sr-only">Periódicos em quartil Q1 Scopus, ordenados por percentil de impacto</caption>
+          <thead><tr>
+            <th scope="col" style="text-align:right">#</th>
+            <th scope="col">Periódico</th>
+            <th scope="col">Categoria de maior percentil</th>
+            <th scope="col" style="text-align:right">CiteScore</th>
+            <th scope="col" style="text-align:right">Percentil</th>
+            <th scope="col" style="text-align:right">Artigos</th>
+            <th scope="col" style="text-align:right">Docentes</th>
+          </tr></thead>
+          <tbody id="q1Body"></tbody>
+        </table>
+      </div>
+      <div class="mt-3" id="q1Nota"></div>
+    </div>
+  </section>
+
+  <!-- Periódicos mais utilizados -->
+  <section class="section section--alt" aria-labelledby="pd-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Veículos</p>
+        <h2 class="h2" id="pd-h">Periódicos mais utilizados</h2>
+        <p class="section-lede">
+          Periódicos com maior número de artigos do corpo docente no período. A coluna
+          "docentes" indica quantos professores distintos publicaram no veículo.
+        </p>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <caption class="sr-only">Periódicos mais utilizados, com artigos, docentes distintos e percentil Scopus</caption>
+          <thead><tr>
+            <th scope="col">Periódico</th>
+            <th scope="col" style="text-align:right">Artigos</th>
+            <th scope="col" style="text-align:right">Docentes</th>
+            <th scope="col" style="text-align:right">Percentil</th>
+            <th scope="col">Quartil</th>
+          </tr></thead>
+          <tbody id="pdBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Relatório ScriptLattes -->
+  <section class="section section--alt" id="scriptlattes" aria-labelledby="sl-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Dados explícitos</p>
+        <h2 class="h2" id="sl-h">Relatório ScriptLattes completo</h2>
+        <p class="section-lede">
+          O portal apresenta os dados resumidos acima. O relatório completo gerado pelo
+          <a href="https://scriptlattes.sourceforge.net/" target="_blank" rel="noopener" style="color:var(--amber);font-weight:600;">ScriptLattes</a>
+          traz cada registro individualmente — produção bibliográfica item a item, orientações,
+          projetos, prêmios, eventos e as páginas de cada membro.
+        </p>
+      </div>
+
+      <div class="sl-grid" id="slGrid"></div>
+
+      <div class="mt-4" id="slNota"></div>
+    </div>
+  </section>
+
+  <!-- Mapa geolocalizado -->
+  <section class="section" id="mapa-geo" aria-labelledby="geo-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Alcance geográfico</p>
+        <h2 class="h2" id="geo-h">Mapa de colaborações no mundo</h2>
+        <p class="section-lede" id="geoLede"></p>
+      </div>
+
+      <div class="geo-wrap">
+        <div class="geo-toolbar" role="group" aria-label="Filtros do mapa de colaborações">
+          <label for="geoProf" class="filter-lbl">Docente</label>
+          <select id="geoProf"><option value="">Todos os docentes</option></select>
+          <label for="geoAno" class="filter-lbl">Ano</label>
+          <select id="geoAno"><option value="">2021–2026</option></select>
+          <label for="geoBusca" class="sr-only">Buscar instituição, cidade ou país</label>
+          <input type="search" id="geoBusca" placeholder="Buscar instituição, cidade ou país…" style="min-width:220px;">
+        </div>
+        <div id="geoMapa" role="application" aria-label="Mapa de colaborações científicas da REDEMAT no mundo"></div>
+        <p class="geo-vazio" id="geoVazio" hidden></p>
+        <div class="geo-stats" aria-live="polite">
+          <div class="geo-stat"><b id="geoNLocais">0</b><span>Instituições</span></div>
+          <div class="geo-stat"><b id="geoNPaises">0</b><span>Países</span></div>
+          <div class="geo-stat"><b id="geoNPubs">0</b><span>Publicações em coautoria</span></div>
+        </div>
+      </div>
+
+      <div class="mt-3" id="geoNota"></div>
+    </div>
+  </section>
+
+  <!-- Rede de colaboração -->
+  <section class="section section--alt" id="colaboracao" aria-labelledby="col-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Rede</p>
+        <h2 class="h2" id="col-h">Grafo de colaborações</h2>
+        <p class="section-lede" id="colLede"></p>
+      </div>
+      <div class="grid grid--3 mb-3" id="colGrid"></div>
+
+      <div class="grafo-wrap">
+        <div class="grafo-toolbar" role="group" aria-label="Controles do grafo de colaborações">
+          <label for="grafoFoco" class="filter-lbl">Docente</label>
+          <select id="grafoFoco"><option value="">Rede completa</option></select>
+          <label class="grafo-chk"><input type="checkbox" id="grafoPesos"> Número de produções em cada vínculo</label>
+          <button type="button" class="mini-link" id="grafoLimpar" hidden>Limpar seleção</button>
+        </div>
+
+        <div class="grafo-canvas">
+          <svg id="grafoSvg" role="img" aria-labelledby="grafoSvgT grafoSvgD" preserveAspectRatio="xMidYMid meet">
+            <title id="grafoSvgT">Grafo de coautoria interna entre os 24 docentes da REDEMAT</title>
+            <desc id="grafoSvgD">Cada círculo é um docente, dimensionado pelo número de produções em coautoria com outros membros do Programa. Cada linha liga dois docentes que assinaram produção em conjunto, com espessura proporcional ao número de produções. A tabela de grau de colaboração abaixo traz os mesmos dados em forma textual.</desc>
+          </svg>
+        </div>
+
+        <div class="grafo-info" id="grafoInfo" aria-live="polite"></div>
+        <ul class="grafo-legenda" id="grafoLegenda"></ul>
+      </div>
+
+      <div class="mt-3" id="grafoRank"></div>
+      <div id="colNota"></div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer-slot"></div>
+
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/mapa-pub-dados.js"></script>
+<script src="../assets/js/mapa-geo-dados.js"></script>
+<script src="../assets/js/grafo-dados.js"></script>
+<!-- Escrito pela sincronização do ScriptLattes. Ausente antes dela: a página
+     trata a ausência e avisa que o relatório ainda não foi sincronizado. -->
+<script src="../scriptlattes/sync-info.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+(function () {
+  'use strict';
+  const R = window.REDEMAT, C = window.RC, P = R.producao, S = P.scopus;
+
+  const Q_COR = { Q1: '#15803D', Q2: '#1D4ED8', Q3: '#A16207', Q4: '#B91C1C', SQ: '#94A3B8' };
+  const comQ = S.unicos.Q1 + S.unicos.Q2 + S.unicos.Q3 + S.unicos.Q4;
+
+  document.getElementById('heroMetrics').innerHTML = [
+    { v: P.total_unico, l: 'Artigos únicos 2021–2026' },
+    { v: P.n_periodicos, l: 'Periódicos distintos' },
+    { v: S.unicos.Q1 + S.unicos.Q2, l: 'Artigos em Q1 ou Q2 Scopus' },
+    { v: R.mapa_geo.paises, l: 'Países com coautoria' }
+  ].map(function (m) { return '<div class="hero-metric"><b data-count="' + m.v + '">0</b><span>' + m.l + '</span></div>'; }).join('');
+
+  document.getElementById('resumoNota').innerHTML = C.note('info',
+    '<strong>Como estes dados foram produzidos.</strong> ' + P.nota +
+    ' O cruzamento com o percentil Scopus 2025 vem do mapa de publicações docente × periódico. ' +
+    C.badge('PRELIMINAR'));
+
+  /* ---------------- quartis ---------------- */
+  document.getElementById('qLede').textContent =
+    comQ + ' dos ' + P.total_unico + ' artigos únicos (' + Math.round(comQ / P.total_unico * 100) +
+    '%) estão em periódicos com quartil Scopus atribuído. Os percentuais abaixo são calculados sobre esses ' +
+    comQ + ' artigos.';
+
+  document.getElementById('qBars').innerHTML = ['Q1', 'Q2', 'Q3', 'Q4'].map(function (q) {
+    const n = S.unicos[q], pct = Math.round(n / comQ * 100);
+    return '<div class="bar-row">' +
+      '<span class="bar-lbl"><span class="jrn-q q-' + q + '">' + q + '</span></span>' +
+      '<span class="bar-track"><span class="bar-fill" style="background:' + Q_COR[q] + ';width:' + pct + '%"></span></span>' +
+      '<span class="bar-val">' + pct + '%</span></div>';
+  }).join('') +
+  '<p style="font-size:2rem;font-weight:800;color:var(--st-val);margin-top:1.25rem;">' +
+    Math.round((S.unicos.Q1 + S.unicos.Q2) / comQ * 100) + '%' +
+    '<span style="font-size:.85rem;font-weight:500;color:var(--text-mid);"> em Q1 ou Q2</span></p>';
+
+  document.getElementById('qAviso').innerHTML = C.note('warn',
+    '<strong>' + S.aviso + '</strong> ' + S.nota);
+
+  /* ---------------- mapa dinâmico ---------------- */
+  /* Os dados vêm de assets/js/mapa-pub-dados.js, carregado por <script>.
+     Isso faz o mapa funcionar tanto por HTTP quanto abrindo o arquivo
+     direto no navegador (file://), onde fetch() de JSON local é bloqueado. */
+  let MAPA = window.MAPA_PUB || null;
+  const selModo = document.getElementById('selModo');
+  const selAlvo = document.getElementById('selAlvo');
+  const lblAlvo = document.getElementById('lblAlvo');
+  let chartMap = null;
+
+  function popular() {
+    const modo = selModo.value;
+    lblAlvo.textContent = modo === 'docente' ? 'Docente' : 'Periódico';
+    if (!MAPA) return;
+    let opts;
+    if (modo === 'docente') {
+      opts = MAPA.docentes.map(function (d) {
+        return '<option value="' + d.nome + '">' + d.nome + ' (' + d.total + ')</option>';
+      });
+    } else {
+      const rs = Object.keys(MAPA.revistas)
+        .map(function (k) { return { k: k, r: MAPA.revistas[k] }; })
+        .filter(function (x) { return x.r.a > 1; })
+        .sort(function (a, b) { return b.r.a - a.r.a; });
+      opts = rs.map(function (x) {
+        return '<option value="' + x.k + '">' + x.r.n + ' (' + x.r.a + ')</option>';
+      });
+    }
+    selAlvo.innerHTML = opts.join('');
+    render();
+  }
+
+  function render() {
+    if (!MAPA) return;
+    const modo = selModo.value, alvo = selAlvo.value;
+    const list = document.getElementById('mapList');
+    let qc = {}, titulo = '', sub = '', rows = [], stats = '';
+
+    if (modo === 'docente') {
+      const d = MAPA.docentes.filter(function (x) { return x.nome === alvo; })[0];
+      if (!d) return;
+      titulo = d.nome;
+      sub = d.total + ' artigo' + (d.total === 1 ? '' : 's') + ' em ' + d.nrev + ' periódico' + (d.nrev === 1 ? '' : 's') + ' distinto' + (d.nrev === 1 ? '' : 's') + ' — 2021 a 2026';
+      qc = d.q;
+      rows = Object.keys(d.rev).map(function (cod) {
+        const r = MAPA.revistas[cod] || { n: cod, q: null, p: null };
+        return { nome: r.n, q: r.q, p: r.p, cat: r.c, n: d.rev[cod] };
+      }).sort(function (a, b) { return b.n - a.n || String(a.nome).localeCompare(String(b.nome)); });
+    } else {
+      const r = MAPA.revistas[alvo];
+      if (!r) return;
+      titulo = r.n;
+      sub = r.a + ' artigo' + (r.a === 1 ? '' : 's') + ' de ' + r.d + ' docente' + (r.d === 1 ? '' : 's') + ' do Programa' +
+            (r.p ? ' — percentil Scopus ' + r.p : ' — sem indexação Scopus') + (r.c ? ' · ' + r.c : '');
+      rows = MAPA.docentes.filter(function (d) { return d.rev[alvo]; })
+        .map(function (d) { return { nome: d.nome, q: r.q, p: r.p, n: d.rev[alvo] }; })
+        .sort(function (a, b) { return b.n - a.n; });
+      qc = {}; qc[r.q || 'SQ'] = r.a;
+    }
+
+    document.getElementById('mapTitle').textContent = titulo;
+    document.getElementById('mapSub').textContent = sub;
+
+    list.innerHTML = rows.map(function (x) {
+      const q = x.q || 'SQ';
+      return '<div class="jrn-row">' +
+        '<span class="jrn-name"><b>' + x.nome + '</b>' +
+          (modo === 'docente' && x.p ? '<br><span style="font-size:.74rem;color:var(--text-soft)">percentil ' + x.p + (x.cat ? ' · ' + x.cat : '') + '</span>' : '') +
+        '</span>' +
+        '<span class="jrn-q q-' + q + '">' + (x.q || 'sem quartil') + '</span>' +
+        '<span class="jrn-n">' + x.n + '</span></div>';
+    }).join('');
+
+    const totQ = ['Q1', 'Q2', 'Q3', 'Q4'].reduce(function (s, q) { return s + (qc[q] || 0); }, 0);
+    const totAll = Object.keys(qc).reduce(function (s, k) { return s + qc[k]; }, 0);
+    const q12 = (qc.Q1 || 0) + (qc.Q2 || 0);
+    stats = '<div style="font-size:.82rem;color:var(--text-mid);line-height:1.7;">' +
+      '<strong style="color:var(--navy)">' + totQ + ' de ' + totAll + '</strong> artigo' + (totAll === 1 ? '' : 's') +
+        ' da seleção em periódico com quartil Scopus atribuído.<br>' +
+      (totQ
+        ? '<strong style="color:var(--st-val)">' + Math.round(q12 / totQ * 100) + '%</strong> desses estão em Q1 ou Q2.'
+        : 'Nenhum periódico da seleção tem quartil Scopus atribuído.') +
+      '</div>';
+    document.getElementById('mapStats').innerHTML = stats;
+
+    drawMap(qc);
+  }
+
+  function drawMap(qc) {
+    const el = document.getElementById('cMap');
+    if (!el) return;
+    if (!window.Chart) {
+      /* Sem a biblioteca, o perfil da seleção vira tabela — com os dados reais. */
+      C.chartFallback('cMap', ['Quartil Scopus', 'Artigos'],
+        [['Q1', qc.Q1 || 0], ['Q2', qc.Q2 || 0], ['Q3', qc.Q3 || 0], ['Q4', qc.Q4 || 0],
+         ['Sem quartil', qc.SQ || 0]],
+        'Gráfico indisponível sem conexão. Perfil da seleção atual:');
+      return;
+    }
+    const labels = ['Q1', 'Q2', 'Q3', 'Q4', 'SQ'];
+    const data = labels.map(function (q) { return qc[q] || 0; });
+    if (chartMap) { chartMap.data.datasets[0].data = data; chartMap.update(); return; }
+    chartMap = new window.Chart(el, {
+      type: 'bar',
+      data: { labels: ['Q1', 'Q2', 'Q3', 'Q4', 'Sem quartil'],
+        datasets: [{ data: data, backgroundColor: labels.map(function (q) { return Q_COR[q]; }), borderRadius: 5, borderSkipped: false }] },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        animation: { duration: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 400 },
+        plugins: { legend: { display: false }, tooltip: { backgroundColor: '#0B1F3A', padding: 10, cornerRadius: 6,
+          callbacks: { label: function (c) { return c.raw + ' artigo' + (c.raw === 1 ? '' : 's'); } } } },
+        scales: { x: { grid: { display: false }, ticks: { font: { size: 11 } } },
+                  y: { beginAtZero: true, grid: { color: 'rgba(16,32,54,.06)' }, ticks: { precision: 0, font: { size: 11 } } } }
+      }
+    });
+  }
+
+  selModo.addEventListener('change', popular);
+  selAlvo.addEventListener('change', render);
+
+  function semMapa(motivo) {
+    document.getElementById('mapList').innerHTML = C.empty('Mapa de publicações não carregado.', motivo);
+    document.getElementById('mapTitle').textContent = 'Mapa indisponível';
+    document.getElementById('mapSub').textContent = '';
+    selAlvo.innerHTML = '<option>—</option>';
+    selAlvo.disabled = true; selModo.disabled = true;
+  }
+
+  if (MAPA && MAPA.docentes && MAPA.docentes.length) {
+    popular();
+  } else {
+    semMapa('O arquivo assets/js/mapa-pub-dados.js não foi carregado. Confirme que ele está na pasta assets/js/ e que a tag <script> correspondente está presente nesta página.');
+  }
+
+  document.getElementById('mapaNota').innerHTML = C.note('info',
+    '<strong>O que este mapa mostra e o que não mostra.</strong> Ele descreve <em>em quais veículos</em> ' +
+    'cada docente publica — informação de perfil temático, útil para candidatos escolherem orientador e ' +
+    'para a avaliação verificar aderência às linhas. Não é um ranking: o número de artigos por docente varia ' +
+    'legitimamente com área, tipo de pesquisa e estágio de carreira, e não é usado aqui para comparar ' +
+    'desempenho. Fonte: mapa de publicações docente × periódico (ScriptLattes + Scopus 2025), coleta em 29/08/2026.');
+
+  /* ---------------- Periódicos Q1 por impacto ---------------- */
+  const Q1 = MAPA
+    ? Object.keys(MAPA.revistas)
+        .map(function (k) { return Object.assign({ cod: k }, MAPA.revistas[k]); })
+        .filter(function (r) { return r.q === 'Q1' && r.p != null; })
+        .sort(function (a, b) { return b.p - a.p || b.a - a.a; })
+    : [];
+
+  document.getElementById('q1Lede').textContent = Q1.length
+    ? Q1.length + ' periódicos em quartil Q1 receberam produção do corpo docente entre 2021 e 2026. ' +
+      'A ordenação é pelo percentil Scopus 2025 na categoria de maior percentil de cada título.'
+    : 'Dado do mapa de publicações não carregado.';
+
+  document.getElementById('q1Body').innerHTML = Q1.length
+    ? Q1.map(function (r, i) {
+        const forte = r.p >= 90;
+        return '<tr>' +
+          '<td class="num" style="color:var(--text-soft);font-weight:600;">' + (i + 1) + '</td>' +
+          '<td><strong style="color:var(--navy)">' + r.n + '</strong><br>' +
+            '<span style="font-size:.74rem;color:var(--text-soft);font-family:ui-monospace,monospace">' + r.cod + '</span></td>' +
+          '<td style="font-size:.8rem;color:var(--text-mid);">' + (r.c || '—') + '</td>' +
+          '<td class="num">' + (r.cs || '—') + '</td>' +
+          '<td class="num"><span class="jrn-q q-Q1" style="' + (forte ? 'font-size:.74rem;' : '') + '">' + r.p + '</span>' +
+            (r.m ? ' <abbr class="pct-man" title="Percentil conferido à mão na interface do Scopus Sources — não veio do snapshot automático">m</abbr>' : '') + '</td>' +
+          '<td class="num">' + r.a + '</td>' +
+          '<td class="num">' + r.d + '</td>' +
+        '</tr>';
+      }).join('')
+    : '<tr><td colspan="7">' + C.empty('Lista indisponível.', 'Os dados do mapa de publicações não foram carregados.') + '</td></tr>';
+
+  (function q1nota() {
+    const man = MAPA ? Object.keys(MAPA.revistas).filter(function (k) { return MAPA.revistas[k].m; }).length : 0;
+    const semP = MAPA ? Object.keys(MAPA.revistas).filter(function (k) { return MAPA.revistas[k].p == null; }).length : 0;
+    document.getElementById('q1Nota').innerHTML = C.note('info',
+      '<strong>Como ler o percentil.</strong> ' + P.periodicos_destaque_q1.nota +
+      ' O quartil e o percentil são do <em>periódico</em>, não do artigo: um artigo em periódico de percentil 95 não é, por isso, um artigo de alto impacto — é um artigo publicado em veículo de alto impacto. ' +
+      C.badge('PRELIMINAR')) +
+      '<div class="mt-2">' + C.note('warn',
+        '<strong>Cobertura da métrica.</strong> ' + semP + ' dos ' + (MAPA ? Object.keys(MAPA.revistas).length : 0) +
+        ' periódicos do conjunto seguem sem percentil no snapshot automático do Scopus. ' +
+        'Não localizar o título na busca automática não significa que ele não tenha métrica: ' +
+        'o Chemical Physics Letters, por exemplo, tem CiteScore 5,8 e percentil 80 na interface do Scopus, ' +
+        'e entrou nesta tabela por consulta manual. ' +
+        (man ? 'Os ' + man + ' título(s) marcados com <abbr class="pct-man" title="conferido à mão">m</abbr> vieram dessa via. ' : '') +
+        'A lista do que falta está em <code>data/percentis-scopus-pendentes.csv</code>; ' +
+        'as consultas manuais entram por <code>data/percentis-scopus-manuais.csv</code>.') + '</div>';
+  }());
+
+  /* ---------------- periódicos destaque ---------------- */
+  document.getElementById('pdBody').innerHTML = P.periodicos_destaque.map(function (p) {
+    return '<tr>' +
+      '<td><strong style="color:var(--navy)">' + p.nome + '</strong><br>' +
+        '<span style="font-size:.74rem;color:var(--text-soft);font-family:ui-monospace,monospace">' + p.cod + '</span></td>' +
+      '<td class="num">' + p.artigos + '</td>' +
+      '<td class="num">' + p.docentes + '</td>' +
+      '<td class="num">' + (p.pct != null ? p.pct : '—') + '</td>' +
+      '<td>' + (p.q ? '<span class="jrn-q q-' + p.q + '">' + p.q + '</span>' : '<span class="jrn-q q-SQ">sem quartil</span>') + '</td>' +
+    '</tr>';
+  }).join('');
+
+  /* ---------------- blocos ScriptLattes ---------------- */
+  const SL = [
+    { t: 'Página inicial do relatório', d: 'Índice geral com todas as seções da produção do grupo.', f: 'index.html' },
+    { t: 'Membros do grupo', d: 'Lista dos docentes com link para a página individual de cada currículo.', f: 'membros.html' },
+    { t: 'Métricas consolidadas', d: 'Produção bibliográfica, técnica e artística; orientações; projetos, prêmios e eventos. Exportável em CSV e XLSX.', f: 'metricas.html' },
+    { t: 'Produção bibliográfica', d: 'Artigos em periódicos, livros, capítulos, trabalhos em congressos e resumos, item a item.', f: 'PB-0.html' },
+    { t: 'Produção técnica', d: 'Softwares, produtos e processos tecnológicos, trabalhos técnicos e demais produções.', f: 'PT-0.html' },
+    { t: 'Orientações concluídas', d: 'Teses, dissertações, TCCs e iniciações científicas concluídas.', f: 'OC-0.html' },
+    { t: 'Orientações em andamento', d: 'Orientações e supervisões em curso.', f: 'OA-0.html' },
+    { t: 'Projetos de pesquisa', d: 'Projetos declarados nos currículos, com financiadores e integrantes.', f: 'Pj-0.html' },
+    { t: 'Eventos e participações', d: 'Participação e organização de eventos científicos.', f: 'Ep-0.html' },
+    { t: 'Grafo de colaborações', d: 'Rede de coautoria entre os membros, em versão estática e interativa.', f: 'grafoDeColaboracoes.html' },
+    { t: 'Prêmios e títulos', d: 'Prêmios e reconhecimentos declarados em currículo.', f: 'Pm-0.html' },
+    { t: 'Páginas individuais', d: 'Uma página por docente, com produção, orientações e projetos do currículo.', f: 'membros.html', rot: 'membro-&lt;id&gt;.html' }
+  ];
+  document.getElementById('slGrid').innerHTML = SL.map(function (x) {
+    return '<a class="sl-card" href="../scriptlattes/' + x.f + '">' +
+      '<span class="sl-t">' + x.t + '</span>' +
+      '<span class="sl-d">' + x.d + '</span>' +
+      '<span class="sl-f">scriptlattes/' + (x.rot || x.f) + '</span></a>';
+  }).join('');
+
+  /* window.SL_SYNC vem de scriptlattes/sync-info.js, escrito pela
+     sincronização. Ausente = relatório ainda não sincronizado; a página diz
+     isso em vez de oferecer links que retornam 404. */
+  const SY = window.SL_SYNC || null;
+  document.getElementById('slNota').innerHTML =
+    (SY
+      ? C.note('info',
+        '<strong>Relatório sincronizado.</strong> ' +
+        SY.paginas_membro_publicadas + ' currículos publicados em ' + SY.arquivos_html +
+        ' páginas HTML, sincronizados em ' + String(SY.sincronizado_em).replace('T', ' às ') + '. ' +
+        (SY.paginas_substituidas_por_aviso
+          ? SY.paginas_substituidas_por_aviso + ' página(s) individual(is) de currículos fora do conjunto ' +
+            'publicado foram substituídas por aviso — os nomes ficam em ' +
+            '<code>scriptlattes/FORA-DO-CONJUNTO.txt</code>. '
+          : '') + C.badge('VALIDADO'))
+      : C.note('warn',
+        '<strong>O relatório precisa ser sincronizado.</strong> A pasta <code>scriptlattes/</code> não vem preenchida ' +
+        'neste pacote — ela recebe a saída do ScriptLattes. Rode <code>scripts/atualizar-scriptlattes.sh</code> ' +
+        'apontando para a pasta de saída para copiar o relatório e aplicar os ajustes de legibilidade. ' +
+        'Enquanto não sincronizada, os links acima retornam 404. ' + C.badge('EM_DEFINICAO'))) +
+    '<div class="mt-2">' + C.note('info',
+      '<strong>Por que o relatório é independente do portal.</strong> O ScriptLattes é gerado por um ' +
+      'programa próprio, a partir dos currículos Lattes, e entra no site como um bloco autocontido em ' +
+      '<code>scriptlattes/</code> — com seu próprio HTML, CSS e JavaScript. O portal não reescreve nem ' +
+      'reinterpreta esse conteúdo: apenas injeta uma folha de legibilidade e um link de retorno. ' +
+      'Isso significa que atualizar o relatório não mexe no site, e mudar o site não altera o relatório. ' +
+      'O portal publica agregados conferidos; o ScriptLattes preserva a evidência item a item, com DOI e ' +
+      'coautores — é essa separação que permite auditar qualquer número deste portal até o registro de ' +
+      'origem no currículo.') + '</div>';
+
+  /* ---------------- colaboração ---------------- */
+  const CO = R.colaboracao;
+  const GS = (window.GRAFO && window.GRAFO.stats) || null;
+  document.getElementById('colGrid').innerHTML = [
+    { v: GS ? GS.nos : CO.interna.nos, l: 'Docentes na rede interna', s: 'Nós do grafo', cor: 'var(--area1)', ico: C.ICO.people },
+    { v: GS ? GS.arestas : CO.interna.arestas, l: 'Vínculos de coautoria interna', s: 'Arestas do grafo', cor: 'var(--l12)', ico: C.ICO.chart },
+    { v: CO.externa.colaboradores, l: 'Coautores externos distintos', s: 'Fora do quadro docente', cor: 'var(--area2)', ico: C.ICO.globe }
+  ].map(function (k) {
+    return '<div class="kpi"><div class="kpi-top">' +
+      '<span class="kpi-ico" style="background:color-mix(in srgb, ' + k.cor + ' 12%, transparent);color:' + k.cor + '">' + k.ico + '</span>' +
+      C.badge('PRELIMINAR') + '</div>' +
+      '<div class="kpi-val" style="color:' + k.cor + '" data-count="' + k.v + '">0</div>' +
+      '<div class="kpi-lbl">' + k.l + '</div><div class="kpi-src">' + k.s + '</div></div>';
+  }).join('');
+
+  /* ═══════════════ GRAFO DE COLABORAÇÕES ═══════════════
+     Dados de assets/js/grafo-dados.js, gerado por scripts/gerar-grafo.py a
+     partir do .dot do ScriptLattes. Desenhado aqui em SVG — o ScriptLattes
+     entrega o grafo como imagem com mapa de área e como applet Java, que
+     nenhum navegador atual executa. Mesmo conteúdo, acessível e navegável. */
+  const GR = window.GRAFO || null;
+
+  const L_COR = {}, L_NOME = {}, L_COD = {};
+  (R.areas.itens || []).forEach(function (a) {
+    (a.linhas || []).forEach(function (l) {
+      L_COR[l.id] = l.cor;
+      L_COD[l.id] = l.codigo;
+      L_NOME[l.id] = l.codigo + ' — ' + l.nome;
+    });
+  });
+
+  function corDe(n) { return L_COR[n.linha] || 'var(--navy-light)'; }
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  document.getElementById('colLede').textContent = GR
+    ? 'Cada docente é um nó e cada aresta é uma produção assinada em conjunto por dois docentes do Programa. '
+      + GR.stats.nucleo + ' dos ' + GR.stats.nos + ' docentes formam um núcleo conectado; '
+      + (GR.stats.nos - GR.stats.nucleo - GR.stats.isolados) + ' aparecem em '
+      + GR.stats.grupos + ' grupos sem ligação com esse núcleo; e '
+      + GR.stats.isolados + ' não registraram coautoria interna no período.'
+    : 'Cada docente é um nó; cada publicação em coautoria entre dois docentes gera uma aresta.';
+
+  (function grafo() {
+    const svg = document.getElementById('grafoSvg');
+    const info = document.getElementById('grafoInfo');
+    const sel = document.getElementById('grafoFoco');
+    const chk = document.getElementById('grafoPesos');
+    const btnLimpar = document.getElementById('grafoLimpar');
+
+    if (!GR || !GR.nos || !GR.nos.length) {
+      document.querySelector('.grafo-wrap').innerHTML = C.note('warn',
+        '<strong>Grafo não carregado.</strong> O arquivo <code>assets/js/grafo-dados.js</code> não foi ' +
+        'encontrado. Gere-o com <code>python3 scripts/gerar-grafo.py &lt;pasta-do-scriptlattes&gt;</code>. ' +
+        'A tabela de grau de colaboração abaixo não depende dele.');
+      return;
+    }
+
+    const NO = {};
+    GR.nos.forEach(function (n) { NO[n.id] = n; });
+    const viz = {};
+    GR.nos.forEach(function (n) { viz[n.id] = []; });
+    GR.arestas.forEach(function (e) {
+      viz[e.a].push({ id: e.b, p: e.p });
+      viz[e.b].push({ id: e.a, p: e.p });
+    });
+    Object.keys(viz).forEach(function (k) { viz[k].sort(function (a, b) { return b.p - a.p; }); });
+
+    svg.setAttribute('viewBox', (GR.viewbox || [0, 0, GR.largura, GR.altura]).join(' '));
+
+    /* faixas: dizem o que cada região do desenho significa */
+    const faixas = [];
+    const yG = GR.nos.filter(function (n) { return !n.nucleo && !n.iso; })[0];
+    const yI = GR.nos.filter(function (n) { return n.iso; })[0];
+    if (yG) faixas.push({ y: yG.y - 44, t: 'Grupos sem ligação com o núcleo' });
+    if (yI) faixas.push({ y: yI.y - 40, t: 'Sem coautoria interna registrada no período' });
+
+    let h = '<g class="grafo-faixas">';
+    faixas.forEach(function (f) {
+      const vb = GR.viewbox || [0, 0, GR.largura, GR.altura];
+      h += '<line x1="' + (vb[0] + 10) + '" y1="' + f.y + '" x2="' + (vb[0] + vb[2] - 10) + '" y2="' + f.y + '"/>' +
+        '<text x="' + (vb[0] + 10) + '" y="' + (f.y - 8) + '">' + esc(f.t) + '</text>';
+    });
+    h += '</g><g class="grafo-arestas">';
+
+    GR.arestas.forEach(function (e, i) {
+      const a = NO[e.a], b = NO[e.b];
+      h += '<line class="ga" id="ga' + i + '" data-a="' + e.a + '" data-b="' + e.b + '" ' +
+        'x1="' + a.x + '" y1="' + a.y + '" x2="' + b.x + '" y2="' + b.y + '" ' +
+        'style="stroke-width:' + (1.2 + Math.min(e.p, 16) * 0.42).toFixed(2) + '"/>';
+    });
+    h += '</g><g class="grafo-pesos" id="grafoPesosG">';
+    GR.arestas.forEach(function (e, i) {
+      const a = NO[e.a], b = NO[e.b];
+      h += '<text class="gp" id="gp' + i + '" data-a="' + e.a + '" data-b="' + e.b + '" ' +
+        'x="' + ((a.x + b.x) / 2).toFixed(1) + '" y="' + ((a.y + b.y) / 2 - 3).toFixed(1) + '">' + e.p + '</text>';
+    });
+    h += '</g><g class="grafo-nos">';
+
+    /* O lado do rótulo vem calculado do gerador, que já afastou os retângulos
+       de texto uns dos outros. Recalcular aqui reabriria as sobreposições. */
+    GR.nos.forEach(function (n) {
+      const dir = n.lado || 0;
+      const tx = dir === 0 ? n.x : n.x + dir * (n.r + 7);
+      const ty = dir === 0 ? n.y + n.r + 15 : n.y + 4;
+      const anc = dir === 0 ? 'middle' : (dir > 0 ? 'start' : 'end');
+      h += '<g class="gn" id="gn' + n.id + '" data-id="' + n.id + '" tabindex="0" role="button" ' +
+        'aria-label="' + esc(n.nome + ' — ' + n.prod + ' produções em coautoria interna, ' +
+          n.grau + ' parceiros no Programa') + '">' +
+        '<circle class="gn-halo" cx="' + n.x + '" cy="' + n.y + '" r="' + (n.r + 5) + '"/>' +
+        '<circle class="gn-c" cx="' + n.x + '" cy="' + n.y + '" r="' + n.r + '" ' +
+        'style="fill:' + corDe(n) + '"/>' +
+        '<text class="gn-n" x="' + n.x + '" y="' + (n.y + 4) + '">' + (n.prod || '') + '</text>' +
+        '<text class="gn-t" x="' + tx.toFixed(1) + '" y="' + ty.toFixed(1) + '" text-anchor="' + anc + '">' +
+        esc(n.abrev) + '</text></g>';
+    });
+    h += '</g>';
+    svg.innerHTML = h;
+
+    /* seletor */
+    GR.nos.slice().sort(function (a, b) { return a.nome.localeCompare(b.nome, 'pt-BR'); })
+      .forEach(function (n) {
+        const o = document.createElement('option');
+        o.value = n.id; o.textContent = n.nome;
+        sel.appendChild(o);
+      });
+
+    /* legenda por linha de pesquisa */
+    const usadas = {};
+    GR.nos.forEach(function (n) { usadas[n.linha || 'nd'] = true; });
+    document.getElementById('grafoLegenda').innerHTML =
+      Object.keys(usadas).sort().map(function (k) {
+        const nome = k === 'nd' ? 'Linha em definição' : (L_NOME[k] || k.toUpperCase());
+        return '<li><span class="grafo-dot" style="background:' + (L_COR[k] || 'var(--navy-light)') + '"></span>' +
+          esc(nome) + '</li>';
+      }).join('') +
+      '<li class="grafo-leg-nota">O tamanho do círculo e o número dentro dele são as produções em coautoria com outros docentes do Programa.</li>';
+
+    /* interação */
+    let atual = null;
+
+    function pinta(id) {
+      atual = id;
+      const ligados = id == null ? null : {};
+      if (id != null) {
+        ligados[id] = true;
+        viz[id].forEach(function (v) { ligados[v.id] = true; });
+      }
+      svg.classList.toggle('grafo--foco', id != null);
+      GR.nos.forEach(function (n) {
+        const g = document.getElementById('gn' + n.id);
+        g.classList.toggle('is-on', id != null && !!ligados[n.id]);
+        g.classList.toggle('is-alvo', id != null && n.id === id);
+      });
+      GR.arestas.forEach(function (e, i) {
+        const on = id != null && (e.a === id || e.b === id);
+        document.getElementById('ga' + i).classList.toggle('is-on', on);
+        document.getElementById('gp' + i).classList.toggle('is-on', on);
+      });
+      btnLimpar.hidden = id == null;
+      sel.value = id == null ? '' : String(id);
+      painel(id);
+    }
+
+    function painel(id) {
+      if (id == null) {
+        info.innerHTML = '<p class="grafo-dica">Selecione um docente na lista, ou clique em um nó do grafo, ' +
+          'para ver com quem ele publica dentro do Programa. ' +
+          '<span class="grafo-dica-src">Fonte: ' + esc(GR.meta.fonte) +
+          ' — processado em ' + esc(GR.meta.processado_em) + '.</span></p>';
+        return;
+      }
+      const n = NO[id];
+      let t = '<div class="grafo-card">' +
+        '<div class="grafo-card-top">' +
+        '<h3>' + esc(n.nome) + '</h3>' +
+        '<a class="mini-link" href="https://lattes.cnpq.br/' + n.lattes + '" target="_blank" rel="noopener">Currículo Lattes</a>' +
+        '</div>' +
+        '<div class="grafo-card-kpis">' +
+        '<div><b>' + n.grau + '</b><span>parceiros no Programa</span></div>' +
+        '<div><b>' + n.prod + '</b><span>produções em coautoria interna</span></div>' +
+        '<div><b>' + (n.rank == null ? '—' : n.rank) + '</b><span>grau de colaboração</span></div>' +
+        '</div>';
+      if (n.linha) t += '<p class="grafo-card-linha">' + esc(L_NOME[n.linha] || n.linha) + '</p>';
+      if (!viz[id].length) {
+        t += C.note('info', 'Sem coautoria com outros docentes do Programa no período 2021–2026. ' +
+          'Isso não diz nada sobre a produção total do docente — só sobre coautoria interna ao grupo.');
+      } else {
+        t += '<table class="tbl grafo-tbl"><caption class="sr-only">Coautoria interna de ' + esc(n.nome) +
+          '</caption><thead><tr><th scope="col">Docente</th><th scope="col">Produções em conjunto</th>' +
+          '<th scope="col">Linha</th></tr></thead><tbody>' +
+          viz[id].map(function (v) {
+            const o = NO[v.id];
+            return '<tr><th scope="row"><button type="button" class="grafo-ir" data-id="' + o.id + '">' +
+              esc(o.nome) + '</button></th><td>' + v.p + '</td><td>' +
+              esc(o.linha ? (L_COD[o.linha] || o.linha) : '—') + '</td></tr>';
+          }).join('') + '</tbody></table>' +
+          '<p class="grafo-card-nota">A coluna não soma o total do docente: uma produção assinada por ' +
+          'três membros do Programa aparece em cada par, e o total do nó a conta uma única vez.</p>';
+      }
+      t += '</div>';
+      info.innerHTML = t;
+      info.querySelectorAll('.grafo-ir').forEach(function (b) {
+        b.addEventListener('click', function () { pinta(Number(b.dataset.id)); });
+      });
+    }
+
+    svg.querySelectorAll('.gn').forEach(function (g) {
+      const id = Number(g.dataset.id);
+      g.addEventListener('click', function () { pinta(atual === id ? null : id); });
+      g.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); pinta(atual === id ? null : id); }
+        if (ev.key === 'Escape') { pinta(null); }
+      });
+      g.addEventListener('mouseenter', function () { if (atual == null) g.classList.add('is-hover'); });
+      g.addEventListener('mouseleave', function () { g.classList.remove('is-hover'); });
+    });
+    sel.addEventListener('change', function () { pinta(sel.value === '' ? null : Number(sel.value)); });
+    btnLimpar.addEventListener('click', function () { pinta(null); sel.focus(); });
+    chk.addEventListener('change', function () {
+      svg.classList.toggle('grafo--pesos', chk.checked);
+    });
+
+    pinta(null);
+  }());
+
+  /* tabela de grau de colaboração — os mesmos dados sem depender do desenho */
+  document.getElementById('grafoRank').innerHTML = GR
+    ? '<details class="grafo-acc"><summary>Grau de colaboração dos ' + GR.stats.nos +
+      ' docentes (tabela)</summary><div class="grafo-acc-body">' +
+      C.note('info', 'O <em>grau de colaboração</em> (Collaboration Rank) é calculado pelo ScriptLattes e ' +
+        'mede o peso de cada docente dentro da rede interna — é análogo ao PageRank em grafos com pesos. ' +
+        'Não é medida de produtividade nem de qualidade da produção: um docente com muita produção e pouca ' +
+        'coautoria interna tem grau baixo por definição.') +
+      '<div class="tbl-wrap mt-2"><table class="tbl"><caption class="sr-only">Grau de colaboração por docente</caption>' +
+      '<thead><tr><th scope="col">Docente</th><th scope="col">Grau de colaboração</th>' +
+      '<th scope="col">Parceiros no Programa</th><th scope="col">Produções em coautoria interna</th></tr></thead><tbody>' +
+      GR.nos.slice().sort(function (a, b) { return (b.rank || 0) - (a.rank || 0); }).map(function (n) {
+        return '<tr><th scope="row">' + esc(n.nome) + '</th><td>' + (n.rank == null ? '—' : n.rank) +
+          '</td><td>' + n.grau + '</td><td>' + n.prod + '</td></tr>';
+      }).join('') + '</tbody></table></div></div></details>'
+    : '';
+
+  document.getElementById('colNota').innerHTML = C.note('info',
+    '<strong>Como ler o grafo.</strong> ' + (GR ? GR.meta.nota : '') +
+    ' O desenho é redesenhado pelo portal a partir dos dados brutos do ScriptLattes ' +
+    '(<code>grafoDeColaboracoesComPesos.dot</code>), porque o relatório original entrega o grafo como imagem ' +
+    'com mapa de área e como applet Java — que nenhum navegador atual executa. O conteúdo é o mesmo; ' +
+    'a versão original continua disponível em <code>scriptlattes/grafoDeColaboracoes.html</code>. ' +
+    (GR ? GR.meta.layout + ' ' : '') + C.badge('PRELIMINAR')) +
+    '<div class="mt-2">' + C.note('warn',
+      '<strong>Limite conhecido.</strong> A rede é construída por casamento de nomes nos currículos: ' +
+      'homonímia e variações de grafia podem juntar ou separar indevidamente coautorias, e isso afeta ' +
+      'tanto a rede interna quanto a contagem de coautores externos. Divergências apontadas pela ' +
+      'coordenação são corrigidas na origem — no currículo Lattes — e não no portal.') + '</div>';
+
+  /* ═══════════════ MAPA GEOLOCALIZADO ═══════════════ */
+  const G = window.MAPA_GEO || null;
+  const MG = R.mapa_geo;
+
+  document.getElementById('geoLede').textContent =
+    MG.conexoes + ' conexões entre docentes da REDEMAT e ' + MG.locais +
+    ' instituições coautoras em ' + MG.paises + ' países, a partir de ' +
+    MG.publicacoes_resolvidas + ' publicações com DOI resolvido no período 2021–2026.';
+
+  document.getElementById('geoNota').innerHTML =
+    C.note('info', '<strong>Como o mapa foi construído.</strong> ' + MG.nota + ' ' + C.badge('PRELIMINAR')) +
+    '<div class="mt-2">' + C.note('warn',
+      '<strong>Auditoria de geolocalização.</strong> ' + MG.auditoria) + '</div>';
+
+  function iniciarGeo() {
+    const el = document.getElementById('geoMapa');
+    const vazio = document.getElementById('geoVazio');
+    if (!el) return;
+
+    if (!G || !G.links || !G.links.length) {
+      el.style.display = 'none';
+      vazio.hidden = false;
+      vazio.textContent = 'Dados do mapa não carregados. Confirme que assets/js/mapa-geo-dados.js está presente.';
+      return;
+    }
+
+    if (!window.L) {
+      /* Sem Leaflet (offline), o mapa vira uma lista por país — o dado não se perde.
+         A barra de filtros é escondida: sem mapa, os controles não teriam efeito. */
+      el.style.display = 'none';
+      const tb = document.querySelector('.geo-toolbar');
+      if (tb) tb.hidden = true;
+      const porPais = {};
+      G.locais.forEach(function (l) {
+        (porPais[l.pais] = porPais[l.pais] || []).push(l);
+      });
+      const linhas = Object.keys(porPais).sort(function (a, b) {
+        return porPais[b].length - porPais[a].length;
+      }).map(function (pais) {
+        const ls = porPais[pais];
+        return '<div class="bar-row"><span class="bar-lbl">' + pais + '</span>' +
+          '<span class="bar-track"><span class="bar-fill" style="background:var(--area1);width:' +
+            Math.round(ls.length / G.locais.length * 100) + '%"></span></span>' +
+          '<span class="bar-val">' + ls.length + '</span></div>';
+      }).join('');
+      vazio.hidden = false;
+      vazio.innerHTML = '<div class="geo-fallback" style="text-align:left;">' +
+        '<p style="font-size:.84rem;color:var(--text-mid);margin-bottom:1rem;">' +
+          'O mapa interativo precisa da biblioteca Leaflet, que não carregou (provavelmente sem conexão). ' +
+          'Instituições coautoras por país:</p>' + linhas + '</div>';
+      document.getElementById('geoNLocais').textContent = C.num(G.locais.length);
+      document.getElementById('geoNPaises').textContent = Object.keys(porPais).length;
+      document.getElementById('geoNPubs').textContent = C.num(G.links.reduce(function (s2, l) { return s2 + l.publicacoes; }, 0));
+      return;
+    }
+
+    const mapa = window.L.map(el, { zoomControl: false, minZoom: 2, worldCopyJump: true, scrollWheelZoom: false })
+      .setView([8, -18], 2);
+    window.L.control.zoom({ position: 'bottomright' }).addTo(mapa);
+    window.L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors', maxZoom: 19
+    }).addTo(mapa);
+    const camada = window.L.layerGroup().addTo(mapa);
+
+    const selP = document.getElementById('geoProf');
+    const selA = document.getElementById('geoAno');
+    G.professores.forEach(function (n) { selP.add(new Option(n, n)); });
+    for (let a = G.meta.fim; a >= G.meta.inicio; a--) selA.add(new Option(a, a));
+
+    function desenhar() {
+      camada.clearLayers();
+      const prof = selP.value, ano = selA.value;
+      const q = document.getElementById('geoBusca').value.trim().toLowerCase();
+
+      let links = G.links.filter(function (l) {
+        return (!prof || l.professor === prof) && (!ano || l.anos[ano]);
+      });
+      const ids = {};
+      links.forEach(function (l) { ids[l.destino] = 1; });
+      let locais = G.locais.filter(function (l) {
+        return ids[l.id] && (!q || (l.instituicao + ' ' + l.cidade + ' ' + l.pais).toLowerCase().indexOf(q) > -1);
+      });
+      const ok = {};
+      locais.forEach(function (l) { ok[l.id] = 1; });
+      links = links.filter(function (l) { return ok[l.destino]; });
+
+      const totais = {};
+      links.forEach(function (l) {
+        totais[l.destino] = (totais[l.destino] || 0) + (ano ? (l.anos[ano] || 0) : l.publicacoes);
+      });
+
+      const o = [G.origem.lat, G.origem.lon];
+      window.L.circleMarker(o, { radius: 7, color: '#fff', weight: 2, fillColor: '#0B1F3A', fillOpacity: 1 })
+        .bindTooltip('<b>REDEMAT</b><br>Ouro Preto, Brasil').addTo(camada);
+
+      locais.forEach(function (l) {
+        const peso = totais[l.id] || 1;
+        window.L.polyline([o, [l.lat, l.lon]], {
+          color: '#1D6FA5', opacity: .35, weight: Math.min(1 + Math.sqrt(peso), 5)
+        }).addTo(camada);
+        window.L.circleMarker([l.lat, l.lon], {
+          radius: 5 + Math.sqrt(peso) * 2, color: '#fff', weight: 1.5,
+          fillColor: '#D9A521', fillOpacity: .88
+        }).bindTooltip('<b>' + l.cidade + ', ' + l.pais + '</b><br>' + l.instituicao +
+          '<br>' + peso + ' publicação' + (peso === 1 ? '' : 'ões')).addTo(camada);
+      });
+
+      const paises = {};
+      locais.forEach(function (l) { paises[l.codigo_pais || l.pais] = 1; });
+      document.getElementById('geoNLocais').textContent = C.num(locais.length);
+      document.getElementById('geoNPaises').textContent = Object.keys(paises).length;
+      document.getElementById('geoNPubs').textContent = C.num(
+        links.reduce(function (s2, l) { return s2 + (ano ? (l.anos[ano] || 0) : l.publicacoes); }, 0));
+
+      const vz = document.getElementById('geoVazio');
+      vz.hidden = locais.length > 0;
+      vz.textContent = 'Nenhuma colaboração corresponde aos filtros.';
+    }
+
+    selP.addEventListener('change', desenhar);
+    selA.addEventListener('change', desenhar);
+    document.getElementById('geoBusca').addEventListener('input', desenhar);
+    /* O zoom por scroll só liga depois de clicar — evita capturar a rolagem da página */
+    mapa.on('click', function () { mapa.scrollWheelZoom.enable(); });
+    mapa.on('mouseout', function () { mapa.scrollWheelZoom.disable(); });
+    desenhar();
+  }
+
+  /* ---------------- init ---------------- */
+  C.mount('producao-lattes.html', '../');
+
+  if (window.L) iniciarGeo();
+  else {
+    const ls = document.querySelector('script[src*="leaflet"]');
+    if (ls) {
+      ls.addEventListener('load', iniciarGeo);
+      ls.addEventListener('error', iniciarGeo);
+    }
+    window.addEventListener('load', function () { setTimeout(iniciarGeo, 300); });
+  }
+
+  C.whenChart(function () {
+    const el = document.getElementById('cQ');
+    if (el) {
+      new window.Chart(el, {
+        type: 'doughnut',
+        data: { labels: ['Q1', 'Q2', 'Q3', 'Q4', 'NE — não elegível', 'Sem métrica Scopus'],
+          datasets: [{ data: [S.unicos.Q1, S.unicos.Q2, S.unicos.Q3, S.unicos.Q4, S.unicos.ne, S.unicos.sem_quartil],
+            backgroundColor: ['#15803D', '#1D4ED8', '#A16207', '#B91C1C', '#94A3B8', '#CBD5E1'], borderWidth: 0 }] },
+        options: {
+          responsive: true, maintainAspectRatio: false, cutout: '58%',
+          animation: { duration: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 650 },
+          plugins: {
+            legend: { display: true, position: 'right', labels: { boxWidth: 11, font: { size: 11 } } },
+            tooltip: { backgroundColor: '#0B1F3A', padding: 10, cornerRadius: 6,
+              callbacks: { label: function (c) { return c.label + ': ' + c.raw + ' artigos'; } } }
+          }
+        }
+      });
+    }
+    if (MAPA) render();
+  }, function () {
+    C.chartFallback('cQ', ['Quartil Scopus', 'Artigos únicos'],
+      [['Q1', S.unicos.Q1], ['Q2', S.unicos.Q2], ['Q3', S.unicos.Q3], ['Q4', S.unicos.Q4],
+       ['NE — não elegível', S.unicos.ne], ['Sem métrica Scopus', S.unicos.sem_quartil],
+       ['Total', P.total_unico]]);
+    /* cMap é preenchido por drawMap() com os dados da seleção — nada a fazer aqui. */
+    if (MAPA) render();
+  });
+})();
+</script>
+</body>
+</html>

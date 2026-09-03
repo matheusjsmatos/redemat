@@ -1,0 +1,20 @@
+# Normaliza fim de linha: no repositório LF, na máquina o que o sistema usa.
+# Sem isto, editar no Windows e no Linux produz diffs de arquivo inteiro.
+* text=auto
+
+# Binários — nunca normalizar, nunca tentar diff textual
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.avif binary
+*.ico  binary
+*.pdf  binary
+*.docx binary
+*.odt  binary
+*.xlsx binary
+
+# SVG é texto (e diffa bem), mas não deve ser tratado como código-fonte
+# em estatísticas de linguagem do GitHub
+*.svg text linguist-detectable=false
