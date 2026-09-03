@@ -1,5 +1,66 @@
 # Registro de correções — Portal REDEMAT
 
+## Versão 4.7 — 03/09/2026
+
+Sai do portal o nome do docente fora do conjunto publicado. A explicação do
+número fica.
+
+### O que saiu
+
+A página de pessoas trazia um aviso — "Exclusão formal. Guilherme Jorge
+Brigolini Silva não integra o conjunto de 24 docentes utilizado nesta versão do
+portal" — e o nome reaparecia em outros dois lugares públicos:
+
+| Onde | O que dizia |
+|---|---|
+| `pessoas.html` | o aviso "Exclusão formal", com o nome |
+| `indicadores.html`, conflito "Número de docentes permanentes" | "com a exclusão formal de Guilherme Jorge Brigolini Silva, o conjunto é de 24" |
+| `reconhecimentos.html` | "Um dos dez prêmios (Melhor Palestrante, SEMTECH 2026) pertence ao docente formalmente excluído" |
+
+O terceiro não trazia o nome, e identificava a pessoa de todo modo: o prêmio
+tem título e ano, e é pesquisável.
+
+### O que ficou
+
+Os números que essas frases explicavam continuam explicados — sem apontar
+ninguém:
+
+- o aviso de `pessoas.html` foi **removido por completo**; nada naquela página
+  afirma 25, então 24 não precisava de ressalva ali;
+- o conflito de contagem passou a dizer "a página oficial lista 25 registros de
+  docentes; o conjunto adotado nesta versão do portal é de 24 — 21 permanentes
+  e 3 colaboradores";
+- o aviso dos prêmios passou de "Um prêmio não aparece nesta lista" para "Nove
+  dos dez prêmios registrados", e o texto agora diz que o décimo "consta de
+  currículo fora do conjunto de 24 docentes adotado nesta versão do portal",
+  sem o título do prêmio.
+
+O campo `docentes.exclusao` deu lugar a `docentes.conjunto_nota`, cujo texto é
+sobre contagem e não sobre pessoa. O motivo está escrito no comentário do
+campo: nomear alguém como excluído é uma afirmação pública sobre essa pessoa, e
+o portal não precisa fazê-la para explicar um número.
+
+### Uma ocorrência que permanece, e por quê
+
+`assets/js/mapa-geo-dados.js` traz o nome em três listas de **coautores** de
+publicações. É fato de autoria vindo do Lattes, não afirmação sobre vínculo com
+o Programa — e remover um coautor de uma lista de autores falsearia o registro.
+
+Vale registrar, porém, que essas listas **não são exibidas em nenhuma página**:
+o mapa usa apenas as contagens. São 797 nomes distintos, 26 KB dos 118 KB do
+arquivo, que todo visitante baixa e ninguém vê. Retirá-las é decisão da
+coordenação — não é remoção de dado publicado, é remoção de dado que trafega
+sem uso.
+
+### Verificação
+
+As três páginas conferidas em navegador: o nome não aparece no texto nem no HTML
+gerado, nenhuma delas imprime "undefined" onde havia o campo antigo, os 13
+cartões de conflito seguem renderizando e não há erro de JavaScript. 14 páginas
+e 8 pontos de quebra sem regressão.
+
+---
+
 ## Versão 4.6 — 03/09/2026
 
 Repositório Git preparado para <https://github.com/matheusjsmatos/redemat>, e

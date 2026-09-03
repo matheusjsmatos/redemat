@@ -3,7 +3,7 @@
 Portal institucional do Programa de Pós-Graduação em Engenharia de Materiais
 (REDEMAT — UFOP · UEMG), reconstruído a partir de dados com proveniência declarada.
 
-**Versão:** 4.6 · **Data:** 03/09/2026
+**Versão:** 4.7 · **Data:** 03/09/2026
 
 ---
 
@@ -436,6 +436,12 @@ O repositório local está pronto para <https://github.com/matheusjsmatos/redema
 envio e da ativação do GitHub Pages está em **`docs/publicar-no-github.md`**.
 
 ## Correções relevantes
+
+**Versão 4.7** retirou do portal o nome do docente fora do conjunto publicado.
+Ele aparecia em três lugares — o aviso "Exclusão formal" em `pessoas.html`, o
+conflito de contagem em `indicadores.html` e, sem o nome mas identificável pelo
+título do prêmio, o aviso de `reconhecimentos.html`. Os números que essas frases
+explicavam seguem explicados em termos de contagem, sem apontar ninguém.
 
 **Versão 4.6** preparou o repositório Git (`.gitignore`, `.gitattributes`,
 `.nojekyll`) e o GitHub Pages, incluindo um `noindex` que vale só no domínio

@@ -21,7 +21,7 @@ const REDEMAT = {
 
   /* ---------------------------------------------------------------- meta */
   meta: {
-    versao: '4.6',
+    versao: '4.7',
     atualizado: '2026-09-03',
     fontes: [
       { id: 'CONSOL',   nome: 'Entrega consolidada Lattes REDEMAT 2021–2026',   ref: 'codex/apcn/10_analises/entrega_atualizada_lattes_20260829 — corte 29/08/2026', coleta: '2026-08-29' },
@@ -255,7 +255,12 @@ const REDEMAT = {
     fonte: 'DOCENTES + PROPOSTA + LATTES',
     ref: 'Página oficial de docentes; tabela de corpo docente da proposta APCN; IDs Lattes do ScriptLattes',
     status: 'VALIDADO',
-    exclusao: 'Guilherme Jorge Brigolini Silva não integra o conjunto de 24 docentes utilizado nesta versão do portal.',
+    /* O conjunto publicado é de 24, e a página oficial lista 25. A diferença é
+       registrada como CONTAGEM, sem identificar a pessoa: nomear alguém como
+       excluído é uma afirmação pública sobre essa pessoa, e o portal não tem
+       por que fazê-la para explicar um número. Ver o conflito "Número de
+       docentes permanentes" em `conflitos`. */
+    conjunto_nota: 'A página oficial do Programa lista 25 registros de docentes; o conjunto adotado nesta versão do portal é de 24 — 21 permanentes e 3 colaboradores, conforme a tabela de corpo docente da proposta APCN.',
     itens: [
       { nome: 'Alan Barros de Oliveira',            cat: 'permanente', ies: 'UFOP', bolsa: 'PQ-2',  ch: '20h', dp: 2, lattes: '2373454332205980', email: 'oliveira@ufop.edu.br',            linha: 'l12', linhaStatus: 'VALIDADO' },
       { nome: 'Américo Tristão Bernardes',          cat: 'permanente', ies: 'UFOP', bolsa: null,    ch: '20h', dp: 2, lattes: '1219153096910234', email: 'atb@ufop.edu.br',                 linha: 'l12', linhaStatus: 'PRELIMINAR' },
@@ -985,7 +990,7 @@ const REDEMAT = {
     publicados: 9,
     por_ano: { 2021: 1, 2022: 2, 2024: 3, 2025: 2, 2026: 2 },
     nota: 'Prêmios e títulos declarados nos currículos Lattes do corpo docente. O docente é identificado pelo índice de membro do relatório ScriptLattes, casado com a listagem de membros.',
-    exclusao: 'Um dos dez prêmios (Melhor Palestrante, SEMTECH 2026) pertence ao docente formalmente excluído do conjunto de 24 publicado no portal e por isso não aparece na lista.',
+    exclusao: 'O relatório do ScriptLattes registra dez prêmios no período; nove aparecem aqui. O décimo consta de currículo fora do conjunto de 24 docentes adotado nesta versão do portal.',
     /* Cada item foi mapeado do campo membros_ids do ScriptLattes para o nome
        do docente pelo índice em membros.html. Índice 9 = docente excluído. */
     itens: [
@@ -1366,11 +1371,11 @@ const REDEMAT = {
       resolvido: true,
       fontes: [
         { fonte: 'Site /indicadores', valor: '21 permanentes' },
-        { fonte: 'Contagem da página de docentes', valor: '25 registros (24 após exclusão formal)' },
+        { fonte: 'Contagem da página de docentes', valor: '25 registros; conjunto adotado: 24' },
         { fonte: 'Painel APCN', valor: '24 no núcleo analítico' },
         { fonte: 'Proposta APCN — tabela de corpo docente', valor: '21 permanentes + 3 colaboradores' }
       ],
-      resolucao: 'RESOLVIDO. A página oficial lista 25 docentes; com a exclusão formal de Guilherme Jorge Brigolini Silva, o conjunto é de 24 docentes — 21 permanentes e 3 colaboradores, conforme a tabela de corpo docente da proposta APCN e os rótulos dos currículos Lattes. O valor 21 do site refere-se apenas aos permanentes.'
+      resolucao: 'RESOLVIDO. A página oficial lista 25 registros de docentes; o conjunto adotado nesta versão do portal é de 24 — 21 permanentes e 3 colaboradores, conforme a tabela de corpo docente da proposta APCN e os rótulos dos currículos Lattes. O valor 21 do site refere-se apenas aos permanentes.'
     },
     {
       campo: 'Categoria formal de docentes (permanente/colaborador)',
