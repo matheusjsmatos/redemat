@@ -1153,9 +1153,3 @@ ul, ol { list-style: none; }
            color: var(--st-div); background: var(--st-div-bg); border-radius: 4px;
            padding: .1rem .34rem; margin-left: .3rem; text-decoration: none;
            border-bottom: 1px dotted currentColor; cursor: help; white-space: nowrap; }
-.hc-resumo { font-size: .82rem; color: var(--text-mid); line-height: 1.65; margin: .9rem 0 0; }
-.hc-mais { font: inherit; font-weight: 700; color: var(--area1); background: none; border: 0;
-           padding: 0; cursor: pointer; text-decoration: underline;
-           text-decoration-color: var(--border-str); white-space: nowrap; }
-.hc-mais:hover { text-decoration-color: currentColor; }
-.hc-det-txt { font-size: .79rem; color: var(--text-mid); line-height: 1.7; margin: 0; }

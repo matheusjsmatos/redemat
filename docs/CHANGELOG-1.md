@@ -1,49 +1,5 @@
 # Registro de correções — Portal REDEMAT
 
-## Versão 4.10 — 08/09/2026
-
-O resumo do Lattes nos cartões do painel histórico — texto que a própria
-pessoa escreveu sobre si.
-
-### 34 resumos, sem baixar nada
-
-O ScriptLattes guarda o HTML bruto de cada currículo em
-`redemat/cache/<id de 16 dígitos>`, e o Lattes traz o resumo num
-`<p class="resumo">`. Os currículos já estavam coletados: **34 dos 48**
-docentes do painel ganharam resumo sem nenhum download novo.
-
-`scripts/extrair-resumos-lattes.py` (novo) faz a extração e grava
-`data/lattes-resumos.csv`; `gerar-historico.py` casa cada resumo com o docente
-pelo ID que `data/nomes-docentes.csv` já guardava.
-
-No cartão, o resumo entra logo abaixo do nome, **cortado em fim de frase** —
-os textos vão de 375 a 3 987 caracteres, e o maior não caberia. "Continuar
-lendo" abre o `details` do próprio cartão, que agora reúne resumo completo,
-títulos de livros e de patentes, com o rótulo dizendo o que contém em vez de
-um "ver mais" genérico.
-
-É a última peça do pedido original: foto, nome, **resumo do Lattes**,
-orientações, projetos, publicações, patentes e livros.
-
-### Dois achados de identidade
-
-- **Ive Silvestre de Almeida = 8756368667136851**, encontrado em
-  `redemat/teste-01.list`. Com ele são **39 dos 48 com ID Lattes**.
-- O ID `8755682183778618`, que aparecia no cache sem correspondência, é do
-  docente formalmente excluído do conjunto publicado. Não entra no painel.
-
-Continuam sem ID — e sem resumo — os **9** docentes que saíram antes de 2021 e
-por isso nunca entraram numa coleta do ScriptLattes. São exatamente os mesmos 9
-com a acentuação a confirmar.
-
-### Verificação
-
-15 páginas sem erro nem 404; 8 pontos de quebra sem scroll horizontal; 48
-cartões, 34 resumos, 34 botões "continuar lendo", 44 blocos de detalhe, 7 notas
-de proveniência; o botão abre o `details` certo e o texto completo aparece.
-
----
-
 ## Versão 4.9 — 08/09/2026
 
 Memória do corpo docente: os 48 docentes que passaram pela REDEMAT desde o

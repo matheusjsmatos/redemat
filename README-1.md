@@ -3,7 +3,7 @@
 Portal institucional do Programa de Pós-Graduação em Engenharia de Materiais
 (REDEMAT — UFOP · UEMG), reconstruído a partir de dados com proveniência declarada.
 
-**Versão:** 4.10 · **Data:** 08/09/2026
+**Versão:** 4.9 · **Data:** 08/09/2026
 
 ---
 
@@ -82,7 +82,6 @@ redemat-portal/
 │   ├── gerar-grafo.py              Converte o .dot do ScriptLattes no grafo SVG do portal
 │   ├── gerar-ilustracoes.py        Desenha as ilustrações do portal em SVG
 │   ├── gerar-historico.py          Apura as 13 coletas CAPES no painel histórico
-│   ├── extrair-resumos-lattes.py   Tira o resumo do Lattes do cache do ScriptLattes
 │   ├── auditar-numeros.py          ⭐ Confere cada número publicado contra a entrega consolidada
 │   ├── importar-percentis-scopus.py  Completa o percentil de periódicos por consulta manual
 │   ├── conferir-fotos.py           Fotos: lista o esperado por pessoa e gera o manifesto
@@ -439,11 +438,6 @@ O repositório local está pronto para <https://github.com/matheusjsmatos/redema
 envio e da ativação do GitHub Pages está em **`docs/publicar-no-github.md`**.
 
 ## Correções relevantes
-
-**Versão 4.10** trouxe o **resumo do Lattes** para os cartões do painel
-histórico — 34 dos 48, extraídos do cache de currículos que o Programa já tinha,
-sem download novo (`scripts/extrair-resumos-lattes.py`). É texto que a própria
-pessoa escreveu sobre si.
 
 **Versão 4.9** criou a **memória do corpo docente** (`pages/historico.html`): os
 48 docentes que passaram pela REDEMAT desde o primeiro quadro, apurados das 13

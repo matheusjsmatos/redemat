@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memória do corpo docente — REDEMAT | UFOP · UEMG</title>
+<meta name="description" content="Painel histórico do corpo docente da REDEMAT desde a fundação em 1996: quem construiu o Programa, o período de cada um e as contribuições registradas nas coletas CAPES.">
+<link rel="canonical" href="https://redemat.ufop.br/historico">
+<link rel="icon" href="../assets/img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<div id="site-header-slot"></div>
+
+<section class="page-hero page-hero--img" style="--hero-img:url('../img/ilustra/historico-hero.svg')" aria-labelledby="ph">
+  <div class="page-hero-in">
+    <nav class="crumb" aria-label="Trilha de navegação">
+      <a href="../index.html">Início</a><span aria-hidden="true">›</span>
+      <a href="programa.html">Programa</a><span aria-hidden="true">›</span>
+      <span aria-current="page">Memória do corpo docente</span>
+    </nav>
+    <h1 id="ph">Memória do corpo docente</h1>
+    <p class="lede" id="phLede"></p>
+    <div class="hero-metrics" id="heroMetrics"></div>
+  </div>
+</section>
+
+<main id="conteudo">
+
+  <!-- Como ler este painel -->
+  <section class="section" style="padding-block:2.25rem 0;">
+    <div class="wrap" id="hIntro"></div>
+  </section>
+
+  <!-- Painel -->
+  <section class="section" id="painel" aria-labelledby="pn-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Trinta anos</p>
+        <h2 class="h2" id="pn-h">Quem construiu o Programa</h2>
+        <p class="section-lede" id="pnLede"></p>
+      </div>
+
+      <div class="lab-bar" role="group" aria-label="Filtros do painel histórico">
+        <label for="hBusca" class="sr-only">Buscar por nome, linha de pesquisa ou instituição</label>
+        <input type="search" id="hBusca" class="lab-busca"
+               placeholder="Buscar por nome, linha de pesquisa ou instituição…">
+        <div class="chips" id="hChips"></div>
+      </div>
+
+      <p class="lab-count" id="hCount" aria-live="polite"></p>
+      <div id="hFases"></div>
+      <p class="geo-vazio" id="hVazio" hidden></p>
+    </div>
+  </section>
+
+  <!-- Encerramento -->
+  <section class="section section--alt" aria-labelledby="nt-h">
+    <div class="wrap wrap--nr">
+      <div class="section-head">
+        <p class="eyebrow">Sobre este painel</p>
+        <h2 class="h2" id="nt-h">De onde vêm estes dados, e o que falta</h2>
+      </div>
+      <div id="hNotas"></div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer-slot"></div>
+
+<script src="../assets/js/site-data.js"></script>
+<script src="../assets/js/historico-dados.js"></script>
+<!-- Manifesto de fotos: declara quem tem foto e em que formato.
+     Gerado por scripts/conferir-fotos.py --manifesto. -->
+<script src="../assets/img/pessoas/fotos.js"></script>
+<script src="../assets/js/components.js"></script>
+<script>
+(function () {
+  'use strict';
+  const R = window.REDEMAT, C = window.RC, H = window.HISTORICO;
+
+  if (!H) {
+    document.getElementById('hFases').innerHTML = C.empty(
+      'Dados do painel histórico não carregados.',
+      'Confirme que assets/js/historico-dados.js está presente. Ele é gerado por ' +
+      'scripts/gerar-historico.py a partir das coletas CAPES.');
+    C.mount('historico.html', '../');
+    return;
+  }
+
+  const T = H.totais, JAN = H.meta.janela_contribuicoes;
+  /* Os anos vêm da camada de dados, não do markup: a rede foi concebida em
+     1995 (`ano_concepcao`) e o Mestrado começou em 1996 (`ano_inicio_mestrado`).
+     O vínculo docente mais antigo das coletas é 06/09/1996, coerente com o
+     início do Mestrado — e é o que este painel consegue documentar. */
+  const CONCEPCAO = R.programa.ano_concepcao.valor;
+  const INICIO = R.programa.ano_inicio_mestrado.valor;
+  const ANOS = new Date().getFullYear() - CONCEPCAO;
+  const D0 = (T.entrada_mais_antiga || '').split('-');
+  const MES = ['janeiro','fevereiro','março','abril','maio','junho','julho',
+               'agosto','setembro','outubro','novembro','dezembro'][+D0[1] - 1] || '';
+  const DATA0 = D0.length === 3 ? D0.reverse().join('/') : '—';
+
+  document.getElementById('phLede').textContent =
+    'A REDEMAT foi concebida em ' + CONCEPCAO + ' e o Mestrado começou em ' + INICIO +
+    '. O que o Programa é hoje foi construído por quem passou por ele — e este painel ' +
+    'reúne todos os docentes registrados nas coletas oficiais: os que continuam no quadro ' +
+    'e os que deixaram sua marca e seguiram adiante.';
+
+  /* ---- métricas do hero ------------------------------------------------ */
+  document.getElementById('heroMetrics').innerHTML = [
+    { v: T.docentes, l: 'Docentes no histórico' },
+    { v: ANOS, l: 'Anos desde a concepção' },
+    { v: T.fundadores, l: 'Da turma de fundação' },
+    { v: T.orientacoes_unicas, l: 'Mestres e doutores formados' }
+  ].map(function (m) {
+    return '<div class="hero-metric"><b data-count="' + m.v + '">0</b><span>' +
+           m.l + '</span></div>';
+  }).join('');
+
+  /* ---- como ler ---------------------------------------------------------
+     Duas janelas diferentes no mesmo cartão, e o visitante precisa saber
+     disso: o período é completo desde 1996, as contribuições só cobrem
+     2013-2025. Quem entrou na fundação fez muito mais do que o número mostra,
+     e omitir esse aviso transformaria a homenagem em subnotificação. */
+  document.getElementById('hIntro').innerHTML =
+    C.note('info',
+      '<strong>Duas janelas, e a diferença importa.</strong> O <em>período no Programa</em> ' +
+      'é completo: as coletas guardam a data real de entrada de cada docente, e a mais ' +
+      'antiga é <strong>' + DATA0 + '</strong>. Já as <em>contribuições</em> — orientações, ' +
+      'produção, projetos — só existem nas coletas de <strong>' + JAN[0] + ' a ' + JAN[1] +
+      '</strong>. Para quem está aqui desde a fundação, o número publicado é ' +
+      '<strong>menor</strong> que a obra: mostra o que está registrado, não o que a pessoa fez. ' +
+      C.badge(H.meta.status)) +
+    '<div class="mt-2">' + C.note('warn',
+      '<strong>Registro, não classificação.</strong> Os cartões estão em ordem cronológica de ' +
+      'entrada no Programa — nunca por volume de produção. Não há pontuação, índice, nem ' +
+      'comparação entre docentes: o portal não publica análise individual de desempenho, e ' +
+      'uma homenagem ordenada por contagem seria exatamente isso.') + '</div>';
+
+  document.getElementById('pnLede').textContent =
+    T.docentes + ' docentes passaram pelo quadro desde ' + INICIO + ' — ' + T.no_quadro +
+    ' seguem no Programa e ' + T.passaram + ' já seguiram adiante. Da turma registrada no ' +
+    'primeiro quadro, em ' + MES + ' de ' + INICIO + ', ' + T.fundadores_no_quadro +
+    ' dos ' + T.fundadores + ' continuam em atividade.';
+
+  /* ---- filtros --------------------------------------------------------- */
+  const FILTROS = [
+    { id: 'todos', rot: 'Todos' },
+    { id: 'quadro', rot: 'No quadro' },
+    { id: 'passaram', rot: 'Passaram pelo Programa' }
+  ].concat(H.fases.map(function (f) {
+    return { id: 'fase:' + f.id, rot: f.titulo.split('—')[0].trim() };
+  }));
+
+  let filtro = 'todos', busca = '';
+
+  document.getElementById('hChips').innerHTML = FILTROS.map(function (f) {
+    /* O estado ativo é o próprio aria-pressed — o CSS estiliza por ele. Uma
+       classe paralela seria um segundo lugar para a mesma verdade. */
+    return '<button type="button" class="chip" data-f="' + f.id +
+      '" aria-pressed="' + (f.id === 'todos') + '">' + f.rot + '</button>';
+  }).join('');
+
+  function passa(p) {
+    if (filtro === 'quadro' && !p.no_quadro) return false;
+    if (filtro === 'passaram' && p.no_quadro) return false;
+    if (filtro.indexOf('fase:') === 0 && p.fase !== filtro.slice(5)) return false;
+    if (!busca) return true;
+    const alvo = (p.nome + ' ' + (p.linhas || []).join(' ') + ' ' +
+                  p.ies.join(' ') + ' ' + p.categoria).toLowerCase();
+    return alvo.indexOf(busca) > -1;
+  }
+
+  /* ---- cartão ----------------------------------------------------------- */
+  function periodo(p) {
+    const ini = p.entrada ? p.entrada.split('-').reverse().join('/') : '—';
+    if (p.no_quadro) return 'No Programa desde ' + ini;
+    if (p.saida) return ini + ' a ' + p.saida.split('-').reverse().join('/');
+    /* Sem data de fim declarada: a coleta não registrou a saída, e inventar
+       uma data seria afirmar o que a fonte não diz. */
+    return 'De ' + ini + ' — última coleta em ' + p.ultima_coleta;
+  }
+
+  function contrib(p) {
+    /* Só entra o que existe. Um zero em "livros" não significa que a pessoa
+       não escreveu livro: significa que não há livro dela nas coletas de
+       2013-2025. Por isso o campo some em vez de mostrar zero. */
+    const itens = [
+      ['teses', 'tese de doutorado', 'teses de doutorado'],
+      ['dissertacoes', 'dissertação de mestrado', 'dissertações de mestrado'],
+      ['artigos', 'artigo em periódico', 'artigos em periódicos'],
+      ['livros', 'livro', 'livros'],
+      ['patentes', 'patente', 'patentes'],
+      ['projetos', 'projeto de pesquisa', 'projetos de pesquisa']
+    ].filter(function (i) { return p[i[0]]; });
+
+    if (!itens.length) {
+      return '<p class="hc-vazio">Sem contribuições registradas na janela de ' +
+             JAN[0] + '–' + JAN[1] + '.</p>';
+    }
+    return '<ul class="hc-contrib">' + itens.map(function (i) {
+      const n = p[i[0]];
+      return '<li><b>' + n + '</b> ' + (n === 1 ? i[1] : i[2]) +
+        (i[0] === 'projetos' && p.projetos_coordenados
+          ? ' <span class="hc-sub">(' + p.projetos_coordenados + ' como responsável)</span>'
+          : '') + '</li>';
+    }).join('') + '</ul>';
+  }
+
+  function destaques(p) {
+    const blocos = [];
+    if (p.resumo_completo) {
+      blocos.push(['Resumo do currículo Lattes', [p.resumo_completo]]);
+    }
+    if (p.livros_titulos) {
+      blocos.push(['Livros', p.livros_titulos]);
+    }
+    if (p.patentes_titulos) {
+      blocos.push(['Patentes', p.patentes_titulos]);
+    }
+    if (!blocos.length) return '';
+    /* O rótulo do details descreve o que ele contém de fato — resumo,
+       livros, patentes, ou a combinação — em vez de um "ver mais" genérico. */
+    const rot = blocos.map(function (b) {
+      return b[0] === 'Resumo do currículo Lattes' ? 'o resumo completo'
+           : 'títulos de ' + b[0].toLowerCase();
+    });
+    return '<details class="hc-det" id="d-' + (p.lattes || p.foto) + '"><summary>Ver ' +
+      (rot.length > 1 ? rot.slice(0, -1).join(', ') + ' e ' + rot[rot.length - 1] : rot[0]) +
+      '</summary><div class="hc-det-body">' + blocos.map(function (b) {
+        if (b[0] === 'Resumo do currículo Lattes') {
+          return '<p class="hc-det-h">' + b[0] + '</p><p class="hc-det-txt">' +
+            C.esc(b[1][0]) + '</p>';
+        }
+        return '<p class="hc-det-h">' + b[0] + '</p><ul class="hc-lista">' +
+          b[1].map(function (t) { return '<li>' + C.esc(t) + '</li>'; }).join('') + '</ul>';
+      }).join('') + '</div></details>';
+  }
+
+  function cartao(p) {
+    const cor = p.no_quadro ? 'var(--navy)' : 'var(--text-soft)';
+    const sit = p.no_quadro
+      ? '<span class="hc-sit hc-sit--on">No quadro</span>'
+      : '<span class="hc-sit">Passou pelo Programa</span>';
+    const meta = [];
+    if (p.categoria) meta.push(p.categoria);
+    p.ies.forEach(function (i) { meta.push(i); });
+    if (p.titulacao) meta.push('Doutorado em ' + p.titulacao);
+
+    return '<article class="hc">' +
+      '<div class="hc-topo">' +
+        C.avatar(p.nome, cor, '../', p.foto, 'lg') +
+        '<div class="hc-id">' +
+          sit +
+          '<h3 class="hc-nome">' + C.esc(p.nome) +
+            /* Os relatórios CAPES guardam nome em caixa alta e sem acento. Para
+               a maioria a grafia foi recuperada de fonte (site-data ou Lattes);
+               onde não foi, o cartão avisa em vez de publicar um acento
+               inventado no nome de quem está sendo homenageado. */
+            (p.grafia_conferir
+              ? ' <abbr class="hc-conf" title="Grafia como consta nos relatórios ' +
+                'CAPES, em caixa alta e sem acento. Acentuação a confirmar com a ' +
+                'coordenação antes da publicação.">grafia a conferir</abbr>'
+              : '') + '</h3>' +
+          '<p class="hc-periodo">' + periodo(p) + '</p>' +
+          '<p class="hc-meta">' + meta.map(C.esc).join(' · ') + '</p>' +
+        '</div>' +
+      '</div>' +
+      /* O resumo do Lattes é a parte humana do cartão — é a pessoa se
+         descrevendo. Vai logo abaixo do nome, cortado em fim de frase; o
+         texto inteiro fica no `details`, porque vai de 375 a 4000 caracteres
+         e o cartão não comporta o maior deles. */
+      (p.resumo
+        ? '<p class="hc-resumo">' + C.esc(p.resumo) +
+          (p.resumo_completo ? ' <button type="button" class="hc-mais" ' +
+            'data-lattes="' + p.lattes + '">continuar lendo</button>' : '') + '</p>'
+        : '') +
+      ((p.linhas && p.linhas.length)
+        ? '<p class="hc-linhas"><span>Produziu em</span> ' +
+          p.linhas.map(function (l) {
+            return '<em>' + C.esc(l) + '</em>';
+          }).join(', ') + '</p>'
+        : '') +
+      contrib(p) +
+      destaques(p) +
+      '</article>';
+  }
+
+  /* ---- render ----------------------------------------------------------- */
+  function render() {
+    const vis = H.docentes.filter(passa);
+    const alvo = document.getElementById('hFases');
+
+    alvo.innerHTML = H.fases.map(function (f) {
+      const g = vis.filter(function (p) { return p.fase === f.id; });
+      if (!g.length) return '';
+      return '<section class="hfase" aria-labelledby="f-' + f.id + '">' +
+        '<div class="hfase-head">' +
+          '<h3 class="hfase-t" id="f-' + f.id + '">' + f.titulo + '</h3>' +
+          '<p class="hfase-x">' + f.texto + '</p>' +
+          '<p class="hfase-n">' + g.length + (g.length === 1 ? ' docente' : ' docentes') +
+            ' · ' + g.filter(function (p) { return p.no_quadro; }).length + ' no quadro</p>' +
+        '</div>' +
+        '<div class="hgrid">' + g.map(cartao).join('') + '</div>' +
+        '</section>';
+    }).join('');
+
+    document.getElementById('hCount').textContent =
+      vis.length + ' de ' + H.docentes.length + ' docentes';
+    const vz = document.getElementById('hVazio');
+    vz.hidden = vis.length > 0;
+    vz.textContent = 'Nenhum docente corresponde a esses filtros.';
+  }
+
+  /* "continuar lendo" abre o details do próprio cartão e leva o foco até ele:
+     o texto completo já está na página, não há segundo lugar para buscá-lo. */
+  document.getElementById('hFases').addEventListener('click', function (e) {
+    const b = e.target.closest('.hc-mais');
+    if (!b) return;
+    const d = document.getElementById('d-' + b.getAttribute('data-lattes'));
+    if (d) { d.open = true; d.querySelector('summary').focus(); }
+  });
+
+  document.getElementById('hChips').addEventListener('click', function (e) {
+    const b = e.target.closest('[data-f]');
+    if (!b) return;
+    filtro = b.getAttribute('data-f');
+    this.querySelectorAll('.chip').forEach(function (c) {
+      c.setAttribute('aria-pressed', c === b);
+    });
+    render();
+  });
+
+  document.getElementById('hBusca').addEventListener('input', function () {
+    busca = this.value.trim().toLowerCase();
+    render();
+  });
+
+  render();
+
+  /* ---- notas de fechamento --------------------------------------------- */
+  document.getElementById('hNotas').innerHTML =
+    C.note('info',
+      '<strong>Fonte.</strong> As ' + T.coletas.length + ' coletas oficiais do Programa ' +
+      'enviadas à CAPES, de ' + T.coletas[0] + ' a ' + T.coletas[T.coletas.length - 1] +
+      ' — o mesmo conjunto que a CAPES usa para ' +
+      'avaliar o Programa. Nada aqui foi digitado à mão: a página é gerada por ' +
+      '<code>scripts/gerar-historico.py</code> a partir desses arquivos. ' +
+      C.badge('VALIDADO')) +
+    '<div class="mt-2">' + C.note('warn',
+      '<strong>O que estas coletas não alcançam.</strong> O Mestrado começou em ' + INICIO +
+      ', e este ' +
+      'conjunto de coletas vai de ' + JAN[0] + ' a ' + JAN[1] + '. Toda orientação, publicação ' +
+      'ou projeto anterior a ' + JAN[0] + ' — dezessete anos de trabalho — está fora dos ' +
+      'números, embora o período de vínculo esteja correto. Recuperar esse trecho depende de ' +
+      'fonte que não está neste conjunto, e o portal não estima o que não tem.') + '</div>' +
+    '<div class="mt-2">' + C.note('warn',
+      '<strong>Fotos e autorização de imagem.</strong> Cada pessoa precisa autorizar por ' +
+      'escrito o uso da própria imagem. Quem ainda não tem foto e autorização aparece com as ' +
+      'iniciais — o painel funciona sem foto nenhuma. Para quem já deixou o Programa, o ' +
+      'contato e a autorização são trabalho da coordenação, e nenhuma foto vai ao ar antes ' +
+      'disso.') + '</div>' +
+    '<div class="mt-2">' + C.note('info',
+      '<strong>Resumo do currículo.</strong> ' + T.com_resumo + ' dos ' + T.docentes +
+      ' cartões trazem o resumo que a própria pessoa escreveu no Lattes, extraído dos ' +
+      'currículos que o Programa já tinha coletado — texto dela, não descrição nossa. ' +
+      'Os outros ' + (T.docentes - T.com_resumo) + ' são de docentes cujo currículo não ' +
+      'está nessa coleta, quase todos de quem saiu antes de 2021.') + '</div>' +
+    (T.grafia_conferir ? '<div class="mt-2">' + C.note('warn',
+      '<strong>Acentuação de ' + T.grafia_conferir + ' nomes a confirmar.</strong> Os relatórios ' +
+      'CAPES guardam nome em caixa alta e sem acento. Para ' +
+      (T.docentes - T.grafia_conferir) + ' dos ' + T.docentes + ' docentes a grafia foi ' +
+      'recuperada de fonte — o cadastro do quadro atual ou o currículo Lattes. Os ' +
+      T.grafia_conferir + ' restantes aparecem como constam na CAPES, marcados no cartão: ' +
+      'acento em nome de pessoa não se adivinha, muito menos numa homenagem.') + '</div>' : '') +
+    '<div class="mt-2">' + C.note('info',
+      '<strong>A lista é automática; a homenagem é uma decisão.</strong> Este painel inclui ' +
+      'todos os docentes que constam das coletas, sem seleção editorial — é o critério mais ' +
+      'defensável para um script. Mas destacar, ordenar ou escrever texto sobre uma pessoa é ' +
+      'juízo institucional, e cabe ao Colegiado: acréscimos, ausências e homenagens ' +
+      'específicas devem passar por ele antes da publicação no domínio. ' +
+      C.badge('PENDENTE')) + '</div>' +
+    '<div class="mt-2">' + C.note('info',
+      '<strong>Contagem de defesas.</strong> As coletas registram ' + T.orientacoes_unicas +
+      ' defesas com orientador principal declarado entre ' + JAN[0] + ' e ' + JAN[1] + ' — ' +
+      T.teses + ' teses e ' + T.dissertacoes + ' dissertações. É uma terceira medida, ao lado ' +
+      'das duas que a <a href="indicadores.html#conflitos">página de indicadores</a> já ' +
+      'registra: as fontes e os recortes de período são diferentes, e o portal mantém as três ' +
+      'declaradas em vez de escolher uma em silêncio.') + '</div>';
+
+  C.mount('historico.html', '../');
+})();
+</script>
+</body>
+</html>

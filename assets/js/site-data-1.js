@@ -21,7 +21,7 @@ const REDEMAT = {
 
   /* ---------------------------------------------------------------- meta */
   meta: {
-    versao: '4.10',
+    versao: '4.9',
     atualizado: '2026-09-08',
     fontes: [
       { id: 'CONSOL',   nome: 'Entrega consolidada Lattes REDEMAT 2021–2026',   ref: 'codex/apcn/10_analises/entrega_atualizada_lattes_20260829 — corte 29/08/2026', coleta: '2026-08-29' },
