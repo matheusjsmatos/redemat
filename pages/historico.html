@@ -181,9 +181,16 @@
   function periodo(p) {
     const ini = p.entrada ? p.entrada.split('-').reverse().join('/') : '—';
     if (p.no_quadro) return 'No Programa desde ' + ini;
+    /* Saída declarada pela coordenação: a data no registro é quando a
+       coordenação informou, NÃO quando a pessoa saiu — a coleta CAPES é anual
+       e ainda os lista. Escrever "1996 a 09/09/2026" diria que saíram hoje,
+       o que a fonte não afirma. Mostra o intervalo que se pode sustentar. */
+    if (p.saida_fonte === 'COORDENACAO') {
+      return 'De ' + ini + ' até ' + p.ultima_coleta;
+    }
     if (p.saida) return ini + ' a ' + p.saida.split('-').reverse().join('/');
-    /* Sem data de fim declarada: a coleta não registrou a saída, e inventar
-       uma data seria afirmar o que a fonte não diz. */
+    /* Sem data de fim em lugar nenhum: inventar uma seria afirmar o que a
+       fonte não diz. */
     return 'De ' + ini + ' — última coleta em ' + p.ultima_coleta;
   }
 
@@ -366,6 +373,15 @@
       'iniciais — o painel funciona sem foto nenhuma. Para quem já deixou o Programa, o ' +
       'contato e a autorização são trabalho da coordenação, e nenhuma foto vai ao ar antes ' +
       'disso.') + '</div>' +
+    (T.saidas_declaradas ? '<div class="mt-2">' + C.note('warn',
+      '<strong>A coleta atrasa em relação ao quadro de hoje.</strong> A coleta CAPES é anual e ' +
+      'retrospectiva: quem sai depois do último envio continua listado nela. ' +
+      T.saidas_declaradas + ' docentes estavam nessa situação e aparecem aqui como quem já ' +
+      'passou pelo Programa, por informação da coordenação — que é mais recente que a coleta. ' +
+      'O período mostrado no cartão vai até a última coleta em que a pessoa consta, e não até ' +
+      'a data da saída, que estes registros não trazem. Com isso, os ' + T.no_quadro +
+      ' marcados como no quadro são exatamente os ' + T.no_quadro + ' da página de ' +
+      '<a href="pessoas.html">Pessoas</a>.') + '</div>' : '') +
     '<div class="mt-2">' + C.note('info',
       '<strong>Resumo do currículo.</strong> ' + T.com_resumo + ' dos ' + T.docentes +
       ' cartões trazem o resumo que a própria pessoa escreveu no Lattes, extraído dos ' +

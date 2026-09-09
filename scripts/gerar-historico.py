@@ -47,24 +47,12 @@ EXCLUIR = {'GUILHERME JORGE BRIGOLINI SILVA'}
 #    scripts/extrair-resumos-lattes.py e casado pelo ID de 16 dígitos que
 #    data/nomes-docentes.csv já guarda. Quem não tem currículo em cache fica
 #    sem resumo, e o cartão simplesmente não mostra a seção.
-RESUMOS = {}
-LATTES_DE = {}
-GRAFIA = {}
-RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CSV_NOMES = os.path.join(RAIZ, 'data', 'nomes-docentes.csv')
-if os.path.exists(CSV_NOMES):
-    for r in csv.DictReader(io.open(CSV_NOMES, encoding='utf-8')):
-        GRAFIA[r['chave_capes']] = (r['nome_publicado'], r['fonte_grafia'])
-        if r.get('lattes'):
-            LATTES_DE[r['chave_capes']] = r['lattes']
-
-CSV_RESUMOS = os.path.join(RAIZ, 'data', 'lattes-resumos.csv')
-if os.path.exists(CSV_RESUMOS):
-    for r in csv.DictReader(io.open(CSV_RESUMOS, encoding='utf-8')):
-        if r.get('resumo'):
-            RESUMOS[r['lattes']] = r['resumo'].strip()
-
-
+# ── saídas declaradas pela coordenação. A coleta CAPES é a fonte de tudo
+#    menos de uma coisa: se a pessoa AINDA está no quadro hoje. A coleta é
+#    anual e retrospectiva, então quem saiu depois do último envio continua
+#    listado nela — foi o que aconteceu com sete docentes, marcados como "no
+#    quadro" quando já haviam saído. Só a coordenação sabe isso, e é o que
+#    data/saidas-docentes.csv registra.
 def resumir(t, limite=230):
     """Primeiro trecho do resumo, cortado em fim de frase quando dá.
 
@@ -120,6 +108,31 @@ def norm(s):
     t = unicodedata.normalize('NFD', s)
     t = ''.join(c for c in t if unicodedata.category(c) != 'Mn')
     return re.sub(r'\s+', ' ', t).strip().upper()
+
+
+SAIDAS = {}
+RESUMOS = {}
+LATTES_DE = {}
+GRAFIA = {}
+RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CSV_NOMES = os.path.join(RAIZ, 'data', 'nomes-docentes.csv')
+if os.path.exists(CSV_NOMES):
+    for r in csv.DictReader(io.open(CSV_NOMES, encoding='utf-8')):
+        GRAFIA[r['chave_capes']] = (r['nome_publicado'], r['fonte_grafia'])
+        if r.get('lattes'):
+            LATTES_DE[r['chave_capes']] = r['lattes']
+
+CSV_SAIDAS = os.path.join(RAIZ, 'data', 'saidas-docentes.csv')
+if os.path.exists(CSV_SAIDAS):
+    for r in csv.DictReader(io.open(CSV_SAIDAS, encoding='utf-8')):
+        SAIDAS[norm(r['nome'])] = r['saida_declarada']
+
+CSV_RESUMOS = os.path.join(RAIZ, 'data', 'lattes-resumos.csv')
+if os.path.exists(CSV_RESUMOS):
+    for r in csv.DictReader(io.open(CSV_RESUMOS, encoding='utf-8')):
+        if r.get('resumo'):
+            RESUMOS[r['lattes']] = r['resumo'].strip()
+
 
 
 def slug(nome):
@@ -188,8 +201,11 @@ for ch, g in D.groupby('chave'):
     ult = int(max(cats))
     ini = g['ini'].min()
     fim = g['fim'].max()
-    # No quadro: aparece na coleta mais recente do conjunto.
-    no_quadro = ult >= ULTIMA_COLETA - 1
+    # No quadro: aparece na coleta mais recente do conjunto — a não ser que a
+    # coordenação já tenha declarado a saída, que é informação mais nova que a
+    # coleta e por isso tem precedência.
+    saida_declarada = SAIDAS.get(ch)
+    no_quadro = (ult >= ULTIMA_COLETA - 1) and not saida_declarada
     tit = pd.to_numeric(g['Ano Titulação'], errors='coerce').dropna()
     bruto = g['Nome Docente'].value_counts().idxmax()
     graf = GRAFIA.get(norm(bruto))
@@ -204,8 +220,10 @@ for ch, g in D.groupby('chave'):
         'titulacao': int(tit.iloc[0]) if len(tit) else None,
         'entrada': ini.strftime('%Y-%m-%d') if pd.notna(ini) else None,
         'entrada_ano': int(ini.year) if pd.notna(ini) else None,
-        'saida': (fim.strftime('%Y-%m-%d')
-                  if (pd.notna(fim) and not no_quadro) else None),
+        'saida': (saida_declarada or (fim.strftime('%Y-%m-%d')
+                  if (pd.notna(fim) and not no_quadro) else None)),
+        'saida_fonte': ('COORDENACAO' if saida_declarada else
+                        ('COLETA' if (pd.notna(fim) and not no_quadro) else '')),
         'no_quadro': bool(no_quadro),
         'primeira_coleta': int(min(cats)),
         'ultima_coleta': ult,
@@ -340,6 +358,7 @@ totais = {
     'grafia_conferir': sum(1 for p in lista if p.get('grafia_conferir')),
     'com_resumo': sum(1 for p in lista if p.get('resumo')),
     'com_lattes': sum(1 for p in lista if p.get('lattes')),
+    'saidas_declaradas': sum(1 for p in lista if p.get('saida_fonte') == 'COORDENACAO'),
 }
 
 saida = {'meta': {

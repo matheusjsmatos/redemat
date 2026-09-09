@@ -21,8 +21,8 @@ const REDEMAT = {
 
   /* ---------------------------------------------------------------- meta */
   meta: {
-    versao: '4.10',
-    atualizado: '2026-09-08',
+    versao: '4.11',
+    atualizado: '2026-09-09',
     fontes: [
       { id: 'CONSOL',   nome: 'Entrega consolidada Lattes REDEMAT 2021–2026',   ref: 'codex/apcn/10_analises/entrega_atualizada_lattes_20260829 — corte 29/08/2026', coleta: '2026-08-29' },
       { id: 'SCOPUS_M', nome: 'Scopus Sources — consulta manual na interface',  ref: 'scopus.com/sources.uri · data/percentis-scopus-manuais.csv', coleta: '2026-09-02' },
@@ -836,7 +836,7 @@ const REDEMAT = {
       lgpd: 'Nomes, e-mails e vínculo de bolsa de discentes não são republicados neste portal.'
     },
     posdoc: {
-      total: 3,
+      total: 4,
       ref: 'https://redemat.ufop.br/pós-doutorandos',
       itens: [
         { nome: 'Adarlêne Moreira Silva', supervisor: 'Versiane Albis Leão', grupo: 'Hidrometalurgia',
@@ -849,7 +849,20 @@ const REDEMAT = {
           area: 'Física da matéria condensada — simulações computacionais de propriedades eletrônicas, ópticas e optoeletrônicas; sistemas bidimensionais, nanomateriais de carbono, DFT e dinâmica molecular.' },
         { nome: 'Leonardo Villegas Lelovsky', supervisor: 'Matheus J. S. Matos', grupo: 'The Nanoscale Physics Group',
           email: 'lvillegas.sk@gmail.com', foto: 'leonardo-villegas-lelovsky',
-          area: 'Física da matéria condensada — simulação de propriedades eletrônicas, ópticas e de transporte em sistemas semicondutores nanoestruturados; spintrônica, dispositivos de grafeno, isolantes topológicos e cálculos ab initio.' }
+          area: 'Física da matéria condensada — simulação de propriedades eletrônicas, ópticas e de transporte em sistemas semicondutores nanoestruturados; spintrônica, dispositivos de grafeno, isolantes topológicos e cálculos ab initio.' },
+        /* Currículo resumido conforme o próprio Lattes (ID 7777922232887300,
+           atualizado em 03/08/2026). Atua na indústria e faz o pós-doutorado
+           no Programa desde 2026 — é o único do grupo com vínculo empregatício
+           externo, o que o cartão registra em `vinculo`. */
+        { nome: 'Vanderson Eney de Matos', supervisor: 'Paulo Santos Assis',
+          grupo: 'Metalurgia extrativa e economia circular',
+          foto: 'vanderson-eney-de-matos', lattes: '7777922232887300',
+          desde: 2026,
+          vinculo: 'Engenheiro de Desenvolvimento Tecnológico e Inovação na Samarco Mineração',
+          formacao: 'Engenharia Metalúrgica pela Escola de Minas da UFOP (2006); Mestrado (2017) e Doutorado (2022) em Engenharia Metalúrgica, Materiais e de Minas pela UFMG.',
+          area: 'Caracterização mineralógica e tecnológica de minério de ferro, processos de concentração e desenvolvimento de reagentes químicos, planejamento integrado de produção, e recuperação e aproveitamento de estéreis, lamas e rejeitos. Coordena projetos de PD&I em sustentabilidade, economia circular, descarbonização, ecotoxicidade e nanotecnologia aplicadas à mineração e à metalurgia. Também tem pesquisa em modelagem física e matemática de distribuidor de lingotamento contínuo na produção de aço.',
+          experiencia: 'Experiência industrial em operação de altos-fornos, refino de silício metálico, produção de alumínio primário e tratamento de minério de ferro.',
+          fonte: 'LATTES', ref: 'http://lattes.cnpq.br/7777922232887300', coleta: '2026-09-09' }
       ]
     },
     tecnicos: {
@@ -964,17 +977,17 @@ const REDEMAT = {
     nota: 'Atas aprovadas das reuniões do Colegiado, hospedadas no site institucional. As decisões do Colegiado são públicas.',
     itens: [
       { ano: 2025, titulo: '1ª Reunião Extraordinária de 2025', data: null,
-        url: 'https://redemat.ufop.br/sites/default/files/redemat/files/ata_da_1a_reuniao_extraordinaria_de_2025.docx' },
+        url: '../documentos/ata_da_1a_reuniao_extraordinaria_de_2025.docx' },
       { ano: 2024, titulo: '5ª Reunião Extraordinária de 2024', data: null,
-        url: 'https://redemat.ufop.br/sites/default/files/redemat/files/ata_da_5a_reuniao_extraordinaria_de_2024.docx' },
+        url: '../documentos/ata_da_5a_reuniao_extraordinaria_de_2024.docx' },
       { ano: 2024, titulo: '4ª Reunião Extraordinária de 2024', data: null,
-        url: 'https://redemat.ufop.br/sites/default/files/redemat/files/ata_da_4a_reuniao_extraordinaria_de_2024.docx' },
+        url: '../documentos/ata_da_4a_reuniao_extraordinaria_de_2024.docx' },
       { ano: 2024, titulo: '3ª Reunião Extraordinária de 2024', data: null,
-        url: 'https://redemat.ufop.br/sites/default/files/redemat/files/ata_da_3a_reuniao_extraordinaria_de_2024.pdf' },
+        url: '../documentos/ata_da_3a_reuniao_extraordinaria_de_2024.pdf' },
       { ano: 2024, titulo: '2ª Reunião Extraordinária de 2024', data: '2024-03-27',
-        url: 'https://redemat.ufop.br/sites/default/files/redemat/files/ata_redemat_2a_reuniao_extraordinaria_2024_03_27_versao_final_aprovada_assinado.pdf' },
+        url: '../documentos/ata_redemat_2a_reuniao_extraordinaria_2024_03_27_versao_final_aprovada_assinado.pdf' },
       { ano: 2024, titulo: '1ª Reunião de 2024 — eleição de coordenadores', data: null,
-        url: 'https://redemat.ufop.br/sites/default/files/redemat/files/ata_da_1a_reuniao_ordinaria_de_2024_-_eleicao_coordenadores_redemat_aprovada.pdf' }
+        url: '../documentos/ata_da_1a_reuniao_ordinaria_de_2024_-_eleicao_coordenadores_redemat_aprovada.pdf' }
     ]
   },
 

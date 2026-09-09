@@ -361,28 +361,48 @@
 
   /* ═══════════════ PÓS-DOUTORANDOS ═══════════════ */
   const PD = R.comunidade.posdoc;
+  /* Nem todo pós-doutorando tem os mesmos campos: alguns registros vêm da
+     coordenação (com e-mail), outros do próprio Lattes (com vínculo externo,
+     experiência e ID Lattes, sem e-mail institucional). O cartão só desenha o
+     que a fonte fornece — campo ausente não vira linha vazia nem mailto vazio. */
   document.getElementById('posGrid').innerHTML = PD.itens.map(function (x) {
+    const links = [
+      x.lattes ? '<a class="mini-link" href="http://lattes.cnpq.br/' + x.lattes + '" target="_blank" ' +
+        'rel="noopener" aria-label="Currículo Lattes de ' + C.esc(x.nome) + ' (abre em nova aba)">' +
+        C.ICO.doc + 'Lattes</a>' : '',
+      x.email ? '<a class="mini-link" href="mailto:' + x.email + '" aria-label="E-mail de ' +
+        C.esc(x.nome) + '">' + C.ICO.mail + 'E-mail</a>' : ''
+    ].filter(Boolean).join('');
+
     return '<article class="card card--hover">' +
       '<div class="prof-top">' +
         C.avatar(x.nome, 'var(--l22)', '../', x.foto) +
         '<div style="min-width:0;flex:1;">' +
-          '<p class="prof-role">Pós-doutorando</p>' +
-          '<h3 class="prof-name">' + x.nome + '</h3>' +
-          '<div class="prof-tags"><span class="tag tag--ies">' + x.grupo + '</span></div>' +
+          '<p class="prof-role">Pós-doutorando' + (x.desde ? ' desde ' + x.desde : '') + '</p>' +
+          '<h3 class="prof-name">' + C.esc(x.nome) + '</h3>' +
+          '<div class="prof-tags"><span class="tag tag--ies">' + C.esc(x.grupo) + '</span></div>' +
         '</div>' +
       '</div>' +
-      (x.formacao ? '<p style="font-size:.79rem;color:var(--text-soft);line-height:1.6;margin:.5rem 0 .6rem;">' + x.formacao + '</p>' : '') +
-      '<p style="font-size:.83rem;color:var(--text-mid);line-height:1.65;margin:.5rem 0 1rem;">' + x.area + '</p>' +
-      '<p style="font-size:.78rem;color:var(--text-soft);margin-bottom:.85rem;">' +
-        '<strong>Supervisão:</strong> ' + x.supervisor + '</p>' +
-      '<div class="prof-links">' +
-        '<a class="mini-link" href="mailto:' + x.email + '" aria-label="E-mail de ' + x.nome + '">' +
-          C.ICO.mail + 'E-mail</a>' +
-      '</div></article>';
+      (x.formacao ? '<p style="font-size:.79rem;color:var(--text-soft);line-height:1.6;margin:.5rem 0 .6rem;">' + C.esc(x.formacao) + '</p>' : '') +
+      '<p style="font-size:.83rem;color:var(--text-mid);line-height:1.65;margin:.5rem 0 .6rem;">' + C.esc(x.area) + '</p>' +
+      (x.experiencia ? '<p style="font-size:.79rem;color:var(--text-soft);line-height:1.6;margin:0 0 .6rem;">' + C.esc(x.experiencia) + '</p>' : '') +
+      '<p style="font-size:.78rem;color:var(--text-soft);margin:.6rem 0 .3rem;">' +
+        '<strong>Supervisão:</strong> ' + C.esc(x.supervisor) + '</p>' +
+      (x.vinculo ? '<p style="font-size:.78rem;color:var(--text-soft);margin:0 0 .85rem;">' +
+        '<strong>Atuação profissional:</strong> ' + C.esc(x.vinculo) + '</p>' : '<div style="height:.55rem;"></div>') +
+      (links ? '<div class="prof-links">' + links + '</div>' : '') +
+      '</article>';
   }).join('');
 
+  /* A página oficial não acompanha as supervisões mais recentes; os registros
+     posteriores a ela vêm do Lattes da pessoa. A nota conta pelos dados, não à
+     mão, para não afirmar procedência que a fonte não cobre. */
+  const pdLattes = PD.itens.filter(function (x) { return x.fonte === 'LATTES'; }).length;
   document.getElementById('posNota').innerHTML = C.note('info',
-    'Fonte: <a href="' + PD.ref + '" target="_blank" rel="noopener">página oficial de pós-doutorandos</a>. ' +
+    'Fonte: <a href="' + PD.ref + '" target="_blank" rel="noopener">página oficial de pós-doutorandos</a>' +
+    (pdLattes ? ', complementada pelo Currículo Lattes de ' + pdLattes +
+      (pdLattes > 1 ? ' supervisionados admitidos' : ' supervisionado admitido') +
+      ' depois da última atualização daquela página' : '') + '. ' +
     'Vagas de pós-doutorado, quando abertas, são divulgadas no mural da página inicial e pelas redes sociais do Programa. ' +
     C.badge('PRELIMINAR'));
 

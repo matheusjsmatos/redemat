@@ -1,5 +1,96 @@
 # Registro de correções — Portal REDEMAT
 
+## Versão 4.11 — 09/09/2026
+
+Três pedidos da coordenação: sete saídas declaradas, um pós-doutorando novo e
+os documentos do portal antigo trazidos para dentro do repositório.
+
+### As saídas vêm da coordenação, não da coleta
+
+Kátia Monteiro Novack, Nelcy Della Santina Mohallem, Cláudio Batista Vieira e
+Rosa Maria Rabelo Junqueira não estão mais no Programa — e, confirmada a
+pergunta, também Luiz Cláudio Cândido, Vagner Roberto Botaro e Gilberto
+Henrique Tavares Álvares da Silva. São **sete** saídas em
+`data/saidas-docentes.csv`, todas com fonte `COORDENACAO`.
+
+O painel histórico inferia "no quadro" de aparecer na coleta mais recente. A
+coleta CAPES é anual e ainda lista quem saiu depois dela, então a declaração da
+coordenação passou a ter **precedência** sobre a inferência em
+`gerar-historico.py`.
+
+O que o cartão **não** diz é a data de saída. A data no registro é o dia em que
+a coordenação informou, não o dia em que a pessoa saiu — escrever
+"1996 a 09/09/2026" afirmaria que saíram hoje. O cartão mostra
+`De <entrada> até <última coleta>`, que é o intervalo que a fonte sustenta.
+
+Nenhuma dessas quatro estava no conjunto de 24 publicado em `pessoas.html`: a
+declaração confirma a situação de quem já estava fora. Conferido:
+painel "no quadro" = 24, portal publica 24, **conjuntos idênticos**.
+
+### Vanderson Eney de Matos — pós-doutorando
+
+Supervisão de Paulo Santos Assis, desde 2026. O currículo resumido vem do
+próprio Lattes (ID 7777922232887300, atualizado em 03/08/2026): metalurgia
+extrativa, caracterização de minério de ferro, economia circular e
+descarbonização, além de modelagem de distribuidor de lingotamento contínuo.
+
+Os quatro pós-doutorandos não têm os mesmos campos — três vieram da
+coordenação, com e-mail; este veio do Lattes, com vínculo externo, experiência
+industrial e ID, sem e-mail institucional. O cartão passou a **desenhar só o
+que a fonte fornece**: antes ele montava `mailto:` sempre, e um registro sem
+e-mail teria publicado `mailto:undefined`.
+
+A nota de fonte também deixou de atribuir os quatro à página oficial de
+pós-doutorandos, que não acompanha as supervisões mais recentes. Ela conta pelos
+dados quantos registros vieram do Lattes, em vez de trazer o número escrito à
+mão.
+
+### Os documentos saíram do site antigo
+
+Seis atas do Colegiado ainda eram servidas de
+`redemat.ufop.br/sites/default/files/…` — endereços que morrem junto com o
+OpenScholar. `scripts/importar-documentos.py` (novo) as localiza no backup,
+desfaz o sufixo `__q<hash>` que o script de download acrescenta, copia para
+`documentos/` (4,8 MB) e reescreve os links.
+
+Resultado: **6 links locais, 0 links de arquivo apontando para o domínio
+antigo**, e os seis arquivos conferidos um a um contra os links.
+
+### A primeira foto do painel histórico
+
+A foto de Antônio Claret Soares Sabioni estava na pasta e não aparecia. Três
+motivos empilhados, cada um invisível sozinho:
+
+- o nome do arquivo tinha maiúsculas (`Antonio-Claret-...`), e o slug que o
+  portal pede é minúsculo. No Windows funciona; no GitHub Pages, que é
+  sensível a caixa, seria 404 depois de publicado;
+- a extensão era `.gif` e o conteúdo, JPEG. O Chrome fareja e mostra, mas
+  basta o servidor mandar `X-Content-Type-Options: nosniff` para a imagem
+  desaparecer. `conferir-fotos.py` já checava a assinatura dos bytes e
+  apontou;
+- `conferir-fotos.py` varria só `site-data.js`, isto é, o quadro **atual**.
+  Sabioni está no painel histórico, fora do quadro — a foto nunca entrava no
+  manifesto, e o portal, que confia no manifesto, nunca a pedia. O cartão caía
+  nas iniciais e o arquivo era relatado como órfão.
+
+O script passou a varrer também `historico-dados.js`, os 24 que já saíram
+incluídos: **53 pessoas conferidas** (era 29). Quem está no quadro continua
+vindo de `site-data.js`, que é a fonte com a grafia publicada — o painel não
+duplica ninguém sob a grafia em caixa alta da coleta CAPES.
+
+Publicar a foto ainda depende da autorização de uso de imagem por escrito.
+
+### Verificação
+
+15 páginas, 8 pontos de quebra: nenhum erro de console, nenhum 404, nenhum
+scroll horizontal, nenhum `undefined` no texto renderizado. Os quatro cartões
+de pós-doutorando com o conteúdo certo e sem `mailto` vazio; os sete docentes
+com saída declarada marcados como fora do quadro, todos com fonte
+`COORDENACAO`; a foto do painel histórico carregando de fato — 565×781 px, sem
+404 em `assets/img/`.
+
+---
+
 ## Versão 4.10 — 08/09/2026
 
 O resumo do Lattes nos cartões do painel histórico — texto que a própria

@@ -7,6 +7,7 @@ window.FOTOS = {
  "alan-barros-de-oliveira": "jpg",
  "americo-tristao-bernardes": "jpg",
  "ana-paula-moreira-barboza": "jpg",
+ "antonio-claret-soares-sabioni": "jpg",
  "dalila-chaves-sicupira": "jpg",
  "gustavo-henrique-silvestre": "jpg",
  "ive-silvestre-de-almeida": "jpg",

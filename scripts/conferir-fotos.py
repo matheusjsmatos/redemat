@@ -53,6 +53,7 @@ import unicodedata
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_DATA = os.path.join(RAIZ, 'assets', 'js', 'site-data.js')
+HISTORICO = os.path.join(RAIZ, 'assets', 'js', 'historico-dados.js')
 PASTA = os.path.join(RAIZ, 'assets', 'img', 'pessoas')
 
 FORMATOS = ['jpg', 'jpeg', 'png', 'webp', 'gif', 'avif']
@@ -93,6 +94,37 @@ def pessoas():
                 out.append((m.group(1),
                             cargo.group(1) if cargo else rotulo,
                             f.group(1) if f else None))
+
+    # O painel histórico também exibe foto, e quem já saiu do quadro não está
+    # em site-data.js. Sem varrer o painel, uma foto de docente histórico fica
+    # na pasta sem entrar no manifesto — e o portal, que confia no manifesto,
+    # nunca a pede: o cartão cai nas iniciais e o arquivo aparece como órfão.
+    out += historicos(set(p[2] or slug(p[0]) for p in out))
+    return out
+
+
+def historicos(ja_vistos):
+    """(nome, papel, slug) dos docentes do painel histórico fora do quadro."""
+    if not os.path.isfile(HISTORICO):
+        return []
+    t = io.open(HISTORICO, encoding='utf-8').read()
+    i = t.find('window.HISTORICO')
+    if i < 0:
+        return []
+    try:
+        dados = json.loads(t[t.index('{', i):].rstrip().rstrip(';'))
+    except ValueError:
+        print('AVISO  historico-dados.js ilegível; painel histórico não conferido.')
+        return []
+    out = []
+    for p in dados.get('docentes', []):
+        sl = p.get('foto') or slug(p.get('nome', ''))
+        # Quem está no quadro já veio de site-data.js, que é a fonte com a
+        # grafia publicada; não duplicar sob a grafia da coleta CAPES.
+        if p.get('no_quadro') or sl in ja_vistos:
+            continue
+        out.append((p.get('nome', ''), 'Painel histórico', sl))
+        ja_vistos.add(sl)
     return out
 
 
