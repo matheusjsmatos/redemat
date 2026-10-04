@@ -41,3 +41,22 @@ venv/
 .idea/
 *.swp
 *~
+
+# ---------------------------------------------------------------------------
+# Dados em nível de pessoa — NÃO publicar no repositório público.
+#
+# As planilhas e os JSON abaixo trazem nome de discente, orientador, título do
+# trabalho e data de defesa, pessoa a pessoa. São insumo de trabalho interno:
+# o portal publica o agregado, não o registro individual. Se algum dia o
+# Programa decidir publicar algum deles, é só apagar a linha correspondente
+# aqui — nada é perdido, só deixa de ser enviado por engano.
+# ---------------------------------------------------------------------------
+planilhas/
+data/defesas-sra.json
+data/discentes-consolidado.json
+data/discentes-docentes.json
+data/orientacoes-lattes.json
+data/vinculos-teses-projetos.json
+
+# Arquivo de trava do LibreOffice (carrega usuário e nome da máquina)
+.~lock.*#

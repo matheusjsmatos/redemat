@@ -523,7 +523,14 @@
 
   function renderMural(cat) {
     const g = document.getElementById('muralGrid');
-    const itens = (M.itens || []).filter(function (i) { return cat === 'todos' || i.categoria === cat; });
+    /* Ordena por data, do mais recente ao mais antigo. Sem isto o mural segue
+       a ordem do array em site-data.js, e quem publica tem que lembrar de
+       inserir no lugar certo — a primeira notícia esquecida no fim da lista
+       apareceria no fim da página. */
+    const itens = (M.itens || [])
+      .filter(function (i) { return cat === 'todos' || i.categoria === cat; })
+      .slice()
+      .sort(function (a, b) { return (b.data || '').localeCompare(a.data || ''); });
 
     if (!itens.length) {
       /* Nada de conteúdo fictício: o estado vazio explica o mecanismo. */
@@ -561,6 +568,18 @@
         detalhe += '<p class="mural-cit"><strong>' + d.premio + '</strong><br>' +
           d.evento + '<br><em>' + d.trabalho + '</em></p>';
       }
+      if (d && d.autores) {
+        detalhe += '<p class="mural-aut"><strong>Autoria:</strong> ' + d.autores + '</p>';
+      }
+      /* Projeto que originou o trabalho: processo, edital e financiador são o
+         que torna a notícia verificável por quem presta contas. */
+      if (d && d.projeto) {
+        const pj = d.projeto;
+        detalhe += '<p class="mural-cit"><strong>' + pj.titulo + '</strong><br>' +
+          pj.processo + ' — ' + pj.edital +
+          '<br>' + pj.financiador + ' · ' + pj.periodo +
+          '<br>Coordenação: ' + pj.coordenacao + '</p>';
+      }
       if (d && d.demais && d.demais.length) {
         detalhe += '<ul class="mural-mais">' + d.demais.map(function (x) {
           return '<li><b>' + x.nome + '</b>' + x.trabalho + '</li>'; }).join('') + '</ul>';
@@ -569,6 +588,11 @@
         detalhe += '<div class="mural-rep">' + d.repercussao.map(function (r) {
           return '<a href="' + r.url + '" target="_blank" rel="noopener">' + r.veiculo +
             ' ' + C.ICO.ext + '</a>'; }).join('') + '</div>';
+      }
+      if (d && d.documento) {
+        detalhe += '<div class="mural-rep"><a href="' + d.documento.url + '" ' +
+          'target="_blank" rel="noopener">' + d.documento.rotulo + ' ' + C.ICO.ext +
+          '</a></div>';
       }
       if (i.url) {
         detalhe += '<div class="mural-rep"><a href="' + i.url + '"' + ext + '>' +
@@ -690,18 +714,20 @@
     document.getElementById('compNota').innerHTML = C.note('info', K.nota + ' ' + C.badge('VALIDADO'));
   }());
 
+  /* Os estilos saíram do atributo style para .inst-card em styles.css: o
+     layout precisa mudar em tela estreita, e media query não existe inline. */
   document.getElementById('instGrid').innerHTML =
-    '<div class="card" style="display:flex;gap:1.5rem;align-items:center;">' +
-      '<img src="assets/img/ufop-logo.png" alt="Universidade Federal de Ouro Preto" style="height:88px;width:auto;flex-shrink:0;">' +
-      '<div><h3 class="h3">UFOP</h3>' +
-      '<p style="font-size:.85rem;color:var(--text-mid);line-height:1.65;">Universidade Federal de Ouro Preto — instituição coordenadora do Programa, sediada no Quadrilátero Ferrífero.</p>' +
-      '<a href="https://www.ufop.br" target="_blank" rel="noopener" style="font-size:.8rem;color:var(--amber);font-weight:600;">ufop.br &#8599;</a></div>' +
+    '<div class="card inst-card">' +
+      '<img class="inst-card__logo" src="assets/img/ufop-logo.png" alt="Universidade Federal de Ouro Preto">' +
+      '<div class="inst-card__txt"><h3 class="h3">UFOP</h3>' +
+      '<p>Universidade Federal de Ouro Preto — instituição coordenadora do Programa, sediada no Quadrilátero Ferrífero.</p>' +
+      '<a href="https://www.ufop.br" target="_blank" rel="noopener">ufop.br &#8599;</a></div>' +
     '</div>' +
-    '<div class="card" style="display:flex;gap:1.5rem;align-items:center;">' +
-      '<img src="assets/img/uemg-logo.png" alt="Universidade do Estado de Minas Gerais" style="height:78px;width:auto;flex-shrink:0;">' +
-      '<div><h3 class="h3">UEMG</h3>' +
-      '<p style="font-size:.85rem;color:var(--text-mid);line-height:1.65;">Universidade do Estado de Minas Gerais — instituição associada, com atuação em design, prototipagem e materiais.</p>' +
-      '<a href="https://www.uemg.br" target="_blank" rel="noopener" style="font-size:.8rem;color:var(--amber);font-weight:600;">uemg.br &#8599;</a></div>' +
+    '<div class="card inst-card">' +
+      '<img class="inst-card__logo inst-card__logo--uemg" src="assets/img/uemg-logo.png" alt="Universidade do Estado de Minas Gerais">' +
+      '<div class="inst-card__txt"><h3 class="h3">UEMG</h3>' +
+      '<p>Universidade do Estado de Minas Gerais — instituição associada, com atuação em design, prototipagem e materiais.</p>' +
+      '<a href="https://www.uemg.br" target="_blank" rel="noopener">uemg.br &#8599;</a></div>' +
     '</div>';
 
   document.getElementById('identNota').innerHTML = C.note('info',

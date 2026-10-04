@@ -21,8 +21,8 @@ const REDEMAT = {
 
   /* ---------------------------------------------------------------- meta */
   meta: {
-    versao: '4.11',
-    atualizado: '2026-09-09',
+    versao: '4.12',
+    atualizado: '2026-10-03',
     fontes: [
       { id: 'CONSOL',   nome: 'Entrega consolidada Lattes REDEMAT 2021–2026',   ref: 'codex/apcn/10_analises/entrega_atualizada_lattes_20260829 — corte 29/08/2026', coleta: '2026-08-29' },
       { id: 'SCOPUS_M', nome: 'Scopus Sources — consulta manual na interface',  ref: 'scopus.com/sources.uri · data/percentis-scopus-manuais.csv', coleta: '2026-09-02' },
@@ -1259,6 +1259,45 @@ const REDEMAT = {
        O portal não gera notícia: estes vieram do site institucional e das
        páginas dos veículos citados. */
     itens: [
+      {
+        /* Premiação informada pela coordenação, com o certificado em mãos. Os
+           dados do projeto e da dissertação não vieram do certificado: foram
+           conferidos no levantamento do Programa — PRJ087 em
+           data/projetos-lattes.json e a defesa de 09/07/2026 no SRA. */
+        categoria: 'estudante',
+        data: '2026-08-15',
+        titulo: 'Pesquisa com feltro de lã que originou dissertação da REDEMAT ganha 1º lugar no Congresso Mineiro de Ortopedia e Traumatologia',
+        texto: 'Um ensaio clínico prospectivo e randomizado sobre a prevenção de lesões por pressão com enxoval de feltro de lã e algodão foi premiado em 1º lugar na categoria Tema Livre Oral do 25º Congresso Mineiro de Ortopedia e Traumatologia, realizado em Ouro Preto. O trabalho nasceu do projeto de pesquisa coordenado pela professora Heloisa Nazaré dos Santos e deu origem à dissertação de mestrado de Samuel Gomes Gontijo, defendida na REDEMAT em julho de 2026 — um mês antes do congresso.',
+        imagem: 'assets/img/mural/certificado-sbot-mg-2026.jpg',
+        imagemAlt: 'Certificado do 25º Congresso Mineiro de Ortopedia e Traumatologia atestando o 1º lugar na categoria Tema Livre Oral.',
+        destaque: true,
+        detalhe: {
+          evento: '25º Congresso Mineiro de Ortopedia e Traumatologia (SBOT-MG) — Ouro Preto, 13 a 15 de agosto de 2026',
+          premio: '1º lugar — categoria Tema Livre Oral',
+          trabalho: 'Prevenção de lesões por pressão em pacientes de alta dependência com enxoval de feltro de lã e algodão: ensaio clínico prospectivo e randomizado',
+          autores: 'Túlio Vinícius de Oliveira Campos, Thalita Felício Soares, Samuel Gomes Gontijo, Heloisa Nazaré dos Santos, Carlos Alberto Silva de Miranda, Nelcy Della Santina Mohallem, Gustavo Fóscolo de Moura Gomes e Marco Antônio Percope de Andrade',
+          projeto: {
+            titulo: 'Aplicação do feltro de lã em produtos ortopédicos e hospitalares',
+            processo: 'APQ-03445-22',
+            edital: 'Edital nº 009/2022 — Fortalecimento e Consolidação da Pesquisa na UEMG e UNIMONTES',
+            financiador: 'FAPEMIG',
+            periodo: '2022–2026',
+            coordenacao: 'Heloisa Nazaré dos Santos'
+          },
+          demais: [
+            { nome: 'Samuel Gomes Gontijo',
+              trabalho: 'Mestrado defendido na REDEMAT em 09/07/2026: “Design têxtil integrado à Engenharia de Materiais em prol da saúde: estudo do feltro de lã ovina na prevenção de lesões cutâneas”' },
+            { nome: 'Heloisa Nazaré dos Santos',
+              trabalho: 'Docente da REDEMAT, coordenadora do projeto FAPEMIG e orientadora da dissertação' },
+            { nome: 'Nelcy Della Santina Mohallem',
+              trabalho: 'Integrante do projeto e coautora do trabalho premiado' }
+          ],
+          documento: {
+            rotulo: 'Certificado do prêmio',
+            url: 'assets/img/mural/certificado-sbot-mg-2026.jpg'
+          }
+        }
+      },
       {
         categoria: 'artigo',
         data: '2023-06-15',

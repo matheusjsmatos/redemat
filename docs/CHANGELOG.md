@@ -1,5 +1,73 @@
 # Registro de correções — Portal REDEMAT
 
+## Versão 4.12 — 03/10/2026
+
+Uma notícia nova no mural — o 1º lugar no Congresso Mineiro de Ortopedia e
+Traumatologia — e, de carona na verificação, uma rolagem horizontal antiga
+em telas estreitas.
+
+### A notícia foi conferida contra o levantamento, não contra o certificado
+
+A coordenação informou a premiação e enviou o certificado. O certificado
+atesta o prêmio, o evento e a autoria; ele **não** diz nada sobre o projeto de
+pesquisa nem sobre a dissertação. Esses dois pontos — que são justamente o que
+liga a notícia à REDEMAT — foram conferidos nas fontes do Programa antes de
+irem para o ar:
+
+- **Projeto**: "Aplicação do feltro de lã em produtos ortopédicos e
+  hospitalares", processo APQ-03445-22, Edital nº 009/2022 (Fortalecimento e
+  Consolidação da Pesquisa na UEMG e UNIMONTES), FAPEMIG, 2022–2026,
+  coordenação de Heloisa Nazaré dos Santos. Registro PRJ087 em
+  `data/projetos-lattes.json`, extraído do currículo Lattes da coordenadora.
+- **Dissertação**: Samuel Gomes Gontijo, mestrado, defesa em **09/07/2026**,
+  orientação de Heloisa Nazaré dos Santos. Registro do SRA, consolidado em
+  `data/discentes-consolidado.json`.
+
+A defesa é de julho e o congresso é de agosto: a frase "um mês antes do
+congresso" no texto da notícia é consequência das duas datas, não enfeite.
+
+O card traz o processo, o edital e o financiador no detalhe. Notícia de prêmio
+sem número de processo é institucional; com número de processo, ela serve de
+evidência em prestação de contas.
+
+### O certificado publicado é a versão recortada
+
+A imagem original termina em duas assinaturas manuscritas de terceiros — o
+presidente da SBOT-MG e o presidente do congresso. Assinatura é dado pessoal
+de quem assinou, e nenhum dos dois é da REDEMAT nem foi consultado. A imagem
+publicada (`assets/img/mural/certificado-sbot-mg-2026.jpg`, 1292×712) corta
+acima do bloco de assinaturas, com a moldura dourada refeita no novo rodapé.
+A original completa fica em `certificado-sbot-mg-2026-completo.jpg`, no
+repositório, **não referenciada por nenhuma página** — se a coordenação
+obtiver a anuência dos dois, basta trocar o caminho no item do mural.
+
+### O mural agora se ordena sozinho
+
+O mural renderizava os itens na ordem do array em `site-data.js`. Funcionava
+enquanto quem publicasse lembrasse de inserir a notícia nova no topo da lista
+— e falharia silenciosamente na primeira vez que alguém usasse `push`: a
+notícia mais recente apareceria no fim da página. A renderização passou a
+ordenar por `data`, da mais recente para a mais antiga. Conferido: 15/08/2026,
+26/05/2026, 15/06/2023.
+
+### Rolagem horizontal a 360px — defeito antigo, não da notícia
+
+A verificação em oito larguras acusou 80px de rolagem horizontal a 360px.
+Antes de mexer, servi uma cópia do `index.html` **sem** a notícia: os mesmos
+80px. O defeito é anterior e não tem relação com o mural.
+
+A origem são os cartões UFOP/UEMG da seção "O Programa". Os dois logos são
+300×90; a 88px de altura cada um pede 293px de largura e estava com
+`flex-shrink:0`. Com o gap e o texto ao lado, o conteúdo pedia ~407px dentro
+de um cartão de ~280px — e os 80px de diferença viravam rolagem da **página
+inteira**, não do cartão.
+
+Os estilos estavam no atributo `style`, onde media query não existe. Foram
+para `.inst-card` em `styles.css`: abaixo de 560px o par vira coluna e o logo
+passa a `max-width:100%`. Acima disso o desenho é o mesmo de antes.
+Reconferido nas oito larguras: nenhuma rolagem horizontal.
+
+
 ## Versão 4.11 — 09/09/2026
 
 Três pedidos da coordenação: sete saídas declaradas, um pós-doutorando novo e

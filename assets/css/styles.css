@@ -563,6 +563,23 @@ ul, ol { list-style: none; }
   .inst-logo--wide { margin-left: 0; }
 }
 
+/* ---------- Cartões UFOP / UEMG (seção "O Programa") ---------- */
+/* O logo tem 300x90: a 88px de altura ele pede 293px de largura e não
+   encolhe (flex-shrink:0). Somado ao gap e ao texto, o conteúdo pedia 407px
+   dentro de um cartão de ~280px a 360px de viewport — a página inteira
+   ganhava 80px de rolagem horizontal. Em telas estreitas o par vira coluna e
+   o logo passa a caber na largura disponível. */
+.inst-card { display: flex; gap: 1.5rem; align-items: center; }
+.inst-card__logo { height: 88px; width: auto; flex-shrink: 0; max-width: 100%; }
+.inst-card__logo--uemg { height: 78px; }
+.inst-card__txt { min-width: 0; }
+.inst-card__txt p { font-size: .85rem; color: var(--text-mid); line-height: 1.65; }
+.inst-card__txt a { font-size: .8rem; color: var(--amber); font-weight: 600; }
+@media (max-width: 560px) {
+  .inst-card { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .inst-card__logo, .inst-card__logo--uemg { height: auto; max-height: 72px; }
+}
+
 /* ---------- Mural / notícias ---------- */
 .mural-filters { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
 .mural-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px,100%), 1fr)); gap: 1.1rem; }
@@ -1019,6 +1036,8 @@ ul, ol { list-style: none; }
 .mural-ex { display: block; font-size: .72rem; color: #6B4E10; background: var(--amber-pale);
             border: 1px solid var(--amber-brd); border-radius: 6px; padding: .45rem .6rem;
             line-height: 1.5; margin-top: .5rem; }
+.mural-aut { font-size: .76rem; color: var(--text-mid); line-height: 1.55; margin: .1rem 0 .55rem; }
+.mural-aut strong { color: var(--navy); }
 .mural-mais { display: flex; flex-wrap: wrap; gap: .3rem; margin: .1rem 0 .5rem; padding: 0; list-style: none; }
 .mural-mais li { font-size: .74rem; color: var(--text-mid); background: var(--bg);
                  border: 1px solid var(--border); border-radius: 6px; padding: .25rem .5rem; min-width: 0; }
