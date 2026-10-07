@@ -1,0 +1,27 @@
+{
+ "meta": {
+  "fonte": "COORDENACAO",
+  "ref": "Declaração de cada docente. Arquivo separado do histórico de propósito: o histórico é regerado a partir das coletas CAPES e sobrescreveria estes campos.",
+  "coleta": "2026-10-07",
+  "status": "PARCIAL",
+  "nota": "O portal mostra apenas o que estiver aqui. Ausência de site não é publicada de forma alguma — nem como 'não informado' — para não sugerir omissão de ninguém."
+ },
+ "docentes": [
+  {
+   "nome": "Marcelo Gomes Speziali",
+   "site_pessoal": "https://professor-marcelo.com/",
+   "site_grupo": "",
+   "nome_grupo": "",
+   "observacao": "Endereço também citado nas referências das disciplinas de Inovação Tecnológica da proposta APCN.",
+   "fonte": "COORDENACAO"
+  },
+  {
+   "nome": "Matheus Josué de Souza Matos",
+   "site_pessoal": "http://professor.ufop.br/matheusmatos",
+   "site_grupo": "https://nano.ufop.br/",
+   "nome_grupo": "",
+   "observacao": "Nome do grupo a confirmar com o docente antes de publicar.",
+   "fonte": "COORDENACAO"
+  }
+ ]
+}

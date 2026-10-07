@@ -51,7 +51,7 @@ venv/
 # Programa decidir publicar algum deles, é só apagar a linha correspondente
 # aqui — nada é perdido, só deixa de ser enviado por engano.
 # ---------------------------------------------------------------------------
-planilhas/
+planilhas/*
 data/defesas-sra.json
 data/discentes-consolidado.json
 data/discentes-docentes.json
@@ -60,3 +60,7 @@ data/vinculos-teses-projetos.json
 
 # Arquivo de trava do LibreOffice (carrega usuário e nome da máquina)
 .~lock.*#
+
+# A planilha de manutenção é exceção: só traz dado público (nome, ID Lattes,
+# disciplina, ementa) e é a superfície de edição de quem mantém o Programa.
+!planilhas/REDEMAT-dados-do-site.xlsx
