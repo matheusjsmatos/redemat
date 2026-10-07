@@ -64,3 +64,6 @@ data/vinculos-teses-projetos.json
 # A planilha de manutenção é exceção: só traz dado público (nome, ID Lattes,
 # disciplina, ementa) e é a superfície de edição de quem mantém o Programa.
 !planilhas/REDEMAT-dados-do-site.xlsx
+
+# Registro da importação do acervo — ruído de execução, não versiona.
+importacao.log

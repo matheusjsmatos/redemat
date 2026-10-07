@@ -44,7 +44,13 @@ UA = {'User-Agent': 'REDEMAT-portal/1.0 (migracao do acervo institucional)'}
 # a recusar conexão por vários minutos. O acervo tem 109 notícias mais anexos;
 # são alguns minutos de qualquer jeito, e um crawl educado é a diferença entre
 # terminar devagar e ser bloqueado no meio.
-PAUSA = 3.0
+# O servidor do portal antigo tem tolerancia MUITO baixa: meia duzia de
+# requisicoes em sequencia e ele passa a recusar conexao por cerca de vinte
+# minutos. Nao adianta encurtar — a migracao inteira (109 noticias mais os
+# anexos) leva horas e foi feita para rodar sozinha, em segundo plano, nao
+# para ser acompanhada passo a passo.
+PAUSA = 20.0
+RECUO = [300, 600, 900, 1800]   # espera apos recusa de conexao
 _ultima = [0.0]
 
 
@@ -63,8 +69,14 @@ def busca(url, binario=False, tentativas=4):
         except Exception as e:
             if i == tentativas - 1:
                 return (None, str(e))
-            # Recusa de conexão costuma ser bloqueio por excesso: espera mais.
-            time.sleep(8 * (i + 1) if 'refused' in str(e).lower() else 2 * (i + 1))
+            msg = str(e).lower()
+            if 'refused' in msg or 'timed out' in msg or 'timeout' in msg:
+                espera = RECUO[min(i, len(RECUO) - 1)]
+                print('   ... servidor recusando; aguardando %d min' % (espera // 60),
+                      flush=True)
+                time.sleep(espera)
+            else:
+                time.sleep(2 * (i + 1))
 
 
 def texto(t):
@@ -143,12 +155,18 @@ def baixa_binario(url, destino_dir, reg, especie):
     caminho = os.path.join(destino_dir, nome)
     if os.path.exists(caminho) and os.path.getsize(caminho) > 0:
         return nome
-    r = busca(url, binario=True)
-    if isinstance(r, tuple):            # erro
-        reg['pendencias'].append('%s não baixado: %s (%s)' % (especie, url, r[1][:80]))
+    # `busca` SEMPRE devolve tupla (dados, tipo-ou-erro) — inclusive no sucesso,
+    # porque `return b if binario else b.decode(...), tipo` é lido como
+    # `(b if binario else b.decode(...)), tipo`. A primeira versão testava
+    # isinstance(r, tuple) para detectar erro e, por isso, descartava TODO
+    # anexo baixado com êxito, registrando o content-type como se fosse a
+    # mensagem de falha. O que distingue erro de sucesso é dados ser None.
+    dados, info = busca(url, binario=True)
+    if dados is None:
+        reg['pendencias'].append('%s não baixado: %s (%s)' % (especie, url, str(info)[:80]))
         return None
     with open(caminho, 'wb') as f:
-        f.write(r)
+        f.write(dados)
     return nome
 
 
@@ -166,21 +184,38 @@ def processa(reg):
         reg['pendencias'].append('página não baixada: %s' % _[:120])
         return False
 
-    m = re.search(r'<div class="node-content".*?>(.*?)(?:<div class="[^"]*field-name-field-news|'
-                  r'<footer|<div id="comments|</article>)', s, re.S)
-    corpo = m.group(1) if m else ''
-    mb = re.search(r'field-name-body.*?<div class="field-item even">(.*)', corpo, re.S)
-    if mb:
-        corpo = mb.group(1)
-    corpo = re.sub(r'<div class="field field-name-field-news-date.*?</div></div></div>', '', corpo, flags=re.S)
-    corpo = corpo.strip()
+    # Corpo: o OpenScholar embrulha o texto em
+    #   field-name-body ... view-mode-full > field-items > field-item even
+    # e FECHA com tres </div>. A primeira versao recortava a partir de
+    # "node-content" ate o proximo bloco e devolvia string vazia em todas as
+    # noticias, sem erro nenhum -- por isso o script agora recusa gravar corpo
+    # vazio: silencio nao e sucesso.
+    corpo = ''
+    m = re.search(r'field-name-body[^>]*>\s*<div class="field-items">\s*'
+                  r'<div class="field-item even">(.*?)</div>\s*</div>\s*</div>', s, re.S)
+    if m:
+        corpo = m.group(1).strip()
 
-    # Data: a página individual é mais confiável que o teaser do índice.
+    # Anexos: ficam FORA do corpo, numa tabela propria depois dele. Procurar
+    # so dentro do corpo nao acha nenhum -- e a maioria das noticias de
+    # processo seletivo so tem conteudo util no PDF anexo.
+    tabelas = re.findall(r'<table class="os-files[^"]*">(.*?)</table>', s, re.S)
+    anexos_html = []
+    for t in tabelas:
+        for a in re.finditer(r'<a href="([^"]+)"[^>]*>(.*?)</a>', t, re.S):
+            anexos_html.append((html.unescape(a.group(1)), texto(a.group(2))))
+
+    # Data: a pagina individual e mais confiavel que o teaser do indice.
     md = re.search(r'date-display-single">([^<]*)<', s)
     if md:
         iso = data_iso(md.group(1))
         if iso:
             reg['data'], reg['data_txt'] = iso, html.unescape(md.group(1)).strip()
+
+    if not corpo and not anexos_html:
+        reg['pendencias'].append('nem corpo nem anexo reconhecidos na pagina — '
+                                 'estrutura diferente do esperado')
+        return False
 
     novos = {}
     for m in re.finditer(r'(href|src)="([^"]+)"', corpo):
@@ -208,6 +243,21 @@ def processa(reg):
             # Link para outra página do site antigo. Não inventa destino: anota.
             reg['pendencias'].append('link interno sem equivalente ainda: %s' % absu)
 
+    for u, rotulo in anexos_html:
+        absu = urllib.parse.urljoin(reg['url'], u)
+        ext = os.path.splitext(urllib.parse.urlparse(absu).path)[1].lower()
+        destino, lista, especie = ((IMGS, reg['imagens'], 'imagem') if ext in IMG_EXT
+                                   else (DOCS, reg['anexos'], 'anexo'))
+        nome = baixa_binario(absu, os.path.join(destino, reg['node']), reg, especie)
+        if not nome:
+            continue
+        local = '%s/noticias/%s/%s' % ('assets/img' if especie == 'imagem'
+                                       else 'assets/doc', reg['node'], nome)
+        item = {'arquivo': local, 'origem': absu}
+        if especie == 'anexo':
+            item['rotulo'] = rotulo or os.path.basename(nome)
+        lista.append(item)
+
     for velho, novo in novos.items():
         corpo = corpo.replace('"%s"' % velho, '"%s"' % novo)
 
@@ -224,6 +274,8 @@ def main():
     ap.add_argument('--limite', type=int, default=0, help='quantas notícias baixar nesta execução')
     ap.add_argument('--refazer', action='store_true', help='rebaixa mesmo o que já tem corpo')
     ap.add_argument('--pausa', type=float, default=PAUSA, help='segundos entre requisições')
+    ap.add_argument('--ate-acabar', action='store_true',
+                    help='continua até não faltar nenhuma (use com nohup)')
     a = ap.parse_args()
     globals()['PAUSA'] = a.pausa
 
@@ -236,6 +288,8 @@ def main():
         if a.indice:
             return
 
+    if a.ate_acabar:
+        a.limite = 0
     pend = [n for n in d['noticias'] if a.refazer or not n.get('corpo')]
     print('faltam %d de %d' % (len(pend), len(d['noticias'])))
     n_ok = 0
