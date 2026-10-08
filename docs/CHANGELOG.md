@@ -1,5 +1,92 @@
 # Registro de correções — Portal REDEMAT
 
+## Versão 4.13 — 08/10/2026
+
+Edital do Mestrado 2027/1 no ar, o sistema de inscrição corrigido e uma chamada
+de bolsas para pesquisadores de fora.
+
+### A UFOP não usa SIGAA
+
+O portal mandava o candidato para `sigaa.ufop.br` em `processo-seletivo.html` e
+citava o SIGAA em `cursos.html`. **Esse endereço não responde** — conferido —
+e o sistema da UFOP é outro: o **PSPG, Sistema de Gestão dos Processos
+Seletivos da Pós-Graduação**, em <https://app.ufop.br/pspg/>, que é o que o
+próprio edital determina ("não haverá inscrição por qualquer outro meio que não
+seja o PSPG"). Mandar o candidato ao sistema errado numa página de processo
+seletivo não é link quebrado: é inscrição perdida.
+
+Na mesma lista de links úteis, `ppgs.ufop.br` também não responde — a
+Pró-Reitoria é `propp.ufop.br`. E o link "Editais e processo seletivo — site
+REDEMAT", que apontava para o portal antigo, saiu: aquele site vai ser
+desligado, e a página para onde ele apontava é justamente esta.
+
+Em `cursos.html` a frase "consulte o SIGAA ou a secretaria" virou só "consulte a
+secretaria". O PSPG não serve de substituto ali: ele é de processo seletivo, não
+de matrícula em disciplina, e redirecionar para lá seria pior que não dizer nada.
+
+### A situação do processo deixou de ser um campo escrito à mão
+
+Havia um `situacao: 'encerrado'` nos dados. Um rótulo desses continua dizendo
+"inscrições abertas" semanas depois do prazo, e numa página de processo seletivo
+isso não é informação velha — é informação errada para quem está decidindo se
+ainda dá tempo de se inscrever.
+
+Agora o cronograma do Anexo III está nos dados em formato ISO e a situação é
+**calculada na hora de desenhar a página**: antes da publicação, publicado,
+inscrições abertas, processo em andamento, concluído. Hoje, 08/10, a faixa diz
+"Edital 2027/1 publicado. As inscrições abrem em 15/10/2026" — sem ninguém
+precisar lembrar de trocar nada em 15 de outubro, nem em 7 de novembro.
+
+### O edital
+
+`Edital REDEMAT nº 7, de 8 de outubro de 2026` — Mestrado, turma 2027/1.
+**20 vagas regulares**, mais reserva para candidatos negros, quilombolas,
+indígenas e pessoas com deficiência e vagas adicionais para servidores
+técnico-administrativos. Inscrições de **15/10 a 07/11/2026** pelo PSPG.
+Prova de inglês eliminatória (60 em 100, nota que não entra na final), análise
+de currículo e entrevista. Resultado final homologado em **18/12/2026**.
+
+O PDF completo está em `assets/doc/editais/`, dentro do repositório — não
+linkado de fora. As vinte vagas aparecem porque agora existe edital vigente: a
+regra do portal é não publicar número de vagas fora da vigência de um, e ela
+continua valendo.
+
+A notícia entrou no mural com as mesmas datas, conferidas contra os anexos III
+e IV, e não contra release.
+
+### Chamadas abertas, com o público-alvo em primeiro lugar
+
+Seção nova em `oportunidades.html`, antes do panorama histórico, porque chamada
+tem prazo. Estreia com as **bolsas da Rede MineraMundi / CAPES-Global**, nas
+quatro modalidades: doutorado sanduíche, pós-doutorado, professor visitante e
+missão acadêmica.
+
+O cartão diz, em destaque e antes de qualquer outra coisa, **"para quem vem de
+fora"**: essa chamada é para pesquisadores, professores e doutorandos
+estrangeiros vinculados a instituições fora do Brasil que queiram vir. Anunciá-la
+como "bolsa para nossos estudantes" mandaria o leitor ao formulário errado — erro
+que só apareceria quando alguém perdesse uma inscrição.
+
+Os valores de bolsa **não** foram copiados para cá. A página da Rede avisa que
+seguem as normas vigentes da CAPES e podem ser atualizados; número que muda na
+origem e fica congelado aqui vira informação errada sem ninguém perceber.
+
+### Defeito antigo: os botões não existiam fora da home
+
+`class="btn btn--dark"` aparecia em cinco páginas — programa, pessoas, normas,
+processo-seletivo e a cópia programa-1 — e **a definição de `.btn` morava apenas
+no `<style>` do `index.html`**. Nessas páginas o botão renderizava como texto
+comum. Os estilos foram para `styles.css`, onde todas as páginas os alcançam.
+É mudança visível nessas cinco páginas, na direção que o próprio HTML já pedia.
+
+### Ainda apontando para o site antigo
+
+A notícia do EOSBF 2026 no mural ainda linka para `redemat.ufop.br/news/...`.
+O acervo já foi importado (107 das 109 notícias, com 48 anexos), então esse link
+passa a ser interno quando a página de arquivo for construída. Fica registrado
+para não passar batido no desligamento.
+
+
 ## Versão 4.12 — 03/10/2026
 
 Uma notícia nova no mural — o 1º lugar no Congresso Mineiro de Ortopedia e

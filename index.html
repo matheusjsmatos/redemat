@@ -53,18 +53,9 @@
 .home-hero h1 em { font-style: normal; color: var(--amber-light); }
 .home-hero .lede { font-size: clamp(1rem, 1.8vw, 1.15rem); color: rgba(255,255,255,.76); max-width: 60ch; line-height: 1.7; }
 .hero-ctas { display: flex; gap: .75rem; margin-top: 2rem; flex-wrap: wrap; }
-.btn {
-  display: inline-flex; align-items: center; gap: .45rem;
-  font-size: .88rem; font-weight: 700; padding: .72rem 1.35rem;
-  border-radius: var(--r-sm); transition: all .16s;
-}
-.btn svg { width: 15px; height: 15px; fill: currentColor; }
-.btn--pri { background: var(--amber); color: #fff; }
-.btn--pri:hover { background: var(--amber-light); transform: translateY(-1px); }
-.btn--sec { background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.28); }
-.btn--sec:hover { background: rgba(255,255,255,.18); }
-.btn--dark { background: var(--navy); color: #fff; }
-.btn--dark:hover { background: var(--navy-mid); transform: translateY(-1px); }
+/* Os estilos de .btn foram para assets/css/styles.css: cinco páginas já
+   usavam class="btn btn--dark" e ficavam sem estilo nenhum, porque a
+   definição morava só aqui. */
 
 /* ---------- Faixa de KPI ---------- */
 .kpi-strip { background: var(--surface); border-bottom: 1px solid var(--border); }
@@ -564,9 +555,15 @@
           '<br>DOI ' + d.doi + '<br>' + d.autor_redemat +
           '<br><em>Coautoria: ' + d.coautoria + '</em></p>';
       }
-      if (d && d.trabalho) {
-        detalhe += '<p class="mural-cit"><strong>' + d.premio + '</strong><br>' +
-          d.evento + '<br><em>' + d.trabalho + '</em></p>';
+      /* Só desenha o que o registro traz. A notícia de edital tem `evento` e
+         não tem `trabalho` nem `premio`; a condição antiga, presa a `trabalho`,
+         deixava o evento de fora e, com `premio` vazio, imprimiria um <strong>
+         vazio seguido de <br>. */
+      if (d && (d.trabalho || d.evento)) {
+        detalhe += '<p class="mural-cit">' +
+          (d.premio ? '<strong>' + d.premio + '</strong><br>' : '') +
+          (d.evento || '') +
+          (d.trabalho ? '<br><em>' + d.trabalho + '</em>' : '') + '</p>';
       }
       if (d && d.autores) {
         detalhe += '<p class="mural-aut"><strong>Autoria:</strong> ' + d.autores + '</p>';
@@ -588,6 +585,13 @@
         detalhe += '<div class="mural-rep">' + d.repercussao.map(function (r) {
           return '<a href="' + r.url + '" target="_blank" rel="noopener">' + r.veiculo +
             ' ' + C.ICO.ext + '</a>'; }).join('') + '</div>';
+      }
+      if (d && d.links) {
+        detalhe += '<div class="mural-links">' + d.links.map(function (l) {
+          const ext = /^https?:/.test(l.url);
+          return '<a href="' + l.url + '"' + (ext ? ' target="_blank" rel="noopener"' : '') +
+            '>' + l.rotulo + (ext ? ' ' + C.ICO.ext : ' →') + '</a>';
+        }).join('') + '</div>';
       }
       if (d && d.documento) {
         detalhe += '<div class="mural-rep"><a href="' + d.documento.url + '" ' +

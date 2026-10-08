@@ -286,7 +286,11 @@
   document.getElementById('discNota').innerHTML = C.note('warn',
     '<strong>Catálogo em aprovação — não é oferta vigente.</strong> ' + CU.nota +
     ' As cargas horárias das disciplinas específicas e a definição dos docentes responsáveis ainda não ' +
-    'foram consolidadas. Para a oferta efetiva do semestre, consulte o SIGAA ou a secretaria do Programa. ' +
+    /* A UFOP não usa SIGAA. Quem quiser saber o que será ofertado no semestre
+       fala com a secretaria; o sistema PSPG é de processo seletivo, não de
+       matrícula em disciplina, e mandar o estudante para lá seria pior do que
+       não dizer nada. */
+    'foram consolidadas. Para a oferta efetiva do semestre, consulte a secretaria do Programa. ' +
     C.badge('EM_DEFINICAO'));
 
   /* ---------- proposta APCN ---------- */

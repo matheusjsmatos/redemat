@@ -35,6 +35,20 @@
 
 <main id="conteudo">
 
+  <!-- Chamadas abertas -->
+  <section class="section" id="chamadas" aria-labelledby="ch-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Com prazo correndo</p>
+        <h2 class="h2" id="ch-h">Chamadas e oportunidades abertas</h2>
+        <p class="section-lede" id="chLede"></p>
+      </div>
+      <div id="chGrid"></div>
+      <div class="mt-3" id="chNota"></div>
+    </div>
+  </section>
+
+
   <!-- Como participar -->
   <section class="section" aria-labelledby="cp-h">
     <div class="wrap">
@@ -153,6 +167,52 @@
 <script>
 (function () {
   'use strict';
+
+  /* ---------- chamadas abertas ----------
+     O público-alvo vai em destaque, antes do resumo. A chamada da Rede
+     MineraMundi é de ENTRADA: para quem está fora do Brasil e quer vir. Listá-la
+     como "bolsa para nossos estudantes" mandaria o leitor ao formulário errado,
+     e é o tipo de erro que só aparece quando alguém perde uma inscrição. */
+  (function () {
+    const R = window.REDEMAT, C = window.RC;
+    const CH = R.chamadas || { itens: [] };
+    const hoje = new Date().toISOString().slice(0, 10);
+    const abertas = CH.itens.filter(function (c) { return !c.fim || c.fim >= hoje; });
+
+    const SENTIDO = {
+      entrada: { r: 'Para quem vem de fora', cor: 'var(--navy)' },
+      saida:   { r: 'Para quem vai daqui',   cor: 'var(--amber)' }
+    };
+
+    document.getElementById('chLede').textContent =
+      'Bolsas e programas com inscrição aberta para discentes, docentes e ' +
+      'pós-doutorandos. Cada chamada indica a quem se destina.';
+
+    document.getElementById('chGrid').innerHTML = abertas.length ? abertas.map(function (c) {
+      const sen = SENTIDO[c.sentido] || {};
+      return '<article class="card chamada">' +
+        (sen.r ? '<p class="chamada-tag" style="color:' + sen.cor + '">' + sen.r + '</p>' : '') +
+        '<h3 class="h3" style="font-size:1.08rem;margin:.25rem 0 .5rem;">' + c.titulo + '</h3>' +
+        '<p class="chamada-prog">' + c.programa + '</p>' +
+        '<p class="chamada-publico"><strong>Público-alvo:</strong> ' + c.publico + '</p>' +
+        '<p style="font-size:.88rem;color:var(--text-mid);line-height:1.7;margin:.7rem 0;">' +
+          c.resumo + '</p>' +
+        '<ul class="chamada-mod">' + (c.modalidades || []).map(function (m) {
+          return '<li><strong>' + m.nome + '</strong><span>' + m.publico +
+                 ' · ' + m.periodo + '</span></li>';
+        }).join('') + '</ul>' +
+        '<p style="font-size:.8rem;color:var(--text-soft);line-height:1.6;margin-top:.7rem;">' +
+          c.valores + '</p>' +
+        '<div class="mt-2"><a class="btn btn--linha" href="' + c.url + '" target="_blank" ' +
+          'rel="noopener">' + c.rotulo_link + ' ' + C.ICO.ext + '</a></div>' +
+      '</article>';
+    }).join('') : C.note('info', 'Nenhuma chamada com inscrição aberta neste momento.');
+
+    document.getElementById('chNota').innerHTML = C.note('warn',
+      '<strong>O prazo e as regras são da instituição que lança a chamada.</strong> Este ' +
+      'portal reúne os links e descreve o público-alvo; valores, requisitos e datas valem ' +
+      'os da página de origem, que pode mudar sem aviso. ' + C.badge('VALIDADO'));
+  }());
   const R = window.REDEMAT, C = window.RC, O = R.oportunidades;
 
   function esc(s) {

@@ -580,6 +580,76 @@ ul, ol { list-style: none; }
   .inst-card__logo, .inst-card__logo--uemg { height: auto; max-height: 72px; }
 }
 
+
+/* ---------- Botões ----------
+   Vieram do <style> de index.html. Enquanto moravam lá, as cinco páginas que
+   usam class="btn btn--dark" (programa, pessoas, normas, processo-seletivo e
+   a cópia programa-1) renderizavam um link comum: a classe existia no HTML e
+   não existia em lugar nenhum do CSS que elas carregam. */
+.btn {
+  display: inline-flex; align-items: center; gap: .45rem;
+  font-size: .88rem; font-weight: 700; padding: .72rem 1.35rem;
+  border-radius: 7px; text-decoration: none; transition: all .18s;
+  border: none; cursor: pointer; line-height: 1.2;
+}
+.btn svg { width: 15px; height: 15px; fill: currentColor; }
+.btn--pri { background: var(--amber); color: #fff; }
+.btn--pri:hover { background: var(--amber-light); transform: translateY(-1px); }
+.btn--sec { background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.28); }
+.btn--sec:hover { background: rgba(255,255,255,.18); }
+.btn--dark { background: var(--navy); color: #fff; }
+.btn--dark:hover { background: var(--navy-mid); transform: translateY(-1px); }
+.btn--linha { background: #fff; color: var(--navy); border: 1px solid var(--border); }
+.btn--linha:hover { border-color: var(--navy); transform: translateY(-1px); }
+
+/* ---------- Chamada do edital vigente ---------- */
+.edital-card { border-left: 4px solid var(--amber); }
+.edital-tag {
+  font-size: .72rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+  color: var(--amber);
+}
+.edital-dados {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+  gap: .9rem; margin-top: 1.2rem; padding-top: 1.1rem; border-top: 1px solid var(--border);
+}
+.edital-dados span {
+  display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .05em;
+  color: var(--text-soft); margin-bottom: .2rem;
+}
+.edital-dados strong { font-size: .95rem; color: var(--navy); line-height: 1.35; }
+.edital-acoes { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.2rem; }
+
+/* ---------- Cronograma ---------- */
+.crono { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+.crono-i {
+  display: grid; grid-template-columns: 11.5rem 1fr; gap: .9rem;
+  padding: .62rem .2rem; border-bottom: 1px solid var(--border); align-items: baseline;
+}
+.crono-d { font-size: .82rem; font-weight: 600; color: var(--navy); font-variant-numeric: tabular-nums; }
+.crono-e { font-size: .86rem; color: var(--text-mid); line-height: 1.6; }
+/* Etapa vencida continua visível — quem chega depois do prazo precisa ver que
+   ele existiu, não encontrar a linha ausente. Só perde o destaque. */
+.crono-i--passou .crono-d, .crono-i--passou .crono-e { color: var(--text-soft); }
+.crono-i--agora { background: #FFF9E8; border-left: 3px solid var(--amber); padding-left: .55rem; }
+.crono-i--agora .crono-d { color: var(--amber-dark, #9a6b00); }
+@media (max-width: 560px) {
+  .crono-i { grid-template-columns: 1fr; gap: .15rem; }
+}
+
+/* ---------- Chamadas abertas ---------- */
+.chamada { border-left: 4px solid var(--navy); }
+.chamada + .chamada { margin-top: 1.1rem; }
+.chamada-tag { font-size: .72rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+.chamada-prog { font-size: .8rem; color: var(--text-soft); line-height: 1.6; }
+.chamada-publico { font-size: .86rem; color: var(--text); line-height: 1.65; margin-top: .6rem; }
+.chamada-publico strong { color: var(--navy); }
+.chamada-mod { list-style: none; margin: .5rem 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)); gap: .55rem; }
+.chamada-mod li { background: var(--surface-alt, #F7F8FA); border: 1px solid var(--border);
+  border-radius: 7px; padding: .6rem .75rem; }
+.chamada-mod strong { display: block; font-size: .84rem; color: var(--navy); line-height: 1.4; }
+.chamada-mod span { display: block; font-size: .76rem; color: var(--text-soft); margin-top: .2rem; line-height: 1.5; }
+
 /* ---------- Mural / notícias ---------- */
 .mural-filters { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
 .mural-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px,100%), 1fr)); gap: 1.1rem; }
@@ -1036,6 +1106,14 @@ ul, ol { list-style: none; }
 .mural-ex { display: block; font-size: .72rem; color: #6B4E10; background: var(--amber-pale);
             border: 1px solid var(--amber-brd); border-radius: 6px; padding: .45rem .6rem;
             line-height: 1.5; margin-top: .5rem; }
+.mural-links { display: flex; flex-wrap: wrap; gap: .5rem; margin: .6rem 0 .2rem; }
+.mural-links a {
+  font-size: .78rem; font-weight: 600; color: var(--navy); text-decoration: none;
+  border: 1px solid var(--border); border-radius: 6px; padding: .35rem .65rem;
+  display: inline-flex; align-items: center; gap: .3rem;
+}
+.mural-links a:hover { border-color: var(--navy); background: var(--surface-alt, #F7F8FA); }
+.mural-links svg { width: 12px; height: 12px; fill: currentColor; }
 .mural-aut { font-size: .76rem; color: var(--text-mid); line-height: 1.55; margin: .1rem 0 .55rem; }
 .mural-aut strong { color: var(--navy); }
 .mural-mais { display: flex; flex-wrap: wrap; gap: .3rem; margin: .1rem 0 .5rem; padding: 0; list-style: none; }

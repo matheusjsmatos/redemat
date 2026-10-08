@@ -21,8 +21,8 @@ const REDEMAT = {
 
   /* ---------------------------------------------------------------- meta */
   meta: {
-    versao: '4.12',
-    atualizado: '2026-10-03',
+    versao: '4.13',
+    atualizado: '2026-10-08',
     fontes: [
       { id: 'CONSOL',   nome: 'Entrega consolidada Lattes REDEMAT 2021–2026',   ref: 'codex/apcn/10_analises/entrega_atualizada_lattes_20260829 — corte 29/08/2026', coleta: '2026-08-29' },
       { id: 'SCOPUS_M', nome: 'Scopus Sources — consulta manual na interface',  ref: 'scopus.com/sources.uri · data/percentis-scopus-manuais.csv', coleta: '2026-09-02' },
@@ -784,18 +784,125 @@ const REDEMAT = {
   },
 
   /* ----------------------------------------------------- processo seletivo */
+  /* ---------------------------------------------------- processo seletivo
+     Tudo aqui vem do edital publicado, com a data de cada etapa em ISO. A
+     situação do processo NÃO é um campo: é calculada a partir dessas datas na
+     hora de desenhar a página. Um campo "situacao: 'aberto'" escrito à mão
+     continua dizendo "inscrições abertas" semanas depois do prazo, e numa
+     página de processo seletivo isso não é desatualização, é informação
+     errada para quem está decidindo se ainda dá tempo de se inscrever. */
   processo_seletivo: {
-    fonte: 'SITE', status: 'PRELIMINAR',
-    semestre: '2026/2',
-    situacao: 'encerrado',
-    nota: 'O edital 2026/2 foi encerrado. Vagas, cronograma e requisitos do próximo processo serão publicados pela secretaria. Requisitos e documentos específicos são definidos em cada edital.',
-    etapas: [
-      { titulo: 'Inscrição', desc: 'Envio de documentação conforme edital: histórico, currículo Lattes, proposta ou projeto de pesquisa e documentos de identificação.' },
-      { titulo: 'Análise de currículo e proposta', desc: 'Avaliação do histórico acadêmico e da aderência da proposta às linhas de pesquisa do Programa pela banca examinadora.' },
-      { titulo: 'Entrevista', desc: 'Entrevista com banca de docentes, presencial ou remota, sobre formação, interesse de pesquisa e aderência à linha pretendida.' },
-      { titulo: 'Resultado e matrícula', desc: 'Publicação do resultado no site do Programa e matrícula no semestre de ingresso.' }
+    fonte: 'EDITAL', ref: 'Edital REDEMAT nº 7, de 8 de outubro de 2026',
+    coleta: '2026-10-08', status: 'VALIDADO',
+    semestre: '2027/1',
+    nivel: 'Mestrado',
+    edital: {
+      numero: 'Edital REDEMAT nº 7, de 8 de outubro de 2026',
+      ementa: 'Dispõe sobre o Processo de Seleção da turma 2027/1 para o curso de ' +
+              'Mestrado em Engenharia de Materiais.',
+      publicacao: '2026-10-08',
+      arquivo: 'assets/doc/editais/edital-redemat-07-2026-mestrado-2027-1.pdf',
+      paginas: 20
+    },
+    inscricao: {
+      inicio: '2026-10-15',
+      fim: '2026-11-07',
+      sistema: 'PSPG — Sistema de Gestão dos Processos Seletivos da Pós-Graduação',
+      url: 'https://app.ufop.br/pspg/',
+      nota: 'A inscrição é feita exclusivamente pelo PSPG. O edital é expresso: não ' +
+            'há inscrição provisória, condicional ou extemporânea, nem por qualquer ' +
+            'outro meio.'
+    },
+    vagas: {
+      regulares: 20, reservadas: 2, adicionais: 2,
+      nota: 'Vinte vagas regulares, mais reserva para candidatos negros, quilombolas, ' +
+            'indígenas e pessoas com deficiência e vagas adicionais para servidores ' +
+            'técnico-administrativos da UFOP. A relação nominal de orientadores com ' +
+            'capacidade de orientação em 2027/1 está no Anexo IV do edital.'
+    },
+    publico: 'Graduados ou concluintes em Engenharias, Física, Química, Química ' +
+             'Industrial, Design e áreas afins, desde que a colação de grau ocorra em ' +
+             'tempo hábil para a matrícula.',
+    /* Cronograma do Anexo III, em ISO para poder ser comparado com a data de hoje. */
+    cronograma: [
+      { data: '2026-10-08', evento: 'Publicação oficial do edital' },
+      { data: '2026-10-15', fim: '2026-11-07', evento: 'Período de inscrição', marco: 'inscricao' },
+      { data: '2026-11-13', evento: 'Inscrições homologadas, comissão de seleção e decisão sobre dispensa da prova de inglês' },
+      { data: '2026-11-20', evento: 'Prova de língua inglesa' },
+      { data: '2026-11-23', evento: 'Resultado da prova de inglês e gabarito' },
+      { data: '2026-11-25', fim: '2026-11-30', evento: 'Análise de currículo' },
+      { data: '2026-11-30', evento: 'Resultado da análise de currículo' },
+      { data: '2026-12-07', fim: '2026-12-10', evento: 'Entrevistas' },
+      { data: '2026-12-11', evento: 'Resultado da etapa de entrevista' },
+      { data: '2026-12-18', evento: 'Resultado final homologado', marco: 'final' },
+      { data: '', evento: 'Convocação e matrícula institucional — a divulgar' }
     ],
-    dica: 'Recomenda-se contato prévio com o(a) docente cuja linha de pesquisa mais se aproxime do seu interesse, antes da inscrição.'
+    etapas: [
+      { titulo: 'Inscrição pelo PSPG',
+        desc: 'Inscrição on-line no Sistema de Gestão dos Processos Seletivos da ' +
+              'Pós-Graduação, com envio dos documentos em PDF: identificação, histórico ' +
+              'e diploma de graduação, currículo Lattes com comprovações e os ' +
+              'documentos específicos de cada modalidade de vaga.' },
+      { titulo: 'Prova de língua inglesa',
+        desc: 'Eliminatória. Interpretação de texto em inglês, preferencialmente da ' +
+              'área de Engenharia de Materiais, em três horas, remota e supervisionada. ' +
+              'Aprovação com 60 pontos em 100. A nota não entra no cálculo da nota final.' },
+      { titulo: 'Análise de currículo',
+        desc: 'Pontuação do currículo Lattes pelo barema do Anexo II: formação, ' +
+              'produção científica, atividades de pesquisa, estágio e experiência ' +
+              'profissional. Cada produto é pontuado uma única vez.' },
+      { titulo: 'Entrevista',
+        desc: 'Entrevista com a comissão de seleção sobre formação, interesse de ' +
+              'pesquisa e aderência à linha pretendida, em programação individual ' +
+              'divulgada após a etapa anterior.' },
+      { titulo: 'Resultado e matrícula',
+        desc: 'Resultado final homologado e, em seguida, convocação e matrícula ' +
+              'institucional conforme o calendário acadêmico da Pós-Graduação da UFOP.' }
+    ],
+    dica: 'Recomenda-se contato prévio com o(a) docente cuja linha de pesquisa mais ' +
+          'se aproxime do seu interesse, antes da inscrição. O Anexo IV do edital diz ' +
+          'quem está disponível para orientação em 2027/1.'
+  },
+
+  /* ------------------------------------------------------- chamadas abertas
+     Oportunidades de fomento com inscrição aberta, para discentes, docentes e
+     pós-doutorandos. Cada uma traz o público a que se destina de forma
+     explícita: a chamada da Rede MineraMundi, por exemplo, é para quem está
+     FORA do Brasil e quer vir — divulgá-la como "bolsa para nossos estudantes"
+     mandaria o leitor errado para o formulário errado.
+     Quando `fim` passa, a chamada sai sozinha da lista de abertas. */
+  chamadas: {
+    fonte: 'COORDENACAO', coleta: '2026-10-08', status: 'VALIDADO',
+    itens: [
+      {
+        id: 'mineramundi-2026',
+        titulo: 'Bolsas da Rede MineraMundi — CAPES-Global',
+        programa: 'Capes-Global.edu · Rede MineraMundi — Rede Internacional de ' +
+                  'Investigação da Mineração, Sustentabilidade e Desenvolvimento Social',
+        publico: 'Pesquisadores, professores e doutorandos estrangeiros vinculados a ' +
+                 'instituições de ensino e pesquisa fora do Brasil',
+        sentido: 'entrada',
+        resumo: 'Quatro modalidades de mobilidade acadêmica para vir ao Brasil, nas ' +
+                'universidades que integram a Rede MineraMundi. A UFOP é uma delas, e a ' +
+                'REDEMAT atua justamente em mineração, materiais e sustentabilidade.',
+        modalidades: [
+          { nome: 'Doutorado Sanduíche no Brasil', publico: 'doutorandos', periodo: '6 a 9 meses' },
+          { nome: 'Pós-Doutorado no Brasil', publico: 'doutores sem vínculo atual com instituição de ensino ou pesquisa', periodo: '6 a 12 meses' },
+          { nome: 'Professor Visitante no Brasil', publico: 'professores ou pesquisadores, para ministrar aulas ou pesquisar', periodo: 'até 3 meses' },
+          { nome: 'Missão Acadêmica no Brasil', publico: 'professores e pesquisadores', periodo: '6 a 14 dias' }
+        ],
+        /* Os valores de bolsa, auxílio-instalação e seguro-saúde ficam na página da
+           Rede, não aqui: a própria página avisa que seguem as normas vigentes da
+           CAPES e podem ser atualizados. Número que muda na origem e é copiado para
+           cá vira informação errada sem ninguém perceber. */
+        valores: 'Passagens, auxílio-instalação, seguro-saúde e mensalidade, em valores ' +
+                 'definidos pelas normas vigentes da CAPES — consulte a página da Rede.',
+        url: 'https://capesglobal.ufop.br/bolsas-e-oportunidades/oportunidades-e-bolsas-no-brasil/pesquisadores-professores-e-doutorandos',
+        rotulo_link: 'Modalidades, requisitos e valores na Rede MineraMundi',
+        inicio: '', fim: '',
+        fonte: 'Rede MineraMundi / UFOP', coleta: '2026-10-08'
+      }
+    ]
   },
 
   /* ------------------------------------------- autoavaliação e governança */
@@ -1259,6 +1366,27 @@ const REDEMAT = {
        O portal não gera notícia: estes vieram do site institucional e das
        páginas dos veículos citados. */
     itens: [
+      {
+        /* Chamada do processo seletivo. Os dados vêm do edital, não de release:
+           número, datas e vagas conferem com o Anexo III e o Anexo IV. */
+        categoria: 'programa',
+        data: '2026-10-08',
+        titulo: 'REDEMAT publica o edital de seleção do Mestrado para a turma 2027/1',
+        texto: 'O Edital REDEMAT nº 7, de 8 de outubro de 2026, abre o processo seletivo do Mestrado em Engenharia de Materiais para ingresso em 2027/1, com 20 vagas regulares mais vagas reservadas e adicionais. As inscrições vão de 15 de outubro a 7 de novembro de 2026 e são feitas exclusivamente pelo PSPG, o Sistema de Gestão dos Processos Seletivos da Pós-Graduação da UFOP. A seleção tem prova de língua inglesa eliminatória, análise de currículo e entrevista, com resultado final homologado em 18 de dezembro de 2026.',
+        destaque: true,
+        detalhe: {
+          evento: 'Processo Seletivo REDEMAT — Mestrado, turma 2027/1',
+          premio: '',
+          documento: {
+            rotulo: 'Edital REDEMAT nº 7/2026 (PDF)',
+            url: 'assets/doc/editais/edital-redemat-07-2026-mestrado-2027-1.pdf'
+          },
+          links: [
+            { rotulo: 'Inscrições no PSPG', url: 'https://app.ufop.br/pspg/' },
+            { rotulo: 'Cronograma e etapas no portal', url: 'pages/processo-seletivo.html' }
+          ]
+        }
+      },
       {
         /* Premiação informada pela coordenação, com o certificado em mãos. Os
            dados do projeto e da dissertação não vieram do certificado: foram

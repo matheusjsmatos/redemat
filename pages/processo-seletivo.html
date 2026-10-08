@@ -159,27 +159,93 @@
 <script>
 (function () {
   'use strict';
-  const R = window.REDEMAT, C = window.RC, PS = R.processo_seletivo;
+  const R = window.REDEMAT, C = window.RC;
 
-  /* ---------- faixa de status ---------- */
+  /* ---------- situação do processo, calculada pelas datas ----------
+     Nada aqui é escrito à mão. Um rótulo "inscrições abertas" gravado nos
+     dados continua no ar depois do prazo, e numa página de processo seletivo
+     isso não é informação velha: é informação errada para quem está decidindo
+     se ainda dá tempo de se inscrever. */
+  const PS = R.processo_seletivo;
+  const HOJE = new Date().toISOString().slice(0, 10);
+  const INS = PS.inscricao, ED = PS.edital;
+
+  const final = (PS.cronograma.filter(function (c) { return c.marco === 'final'; })[0] || {}).data || '';
+  const fase =
+    HOJE < ED.publicacao        ? 'breve' :
+    HOJE < INS.inicio           ? 'publicado' :
+    HOJE <= INS.fim             ? 'aberto' :
+    (final && HOJE <= final)    ? 'andamento' : 'encerrado';
+
+  function dia(d) {
+    if (!d) return '';
+    const p = d.split('-');
+    return p[2] + '/' + p[1] + '/' + p[0];
+  }
+  function diasAte(d) {
+    return Math.round((new Date(d + 'T12:00:00') - new Date(HOJE + 'T12:00:00')) / 86400000);
+  }
+
   const BAND = {
-    encerrado: { cls: 'encerrado', txt: 'As inscrições para o processo seletivo ' + PS.semestre + ' foram encerradas. Acompanhe esta página para o próximo edital.' },
-    aberto:    { cls: 'aberto',    txt: 'Inscrições abertas para o processo seletivo ' + PS.semestre + '. <a href="#situacao">Ver detalhes</a>' },
-    breve:     { cls: 'breve',     txt: 'O edital do processo seletivo ' + PS.semestre + ' será publicado em breve.' }
+    breve:     { cls: 'breve', txt: 'O edital do processo seletivo ' + PS.semestre + ' será publicado em breve.' },
+    publicado: { cls: 'breve', txt: '<strong>Edital ' + PS.semestre + ' publicado.</strong> As inscrições abrem em ' +
+                 dia(INS.inicio) + '. <a href="#situacao">Ver o edital e o cronograma</a>' },
+    aberto:    { cls: 'aberto', txt: '<strong>Inscrições abertas</strong> para o Mestrado ' + PS.semestre +
+                 ', até ' + dia(INS.fim) + '. <a href="#situacao">Como se inscrever</a>' },
+    andamento: { cls: 'aberto', txt: 'As inscrições para o ' + PS.semestre + ' foram encerradas e o processo está em ' +
+                 'andamento. <a href="#situacao">Ver o cronograma das etapas</a>' },
+    encerrado: { cls: 'encerrado', txt: 'O processo seletivo ' + PS.semestre + ' foi concluído. Acompanhe esta ' +
+                 'página para o próximo edital.' }
   };
-  const b = BAND[PS.situacao] || BAND.breve;
   document.getElementById('statusBand').innerHTML =
-    '<div class="status-band ' + b.cls + '">' + b.txt + '</div>';
+    '<div class="status-band ' + BAND[fase].cls + '">' + BAND[fase].txt + '</div>';
 
-  /* ---------- situação ---------- */
+  /* ---------- chamada do edital vigente ---------- */
+  const prazo = fase === 'publicado' ? 'Inscrições de ' + dia(INS.inicio) + ' a ' + dia(INS.fim)
+              : fase === 'aberto'    ? 'Inscrições até ' + dia(INS.fim) +
+                                       ' (' + diasAte(INS.fim) + ' dia' + (diasAte(INS.fim) === 1 ? '' : 's') + ')'
+              : 'Inscrições encerradas em ' + dia(INS.fim);
+
+  const botao = (fase === 'publicado' || fase === 'aberto')
+    ? '<a class="btn btn--pri" href="' + INS.url + '" target="_blank" rel="noopener">' +
+      (fase === 'aberto' ? 'Inscrever-se no PSPG ' : 'Acessar o PSPG ') + C.ICO.ext + '</a>'
+    : '';
+
   document.getElementById('situacao').innerHTML =
-    C.note(PS.situacao === 'aberto' ? 'info' : 'warn',
-      '<strong>Situação atual — ' + PS.semestre + ':</strong> ' + PS.nota +
-      ' Fonte: site institucional REDEMAT. ' + C.badge('PRELIMINAR')) +
-    '<div class="mt-2">' + C.note('info',
-      '<strong>Número de vagas.</strong> Este portal não publica número de vagas fora da vigência de um ' +
-      'edital, para evitar informação desatualizada. As vagas de cada processo — por ampla concorrência e ' +
-      'por ações afirmativas — constam exclusivamente no edital publicado.') + '</div>';
+    '<div class="card edital-card">' +
+      '<p class="edital-tag">' + ED.numero + '</p>' +
+      '<h2 class="h2" style="font-size:1.3rem;margin:.35rem 0 .6rem;">Mestrado em Engenharia de Materiais — turma ' +
+        PS.semestre + '</h2>' +
+      '<p style="font-size:.92rem;color:var(--text-mid);line-height:1.7;">' + ED.ementa + '</p>' +
+      '<div class="edital-dados">' +
+        '<div><span>Prazo</span><strong>' + prazo + '</strong></div>' +
+        '<div><span>Vagas regulares</span><strong>' + PS.vagas.regulares + '</strong></div>' +
+        '<div><span>Inscrição</span><strong>' + INS.sistema.split(' — ')[0] + '</strong></div>' +
+        '<div><span>Resultado final</span><strong>' + dia(final) + '</strong></div>' +
+      '</div>' +
+      '<p style="font-size:.84rem;color:var(--text-mid);line-height:1.7;margin-top:.9rem;">' +
+        PS.vagas.nota + '</p>' +
+      '<div class="edital-acoes">' + botao +
+        '<a class="btn btn--linha" href="../' + ED.arquivo + '" target="_blank" rel="noopener">' +
+          'Edital completo em PDF (' + ED.paginas + ' páginas) ' + C.ICO.ext + '</a>' +
+      '</div>' +
+      '<p style="font-size:.8rem;color:var(--text-soft);margin-top:.9rem;line-height:1.6;">' +
+        INS.nota + '</p>' +
+    '</div>' +
+    '<div class="mt-3"><h3 class="h3" style="font-size:.95rem;margin-bottom:.6rem;">Cronograma</h3>' +
+      '<ol class="crono">' + PS.cronograma.map(function (c) {
+        const passou = c.data && (c.fim || c.data) < HOJE;
+        const agora = c.data && c.data <= HOJE && HOJE <= (c.fim || c.data);
+        const quando = !c.data ? 'A divulgar'
+                     : c.fim ? dia(c.data) + ' a ' + dia(c.fim) : dia(c.data);
+        return '<li class="crono-i' + (passou ? ' crono-i--passou' : '') +
+               (agora ? ' crono-i--agora' : '') + '">' +
+               '<span class="crono-d">' + quando + '</span>' +
+               '<span class="crono-e">' + c.evento + '</span></li>';
+      }).join('') + '</ol>' +
+      '<p style="font-size:.78rem;color:var(--text-soft);margin-top:.7rem;">Fonte: ' + ED.numero +
+      ', Anexo III. ' + C.badge('VALIDADO') + '</p></div>' +
+    '<div class="mt-3">' + C.note('info', '<strong>Público-alvo.</strong> ' + PS.publico) + '</div>';
 
   /* ---------- etapas ---------- */
   document.getElementById('etapas').innerHTML = PS.etapas.map(function (e, i) {
@@ -250,10 +316,15 @@
         'Endereço de correspondência no cadastro institucional: ' + c.endereco_cadastro + '</p>' : '') +
       '</div></div>';
 
+  /* A UFOP não usa SIGAA: o sistema de inscrição é o PSPG, como o próprio
+     edital determina. O endereço ppgs.ufop.br que estava aqui não responde — a
+     Pró-Reitoria é propp.ufop.br. E o link para o portal antigo saiu: ele vai
+     ser desligado, e a página para onde ele aponta é esta. */
   document.getElementById('links').innerHTML = [
-    { u: 'https://redemat.ufop.br/processo-seletivo', t: 'Editais e processo seletivo — site REDEMAT' },
-    { u: 'https://sigaa.ufop.br', t: 'SIGAA — sistema acadêmico da UFOP' },
-    { u: 'https://ppgs.ufop.br', t: 'Pró-Reitoria de Pesquisa e Pós-Graduação — UFOP' },
+    { u: PS.inscricao.url, t: 'PSPG — Sistema de Gestão dos Processos Seletivos da Pós-Graduação' },
+    { u: '../' + PS.edital.arquivo, t: PS.edital.numero + ' — PDF' },
+    { u: 'https://propp.ufop.br/pt-br/acoes-afirmativas', t: 'Ações afirmativas — formulários de autodeclaração (PROPP/UFOP)' },
+    { u: 'https://propp.ufop.br', t: 'Pró-Reitoria de Pesquisa, Pós-Graduação e Inovação — UFOP' },
     { u: 'https://www.gov.br/capes/pt-br', t: 'CAPES — bolsas e programas' },
     { u: 'http://lattes.cnpq.br', t: 'Plataforma Lattes — criar ou atualizar currículo' }
   ].map(function (l) {
