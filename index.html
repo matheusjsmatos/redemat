@@ -538,7 +538,17 @@
     }
 
     g.innerHTML = itens.map(function (i) {
-      const c = M.categorias.filter(function (x) { return x.id === i.categoria; })[0] || M.categorias[0];
+      /* Categoria desconhecida caía em M.categorias[0] sem dizer nada: o item
+         do edital, cadastrado como 'programa', apareceu rotulado "Notícias" e
+         ficou fora do filtro "Processo seletivo" — justamente o que o candidato
+         usa. Mesmo erro do STATUS_MAP na v4.5; aqui também passa a gritar. */
+      let c = M.categorias.filter(function (x) { return x.id === i.categoria; })[0];
+      if (!c) {
+        console.warn('[mural] categoria desconhecida: "' + i.categoria + '" em "' +
+                     (i.titulo || '').slice(0, 60) + '". Ids válidos: ' +
+                     M.categorias.map(function (x) { return x.id; }).join(', '));
+        c = M.categorias[0];
+      }
       const media = i.imagem
         ? '<div class="mural-media"><img src="' + i.imagem + '" alt="' + (i.imagemAlt || '') + '" loading="lazy"></div>'
         : '<div class="mural-media"><span class="mural-media-ph" aria-hidden="true">' + PH + '</span></div>';
