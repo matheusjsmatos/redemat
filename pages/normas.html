@@ -46,17 +46,14 @@
         <p class="eyebrow">Regulamentação</p>
         <h2 class="h2" id="norm-h">Normas por assunto</h2>
         <p class="section-lede">
-          Clique em um grupo para ver os documentos que o compõem. Os arquivos permanecem
-          hospedados no site institucional da REDEMAT.
+          Clique em um grupo para ver os documentos que o compõem. Os arquivos abrem
+          direto daqui — nenhum link sai para fora do portal.
         </p>
       </div>
       <div style="display:flex;flex-direction:column;gap:.85rem;" id="normGroups"></div>
-      <div class="mt-3">
-        <a href="https://redemat.ufop.br/normas" target="_blank" rel="noopener" class="btn btn--dark"
-           style="display:inline-flex;align-items:center;gap:.45rem;font-size:.86rem;font-weight:700;padding:.7rem 1.3rem;border-radius:var(--r-sm);background:var(--navy);color:#fff;">
-          Abrir a página oficial de normas ↗
-        </a>
-      </div>
+      <!-- O botão "Abrir a página oficial de normas", que apontava para
+           redemat.ufop.br/normas, saiu: aquele site será desligado e os
+           arquivos agora estão aqui. -->
     </div>
   </section>
 
@@ -182,8 +179,21 @@
         CHEV +
       '</button>' +
       '<ul class="norm-list" id="ng-' + g.id + '" role="region" aria-labelledby="nh-' + g.id + '"' + (open ? '' : ' hidden') + '>' +
+        /* O arquivo abre daqui. Item sem arquivo continua listado, sem link e
+           com a situação dita — some da lista seria pior: quem procura a norma
+           pensaria que ela não existe, em vez de saber que falta carregar. */
         g.itens.map(function (it) {
-          return '<li><p class="norm-name">' + it.nome + '</p><p class="norm-desc">' + it.desc + '</p></li>';
+          const links = it.arquivos ? it.arquivos
+            : it.arquivo ? [{ rotulo: 'Abrir documento', url: it.arquivo }] : [];
+          const acao = links.length
+            ? '<p class="norm-files">' + links.map(function (a) {
+                const ext = (a.url.split('.').pop() || '').toUpperCase();
+                return '<a href="../' + a.url + '" target="_blank" rel="noopener">' +
+                  C.ICO.ext + '<span>' + a.rotulo + ' · ' + ext + '</span></a>';
+              }).join('') + '</p>'
+            : '<p class="norm-falta">Arquivo ainda não carregado neste portal</p>';
+          return '<li><p class="norm-name">' + it.nome + '</p><p class="norm-desc">' +
+                 it.desc + '</p>' + acao + '</li>';
         }).join('') +
       '</ul></div>';
   }).join('');

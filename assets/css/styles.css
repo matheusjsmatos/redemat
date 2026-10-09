@@ -636,6 +636,20 @@ ul, ol { list-style: none; }
   .crono-i { grid-template-columns: 1fr; gap: .15rem; }
 }
 
+/* ---------- Arquivos na página de normas ---------- */
+.norm-files { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .5rem; }
+.norm-files a {
+  display: inline-flex; align-items: center; gap: .35rem;
+  font-size: .78rem; font-weight: 600; color: var(--navy); text-decoration: none;
+  border: 1px solid var(--border); border-radius: 6px; padding: .33rem .6rem;
+  background: var(--surface);
+}
+.norm-files a:hover { border-color: var(--navy); background: var(--surface-alt, #FBFCFD); }
+.norm-files svg { width: 12px; height: 12px; fill: currentColor; flex-shrink: 0; }
+/* Item sem arquivo continua na lista: sumir faria quem procura a norma pensar
+   que ela não existe, em vez de saber que falta carregar. */
+.norm-falta { font-size: .76rem; color: var(--text-soft); font-style: italic; margin-top: .45rem; }
+
 /* ---------- Chamadas abertas ---------- */
 .chamada { border-left: 4px solid var(--navy); }
 .chamada + .chamada { margin-top: 1.1rem; }

@@ -344,9 +344,12 @@
     const tot = Object.keys(E).reduce(function (a, k) { return a + E[k]; }, 0);
     const cor = { A1: '#15803D', A2: '#16A34A', A3: '#1D4ED8', A4: '#3B82F6',
                   B1: '#A16207', B2: '#CA8A04', B3: '#D97706', B4: '#EA580C', C: '#94A3B8' };
+    /* As notas longas de método saíram da página e estão em
+       docs/notas-metodologicas-producao.md. O rótulo de escopo FICA: sem ele,
+       um gráfico chamado "distribuição Qualis" sobre 69 dos 308 artigos
+       afirmaria algo que não é verdade. Isso é legenda de eixo, não ressalva. */
     box.innerHTML =
-      C.note('info', '<strong>Escopo desta distribuição.</strong> ' + Q.nota) +
-      '<p class="mt-2" style="font-size:.82rem;color:var(--text-mid)">' +
+      '<p style="font-size:.82rem;color:var(--text-mid)">' +
       Q.subconjunto.escopo + ' — ' + tot + ' artigos classificados.</p>' +
       '<div class="mt-2">' + Object.keys(E).map(function (k) {
         return '<div class="bar-row"><span class="bar-lbl">' + k + '</span>' +
@@ -354,39 +357,17 @@
           (E[k] / tot * 100).toFixed(1) + '%;background:' + cor[k] + '"></span></span>' +
           '<span class="bar-val">' + E[k] + '</span></div>';
       }).join('') + '</div>' +
-      '<div class="mt-2">' + C.note('warn', '<strong>Não extrapole.</strong> ' +
-        Q.subconjunto.aviso + ' ' + C.badge('PRELIMINAR')) + '</div>';
+      '</div>';
   }());
 
-  document.getElementById('prodNotas').innerHTML =
-    C.note('info', '<strong>Como o total foi apurado.</strong> ' + R.producao.nota +
-      ' ' + R.producao.aviso_2026 + ' ' + C.badge('PRELIMINAR')) +
-    '<div class="mt-2">' + C.note('warn',
-      '<strong>Pendência crítica declarada.</strong> A comprovação de percentil Scopus/Web of Science para a ' +
-      'produção destacada e para ao menos 60% do núcleo docente consta como pendência formal antes da submissão ' +
-      'da proposta APCN. Enquanto não concluída, o portal não publica distribuição por estrato do conjunto ' +
-      'completo — só a do subconjunto auditado acima, com o escopo declarado.') + '</div>' +
-    '<div class="mt-2">' + C.note('info',
-      'Livros publicados no período: ' + R.producao.livros_capitulos.livros + '. Capítulos de livro: ' +
-      R.producao.livros_capitulos.capitulos + '. Artigos em periódico com percentil Scopus acima de 50: ' +
-      R.producao.p50.valor + ' <em>' + R.producao.p50.unidade + '</em> — ' + R.producao.p50.nota +
-      ' ' + C.badge('VALIDADO')) + '</div>' +
-    '<div class="mt-2">' + C.note('prov',
-      '<strong>Uma medida, dois números — e por que os dois aparecem.</strong> ' +
-      'Todo indicador de produção pode ser contado por <em>produto único</em> (cada artigo uma vez no Programa) ' +
-      'ou por <em>soma por docente</em> (cada artigo uma vez para cada docente coautor). No período, são ' +
-      R.producao.total_unico + ' artigos únicos e ' + R.producao.total_somado + ' registros docente–artigo; ' +
-      R.producao.com_discentes.valor + ' artigos únicos com coautoria de discente ou egresso, cuja soma por ' +
-      'docente é ' + R.producao.com_discentes.soma_por_docente + '. ' +
-      'Num recorte mais exigente — em que o docente coautor é também o orientador principal comprovado do ' +
-      'discente — são ' + R.producao.com_discentes.criterio_estrito.valor + ' artigos, de ' +
-      R.producao.com_discentes.criterio_estrito.docentes + ' docentes. ' +
-      'Os três números são corretos e medem coisas diferentes; o portal diz sempre qual está mostrando.') + '</div>' +
-    '<div class="mt-2">' + C.note('warn',
-      '<strong>Duas séries anuais que não coincidem.</strong> A série Lattes registra ' +
-      R.producao.serie_oficial_2021_2024.unicos[2021] + ' artigos únicos em 2021 pela contagem oficial do ' +
-      'quadriênio e ' + R.producao.unicos[2021] + ' pela coleta Lattes. ' +
-      R.producao.serie_oficial_2021_2024.nota + ' ' + C.badge('DIVERGENTE')) + '</div>';
+  /* As cinco notas metodológicas que ficavam aqui — escopo Qualis, apuração do
+     total, pendência de percentil, produto único x soma por docente e as duas
+     séries de 2021 — saíram da página por decisão da coordenação e estão
+     registradas em docs/notas-metodologicas-producao.md. */
+  document.getElementById('prodNotas').innerHTML = C.note('info',
+    'Livros publicados no período: ' + R.producao.livros_capitulos.livros +
+    '. Capítulos de livro: ' + R.producao.livros_capitulos.capitulos + '. ' +
+    C.badge('VALIDADO'));
 
   /* ---------------- formação ---------------- */
   const F = R.formacao;

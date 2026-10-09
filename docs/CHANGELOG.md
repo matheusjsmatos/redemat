@@ -1,5 +1,63 @@
 # Registro de correções — Portal REDEMAT
 
+## Versão 4.15 — 09/10/2026
+
+As notas metodológicas da produção saíram das páginas, por decisão da
+coordenação, e os documentos de normas passaram a abrir de dentro do portal.
+
+### As notas de método foram para um arquivo de controle
+
+Cinco blocos saíram de `indicadores.html` e quatro textos longos saíram de
+`site-data.js`: escopo da distribuição Qualis, apuração do total, pendência de
+percentil Scopus, produto único × soma por docente e as duas séries de 2021.
+Estão em **`docs/notas-metodologicas-producao.md`**, com o texto integral e a
+fonte de cada número. Os números continuam publicados; o que saiu foi a
+explicação ao lado deles.
+
+**Uma coisa ficou, e é deliberado:** o rótulo de escopo do gráfico Qualis.
+Aquele gráfico cobre **69 dos 308 artigos** — o subconjunto com coautoria
+discente auditado no DPIDE2. Sem a linha que diz isso, um gráfico intitulado
+"distribuição Qualis" afirma algo que não é verdade sobre a produção do
+Programa. Isso é legenda de eixo, não ressalva, e por isso permaneceu.
+
+**O risco que esta remoção cria**, registrado no próprio arquivo de controle: a
+distinção entre *produto único* e *soma por docente* já produziu um erro
+publicado — 202 era a soma por docente e foi ao ar como número de artigos. Com
+a explicação fora da página, a distinção passa a depender de quem monta os
+números saber dela.
+
+### Normas: os arquivos abrem daqui
+
+A página apontava para `redemat.ufop.br/normas` — um site que será desligado.
+O botão "Abrir a página oficial de normas" saiu e **nenhum link da página sai
+mais do portal**.
+
+**21 documentos** agora abrem direto, de `normas/`. O mapeamento de cada item da
+lista para o seu arquivo foi feito lendo o **primeiro texto de cada PDF**, não o
+nome do arquivo: `conpep_105.pdf` só virou "Norma Geral dos Programas de
+Pós-Graduação" porque a própria resolução abre dizendo *"Aprova as Normas Gerais
+de Pós-Graduação stricto sensu da UFOP"*. Onde a evidência não bastava, não
+houve palpite — link errado numa página de normas é pior que link ausente.
+
+Oito documentos existiam no repositório e não estavam na relação. Ganharam grupo
+próprio, **"Outras resoluções e políticas da UFOP"**: Popularização da Ciência
+(CONPEP 108), Equidade de Gênero e Parentalidade (145), retificação das bolsas
+institucionais (193), Política de Egressos (197), a Portaria PROPPI 2/2022 de
+ações afirmativas — que é a citada nos editais —, a Portaria MEC 99/2025, as
+orientações da PROPPI para APCN e o modelo de declaração de aceite de orientação.
+
+**18 itens seguem sem arquivo** e continuam listados, cada um com a frase
+"arquivo ainda não carregado neste portal". Sumir com eles faria quem procura a
+norma concluir que ela não existe, em vez de saber que falta carregá-la. São,
+entre outros: Resoluções CEPE 7465 e 8016, CONPEP 57, Portaria PROPPI 8/2024,
+Guia de Normalização do SISBIN, as diretrizes do PROAP e os formulários
+eletrônicos.
+
+Conferido que nomes com espaço, acento e parêntese — *"Portaria nº 99, de 17 de
+Abril de 2025.pdf"* e o arquivo de orientações da APCN — são servidos
+corretamente por HTTP, que era o risco real desse lote.
+
+
 ## Versão 4.14 — 09/10/2026
 
 O Colegiado aprovou a proposta APCN e as alterações do Mestrado. Os avisos de

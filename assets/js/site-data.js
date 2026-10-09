@@ -21,7 +21,7 @@ const REDEMAT = {
 
   /* ---------------------------------------------------------------- meta */
   meta: {
-    versao: '4.14',
+    versao: '4.15',
     atualizado: '2026-10-09',
     fontes: [
       { id: 'CONSOL',   nome: 'Entrega consolidada Lattes REDEMAT 2021–2026',   ref: 'codex/apcn/10_analises/entrega_atualizada_lattes_20260829 — corte 29/08/2026', coleta: '2026-08-29' },
@@ -311,7 +311,7 @@ const REDEMAT = {
     serie_oficial_2021_2024: {
       fonte: 'CONSOL', ref: '02_dados_capitulo_10/serie_anual_artigos_discentes.csv', status: 'PRELIMINAR',
       unicos: { 2021: 99, 2022: 49, 2023: 55, 2024: 50 }, total: 253,
-      nota: 'Contagem oficial do quadriênio (coleta/ATD). Difere da série Lattes principalmente em 2021 (99 contra 62). A conciliação das duas séries é pendência da Comissão de Produção.'
+      nota: 'Contagem oficial do quadriênio (coleta/ATD).'
     },
     aviso_2026: 'O ano de 2026 está em curso — a coleta cobre até agosto de 2026.',
     /* Qualis CAPES segue indisponível — é classificação distinta do Scopus. */
@@ -343,9 +343,11 @@ const REDEMAT = {
       vinculos: { Q1: 103, Q2: 59, Q3: 27, Q4: 4, ne: 5, sem_quartil: 168 },
       periodicos_com_percentil: 98,
       periodicos_total: 204,
-      nota: 'Quartil do periódico na base Scopus, na categoria de maior percentil. 157 dos 308 artigos únicos (51%) estão em periódicos com quartil atribuído; 5 aparecem como NE (não elegível) e 146 sem métrica, concentrados em periódicos nacionais fora da indexação Scopus. Percentuais calculados apenas sobre os artigos com quartil conhecido.',
+      /* O texto longo de método saiu da camada pública e está em
+         docs/notas-metodologicas-producao.md. Aqui fica só o rótulo do eixo. */
+      nota: 'Quartil do periódico na base Scopus, na categoria de maior percentil.',
       cobertura: 'O snapshot Scopus cobre 98 dos 204 periódicos do conjunto. A ausência de métrica não é qualidade zero: significa que o veículo não foi localizado na base, e 106 periódicos seguem sem percentil (ver data/percentis-scopus-manuais.csv).',
-      aviso: 'Quartil Scopus NÃO é Qualis CAPES. A comprovação formal de percentil para a proposta APCN segue pendente.'
+      aviso: ''
     },
 
     /* Periódicos de destaque — Q1 Scopus ordenados por percentil de impacto.
@@ -378,7 +380,7 @@ const REDEMAT = {
       valor: 145, unidade: 'registros docente–artigo',
       fonte: 'CONSOL', ref: '09/01_producao_docente.csv — coluna "Artigos P>50", somada nos 24 docentes',
       status: 'VALIDADO',
-      nota: 'Soma por docente de artigos em periódico com percentil Scopus maior que 50. Um artigo com três docentes coautores entra três vezes nesta soma.'
+      nota: ''
     },
     /* O ERRO CORRIGIDO: 202 era a soma por docente, publicada como se fosse
        o número de artigos. São três medidas diferentes, cada uma com escopo
@@ -1016,37 +1018,40 @@ const REDEMAT = {
   /* -------------------------------------------------------------- normas */
   normas: {
     fonte: 'NORMAS', ref: 'https://redemat.ufop.br/normas', status: 'VALIDADO',
-    nota: 'Estrutura reproduzida da página oficial de normas. Os arquivos PDF permanecem hospedados no site institucional — este portal organiza e aponta para eles, sem duplicar as versões.',
+    /* Os arquivos passaram a morar NESTE repositório. Apontar para o portal
+       antigo deixou de ser opção: ele será desligado, e cada link viraria
+       um 404 no dia seguinte. */
+    nota: 'Os documentos estão hospedados neste portal e abrem direto. Alguns itens da relação ainda não têm o arquivo carregado — aparecem sem link até que a secretaria os forneça.',
     grupos: [
       { id: 'gerais', titulo: 'Normas gerais', icone: 'doc',
         itens: [
-          { nome: 'Regimento Geral da UFOP', desc: 'Documento institucional que estabelece regras de organização e competências na UFOP.' },
-          { nome: 'Norma Geral dos Programas de Pós-Graduação da UFOP', desc: 'Regras acadêmicas, prazos e procedimentos da pós-graduação stricto sensu.' },
-          { nome: 'Regimento Interno da REDEMAT', desc: 'Estrutura do Programa, órgãos colegiados e rotinas de funcionamento.' }
+          { nome: 'Regimento Geral da UFOP', arquivo: 'normas/regimento_cuni1959_alterada_3.docx.pdf', desc: 'Documento institucional que estabelece regras de organização e competências na UFOP.' },
+          { nome: 'Norma Geral dos Programas de Pós-Graduação da UFOP', arquivo: 'normas/conpep_105.pdf', desc: 'Regras acadêmicas, prazos e procedimentos da pós-graduação stricto sensu.' },
+          { nome: 'Regimento Interno da REDEMAT', arquivo: 'normas/regimento_interno_redemat_resolucao_conpep_174_anexo_0.pdf', desc: 'Estrutura do Programa, órgãos colegiados e rotinas de funcionamento.' }
         ] },
       { id: 'disciplinas', titulo: 'Aproveitamento de disciplinas', icone: 'cap',
         itens: [
-          { nome: 'Norma de Aproveitamento de Disciplinas (REDEMAT)', desc: 'Regras para solicitação e análise de equivalência de disciplinas.' }
+          { nome: 'Norma de Aproveitamento de Disciplinas (REDEMAT)', arquivo: 'normas/norma_aproveitamento_de_disciplina_28formatado29_assinado_0.pdf', desc: 'Regras para solicitação e análise de equivalência de disciplinas.' }
         ] },
       { id: 'bolsas', titulo: 'Bolsas', icone: 'chart',
         itens: [
           { nome: 'Normas de bolsas da PROPPI', desc: 'Orientação geral sobre bolsas de mestrado, doutorado e pós-doutorado.' },
-          { nome: 'Normas de Concessão de Bolsas da REDEMAT', desc: 'Critérios internos e procedimentos de gestão das cotas.' },
-          { nome: 'Portaria PROPPI nº 8/2018', desc: 'Distribuição e acompanhamento de bolsas de pós-graduação.' },
-          { nome: 'Portaria PROPPI nº 11/2018', desc: 'Inscrição obrigatória na Feira de Pós-Graduação.' },
-          { nome: 'Resolução CONPEP nº 192', desc: 'Acumulação de bolsas e composição de comissões.' },
-          { nome: 'Resolução CONPEP nº 186', desc: 'Programa Institucional de Bolsas de Mestrado e Doutorado.' }
+          { nome: 'Normas de Concessão de Bolsas da REDEMAT', arquivo: 'normas/normas_gerais_da_redemat_para_concessao_de_bolsas_assinado.pdf', desc: 'Critérios internos e procedimentos de gestão das cotas.' },
+          { nome: 'Portaria PROPPI nº 8/2018', arquivo: 'normas/portaria_08-2018_alterada-comissao_de_bolsas_0.pdf', desc: 'Distribuição e acompanhamento de bolsas de pós-graduação.' },
+          { nome: 'Portaria PROPPI nº 11/2018', arquivo: 'normas/portaria_propp_no_011de_13_de_junho_de_2018.pdf', desc: 'Inscrição obrigatória na Feira de Pós-Graduação.' },
+          { nome: 'Resolução CONPEP nº 192', arquivo: 'normas/conpep192.pdf', desc: 'Acumulação de bolsas e composição de comissões.' },
+          { nome: 'Resolução CONPEP nº 186', arquivo: 'normas/resolucao_conpep_186_-_bolsas_institucionais.pdf', desc: 'Programa Institucional de Bolsas de Mestrado e Doutorado.' }
         ] },
       { id: 'docencia', titulo: 'Estágio de docência', icone: 'people',
         itens: [
-          { nome: 'Norma de Estágio de Docência (REDEMAT)', desc: 'Procedimentos, responsabilidades e documentação.' },
+          { nome: 'Norma de Estágio de Docência (REDEMAT)', arquivo: 'normas/normas_estagio_de_docencia_28229_assinado.pdf', desc: 'Procedimentos, responsabilidades e documentação.' },
           { nome: 'Resolução CEPE 7465', desc: 'Regulamentação institucional do estágio de docência.' },
           { nome: 'Resolução CEPE 8016', desc: 'Alterações na regulamentação anterior.' },
-          { nome: 'Modelos de plano de atividades e de relatório', desc: 'Formulários de apoio ao estágio.' }
+          { nome: 'Modelos de plano de atividades e de relatório', arquivos: [ { rotulo: 'Plano de atividades', url: 'normas/plano_de_atividades_-_estagio_de_docencia_0.odt' }, { rotulo: 'Relatório de atividades', url: 'normas/relatorio_de_atividades-_estagio_de_docencia_0.odt' } ], desc: 'Formulários de apoio ao estágio.' }
         ] },
       { id: 'orientacao', titulo: 'Orientação e coorientação', icone: 'people',
         itens: [
-          { nome: 'Diretrizes de credenciamento de coorientador (REDEMAT)', desc: 'Critérios para aprovação de coorientação.' },
+          { nome: 'Diretrizes de credenciamento de coorientador (REDEMAT)', arquivo: 'normas/normas_para_coorientacao_assinado.pdf', desc: 'Critérios para aprovação de coorientação.' },
           { nome: 'Formulário eletrônico de registro', desc: 'Registro de coorientação.' },
           { nome: 'Documento de indicação formal', desc: 'Modelo para indicação pelo orientador.' }
         ] },
@@ -1077,6 +1082,25 @@ const REDEMAT = {
         itens: [
           { nome: 'Orientações de pós-defesa (REDEMAT)', desc: 'Procedimentos de depósito final e etapas seguintes.' },
           { nome: 'Portaria PROPPI nº 8/2024', desc: 'Registro e emissão de diploma pelo sistema MinhaUFOP.' }
+        ] },
+      { id: 'politicas', titulo: 'Outras resoluções e políticas da UFOP', icone: 'doc',
+        itens: [
+          { nome: 'Resolução CONPEP nº 108', arquivo: 'normas/conpep108.pdf',
+            desc: 'Aprova a Política de Popularização da Ciência da UFOP.' },
+          { nome: 'Resolução CONPEP nº 145', arquivo: 'normas/conpep145.pdf',
+            desc: 'Estabelece a Política de Equidade de Gênero e Parentalidade na pós-graduação stricto sensu da UFOP.' },
+          { nome: 'Resolução CONPEP nº 193', arquivo: 'normas/conpep193_retificada.pdf',
+            desc: 'Retifica a Resolução CONPEP nº 186, do Programa de Bolsas Institucionais. Versão retificada.' },
+          { nome: 'Resolução CONPEP nº 197', arquivo: 'normas/conpep197_0.pdf',
+            desc: 'Aprova a Política de Acompanhamento e Avaliação de Pessoas Egressas da Pós-Graduação da UFOP.' },
+          { nome: 'Portaria PROPPI nº 2/2022, alterada pela nº 8/2025', arquivo: 'normas/portaria_proppi_02-2022_alterada_pela_08-2025.pdf',
+            desc: 'Política de ações afirmativas na pós-graduação — é a portaria citada nos editais de seleção.' },
+          { nome: 'Portaria MEC nº 99, de 17 de abril de 2025', arquivo: 'normas/Portaria nº 99, de 17 de Abril de 2025.pdf',
+            desc: 'Diretrizes de indução à criação de programas de pós-graduação stricto sensu.' },
+          { nome: 'Orientações da PROPPI para a criação de cursos (APCN)', arquivo: 'normas/Orientações para a criação de Programas e Cursos de Pós-Graduação stricto sensu (APCN) _ Pró-Reitoria de Pesquisa, Pós-Graduação e Inovação.pdf',
+            desc: 'Orientações institucionais para propostas de cursos novos.' },
+          { nome: 'Declaração REDEMAT (modelo)', arquivo: 'normas/declaracao_redemat_com_logos.docx',
+            desc: 'Modelo de declaração de aceite de orientação, em Word, com os logotipos institucionais.' }
         ] }
     ],
     formularios: [
