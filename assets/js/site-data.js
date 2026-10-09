@@ -1375,6 +1375,12 @@ const REDEMAT = {
            candidato usa. */
         categoria: 'selecao',
         data: '2026-10-08',
+        /* Capa desenhada na paleta do portal (scripts/gerar-capa-noticia.py).
+           Não traz data nem "inscrições abertas": a situação do processo é
+           calculada pelo cronograma justamente para não anunciar prazo
+           vencido, e texto gravado num JPG escaparia dessa conta. */
+        imagem: 'assets/img/mural/processo-seletivo-2027-1.jpg',
+        imagemAlt: 'Arte do processo seletivo da REDEMAT: fundo azul-marinho com uma rede hexagonal ao fundo e os dizeres Processo Seletivo, Mestrado em Engenharia de Materiais, Turma 2027/1, REDEMAT UFOP-UEMG.',
         titulo: 'REDEMAT publica o edital de seleção do Mestrado para a turma 2027/1',
         texto: 'O Edital REDEMAT nº 7, de 8 de outubro de 2026, abre o processo seletivo do Mestrado em Engenharia de Materiais para ingresso em 2027/1, com 20 vagas regulares mais vagas reservadas e adicionais. As inscrições vão de 15 de outubro a 7 de novembro de 2026 e são feitas exclusivamente pelo PSPG, o Sistema de Gestão dos Processos Seletivos da Pós-Graduação da UFOP. A seleção tem prova de língua inglesa eliminatória, análise de currículo e entrevista, com resultado final homologado em 18 de dezembro de 2026.',
         destaque: true,
