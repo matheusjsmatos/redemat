@@ -148,11 +148,15 @@
   const R = window.REDEMAT, C = window.RC;
 
   /* --------------- aviso de status --------------- */
-  document.getElementById('statusNota').innerHTML = C.note('warn',
-    '<strong>Estrutura proposta, em aprovação.</strong> ' + R.areas.nota +
-    ' A estrutura vigente publicada no site atual descreve três áreas ' +
-    '(Biomateriais e Compósitos, Materiais Avançados e Tecnologia Mineral). ' +
-    'Esta página apresenta a arquitetura da proposta APCN 2026. ' + C.badge('PRELIMINAR'));
+  /* O aviso deixou de ser de pendência e virou de transição: o Colegiado
+     decidiu, mas o site antigo ainda descreve três áreas, e quem conhece a
+     REDEMAT de antes precisa entender que mudou — não achar que uma das duas
+     páginas está errada. */
+  document.getElementById('statusNota').innerHTML = C.note('info',
+    '<strong>Estrutura vigente.</strong> ' + R.areas.nota +
+    ' O portal antigo ainda descreve a organização anterior, em três áreas ' +
+    '(Biomateriais e Compósitos, Materiais Avançados e Tecnologia Mineral), ' +
+    'que fica como registro histórico. ' + C.badge('VALIDADO'));
 
   /* --------------- áreas --------------- */
   document.getElementById('areasWrap').innerHTML = R.areas.itens.map(function (a) {

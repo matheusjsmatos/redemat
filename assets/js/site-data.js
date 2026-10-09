@@ -21,8 +21,8 @@ const REDEMAT = {
 
   /* ---------------------------------------------------------------- meta */
   meta: {
-    versao: '4.13',
-    atualizado: '2026-10-08',
+    versao: '4.14',
+    atualizado: '2026-10-09',
     fontes: [
       { id: 'CONSOL',   nome: 'Entrega consolidada Lattes REDEMAT 2021–2026',   ref: 'codex/apcn/10_analises/entrega_atualizada_lattes_20260829 — corte 29/08/2026', coleta: '2026-08-29' },
       { id: 'SCOPUS_M', nome: 'Scopus Sources — consulta manual na interface',  ref: 'scopus.com/sources.uri · data/percentis-scopus-manuais.csv', coleta: '2026-09-02' },
@@ -185,9 +185,10 @@ const REDEMAT = {
 
   /* ------------------------------- áreas de concentração e linhas (2+4) */
   areas: {
-    fonte: 'PROPOSTA + CURRIC', ref: 'seções 6.2 e 6.3 da proposta APCN 2026',
-    status: 'PRELIMINAR',
-    nota: 'Arquitetura de duas áreas e quatro linhas proposta em 2026 para substituir as 17 linhas históricas. Aguarda aprovação no Colegiado.',
+    fonte: 'COLEGIADO', ref: 'Aprovação da proposta APCN pelo Colegiado da REDEMAT — seções 6.2 e 6.3 do documento aprovado',
+    coleta: '2026-10-09',
+    status: 'VALIDADO',
+    nota: 'Duas áreas de concentração e quatro linhas de pesquisa, aprovadas pelo Colegiado em substituição às 17 linhas históricas.',
     itens: [
       {
         id: 'a1', codigo: 'Área de Concentração 1',
@@ -681,8 +682,9 @@ const REDEMAT = {
 
   /* --------------------------------------------------- estrutura curricular */
   curriculo: {
-    fonte: 'CURRIC', ref: 'Proposta de estrutura curricular', status: 'EM_DEFINICAO',
-    nota: 'Estrutura em discussão no Colegiado. Todas as disciplinas constam como "validar e aprovar no Colegiado" — não representam oferta vigente.',
+    fonte: 'COLEGIADO', ref: 'Estrutura curricular aprovada pelo Colegiado da REDEMAT — seção 8 do documento aprovado',
+    coleta: '2026-10-09', status: 'VALIDADO',
+    nota: 'Um núcleo comum e quatro conjuntos de disciplinas vinculados às linhas de pesquisa, em 39 componentes.',
     creditos: {
       mestrado:  { nucleo: 8, linha: 10, total: 18 },
       doutorado: { nucleo: 8, linha: 22, total: 30 }
@@ -747,13 +749,22 @@ const REDEMAT = {
   },
 
   /* ---------------------------------------------------- proposta APCN 2026 */
+  /* O Colegiado aprovou o documento; a CRIAÇÃO do curso depende da CAPES.
+     São duas decisões distintas e o portal não pode fundi-las: dizer "curso
+     aprovado" com base na aprovação interna anunciaria um doutorado novo que
+     ainda não existe. */
   apcn: {
-    fonte: 'PROPOSTA', status: 'EM_DEFINICAO',
+    fonte: 'COLEGIADO', ref: 'Proposta APCN aprovada pelo Colegiado da REDEMAT',
+    coleta: '2026-10-09', status: 'VALIDADO',
     titulo: 'Proposta de criação de curso de Doutorado em forma associativa UFOP-UEMG (APCN/CAPES 2026)',
-    aviso: 'Documento de trabalho da Comissão APCN, versão 0.1 de 31/07/2026. NÃO se refere ao Doutorado atualmente em funcionamento, que segue com oferta e seleção regulares.',
+    aviso: 'Proposta aprovada pelo Colegiado da REDEMAT e encaminhada à CAPES. A criação do curso depende da avaliação da CAPES. NÃO se refere ao Doutorado atualmente em funcionamento, que segue com oferta e seleção regulares.',
     vagas_previstas: { valor: 10, ref: 'por seleção semestral — decisão colegiada após simulação de capacidade', status: 'EM_DEFINICAO' },
     creditos_previstos: 30,
     nucleo_previsto: { valor: '12 a 13 docentes habilitados', status: 'EM_DEFINICAO' },
+    /* Já não são pendências de aprovação interna — essa decisão foi tomada.
+       São os documentos e comprovações que instruem o trâmite na CAPES.
+       Não foram apagadas porque ninguém informou que estão resolvidas. */
+    rotulo_pendencias: 'Documentos e comprovações do trâmite na CAPES',
     pendencias_criticas: [
       'Declarações oficiais de comprometimento da Reitoria/Pró-Reitoria da UFOP e da UEMG.',
       'Instrumento jurídico atualizado da associação UFOP-UEMG, com governança acadêmica e administrativa.',
@@ -1596,7 +1607,7 @@ const REDEMAT = {
         { fonte: 'Avaliação quadrienal + proposta APCN', valor: '17 linhas históricas, com sobreposição' },
         { fonte: 'Proposta APCN 2026', valor: '2 áreas de concentração e 4 linhas de pesquisa' }
       ],
-      resolucao: 'O portal adota a arquitetura de 2 áreas e 4 linhas da proposta APCN 2026, marcada PRELIMINAR, com aviso de que aguarda aprovação no Colegiado.'
+      resolucao: 'RESOLVIDO. O Colegiado aprovou a arquitetura de 2 áreas e 4 linhas, que passa a ser a estrutura do Programa. As 3 áreas do site antigo e as 17 linhas históricas ficam como registro.'
     },
     {
       campo: 'Valores de captação de recursos',

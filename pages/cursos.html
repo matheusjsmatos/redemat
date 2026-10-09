@@ -283,15 +283,16 @@
   });
   document.getElementById('specGroups').innerHTML = groups.join('');
 
-  document.getElementById('discNota').innerHTML = C.note('warn',
-    '<strong>Catálogo em aprovação — não é oferta vigente.</strong> ' + CU.nota +
-    ' As cargas horárias das disciplinas específicas e a definição dos docentes responsáveis ainda não ' +
-    /* A UFOP não usa SIGAA. Quem quiser saber o que será ofertado no semestre
-       fala com a secretaria; o sistema PSPG é de processo seletivo, não de
-       matrícula em disciplina, e mandar o estudante para lá seria pior do que
-       não dizer nada. */
-    'foram consolidadas. Para a oferta efetiva do semestre, consulte a secretaria do Programa. ' +
-    C.badge('EM_DEFINICAO'));
+  /* Catálogo aprovado não é oferta garantida, e as duas coisas se confundem
+     com facilidade. O aviso deixou de falar de aprovação pendente — ela
+     aconteceu — e passou a dizer o que de fato continua aberto: qual
+     disciplina roda em que semestre, e as sete sem responsável definido. */
+  document.getElementById('discNota').innerHTML = C.note('info',
+    '<strong>Catálogo aprovado pelo Colegiado.</strong> ' + CU.nota +
+    ' Catálogo não é calendário: a oferta de cada semestre é definida pela programação do ' +
+    'Programa. Sete das 39 disciplinas ainda não têm docente responsável definido no ' +
+    'documento aprovado. Para saber o que será ofertado, consulte a secretaria. ' +
+    C.badge('VALIDADO'));
 
   /* ---------- proposta APCN ---------- */
   const apcnSec = document.getElementById('apcnSec');

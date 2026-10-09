@@ -335,10 +335,14 @@
       '<span class="bar-track"><span class="bar-fill" style="background:var(--text-soft);width:' + Math.round(semLinha / D.length * 100) + '%"></span></span>' +
       '<span class="bar-val">' + semLinha + '</span></div>' : '');
 
+  /* A estrutura foi aprovada, mas a VINCULAÇÃO de cada docente a uma linha
+     continua sendo, para a maioria, inferência a partir da disciplina pela qual
+     responde. Aprovar a arquitetura não transforma essa inferência em registro:
+     o aviso muda de assunto, não desaparece. */
   document.getElementById('distNota').innerHTML = C.note('warn',
-    'A arquitetura de duas áreas e quatro linhas foi proposta em 2026 e aguarda aprovação no Colegiado. ' +
-    'Nove docentes têm vinculação nomeada na proposta APCN; para os demais, a linha exibida foi inferida ' +
-    'da responsabilidade por disciplina na proposta curricular. ' + C.badge('PRELIMINAR'));
+    'A arquitetura de duas áreas e quatro linhas está aprovada. A vinculação individual, porém, ' +
+    'só está nomeada para nove docentes; para os demais, a linha exibida foi inferida da ' +
+    'responsabilidade por disciplina. ' + C.badge('PARCIAL'));
 
   /* ------------------- composição ------------------- */
   document.getElementById('compGrid').innerHTML = [

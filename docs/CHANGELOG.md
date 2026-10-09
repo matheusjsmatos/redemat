@@ -1,5 +1,66 @@
 # Registro de correções — Portal REDEMAT
 
+## Versão 4.14 — 09/10/2026
+
+O Colegiado aprovou a proposta APCN e as alterações do Mestrado. Os avisos de
+pendência saíram — e, onde a aprovação não resolve o assunto, mudaram de assunto
+em vez de sumir.
+
+### O que deixou de ser proposta
+
+| Onde | Antes | Agora |
+|---|---|---|
+| `areas` | PRELIMINAR — "aguarda aprovação no Colegiado" | VALIDADO — "aprovadas pelo Colegiado em substituição às 17 linhas históricas" |
+| `curriculo` | EM_DEFINICAO — "em discussão no Colegiado", "não representam oferta vigente" | VALIDADO — catálogo aprovado |
+| `apcn` | EM_DEFINICAO — "documento de trabalho, versão 0.1" | VALIDADO — "aprovada pelo Colegiado e encaminhada à CAPES" |
+| conflito "áreas e linhas" | em aberto | RESOLVIDO |
+
+A fonte desses campos passou de `PROPOSTA`/`CURRIC` para **`COLEGIADO`**. O aviso
+amarelo de `pesquisa.html`, de `index.html` e de `cursos.html` virou azul: é
+informação, não ressalva.
+
+### Duas decisões que o portal não pode fundir
+
+O Colegiado aprovou o **documento**. A **criação do curso de Doutorado** depende
+da CAPES. São decisões distintas, e tratá-las como uma só faria o portal
+anunciar um doutorado novo que ainda não existe — ao lado do Doutorado que já
+funciona, que é exatamente a confusão que o aviso existe para evitar.
+
+Por isso o texto do APCN agora diz: *proposta aprovada pelo Colegiado e
+encaminhada à CAPES; a criação do curso depende da avaliação da CAPES*. E as
+`pendencias_criticas` não foram apagadas: deixaram de ser pendências de
+aprovação interna — essa decisão foi tomada — e passaram a ser rotuladas como o
+que são, os documentos e comprovações que instruem o trâmite na CAPES. Apagá-las
+exigiria saber que foram resolvidas, e ninguém informou isso.
+
+### Dois avisos que mudaram de assunto, não sumiram
+
+**`pessoas.html`.** Dizia que a arquitetura aguardava aprovação. A arquitetura
+está aprovada — mas a **vinculação de cada docente a uma linha** continua
+nomeada para apenas nove deles; para os demais, a linha exibida é inferida da
+disciplina pela qual respondem. Aprovar a estrutura não transforma inferência em
+registro. O aviso passou a falar disso, com selo PARCIAL.
+
+**`cursos.html`.** Dizia "catálogo em aprovação — não é oferta vigente". Agora
+diz que o catálogo foi aprovado e que catálogo não é calendário: qual disciplina
+roda em que semestre depende da programação, e sete das 39 ainda não têm docente
+responsável definido no documento aprovado.
+
+### A conferir com a coordenação
+
+Dois pontos que esta versão não resolve sozinha:
+
+1. **Referência da ata.** Os campos novos registram `fonte: 'COLEGIADO'` com a
+   data em que a aprovação foi informada. Falta o número e a data da reunião —
+   todo dado deste portal carrega procedência, e "aprovado" sem referência é
+   justamente o tipo de afirmação que ele não publica.
+2. **O edital em vigor contradiz a estrutura aprovada.** O Edital REDEMAT nº
+   7/2026, publicado em 08/10, descreve no item 3.1 **três áreas de
+   concentração** — Processos de Fabricação, Análise e Seleção de Materiais e
+   Engenharia de Superfícies. O site agora publica duas. Um candidato que ler os
+   dois vai encontrar a divergência no meio da inscrição.
+
+
 ## Versão 4.13 — 08/10/2026
 
 Edital do Mestrado 2027/1 no ar, o sistema de inscrição corrigido e uma chamada
