@@ -167,10 +167,7 @@
       '(24 meses no mestrado, 48 meses no doutorado). Não considera prorrogações, ' +
       'trancamentos ou defesas já agendadas — para a situação real de um discente, ' +
       'consulte a secretaria.') + '</div>' +
-    '<div class="mt-2">' + C.note('info',
-      '<strong>O que não é publicado.</strong> E-mails de discentes não constam nesta página: ' +
-      'não são necessários para a finalidade de transparência. Títulos de trabalho em andamento, ' +
-      'histórico escolar e qualquer avaliação individual também não são publicados.') + '</div>';
+    '';
 
   /* ---------------- panorama ---------------- */
   const bolsas = {};
@@ -203,11 +200,39 @@
     .map(function (k) { return [k, bolsas[k]]; }),
     ['var(--st-nd)', 'var(--area1)', 'var(--area2)', 'var(--amber)']);
 
+  /* ---------------- quem está no quadro atual ----------------
+     O cadastro de discentes guarda os nomes SEM acento (vêm das coletas, em
+     caixa alta), e a lista de docentes guarda com acento. Comparar as duas
+     literalmente marcava Geraldo Lúcio de Faria, Versiane Albis Leão, Fernando
+     Gabriel, Taíse, Américo, Matheus, Víctor e Heloísa como "externos ao
+     quadro" — oito dos 24 docentes atuais, acusados de não pertencer ao próprio
+     Programa por causa de um acento. A comparação passa a ignorar acento e
+     caixa, e devolve a grafia oficial. */
+  function semAcento(t) {
+    return (t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase().replace(/\s+/g, ' ').trim();
+  }
+  const QUADRO = {};
+  R.docentes.itens.forEach(function (d) { QUADRO[semAcento(d.nome)] = d.nome; });
+  /* Orientador fora do quadro atual não é exibido: a orientação segue válida
+     para o discente, mas quem deixou o Programa não aparece como orientador do
+     Programa. O registro vira "—" e entra na lista de pendências. */
+  function oficial(n) { return QUADRO[semAcento(n)] || null; }
+
   /* ---------------- filtros ---------------- */
   const fB = document.getElementById('fBolsa');
   Object.keys(bolsas).sort().forEach(function (k) { fB.add(new Option(k, k)); });
+  /* O seletor lista só orientadores do quadro atual, mais uma opção para os
+     registros a atualizar — oferecer o nome de quem saiu seria reintroduzir
+     pela caixa de seleção o que foi tirado da tabela. */
   const fO = document.getElementById('fOri');
-  Object.keys(oris).sort().forEach(function (k) { fO.add(new Option(k + ' (' + oris[k] + ')', k)); });
+  const totalFora = Object.keys(oris).filter(function (k) { return !oficial(k); })
+    .reduce(function (a, k) { return a + oris[k]; }, 0) +
+    D.filter(function (x) { return !x.orientador; }).length;
+  Object.keys(oris).filter(oficial).sort(function (a, b) {
+    return oficial(a).localeCompare(oficial(b), 'pt-BR');
+  }).forEach(function (k) { fO.add(new Option(oficial(k) + ' (' + oris[k] + ')', k)); });
+  if (totalFora) fO.add(new Option('— orientação a atualizar (' + totalFora + ')', '__fora__'));
 
   let ordem = { k: 'nome', asc: true };
 
@@ -220,7 +245,8 @@
     let l = D.filter(function (x) {
       if (nv && x.nivel !== nv) return false;
       if (bo && (x.bolsa || 'Sem bolsa') !== bo) return false;
-      if (or && x.orientador !== or) return false;
+      if (or === '__fora__') { if (x.orientador && oficial(x.orientador)) return false; }
+      else if (or && x.orientador !== or) return false;
       if (q && x.nome.toLowerCase().indexOf(q) === -1) return false;
       return true;
     });
@@ -252,9 +278,14 @@
       return '<tr>' +
         '<td><span class="disc-nome">' + x.nome + '</span></td>' +
         '<td><span class="nivel-tag ' + x.nivel + '">' + x.nivel + '</span></td>' +
-        '<td>' + (x.orientador
-            ? x.orientador + (x.coorientador ? '<span class="disc-coori">Coorientação: ' + x.coorientador + '</span>' : '')
-            : '<span style="color:var(--text-soft);">Não informado no cadastro</span>') + '</td>' +
+        '<td>' + (function () {
+            const of = x.orientador ? oficial(x.orientador) : null;
+            if (of) {
+              return of + (x.coorientador ? '<span class="disc-coori">Coorientação: ' +
+                     x.coorientador + '</span>' : '');
+            }
+            return '<span class="ori-pend" title="Orientação a atualizar no cadastro do Programa">—</span>';
+          }()) + '</td>' +
         '<td><span class="bolsa-tag ' + bk + '">' + (x.bolsa || 'Sem bolsa') + '</span></td>' +
         '<td style="white-space:nowrap;">' + fmt(x.ingresso) + '</td>' +
         '<td style="white-space:nowrap;"' + (vencido ? ' class="prazo-vencido"' : '') + '>' + fmt(x.prazo) +
@@ -295,29 +326,43 @@
   /* ---------------- orientações por docente ---------------- */
   const parOri = Object.keys(oris).sort(function (a, b) { return oris[b] - oris[a] || a.localeCompare(b, 'pt-BR'); });
   const maxOri = oris[parOri[0]] || 1;
-  const doNucleo = {};
-  R.docentes.itens.forEach(function (d) { doNucleo[d.nome.toLowerCase()] = 1; });
 
-  document.getElementById('oriCard').innerHTML = parOri.map(function (n) {
-    const interno = doNucleo[n.toLowerCase()];
-    return '<div class="bar-row">' +
-      '<span class="bar-lbl bar-lbl--wide">' + n +
-        (interno ? '' : ' <span style="font-size:.7rem;color:var(--text-soft);">(externo ao quadro atual)</span>') + '</span>' +
-      '<span class="bar-track"><span class="bar-fill" style="background:' +
-        (interno ? 'var(--area1)' : 'var(--text-soft)') + ';width:' + (oris[n] / maxOri * 100) + '%"></span></span>' +
-      '<span class="bar-val">' + oris[n] + '</span></div>';
-  }).join('');
+  /* Os orientadores fora do quadro somem da relação e viram uma única linha
+     "—": são orientações cujo registro precisa ser atualizado, não docentes do
+     Programa. Manter a contagem visível evita o efeito contrário — sumir com
+     os discentes junto com o nome. */
+  /* Duas situações diferentes caem no mesmo "—": o cadastro sem orientador
+     nenhum e o cadastro que aponta para quem já saiu. A barra soma as duas,
+     porque é isso que a tabela mostra; a nota diz quanto é de cada uma, senão
+     o número da barra não bate com os travessões da tabela. */
+  const doQuadro = parOri.filter(function (n) { return oficial(n); });
+  const nFora = parOri.filter(function (n) { return !oficial(n); })
+    .reduce(function (a, n) { return a + oris[n]; }, 0);
+  const nVazio = D.filter(function (x) { return !x.orientador; }).length;
+  const nPend = nFora + nVazio;
+  const maxBar = Math.max(oris[doQuadro[0]] || 1, nPend, 1);
 
-  const externos = parOri.filter(function (n) { return !doNucleo[n.toLowerCase()]; });
-  document.getElementById('oriNota').innerHTML = C.note('info',
-    'Contagem de discentes ativos por orientador. ' +
-    (externos.length
-      ? externos.length + ' orientador' + (externos.length === 1 ? '' : 'es') + ' não integra' + (externos.length === 1 ? '' : 'm') +
-        ' o quadro atual de 24 docentes — são orientações herdadas de docentes que deixaram o Programa ' +
-        'ou coorientações externas, e seguem válidas até a titulação dos discentes. '
-      : '') +
-    'A distribuição de orientações é informação de capacidade, não de desempenho: um docente com ' +
-    'menos orientandos pode estar em início de credenciamento ou concluindo um ciclo. ' + C.badge('PRELIMINAR'));
+  document.getElementById('oriCard').innerHTML =
+    doQuadro.map(function (n) {
+      return '<div class="bar-row">' +
+        '<span class="bar-lbl bar-lbl--wide">' + oficial(n) + '</span>' +
+        '<span class="bar-track"><span class="bar-fill" style="background:var(--area1);width:' +
+          (oris[n] / maxBar * 100) + '%"></span></span>' +
+        '<span class="bar-val">' + oris[n] + '</span></div>';
+    }).join('') +
+    (nPend ? '<div class="bar-row">' +
+      '<span class="bar-lbl bar-lbl--wide ori-pend">— <span style="font-size:.72rem;">orientação a atualizar</span></span>' +
+      '<span class="bar-track"><span class="bar-fill" style="background:var(--text-soft);width:' +
+        (nPend / maxBar * 100) + '%"></span></span>' +
+      '<span class="bar-val">' + nPend + '</span></div>' : '');
+
+  document.getElementById('oriNota').innerHTML = C.note(nPend ? 'warn' : 'info',
+    'Contagem de discentes ativos por orientador do quadro atual. ' +
+    (nPend ? '<strong>' + nPend + ' discente' + (nPend === 1 ? '' : 's') + ' sem orientador do ' +
+      'quadro atual no cadastro</strong> — ' + nVazio + ' com o campo vazio e ' + nFora +
+      ' apontando para docente que já deixou o Programa. A orientação segue válida até a titulação ' +
+      'do discente; o cadastro é que precisa ser atualizado. ' : '') +
+    C.badge(nPend ? 'PENDENTE' : 'VALIDADO'));
 
   /* ---------------- init ---------------- */
   render();
