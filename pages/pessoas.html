@@ -153,12 +153,17 @@
     <section class="section" style="padding-top:2.5rem;" aria-labelledby="tec-h">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">Secretaria</p>
-          <h2 class="h2" id="tec-h">Secretaria e equipe técnica</h2>
+          <p class="eyebrow">Administração</p>
+          <h2 class="h2" id="tec-h">Coordenação, Colegiado e Secretaria</h2>
           <p class="section-lede">
-            A equipe que atende discentes, docentes e candidatos no dia a dia do Programa.
+            Quem responde pelo Programa e quem atende discentes, docentes e candidatos no
+            dia a dia.
           </p>
         </div>
+        <div id="admEstrutura" class="mb-3"></div>
+        <div class="grid grid--2 mb-3" id="coordGrid"></div>
+        <div class="card mb-3" id="colegiadoCard"></div>
+        <h3 class="h3 mb-2">Secretaria e equipe técnica</h3>
         <div class="grid grid--2" id="tecGrid"></div>
         <div class="mt-3" id="tecNota"></div>
       </div>
@@ -170,6 +175,10 @@
 <div id="site-footer-slot"></div>
 
 <script src="../assets/js/site-data.js"></script>
+<!-- Páginas pessoais e de grupo declaradas por cada docente.
+     Gerado por scripts/gerar-sites-docentes.py a partir de
+     data/sites-docentes.json. Ausente, os cartões saem sem esses links. -->
+<script src="../assets/js/sites-docentes.js"></script>
 <!-- Manifesto de fotos: declara quem tem foto e em que formato.
      Gerado por scripts/conferir-fotos.py --manifesto. Ausente antes
      da primeira foto: o portal trata a ausência e usa as iniciais. -->
@@ -216,6 +225,13 @@
   }).join('');
 
   /* ------------------- render ------------------- */
+  /* Mesma normalização do gerador: o nome na lista de docentes e o nome em
+     sites-docentes.json nem sempre têm o mesmo acento. */
+  function semAcento(t) {
+    return (t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase().replace(/\s+/g, ' ').trim();
+  }
+
   function card(d) {
     const li = d.linha ? C.lineInfo(d.linha) : null;
     const cor = d.linha ? C.lineColor(d.linha) : 'var(--text-soft)';
@@ -235,11 +251,22 @@
       : '<div class="prof-line"><span class="dot" style="background:var(--text-soft)" aria-hidden="true"></span>' +
         '<span style="color:var(--text-soft);">Vinculação de linha em definição</span></div>';
 
+    /* Páginas declaradas pelo próprio docente. O cartão desenha só o que
+       existe: quem não informou endereço não ganha rótulo de ausência, que
+       seria apontar omissão de quem não quis ou não teve tempo de informar. */
+    const S = (window.SITES_DOCENTES || {})[semAcento(d.nome)] || {};
     const links = [
       '<a class="mini-link" href="http://lattes.cnpq.br/' + d.lattes + '" target="_blank" rel="noopener" ' +
         'aria-label="Currículo Lattes de ' + d.nome + ' (abre em nova aba)">' + C.ICO.doc + 'Lattes</a>',
       d.email ? '<a class="mini-link" href="mailto:' + d.email + '" aria-label="Enviar e-mail para ' + d.nome + '">' +
-        C.ICO.mail + 'E-mail</a>' : ''
+        C.ICO.mail + 'E-mail</a>' : '',
+      S.site_pessoal ? '<a class="mini-link" href="' + S.site_pessoal + '" target="_blank" rel="noopener" ' +
+        'aria-label="Página pessoal de ' + d.nome + ' (abre em nova aba)">' + C.ICO.globe + 'Página pessoal</a>' : '',
+      S.site_grupo ? '<a class="mini-link" href="' + S.site_grupo + '" target="_blank" rel="noopener" ' +
+        'aria-label="' + (S.nome_grupo || 'Grupo de pesquisa') + ' de ' + d.nome + ' (abre em nova aba)">' +
+        C.ICO.people + (S.nome_grupo || 'Grupo de pesquisa') + '</a>' : '',
+      S.site_particular ? '<a class="mini-link" href="' + S.site_particular + '" target="_blank" rel="noopener" ' +
+        'aria-label="Página particular de ' + d.nome + ' (abre em nova aba)">' + C.ICO.globe + 'Página particular</a>' : ''
     ].filter(Boolean).join('');
 
     return '<article class="prof-card" role="listitem">' +
@@ -300,20 +327,11 @@
   document.getElementById('q').addEventListener('input', function (e) { query = e.target.value; apply(); });
 
   /* ------------------- notas ------------------- */
-  document.getElementById('notas').innerHTML =
-    C.note('info',
-      '<strong>Sobre estes dados.</strong> Nomes, e-mails e identificadores Lattes provêm da ' +
-      '<a href="https://redemat.ufop.br/docentes-1" target="_blank" rel="noopener">página oficial de docentes</a>. ' +
-      'Categoria, instituição, carga horária e bolsa provêm da tabela de corpo docente da proposta APCN 2026. ' +
-      'O asterisco (*) na linha de pesquisa indica vinculação inferida da responsabilidade por disciplina na ' +
-      'proposta curricular, ainda não validada no Colegiado. ' + C.badge('VALIDADO')) +
-    '<div class="mt-2">' + C.note('warn',
-      '<strong>O que não é publicado.</strong> Este diretório não apresenta contagens individuais de produção, ' +
-      'captação de recursos, índice h ou qualquer pontuação por docente. Análises individuais integram instrumento ' +
-      'interno de planejamento e não constituem avaliação pública do corpo docente.') + '</div>' +
-    '<div class="mt-2">' + C.note('info',
-      '<strong>Fotos.</strong> ' + R.fotos.nota + ' ' + R.fotos.consentimento +
-      ' Arquivos em <code>' + R.fotos.pasta + '</code> — ver <code>LEIA-ME.md</code> na pasta.') + '</div>';
+  /* As três notas que ficavam aqui — procedência dos campos, o que não é
+     publicado e a exigência de autorização de imagem — saíram por decisão da
+     coordenação e estão em docs/notas-governanca.md. A regra em si continua
+     valendo: nada de contagem individual, e foto só com autorização escrita. */
+  document.getElementById('notas').innerHTML = '';
 
   /* ------------------- distribuição por linha ------------------- */
   const linhas = [];
@@ -339,10 +357,7 @@
      continua sendo, para a maioria, inferência a partir da disciplina pela qual
      responde. Aprovar a arquitetura não transforma essa inferência em registro:
      o aviso muda de assunto, não desaparece. */
-  document.getElementById('distNota').innerHTML = C.note('warn',
-    'A arquitetura de duas áreas e quatro linhas está aprovada. A vinculação individual, porém, ' +
-    'só está nomeada para nove docentes; para os demais, a linha exibida foi inferida da ' +
-    'responsabilidade por disciplina. ' + C.badge('PARCIAL'));
+  document.getElementById('distNota').innerHTML = '';
 
   /* ------------------- composição ------------------- */
   document.getElementById('compGrid').innerHTML = [
@@ -453,6 +468,56 @@
     '<p style="font-size:.9rem;color:var(--text-mid);line-height:1.7;margin-bottom:1.25rem;">' + AC.texto + '</p>' +
     '<a href="' + AC.url + '" target="_blank" rel="noopener" class="mini-link" style="font-size:.85rem;padding:.5rem .9rem;">' +
       C.ICO.ext + AC.orgao + '</a>';
+
+  /* ═══════════════ ADMINISTRAÇÃO ═══════════════ */
+  (function administracao() {
+    const A = R.programa.administracao;
+    if (!A) return;
+
+    document.getElementById('admEstrutura').innerHTML = C.note('info', A.estrutura);
+
+    document.getElementById('coordGrid').innerHTML = R.programa.coordenacao.map(function (c) {
+      return '<article class="card card--hover">' +
+        '<div class="prof-top">' +
+          C.avatar(c.nome, 'var(--navy)', '../', c.foto) +
+          '<div style="min-width:0;flex:1;">' +
+            '<p class="prof-role">' + c.cargo + '</p>' +
+            '<h3 class="prof-name">' + c.nome + '</h3>' +
+          '</div>' +
+        '</div>' +
+        '<div class="prof-links" style="border-top:none;padding-top:.5rem;">' +
+          '<a class="mini-link" href="mailto:' + c.email + '">' + C.ICO.mail + c.email + '</a>' +
+        '</div></article>';
+    }).join('');
+
+    /* Mandato vencido fica visível e marcado. Esconder a data deixaria a
+       composição parecendo corrente quando não está — e é a representação
+       discente, justamente a que mais importa estar em dia. */
+    const hoje = new Date().toISOString().slice(0, 10);
+    function venceu(m) {
+      const f = /a (\d{2})\/(\d{2})\/(\d{4})$/.exec(m || '');
+      return f ? (f[3] + '-' + f[2] + '-' + f[1]) < hoje : false;
+    }
+    const linhas = A.colegiado.map(function (x) {
+      const v = venceu(x.mandato);
+      return '<tr>' +
+        '<td><strong>' + x.nome + '</strong></td>' +
+        '<td>' + x.unidade + '</td>' +
+        '<td style="white-space:nowrap;">' +
+          (x.mandato
+            ? x.mandato + (v ? ' <span class="mand-venc" title="Mandato encerrado conforme a data publicada">· encerrado</span>' : '')
+            : '<span style="color:var(--text-soft);">não informado</span>') +
+        '</td></tr>';
+    }).join('');
+
+    document.getElementById('colegiadoCard').innerHTML =
+      '<h3 class="h3">Colegiado Especial</h3>' +
+      '<div class="tbl-wrap mt-2"><table class="tbl"><thead><tr>' +
+        '<th scope="col">Integrante</th><th scope="col">Unidade</th><th scope="col">Mandato</th>' +
+      '</tr></thead><tbody>' + linhas + '</tbody></table></div>' +
+      '<p style="font-size:.78rem;color:var(--text-soft);margin-top:.7rem;line-height:1.6;">' +
+        A.nota_mandatos + '</p>';
+  }());
 
   /* ═══════════════ TÉCNICOS ═══════════════ */
   const TE = R.comunidade.tecnicos;

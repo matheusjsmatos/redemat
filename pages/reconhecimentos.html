@@ -123,17 +123,10 @@
       '</div></div>';
   }).join('');
 
-  document.getElementById('prNota').innerHTML =
-    C.note('info', '<strong>Como os nomes foram atribuídos.</strong> ' + P.nota +
-      ' Fonte: ' + esc(P.ref) + '. ' + C.badge('VALIDADO')) +
-    '<div class="mt-2">' + C.note('warn',
-      '<strong>Nove dos dez prêmios registrados.</strong> ' + P.exclusao +
-      ' O relatório ScriptLattes registra ' + P.total_lattes + ' prêmios; o portal publica ' +
-      P.publicados + '.') + '</div>' +
-    '<div class="mt-2">' + C.note('prov',
-      '<strong>O que esta lista não é.</strong> Não é ranking nem medida de desempenho ' +
-      'individual: prêmio depende de área, de existir premiação na especialidade e de quem ' +
-      'indica. A ausência de um docente aqui não diz nada sobre o trabalho dele.') + '</div>';
+  /* As três notas sobre prêmios — atribuição por índice de membro, o décimo
+     prêmio fora do conjunto publicado e 'não é ranking' — saíram por decisão
+     da coordenação */
+  document.getElementById('prNota').innerHTML = '';
 
   /* ---------------- prêmios de estudantes ---------------- */
   document.getElementById('pdLede').textContent = P.discentes.nota;
@@ -148,11 +141,9 @@
         'Notícia no site do Programa ' + C.ICO.ext + '</a>' : '') +
       '</article>';
   }).join('');
-  document.getElementById('pdNota').innerHTML = C.note('info',
-    '<strong>Faltam prêmios aqui?</strong> Provavelmente sim. Prêmio de estudante não fica ' +
-    'registrado no currículo do orientador, e por isso não é capturado automaticamente. ' +
-    'A secretaria cadastra caso a caso, a partir de notícia ou informe do orientador. ' +
-    C.badge('PARCIAL'));
+  /* Nota sobre a captura de prêmios de estudante retirada por decisão da
+     coordenação */
+  document.getElementById('pdNota').innerHTML = '';
 
   /* ---------------- patentes ---------------- */
   document.getElementById('ptLede').textContent = D.nota;
@@ -189,17 +180,9 @@
       '</article>';
   }).join('');
 
-  document.getElementById('ptNota').innerHTML =
-    C.note('warn', '<strong>Situação de cada processo.</strong> ' + PAT.aviso) +
-    '<div class="mt-2">' + C.note('info',
-      '<strong>Por que 8 e não 47.</strong> O inventário do Lattes tem ' + PAT.unicas +
-      ' patentes únicas, extraídas do HTML bruto dos currículos porque o campo de patentes ' +
-      'dos arquivos consolidados vem vazio. Destas, ' + D.itens.length + ' têm descrição de ' +
-      'aplicação escrita pelo Programa e são as que aparecem acima com detalhe. As outras ' +
-      (PAT.unicas - 7) + ' constam no currículo sem essa descrição — existem, mas o portal ' +
-      'não inventaria uma aplicação que ninguém escreveu. ' +
-      'Fonte da seleção: <a href="' + D.ref + '" target="_blank" rel="noopener">página oficial de patentes</a>. ' +
-      C.badge('VALIDADO')) + '</div>';
+  /* As duas notas sobre patentes — situação no INPI e por que 8 das 47 —
+     saíram por decisão da coordenação */
+  document.getElementById('ptNota').innerHTML = '';
 
   C.mount('reconhecimentos.html', '../');
 })();

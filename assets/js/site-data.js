@@ -21,8 +21,8 @@ const REDEMAT = {
 
   /* ---------------------------------------------------------------- meta */
   meta: {
-    versao: '4.15',
-    atualizado: '2026-10-09',
+    versao: '4.17',
+    atualizado: '2026-10-10',
     fontes: [
       { id: 'CONSOL',   nome: 'Entrega consolidada Lattes REDEMAT 2021–2026',   ref: 'codex/apcn/10_analises/entrega_atualizada_lattes_20260829 — corte 29/08/2026', coleta: '2026-08-29' },
       { id: 'SCOPUS_M', nome: 'Scopus Sources — consulta manual na interface',  ref: 'scopus.com/sources.uri · data/percentis-scopus-manuais.csv', coleta: '2026-09-02' },
@@ -93,6 +93,36 @@ const REDEMAT = {
         }
       ],
       nota: 'Esta composição por departamentos é o que dá ao Programa a combinação de metalurgia, física, química e design — e é ela que explica por que a mesma rede orienta trabalhos em aço microligado e em design de moda.'
+    },
+    /* ------------------------------------------------ administração
+       Transcrito da página oficial de administração do Programa. O WhatsApp
+       do secretário consta lá e NÃO entra aqui: celular pessoal é um dos
+       campos que este portal não publica. O e-mail institucional dele e o da
+       secretaria cobrem o contato. */
+    administracao: {
+      fonte: 'SITE', ref: 'https://redemat.ufop.br/administração', coleta: '2026-10-10',
+      status: 'VALIDADO',
+      estrutura: 'A administração da REDEMAT é composta, conforme o Regimento Interno, pelo ' +
+                 'Conselho Superior, pelo Colegiado Especial e pela Secretaria do Programa. O ' +
+                 'Conselho Superior é formado pelos reitores da UFOP e da UEMG. O Colegiado ' +
+                 'Especial reúne representantes dos departamentos da UFOP envolvidos na REDEMAT ' +
+                 '— Engenharia Metalúrgica, Física e Química — e da Escola de Design da UEMG. A ' +
+                 'presidência do Colegiado cabe a um de seus membros docentes, eleito por ' +
+                 'votação, que acumula a Coordenação Acadêmica.',
+      colegiado: [
+        { nome: 'Prof. Rodrigo Rangel Porcaro',        unidade: 'DEMET/UFOP', mandato: '25/07/2026 a 25/07/2028' },
+        { nome: 'Prof. Matheus Josué de Souza Matos',  unidade: 'DEFIS/UFOP', mandato: '03/02/2026 a 03/02/2028' },
+        { nome: 'Profa. Dalila Chaves Sicupira',       unidade: 'DEQUI/UFOP', mandato: '03/02/2026 a 03/02/2028' },
+        { nome: 'Prof. Antônio Valadão Cardoso',       unidade: 'ED/UEMG',    mandato: '01/03/2026 a 01/03/2028' },
+        { nome: 'Profa. Eliane Ayres',                 unidade: 'ED/UEMG',    mandato: '' },
+        { nome: 'Profa. Rita de Castro Engler',        unidade: 'ED/UEMG',    mandato: '' },
+        { nome: 'Rodrigo Cesário Lourenço',            unidade: 'Representante dos técnicos administrativos', mandato: '23/06/2025 a 23/06/2027' },
+        { nome: 'Victor Cardoso Campideli',            unidade: 'Representante discente', mandato: '25/06/2025 a 25/06/2026' }
+      ],
+      /* Dois mandatos sem data na fonte e um já vencido: o portal mostra o que
+         a fonte traz e não completa o que ela não diz. */
+      nota_mandatos: 'Mandatos conforme a página oficial de administração. Dois integrantes ' +
+                     'constam sem data de mandato na fonte.'
     },
     contato: {
       /* A secretaria funciona na Escola de Minas, Campus Morro do Cruzeiro.
@@ -513,7 +543,8 @@ const REDEMAT = {
       { pais: 'Inglaterra',      flag: '🇬🇧', vinculos: 3 },
       { pais: 'Noruega',         flag: '🇳🇴', vinculos: 2 }
     ],
-    paises_nota: 'Vínculos institucionais no exterior extraídos da seção "Atuação Profissional" dos currículos Lattes do corpo docente. Contagem de vínculos, não de acordos formais vigentes.',
+    /* Retirada por decisão da coordenação */
+    paises_nota: '',
     acordos_formais: {
       status: 'EM_DEFINICAO',
       nota: 'O portfólio de acordos internacionais vigentes, com objeto, vigência e resultados, consta como pendência da proposta APCN. Será publicado após consolidação.'
@@ -552,7 +583,8 @@ const REDEMAT = {
     interna: {
       nos: 24, arestas: 26, soma_pesos_arestas: 86,   /* soma dos pesos das arestas: NÃO é contagem de produções — uma produção com três membros conta em cada par */
       nucleo: 14, grupos_separados: 5, sem_coautoria_interna: 5,
-      nota: 'Rede de coautoria entre os docentes do Programa — evidência de integração prévia do corpo docente. O desenho e os dados por docente ficam em assets/js/grafo-dados.js, gerado por scripts/gerar-grafo.py.',
+      /* Retirada por decisão da coordenação */
+      nota: '',
       execucao_anterior: { arestas: 29, ref: 'ScriptLattes 28/08/2026' }
     },
     externa: { colaboradores: 797, nota: 'Coautores externos distintos identificados nos currículos do corpo docente.' }
@@ -646,7 +678,8 @@ const REDEMAT = {
   ------------------------------------------------------------------------ */
   parceiros: {
     fonte: 'PROPOSTA + PAINEL', ref: 'seção 4.4 da proposta APCN; painel de projetos', status: 'PRELIMINAR',
-    nota: 'Relação de cooperação histórica e de financiadores identificados nos projetos do período. O portfólio de instrumentos vigentes, com objeto, vigência e resultados, consta como pendência e será publicado após consolidação.',
+    /* Retirada por decisão da coordenação */
+    nota: '',
     itens: [
       { nome: 'Vale',              slug: 'vale',          tipo: 'Empresa',       projetos: 2, comProjeto: true },
       { nome: 'CEMIG',             slug: 'cemig',         tipo: 'Empresa',       projetos: 1, comProjeto: true },
@@ -1011,7 +1044,9 @@ const REDEMAT = {
     pasta: 'assets/img/pessoas/',
     formato: 'jpg',
     especificacao: 'Recorte quadrado, 400×400 px no mínimo, enquadramento do rosto e ombros, fundo neutro. JPG com qualidade 80–85.',
-    nota: 'Nenhuma foto acompanha este pacote. Cada pessoa precisa autorizar o uso da própria imagem antes da publicação — o portal funciona sem foto e exibe as iniciais.',
+    /* A regra continua valendo e está em docs/notas-governanca.md: foto só
+       com autorização escrita. O texto saiu da página, não a exigência. */
+    nota: '',
     consentimento: 'Recomenda-se registrar a autorização de uso de imagem por escrito, conforme a LGPD, antes de publicar a foto de docentes, pós-doutorandos e técnicos.'
   },
 

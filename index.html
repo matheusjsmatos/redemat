@@ -398,6 +398,24 @@
           <a href="pages/processo-seletivo.html" class="btn btn--pri">Processo seletivo</a>
           <a href="pages/pessoas.html" class="btn btn--sec">Encontrar um orientador</a>
         </div>
+
+        <!-- Empresa é outro público, com outra pergunta: não procura orientador,
+             procura competência. Por isso bloco separado, e não um terceiro
+             botão na fileira de quem vai se inscrever. -->
+        <div class="cta-emp">
+          <h3>Empresas e instituições</h3>
+          <p>
+            A REDEMAT desenvolve pesquisa aplicada em metalurgia, materiais funcionais, recursos
+            minerais, biomateriais e design, com histórico de projetos em cooperação com o setor
+            produtivo. Para propor uma parceria, identifique a linha de pesquisa mais próxima do
+            seu problema e fale com o docente responsável, ou escreva para a coordenação.
+          </p>
+          <div class="hero-ctas">
+            <a href="pages/pesquisa.html#areas" class="btn btn--sec">Linhas de pesquisa</a>
+            <a href="pages/pessoas.html" class="btn btn--sec">Corpo docente</a>
+            <a id="ctaEmpMail" class="btn btn--sec">Falar com a coordenação</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -668,9 +686,10 @@
     '</div>';
   }).join('');
 
-  document.getElementById('partnerNota').innerHTML =
-    C.note('info', R.parceiros.nota + ' ' + C.badge('PRELIMINAR')) +
-    '<div class="mt-2">' + C.note('warn', '<strong>Sobre os logos.</strong> ' + R.parceiros.aviso_marca) + '</div>';
+  /* Notas de parceiros retiradas por decisão da coordenação: a ressalva de
+     relação histórica e o aviso sobre marcas registradas. A regra de não
+     exibir logo sem autorização continua valendo — ver docs/pendencias.md. */
+  document.getElementById('partnerNota').innerHTML = '';
 
   /* ---------------- Atalhos: oportunidades, labs, prêmios ---------------- */
   (function atalhos() {
@@ -704,6 +723,15 @@
   }());
 
   /* ---------------- Composição institucional ---------------- */
+  /* O endereço da coordenação vem dos dados: escrito no markup, viraria mais
+     um lugar para esquecer de atualizar. */
+  (function ctaEmpresas() {
+    const a = document.getElementById('ctaEmpMail');
+    const c = R.programa.contato;
+    if (a) a.href = 'mailto:' + (c.email_coord || c.email) +
+      '?subject=' + encodeURIComponent('Proposta de parceria com a REDEMAT');
+  }());
+
   (function composicao() {
     const K = R.programa.composicao;
     document.getElementById('compLede').textContent = K.resumo;
@@ -725,7 +753,9 @@
         }).join('') +
         '</div>';
     }).join('');
-    document.getElementById('compNota').innerHTML = C.note('info', K.nota + ' ' + C.badge('VALIDADO'));
+    /* Sem o selo: a frase é interpretação do Programa sobre a própria
+       composição, não um dado conferido contra fonte. */
+    document.getElementById('compNota').innerHTML = C.note('info', K.nota);
   }());
 
   /* Os estilos saíram do atributo style para .inst-card em styles.css: o

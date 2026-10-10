@@ -2,9 +2,15 @@
  "meta": {
   "fonte": "COORDENACAO",
   "ref": "Declaração de cada docente. Arquivo separado do histórico de propósito: o histórico é regerado a partir das coletas CAPES e sobrescreveria estes campos.",
-  "coleta": "2026-10-07",
+  "coleta": "2026-10-10",
   "status": "PARCIAL",
-  "nota": "O portal mostra apenas o que estiver aqui. Ausência de site não é publicada de forma alguma — nem como 'não informado' — para não sugerir omissão de ninguém."
+  "nota": "O portal mostra apenas o que estiver aqui. Ausência de site não é publicada de forma alguma — nem como 'não informado' — para não sugerir omissão de ninguém. Os campos ficam disponíveis para todos os docentes; preenche quem quiser.",
+  "campos": {
+   "site_pessoal": "Página pessoal ou profissional do docente.",
+   "site_grupo": "Página do grupo de pesquisa que o docente integra ou coordena.",
+   "nome_grupo": "Nome do grupo, usado como rótulo do link.",
+   "site_particular": "Página pessoal de natureza não acadêmica, quando o próprio docente pede que seja divulgada."
+  }
  },
  "docentes": [
   {
@@ -12,7 +18,8 @@
    "site_pessoal": "https://professor-marcelo.com/",
    "site_grupo": "",
    "nome_grupo": "",
-   "observacao": "Endereço também citado nas referências das disciplinas de Inovação Tecnológica da proposta APCN.",
+   "site_particular": "",
+   "observacao": "Endereço também citado nas referências das disciplinas de Inovação Tecnológica do documento aprovado.",
    "fonte": "COORDENACAO"
   },
   {
@@ -20,6 +27,7 @@
    "site_pessoal": "http://professor.ufop.br/matheusmatos",
    "site_grupo": "https://nano.ufop.br/",
    "nome_grupo": "",
+   "site_particular": "https://vidamigosamores.blogspot.com/",
    "observacao": "Nome do grupo a confirmar com o docente antes de publicar.",
    "fonte": "COORDENACAO"
   }

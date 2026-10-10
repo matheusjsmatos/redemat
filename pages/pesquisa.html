@@ -75,7 +75,7 @@
   </section>
 
   <!-- Áreas e linhas -->
-  <section class="section section--alt" aria-labelledby="areas-h">
+  <section class="section section--alt" id="areas" aria-labelledby="areas-h">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Estrutura</p>
@@ -213,9 +213,8 @@
       '<div class="kpi-src">' + k.s + '</div></div>';
   }).join('');
 
-  document.getElementById('colabNota').innerHTML = C.note('info',
-    col.interna.nota + ' ' + col.externa.nota +
-    ' Fonte: grafo de coautoria gerado pelo ScriptLattes a partir dos currículos do corpo docente, coleta em 28/08/2026.');
+  /* Nota do grafo de coautoria retirada por decisão da coordenação. */
+  document.getElementById('colabNota').innerHTML = '';
 
   /* --------------- infraestrutura --------------- */
   (function infra() {
@@ -240,14 +239,11 @@
         return '<li><b>' + (x.sigla ? x.sigla + ' — ' : '') + x.nome.split(' — ').pop() + '</b>' +
           (x.equipamentos || []).length + ' equipamentos · ' + (x.tecnicas || []).slice(0, 3).join(', ') + '</li>';
       }).join('') + '</ul>' +
-      '<div class="mt-3">' + C.note('info',
-        '<strong>Infraestrutura da instituição associada.</strong> ' + R.infraestrutura.uemg.valor +
-        '. Fonte: proposta APCN 2026, ficha da UEMG. ' + C.badge('PRELIMINAR')) + '</div>' +
-      '<div class="mt-2">' + C.note('warn', L.aviso) + '</div>' +
-      '<div class="mt-2">' + C.note('info',
-        'Para equipamentos multiusuários e agendamento de análises, o contato é o responsável do ' +
-        'laboratório — os e-mails estão na página de laboratórios — ou a secretaria: ' +
-        '<a href="mailto:' + R.programa.contato.email + '">' + R.programa.contato.email + '</a>') + '</div>';
+      /* As três notas de infraestrutura — ficha da UEMG, inventário pendente e
+         contato para equipamento multiusuário — saíram por decisão da
+         coordenação. O link para a página de laboratórios, logo acima, segue
+         sendo o caminho de quem procura equipamento e responsável. */
+      '';
   }());
 
   C.mount('pesquisa.html', '../');

@@ -636,6 +636,9 @@ ul, ol { list-style: none; }
   .crono-i { grid-template-columns: 1fr; gap: .15rem; }
 }
 
+/* ---------- Orientação a atualizar ---------- */
+.ori-pend { color: var(--text-soft); font-weight: 600; }
+
 /* ---------- Arquivos na página de normas ---------- */
 .norm-files { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .5rem; }
 .norm-files a {
@@ -649,6 +652,22 @@ ul, ol { list-style: none; }
 /* Item sem arquivo continua na lista: sumir faria quem procura a norma pensar
    que ela não existe, em vez de saber que falta carregar. */
 .norm-falta { font-size: .76rem; color: var(--text-soft); font-style: italic; margin-top: .45rem; }
+
+/* ---------- Mandato encerrado ---------- */
+.mand-venc { font-size: .74rem; font-weight: 700; color: var(--amber); white-space: nowrap; }
+
+/* ---------- Chamada para empresas ---------- */
+.cta-emp {
+  margin-top: 2rem; padding-top: 1.75rem;
+  border-top: 1px solid rgba(255,255,255,.18);
+}
+.cta-emp h3 {
+  font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: .5rem;
+}
+.cta-emp p {
+  font-size: .9rem; line-height: 1.7; color: rgba(255,255,255,.82);
+  max-width: 62ch; margin-bottom: 1.1rem;
+}
 
 /* ---------- Chamadas abertas ---------- */
 .chamada { border-left: 4px solid var(--navy); }

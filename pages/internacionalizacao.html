@@ -311,10 +311,10 @@
     '</div>';
   }).join('');
 
-  document.getElementById('partNota').innerHTML =
-    C.note('warn', '<strong>Relação histórica, não portfólio vigente.</strong> ' + R.parceiros.nota +
-      ' ' + C.badge('PRELIMINAR')) +
-    '<div class="mt-2">' + C.note('info', '<strong>Sobre os logos.</strong> ' + R.parceiros.aviso_marca) + '</div>';
+  /* Notas de parceiros retiradas por decisão da coordenação: a ressalva de
+     relação histórica e o aviso sobre marcas registradas. A regra de não
+     exibir logo sem autorização continua valendo — ver docs/pendencias.md. */
+  document.getElementById('partNota').innerHTML = '';
 
   /* ---------- financiadores ---------- */
   const F = R.projetos.agencias_valor.concat(R.projetos.empresas_valor).slice().sort(function (a, b) { return b.projetos - a.projetos; });

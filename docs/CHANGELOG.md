@@ -1,5 +1,141 @@
 # Registro de correções — Portal REDEMAT
 
+## Versão 4.17 — 10/10/2026
+
+Doze notas metodológicas saíram das páginas, cada docente ganhou campos para
+site pessoal e de grupo, a aba da secretaria passou a mostrar a coordenação e o
+Colegiado, e empresas ganharam um caminho de entrada.
+
+### Notas retiradas
+
+Saíram de `internacionalizacao.html` (vínculos no exterior, logos),
+`index.html` (cooperação histórica, logos, selo VALIDADO na composição por
+departamentos), `reconhecimentos.html` (seis notas sobre prêmios e patentes) e
+`pesquisa.html` (coautoria e três de infraestrutura).
+
+O texto de cada uma está em `docs/notas-governanca.md`, §5 a §10, com o risco
+que a retirada cria. Duas merecem vigilância:
+
+- **Prêmios.** A nota retirada dizia, com todas as letras, que a lista *não é
+  ranking nem medida de desempenho individual*. A regra continua valendo — o
+  portal segue sem publicar pontuação por docente —, mas o visitante deixou de
+  ser avisado de como ler a lista.
+- **Patentes.** A página mostra 8 e o Lattes registra 47. A nota explicava a
+  diferença. Sem ela, o número menor fica sem justificativa, e num processo
+  avaliativo isso pesa contra o Programa. Virou pendência.
+
+O selo VALIDADO saiu só do **rótulo** da frase sobre departamentos; a
+procedência do dado continua registrada em `site-data.js`.
+
+### Sites pessoais e de grupo por docente
+
+Cada docente passa a ter quatro campos em `data/sites-docentes.json`:
+`site_pessoal`, `site_grupo` com `nome_grupo` para rotular o link, e
+`site_particular` — página não acadêmica, publicada só a pedido do próprio
+docente.
+
+O arquivo é **separado do histórico de propósito**: `historico-dados.js` é
+regerado a partir das coletas CAPES e sobrescreveria estes campos a cada
+atualização. `scripts/gerar-sites-docentes.py` converte o JSON em
+`assets/js/sites-docentes.js`, indexado por nome sem acento — o mesmo
+casamento insensível a acento que corrigiu o bug dos orientadores na 4.16.
+
+**Ausência de site não é publicada de forma alguma.** Sem campo, sem link, sem
+"não informado": um rótulo de ausência transformaria em omissão pública o fato
+de alguém não ter página.
+
+Preenchidos até aqui: Marcelo Gomes Speziali (pessoal) e Matheus Josué de Souza
+Matos (pessoal, grupo e particular). Os campos ficam abertos para todos.
+
+### Coordenação, Colegiado e Secretaria
+
+A aba que mostrava só o secretário passou a mostrar a estrutura inteira,
+transcrita da página oficial de administração: coordenadora, vice-coordenador e
+as oito cadeiras do Colegiado com unidade e mandato.
+
+Mandato vencido é **calculado pela data**, não marcado à mão — pelo mesmo motivo
+que a situação do processo seletivo é calculada pelo cronograma: um rótulo
+escrito à mão continua no ar depois de vencer. Hoje um mandato aparece
+sinalizado (representação discente, encerrada em 25/06/2026).
+
+O celular da secretaria, que consta na página oficial, **não foi transcrito**.
+É número pessoal; o portal publica o e-mail institucional e o telefone fixo.
+
+### Empresas
+
+Novo bloco na página inicial, abaixo de "Pense sua pesquisa com a gente".
+Empresa não procura orientador, procura competência — por isso bloco separado,
+e não um terceiro botão na fileira de quem vai se inscrever. Leva às linhas de
+pesquisa (`pesquisa.html#areas`, âncora criada agora), ao diretório de docentes
+e a um e-mail já com assunto preenchido para a coordenação.
+
+## Versão 4.16 — 09/10/2026
+
+Quatro notas de governança saíram das páginas, e um bug acusava oito docentes do
+quadro de não pertencerem ao Programa.
+
+### Oito docentes atuais apareciam como "externos ao quadro"
+
+Em `discentes.html`, o orientador era comparado com a lista de docentes **letra
+por letra**. O cadastro de discentes guarda os nomes **sem acento** — vêm das
+coletas, em caixa alta — e a lista de docentes guarda com acento. Resultado:
+
+> Geraldo Lucio de Faria **(externo ao quadro atual)**
+
+Geraldo Lúcio de Faria é um dos 24. Com ele, **Versiane Albis Leão, Fernando
+Gabriel da Silva Araújo, Taíse Matte Manhabosco, Américo Tristão Bernardes,
+Matheus Josué de Souza Matos, Víctor de Andrade Alvarenga Oliveira e Heloisa
+Nazaré dos Santos** — oito dos 24 docentes atuais rotulados publicamente como
+não pertencentes ao próprio Programa, por causa de um acento.
+
+A comparação passou a ignorar acento e caixa e a devolver a grafia oficial, que
+é a que aparece na tela.
+
+### Quem saiu do Programa não aparece mais como orientador
+
+Dos 13 "externos" que a regra antiga listava, **cinco eram de fato externos** —
+Gilberto Henrique Tavares Álvares da Silva, Cláudio Batista Vieira, Vagner
+Roberto Botaro, Adilson Rodrigues da Costa e Margareth Spangler Andrade, todos
+com saída registrada no painel histórico.
+
+Esses nomes saíram da tabela, do gráfico e do seletor de filtro. No lugar, **—**.
+
+**Os discentes não sumiram junto com o nome.** São **29 registros**: 22 com o
+campo de orientador vazio e 7 apontando para quem já saiu. Aparecem na tabela
+com "—", formam uma linha própria no gráfico e têm opção própria no filtro. A
+orientação segue válida até a titulação; o que falta é o cadastro.
+
+Os três números batem: 29 travessões na tabela, 29 na barra, 29 no filtro.
+Conferido no navegador — porque a primeira versão desta correção mostrava 29 na
+tabela e 7 na barra, contando só um dos dois casos.
+
+### As notas de governança foram para um arquivo de controle
+
+Saíram de `pessoas.html` e `discentes.html`, por decisão da coordenação:
+procedência dos campos do diretório, "o que não é publicado", exigência de
+autorização de uso de imagem e o aviso de vinculação inferida. Estão em
+**`docs/notas-governanca.md`**.
+
+**As regras continuam valendo** — o portal segue sem publicar contagem
+individual por docente, sem e-mail de discente e sem foto não autorizada. O que
+saiu foi o texto que informava o visitante disso.
+
+Uma consequência que vale registrar: o **asterisco** que marca vinculação
+inferida continua na página de docentes, e a legenda que o explicava saiu. Hoje
+ele é um símbolo sem significado para quem lê. Está em `docs/pendencias.md`
+como P-07.
+
+### Lista de pendências
+
+**`docs/pendencias.md`**, com 15 itens em três níveis. Cada um diz o que falta,
+quem resolve e **o que acontece enquanto não for resolvido** — essa última parte
+é o que separa uma lista de pendências de um inventário.
+
+No topo: o edital que descreve três áreas enquanto o site publica duas; os 29
+cadastros de orientação; a ata que falta; e o nome do docente fora do conjunto
+publicado, ainda no ar nos arquivos ao lado das páginas.
+
+
 ## Versão 4.15 — 09/10/2026
 
 As notas metodológicas da produção saíram das páginas, por decisão da
@@ -620,14 +756,13 @@ número fica.
 
 ### O que saiu
 
-A página de pessoas trazia um aviso — "Exclusão formal. Guilherme Jorge
-Brigolini Silva não integra o conjunto de 24 docentes utilizado nesta versão do
-portal" — e o nome reaparecia em outros dois lugares públicos:
+A página de pessoas trazia um aviso — "Exclusão formal. [nome de docente] não integra o conjunto de 24 docentes
+utilizado nesta versão do portal" — e o nome reaparecia em outros dois lugares públicos:
 
 | Onde | O que dizia |
 |---|---|
 | `pessoas.html` | o aviso "Exclusão formal", com o nome |
-| `indicadores.html`, conflito "Número de docentes permanentes" | "com a exclusão formal de Guilherme Jorge Brigolini Silva, o conjunto é de 24" |
+| `indicadores.html`, conflito "Número de docentes permanentes" | "com a exclusão formal de [nome de docente], o conjunto é de 24" |
 | `reconhecimentos.html` | "Um dos dez prêmios (Melhor Palestrante, SEMTECH 2026) pertence ao docente formalmente excluído" |
 
 O terceiro não trazia o nome, e identificava a pessoa de todo modo: o prêmio
@@ -1651,7 +1786,7 @@ incorretos.
 A lista foi substituída pelos 24 docentes obtidos da página oficial
 (`redemat.ufop.br/docentes-1`), cruzada com a tabela de corpo docente da
 proposta APCN e com os identificadores Lattes de 16 dígitos extraídos do
-ScriptLattes. Guilherme Jorge Brigolini Silva foi excluído conforme instrução.
+ScriptLattes. Um docente foi excluído conforme instrução da coordenação.
 
 Consequência: todos os identificadores Lattes agora apontam para currículos
 reais; os e-mails são os institucionais publicados.
@@ -1662,7 +1797,7 @@ O conflito documentado na v1.0 (21 vs. 24 vs. 25 permanentes) tinha explicação
 simples, que as fontes cruzadas revelaram:
 
 - a página oficial lista 25 registros;
-- excluindo Guilherme Jorge Brigolini Silva: 24 docentes;
+- excluindo esse docente: 24 docentes;
 - desses, 21 permanentes e 3 colaboradores (Antônio Valadão Cardoso,
   Heloisa Nazaré dos Santos, Ive Silvestre de Almeida);
 - o valor "21" do site referia-se apenas aos permanentes;
